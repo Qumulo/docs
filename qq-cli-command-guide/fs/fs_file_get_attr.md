@@ -32,8 +32,8 @@ sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq fs_file_get_attr</code> command.
 synopsis: Get file attributes
 title: qq fs_file_get_attr
-usage: "qq fs_file_get_attr [-h] (--path PATH | --id ID) [--snapshot SNAPSHOT] [--retrieve-file-lock]\n\
-  \    [--stream-id STREAM_ID | --stream-name STREAM_NAME]"
+usage: qq fs_file_get_attr [-h] (--path PATH | --id ID) [--snapshot SNAPSHOT] [--retrieve-file-lock]
+  [--stream-id STREAM_ID | --stream-name STREAM_NAME]
 zendesk_source: qq CLI Command Guide
 
 ---

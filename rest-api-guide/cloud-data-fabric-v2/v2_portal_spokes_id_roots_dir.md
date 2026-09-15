@@ -3,7 +3,8 @@ category: /Cloud Data Fabric V2
 methods:
   delete:
     summary: Delete the specified spoke root directory for the specified spoke portal.
-      This action does not affect the data in the hub root directory.
+      This action does not affect the data in the hub root directory. Requires connectivity
+      with the hub portal host cluster.
     parameters:
     - name: id
       description: Portal ID

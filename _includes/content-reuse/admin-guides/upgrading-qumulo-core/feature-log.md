@@ -15,6 +15,36 @@ For information about upgrade types for each release, see <a href='mode-referenc
     </ul>{% endcapture %}
 
 
+## Qumulo Core 7.10.0
+{{ nexusLink }}
+
+{{site.data.alerts.important}}
+<ul>
+  <li>
+    <p>This release includes a cryptographic module compliant with <a target="_blank" href="https://csrc.nist.gov/pubs/fips/140-3/final">FIPS 140-3</a>.</p>
+    <p><strong>Upgrade Requirements:</strong> To be able to upgrade your cluster to Qumulo Core 7.10.0, you must ensure that all certificates on your cluster are compliant with FIPS 104-3. Non-compliant certificates can cause error messages beginning with <code>REPLACEMENT_ADVICE</code> or <code>MATCHING_KEY_ADVICE</code>.</p>
+  </li>
+  <li>
+    <p>Deployment or Redeployment Requirements: For Cloud Native Qumulo (CNQ) clusters that were:</p>
+    <ul>
+      <li><strong>Deployed on Qumulo Core lower than 7.4.3:</strong> If the clusters haven’t undergone a cluster redeployment on Qumulo Core 7.4.3 (or higher), they must complete the cluster redeployment process before upgrading to Qumulo Core 7.10.1 (or higher). This process retains your cluster’s configuration and all data.</li>
+      <li><strong>Deployed or Redeployed on Qumulo Core 7.4.3 (and higher):</strong> No additional steps are required.</li>
+    </ul>
+  </li>
+</ul>
+{{site.data.alerts.end}}
+
+* **Audit Logging:** Added logging for internal Qumulo REST API operations performed on the cluster’s behalf
+* **Cloud Data Fabric (CDF):** Made improvements for workflows with significant spoke portal read and write activity
+* **Networking:** Improved error detection in the back-end network layer to enhance cluster stability and resilience
+* **Object Metadata Cache (OMC):** Configured all new Azure Native Qumulo (ANQ) and Cloud Native Qumulo (CNQ) to use the OMC as the single source of truth for objects in use by the cluster.
+* **Web UI:** Made improvements to:
+  * **Portal Cache** reporting on the donut chart on the **Overview** page
+  * Messaging about portal relationship connectivity
+  * Information about portal host cluster files and directories on **Analytics Activity** dashboards
+* **REST API:** Made improvements to Analytics and Files endpoints
+
+
 ## Qumulo Core 7.9.3.1
 {{ nexusLink }}
 

@@ -62,7 +62,8 @@ methods:
       description: Return value on success
     preview: false
   patch:
-    summary: Change configuration for the specified hub portal.
+    summary: Change the spoke hosts or the type of the specified hub portal. The portal
+      must be accepted, and PORTAL_READ_WRITE is the only type that may be set.
     parameters:
     - name: id
       description: Portal ID

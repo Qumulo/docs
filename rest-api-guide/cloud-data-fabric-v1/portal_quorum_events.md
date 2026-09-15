@@ -17,8 +17,8 @@ methods:
         seconds. If not specified, defaults to the current system time.
       required: false
     - name: type
-      description: "Only return events of this kind: success or abandon.:\n * `abandon`\
-        \ - abandon,\n * `success` - success"
+      description: 'Only return events of this kind: success or abandon.<ul><li><code>abandon</code>
+        - abandon</li><li><code>success</code> - success</li></ul>'
       required: false
     - name: node-id
       description: Only return events recorded by this node.

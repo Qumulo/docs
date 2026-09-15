@@ -11,6 +11,14 @@ layout: page
 <style>div#toc{height:200px;overflow:auto;}</style>
 
 
+## Qumulo Core 7.10.0
+{{ nexusLink }}
+<ul>
+  <li>Added <code>POST /v1/files/try-resolve</code></li>
+  <li>Added <code>portal_cache_size_bytes</code> parameter to <code>GET /v1/file-system</code> response</li>
+</ul>
+
+
 ## Qumulo Core 7.9.3.1
 {{ nexusLink }}
 {{ noAPIchanges }}

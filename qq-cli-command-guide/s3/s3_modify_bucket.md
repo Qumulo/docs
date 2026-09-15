@@ -35,9 +35,9 @@ synopsis: Modify the settings of the given bucket. Use this command to update th
   bucket versioning state. Using this command to enable anonymous access to a bucket
   has been disabled, use s3_set_bucket_policy instead.
 title: qq s3_modify_bucket
-usage: "qq s3_modify_bucket [-h] --name NAME [--suspend-versioning | --enable-versioning]\n\
-  \    [--enable-object-lock-without-retention | --enable-object-lock-with-retention-days\
-  \ RETENTION_DAYS | --enable-object-lock-with-retention-years RETENTION_YEARS]"
+usage: qq s3_modify_bucket [-h] --name NAME [--suspend-versioning | --enable-versioning]
+  [--enable-object-lock-without-retention | --enable-object-lock-with-retention-days
+  RETENTION_DAYS | --enable-object-lock-with-retention-years RETENTION_YEARS]
 zendesk_source: qq CLI Command Guide
 
 ---

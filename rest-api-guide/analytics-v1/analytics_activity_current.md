@@ -5,11 +5,11 @@ methods:
     summary: Returns the current sampled IOPS and throughput from the cluster.
     parameters:
     - name: type
-      description: "Filters activity to a specific type. If not specified, all activity\
-        \ is returned.:\n * `file-iops-read` - file-iops-read,\n * `file-iops-write`\
-        \ - file-iops-write,\n * `file-throughput-read` - file-throughput-read,\n\
-        \ * `file-throughput-write` - file-throughput-write,\n * `metadata-iops-read`\
-        \ - metadata-iops-read,\n * `metadata-iops-write` - metadata-iops-write"
+      description: Filters activity to a specific type. If not specified, all activity
+        is returned.<ul><li><code>file-iops-read</code> - file-iops-read</li><li><code>file-iops-write</code>
+        - file-iops-write</li><li><code>file-throughput-read</code> - file-throughput-read</li><li><code>file-throughput-write</code>
+        - file-throughput-write</li><li><code>metadata-iops-read</code> - metadata-iops-read</li><li><code>metadata-iops-write</code>
+        - metadata-iops-write</li></ul>
       required: false
     response_body:
       schema: "{\n  \"description\": \"api_rates\",\n  \"type\": \"object\",\n  \"\

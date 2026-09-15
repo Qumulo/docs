@@ -52,7 +52,8 @@ methods:
       description: Return value on success
     preview: false
   delete:
-    summary: Delete the specified spoke portal from the current cluster.
+    summary: Delete the specified spoke portal from the current cluster. Requires
+      connectivity with the hub portal host cluster.
     parameters:
     - name: id
       description: Portal ID

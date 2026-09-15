@@ -449,8 +449,7 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
   </tr>
   <tr>
     <td>Maximum object size (by using <code>MultipartUpload</code>)</td>
-    <td>48.8 TiB (10,000 * 5 GiB)</td>
-    <td>5 TiB</td>
+    <td colspan="2" class="joined-cell">48.8 TiB (10,000 * 5 GiB)</td>
   </tr>
   <tr>
     <td>Minimum object key length</td>

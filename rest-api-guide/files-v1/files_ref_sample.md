@@ -12,10 +12,11 @@ methods:
         UI URL-encodes the paths.
       required: true
     - name: by-value
-      description: "Weight the sampling by the value specified: capacity (total bytes\
-        \ used for data and metadata), data (total bytes used for data only), file\
-        \ (file count), named_streams (named stream count):\n * `capacity` - capacity,\n\
-        \ * `data` - data,\n * `file` - file,\n * `named_streams` - named_streams"
+      description: 'Weight the sampling by the value specified: capacity (total bytes
+        used for data and metadata), data (total bytes used for data only), file (file
+        count), named_streams (named stream count):<ul><li><code>capacity</code> -
+        capacity</li><li><code>data</code> - data</li><li><code>file</code> - file</li><li><code>named_streams</code>
+        - named_streams</li></ul>'
       required: true
     - name: limit
       description: Maximum number of entries returned

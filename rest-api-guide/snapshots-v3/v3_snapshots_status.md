@@ -6,10 +6,10 @@ methods:
       additional non-configurable information about a snapshot.
     parameters:
     - name: filter
-      description: "Filter the list of snapshots to exclude snapshots in process of\
-        \ being deleted, or include only snapshots in process of being deleted. By\
-        \ default, includes all snapshots.:\n * `all` - all,\n * `exclude_in_delete`\
-        \ - exclude_in_delete,\n * `only_in_delete` - only_in_delete"
+      description: Filter the list of snapshots to exclude snapshots in process of
+        being deleted, or include only snapshots in process of being deleted. By default,
+        includes all snapshots.<ul><li><code>all</code> - all</li><li><code>exclude_in_delete</code>
+        - exclude_in_delete</li><li><code>only_in_delete</code> - only_in_delete</li></ul>
       required: true
     response_body:
       schema: "{\n  \"description\": \"api_snapshot_statuses\",\n  \"type\": \"object\"\

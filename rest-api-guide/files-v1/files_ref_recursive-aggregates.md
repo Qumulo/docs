@@ -22,12 +22,13 @@ methods:
         10, system limit: 5000)'
       required: false
     - name: order-by
-      description: "Ordering field used for top N selection and sorting (default:\
-        \ total_blocks):\n * `total_blocks` - total_blocks,\n * `total_datablocks`\
-        \ - total_datablocks,\n * `total_directories` - total_directories,\n * `total_files`\
-        \ - total_files,\n * `total_metablocks` - total_metablocks,\n * `total_named_stream_datablocks`\
-        \ - total_named_stream_datablocks,\n * `total_named_streams` - total_named_streams,\n\
-        \ * `total_other` - total_other,\n * `total_symlinks` - total_symlinks"
+      description: 'Ordering field used for top N selection and sorting (default:
+        total_blocks):<ul><li><code>total_blocks</code> - total_blocks</li><li><code>total_datablocks</code>
+        - total_datablocks</li><li><code>total_directories</code> - total_directories</li><li><code>total_files</code>
+        - total_files</li><li><code>total_metablocks</code> - total_metablocks</li><li><code>total_named_stream_datablocks</code>
+        - total_named_stream_datablocks</li><li><code>total_named_streams</code> -
+        total_named_streams</li><li><code>total_other</code> - total_other</li><li><code>total_symlinks</code>
+        - total_symlinks</li></ul>'
       required: false
     - name: snapshot
       description: The snapshot ID that specifies the version of the filesystem to

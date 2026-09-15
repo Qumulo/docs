@@ -182,10 +182,10 @@ methods:
         this read.
       required: false
     - name: include-acls
-      description: 'If set to true, include the ACL for each entry in the response.
+      description: If set to true, include the ACL for each entry in the response.
         To retrieve the ACL for files[i], look up file_acls.acl_pool[file_acls.acl_indices[i]].
-        When the caller doesn''t have the READ_ACL permission for a file, the entry
-        in acl.acl_indices is null. False by default. '
+        When the caller doesn't have the READ_ACL permission for a file, the entry
+        in acl.acl_indices is null. False by default.
       required: false
     - name: after
       description: Return entries after the given key (keys are returned in the paging

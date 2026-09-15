@@ -25,8 +25,8 @@ summary: This section explains how to use the <code>qq web_ui_modify_settings</c
   command.
 synopsis: Modify configuration options for the Web UI
 title: qq web_ui_modify_settings
-usage: "qq web_ui_modify_settings [-h] [--inactivity-timeout MINUTES | --disable-inactivity-timeout]\n\
-  \    [--login-banner BANNER_MARKDOWN_FILE | --disable-login-banner]"
+usage: qq web_ui_modify_settings [-h] [--inactivity-timeout MINUTES | --disable-inactivity-timeout]
+  [--login-banner BANNER_MARKDOWN_FILE | --disable-login-banner]
 zendesk_source: qq CLI Command Guide
 
 ---
