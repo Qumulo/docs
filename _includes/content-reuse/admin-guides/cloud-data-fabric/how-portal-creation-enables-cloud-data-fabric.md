@@ -107,7 +107,7 @@ In addition, Qumulo Core 7.6.2 introduces the following changes:
   * **Combined One-to-One and Many-to-One Mapping:** Multiple spoke portal root directories map to both unique and shared hub portal root directories
 
 ### Portals
-* **Spoke Portal:** An interface point on a Qumulo cluster that accesses a portion of the file system on another cluster (which has a _hub portal)_. {{site.gns.dirOnCluster}} spoke portal. {{site.gns.spokePortalInitiates}} You can configure multiple spoke portals on the same Qumulo cluster, as long as the spoke portal root directories don't overlap and the host cluster for each portal relationship is unique.
+* **Spoke Portal:** An interface point on a Qumulo cluster that accesses a portion of the file system on another cluster (which has a _hub portal)_. {{site.gns.dirOnCluster}} a spoke portal. {{site.gns.spokePortalInitiates}} You can configure multiple spoke portals on the same Qumulo cluster, as long as the spoke portal root directories don't overlap and the host cluster for each portal relationship is unique.
   {: #spoke-portal}
 
   * **Read-Write Portal:** A spoke portal that can access, modify, and create any files or directories within one or more corresponding hub portal root directories (in the `Authorized` state) according to file system permissions.
@@ -116,7 +116,7 @@ In addition, Qumulo Core 7.6.2 introduces the following changes:
   * **Read-Only Portal:** A spoke portal that can access any files or directories within one or more corresponding hub portal root directories (in the `Authorized` state) according to file system permissions, but can't modify or create any files or directories regardless of file system permissions.
   {: #read-only-portal}
 
-* **Hub Portal:** An interface point on a Qumulo cluster that shares a portion of its file system with another cluster (which has a _spoke portal)_. {{site.gns.dirOnCluster}} hub portal. {{site.gns.spokePortalInitiates}} You can configure multiple portal relationships, with the same hub portal root directory, with nested directories, or with independent ones.
+* **Hub Portal:** An interface point on a Qumulo cluster that shares a portion of its file system with another cluster (which has a _spoke portal)_. {{site.gns.dirOnCluster}} a hub portal. {{site.gns.spokePortalInitiates}} You can configure multiple portal relationships, with the same hub portal root directory, with nested directories, or with independent ones.
   {: #hub-portal}
 
   {{site.data.alerts.note}}
@@ -133,7 +133,7 @@ In addition, Qumulo Core 7.6.2 introduces the following changes:
 * **Peer Portal:** A portal that serves as a counterpart to another portal. For example, a hub portal is a peer portal to a spoke portal.
   {: #peer-portal}
 
-* **Peer Portal Address:** The IP address for a peer portal.
+* **Peer Portal Address:** The IP address of a peer portal.
   {: #peer-portal-address}
 
 #### Portal Relationship States {#portal-relationship-states}
