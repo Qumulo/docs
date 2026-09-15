@@ -17,10 +17,7 @@ optional_options:
   help: The IP addresses and TCP ports of the remote cluster. Use a comma-delimited
     list to specify multiple hosts. Use colon as a separator after each IP address
     to provide custom TCP port (3713 is used by default). Ports specified this way
-    override other --port arguments. Put brackets around an IPv6 address, such as
-    [2001:db8::1] or [2001:db8::1]:4000. Use a dash to specify a range of IPv4 addresses
-    that share their first three octets, such as 10.220.1.70-73 or 10.220.1.70-10.220.1.73.
-    A port applies to the whole range.
+    override other --port arguments.
   name: -m
   required: false
 - alternate: []

@@ -14,9 +14,58 @@ methods:
         UI URL-encodes the paths.
       required: true
     - name: filter
-      description: A list that indicates the types of notification that you want to
-        receive, in CSV format. If you don't provide the list, the system sends every
-        type of notification. The following are available notification types:<ul><li><code>child_file_added</code></li><li><code>child_dir_added</code></li><li><code>child_file_removed</code></li><li><code>child_dir_removed</code></li><li><code>child_file_moved_from</code></li><li><code>child_file_moved_to</code></li><li><code>child_dir_moved_from</code></li><li><code>child_dir_moved_to</code></li><li><code>child_btime_changed</code></li><li><code>child_mtime_changed</code></li><li><code>child_atime_changed</code></li><li><code>child_size_changed</code></li><li><code>child_extra_attrs_changed</code></li><li><code>child_acl_changed</code></li><li><code>child_owner_changed</code></li><li><code>child_group_changed</code></li><li><code>child_data_written</code></li><li><code>child_stream_added</code></li><li><code>child_stream_removed</code></li><li><code>child_stream_moved_from</code></li><li><code>child_stream_moved_to</code></li><li><code>child_stream_size_changed</code></li><li><code>child_stream_data_written</code></li><li><code>self_removed</code></li></ul>
+      description: 'A list that indicates the types of notification that you want
+        to receive, in CSV format. If you don''t provide the list, the system sends
+        every type of notification. The following are available notification types:*
+        child_file_added
+
+        * child_dir_added
+
+        * child_file_removed
+
+        * child_dir_removed
+
+        * child_file_moved_from
+
+        * child_file_moved_to
+
+        * child_dir_moved_from
+
+        * child_dir_moved_to
+
+        * child_btime_changed
+
+        * child_mtime_changed
+
+        * child_atime_changed
+
+        * child_size_changed
+
+        * child_extra_attrs_changed
+
+        * child_acl_changed
+
+        * child_owner_changed
+
+        * child_group_changed
+
+        * child_data_written
+
+        * child_stream_added
+
+        * child_stream_removed
+
+        * child_stream_moved_from
+
+        * child_stream_moved_to
+
+        * child_stream_size_changed
+
+        * child_stream_data_written
+
+        * self_removed
+
+        '
       required: false
     - name: recursive
       description: Specifies whether notifications are recursive. A recursive notification

@@ -31,11 +31,10 @@ sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq portal_delete_spoke_root</code>
   command.
 synopsis: Delete the specified spoke root directory for the specified spoke portal.
-  This action does not affect the data in the hub root directory. Requires connectivity
-  with the hub portal host cluster.
+  This action does not affect the data in the hub root directory.
 title: qq portal_delete_spoke_root
-usage: qq portal_delete_spoke_root [-h] -i ID [-j] [-n] (--spoke-root-id SPOKE_ROOT_ID
-  | --spoke-root-path SPOKE_ROOT_PATH)
+usage: "qq portal_delete_spoke_root [-h] -i ID [-j] [-n]\n    (--spoke-root-id SPOKE_ROOT_ID\
+  \ | --spoke-root-path SPOKE_ROOT_PATH)"
 zendesk_source: qq CLI Command Guide
 
 ---

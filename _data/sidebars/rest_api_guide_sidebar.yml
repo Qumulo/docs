@@ -652,11 +652,6 @@ entries:
       url: /rest-api-guide/files-v1/files_resolve.html
     - apiversion: v1
       output: web,pdf
-      preview: true
-      title: files/try-resolve
-      url: /rest-api-guide/files-v1/files_try-resolve.html
-    - apiversion: v1
-      output: web,pdf
       title: files/{ref}
       url: /rest-api-guide/files-v1/files_ref.html
     - apiversion: v1

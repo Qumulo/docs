@@ -35,8 +35,8 @@ summary: This section explains how to use the <code>qq portal_list_quorum_events
 synopsis: List recent portal quorum success and abandon events recorded by the nodes
   of this cluster
 title: qq portal_list_quorum_events
-usage: qq portal_list_quorum_events [-h] [--begin-time BEGIN_TIME] [--end-time END_TIME]
-  [--type {success,abandon}] [--node-id NODE_ID] [--fs-id FS_ID] [--limit LIMIT]
+usage: "qq portal_list_quorum_events [-h] [--begin-time BEGIN_TIME] [--end-time END_TIME]\
+  \ [--type {success,abandon}]\n    [--node-id NODE_ID] [--fs-id FS_ID] [--limit LIMIT]"
 zendesk_source: qq CLI Command Guide
 
 ---

@@ -14,9 +14,8 @@ methods:
         If not specified, defaults to the current system time.
       required: false
     - name: interval
-      description: Sampling interval. If not specified, defaults to <code>hourly</code>.<ul><li><code>daily</code>
-        - daily</li><li><code>hourly</code> - hourly</li><li><code>weekly</code> -
-        weekly</li></ul>
+      description: "Sampling interval. If not specified, defaults to 'hourly'.:\n\
+        \ * `daily` - daily,\n * `hourly` - hourly,\n * `weekly` - weekly"
       required: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\

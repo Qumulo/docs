@@ -14,9 +14,7 @@ optional_options:
   name: --mount-path
   required: true
 - alternate: []
-  help: Optional prefix inside the bucket, matched against object keys as it is written.
-    Must end with the delimiter. An empty prefix is refused; omit this option to bridge
-    the whole bucket.
+  help: Optional prefix inside the bucket. Stored with a trailing "/".
   name: --key-prefix
   required: false
 - alternate: []
@@ -42,16 +40,9 @@ optional_options:
   name: --notification-queue-url
   required: false
 - alternate: []
-  help: Reject protocol data and namespace writes to the bridge while the bucket keeps
-    converging. File attributes stay writable.
+  help: Reject protocol writes to the bridge while the bucket keeps converging.
   name: --read-only
   required: false
-- alternate: []
-  help: Import file-mover object metadata (ownership, permissions, ACLs, timestamps)
-    onto bridge inodes. AUTO translates objects matching a known mover dialect; OFF
-    inherits everything from the parent directory. Immutable after creation.
-  name: --metadata-import
-  required: true
 permalink: /qq-cli-command-guide/object/object_bridge_create.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
@@ -61,10 +52,9 @@ synopsis: Test-only. Create a bridge filesystem rooted at an external object buc
   The cluster must have been created with the object_portals test option enabled.
 title: qq object_bridge_create
 usage: "qq object_bridge_create [-h] --bucket-uri BUCKET_URI --mount-path MOUNT_PATH\
-  \ [--key-prefix KEY_PREFIX] [--delimiter DELIMITER] [--access-key-id ACCESS_KEY_ID]\
-  \ [--secret-access-key SECRET_ACCESS_KEY] [--key-vault-hostname KEY_VAULT_HOSTNAME]\n\
-  \    [--notification-queue-url NOTIFICATION_QUEUE_URL] [--read-only] --metadata-import\
-  \ {OFF,AUTO}"
+  \ [--key-prefix KEY_PREFIX]\n    [--delimiter DELIMITER] [--access-key-id ACCESS_KEY_ID]\n\
+  \    [--secret-access-key SECRET_ACCESS_KEY] [--key-vault-hostname KEY_VAULT_HOSTNAME]\n\
+  \    [--notification-queue-url NOTIFICATION_QUEUE_URL] [--read-only]"
 zendesk_source: qq CLI Command Guide
 
 ---

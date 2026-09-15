@@ -20,10 +20,10 @@ optional_options:
   required: false
 - alternate:
   - --read-only-spoke
-  help: Create a read-only spoke portal. Read-only spoke portals prevent users from
+  help: 'Create a read-only spoke portal. Read-only spoke portals prevent users from
     creating or modifying files or directories under the hub portal root directory.
-    To make the spoke portal writable later, run `portal_modify_hub --make-read-write`
-    on the hub cluster.
+    Important: It isn''t possible to change a read-only spoke portal to a read-write
+    portal after creating it.'
   name: -r
   required: false
 - alternate:
@@ -36,10 +36,7 @@ optional_options:
   help: The IP addresses and TCP ports of the remote cluster. Use a comma-delimited
     list to specify multiple hosts. Use colon as a separator after each IP address
     to provide custom TCP port (3713 is used by default). Ports specified this way
-    override other --port arguments. Put brackets around an IPv6 address, such as
-    [2001:db8::1] or [2001:db8::1]:4000. Use a dash to specify a range of IPv4 addresses
-    that share their first three octets, such as 10.220.1.70-73 or 10.220.1.70-10.220.1.73.
-    A port applies to the whole range.
+    override other --port arguments.
   name: -m
   required: false
 - alternate:
@@ -60,8 +57,8 @@ summary: This section explains how to use the <code>qq portal_create</code> comm
 synopsis: Create a spoke portal on the current cluster and propose a hub portal on
   another cluster
 title: qq portal_create
-usage: qq portal_create [-h] [--spoke-root SPOKE_ROOT] [--hub-root HUB_ROOT] [-j]
-  [-r] [-n] (-m HUB_HOSTS | -a HUB_ADDRESS) [-p HUB_PORT]
+usage: "qq portal_create [-h] [--spoke-root SPOKE_ROOT] [--hub-root HUB_ROOT] [-j]\
+  \ [-r] [-n]\n    (-m HUB_HOSTS | -a HUB_ADDRESS) [-p HUB_PORT]"
 zendesk_source: qq CLI Command Guide
 
 ---

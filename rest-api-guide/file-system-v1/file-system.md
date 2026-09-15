@@ -13,9 +13,7 @@ methods:
         : {\n      \"description\": \"Available file system size in bytes\",\n   \
         \   \"type\": \"string\"\n    },\n    \"snapshot_size_bytes\": {\n      \"\
         description\": \"Capacity used by all snapshots in bytes\",\n      \"type\"\
-        : \"string\"\n    },\n    \"portal_cache_size_bytes\": {\n      \"description\"\
-        : \"Capacity used by portal caching in bytes. Does not count against free_size_bytes\"\
-        ,\n      \"type\": \"string\"\n    }\n  }\n}"
+        : \"string\"\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success
