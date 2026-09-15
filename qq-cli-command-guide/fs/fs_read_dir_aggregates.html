@@ -3110,22 +3110,6 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="fs_try_resolve_paths" href="/qq-cli-command-guide/fs/fs_try_resolve_paths.html">
-              fs_try_resolve_paths
-              <span class="tag-container">
-              
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
             <a title="fs_unlink" href="/qq-cli-command-guide/fs/fs_unlink.html">
               fs_unlink
               <span class="tag-container">
@@ -8227,8 +8211,10 @@ $(document).ready(function() {
 
 
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_read_dir_aggregates <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="o">(</span><span class="nt">--path</span> PATH | <span class="nt">--id</span> ID<span class="o">)</span> <span class="o">[</span><span class="nt">--recursive</span><span class="o">]</span> <span class="o">[</span><span class="nt">--max-entries</span> MAX_ENTRIES] <span class="o">[</span><span class="nt">--max-depth</span> MAX_DEPTH]
-    <span class="o">[</span><span class="nt">--order-by</span> <span class="o">{</span>total_blocks,total_datablocks,total_named_stream_datablocks,total_metablocks,total_files,total_directories,total_symlinks,total_other,total_named_streams<span class="o">}]</span> <span class="o">[</span><span class="nt">--snapshot</span> SNAPSHOT]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_read_dir_aggregates <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="o">(</span><span class="nt">--path</span> PATH | <span class="nt">--id</span> ID<span class="o">)</span> <span class="o">[</span><span class="nt">--recursive</span><span class="o">]</span> <span class="o">[</span><span class="nt">--max-entries</span> MAX_ENTRIES]
+    <span class="o">[</span><span class="nt">--max-depth</span> MAX_DEPTH]
+    <span class="o">[</span><span class="nt">--order-by</span> <span class="o">{</span>total_blocks,total_datablocks,total_named_stream_datablocks,total_metablocks,total_files,total_directories,total_symlinks,total_other,total_named_streams<span class="o">}]</span>
+    <span class="o">[</span><span class="nt">--snapshot</span> SNAPSHOT]
 </code></pre></div></div>
 
 
@@ -9029,11 +9015,6 @@ directory entries which are smaller than 10% of the directory's total size.
           
             
             
-  <li><a href="/qq-cli-command-guide/fs/fs_try_resolve_paths.html">fs_try_resolve_paths</a></li>
-            
-          
-            
-            
   <li><a href="/qq-cli-command-guide/fs/fs_unlink.html">fs_unlink</a></li>
             
           
@@ -9049,9 +9030,6 @@ directory entries which are smaller than 10% of the directory's total size.
           
         
 </ul>
-        
-    
-      
         
     
       

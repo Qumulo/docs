@@ -3506,26 +3506,6 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="files/try-resolve" href="/rest-api-guide/files-v1/files_try-resolve.html">
-              files/<wbr>try-resolve
-              <span class="tag-container">
-              
-                <span class="apiversion v1">v1</span>
-              
-              
-                <span class="apipreview">preview</span>
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
             <a title="files/{ref}" href="/rest-api-guide/files-v1/files_ref.html">
               files/<wbr>{ref}
               <span class="tag-container">
@@ -8905,7 +8885,11 @@ $(document).ready(function() {
       
   <tr>
     <td><code>by-value</code></td>
-    <td>Weight the sampling by the value specified: capacity (total bytes used for data and metadata), data (total bytes used for data only), file (file count), named_streams (named stream count):<ul><li><code>capacity</code> - capacity</li><li><code>data</code> - data</li><li><code>file</code> - file</li><li><code>named_streams</code> - named_streams</li></ul></td>
+    <td>Weight the sampling by the value specified: capacity (total bytes used for data and metadata), data (total bytes used for data only), file (file count), named_streams (named stream count):
+ * `capacity` - capacity,
+ * `data` - data,
+ * `file` - file,
+ * `named_streams` - named_streams</td>
     <td>Yes</td>
   </tr>
       

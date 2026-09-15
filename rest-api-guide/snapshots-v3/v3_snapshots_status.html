@@ -3506,26 +3506,6 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="files/try-resolve" href="/rest-api-guide/files-v1/files_try-resolve.html">
-              files/<wbr>try-resolve
-              <span class="tag-container">
-              
-                <span class="apiversion v1">v1</span>
-              
-              
-                <span class="apipreview">preview</span>
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
             <a title="files/{ref}" href="/rest-api-guide/files-v1/files_ref.html">
               files/<wbr>{ref}
               <span class="tag-container">
@@ -8899,7 +8879,10 @@ $(document).ready(function() {
       
   <tr>
     <td><code>filter</code></td>
-    <td>Filter the list of snapshots to exclude snapshots in process of being deleted, or include only snapshots in process of being deleted. By default, includes all snapshots.<ul><li><code>all</code> - all</li><li><code>exclude_in_delete</code> - exclude_in_delete</li><li><code>only_in_delete</code> - only_in_delete</li></ul></td>
+    <td>Filter the list of snapshots to exclude snapshots in process of being deleted, or include only snapshots in process of being deleted. By default, includes all snapshots.:
+ * `all` - all,
+ * `exclude_in_delete` - exclude_in_delete,
+ * `only_in_delete` - only_in_delete</td>
     <td>Yes</td>
   </tr>
       

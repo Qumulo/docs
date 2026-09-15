@@ -3110,22 +3110,6 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="fs_try_resolve_paths" href="/qq-cli-command-guide/fs/fs_try_resolve_paths.html">
-              fs_try_resolve_paths
-              <span class="tag-container">
-              
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
             <a title="fs_unlink" href="/qq-cli-command-guide/fs/fs_unlink.html">
               fs_unlink
               <span class="tag-container">
@@ -8227,8 +8211,10 @@ $(document).ready(function() {
 
 
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq object_bridge_create <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="nt">--bucket-uri</span> BUCKET_URI <span class="nt">--mount-path</span> MOUNT_PATH <span class="o">[</span><span class="nt">--key-prefix</span> KEY_PREFIX] <span class="o">[</span><span class="nt">--delimiter</span> DELIMITER] <span class="o">[</span><span class="nt">--access-key-id</span> ACCESS_KEY_ID] <span class="o">[</span><span class="nt">--secret-access-key</span> SECRET_ACCESS_KEY] <span class="o">[</span><span class="nt">--key-vault-hostname</span> KEY_VAULT_HOSTNAME]
-    <span class="o">[</span><span class="nt">--notification-queue-url</span> NOTIFICATION_QUEUE_URL] <span class="o">[</span><span class="nt">--read-only</span><span class="o">]</span> <span class="nt">--metadata-import</span> <span class="o">{</span>OFF,AUTO<span class="o">}</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq object_bridge_create <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="nt">--bucket-uri</span> BUCKET_URI <span class="nt">--mount-path</span> MOUNT_PATH <span class="o">[</span><span class="nt">--key-prefix</span> KEY_PREFIX]
+    <span class="o">[</span><span class="nt">--delimiter</span> DELIMITER] <span class="o">[</span><span class="nt">--access-key-id</span> ACCESS_KEY_ID]
+    <span class="o">[</span><span class="nt">--secret-access-key</span> SECRET_ACCESS_KEY] <span class="o">[</span><span class="nt">--key-vault-hostname</span> KEY_VAULT_HOSTNAME]
+    <span class="o">[</span><span class="nt">--notification-queue-url</span> NOTIFICATION_QUEUE_URL] <span class="o">[</span><span class="nt">--read-only</span><span class="o">]</span>
 </code></pre></div></div>
 
 
@@ -8279,7 +8265,7 @@ $(document).ready(function() {
       
     </td>
     <td>
-      Optional prefix inside the bucket, matched against object keys as it is written. Must end with the delimiter. An empty prefix is refused; omit this option to bridge the whole bucket.
+      Optional prefix inside the bucket. Stored with a trailing "/".
     </td>
   </tr>
 
@@ -8363,21 +8349,7 @@ $(document).ready(function() {
       
     </td>
     <td>
-      Reject protocol data and namespace writes to the bridge while the bucket keeps converging. File attributes stay writable.
-    </td>
-  </tr>
-
-  <tr>
-    <td>
-      <code>--metadata-import</code>
-    </td>
-    <td>
-      
-        Yes
-      
-    </td>
-    <td>
-      Import file-mover object metadata (ownership, permissions, ACLs, timestamps) onto bridge inodes. AUTO translates objects matching a known mover dialect; OFF inherits everything from the parent directory. Immutable after creation.
+      Reject protocol writes to the bridge while the bucket keeps converging.
     </td>
   </tr>
 
@@ -8693,9 +8665,6 @@ $(document).ready(function() {
         
     
   
-    
-      
-        
     
       
         
