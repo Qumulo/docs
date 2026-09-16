@@ -2826,7 +2826,7 @@ If the <code>terraform apply</code> command fails for a reason not listed in thi
       </li>
     </ul>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The four backslashes (<code>\\\\</code>) in the <code>smb</code> endpoint in the following example are intentional because Terraform escapes backslashes when it prints string values; a doubled backslash in the output represents a single backslash. The path that clients use in this example is <code>\\203.0.113.1\&lt;SMB Share Name&gt;</code></div>
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The four backslashes (<code class="language-plaintext highlighter-rouge">\\\\</code>) in the <code class="language-plaintext highlighter-rouge">smb</code> endpoint in the following example are intentional because Terraform escapes backslashes when it prints string values; a doubled backslash in the output represents a single backslash. The path that clients use in this example is <code class="language-plaintext highlighter-rouge">\\203.0.113.1\&lt;SMB Share Name&gt;</code></div>
 
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cluster_soft_capacity_limit_tb = 500
 cluster_uuid = "12345a6b-7c89-0d12-3456-78fe9012f345"
