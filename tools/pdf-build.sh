@@ -176,7 +176,6 @@ build_prince () {
 
   echo ""
   echo "Building PDF-friendly HTML site..."
-  echo -e "\033[1;33mNote: You can ignore any warnings about setting the locale.\033[0m"
   CONTAINER_ID=$(docker run \
     --rm \
     --user $(id -u):$(id -g) \
@@ -216,8 +215,8 @@ build_prince () {
 
 echo "Cleaning up the Docker container..."
 if [ $(docker ps | grep -c 'docs-container-pdf$') -gt 0 ]; then
-  docker kill docs-container-pdf || true
-  docker wait docs-container-pdf || true
+  docker kill docs-container-pdf >/dev/null 2>&1 || true
+  docker wait docs-container-pdf >/dev/null 2>&1 || true
 fi
 }
 
@@ -227,7 +226,7 @@ do
   build_prince "$i"
 done
 
-#echo "Deleting temporary build files..."
-#cd _site && rm * -rf
+echo "Deleting temporary build files..."
+rm -rf _site/*
 
 echo "Done. The PDF output is in the /pdf directory."
