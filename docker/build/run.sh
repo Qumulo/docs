@@ -1,6 +1,9 @@
 #!/bin/bash
 
 set -e
+export LANG=C.UTF-8
+export LC_ALL=C.UTF-8
+export HOME=/tmp
 
 # Check if we're inside the container
 if [[ -f /.dockerenv ]] || grep -qa docker /proc/1/cgroup; then
