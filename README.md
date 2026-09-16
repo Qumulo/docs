@@ -11,6 +11,7 @@ Welcome to the Qumulo Documentation Portal repository! This project uses docs-as
   * [🍊&thinsp;As a Qumulon](#as-a-qumulon-1)
   * [How Automation Works in the `docs-internal` Repository](#how-automation-works-in-the-docs-internal-repository)
 * [Features and Functionality](#features-and-functionality)
+* [Pinned Versions](#pinned-versions)
 * [Project Infrastructure Overview](#project-infrastructure-overview)
 * [Licenses](#licenses)
 
@@ -97,6 +98,16 @@ This project began from [Jekyll Doc Theme 6.0](https://github.com/tomjoht/docume
   * [Custom generation of REST API change summaries from `openapi.json](tools/gen-api-changes.py)
   * 🔒 Custom generation of `qq` CLI documentation from the code base
 
+
+## Pinned Versions
+* Docs & PDF builds in `docs-builder` container ([`docker/build/Dockerfile`](docker/build/Dockerfile))
+  * Ruby 3.4.1
+  * Bundler 4.0.21
+  * Jekyll 4.4.1
+  * PrinceXML 14.4 (local builds)
+* Hot Topic build in `google-analytics-script` container ([`tools/hot-topic/Dockerfile`](tools/hot-topic/Dockerfile))
+  * Python 3.11
+  * Pip 26.2.1 
 
 ## Project Infrastructure Overview
 The following diagram outlines the most current project infrastructure.
