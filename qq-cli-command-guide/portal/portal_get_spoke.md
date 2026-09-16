@@ -19,7 +19,9 @@ optional_options:
   required: false
 - alternate:
   - --dns-lookup
-  help: Attempt reverse DNS lookups for peer IP addresses
+  help: Resolve peer IP addresses to names. The local cluster performs the lookup,
+    so the names come from its DNS configuration and the caller needs the PRIVILEGE_DNS_USE
+    privilege.
   name: -d
   required: false
 permalink: /qq-cli-command-guide/portal/portal_get_spoke.html

@@ -502,6 +502,9 @@ entries:
       title: fs_set_user_metadata
       url: /qq-cli-command-guide/fs/fs_set_user_metadata.html
     - output: web,pdf
+      title: fs_try_resolve_paths
+      url: /qq-cli-command-guide/fs/fs_try_resolve_paths.html
+    - output: web,pdf
       title: fs_unlink
       url: /qq-cli-command-guide/fs/fs_unlink.html
     - output: web,pdf

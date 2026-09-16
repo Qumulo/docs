@@ -83,18 +83,15 @@ methods:
         \     \"description\": \"id_value\",\n                      \"type\": \"string\"\
         \n                    }\n                  }\n                }\n        \
         \      }\n            }\n          },\n          \"fields_to_present_as_32_bit\"\
-        : {\n            \"description\": \"Specify which NFS3 result values should\
-        \ be 32-bit sanitized on this export. Has no effect on exports used over NFS4.\"\
-        ,\n            \"type\": \"array\",\n            \"items\": {\n          \
-        \    \"type\": \"string\",\n              \"enum\": [\n                \"\
-        FILE_IDS\",\n                \"FILE_SIZES\",\n                \"FS_SIZE\"\
-        ,\n                \"ALL\"\n              ],\n              \"description\"\
-        : \"Specify which NFS3 result values should be 32-bit sanitized on this export.\
-        \ Has no effect on exports used over NFS4.:\\n * `ALL` - Force all 64 bit\
-        \ fields to fit in 32 bits.,\\n * `FILE_IDS` - Hash high file ids to 32 bits.,\\\
-        n * `FILE_SIZES` - Clamp large file sizes to 4GiB to fit in 32 bits.,\\n *\
-        \ `FS_SIZE` - Clamp available, used and total space reported for the FS to\
-        \ 4GiB.\"\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        : {\n            \"type\": \"array\",\n            \"items\": {\n        \
+        \      \"type\": \"string\",\n              \"enum\": [\n                \"\
+        FILE_IDS\",\n                \"FILE_SIZES\",\n                \"FS_SIZE\"\n\
+        \              ],\n              \"description\": \"Specify which NFS3 result\
+        \ values should be 32-bit sanitized on this export. Has no effect on exports\
+        \ used over NFS4.:\\n * `FILE_IDS` - Hash high file ids to 32 bits.,\\n *\
+        \ `FILE_SIZES` - Clamp large file sizes to 4GiB to fit in 32 bits.,\\n * `FS_SIZE`\
+        \ - Clamp available, used and total space reported for the FS to 4GiB.\"\n\
+        \            }\n          }\n        }\n      }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success
@@ -173,14 +170,11 @@ methods:
         \       \"id_value\": {\n                \"description\": \"id_value\",\n\
         \                \"type\": \"string\"\n              }\n            }\n  \
         \        }\n        }\n      }\n    },\n    \"fields_to_present_as_32_bit\"\
-        : {\n      \"description\": \"Specify which NFS3 result values should be 32-bit\
-        \ sanitized on this export. Has no effect on exports used over NFS4.\",\n\
-        \      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\"\
-        ,\n        \"enum\": [\n          \"FILE_IDS\",\n          \"FILE_SIZES\"\
-        ,\n          \"FS_SIZE\",\n          \"ALL\"\n        ],\n        \"description\"\
-        : \"Specify which NFS3 result values should be 32-bit sanitized on this export.\
-        \ Has no effect on exports used over NFS4.:\\n * `ALL` - Force all 64 bit\
-        \ fields to fit in 32 bits.,\\n * `FILE_IDS` - Hash high file ids to 32 bits.,\\\
+        : {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"\
+        string\",\n        \"enum\": [\n          \"FILE_IDS\",\n          \"FILE_SIZES\"\
+        ,\n          \"FS_SIZE\"\n        ],\n        \"description\": \"Specify which\
+        \ NFS3 result values should be 32-bit sanitized on this export. Has no effect\
+        \ on exports used over NFS4.:\\n * `FILE_IDS` - Hash high file ids to 32 bits.,\\\
         n * `FILE_SIZES` - Clamp large file sizes to 4GiB to fit in 32 bits.,\\n *\
         \ `FS_SIZE` - Clamp available, used and total space reported for the FS to\
         \ 4GiB.\"\n      }\n    }\n  }\n}"
@@ -254,14 +248,11 @@ methods:
         \       \"id_value\": {\n                \"description\": \"id_value\",\n\
         \                \"type\": \"string\"\n              }\n            }\n  \
         \        }\n        }\n      }\n    },\n    \"fields_to_present_as_32_bit\"\
-        : {\n      \"description\": \"Specify which NFS3 result values should be 32-bit\
-        \ sanitized on this export. Has no effect on exports used over NFS4\",\n \
-        \     \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\"\
-        ,\n        \"enum\": [\n          \"FILE_IDS\",\n          \"FILE_SIZES\"\
-        ,\n          \"FS_SIZE\",\n          \"ALL\"\n        ],\n        \"description\"\
-        : \"Specify which NFS3 result values should be 32-bit sanitized on this export.\
-        \ Has no effect on exports used over NFS4:\\n * `ALL` - Force all 64 bit fields\
-        \ to fit in 32 bits.,\\n * `FILE_IDS` - Hash high file ids to 32 bits.,\\\
+        : {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"\
+        string\",\n        \"enum\": [\n          \"FILE_IDS\",\n          \"FILE_SIZES\"\
+        ,\n          \"FS_SIZE\"\n        ],\n        \"description\": \"Specify which\
+        \ NFS3 result values should be 32-bit sanitized on this export. Has no effect\
+        \ on exports used over NFS4:\\n * `FILE_IDS` - Hash high file ids to 32 bits.,\\\
         n * `FILE_SIZES` - Clamp large file sizes to 4GiB to fit in 32 bits.,\\n *\
         \ `FS_SIZE` - Clamp available, used and total space reported for the FS to\
         \ 4GiB.\"\n      }\n    }\n  }\n}"

@@ -46,8 +46,8 @@ synopsis: Add object storage URIs and associated credentials for configuring the
   accounts. Performing this action on a cluster not backed by objects results in an
   error.
 title: qq add_object_storage_uris
-usage: "qq add_object_storage_uris [-h] [--uris URIS [URIS ...]]\n    [--credentials-file\
-  \ CREDENTIALS_FILE | --credentials CREDENTIALS [CREDENTIALS ...]]"
+usage: qq add_object_storage_uris [-h] [--uris URIS [URIS ...]] [--credentials-file
+  CREDENTIALS_FILE | --credentials CREDENTIALS [CREDENTIALS ...]]
 zendesk_source: qq CLI Command Guide
 
 ---

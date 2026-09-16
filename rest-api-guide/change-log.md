@@ -11,6 +11,14 @@ layout: page
 <style>div#toc{height:200px;overflow:auto;}</style>
 
 
+## Qumulo Core 7.10.0
+{{ nexusLink }}
+<ul>
+  <li>Added <code>POST /v1/files/try-resolve</code></li>
+  <li>Added <code>portal_cache_size_bytes</code> parameter to <code>GET /v1/file-system</code> response</li>
+</ul>
+
+
 ## Qumulo Core 7.9.3.1
 {{ nexusLink }}
 {{ noAPIchanges }}
@@ -523,29 +531,14 @@ Added <code>POST /v5/cluster/object-backed/create</code>
 
 ## Qumulo Core 7.4.1.1
 {{ nexusLink }}
-{{ noAPIchanges }}
+<ul>
+  <li>Removed <code>/v1/portal/spokes/{id}/evict-data</code></li>
+  <li>Removed <code>/v1/portal/spokes/{id}/evict-link</code></li>
+  <li>Removed <code>/v1/portal/spokes/{id}/evict-tree</code></li>
+  <li>Added <code>GET /v1/cluster/slots/node/{node_id}</code></li>
+</ul>
 
 
 ## Qumulo Core 7.4.0.4 (Quarterly)
 {{ nexusLink }}
-<ul>
-  <li>Added <code>GET /v1/portal/file-systems/</code></li>
-  <li>Added <code>GET /v1/portal/file-systems/{id}</code></li>
-  <li>Added <code>POST /v1/shutdown/container-restart/{node_id}</code></li>
-</ul>
-<details>
-  <summary>Click to expand</summary>
-  <ul>
-    <li>Added <code>POST /v1/shutdown/halt/{node_id}</code></li>
-    <li>Added <code>POST /v1/shutdown/reboot/{node_id}</code></li>
-    <li>Added <code>hub_cluster_uuid</code> parameter to <code>GET /v1/portal/spokes/{id}</code> response</li>
-    <li>  
-      Modified <code>PATCH /v1/portal/spokes/{id}</code>:
-      <ul>  
-        <li>Added <code>hub_cluster_uuid</code> parameter to <code>PATCH /v1/portal/spokes/{id}</code> request body</li>
-        <li>Added <code>hub_cluster_uuid</code> parameter to <code>PATCH /v1/portal/spokes/{id}</code> response</li>
-      </ul> 
-    </li>   
-    <li>Added <code>hub_cluster_uuid</code> parameter to <code>POST /v1/portal/spokes/{id}/propose</code> response</li>
-  </ul>   
-</details>
+{{ noAPIchanges }}
