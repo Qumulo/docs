@@ -186,11 +186,7 @@ check_tqdm() {
 }
 
 ignore_warnings() {
-    echo -e "\033[1;33mNote: You can ignore any warnings about setting the locale or about GitHub API authentication.\033[0m"
-}
-
-ignore_locale() {
-    echo -e "\033[1;33mNote: You can ignore any warnings about setting the locale.\033[0m"
+    echo -e "\033[1;33mNote: You can ignore any warnings about GitHub API authentication.\033[0m"
 }
 
 # Check that the src repository exists
@@ -677,23 +673,18 @@ publish_release_notes_to_nexus() {
 # Check documentation for spelling errors by using Hunspell
 check_spelling_errors() {
     start_in_docs_dir
-    echo "Checking documentation for spelling errors..."
-    ignore_locale
-    docker run --rm --user $(id -u):$(id -g) --name docs-container-proof -v $(pwd):/src:rw docs-builder proof
+    docker run --rm -t --user $(id -u):$(id -g) --name docs-container-proof -v $(pwd):/src:rw docs-builder proof
 }
 
 # Check documentation for link, script, and image errors by using HTML Proofer
 check_docs_errors() {
     start_in_docs_dir
-    echo "Checking documentation for link, script, and image errors..."
-    ignore_locale
     docker run --rm -it --user $(id -u):$(id -g) --name docs-container-check -v $(pwd):/src:rw docs-builder check
 } 
 
 # Check documentation for sidebar errors
 check_sidebar_errors() {
     start_in_docs_dir
-    echo "Checking documentation for sidebar errors..."
     docker run -i --rm --user $(id -u):$(id -g) --name docs-container-proof -v $(pwd):/src:rw docs-builder sidebar
 }
 

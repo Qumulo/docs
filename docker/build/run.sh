@@ -151,12 +151,12 @@ if [[ -f /.dockerenv ]] || grep -qa docker /proc/1/cgroup; then
             rm -rf _site ;;
         proof)
             echo ""
-            echo "Checking spelling..."
+            echo "Checking for spelling errors..."
             rm -rf _site
             bundle exec ruby tools/check-spelling.rb ;;
         check)
             echo ""
-            echo "Checking HTML output..."
+            echo "Checking for script, link, and image errors..."
             bundle exec jekyll build -d _site
             ignore_list=$(grep -v '^\s*$' /src/tools/.ignore-error | paste -sd "," -)
             if [ -n "$ignore_list" ]; then
@@ -171,7 +171,7 @@ if [[ -f /.dockerenv ]] || grep -qa docker /proc/1/cgroup; then
             ;;
         sidebar)
             echo ""
-            echo "Checking for loose Markdown files..."
+            echo "Checking for sidebar errors and loose Markdown files..."
             bundle exec ruby tools/check-sidebars.rb ;;
         serve)
             echo ""
