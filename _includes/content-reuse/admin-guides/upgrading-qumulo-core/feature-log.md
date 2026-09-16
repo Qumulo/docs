@@ -13,10 +13,9 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {{ nexusLink }}
 
 {% capture mustWait %}For clusters running Qumulo Core 7.9.0 (and higher), you must wait for on-disk upgrades to complete before you can upgrade the cluster to a higher version (this process typically takes 1-2 days). To check whether a cluster is ready to be upgraded, you can use the Qumulo REST API or the <code>qq</code> CLI. For example:
-    <ul>
-      <li><code>POST /v2/upgrade/verify-image</code></li>
-      <li><code>qq upgrade_verify_image --path /example/path/to/target/image</code></li>
-    </ul>{% endcapture %}
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><code>POST /v2/upgrade/verify-image</code></pre></div></div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><code>qq upgrade_verify_image \
+  --path /example/path/to/target/image</code></pre></div></div>{% endcapture %}
 {% capture clustCapRecl %}This release resolves an issue with system performance during the cluster capacity reclamation process.{% endcapture %}
 
 {{site.data.alerts.important}}
@@ -47,10 +46,6 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {% capture betterStartup %}<strong>Cloud Native Qumulo (CNQ), Azure Native Qumulo (ANQ), and Stratus Accelerator clusters:</strong> Improved cluster start-up times.{% endcapture %}
 {% capture appHardInst %}<strong>Appliance Hardware Installations:</strong> Upgraded the host kernel on Ubuntu 24.04, from 6.8.0-85 to 6.8.0-117{% endcapture %}
 {% capture disableKernMod %}the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.{% endcapture %}
-{% capture mustWait %}For clusters running Qumulo Core 7.9.0 (and higher), you must wait for on-disk upgrades to complete before you can upgrade the cluster to a higher version (this process typically takes 1-2 days). To check whether a cluster is ready to be upgraded, you can use the Qumulo REST API or the <code>qq</code> CLI. For example:
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><button class="btn btn-xs btn-default copy-btn" title="Copy to clipboard"><i class="fa fa-copy"></i></button><code>POST /v2/upgrade/verify-image</code></pre></div></div>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><button class="btn btn-xs btn-default copy-btn" title="Copy to clipboard"><i class="fa fa-copy"></i></button><code>qq upgrade_verify_image \
-  --path /example/path/to/target/image</code></pre></div></div>{% endcapture %}
 {{site.data.alerts.important}}
 
 <ul>

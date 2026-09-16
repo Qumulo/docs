@@ -422,7 +422,7 @@ sidebar_content = {
                 {
                     "title": "Change Log",
                     "url": "/rest-api-guide/change-log.html",
-                    "output": "web,pdf"
+                    "output": "web"
                 }
             ]
         }
