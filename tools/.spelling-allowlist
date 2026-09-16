@@ -20,6 +20,8 @@ Autocomplete
 autocompletion
 AVX
 AZs
+azurerm
+backend
 backplane
 BMC
 Broadcom
@@ -148,6 +150,7 @@ keytab
 KiB
 KMIP
 KMS
+KQL
 Kubernetes
 LACP
 LAN
