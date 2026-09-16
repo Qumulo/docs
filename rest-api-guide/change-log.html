@@ -9316,58 +9316,6 @@ $(document).ready(function() {
 
 <p>This release contains no REST API changes.</p>
 
-<h2 id="qumulo-core-744">Qumulo Core 7.4.4</h2>
-
-<p>Added <code>GET /v1/health/ssd-endurance</code></p>
-
-<h2 id="qumulo-core-7431">Qumulo Core 7.4.3.1</h2>
-
-<p>Added <code>POST /v5/cluster/object-backed/create</code></p>
-
-<h2 id="qumulo-core-7421">Qumulo Core 7.4.2.1</h2>
-
-<ul>
-  <li>Added <code>DELETE /v1/files/{ref}/entries/{name}</code></li>
-  <li>Added <code>force</code> parameter to <code>DELETE /v1/portal/hubs/{id}</code> parameters</li>
-  <li>Added <code>status</code> parameter to <code>GET /v1/portal/hubs/{id}</code> response</li>
-</ul>
-<details>
-  <summary>Click to expand</summary>
-  <ul>
-    <li>
-      Modified <code>PATCH /v1/portal/hubs/{id}</code>:
-      <ul>
-        <li>Added <code>status</code> parameter to <code>PATCH /v1/portal/hubs/{id}</code> request body</li>
-        <li>Added <code>status</code> parameter to <code>PATCH /v1/portal/hubs/{id}</code> response</li>
-      </ul>
-    </li>
-    <li>Added <code>status</code> parameter to <code>POST /v1/portal/hubs/{id}/authorize</code> response</li>
-    <li>Added <code>force</code> parameter to <code>DELETE /v1/portal/spokes/{id}</code> parameters</li>
-    <li>Added <code>status</code> parameter to <code>GET /v1/portal/spokes/{id}</code> response</li>
-    <li>
-      Modified <code>PATCH /v1/portal/spokes/{id}</code>:
-      <ul>
-        <li>Added <code>status</code> parameter to <code>PATCH /v1/portal/spokes/{id}</code> request body</li>
-        <li>Added <code>status</code> parameter to <code>PATCH /v1/portal/spokes/{id}</code> response</li>
-      </ul>
-    </li>
-    <li>Added <code>status</code> parameter to <code>POST /v1/portal/spokes/{id}/propose</code> response</li>
-  </ul>
-</details>
-
-<h2 id="qumulo-core-7411">Qumulo Core 7.4.1.1</h2>
-
-<ul>
-  <li>Removed <code>/v1/portal/spokes/{id}/evict-data</code></li>
-  <li>Removed <code>/v1/portal/spokes/{id}/evict-link</code></li>
-  <li>Removed <code>/v1/portal/spokes/{id}/evict-tree</code></li>
-  <li>Added <code>GET /v1/cluster/slots/node/{node_id}</code></li>
-</ul>
-
-<h2 id="qumulo-core-7404-quarterly">Qumulo Core 7.4.0.4 (Quarterly)</h2>
-
-<p>This release contains no REST API changes.</p>
-
    
 
 
