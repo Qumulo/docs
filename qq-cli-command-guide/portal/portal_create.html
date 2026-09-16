@@ -3110,6 +3110,22 @@ fetch('/data/website.json')
           
           
           <li>
+            <a title="fs_try_resolve_paths" href="/qq-cli-command-guide/fs/fs_try_resolve_paths.html">
+              fs_try_resolve_paths
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
             <a title="fs_unlink" href="/qq-cli-command-guide/fs/fs_unlink.html">
               fs_unlink
               <span class="tag-container">
@@ -8231,8 +8247,7 @@ $(document).ready(function() {
 
 
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq portal_create <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="o">[</span><span class="nt">--spoke-root</span> SPOKE_ROOT] <span class="o">[</span><span class="nt">--hub-root</span> HUB_ROOT] <span class="o">[</span><span class="nt">-j</span><span class="o">]</span> <span class="o">[</span><span class="nt">-r</span><span class="o">]</span> <span class="o">[</span><span class="nt">-n</span><span class="o">]</span>
-    <span class="o">(</span><span class="nt">-m</span> HUB_HOSTS | <span class="nt">-a</span> HUB_ADDRESS<span class="o">)</span> <span class="o">[</span><span class="nt">-p</span> HUB_PORT]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq portal_create <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="o">[</span><span class="nt">--spoke-root</span> SPOKE_ROOT] <span class="o">[</span><span class="nt">--hub-root</span> HUB_ROOT] <span class="o">[</span><span class="nt">-j</span><span class="o">]</span> <span class="o">[</span><span class="nt">-r</span><span class="o">]</span> <span class="o">[</span><span class="nt">-n</span><span class="o">]</span> <span class="o">(</span><span class="nt">-m</span> HUB_HOSTS | <span class="nt">-a</span> HUB_ADDRESS<span class="o">)</span> <span class="o">[</span><span class="nt">-p</span> HUB_PORT]
 </code></pre></div></div>
 
 
@@ -8297,7 +8312,7 @@ $(document).ready(function() {
       
     </td>
     <td>
-      Create a read-only spoke portal. Read-only spoke portals prevent users from creating or modifying files or directories under the hub portal root directory. Important: It isn't possible to change a read-only spoke portal to a read-write portal after creating it.
+      Create a read-only spoke portal. Read-only spoke portals prevent users from creating or modifying files or directories under the hub portal root directory. To make the spoke portal writable later, run `portal_modify_hub --make-read-write` on the hub cluster.
     </td>
   </tr>
 
@@ -8325,7 +8340,7 @@ $(document).ready(function() {
       
     </td>
     <td>
-      The IP addresses and TCP ports of the remote cluster. Use a comma-delimited list to specify multiple hosts. Use colon as a separator after each IP address to provide custom TCP port (3713 is used by default). Ports specified this way override other --port arguments.
+      The IP addresses and TCP ports of the remote cluster. Use a comma-delimited list to specify multiple hosts. Use colon as a separator after each IP address to provide custom TCP port (3713 is used by default). Ports specified this way override other --port arguments. Put brackets around an IPv6 address, such as [2001:db8::1] or [2001:db8::1]:4000. Use a dash to specify a range of IPv4 addresses that share their first three octets, such as 10.220.1.70-73 or 10.220.1.70-10.220.1.73. A port applies to the whole range.
     </td>
   </tr>
 
@@ -8669,6 +8684,9 @@ $(document).ready(function() {
         
     
   
+    
+      
+        
     
       
         

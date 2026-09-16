@@ -3506,6 +3506,26 @@ fetch('/data/website.json')
           
           
           <li>
+            <a title="files/try-resolve" href="/rest-api-guide/files-v1/files_try-resolve.html">
+              files/<wbr>try-resolve
+              <span class="tag-container">
+              
+                <span class="apiversion v1">v1</span>
+              
+              
+                <span class="apipreview">preview</span>
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
             <a title="files/{ref}" href="/rest-api-guide/files-v1/files_ref.html">
               files/<wbr>{ref}
               <span class="tag-container">
@@ -9019,17 +9039,15 @@ $(document).ready(function() {
             </span><span class="p">}</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="nl">"fields_to_present_as_32_bit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Specify which NFS3 result values should be 32-bit sanitized on this export. Has no effect on exports used over NFS4."</span><span class="p">,</span><span class="w">
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="s2">"FILE_IDS"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"FILE_SIZES"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"FS_SIZE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ALL"</span><span class="w">
+                </span><span class="s2">"FS_SIZE"</span><span class="w">
               </span><span class="p">],</span><span class="w">
-              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Specify which NFS3 result values should be 32-bit sanitized on this export. Has no effect on exports used over NFS4.:</span><span class="se">\n</span><span class="s2"> * `ALL` - Force all 64 bit fields to fit in 32 bits.,</span><span class="se">\n</span><span class="s2"> * `FILE_IDS` - Hash high file ids to 32 bits.,</span><span class="se">\n</span><span class="s2"> * `FILE_SIZES` - Clamp large file sizes to 4GiB to fit in 32 bits.,</span><span class="se">\n</span><span class="s2"> * `FS_SIZE` - Clamp available, used and total space reported for the FS to 4GiB."</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Specify which NFS3 result values should be 32-bit sanitized on this export. Has no effect on exports used over NFS4.:</span><span class="se">\n</span><span class="s2"> * `FILE_IDS` - Hash high file ids to 32 bits.,</span><span class="se">\n</span><span class="s2"> * `FILE_SIZES` - Clamp large file sizes to 4GiB to fit in 32 bits.,</span><span class="se">\n</span><span class="s2"> * `FS_SIZE` - Clamp available, used and total space reported for the FS to 4GiB."</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -9196,17 +9214,15 @@ $(document).ready(function() {
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"fields_to_present_as_32_bit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Specify which NFS3 result values should be 32-bit sanitized on this export. Has no effect on exports used over NFS4"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="s2">"FILE_IDS"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"FILE_SIZES"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"FS_SIZE"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"ALL"</span><span class="w">
+          </span><span class="s2">"FS_SIZE"</span><span class="w">
         </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Specify which NFS3 result values should be 32-bit sanitized on this export. Has no effect on exports used over NFS4:</span><span class="se">\n</span><span class="s2"> * `ALL` - Force all 64 bit fields to fit in 32 bits.,</span><span class="se">\n</span><span class="s2"> * `FILE_IDS` - Hash high file ids to 32 bits.,</span><span class="se">\n</span><span class="s2"> * `FILE_SIZES` - Clamp large file sizes to 4GiB to fit in 32 bits.,</span><span class="se">\n</span><span class="s2"> * `FS_SIZE` - Clamp available, used and total space reported for the FS to 4GiB."</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Specify which NFS3 result values should be 32-bit sanitized on this export. Has no effect on exports used over NFS4:</span><span class="se">\n</span><span class="s2"> * `FILE_IDS` - Hash high file ids to 32 bits.,</span><span class="se">\n</span><span class="s2"> * `FILE_SIZES` - Clamp large file sizes to 4GiB to fit in 32 bits.,</span><span class="se">\n</span><span class="s2"> * `FS_SIZE` - Clamp available, used and total space reported for the FS to 4GiB."</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -9348,17 +9364,15 @@ $(document).ready(function() {
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"fields_to_present_as_32_bit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Specify which NFS3 result values should be 32-bit sanitized on this export. Has no effect on exports used over NFS4."</span><span class="p">,</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="s2">"FILE_IDS"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"FILE_SIZES"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"FS_SIZE"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"ALL"</span><span class="w">
+          </span><span class="s2">"FS_SIZE"</span><span class="w">
         </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Specify which NFS3 result values should be 32-bit sanitized on this export. Has no effect on exports used over NFS4.:</span><span class="se">\n</span><span class="s2"> * `ALL` - Force all 64 bit fields to fit in 32 bits.,</span><span class="se">\n</span><span class="s2"> * `FILE_IDS` - Hash high file ids to 32 bits.,</span><span class="se">\n</span><span class="s2"> * `FILE_SIZES` - Clamp large file sizes to 4GiB to fit in 32 bits.,</span><span class="se">\n</span><span class="s2"> * `FS_SIZE` - Clamp available, used and total space reported for the FS to 4GiB."</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Specify which NFS3 result values should be 32-bit sanitized on this export. Has no effect on exports used over NFS4.:</span><span class="se">\n</span><span class="s2"> * `FILE_IDS` - Hash high file ids to 32 bits.,</span><span class="se">\n</span><span class="s2"> * `FILE_SIZES` - Clamp large file sizes to 4GiB to fit in 32 bits.,</span><span class="se">\n</span><span class="s2"> * `FS_SIZE` - Clamp available, used and total space reported for the FS to 4GiB."</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
