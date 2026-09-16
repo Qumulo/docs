@@ -29,6 +29,21 @@ GEM
     google-protobuf (4.30.2)
       bigdecimal
       rake (>= 13)
+    google-protobuf (4.30.2-aarch64-linux)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.30.2-arm64-darwin)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.30.2-x86-linux)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.30.2-x86_64-darwin)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.30.2-x86_64-linux)
+      bigdecimal
+      rake (>= 13)
     html-proofer (4.4.3)
       addressable (~> 2.3)
       mercenary (~> 0.3)
@@ -84,6 +99,22 @@ GEM
     nokogiri (1.19.4)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
+    nokogiri (1.19.4-aarch64-linux-gnu)
+      racc (~> 1.4)
+    nokogiri (1.19.4-aarch64-linux-musl)
+      racc (~> 1.4)
+    nokogiri (1.19.4-arm-linux-gnu)
+      racc (~> 1.4)
+    nokogiri (1.19.4-arm-linux-musl)
+      racc (~> 1.4)
+    nokogiri (1.19.4-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.19.4-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.19.4-x86_64-linux-gnu)
+      racc (~> 1.4)
+    nokogiri (1.19.4-x86_64-linux-musl)
+      racc (~> 1.4)
     ostruct (0.6.0)
     parallel (1.23.0)
     pathutil (0.16.2)
@@ -101,6 +132,34 @@ GEM
     sass-embedded (1.86.3)
       google-protobuf (~> 4.30)
       rake (>= 13)
+    sass-embedded (1.86.3-aarch64-linux-android)
+      google-protobuf (~> 4.30)
+    sass-embedded (1.86.3-aarch64-linux-gnu)
+      google-protobuf (~> 4.30)
+    sass-embedded (1.86.3-aarch64-linux-musl)
+      google-protobuf (~> 4.30)
+    sass-embedded (1.86.3-arm-linux-androideabi)
+      google-protobuf (~> 4.30)
+    sass-embedded (1.86.3-arm-linux-gnueabihf)
+      google-protobuf (~> 4.30)
+    sass-embedded (1.86.3-arm-linux-musleabihf)
+      google-protobuf (~> 4.30)
+    sass-embedded (1.86.3-arm64-darwin)
+      google-protobuf (~> 4.30)
+    sass-embedded (1.86.3-riscv64-linux-android)
+      google-protobuf (~> 4.30)
+    sass-embedded (1.86.3-riscv64-linux-gnu)
+      google-protobuf (~> 4.30)
+    sass-embedded (1.86.3-riscv64-linux-musl)
+      google-protobuf (~> 4.30)
+    sass-embedded (1.86.3-x86_64-darwin)
+      google-protobuf (~> 4.30)
+    sass-embedded (1.86.3-x86_64-linux-android)
+      google-protobuf (~> 4.30)
+    sass-embedded (1.86.3-x86_64-linux-gnu)
+      google-protobuf (~> 4.30)
+    sass-embedded (1.86.3-x86_64-linux-musl)
+      google-protobuf (~> 4.30)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
     typhoeus (1.4.0)
@@ -112,7 +171,26 @@ GEM
     zeitwerk (2.6.11)
 
 PLATFORMS
+  aarch64-linux
+  aarch64-linux-android
+  aarch64-linux-gnu
+  aarch64-linux-musl
+  arm-linux-androideabi
+  arm-linux-gnu
+  arm-linux-gnueabihf
+  arm-linux-musl
+  arm-linux-musleabihf
+  arm64-darwin
+  riscv64-linux-android
+  riscv64-linux-gnu
+  riscv64-linux-musl
   ruby
+  x86-linux
+  x86_64-darwin
+  x86_64-linux
+  x86_64-linux-android
+  x86_64-linux-gnu
+  x86_64-linux-musl
 
 DEPENDENCIES
   faraday-retry
