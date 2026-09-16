@@ -1862,6 +1862,14 @@ pre, table code {
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
+@media print {
+  table code {
+    prince-text-replace: "_" "_\200B";
+    white-space: normal;
+    word-break: normal;
+  }
+}
+
 pre {
     margin: 25px 0px;
 }
