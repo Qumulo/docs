@@ -28,7 +28,7 @@ Ensure that your host system meets the minimum requirements.
   <tr>
     <td>Linux Distribution</td>
     <td>
-      A <a target="_blank" href="https://en.wikipedia.org/wiki/Systemd#Adoption"><code>systemd</code>-based Linux distribution</a>
+      A <a target="_blank" href="https://en.wikipedia.org/wiki/Systemd#Adoption"><code>systemd</code>-based Linux distribution</a><
       {{site.data.alerts.note}}
       <ul>
          <li>We've performed comprehensive testing of the <code>.deb</code> package running on Ubuntu 20.04, on-premises and on AWS, as well as spot-checks of installation and clustering processes on Ubuntu 22.04, Ubuntu 24.04, and Debian 11.</li>

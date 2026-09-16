@@ -343,7 +343,7 @@ The following table lists recommended _EC2 instance types_ (combinations of _EC2
 
    * The Qumulo Core Web UI endpoint
 
-   {% capture backSlashes %}The four backslashes (<code>\\\\</code>) in the <code>smb</code> endpoint in the following example are intentional because Terraform escapes backslashes when it prints string values; a doubled backslash in the output represents a single backslash. The path that clients use in this example is <code>\\{{site.exampleIP1}}\&lt;SMB Share Name&gt;</code>{% endcapture %}
+   {% capture backSlashes %}The four backslashes (`\\\\`) in the `smb` endpoint in the following example are intentional because Terraform escapes backslashes when it prints string values; a doubled backslash in the output represents a single backslash. The path that clients use in this example is `\\{{site.exampleIP1}}\<SMB Share Name>`{% endcapture %}
    {% include note.html content=backSlashes %}
    
    ```
