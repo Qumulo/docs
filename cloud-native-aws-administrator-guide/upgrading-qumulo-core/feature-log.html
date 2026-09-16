@@ -2441,10 +2441,9 @@ $(document).ready(function() {
 <ul>
   <li>This release resolves an issue with system performance during the cluster capacity reclamation process.</li>
   <li>For clusters running Qumulo Core 7.9.0 (and higher), you must wait for on-disk upgrades to complete before you can upgrade the cluster to a higher version (this process typically takes 1-2 days). To check whether a cluster is ready to be upgraded, you can use the Qumulo REST API or the <code>qq</code> CLI. For example:
-    <ul>
-      <li><code>POST /v2/upgrade/verify-image</code></li>
-      <li><code>qq upgrade_verify_image --path /example/path/to/target/image</code></li>
-    </ul></li>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><code>POST /v2/upgrade/verify-image</code></pre></div></div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><code>qq upgrade_verify_image \
+  --path /example/path/to/target/image</code></pre></div></div></li>
 </ul>
 </div>
 
@@ -2477,8 +2476,8 @@ $(document).ready(function() {
     </ul>
   </li>
   <li>For clusters running Qumulo Core 7.9.0 (and higher), you must wait for on-disk upgrades to complete before you can upgrade the cluster to a higher version (this process typically takes 1-2 days). To check whether a cluster is ready to be upgraded, you can use the Qumulo REST API or the <code>qq</code> CLI. For example:
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><button class="btn btn-xs btn-default copy-btn" title="Copy to clipboard"><i class="fa fa-copy"></i></button><code>POST /v2/upgrade/verify-image</code></pre></div></div>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><button class="btn btn-xs btn-default copy-btn" title="Copy to clipboard"><i class="fa fa-copy"></i></button><code>qq upgrade_verify_image \
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><code>POST /v2/upgrade/verify-image</code></pre></div></div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><code>qq upgrade_verify_image \
   --path /example/path/to/target/image</code></pre></div></div></li>
   <li>This release adds important performance, security, and stability improvements:
     <ul>
@@ -2542,8 +2541,8 @@ $(document).ready(function() {
     </ul>
   </li>
   <li>For clusters running Qumulo Core 7.9.0 (and higher), you must wait for on-disk upgrades to complete before you can upgrade the cluster to a higher version (this process typically takes 1-2 days). To check whether a cluster is ready to be upgraded, you can use the Qumulo REST API or the <code>qq</code> CLI. For example:
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><button class="btn btn-xs btn-default copy-btn" title="Copy to clipboard"><i class="fa fa-copy"></i></button><code>POST /v2/upgrade/verify-image</code></pre></div></div>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><button class="btn btn-xs btn-default copy-btn" title="Copy to clipboard"><i class="fa fa-copy"></i></button><code>qq upgrade_verify_image \
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><code>POST /v2/upgrade/verify-image</code></pre></div></div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><code>qq upgrade_verify_image \
   --path /example/path/to/target/image</code></pre></div></div></li>
 </ul>
 </div>
