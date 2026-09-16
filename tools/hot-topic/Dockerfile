@@ -2,7 +2,7 @@
 FROM python:3.11-slim
 
 # Update pip as necessary
-RUN pip install --no-cache-dir --upgrade pip
+RUN pip install --no-cache-dir --upgrade "pip==26.2.1"
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir google-analytics-data packaging
