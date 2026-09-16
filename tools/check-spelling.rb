@@ -132,7 +132,7 @@ total_files = target_files.size
 FFI::Hunspell.dict('en_US') do |dict|
   target_files.each_with_index do |filename, index|
     # Render a progress bar
-    if total_files > 0
+    if total_files > 0 && $stdout.tty?
       percent = ((index + 1).to_f / total_files * 100).round
       filled = percent / 2
       bar = '=' * filled + ' ' * (50 - filled)
@@ -169,7 +169,7 @@ FFI::Hunspell.dict('en_US') do |dict|
 end
 
 # Clear progress bar line after completion
-print "\r\e[K" if total_files > 0
+print "\r\e[K" if total_files > 0 && $stdout.tty?
 
 puts "\n"
 incorrect_words.each do |entry|

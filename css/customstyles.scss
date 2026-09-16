@@ -718,6 +718,12 @@ li:has(+ li) div.highlighter-rouge {
   .alert {
     break-inside: avoid;
   }
+
+  .alert:has(> ul > li > ul) {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+    overflow: visible !important;
+  }
 }
 
 ul.two-columns {
@@ -1854,6 +1860,14 @@ pre, table code {
     white-space: -pre-wrap;      /* Opera 4-6 */
     white-space: -o-pre-wrap;    /* Opera 7 */
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+@media print {
+  table code {
+    prince-text-replace: "_" "_\200B";
+    white-space: normal;
+    word-break: normal;
+  }
 }
 
 pre {

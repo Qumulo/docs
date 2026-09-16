@@ -1,6 +1,6 @@
 ---
 title: "Deploying Cloud Native Qumulo on AWS with the Qumulo Terraform Provider"
-summary: "This section explains how to deploy Cloud Native Qumulo (CNQ) on AWS by preparing your infrastructure, environment, and authentication; deploying and configuring your Qumulo cluster; mounting the Qumulo file system; and performing post-deployment actions such as adding and removing nodes"
+summary: "This section explains how to deploy Cloud Native Qumulo (CNQ) on AWS by preparing your infrastructure, environment, and authentication; deploying and configuring your Qumulo cluster; mounting the Qumulo file system; and performing post-deployment actions such as adding and removing nodes."
 permalink: /cloud-native-aws-administrator-guide/getting-started/terraform.html
 redirect_from:
   - /aws-administrator-guide/getting-started/terraform.html
@@ -9,6 +9,15 @@ sidebar: cloud_native_aws_administrator_guide_sidebar
 ---
 
 For an overview of {{site.aws.cnqAWSshort}}, its prerequisites, and limits, see [How Cloud Native Qumulo Works](how-cloud-native-qumulo-works.html).
+
+{{site.data.alerts.important}}
+New {{site.cnqShort}} deployments use the <a href="https://qumulo.github.io/terraform-provider-qumulo-cloud/">Qumulo Terraform Provider</a>:
+<ul>
+  <li>The Terraform Provider doesn't require downloading a Terraform bundle or staging an installer in an S3 bucket.</li>
+  <li>Persistent storage and compute resources deploy in a single Terraform workspace and don't require configuring a cross-workspace remote state.</li>
+  <li>Node addition and removal, soft capacity limit increases, and EC2 instance type changes deploy with one variable change and <code>terraform apply</code> command and don't require multi-stage sequences or a second Terraform workspace for cluster replacement.</li>
+</ul>
+{{site.data.alerts.end}}
 
 ## Prerequisites {#prerequisites}
 This section explains the prerequisites to deploying {{site.aws.cnqAWSshort}}.
@@ -65,13 +74,13 @@ This section explains the prerequisites to deploying {{site.aws.cnqAWSshort}}.
 ### Working with the Qumulo-terraform-aws Repository
 {% include note.html content="Existing clusters that used the previous deployment provisioning remain operational. For information about migrating your cluster to the new Terraform deployment method, see the [Import Guide](https://qumulo.github.io/terraform-provider-qumulo-cloud/import-guide/) in the Qumulo Terraform Provider documentation." %}
 
-The [Qumulo-terraform-aws](https://github.com/Qumulo/Qumulo-terraform-aws) repository contains Terraform configurations that let you deploy S3 buckets and a {{site.cnqShort}} cluster with 1 or 3&ndash;24 nodes that adhere to the [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/) and have fully elastic compute and capacity.
+The [Qumulo-terraform-aws](https://github.com/Qumulo/Qumulo-terraform-aws) repository contains Terraform configurations that let you deploy the persistent storage and the compute cluster, with 1 or 3&ndash;24 nodes. These resources form the {{site.cnqShort}} cluster, which adheres to the [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/) and has fully elastic compute and capacity.
 
 This deployment uses the [Qumulo Terraform Provider](https://qumulo.github.io/terraform-provider-qumulo-cloud/), which greatly simplifies Terraform operations by ensuring that:
 * Persistent storage and compute deploy together in a single Terraform workspace
 * Node operations use a single variable and a single `terraform apply` command
 
-### Working With the terraform apply Command
+### Working with the terraform apply Command
 This section explains the most common scenarios that cause the `terraform apply` command to fail.
 
 <table>
@@ -124,13 +133,7 @@ This section explains how to prepare the required files, configure your deployme
 ### Step 1: Prepare the Required Files {#prepare-the-required-files}
 During the following process, Terraform downloads the Qumulo Terraform Provider from Qumulo's registry. Later, the Terraform Provider installs Qumulo Core on your cluster's nodes.
 
-1. To clone the `Qumulo-terraform-aws` repository and check out a specific release, run the following commands.
-
-   ```bash
-   git clone https://github.com/Qumulo/Qumulo-terraform-aws.git
-   cd Qumulo-terraform-aws
-   git checkout {{site.cnq.tfVersion}}
-   ```
+1. Clone the `Qumulo-terraform-aws` repository, then check out the branch for a specific release.
 
 1. To understand the deployment variables, review the `terraform.tfvars.example` and `README` files.
 
@@ -174,16 +177,23 @@ During the following process, Terraform downloads the Qumulo Terraform Provider 
    * **Networking:** `vpc_id` and `subnet_ids`
 
       * **Single-AZ (Availability Zone) Deployment:** Specify 1 private subnet
-        
-      * **Multi-AZ Deployment:** Specify 3 subnets, one for each AZ
+
+      * **Multi-AZ Deployment:** Specify 3 (or more) subnets, one for each AZ.
+
+        {% include note.html content="Because 2 AZs can't form a majority quorum, it isn't possible to deploy across 2 AZs." %}
 
    * **Cluster Configuration:** `instance_type` and `node_count` (1, or 3&ndash;24). See [Recommended EC2 Instance Types](#recommended-ec2-instance-types).
 
-      {% include note.html content="A 4-node cluster can support only a single-AZ deployment." %}
+     {{site.data.alerts.note}}
+     <ul>
+       <li>A 4-node cluster can support only a single-AZ deployment.</li>
+       <li>Because a 2-node cluster is unsupported and a 4-node cluster is single-AZ only, a multi-AZ deployment requires 3 nodes, or 5 or more nodes.</li>
+     </ul>
+     {{site.data.alerts.end}}
 
    * **Soft Capacity Limit:** If you don't use the default limit, specify `soft_capacity_limit_tb` to set the initial capacity limit of your Qumulo cluster (in TB).
 
-      {% include note.html content="It is possible to increase this limit at any time, but not to decrease it." %}
+     {% include note.html content="It is possible to increase this limit at any time, but not to decrease it." %}
 
    * **Cluster / Active Directory Name:** `cluster_name`
 
@@ -306,7 +316,14 @@ The following table lists recommended _EC2 instance types_ (combinations of _EC2
 
 
 ### Step 3: Create the Necessary Resources {#create-the-necessary-resources}
-{% include note.html content="If EC2 capacity is unavailable in your Availability Zone (AZ), you can select a different AZ, deploy in multiple AZs, or increase the resource creation timeout so that the Qumulo Terraform Provider continues retrying the operation until capacity becomes available." %}
+{{site.data.alerts.important}}
+<ul>
+  <li>If EC2 capacity is unavailable in your Availability Zones, the Qumulo Terraform Provider continues retrying the operation in the Availability Zones that you configured until capacity becomes available.</li>
+  <li>The Terraform Provider doesn't move your deployment to different Availability Zones or Region.</li>
+  <li>To relocate your deployment by replacing the cluster, change either the <code>subnet_ids</code> or <code>region</code> variable and re-run the <code>terraform apply</code> command.</li>
+  <li>Alternatively, you can deploy your cluster in multiple AZs, or increase the resource creation timeout.</li>
+</ul>
+{{site.data.alerts.end}}
 
 1. To authenticate to your AWS account, use the `aws` CLI.
 
@@ -326,7 +343,9 @@ The following table lists recommended _EC2 instance types_ (combinations of _EC2
 
    * The Qumulo Core Web UI endpoint
 
-   For example:
+   {% capture backSlashes %}The four backslashes (`\\\\`) in the `smb` endpoint in the following example are intentional because Terraform escapes backslashes when it prints string values; a doubled backslash in the output represents a single backslash. The path that clients use in this example is `\\{{site.exampleIP1}}\<SMB Share Name>`{% endcapture %}
+   {% include note.html content=backSlashes %}
+   
    ```
    cluster_soft_capacity_limit_tb = 500
    cluster_uuid = "{{site.exampleUUID41}}"
@@ -357,7 +376,7 @@ The following table lists recommended _EC2 instance types_ (combinations of _EC2
    {{site.data.alerts.important}}
    <ul>
      <li>{{ sensPass }}</li>
-     <li>If you change the administrator password by using the Qumulo Core Web UI, Qumulo REST API, or <code>qq</code> CLI after deployment, although Terraform configuration remains unaffected, we recommend keeping your secrets store up to date with your cluster's settings, so that future redeployments use the correct value.</li>
+     <li>If you change the administrator password by using the Qumulo Core Web UI, Qumulo REST API, or <code>qq</code> CLI after deployment, although Terraform configuration remains unaffected, we recommend keeping your secrets store up to date with your cluster's settings, so that future modifications made with Terraform use the correct value.</li>
    </ul>
    {{site.data.alerts.end}}
 
@@ -373,13 +392,14 @@ The following table lists recommended _EC2 instance types_ (combinations of _EC2
 
    
 ## Part 3: Performing Post-Deployment Actions {#part-3-perform-post-deployment-actions}
-This section describes the common actions you can perform on a {{site.cnqShort}} cluster after deploying it: adding and removing nodes, increasing the soft capacity limit for a cluster, changing the EC2 instance type and deleting a cluster.
+This section describes the common actions you can perform on a {{site.cnqShort}} cluster after deploying it.
 
 {{site.data.alerts.important}}
 <ul>
   <li>After you create your Qumulo cluster, the deployed version (and the <code>cluster_version</code> variable) becomes immutable in the Terraform configuration. It isn't possible to upgrade Qumulo Core by changing this variable or by performing a Terraform operation.</li>
   <li>To upgrade Qumulo Core, use the Qumulo Core Web UI or the <code>qq</code> CLI. For more information, see <a href="../upgrading-qumulo-core/performing-upgrades.html">Performing Upgrades</a>.</li>
   <li>For all node addition and EC2 instance type change operations, the Qumulo Terraform Provider deploys the same Qumulo Core version as the one that your cluster is currently running.</li>
+  <li>If you upgrade Qumulo Core outside of Terraform, don't change the <code>cluster_version</code> variable. Changing it to match the upgraded version causes the next <code>terraform apply</code> command to fail.</li>  
 </ul>
 {{site.data.alerts.end}}
 
@@ -395,19 +415,27 @@ Terraform adds the nodes to your cluster and displays the additional primary (st
 ### Removing Nodes from an Existing CNQ on AWS Cluster {#removing-node-from-existing-cluster}
 Removing nodes is a single Terraform operation. The Qumulo Terraform Provider handles the separate quorum removal and resource cleanup steps.
 
+{{site.data.alerts.important}}
+<ul>
+  <li>It isn't possible to choose which specific nodes the Terraform Provider removes from a cluster. To retire a specific node, you must replace the entire cluster.</li>
+  <li>Lowering the value of the <code>node_count</code> variable removes the highest-numbered nodes. For example, to reduce a 4-node cluster to 3-node cluster, the Terraform Provider removes node <code>4</code>. In this scenario, it isn't possible to remove node 2 and keep node 4.</li>
+</ul>
+{{site.data.alerts.end}}
+
 1. Edit the `terraform.tfvars` file and set `node_count` to a lower value.
 
 1. {{site.cnq.runTFapply}}
 
 1. {{site.cnq.reviewExecPlan}}
 
-The specified nodes are removed from your cluster.
+Terraform removes the highest-numbered nodes from your cluster.
 
 ### Increasing the Soft Capacity Limit for an Existing CNQ on AWS Cluster {#increasing-soft-capacity-limit-existing-cluster}
 {{site.data.alerts.important}}
 <ul>
-  <li>A single operation can increase the soft capacity limit by less than 5,000 TB.</li>
-  <li>We recommend applying larger increases in incremental steps.</li>
+  <li>A single operation can increase the soft capacity limit by any amount under 5,000 TB.</li>
+  <li>To increase the soft capacity limit by 5,000 TB or more, apply the increase in incremental steps.</li>
+  <li>The maximum soft capacity limit is 50,000 TB.</li>
   <li>It isn't possible to decrease the soft capacity limit.</li>
 </ul>
 {{site.data.alerts.end}}
@@ -435,11 +463,15 @@ The Qumulo Terraform Provider performs the replacement natively within the exist
 {{site.data.alerts.caution}}
 <ul>
   <li>When you no longer need your cluster, you must back up all important data on the cluster safely before deleting the cluster. Deleting the cluster deletes its compute and cache resources and its persistent storage.</li>
-  <li>The system won't run the <code>terraform destroy</code> command unless you disable deletion protection and then apply this change.</li>
+  <li>The system won't run the <code>terraform destroy</code> command unless you disable deletion protection for your cluster and Network Load Balancer (if present) and then apply this change.</li>
 </ul>
 {{site.data.alerts.end}}
 
-1. After you back up your data safely, edit your `terraform.tfvars` file and set the deletion protection variable to `false`.
+1. After you back up your data safely, edit your `terraform.tfvars` file and set the `deletion_protection` variable to `false`.
+
+1. If your deployment has a Network Load Balancer (NLB), set the `nlb_deletion_protection` variable to `false`.
+
+   {% include note.html content="NLB configuration is present for every multi-AZ deployment and for single-AZ deployments with the `nlb_provision` variable set to `true`." %}
 
 1. Run the `terraform apply` command, review the Terraform execution plan, and then enter `yes`.
 
