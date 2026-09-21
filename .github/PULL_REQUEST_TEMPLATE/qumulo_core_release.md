@@ -13,7 +13,7 @@
   - [ ] Email to company
 - [ ] Upgrade mode reference
 
-## Manual Documentation Updates
+## (Optional) Manual Feature Documentation Updates
 - [ ] Docs updates
 
 ## Automated Documentation Updates
@@ -22,7 +22,8 @@
 - [ ] REST API change log
 
 ## Testing
-- [ ] Spellchecker
+- [ ] Sidebar checker
+- [ ] Spelling checker
 - [ ] Script, link, and image checker
 
 ## Fit and Finish
