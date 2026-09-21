@@ -480,14 +480,25 @@ regen_api_docs() {
     no_toolchain
     USER_SITE=$(python3 -m site --user-site)
 
-    if [ -n "$api_version" ]; then
+    run_gen_api() {
         # Non-Interactive execution
-        echo "Building REST API documentation for version $api_version from artifacts.eng.qumulo.com ..."
-        PYTHONPATH="$USER_SITE" python3 tools/gen-api.py "$api_version"
-    else
+        if [ -n "$api_version" ]; then
+            echo "Building REST API documentation for version $api_version from artifacts.eng.qumulo.com ..."
+            PYTHONPATH="$USER_SITE" python3 tools/gen-api.py "$api_version"
         # Interactive execution
-        echo "Building REST API documentation from artifacts.eng.qumulo.com ..."
-        PYTHONPATH="$USER_SITE" python3 tools/gen-api.py
+        else
+            echo "Building REST API documentation from artifacts.eng.qumulo.com ..."
+            PYTHONPATH="$USER_SITE" python3 tools/gen-api.py
+        fi
+    }
+
+    # First build attempt; if it fails, remediate toolchain and retry immediately
+    if ! run_gen_api; then
+        echo -e "\033[1;33mAPI generation failed. Checking environment and remediating toolchain...\033[0m"
+        check_environment
+        no_toolchain
+        echo "Retrying REST API documentation generation..."
+        run_gen_api
     fi
 }
 
