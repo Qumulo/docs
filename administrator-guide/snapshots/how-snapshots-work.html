@@ -2753,19 +2753,15 @@ $(document).ready(function() {
 </ul>
 
 <h2 id="determining-snapshots-storage-usage">Determining Snapshots’ Storage Usage</h2>
-<p>When Qumulo Core tracks the difference between the <em>saved</em> (snapshotted) and <em>live</em> (latest) versions of a file, it creates a <em>lineage</em> of snapshots independent from each other. To determine the amount of data that a single snapshot references, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/snapshot/snapshot_get_capacity_used_per_snapshot.html"><code>qq snapshot_get_capacity_used_per_snapshot</code></a>
- command and specify the snapshot ID. For example:</p>
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Qumulo Core 7.9.0.2 (and higher) removes the <code class="language-plaintext highlighter-rouge">qq snapshot_calculate_used_capacity</code> and <code class="language-plaintext highlighter-rouge">qq snapshot_get_capacity_used_per_snapshot</code> commands and their corresponding <code class="language-plaintext highlighter-rouge">/v1/snapshots/</code> REST API endpoints. To determine the amount of data that a single snapshot references, use the <a href="https://github.com/Qumulo/qsnap"><code class="language-plaintext highlighter-rouge">qsnap</code></a> CLI.</div>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq snapshot_get_capacity_used_per_snapshot <span class="se">\</span>
-  <span class="nt">--id</span> 1682119059
-</code></pre></div></div>
+<p>When Qumulo Core tracks the difference between the <em>saved</em> (snapshotted) and <em>live</em> (latest) versions of a file, it creates a <em>lineage</em> of snapshots independent from each other.</p>
 
 <p>More than one snapshot can reference <em>covered data</em>. It isn’t possible to release covered data until you delete all <em>covering snapshots</em> that reference it.</p>
 
 <ul>
   <li>
-    <p>To determine the total covered data, including data no longer present in the snapshot, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/snapshot/snapshot_get_capacity_used_per_snapshot.html"><code>qq snapshot_get_capacity_used_per_snapshot</code></a>
- command and specify multiple, comma-separated snapshot IDs.</p>
+    <p>To determine the total covered data, including data no longer present in the snapshot, use the <code class="language-plaintext highlighter-rouge">qsnap</code> CLI.</p>
   </li>
   <li>
     <p>To determine the total amount of data, including covered data that multiple snapshots reference, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/snapshot/snapshot_get_total_used_capacity.html"><code>qq snapshot_get_total_used_capacity</code></a>
@@ -2781,7 +2777,7 @@ $(document).ready(function() {
 <p>For example, if you run the <a href="https://docs.qumulo.com/qq-cli-command-guide/snapshot/snapshot_get_total_used_capacity.html"><code>qq snapshot_get_total_used_capacity</code></a>
  command, Qumulo Core shows that storage usage is 1,319,413,953,331 Bytes (1.2 TiB). This amount includes the total snapshot data and the covering snapshots.</p>
 
-<p>If you add up the usage for all snapshots currently in the file system (by using the <code class="language-plaintext highlighter-rouge">qq snapshot_get_capacity_used_per_snapshot</code> command), Qumulo Core shows that total snapshot storage usage is 2,147,483,648 Bytes (2 GiB). This amount includes the data changes that each snapshot stores but doesn’t include the unchanged file portions within each snapshot.</p>
+<p>If you use the <code class="language-plaintext highlighter-rouge">qsnap</code> CLI to add up the usage for all snapshots currently in the file system, Qumulo Core shows that total snapshot storage usage is 2,147,483,648 Bytes (2 GiB). This amount includes the data changes that each snapshot stores but doesn’t include the unchanged file portions within each snapshot.</p>
 
 <h3 id="example-tracking-file-snapshot-changes-over-time">Example: Tracking File Snapshot Changes Over Time</h3>
 <p>For example, you have a 1 TiB file that you modify over time.</p>
