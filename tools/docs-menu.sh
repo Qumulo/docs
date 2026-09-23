@@ -662,7 +662,7 @@ publish_release_notes_to_nexus() {
     
     # Force python to flush output unbuffered, merge streams, and stream through tee
     # so everything prints to the screen immediately while capturing to the log.
-    PYTHONUNBUFFERED=1 ./release_management/publish.py $dry_run_flag $ignore_date_flag --overwrite --release-notes-only "$version_number" s3 --aws-profile "$aws_profile" 2>&1 \vert{} tee "$cmd_errlog"
+    PYTHONUNBUFFERED=1 ./release_management/publish.py $dry_run_flag $ignore_date_flag --overwrite --release-notes-only "$version_number" s3 --aws-profile "$aws_profile" 2>&1 | tee "$cmd_errlog"
     local exit_pipeline=${PIPESTATUS[0]}
 
     # Check the actual python execution exit code
