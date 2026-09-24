@@ -45,11 +45,11 @@ For information about upgrade types for each release, see <a href='mode-referenc
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><code>POST /v2/upgrade/verify-image</code></pre></div></div>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><code>qq upgrade_verify_image \
   --path /example/path/to/target/image</code></pre></div></div>{% endcapture %}
-{% capture clustCapRecl %}This release resolves an issue with system performance during the cluster capacity reclamation process.{% endcapture %}
+{% capture clustCapRecl %}issue with system performance during the cluster capacity reclamation process.{% endcapture %}
 
 {{site.data.alerts.important}}
 <ul>
-  <li>{{ clustCapRecl }}</li>
+  <li>This release resolves an {{ clustCapRecl }}</li>
   <li>{{ mustWait }}</li>
 </ul>
 {{site.data.alerts.end}}
@@ -78,7 +78,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {{site.data.alerts.important}}
 <ul>
   <li>
-    This release resolves:
+    This release resolves&hellip;
     <ul>
       <li>An {{ clustCapRecl }}</li>
       <li><strong>Stratus Accelerator Clusters Deployed with Qumulo Core 7.9.2:</strong> An issue with an unlikely scenario that previously could occur on a Qumulo cluster with heavy workloads resulting from moving or combining data stored on a shared DataCore cluster. In this scenario, the object metadata cache can become corrupted when SSDs on nodes perform operations out of order.</li>
@@ -104,7 +104,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
       </li>
     </ul>
   </li>
-  <li>This release resolves issues that previously:
+  <li>This release resolves issues that previously&hellip;
     <ul>
       <li>Prevented the system from handling an internal encoding inconsistency from legacy builds</li>
       <li>Prevented quorum formation if the audit server address specified in the audit configuration isn't a valid IP address or DNS name</li>
@@ -129,16 +129,18 @@ For information about upgrade types for each release, see <a href='mode-referenc
   * **Nexus Agent:** Can't detect a cleanly closed connection to Nexus
 
 
-## Qumulo Core 7.9.1.2
+## Qumulo Core 7.9.1.3
 {{ nexusLink }}
 
 ### Features and Improvements
+{% capture snapDel %}delayed the system process that cleans up snapshots for certain cluster configurations, causing the system to reach the total snapshot limit{% endcapture %}
 {% capture couldCrash %}crash while upgrading on-disk structures in certain scenarios{% endcapture %}
 {{site.data.alerts.important}}
 <ul>
   <li>
-    This release resolves:
+    This release resolves&hellip;
     <ul>
+      <li>An issue that previously significantly {{ snapDel }}</li> 
       <li>An {{ clustCapRecl }}</li>
       <li>An issue that previously could cause Qumulo Core to {{ couldCrash }}.</li>
     </ul>
@@ -158,7 +160,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-791)
 
 
-## Qumulo Core 7.9.0.3 (Quarterly)
+## Qumulo Core 7.9.0.4 (Quarterly)
 {{ nexusLink }}
 
 ### Features and Improvements
@@ -174,8 +176,9 @@ For information about upgrade types for each release, see <a href='mode-referenc
     </ul>
   </li>
   <li>
-    This release resolves issues that previously:
+    This release resolves issues that previously&hellip;
     <ul>
+      <li>Significantly {{ snapDel }}</li>
       <li>Affected system performance during the cluster reclamation process</li>
       <li>Prevented the system from handling an internal encoding inconsistency from legacy builds</li>
       <li>Prevented quorum formation if the audit server address specified in the audit configuration isn't a valid IP address or DNS name</li>

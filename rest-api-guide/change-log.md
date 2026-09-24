@@ -64,7 +64,7 @@ layout: page
 </details>
 
 
-## Qumulo Core 7.9.1.2
+## Qumulo Core 7.9.1.3
 {{ nexusLink }}
 <ul>
   <li>Removed <code>/v1/portal/quorum/events</code></li>
@@ -72,7 +72,7 @@ layout: page
 </ul>
 
 
-## Qumulo Core 7.9.0.3
+## Qumulo Core 7.9.0.4
 {{ nexusLink }}
 <ul>
   <li>Removed <code>/v1/snapshots/calculate-used-capacity</code></li>
