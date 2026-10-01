@@ -4893,8 +4893,8 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="object_bridge_create" href="/qq-cli-command-guide/object/object_bridge_create.html">
-              object_bridge_create
+            <a title="object_portal_create_bridge" href="/qq-cli-command-guide/object/object_portal_create_bridge.html">
+              object_portal_create_bridge
               <span class="tag-container">
               
               
@@ -4909,8 +4909,8 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="object_bridge_delete" href="/qq-cli-command-guide/object/object_bridge_delete.html">
-              object_bridge_delete
+            <a title="object_portal_delete_bridge" href="/qq-cli-command-guide/object/object_portal_delete_bridge.html">
+              object_portal_delete_bridge
               <span class="tag-container">
               
               
@@ -4925,8 +4925,8 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="object_bridge_export_job_run" href="/qq-cli-command-guide/object/object_bridge_export_job_run.html">
-              object_bridge_export_job_run
+            <a title="object_portal_get_bridge" href="/qq-cli-command-guide/object/object_portal_get_bridge.html">
+              object_portal_get_bridge
               <span class="tag-container">
               
               
@@ -4941,8 +4941,8 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="object_bridge_export_rule_create" href="/qq-cli-command-guide/object/object_bridge_export_rule_create.html">
-              object_bridge_export_rule_create
+            <a title="object_portal_list_bridges" href="/qq-cli-command-guide/object/object_portal_list_bridges.html">
+              object_portal_list_bridges
               <span class="tag-container">
               
               
@@ -4957,40 +4957,8 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="object_bridge_export_rule_delete" href="/qq-cli-command-guide/object/object_bridge_export_rule_delete.html">
-              object_bridge_export_rule_delete
-              <span class="tag-container">
-              
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="object_bridge_export_rule_get" href="/qq-cli-command-guide/object/object_bridge_export_rule_get.html">
-              object_bridge_export_rule_get
-              <span class="tag-container">
-              
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="object_bridge_export_rule_list" href="/qq-cli-command-guide/object/object_bridge_export_rule_list.html">
-              object_bridge_export_rule_list
+            <a title="object_portal_refresh" href="/qq-cli-command-guide/object/object_portal_refresh.html">
+              object_portal_refresh
               <span class="tag-container">
               
               
@@ -5160,8 +5128,8 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="portal_get_file_system" href="/qq-cli-command-guide/portal/portal_get_file_system.html">
-              portal_get_file_system
+            <a title="portal_get_filesystem" href="/qq-cli-command-guide/portal/portal_get_filesystem.html">
+              portal_get_filesystem
               <span class="tag-container">
               
               
@@ -5224,8 +5192,8 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="portal_list_file_systems" href="/qq-cli-command-guide/portal/portal_list_file_systems.html">
-              portal_list_file_systems
+            <a title="portal_list_filesystems" href="/qq-cli-command-guide/portal/portal_list_filesystems.html">
+              portal_list_filesystems
               <span class="tag-container">
               
               
@@ -8227,7 +8195,7 @@ $(document).ready(function() {
 
 
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq authoritative_dns_modify_settings <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="o">[</span><span class="nt">--fqdn</span> FQDN] <span class="o">[</span><span class="nt">--enable</span><span class="o">]</span> <span class="o">[</span><span class="nt">--disable</span><span class="o">]</span> <span class="o">[</span><span class="nt">--host-restrictions</span> HOST_RESTRICTIONS <span class="o">[</span>HOST_RESTRICTIONS ...]] <span class="o">[</span><span class="nt">--disable-host-restrictions</span><span class="o">]</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq authoritative_dns_modify_settings <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="o">[</span><span class="nt">--fqdn</span> FQDN] <span class="o">[</span><span class="nt">--enable</span><span class="o">]</span> <span class="o">[</span><span class="nt">--disable</span><span class="o">]</span> <span class="o">[</span><span class="nt">--host-restrictions</span> HOST_RESTRICTIONS <span class="o">[</span>HOST_RESTRICTIONS ...]] <span class="o">[</span><span class="nt">--disable-host-restrictions</span><span class="o">]</span> <span class="o">[</span><span class="nt">--record-ttl-seconds</span> RECORD_TTL_SECONDS]
 </code></pre></div></div>
 
 
@@ -8307,6 +8275,20 @@ $(document).ready(function() {
     </td>
     <td>
       Allow all IP addresses to query the Qumulo Authoritative DNS server
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <code>--record-ttl-seconds</code>
+    </td>
+    <td>
+      
+        No
+      
+    </td>
+    <td>
+      How long resolvers may cache a record, from 0 to 3600 seconds.
     </td>
   </tr>
 
@@ -9064,12 +9046,6 @@ $(document).ready(function() {
         
     
   
-    
-      
-        
-    
-      
-        
     
       
         

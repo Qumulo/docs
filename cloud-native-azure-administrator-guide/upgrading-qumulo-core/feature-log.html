@@ -2418,6 +2418,41 @@ $(document).ready(function() {
      
      <style>div#toc{height:200px;overflow:auto;}</style>
 
+<h2 id="qumulo-core-7101">Qumulo Core 7.10.1</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>To upgrade from Qumulo 7.10.0, the tunable <code>use_openssl_crypto</code> must not be set to <code>true</code>.</li>
+  <li>This release significantly shortens quorum formation time for Cloud Native Qumulo created on Qumulo Core versions lower than 7.10.0 and Stratus Accelerator clusters created on Qumulo Core versions lower than 7.9.2.</li>
+  <li>
+    <p>For Cloud Native Qumulo (CNQ) clusters that were:</p>
+    <ul>
+      <li><strong>Deployed on Qumulo Core lower than 7.4.3:</strong> If the clusters haven’t undergone a cluster redeployment on Qumulo Core 7.4.3 (or higher), they must complete the cluster redeployment process before upgrading to Qumulo Core 7.10.1 (or higher). This process retains your cluster’s configuration and all data.</li>
+      <li><strong>Deployed or Adjusted Cluster Infrastructure on Qumulo Core 7.4.3 (and higher):</strong> No additional steps are required.</li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+<ul>
+  <li><strong>Cloud Data Fabric (CDF):</strong>
+    <ul>
+      <li>Added a Qumulo Web UI portal management page under <strong>Cluster &gt; Portal</strong></li>
+      <li>Updated REST API endpoints and <code class="language-plaintext highlighter-rouge">qq</code> CLI commands related to portal connectivity, portal quorum events, and listing configuration status for hub portals and spoke portals</li>
+    </ul>
+  </li>
+  <li><strong>Qumulo Authoritative DNS (QDNS):</strong> Configured QDNS to serve DNS records with a customizable TTL value and made a corresponding change to the <code class="language-plaintext highlighter-rouge">qq</code> CLI</li>
+  <li><strong>Resolved Issues With:</strong>
+    <ul>
+      <li>Writes to a spoke portal over S3</li>
+      <li>Deleting a portal relationship with open connections to a directory</li>
+      <li>Moving IP addresses of a CNQ on Azure cluster</li>
+      <li>LDAP lookups and distinguished names containing a comma (<code class="language-plaintext highlighter-rouge">,</code>)</li>
+    </ul>
+  </li>
+</ul>
+
 <h2 id="qumulo-core-7100-quarterly">Qumulo Core 7.10.0 (Quarterly)</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 

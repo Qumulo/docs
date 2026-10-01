@@ -4893,8 +4893,8 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="object_bridge_create" href="/qq-cli-command-guide/object/object_bridge_create.html">
-              object_bridge_create
+            <a title="object_portal_create_bridge" href="/qq-cli-command-guide/object/object_portal_create_bridge.html">
+              object_portal_create_bridge
               <span class="tag-container">
               
               
@@ -4909,8 +4909,8 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="object_bridge_delete" href="/qq-cli-command-guide/object/object_bridge_delete.html">
-              object_bridge_delete
+            <a title="object_portal_delete_bridge" href="/qq-cli-command-guide/object/object_portal_delete_bridge.html">
+              object_portal_delete_bridge
               <span class="tag-container">
               
               
@@ -4925,8 +4925,8 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="object_bridge_export_job_run" href="/qq-cli-command-guide/object/object_bridge_export_job_run.html">
-              object_bridge_export_job_run
+            <a title="object_portal_get_bridge" href="/qq-cli-command-guide/object/object_portal_get_bridge.html">
+              object_portal_get_bridge
               <span class="tag-container">
               
               
@@ -4941,8 +4941,8 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="object_bridge_export_rule_create" href="/qq-cli-command-guide/object/object_bridge_export_rule_create.html">
-              object_bridge_export_rule_create
+            <a title="object_portal_list_bridges" href="/qq-cli-command-guide/object/object_portal_list_bridges.html">
+              object_portal_list_bridges
               <span class="tag-container">
               
               
@@ -4957,40 +4957,8 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="object_bridge_export_rule_delete" href="/qq-cli-command-guide/object/object_bridge_export_rule_delete.html">
-              object_bridge_export_rule_delete
-              <span class="tag-container">
-              
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="object_bridge_export_rule_get" href="/qq-cli-command-guide/object/object_bridge_export_rule_get.html">
-              object_bridge_export_rule_get
-              <span class="tag-container">
-              
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="object_bridge_export_rule_list" href="/qq-cli-command-guide/object/object_bridge_export_rule_list.html">
-              object_bridge_export_rule_list
+            <a title="object_portal_refresh" href="/qq-cli-command-guide/object/object_portal_refresh.html">
+              object_portal_refresh
               <span class="tag-container">
               
               
@@ -5160,8 +5128,8 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="portal_get_file_system" href="/qq-cli-command-guide/portal/portal_get_file_system.html">
-              portal_get_file_system
+            <a title="portal_get_filesystem" href="/qq-cli-command-guide/portal/portal_get_filesystem.html">
+              portal_get_filesystem
               <span class="tag-container">
               
               
@@ -5224,8 +5192,8 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="portal_list_file_systems" href="/qq-cli-command-guide/portal/portal_list_file_systems.html">
-              portal_list_file_systems
+            <a title="portal_list_filesystems" href="/qq-cli-command-guide/portal/portal_list_filesystems.html">
+              portal_list_filesystems
               <span class="tag-container">
               
               
@@ -8220,14 +8188,14 @@ $(document).ready(function() {
 
 
 <h2>Description</h2>
-<div id="description"><p>Modify the spoke hosts and writability of a hub portal</p>
+<div id="description"><p>Modify the spoke hosts and type of a hub portal</p>
 </div>
 
 <h2>Usage</h2>
 
 
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq portal_modify_hub <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="nt">-i</span> ID <span class="o">[</span><span class="nt">-j</span><span class="o">]</span> <span class="o">[</span><span class="nt">-n</span><span class="o">]</span> <span class="o">[</span><span class="nt">--make-read-write</span><span class="o">]</span> <span class="o">[</span><span class="nt">-m</span> SPOKE_HOSTS | <span class="nt">-a</span> SPOKE_ADDRESS] <span class="o">[</span><span class="nt">-p</span> SPOKE_PORT]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq portal_modify_hub <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="nt">-i</span> ID <span class="o">[</span><span class="nt">-j</span><span class="o">]</span> <span class="o">[</span><span class="nt">-n</span><span class="o">]</span> <span class="o">[</span><span class="nt">--type</span> <span class="o">{</span>read-write,read-only<span class="o">}]</span> <span class="o">[</span><span class="nt">-m</span> SPOKE_HOSTS | <span class="nt">-a</span> SPOKE_ADDRESS] <span class="o">[</span><span class="nt">-p</span> SPOKE_PORT]
 </code></pre></div></div>
 
 
@@ -8284,7 +8252,7 @@ $(document).ready(function() {
 
   <tr>
     <td>
-      <code>--make-read-write</code>
+      <code>--type</code>
     </td>
     <td>
       
@@ -8292,7 +8260,7 @@ $(document).ready(function() {
       
     </td>
     <td>
-      Let the spoke portal write to the portal directories. A read-write portal cannot be made read-only again.
+      Change the type of the portal. Setting read-write takes effect immediately, as does setting read-only on a paused portal. Setting read-only on a read-write portal starts a transition that drains outstanding spoke writes; the portal reports the Quiescing state until the drain finishes.
     </td>
   </tr>
 
@@ -9095,12 +9063,6 @@ $(document).ready(function() {
       
         
     
-      
-        
-    
-      
-        
-    
   
     
       
@@ -9200,7 +9162,7 @@ $(document).ready(function() {
           
             
             
-  <li><a href="/qq-cli-command-guide/portal/portal_get_file_system.html">portal_get_file_system</a></li>
+  <li><a href="/qq-cli-command-guide/portal/portal_get_filesystem.html">portal_get_filesystem</a></li>
             
           
             
@@ -9220,7 +9182,7 @@ $(document).ready(function() {
           
             
             
-  <li><a href="/qq-cli-command-guide/portal/portal_list_file_systems.html">portal_list_file_systems</a></li>
+  <li><a href="/qq-cli-command-guide/portal/portal_list_filesystems.html">portal_list_filesystems</a></li>
             
           
             
