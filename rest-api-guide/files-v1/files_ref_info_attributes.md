@@ -5,7 +5,7 @@ methods:
     summary: Get file attributes.
     parameters:
     - name: ref
-      description: The file ID or the absolute path to the file system object. File
+      description: The file ID or the absolute path to the filesystem object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.
@@ -137,7 +137,7 @@ methods:
       POSIX-style; file's ACL is updated to match the requested permissions.
     parameters:
     - name: ref
-      description: The file ID or the absolute path to the file system object. File
+      description: The file ID or the absolute path to the filesystem object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.

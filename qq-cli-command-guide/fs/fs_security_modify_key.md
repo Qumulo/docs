@@ -39,7 +39,7 @@ positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq fs_security_modify_key</code>
   command.
-synopsis: 'Modify the name or comment of a key in the file system key store.
+synopsis: 'Modify the name or comment of a key in the filesystem key store.
 
   Enable or disable a key.
 

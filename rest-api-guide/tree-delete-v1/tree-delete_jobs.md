@@ -53,7 +53,7 @@ methods:
     request_body:
       schema: "{\n  \"description\": \"tree_delete_job_post\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The file ID\
-        \ or the absolute path to the file system object. File IDs can be found in\
+        \ or the absolute path to the filesystem object. File IDs can be found in\
         \ the id field of responses of APIs that return file attributes. You must\
         \ URL-encode the paths. The APIs & Tools page in the Qumulo Core Web UI URL-encodes\
         \ the paths.\",\n      \"type\": \"string\"\n    }\n  }\n}"

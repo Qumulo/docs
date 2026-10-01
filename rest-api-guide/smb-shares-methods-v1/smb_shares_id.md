@@ -41,7 +41,7 @@ methods:
       description: The unique ID of the SMB share
       required: true
     - name: allow-fs-path-create
-      description: Specifies whether the file system path can be created if it does
+      description: Specifies whether the filesystem path can be created if it does
         not already exist.
       required: false
     - name: If-Match

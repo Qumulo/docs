@@ -11,6 +11,120 @@ layout: page
 <style>div#toc{height:200px;overflow:auto;}</style>
 
 
+## Qumulo Core 7.10.1
+{{ nexusLink }}
+<ul>
+  <li>Added <code>GET | POST /v1/object-portal/bridges/</code></li>
+  <li>Added <code>DELETE | GET /v1/object-portal/bridges/{filesystem_uuid}</code></li>
+  <li>Added <code>POST /v1/object-portal/notify</code></li>
+</ul>
+<details>
+  <summary>Click to expand</summary>
+  <ul>
+    <li>Added <code>POST /v1/object-portal/refresh</code></li>
+    <li>Added <code>record_ttl_seconds</code> parameter to <code>GET /v1/authoritative-dns/settings</code> response</li>
+    <li>
+      Modified <code>PATCH /v1/authoritative-dns/settings</code>:
+      <ul>
+        <li>Added <code>record_ttl_seconds</code> parameter to <code>PATCH /v1/authoritative-dns/settings</code> request body</li>
+        <li>Added <code>record_ttl_seconds</code> parameter to <code>PATCH /v1/authoritative-dns/settings</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>total_external_objects</code> parameter to <code>GET /v1/files/{ref}/aggregates/</code> response</li>
+    <li>Added <code>sample_count</code> parameter to <code>POST /v1/portal/ping</code> request body</li>
+    <li>
+      Modified <code>GET /v1/portal/quorum/events</code>:
+      <ul>
+        <li>Added <code>filesystem-uuid</code> parameter to <code>GET /v1/portal/quorum/events</code> parameters</li>
+        <li>Removed <code>fs-id</code> parameter from <code>GET /v1/portal/quorum/events</code> parameters</li>
+      </ul>
+    </li>
+    <li>Added <code>filesystem_uuid</code> parameter to <code>DELETE /v2/portal/hubs/{id}</code> <code>202</code> response</li>
+    <li>Added <code>filesystem_uuid</code> parameter to <code>GET /v2/portal/hubs/{id}</code> response</li>
+    <li>
+      Modified <code>PATCH /v2/portal/hubs/{id}</code>:
+      <ul>
+        <li>Added <code>filesystem_uuid</code> parameter to <code>PATCH /v2/portal/hubs/{id}</code> request body</li>
+        <li>Added <code>filesystem_uuid</code> parameter to <code>PATCH /v2/portal/hubs/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>filesystem_uuid</code> parameter to <code>POST /v2/portal/hubs/{id}/accept</code> response</li>
+    <li>Added <code>filesystem_uuid</code> parameter to <code>DELETE /v2/portal/hubs/{id}/roots/{dir}</code> response</li>
+    <li>Added <code>filesystem_uuid</code> parameter to <code>POST /v2/portal/hubs/{id}/roots/{dir}</code> response</li>
+    <li>
+      Added parameters to <code>POST /v2/portal/spokes/</code> response:
+          <ul>
+            <li><code>filesystem_uuid</code></li>
+            <li><code>hub_cluster_name</code></li>
+          </ul>
+    </li>
+    <li>
+      Added parameters to <code>DELETE /v2/portal/spokes/{id}</code> <code>202</code> response:
+          <ul>
+            <li><code>filesystem_uuid</code></li>
+            <li><code>hub_cluster_name</code></li>
+          </ul>
+    </li>
+    <li>
+      Added parameters to <code>GET /v2/portal/spokes/{id}</code> response:
+          <ul>
+            <li><code>filesystem_uuid</code></li>
+            <li><code>hub_cluster_name</code></li>
+          </ul>
+    </li>
+    <li>
+      Modified <code>PATCH /v2/portal/spokes/{id}</code>:
+      <ul>
+        <li>Added parameters to <code>PATCH /v2/portal/spokes/{id}</code> request body:
+          <ul>
+            <li><code>filesystem_uuid</code></li>
+            <li><code>hub_cluster_name</code></li>
+          </ul></li>
+        <li>Added parameters to <code>PATCH /v2/portal/spokes/{id}</code> response:
+          <ul>
+            <li><code>filesystem_uuid</code></li>
+            <li><code>hub_cluster_name</code></li>
+          </ul></li>
+      </ul>
+    </li>
+    <li>
+      Added parameters to <code>POST /v2/portal/spokes/{id}/roots/</code> response:
+          <ul>
+            <li><code>filesystem_uuid</code></li>
+            <li><code>hub_cluster_name</code></li>
+          </ul>
+    </li>
+    <li>
+      Added parameters to <code>DELETE /v2/portal/spokes/{id}/roots/{dir}</code> response:
+          <ul>
+            <li><code>filesystem_uuid</code></li>
+            <li><code>hub_cluster_name</code></li>
+          </ul>
+    </li>
+    <li>
+      Added parameters to <code>GET /v3/replication/object-relationships/{id}/status</code> response:
+          <ul>
+            <li><code>access_key_id</code></li>
+            <li><code>bucket</code></li>
+            <li><code>bucket_style</code></li>
+            <li><code>ca_certificate</code></li>
+            <li><code>current_job</code></li>
+            <li><code>direction</code></li>
+            <li><code>id</code></li>
+            <li><code>last_job</code></li>
+            <li><code>local_directory_id</code></li>
+            <li><code>local_directory_path</code></li>
+            <li><code>object_folder</code></li>
+            <li><code>object_store_address</code></li>
+            <li><code>port</code></li>
+            <li><code>region</code></li>
+            <li><code>state</code></li>
+          </ul>
+    </li>
+  </ul>
+</details>
+
+
 ## Qumulo Core 7.10.0
 {{ nexusLink }}
 <ul>

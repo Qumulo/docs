@@ -6,7 +6,7 @@ methods:
       file. Values are base 64 encoded.
     parameters:
     - name: ref
-      description: The file ID or the absolute path to the file system object. File
+      description: The file ID or the absolute path to the filesystem object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.
@@ -35,9 +35,9 @@ methods:
         \            \"enum\": [\n              \"GENERIC\",\n              \"S3\"\
         \n            ],\n            \"description\": \"The type of user metadata.\
         \ Generic user metadata is visible through the S3 api as object tags. S3 metadata\
-        \ is visible to the S3 protocol as object metadata.:\\n * `GENERIC` - FS_USER_METADATA_TYPE_GENERIC,\\\
-        n * `S3` - FS_USER_METADATA_TYPE_S3\"\n          },\n          \"key\": {\n\
-        \            \"description\": \"The key used to reference the user metadata.\"\
+        \ is visible to the S3 protocol as object metadata.:\\n * `GENERIC` - API_FILES_USER_METADATA_TYPE_GENERIC,\\\
+        n * `S3` - API_FILES_USER_METADATA_TYPE_S3\"\n          },\n          \"key\"\
+        : {\n            \"description\": \"The key used to reference the user metadata.\"\
         ,\n            \"type\": \"string\"\n          },\n          \"value\": {\n\
         \            \"description\": \"The Base64-encoded value that the user-defined\
         \ metadata entry stores.\",\n            \"type\": \"string\"\n          }\n\

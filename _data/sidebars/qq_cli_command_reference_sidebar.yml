@@ -814,26 +814,20 @@ entries:
       title: object_backed_fault_tolerance_get
       url: /qq-cli-command-guide/object/object_backed_fault_tolerance_get.html
     - output: web,pdf
-      title: object_bridge_create
-      url: /qq-cli-command-guide/object/object_bridge_create.html
+      title: object_portal_create_bridge
+      url: /qq-cli-command-guide/object/object_portal_create_bridge.html
     - output: web,pdf
-      title: object_bridge_delete
-      url: /qq-cli-command-guide/object/object_bridge_delete.html
+      title: object_portal_delete_bridge
+      url: /qq-cli-command-guide/object/object_portal_delete_bridge.html
     - output: web,pdf
-      title: object_bridge_export_job_run
-      url: /qq-cli-command-guide/object/object_bridge_export_job_run.html
+      title: object_portal_get_bridge
+      url: /qq-cli-command-guide/object/object_portal_get_bridge.html
     - output: web,pdf
-      title: object_bridge_export_rule_create
-      url: /qq-cli-command-guide/object/object_bridge_export_rule_create.html
+      title: object_portal_list_bridges
+      url: /qq-cli-command-guide/object/object_portal_list_bridges.html
     - output: web,pdf
-      title: object_bridge_export_rule_delete
-      url: /qq-cli-command-guide/object/object_bridge_export_rule_delete.html
-    - output: web,pdf
-      title: object_bridge_export_rule_get
-      url: /qq-cli-command-guide/object/object_bridge_export_rule_get.html
-    - output: web,pdf
-      title: object_bridge_export_rule_list
-      url: /qq-cli-command-guide/object/object_bridge_export_rule_list.html
+      title: object_portal_refresh
+      url: /qq-cli-command-guide/object/object_portal_refresh.html
     output: web,pdf
     title: object
     url: /qq-cli-command-guide/object/
@@ -863,8 +857,8 @@ entries:
       title: portal_get_eviction_settings
       url: /qq-cli-command-guide/portal/portal_get_eviction_settings.html
     - output: web,pdf
-      title: portal_get_file_system
-      url: /qq-cli-command-guide/portal/portal_get_file_system.html
+      title: portal_get_filesystem
+      url: /qq-cli-command-guide/portal/portal_get_filesystem.html
     - output: web,pdf
       title: portal_get_hub
       url: /qq-cli-command-guide/portal/portal_get_hub.html
@@ -875,8 +869,8 @@ entries:
       title: portal_list
       url: /qq-cli-command-guide/portal/portal_list.html
     - output: web,pdf
-      title: portal_list_file_systems
-      url: /qq-cli-command-guide/portal/portal_list_file_systems.html
+      title: portal_list_filesystems
+      url: /qq-cli-command-guide/portal/portal_list_filesystems.html
     - output: web,pdf
       title: portal_list_hubs
       url: /qq-cli-command-guide/portal/portal_list_hubs.html

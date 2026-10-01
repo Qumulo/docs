@@ -131,8 +131,6 @@ methods:
     - code: '200'
       description: Return value on success
     preview: false
-    request_body:
-      schema: "{\n  \"type\": \"object\"\n}"
   delete:
     summary: Delete the current Kerberos keytab configuration
     parameters:

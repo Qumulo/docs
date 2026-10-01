@@ -37,7 +37,7 @@ methods:
     summary: Add an SMB share with given options.
     parameters:
     - name: allow-fs-path-create
-      description: Specifies whether the file system path can be created if it does
+      description: Specifies whether the filesystem path can be created if it does
         not already exist.
       required: false
     response_body:

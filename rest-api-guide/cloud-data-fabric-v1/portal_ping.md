@@ -17,10 +17,18 @@ methods:
         \                \"description\": \"address\",\n                \"type\":\
         \ \"string\"\n              },\n              \"port\": {\n              \
         \  \"description\": \"port\",\n                \"type\": \"number\"\n    \
-        \          }\n            }\n          },\n          \"unreachable_reason\"\
-        : {\n            \"description\": \"Error message if connection failed, empty\
-        \ if successful\",\n            \"type\": \"string\"\n          }\n      \
-        \  }\n      }\n    }\n  }\n}"
+        \          }\n            }\n          },\n          \"state\": {\n      \
+        \      \"type\": \"string\",\n            \"enum\": [\n              \"reachable\"\
+        ,\n              \"unreachable\",\n              \"rejected\"\n          \
+        \  ],\n            \"description\": \"Whether the host answered, could not\
+        \ be reached, or answered and rejected the connection:\\n * `reachable` -\
+        \ HOST_REACHABLE,\\n * `rejected` - HOST_REJECTED,\\n * `unreachable` - HOST_UNREACHABLE\"\
+        \n          },\n          \"ping_ms\": {\n            \"description\": \"\
+        Connection round trip time reported in milliseconds\",\n            \"type\"\
+        : \"number\"\n          },\n          \"unreachable_reason\": {\n        \
+        \    \"description\": \"Why the connection was unreachable or rejected.\"\
+        ,\n            \"type\": \"string\"\n          }\n        }\n      }\n   \
+        \ }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success
@@ -35,7 +43,9 @@ methods:
         : {\n            \"description\": \"port\",\n            \"type\": \"number\"\
         \n          }\n        }\n      }\n    },\n    \"peer_uuid\": {\n      \"\
         description\": \"Optional UUID of the peer cluster for verification\",\n \
-        \     \"type\": \"string\"\n    }\n  }\n}"
+        \     \"type\": \"string\"\n    },\n    \"sample_count\": {\n      \"description\"\
+        : \"Number of calls to average each round trip over\",\n      \"type\": \"\
+        string\"\n    }\n  }\n}"
 rest_endpoint: /v1/portal/ping
 api_version: v1
 permalink: /rest-api-guide/cloud-data-fabric-v1/portal_ping.html

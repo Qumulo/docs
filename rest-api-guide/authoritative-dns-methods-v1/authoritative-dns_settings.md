@@ -10,7 +10,9 @@ methods:
         : \"enabled\",\n      \"type\": \"boolean\"\n    },\n    \"fqdn\": {\n   \
         \   \"description\": \"fqdn\",\n      \"type\": \"string\"\n    },\n    \"\
         host_restrictions\": {\n      \"description\": \"host_restrictions\",\n  \
-        \    \"type\": \"string\"\n    }\n  }\n}"
+        \    \"type\": \"string\"\n    },\n    \"record_ttl_seconds\": {\n      \"\
+        description\": \"record_ttl_seconds\",\n      \"type\": \"number\"\n    }\n\
+        \  }\n}"
     responses:
     - code: '200'
       description: Return value on success
@@ -27,7 +29,9 @@ methods:
         : \"enabled\",\n      \"type\": \"boolean\"\n    },\n    \"fqdn\": {\n   \
         \   \"description\": \"fqdn\",\n      \"type\": \"string\"\n    },\n    \"\
         host_restrictions\": {\n      \"description\": \"host_restrictions\",\n  \
-        \    \"type\": \"string\"\n    }\n  }\n}"
+        \    \"type\": \"string\"\n    },\n    \"record_ttl_seconds\": {\n      \"\
+        description\": \"record_ttl_seconds\",\n      \"type\": \"number\"\n    }\n\
+        \  }\n}"
     responses:
     - code: '200'
       description: Return value on success
@@ -38,7 +42,9 @@ methods:
         : \"enabled\",\n      \"type\": \"boolean\"\n    },\n    \"fqdn\": {\n   \
         \   \"description\": \"fqdn\",\n      \"type\": \"string\"\n    },\n    \"\
         host_restrictions\": {\n      \"description\": \"host_restrictions\",\n  \
-        \    \"type\": \"string\"\n    }\n  }\n}"
+        \    \"type\": \"string\"\n    },\n    \"record_ttl_seconds\": {\n      \"\
+        description\": \"record_ttl_seconds\",\n      \"type\": \"number\"\n    }\n\
+        \  }\n}"
 rest_endpoint: /v1/authoritative-dns/settings
 api_version: v1
 permalink: /rest-api-guide/authoritative-dns-methods-v1/authoritative-dns_settings.html

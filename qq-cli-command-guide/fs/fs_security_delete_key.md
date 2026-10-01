@@ -12,7 +12,7 @@ positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq fs_security_delete_key</code>
   command.
-synopsis: Delete a key from the file system key store.
+synopsis: Delete a key from the filesystem key store.
 title: qq fs_security_delete_key
 usage: qq fs_security_delete_key [-h] -k KEY
 zendesk_source: qq CLI Command Guide

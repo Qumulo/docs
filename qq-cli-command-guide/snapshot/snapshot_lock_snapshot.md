@@ -14,7 +14,7 @@ optional_options:
   required: false
 - alternate:
   - --lock-key
-  help: 'The identifier or name of the key in the file system key store that protects
+  help: 'The identifier or name of the key in the filesystem key store that protects
     the snapshot. Important: You must specify either the name or the identifier of
     the key.'
   name: -k

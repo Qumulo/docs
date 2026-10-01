@@ -11,7 +11,7 @@ optional_options:
   name: --name
   required: true
 - alternate: []
-  help: File system path.
+  help: Filesystem path.
   name: --fs-path
   required: true
 - alternate: []
@@ -23,12 +23,12 @@ optional_options:
   name: --access-based-enumeration-enabled
   required: false
 - alternate: []
-  help: Creates the specified file system path if the path does not exist already.
+  help: Creates the specified filesystem path if the path does not exist already.
   name: --create-fs-path
   required: false
 - alternate: []
-  help: Enable expanding %U in the specified file system path to the SMB username
-    during connection.
+  help: Enable expanding %U in the specified filesystem path to the SMB username during
+    connection.
   name: --expand-fs-path-variables
   required: false
 - alternate: []

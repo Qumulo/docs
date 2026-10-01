@@ -1,8 +1,8 @@
 ---
-category: /File System V1
+category: /Filesystem V1
 methods:
   get:
-    summary: "List the file system\u2019s public keys."
+    summary: "List the filesystem\u2019s public keys."
     parameters: []
     response_body:
       schema: "{\n  \"description\": \"api_change_lock_keys\",\n  \"type\": \"object\"\
@@ -25,7 +25,7 @@ methods:
       description: Return value on success
     preview: false
   post:
-    summary: Register a new file system public key.
+    summary: Register a new filesystem public key.
     parameters: []
     response_body:
       schema: "{\n  \"description\": \"api_change_lock_key\",\n  \"type\": \"object\"\
@@ -54,8 +54,7 @@ methods:
         string\"\n    }\n  }\n}"
 rest_endpoint: /v1/file-system/security/keys/
 api_version: v1
-permalink: /rest-api-guide/file-system-v1/file-system_security_keys.html
-sidebar: rest_api_guide_sidebar
-redirect_from: /rest-api-guide/file-system/file-system_security_keys.html
 deprecated: false
+permalink: /rest-api-guide/filesystem-v1/file-system_security_keys.html
+sidebar: rest_api_guide_sidebar
 ---

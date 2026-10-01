@@ -11,7 +11,7 @@ positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq fs_security_list_keys</code>
   command.
-synopsis: List information for all keys in the file system key store.
+synopsis: List information for all keys in the filesystem key store.
 title: qq fs_security_list_keys
 usage: qq fs_security_list_keys [-h] [--json]
 zendesk_source: qq CLI Command Guide

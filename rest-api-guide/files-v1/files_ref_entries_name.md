@@ -3,12 +3,12 @@ category: /Files V1
 methods:
   delete:
     summary: Delete the link specified by 'name' in the directory specified by 'ref'.
-      The file system object is deleted if this was its last link. This operation
-      is more convenient than 'DELETE /v1/files/<ref>' when the file ID of the directory
+      The filesystem object is deleted if this was its last link. This operation is
+      more convenient than 'DELETE /v1/files/<ref>' when the file ID of the directory
       is known in advance for deleting multiple files in one directory.
     parameters:
     - name: ref
-      description: The file ID or the absolute path to the file system object. File
+      description: The file ID or the absolute path to the filesystem object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.

@@ -24,7 +24,7 @@ methods:
         : {\n            \"description\": \"The access key ID of the S3 credentials\
         \ to use in signed requests.\",\n            \"type\": \"string\"\n      \
         \    },\n          \"owner\": {\n            \"description\": \"The system\
-        \ identity that the requests with the current credentials use for file system\
+        \ identity that the requests with the current credentials use for filesystem\
         \ operations.\",\n            \"type\": \"object\",\n            \"properties\"\
         : {\n              \"domain\": {\n                \"type\": \"string\",\n\
         \                \"enum\": [\n                  \"LOCAL\",\n             \
@@ -68,7 +68,7 @@ methods:
         The access key ID of the S3 credentials to use in signed requests.\",\n  \
         \    \"type\": \"string\"\n    },\n    \"owner\": {\n      \"description\"\
         : \"The system identity which the requests with the current credentials use\
-        \ for file system operations.\",\n      \"type\": \"object\",\n      \"properties\"\
+        \ for filesystem operations.\",\n      \"type\": \"object\",\n      \"properties\"\
         : {\n        \"domain\": {\n          \"type\": \"string\",\n          \"\
         enum\": [\n            \"LOCAL\",\n            \"API_NULL_DOMAIN\",\n    \
         \        \"WORLD\",\n            \"POSIX_USER\",\n            \"POSIX_GROUP\"\

@@ -6,7 +6,7 @@ methods:
       file by using the specified key.
     parameters:
     - name: ref
-      description: The file ID or the absolute path to the file system object. File
+      description: The file ID or the absolute path to the filesystem object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.
@@ -35,7 +35,7 @@ methods:
       the specified key.
     parameters:
     - name: ref
-      description: The file ID or the absolute path to the file system object. File
+      description: The file ID or the absolute path to the filesystem object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.
@@ -59,7 +59,7 @@ methods:
       using the specified key.
     parameters:
     - name: ref
-      description: The file ID or the absolute path to the file system object. File
+      description: The file ID or the absolute path to the filesystem object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.
@@ -88,7 +88,7 @@ methods:
       key and user-defined metadata type.
     parameters:
     - name: ref
-      description: The file ID or the absolute path to the file system object. File
+      description: The file ID or the absolute path to the filesystem object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.

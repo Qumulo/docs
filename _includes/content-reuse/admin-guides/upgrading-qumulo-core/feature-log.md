@@ -9,6 +9,34 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {% capture platUpg %}This release of Qumulo Core is a _platform upgrade_ that requires either a complete reboot (rebooting all nodes in your cluster at the same time) or a rolling reboot (rebooting the nodes in your cluster one at a time).{% endcapture %}
 
 
+## Qumulo Core 7.10.1
+{{ nexusLink }}
+
+{% capture adjInfra %}    <p>For Cloud Native Qumulo (CNQ) clusters that were:</p>
+    <ul>
+      <li><strong>Deployed on Qumulo Core lower than 7.4.3:</strong> If the clusters haven’t undergone a cluster redeployment on Qumulo Core 7.4.3 (or higher), they must complete the cluster redeployment process before upgrading to Qumulo Core 7.10.1 (or higher). This process retains your cluster’s configuration and all data.</li>
+      <li><strong>Deployed or Adjusted Cluster Infrastructure on Qumulo Core 7.4.3 (and higher):</strong> No additional steps are required.</li>
+    </ul>{% endcapture %}
+{{site.data.alerts.important}}
+<ul>
+  <li>To upgrade from Qumulo 7.10.0, the tunable <code>use_openssl_crypto</code> must not be set to <code>true</code>.</li>
+  <li>This release significantly shortens quorum formation time for Cloud Native Qumulo created on Qumulo Core versions lower than 7.10.0 and Stratus Accelerator clusters created on Qumulo Core versions lower than 7.9.2.</li>
+  <li>
+{{ adjInfra }}
+  </li>
+</ul>
+{{site.data.alerts.end}}
+
+* **Cloud Data Fabric (CDF):**
+  * Added a Qumulo Web UI portal management page under **Cluster > Portal**
+  * Updated REST API endpoints and `qq` CLI commands related to portal connectivity, portal quorum events, and listing configuration status for hub portals and spoke portals
+* **Qumulo Authoritative DNS (QDNS):** Configured QDNS to serve DNS records with a customizable TTL value and made a corresponding change to the `qq` CLI
+* **Resolved Issues With:**
+  * Writes to a spoke portal over S3
+  * Deleting a portal relationship with open connections to a directory
+  * Moving IP addresses of a CNQ on Azure cluster
+  * LDAP lookups and distinguished names containing a comma (`,`)
+
 ## Qumulo Core 7.10.0 (Quarterly)
 {{ nexusLink }}
 
@@ -19,11 +47,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
     <p><strong>Upgrade Requirements:</strong> To be able to upgrade your cluster to Qumulo Core 7.10.0, you must ensure that all certificates on your cluster are compliant with FIPS 140-3. Non-compliant certificates can cause error messages beginning with <code>REPLACEMENT_ADVICE</code> or <code>MATCHING_KEY_ADVICE</code>.</p>
   </li>
   <li>
-    <p>For Cloud Native Qumulo (CNQ) clusters that were:</p>
-    <ul>
-      <li><strong>Deployed on Qumulo Core lower than 7.4.3:</strong> If the clusters haven’t undergone a cluster redeployment on Qumulo Core 7.4.3 (or higher), they must complete the cluster redeployment process before upgrading to Qumulo Core 7.10.1 (or higher). This process retains your cluster’s configuration and all data.</li>
-      <li><strong>Deployed or Adjusted Cluster Infrastructure on Qumulo Core 7.4.3 (and higher):</strong> No additional steps are required.</li>
-    </ul>
+{{ adjInfra }}
   </li>
 </ul>
 {{site.data.alerts.end}}

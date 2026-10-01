@@ -100,7 +100,7 @@ methods:
         \ - Rotate encryption keys for clusters with at-rest-encryption,\\n * `PRIVILEGE_FILE_FULL_ACCESS`\
         \ - Provides full access to all files regardless of permissions,\\n * `PRIVILEGE_FILE_READ_ACCESS`\
         \ - Provides read access to all files regardless of permissions,\\n * `PRIVILEGE_FS_ATTRIBUTES_READ`\
-        \ - Read file system statistics,\\n * `PRIVILEGE_FS_DELETE_TREE_READ` - View\
+        \ - Read filesystem statistics,\\n * `PRIVILEGE_FS_DELETE_TREE_READ` - View\
         \ the status of directory tree delete operations,\\n * `PRIVILEGE_FS_DELETE_TREE_WRITE`\
         \ - Use directory tree delete API. Granting this privilege allows the deletion\
         \ of any file or directory on the cluster. File and directory permissions\
@@ -109,57 +109,56 @@ methods:
         \ - Read and list public keys for various FS security features.,\\n * `PRIVILEGE_FS_KEY_MANAGEMENT_WRITE`\
         \ - Create and manage public keys for various FS security features.,\\n *\
         \ `PRIVILEGE_FS_LOCK_READ` - View NLM and SMB locks and waiters,\\n * `PRIVILEGE_FS_LOCK_WRITE`\
-        \ - Release NLM and SMB locks,\\n * `PRIVILEGE_FS_SETTINGS_READ` - View file\
-        \ system permissions settings,\\n * `PRIVILEGE_FS_SETTINGS_WRITE` - Modify\
-        \ file system permissions mode,\\n * `PRIVILEGE_FTP_READ` - View FTP status\
-        \ and settings,\\n * `PRIVILEGE_FTP_WRITE` - Modify FTP status and settings,\\\
-        n * `PRIVILEGE_IDENTITY_CONFIG_READ` - Read and list identity configurations.,\\\
-        n * `PRIVILEGE_IDENTITY_CONFIG_WRITE` - Modify identity configurations.,\\\
-        n * `PRIVILEGE_IDENTITY_MAPPING_READ` - Get AD/LDAP User Defined Mappings,\\\
-        n * `PRIVILEGE_IDENTITY_MAPPING_WRITE` - Set AD/LDAP User Defined Mappings,\\\
-        n * `PRIVILEGE_IDENTITY_READ` - Use Qumulo's identity lookup and translation\
-        \ APIs,\\n * `PRIVILEGE_IDENTITY_WRITE` - Modify identity attributes and clear\
-        \ authentication cache,\\n * `PRIVILEGE_KERBEROS_KEYTAB_READ` - View Kerberos\
-        \ keytab,\\n * `PRIVILEGE_KERBEROS_KEYTAB_WRITE` - Modify Kerberos keytab,\\\
-        n * `PRIVILEGE_KERBEROS_SETTINGS_READ` - Read Kerberos settings,\\n * `PRIVILEGE_KERBEROS_SETTINGS_WRITE`\
-        \ - Modify Kerberos settings,\\n * `PRIVILEGE_KV_READ` - DEPRECATED: Read\
-        \ and delete KV store entries for all users,\\n * `PRIVILEGE_LDAP_READ` -\
-        \ View LDAP settings,\\n * `PRIVILEGE_LDAP_USE` - Use Qumulo's APIs for performing\
-        \ LDAP queries,\\n * `PRIVILEGE_LDAP_WRITE` - Modify LDAP settings,\\n * `PRIVILEGE_LICENSE_READ`\
-        \ - Get the cluster's license status.,\\n * `PRIVILEGE_LOCAL_GROUP_READ` -\
-        \ View local groups and members,\\n * `PRIVILEGE_LOCAL_GROUP_WRITE` - Modify\
-        \ local groups and membership,\\n * `PRIVILEGE_LOCAL_USER_READ` - Get information\
-        \ about local users,\\n * `PRIVILEGE_LOCAL_USER_WRITE` - Create and modify\
-        \ all local users,\\n * `PRIVILEGE_METRICS_CONFIG_READ` - View metrics configuration,\\\
-        n * `PRIVILEGE_METRICS_CONFIG_WRITE` - Modify metrics configuration,\\n *\
-        \ `PRIVILEGE_METRICS_READ` - Get all metrics,\\n * `PRIVILEGE_NETWORK_IP_ALLOCATION_READ`\
-        \ - View network IP address allocations,\\n * `PRIVILEGE_NETWORK_READ` - Read\
-        \ network status and settings,\\n * `PRIVILEGE_NETWORK_WRITE` - Modify network\
-        \ configuration,\\n * `PRIVILEGE_NFS_EXPORT_READ` - View configuration of\
-        \ NFS exports,\\n * `PRIVILEGE_NFS_EXPORT_WRITE` - Create, modify, and delete\
-        \ NFS exports,\\n * `PRIVILEGE_NFS_SETTINGS_READ` - Internal-Only: View NFS\
-        \ server settings,\\n * `PRIVILEGE_NFS_SETTINGS_WRITE` - Internal-Only: Modify\
-        \ NFS server settings,\\n * `PRIVILEGE_OBJECT_STORAGE_CONFIG_READ` - Read\
-        \ object storage config, including store URIs and credentials.,\\n * `PRIVILEGE_OBJECT_STORAGE_CONFIG_WRITE`\
-        \ - Write object storage config, including store URIs and credentials.,\\\
-        n * `PRIVILEGE_OBJECT_STORAGE_URIS_READ` - View the object storage URIs.,\\\
-        n * `PRIVILEGE_OBJECT_STORAGE_URIS_WRITE` - Add new object storage URIs.,\\\
-        n * `PRIVILEGE_PORTAL_GLOBAL_READ` - View global portal settings and status,\\\
-        n * `PRIVILEGE_PORTAL_HUB_READ` - View hub portal relationship status and\
-        \ configuration,\\n * `PRIVILEGE_PORTAL_HUB_WRITE` - Authorize, modify, and\
-        \ delete hub portal relationships. Granting this privilege allows authorizing\
-        \ proposed relationships. Depending on existing file and directory permissions,\
-        \ this privilege can allow remote access to local data under the hub root\
-        \ directory.,\\n * `PRIVILEGE_PORTAL_SPOKE_EVICT` - Remove cached files and\
-        \ directories from a spoke portal. Qumulo Core recaches the removed files\
-        \ or directories upon access.,\\n * `PRIVILEGE_PORTAL_SPOKE_READ` - View spoke\
-        \ portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_SPOKE_WRITE`\
+        \ - Release NLM and SMB locks,\\n * `PRIVILEGE_FS_SETTINGS_READ` - View filesystem\
+        \ permissions settings,\\n * `PRIVILEGE_FS_SETTINGS_WRITE` - Modify filesystem\
+        \ permissions mode,\\n * `PRIVILEGE_FTP_READ` - View FTP status and settings,\\\
+        n * `PRIVILEGE_FTP_WRITE` - Modify FTP status and settings,\\n * `PRIVILEGE_IDENTITY_CONFIG_READ`\
+        \ - Read and list identity configurations.,\\n * `PRIVILEGE_IDENTITY_CONFIG_WRITE`\
+        \ - Modify identity configurations.,\\n * `PRIVILEGE_IDENTITY_MAPPING_READ`\
+        \ - Get AD/LDAP User Defined Mappings,\\n * `PRIVILEGE_IDENTITY_MAPPING_WRITE`\
+        \ - Set AD/LDAP User Defined Mappings,\\n * `PRIVILEGE_IDENTITY_READ` - Use\
+        \ Qumulo's identity lookup and translation APIs,\\n * `PRIVILEGE_IDENTITY_WRITE`\
+        \ - Modify identity attributes and clear authentication cache,\\n * `PRIVILEGE_KERBEROS_KEYTAB_READ`\
+        \ - View Kerberos keytab,\\n * `PRIVILEGE_KERBEROS_KEYTAB_WRITE` - Modify\
+        \ Kerberos keytab,\\n * `PRIVILEGE_KERBEROS_SETTINGS_READ` - Read Kerberos\
+        \ settings,\\n * `PRIVILEGE_KERBEROS_SETTINGS_WRITE` - Modify Kerberos settings,\\\
+        n * `PRIVILEGE_KV_READ` - DEPRECATED: Read and delete KV store entries for\
+        \ all users,\\n * `PRIVILEGE_LDAP_READ` - View LDAP settings,\\n * `PRIVILEGE_LDAP_USE`\
+        \ - Use Qumulo's APIs for performing LDAP queries,\\n * `PRIVILEGE_LDAP_WRITE`\
+        \ - Modify LDAP settings,\\n * `PRIVILEGE_LICENSE_READ` - Get the cluster's\
+        \ license status.,\\n * `PRIVILEGE_LOCAL_GROUP_READ` - View local groups and\
+        \ members,\\n * `PRIVILEGE_LOCAL_GROUP_WRITE` - Modify local groups and membership,\\\
+        n * `PRIVILEGE_LOCAL_USER_READ` - Get information about local users,\\n *\
+        \ `PRIVILEGE_LOCAL_USER_WRITE` - Create and modify all local users,\\n * `PRIVILEGE_METRICS_CONFIG_READ`\
+        \ - View metrics configuration,\\n * `PRIVILEGE_METRICS_CONFIG_WRITE` - Modify\
+        \ metrics configuration,\\n * `PRIVILEGE_METRICS_READ` - Get all metrics,\\\
+        n * `PRIVILEGE_NETWORK_IP_ALLOCATION_READ` - View network IP address allocations,\\\
+        n * `PRIVILEGE_NETWORK_READ` - Read network status and settings,\\n * `PRIVILEGE_NETWORK_WRITE`\
+        \ - Modify network configuration,\\n * `PRIVILEGE_NFS_EXPORT_READ` - View\
+        \ configuration of NFS exports,\\n * `PRIVILEGE_NFS_EXPORT_WRITE` - Create,\
+        \ modify, and delete NFS exports,\\n * `PRIVILEGE_NFS_SETTINGS_READ` - Internal-Only:\
+        \ View NFS server settings,\\n * `PRIVILEGE_NFS_SETTINGS_WRITE` - Internal-Only:\
+        \ Modify NFS server settings,\\n * `PRIVILEGE_OBJECT_STORAGE_CONFIG_READ`\
+        \ - Read object storage config, including store URIs and credentials.,\\n\
+        \ * `PRIVILEGE_OBJECT_STORAGE_CONFIG_WRITE` - Write object storage config,\
+        \ including store URIs and credentials.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_READ`\
+        \ - View the object storage URIs.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_WRITE`\
+        \ - Add new object storage URIs.,\\n * `PRIVILEGE_PORTAL_GLOBAL_READ` - View\
+        \ global portal settings and status,\\n * `PRIVILEGE_PORTAL_HUB_READ` - View\
+        \ hub portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_HUB_WRITE`\
+        \ - Authorize, modify, and delete hub portal relationships. Granting this\
+        \ privilege allows authorizing proposed relationships. Depending on existing\
+        \ file and directory permissions, this privilege can allow remote access to\
+        \ local data under the hub root directory.,\\n * `PRIVILEGE_PORTAL_SPOKE_EVICT`\
+        \ - Remove cached files and directories from a spoke portal. Qumulo Core recaches\
+        \ the removed files or directories upon access.,\\n * `PRIVILEGE_PORTAL_SPOKE_READ`\
+        \ - View spoke portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_SPOKE_WRITE`\
         \ - Create, modify, and delete spoke portal relationships. Granting this privilege\
         \ allows creating spoke portal root directories. Depending on existing file\
         \ permissions, this privilege can allow local access to remote files and directories.,\\\
         n * `PRIVILEGE_POWER_CYCLE` - Shutdown and reboot nodes,\\n * `PRIVILEGE_QUOTA_READ`\
-        \ - View all file system quotas,\\n * `PRIVILEGE_QUOTA_WRITE` - Create, modify,\
-        \ and delete file system quotas,\\n * `PRIVILEGE_REBOOT_READ` - View Reboot\
+        \ - View all filesystem quotas,\\n * `PRIVILEGE_QUOTA_WRITE` - Create, modify,\
+        \ and delete filesystem quotas,\\n * `PRIVILEGE_REBOOT_READ` - View Reboot\
         \ Status,\\n * `PRIVILEGE_REBOOT_USE` - Perform Reboots,\\n * `PRIVILEGE_RECONCILER_READ`\
         \ - View reconciler status and metrics,\\n * `PRIVILEGE_REPLICATION_OBJECT_READ`\
         \ - View object store relationship settings and status,\\n * `PRIVILEGE_REPLICATION_OBJECT_WRITE`\
@@ -320,7 +319,7 @@ methods:
         \ - Rotate encryption keys for clusters with at-rest-encryption,\\n * `PRIVILEGE_FILE_FULL_ACCESS`\
         \ - Provides full access to all files regardless of permissions,\\n * `PRIVILEGE_FILE_READ_ACCESS`\
         \ - Provides read access to all files regardless of permissions,\\n * `PRIVILEGE_FS_ATTRIBUTES_READ`\
-        \ - Read file system statistics,\\n * `PRIVILEGE_FS_DELETE_TREE_READ` - View\
+        \ - Read filesystem statistics,\\n * `PRIVILEGE_FS_DELETE_TREE_READ` - View\
         \ the status of directory tree delete operations,\\n * `PRIVILEGE_FS_DELETE_TREE_WRITE`\
         \ - Use directory tree delete API. Granting this privilege allows the deletion\
         \ of any file or directory on the cluster. File and directory permissions\
@@ -329,57 +328,56 @@ methods:
         \ - Read and list public keys for various FS security features.,\\n * `PRIVILEGE_FS_KEY_MANAGEMENT_WRITE`\
         \ - Create and manage public keys for various FS security features.,\\n *\
         \ `PRIVILEGE_FS_LOCK_READ` - View NLM and SMB locks and waiters,\\n * `PRIVILEGE_FS_LOCK_WRITE`\
-        \ - Release NLM and SMB locks,\\n * `PRIVILEGE_FS_SETTINGS_READ` - View file\
-        \ system permissions settings,\\n * `PRIVILEGE_FS_SETTINGS_WRITE` - Modify\
-        \ file system permissions mode,\\n * `PRIVILEGE_FTP_READ` - View FTP status\
-        \ and settings,\\n * `PRIVILEGE_FTP_WRITE` - Modify FTP status and settings,\\\
-        n * `PRIVILEGE_IDENTITY_CONFIG_READ` - Read and list identity configurations.,\\\
-        n * `PRIVILEGE_IDENTITY_CONFIG_WRITE` - Modify identity configurations.,\\\
-        n * `PRIVILEGE_IDENTITY_MAPPING_READ` - Get AD/LDAP User Defined Mappings,\\\
-        n * `PRIVILEGE_IDENTITY_MAPPING_WRITE` - Set AD/LDAP User Defined Mappings,\\\
-        n * `PRIVILEGE_IDENTITY_READ` - Use Qumulo's identity lookup and translation\
-        \ APIs,\\n * `PRIVILEGE_IDENTITY_WRITE` - Modify identity attributes and clear\
-        \ authentication cache,\\n * `PRIVILEGE_KERBEROS_KEYTAB_READ` - View Kerberos\
-        \ keytab,\\n * `PRIVILEGE_KERBEROS_KEYTAB_WRITE` - Modify Kerberos keytab,\\\
-        n * `PRIVILEGE_KERBEROS_SETTINGS_READ` - Read Kerberos settings,\\n * `PRIVILEGE_KERBEROS_SETTINGS_WRITE`\
-        \ - Modify Kerberos settings,\\n * `PRIVILEGE_KV_READ` - DEPRECATED: Read\
-        \ and delete KV store entries for all users,\\n * `PRIVILEGE_LDAP_READ` -\
-        \ View LDAP settings,\\n * `PRIVILEGE_LDAP_USE` - Use Qumulo's APIs for performing\
-        \ LDAP queries,\\n * `PRIVILEGE_LDAP_WRITE` - Modify LDAP settings,\\n * `PRIVILEGE_LICENSE_READ`\
-        \ - Get the cluster's license status.,\\n * `PRIVILEGE_LOCAL_GROUP_READ` -\
-        \ View local groups and members,\\n * `PRIVILEGE_LOCAL_GROUP_WRITE` - Modify\
-        \ local groups and membership,\\n * `PRIVILEGE_LOCAL_USER_READ` - Get information\
-        \ about local users,\\n * `PRIVILEGE_LOCAL_USER_WRITE` - Create and modify\
-        \ all local users,\\n * `PRIVILEGE_METRICS_CONFIG_READ` - View metrics configuration,\\\
-        n * `PRIVILEGE_METRICS_CONFIG_WRITE` - Modify metrics configuration,\\n *\
-        \ `PRIVILEGE_METRICS_READ` - Get all metrics,\\n * `PRIVILEGE_NETWORK_IP_ALLOCATION_READ`\
-        \ - View network IP address allocations,\\n * `PRIVILEGE_NETWORK_READ` - Read\
-        \ network status and settings,\\n * `PRIVILEGE_NETWORK_WRITE` - Modify network\
-        \ configuration,\\n * `PRIVILEGE_NFS_EXPORT_READ` - View configuration of\
-        \ NFS exports,\\n * `PRIVILEGE_NFS_EXPORT_WRITE` - Create, modify, and delete\
-        \ NFS exports,\\n * `PRIVILEGE_NFS_SETTINGS_READ` - Internal-Only: View NFS\
-        \ server settings,\\n * `PRIVILEGE_NFS_SETTINGS_WRITE` - Internal-Only: Modify\
-        \ NFS server settings,\\n * `PRIVILEGE_OBJECT_STORAGE_CONFIG_READ` - Read\
-        \ object storage config, including store URIs and credentials.,\\n * `PRIVILEGE_OBJECT_STORAGE_CONFIG_WRITE`\
-        \ - Write object storage config, including store URIs and credentials.,\\\
-        n * `PRIVILEGE_OBJECT_STORAGE_URIS_READ` - View the object storage URIs.,\\\
-        n * `PRIVILEGE_OBJECT_STORAGE_URIS_WRITE` - Add new object storage URIs.,\\\
-        n * `PRIVILEGE_PORTAL_GLOBAL_READ` - View global portal settings and status,\\\
-        n * `PRIVILEGE_PORTAL_HUB_READ` - View hub portal relationship status and\
-        \ configuration,\\n * `PRIVILEGE_PORTAL_HUB_WRITE` - Authorize, modify, and\
-        \ delete hub portal relationships. Granting this privilege allows authorizing\
-        \ proposed relationships. Depending on existing file and directory permissions,\
-        \ this privilege can allow remote access to local data under the hub root\
-        \ directory.,\\n * `PRIVILEGE_PORTAL_SPOKE_EVICT` - Remove cached files and\
-        \ directories from a spoke portal. Qumulo Core recaches the removed files\
-        \ or directories upon access.,\\n * `PRIVILEGE_PORTAL_SPOKE_READ` - View spoke\
-        \ portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_SPOKE_WRITE`\
+        \ - Release NLM and SMB locks,\\n * `PRIVILEGE_FS_SETTINGS_READ` - View filesystem\
+        \ permissions settings,\\n * `PRIVILEGE_FS_SETTINGS_WRITE` - Modify filesystem\
+        \ permissions mode,\\n * `PRIVILEGE_FTP_READ` - View FTP status and settings,\\\
+        n * `PRIVILEGE_FTP_WRITE` - Modify FTP status and settings,\\n * `PRIVILEGE_IDENTITY_CONFIG_READ`\
+        \ - Read and list identity configurations.,\\n * `PRIVILEGE_IDENTITY_CONFIG_WRITE`\
+        \ - Modify identity configurations.,\\n * `PRIVILEGE_IDENTITY_MAPPING_READ`\
+        \ - Get AD/LDAP User Defined Mappings,\\n * `PRIVILEGE_IDENTITY_MAPPING_WRITE`\
+        \ - Set AD/LDAP User Defined Mappings,\\n * `PRIVILEGE_IDENTITY_READ` - Use\
+        \ Qumulo's identity lookup and translation APIs,\\n * `PRIVILEGE_IDENTITY_WRITE`\
+        \ - Modify identity attributes and clear authentication cache,\\n * `PRIVILEGE_KERBEROS_KEYTAB_READ`\
+        \ - View Kerberos keytab,\\n * `PRIVILEGE_KERBEROS_KEYTAB_WRITE` - Modify\
+        \ Kerberos keytab,\\n * `PRIVILEGE_KERBEROS_SETTINGS_READ` - Read Kerberos\
+        \ settings,\\n * `PRIVILEGE_KERBEROS_SETTINGS_WRITE` - Modify Kerberos settings,\\\
+        n * `PRIVILEGE_KV_READ` - DEPRECATED: Read and delete KV store entries for\
+        \ all users,\\n * `PRIVILEGE_LDAP_READ` - View LDAP settings,\\n * `PRIVILEGE_LDAP_USE`\
+        \ - Use Qumulo's APIs for performing LDAP queries,\\n * `PRIVILEGE_LDAP_WRITE`\
+        \ - Modify LDAP settings,\\n * `PRIVILEGE_LICENSE_READ` - Get the cluster's\
+        \ license status.,\\n * `PRIVILEGE_LOCAL_GROUP_READ` - View local groups and\
+        \ members,\\n * `PRIVILEGE_LOCAL_GROUP_WRITE` - Modify local groups and membership,\\\
+        n * `PRIVILEGE_LOCAL_USER_READ` - Get information about local users,\\n *\
+        \ `PRIVILEGE_LOCAL_USER_WRITE` - Create and modify all local users,\\n * `PRIVILEGE_METRICS_CONFIG_READ`\
+        \ - View metrics configuration,\\n * `PRIVILEGE_METRICS_CONFIG_WRITE` - Modify\
+        \ metrics configuration,\\n * `PRIVILEGE_METRICS_READ` - Get all metrics,\\\
+        n * `PRIVILEGE_NETWORK_IP_ALLOCATION_READ` - View network IP address allocations,\\\
+        n * `PRIVILEGE_NETWORK_READ` - Read network status and settings,\\n * `PRIVILEGE_NETWORK_WRITE`\
+        \ - Modify network configuration,\\n * `PRIVILEGE_NFS_EXPORT_READ` - View\
+        \ configuration of NFS exports,\\n * `PRIVILEGE_NFS_EXPORT_WRITE` - Create,\
+        \ modify, and delete NFS exports,\\n * `PRIVILEGE_NFS_SETTINGS_READ` - Internal-Only:\
+        \ View NFS server settings,\\n * `PRIVILEGE_NFS_SETTINGS_WRITE` - Internal-Only:\
+        \ Modify NFS server settings,\\n * `PRIVILEGE_OBJECT_STORAGE_CONFIG_READ`\
+        \ - Read object storage config, including store URIs and credentials.,\\n\
+        \ * `PRIVILEGE_OBJECT_STORAGE_CONFIG_WRITE` - Write object storage config,\
+        \ including store URIs and credentials.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_READ`\
+        \ - View the object storage URIs.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_WRITE`\
+        \ - Add new object storage URIs.,\\n * `PRIVILEGE_PORTAL_GLOBAL_READ` - View\
+        \ global portal settings and status,\\n * `PRIVILEGE_PORTAL_HUB_READ` - View\
+        \ hub portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_HUB_WRITE`\
+        \ - Authorize, modify, and delete hub portal relationships. Granting this\
+        \ privilege allows authorizing proposed relationships. Depending on existing\
+        \ file and directory permissions, this privilege can allow remote access to\
+        \ local data under the hub root directory.,\\n * `PRIVILEGE_PORTAL_SPOKE_EVICT`\
+        \ - Remove cached files and directories from a spoke portal. Qumulo Core recaches\
+        \ the removed files or directories upon access.,\\n * `PRIVILEGE_PORTAL_SPOKE_READ`\
+        \ - View spoke portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_SPOKE_WRITE`\
         \ - Create, modify, and delete spoke portal relationships. Granting this privilege\
         \ allows creating spoke portal root directories. Depending on existing file\
         \ permissions, this privilege can allow local access to remote files and directories.,\\\
         n * `PRIVILEGE_POWER_CYCLE` - Shutdown and reboot nodes,\\n * `PRIVILEGE_QUOTA_READ`\
-        \ - View all file system quotas,\\n * `PRIVILEGE_QUOTA_WRITE` - Create, modify,\
-        \ and delete file system quotas,\\n * `PRIVILEGE_REBOOT_READ` - View Reboot\
+        \ - View all filesystem quotas,\\n * `PRIVILEGE_QUOTA_WRITE` - Create, modify,\
+        \ and delete filesystem quotas,\\n * `PRIVILEGE_REBOOT_READ` - View Reboot\
         \ Status,\\n * `PRIVILEGE_REBOOT_USE` - Perform Reboots,\\n * `PRIVILEGE_RECONCILER_READ`\
         \ - View reconciler status and metrics,\\n * `PRIVILEGE_REPLICATION_OBJECT_READ`\
         \ - View object store relationship settings and status,\\n * `PRIVILEGE_REPLICATION_OBJECT_WRITE`\
@@ -537,7 +535,7 @@ methods:
         \ - Rotate encryption keys for clusters with at-rest-encryption,\\n * `PRIVILEGE_FILE_FULL_ACCESS`\
         \ - Provides full access to all files regardless of permissions,\\n * `PRIVILEGE_FILE_READ_ACCESS`\
         \ - Provides read access to all files regardless of permissions,\\n * `PRIVILEGE_FS_ATTRIBUTES_READ`\
-        \ - Read file system statistics,\\n * `PRIVILEGE_FS_DELETE_TREE_READ` - View\
+        \ - Read filesystem statistics,\\n * `PRIVILEGE_FS_DELETE_TREE_READ` - View\
         \ the status of directory tree delete operations,\\n * `PRIVILEGE_FS_DELETE_TREE_WRITE`\
         \ - Use directory tree delete API. Granting this privilege allows the deletion\
         \ of any file or directory on the cluster. File and directory permissions\
@@ -546,57 +544,56 @@ methods:
         \ - Read and list public keys for various FS security features.,\\n * `PRIVILEGE_FS_KEY_MANAGEMENT_WRITE`\
         \ - Create and manage public keys for various FS security features.,\\n *\
         \ `PRIVILEGE_FS_LOCK_READ` - View NLM and SMB locks and waiters,\\n * `PRIVILEGE_FS_LOCK_WRITE`\
-        \ - Release NLM and SMB locks,\\n * `PRIVILEGE_FS_SETTINGS_READ` - View file\
-        \ system permissions settings,\\n * `PRIVILEGE_FS_SETTINGS_WRITE` - Modify\
-        \ file system permissions mode,\\n * `PRIVILEGE_FTP_READ` - View FTP status\
-        \ and settings,\\n * `PRIVILEGE_FTP_WRITE` - Modify FTP status and settings,\\\
-        n * `PRIVILEGE_IDENTITY_CONFIG_READ` - Read and list identity configurations.,\\\
-        n * `PRIVILEGE_IDENTITY_CONFIG_WRITE` - Modify identity configurations.,\\\
-        n * `PRIVILEGE_IDENTITY_MAPPING_READ` - Get AD/LDAP User Defined Mappings,\\\
-        n * `PRIVILEGE_IDENTITY_MAPPING_WRITE` - Set AD/LDAP User Defined Mappings,\\\
-        n * `PRIVILEGE_IDENTITY_READ` - Use Qumulo's identity lookup and translation\
-        \ APIs,\\n * `PRIVILEGE_IDENTITY_WRITE` - Modify identity attributes and clear\
-        \ authentication cache,\\n * `PRIVILEGE_KERBEROS_KEYTAB_READ` - View Kerberos\
-        \ keytab,\\n * `PRIVILEGE_KERBEROS_KEYTAB_WRITE` - Modify Kerberos keytab,\\\
-        n * `PRIVILEGE_KERBEROS_SETTINGS_READ` - Read Kerberos settings,\\n * `PRIVILEGE_KERBEROS_SETTINGS_WRITE`\
-        \ - Modify Kerberos settings,\\n * `PRIVILEGE_KV_READ` - DEPRECATED: Read\
-        \ and delete KV store entries for all users,\\n * `PRIVILEGE_LDAP_READ` -\
-        \ View LDAP settings,\\n * `PRIVILEGE_LDAP_USE` - Use Qumulo's APIs for performing\
-        \ LDAP queries,\\n * `PRIVILEGE_LDAP_WRITE` - Modify LDAP settings,\\n * `PRIVILEGE_LICENSE_READ`\
-        \ - Get the cluster's license status.,\\n * `PRIVILEGE_LOCAL_GROUP_READ` -\
-        \ View local groups and members,\\n * `PRIVILEGE_LOCAL_GROUP_WRITE` - Modify\
-        \ local groups and membership,\\n * `PRIVILEGE_LOCAL_USER_READ` - Get information\
-        \ about local users,\\n * `PRIVILEGE_LOCAL_USER_WRITE` - Create and modify\
-        \ all local users,\\n * `PRIVILEGE_METRICS_CONFIG_READ` - View metrics configuration,\\\
-        n * `PRIVILEGE_METRICS_CONFIG_WRITE` - Modify metrics configuration,\\n *\
-        \ `PRIVILEGE_METRICS_READ` - Get all metrics,\\n * `PRIVILEGE_NETWORK_IP_ALLOCATION_READ`\
-        \ - View network IP address allocations,\\n * `PRIVILEGE_NETWORK_READ` - Read\
-        \ network status and settings,\\n * `PRIVILEGE_NETWORK_WRITE` - Modify network\
-        \ configuration,\\n * `PRIVILEGE_NFS_EXPORT_READ` - View configuration of\
-        \ NFS exports,\\n * `PRIVILEGE_NFS_EXPORT_WRITE` - Create, modify, and delete\
-        \ NFS exports,\\n * `PRIVILEGE_NFS_SETTINGS_READ` - Internal-Only: View NFS\
-        \ server settings,\\n * `PRIVILEGE_NFS_SETTINGS_WRITE` - Internal-Only: Modify\
-        \ NFS server settings,\\n * `PRIVILEGE_OBJECT_STORAGE_CONFIG_READ` - Read\
-        \ object storage config, including store URIs and credentials.,\\n * `PRIVILEGE_OBJECT_STORAGE_CONFIG_WRITE`\
-        \ - Write object storage config, including store URIs and credentials.,\\\
-        n * `PRIVILEGE_OBJECT_STORAGE_URIS_READ` - View the object storage URIs.,\\\
-        n * `PRIVILEGE_OBJECT_STORAGE_URIS_WRITE` - Add new object storage URIs.,\\\
-        n * `PRIVILEGE_PORTAL_GLOBAL_READ` - View global portal settings and status,\\\
-        n * `PRIVILEGE_PORTAL_HUB_READ` - View hub portal relationship status and\
-        \ configuration,\\n * `PRIVILEGE_PORTAL_HUB_WRITE` - Authorize, modify, and\
-        \ delete hub portal relationships. Granting this privilege allows authorizing\
-        \ proposed relationships. Depending on existing file and directory permissions,\
-        \ this privilege can allow remote access to local data under the hub root\
-        \ directory.,\\n * `PRIVILEGE_PORTAL_SPOKE_EVICT` - Remove cached files and\
-        \ directories from a spoke portal. Qumulo Core recaches the removed files\
-        \ or directories upon access.,\\n * `PRIVILEGE_PORTAL_SPOKE_READ` - View spoke\
-        \ portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_SPOKE_WRITE`\
+        \ - Release NLM and SMB locks,\\n * `PRIVILEGE_FS_SETTINGS_READ` - View filesystem\
+        \ permissions settings,\\n * `PRIVILEGE_FS_SETTINGS_WRITE` - Modify filesystem\
+        \ permissions mode,\\n * `PRIVILEGE_FTP_READ` - View FTP status and settings,\\\
+        n * `PRIVILEGE_FTP_WRITE` - Modify FTP status and settings,\\n * `PRIVILEGE_IDENTITY_CONFIG_READ`\
+        \ - Read and list identity configurations.,\\n * `PRIVILEGE_IDENTITY_CONFIG_WRITE`\
+        \ - Modify identity configurations.,\\n * `PRIVILEGE_IDENTITY_MAPPING_READ`\
+        \ - Get AD/LDAP User Defined Mappings,\\n * `PRIVILEGE_IDENTITY_MAPPING_WRITE`\
+        \ - Set AD/LDAP User Defined Mappings,\\n * `PRIVILEGE_IDENTITY_READ` - Use\
+        \ Qumulo's identity lookup and translation APIs,\\n * `PRIVILEGE_IDENTITY_WRITE`\
+        \ - Modify identity attributes and clear authentication cache,\\n * `PRIVILEGE_KERBEROS_KEYTAB_READ`\
+        \ - View Kerberos keytab,\\n * `PRIVILEGE_KERBEROS_KEYTAB_WRITE` - Modify\
+        \ Kerberos keytab,\\n * `PRIVILEGE_KERBEROS_SETTINGS_READ` - Read Kerberos\
+        \ settings,\\n * `PRIVILEGE_KERBEROS_SETTINGS_WRITE` - Modify Kerberos settings,\\\
+        n * `PRIVILEGE_KV_READ` - DEPRECATED: Read and delete KV store entries for\
+        \ all users,\\n * `PRIVILEGE_LDAP_READ` - View LDAP settings,\\n * `PRIVILEGE_LDAP_USE`\
+        \ - Use Qumulo's APIs for performing LDAP queries,\\n * `PRIVILEGE_LDAP_WRITE`\
+        \ - Modify LDAP settings,\\n * `PRIVILEGE_LICENSE_READ` - Get the cluster's\
+        \ license status.,\\n * `PRIVILEGE_LOCAL_GROUP_READ` - View local groups and\
+        \ members,\\n * `PRIVILEGE_LOCAL_GROUP_WRITE` - Modify local groups and membership,\\\
+        n * `PRIVILEGE_LOCAL_USER_READ` - Get information about local users,\\n *\
+        \ `PRIVILEGE_LOCAL_USER_WRITE` - Create and modify all local users,\\n * `PRIVILEGE_METRICS_CONFIG_READ`\
+        \ - View metrics configuration,\\n * `PRIVILEGE_METRICS_CONFIG_WRITE` - Modify\
+        \ metrics configuration,\\n * `PRIVILEGE_METRICS_READ` - Get all metrics,\\\
+        n * `PRIVILEGE_NETWORK_IP_ALLOCATION_READ` - View network IP address allocations,\\\
+        n * `PRIVILEGE_NETWORK_READ` - Read network status and settings,\\n * `PRIVILEGE_NETWORK_WRITE`\
+        \ - Modify network configuration,\\n * `PRIVILEGE_NFS_EXPORT_READ` - View\
+        \ configuration of NFS exports,\\n * `PRIVILEGE_NFS_EXPORT_WRITE` - Create,\
+        \ modify, and delete NFS exports,\\n * `PRIVILEGE_NFS_SETTINGS_READ` - Internal-Only:\
+        \ View NFS server settings,\\n * `PRIVILEGE_NFS_SETTINGS_WRITE` - Internal-Only:\
+        \ Modify NFS server settings,\\n * `PRIVILEGE_OBJECT_STORAGE_CONFIG_READ`\
+        \ - Read object storage config, including store URIs and credentials.,\\n\
+        \ * `PRIVILEGE_OBJECT_STORAGE_CONFIG_WRITE` - Write object storage config,\
+        \ including store URIs and credentials.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_READ`\
+        \ - View the object storage URIs.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_WRITE`\
+        \ - Add new object storage URIs.,\\n * `PRIVILEGE_PORTAL_GLOBAL_READ` - View\
+        \ global portal settings and status,\\n * `PRIVILEGE_PORTAL_HUB_READ` - View\
+        \ hub portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_HUB_WRITE`\
+        \ - Authorize, modify, and delete hub portal relationships. Granting this\
+        \ privilege allows authorizing proposed relationships. Depending on existing\
+        \ file and directory permissions, this privilege can allow remote access to\
+        \ local data under the hub root directory.,\\n * `PRIVILEGE_PORTAL_SPOKE_EVICT`\
+        \ - Remove cached files and directories from a spoke portal. Qumulo Core recaches\
+        \ the removed files or directories upon access.,\\n * `PRIVILEGE_PORTAL_SPOKE_READ`\
+        \ - View spoke portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_SPOKE_WRITE`\
         \ - Create, modify, and delete spoke portal relationships. Granting this privilege\
         \ allows creating spoke portal root directories. Depending on existing file\
         \ permissions, this privilege can allow local access to remote files and directories.,\\\
         n * `PRIVILEGE_POWER_CYCLE` - Shutdown and reboot nodes,\\n * `PRIVILEGE_QUOTA_READ`\
-        \ - View all file system quotas,\\n * `PRIVILEGE_QUOTA_WRITE` - Create, modify,\
-        \ and delete file system quotas,\\n * `PRIVILEGE_REBOOT_READ` - View Reboot\
+        \ - View all filesystem quotas,\\n * `PRIVILEGE_QUOTA_WRITE` - Create, modify,\
+        \ and delete filesystem quotas,\\n * `PRIVILEGE_REBOOT_READ` - View Reboot\
         \ Status,\\n * `PRIVILEGE_REBOOT_USE` - Perform Reboots,\\n * `PRIVILEGE_RECONCILER_READ`\
         \ - View reconciler status and metrics,\\n * `PRIVILEGE_REPLICATION_OBJECT_READ`\
         \ - View object store relationship settings and status,\\n * `PRIVILEGE_REPLICATION_OBJECT_WRITE`\

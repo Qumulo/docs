@@ -17,7 +17,7 @@ sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq fs_security_get_key_usage</code>
   command.
 synopsis: Show information about snapshot and snapshot policy usage for a key from
-  the file system key store.
+  the filesystem key store.
 title: qq fs_security_get_key_usage
 usage: qq fs_security_get_key_usage [-h] -k KEY [--json]
 zendesk_source: qq CLI Command Guide

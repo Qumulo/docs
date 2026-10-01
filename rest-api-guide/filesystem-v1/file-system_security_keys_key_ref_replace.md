@@ -1,8 +1,8 @@
 ---
-category: /File System V1
+category: /Filesystem V1
 methods:
   post:
-    summary: Replace the file system public key by using the name or identifier of
+    summary: Replace the filesystem public key by using the name or identifier of
       the specified key.
     parameters:
     - name: key_ref
@@ -37,8 +37,7 @@ methods:
         \ replacement private key.\",\n      \"type\": \"string\"\n    }\n  }\n}"
 rest_endpoint: /v1/file-system/security/keys/{key_ref}/replace
 api_version: v1
-permalink: /rest-api-guide/file-system-v1/file-system_security_keys_key_ref_replace.html
-sidebar: rest_api_guide_sidebar
-redirect_from: /rest-api-guide/file-system/file-system_security_keys_key_ref_replace.html
 deprecated: false
+permalink: /rest-api-guide/filesystem-v1/file-system_security_keys_key_ref_replace.html
+sidebar: rest_api_guide_sidebar
 ---

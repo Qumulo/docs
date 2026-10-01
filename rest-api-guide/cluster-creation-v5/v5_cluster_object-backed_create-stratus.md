@@ -42,8 +42,8 @@ methods:
         \      }\n      }\n    },\n    \"admin_password\": {\n      \"description\"\
         : \"The administrator password\",\n      \"type\": \"string\",\n      \"format\"\
         : \"password\"\n    },\n    \"usable_capacity\": {\n      \"description\"\
-        : \"File system usable capacity in bytes\",\n      \"type\": \"string\"\n\
-        \    },\n    \"object_store_uris\": {\n      \"type\": \"array\",\n      \"\
+        : \"Filesystem usable capacity in bytes\",\n      \"type\": \"string\"\n \
+        \   },\n    \"object_store_uris\": {\n      \"type\": \"array\",\n      \"\
         items\": {\n        \"description\": \"URI(s) of the object store(s) to be\
         \ used by this tenant cluster\",\n        \"type\": \"string\"\n      }\n\
         \    },\n    \"object_store_credentials\": {\n      \"type\": \"array\",\n\

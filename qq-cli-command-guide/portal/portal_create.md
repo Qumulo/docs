@@ -19,17 +19,17 @@ optional_options:
   name: -j
   required: false
 - alternate:
-  - --read-only-spoke
-  help: Create a read-only spoke portal. Read-only spoke portals prevent users from
-    creating or modifying files or directories under the hub portal root directory.
-    To make the spoke portal writable later, run `portal_modify_hub --make-read-write`
-    on the hub cluster.
-  name: -r
-  required: false
-- alternate:
   - --no-paths
   help: Do not attempt to resolve file IDs present on the local cluster to paths.
   name: -n
+  required: false
+- alternate:
+  - --read-only-spoke
+  help: Create a read-only spoke portal. Read-only spoke portals prevent users from
+    creating or modifying files or directories under the hub portal root directory.
+    To make the spoke portal writable later, run `portal_modify_hub --type read-write`
+    on the hub cluster.
+  name: -r
   required: false
 - alternate:
   - --hub-hosts
@@ -61,7 +61,7 @@ synopsis: Create a spoke portal on the current cluster and propose a hub portal 
   another cluster
 title: qq portal_create
 usage: qq portal_create [-h] [--spoke-root SPOKE_ROOT] [--hub-root HUB_ROOT] [-j]
-  [-r] [-n] (-m HUB_HOSTS | -a HUB_ADDRESS) [-p HUB_PORT]
+  [-n] [-r] (-m HUB_HOSTS | -a HUB_ADDRESS) [-p HUB_PORT]
 zendesk_source: qq CLI Command Guide
 
 ---

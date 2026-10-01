@@ -120,19 +120,19 @@ methods:
         \ to this share to be encrypted. Clients without encryption capabilities will\
         \ not be able to connect. Default is false if this field is empty.\",\n  \
         \    \"type\": \"boolean\"\n    },\n    \"allow_fs_path_create\": {\n    \
-        \  \"description\": \"If true, the server will create the file system path\
-        \ for the share if it does not already exist. If false, the file system path\
+        \  \"description\": \"If true, the server will create the filesystem path\
+        \ for the share if it does not already exist. If false, the filesystem path\
         \ must already exist. Default is false if this field is empty.\",\n      \"\
         type\": \"boolean\"\n    },\n    \"expand_fs_path_variables\": {\n      \"\
-        description\": \"If true, the server will expand %U variables in the file\
-        \ system path to username. Default is false if this field is empty.\",\n \
-        \     \"type\": \"boolean\"\n    },\n    \"offline_files_caching_mode\": {\n\
-        \      \"type\": \"string\",\n      \"enum\": [\n        \"NO_CACHING\",\n\
-        \        \"MANUAL_CACHING\",\n        \"AUTOMATIC_CACHING\"\n      ],\n  \
-        \    \"description\": \"Offline-files caching mode advertised to SMB clients:\
-        \ \\\"no_caching\\\" (no caching, the default), \\\"manual_caching\\\" (cache\
-        \ files the user designates as offline-available), or \\\"automatic_caching\\\
-        \" (cache files as they are opened).:\\n * `AUTOMATIC_CACHING` - SMB_OFFLINE_FILES_CACHING_MODE_AUTOMATIC_CACHING,\\\
+        description\": \"If true, the server will expand %U variables in the filesystem\
+        \ path to username. Default is false if this field is empty.\",\n      \"\
+        type\": \"boolean\"\n    },\n    \"offline_files_caching_mode\": {\n     \
+        \ \"type\": \"string\",\n      \"enum\": [\n        \"NO_CACHING\",\n    \
+        \    \"MANUAL_CACHING\",\n        \"AUTOMATIC_CACHING\"\n      ],\n      \"\
+        description\": \"Offline-files caching mode advertised to SMB clients: \\\"\
+        no_caching\\\" (no caching, the default), \\\"manual_caching\\\" (cache files\
+        \ the user designates as offline-available), or \\\"automatic_caching\\\"\
+        \ (cache files as they are opened).:\\n * `AUTOMATIC_CACHING` - SMB_OFFLINE_FILES_CACHING_MODE_AUTOMATIC_CACHING,\\\
         n * `MANUAL_CACHING` - SMB_OFFLINE_FILES_CACHING_MODE_MANUAL_CACHING,\\n *\
         \ `NO_CACHING` - SMB_OFFLINE_FILES_CACHING_MODE_NO_CACHING\"\n    }\n  }\n\
         }"
@@ -261,19 +261,19 @@ methods:
         \ to this share to be encrypted. Clients without encryption capabilities will\
         \ not be able to connect. Default is false if this field is empty.\",\n  \
         \    \"type\": \"boolean\"\n    },\n    \"allow_fs_path_create\": {\n    \
-        \  \"description\": \"If true, the server will create the file system path\
-        \ for the share if it does not already exist. If false, the file system path\
+        \  \"description\": \"If true, the server will create the filesystem path\
+        \ for the share if it does not already exist. If false, the filesystem path\
         \ must already exist. Default is false if this field is empty.\",\n      \"\
         type\": \"boolean\"\n    },\n    \"expand_fs_path_variables\": {\n      \"\
-        description\": \"If true, the server will expand %U variables in the file\
-        \ system path to username. Default is false if this field is empty.\",\n \
-        \     \"type\": \"boolean\"\n    },\n    \"offline_files_caching_mode\": {\n\
-        \      \"type\": \"string\",\n      \"enum\": [\n        \"NO_CACHING\",\n\
-        \        \"MANUAL_CACHING\",\n        \"AUTOMATIC_CACHING\"\n      ],\n  \
-        \    \"description\": \"Offline-files caching mode advertised to SMB clients:\
-        \ \\\"no_caching\\\" (no caching, the default), \\\"manual_caching\\\" (cache\
-        \ files the user designates as offline-available), or \\\"automatic_caching\\\
-        \" (cache files as they are opened).:\\n * `AUTOMATIC_CACHING` - SMB_OFFLINE_FILES_CACHING_MODE_AUTOMATIC_CACHING,\\\
+        description\": \"If true, the server will expand %U variables in the filesystem\
+        \ path to username. Default is false if this field is empty.\",\n      \"\
+        type\": \"boolean\"\n    },\n    \"offline_files_caching_mode\": {\n     \
+        \ \"type\": \"string\",\n      \"enum\": [\n        \"NO_CACHING\",\n    \
+        \    \"MANUAL_CACHING\",\n        \"AUTOMATIC_CACHING\"\n      ],\n      \"\
+        description\": \"Offline-files caching mode advertised to SMB clients: \\\"\
+        no_caching\\\" (no caching, the default), \\\"manual_caching\\\" (cache files\
+        \ the user designates as offline-available), or \\\"automatic_caching\\\"\
+        \ (cache files as they are opened).:\\n * `AUTOMATIC_CACHING` - SMB_OFFLINE_FILES_CACHING_MODE_AUTOMATIC_CACHING,\\\
         n * `MANUAL_CACHING` - SMB_OFFLINE_FILES_CACHING_MODE_MANUAL_CACHING,\\n *\
         \ `NO_CACHING` - SMB_OFFLINE_FILES_CACHING_MODE_NO_CACHING\"\n    }\n  }\n\
         }"
@@ -335,19 +335,22 @@ methods:
         \         \"EXECUTE\",\n                \"MODIFY\",\n                \"EXTEND\"\
         ,\n                \"DELETE_CHILD\",\n                \"SYNCHRONIZE\",\n \
         \               \"READ\",\n                \"WRITE\",\n                \"\
-        CHANGE_PERMISSIONS\"\n              ],\n              \"description\": \"\
-        Rights pertaining to the permissions entry:\\n * `CHANGE_OWNER` - Owner write\
-        \ access,\\n * `CHANGE_PERMISSIONS` - Rights to change permissions on file\
-        \ objects,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete from\
-        \ directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` - File\
-        \ extension access,\\n * `MODIFY` - File modification access,\\n * `READ`\
-        \ - Read access rights,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR`\
-        \ - Attribute read access,\\n * `READ_DATA` - File read access,\\n * `READ_EA`\
-        \ - Extended attribute read access,\\n * `SYNCHRONIZE` - File synchronize\
-        \ access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL` - ACL write\
-        \ access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA` - Extended\
-        \ attribute write access,\\n * `WRITE_GROUP` - Group write access\"\n    \
-        \        }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
+        CHANGE_PERMISSIONS\",\n                \"ADD_FILE\",\n                \"ADD_SUBDIR\"\
+        ,\n                \"ALL\",\n                \"NONE\"\n              ],\n\
+        \              \"description\": \"Rights pertaining to the permissions entry:\\\
+        n * `ADD_FILE` - Alias for MODIFY,\\n * `ADD_SUBDIR` - Alias for EXTEND,\\\
+        n * `ALL` - READ, WRITE, and CHANGE_PERMISSIONS,\\n * `CHANGE_OWNER` - Owner\
+        \ write access,\\n * `CHANGE_PERMISSIONS` - Rights to change permissions on\
+        \ file objects,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete\
+        \ from directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` -\
+        \ File extension access,\\n * `MODIFY` - File modification access,\\n * `NONE`\
+        \ - No rights,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read\
+        \ access,\\n * `READ_ATTR` - Attribute read access,\\n * `READ_DATA` - File\
+        \ read access,\\n * `READ_EA` - Extended attribute read access,\\n * `SYNCHRONIZE`\
+        \ - File synchronize access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL`\
+        \ - ACL write access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA`\
+        \ - Extended attribute write access,\\n * `WRITE_GROUP` - Group write access\"\
+        \n            }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"The network access control list (ACL) for this SMB share. If not specified,\
         \ the default is to allow any host.\",\n        \"type\": \"object\",\n  \
@@ -369,22 +372,26 @@ methods:
         ,\n                \"DELETE\",\n                \"EXECUTE\",\n           \
         \     \"MODIFY\",\n                \"EXTEND\",\n                \"DELETE_CHILD\"\
         ,\n                \"SYNCHRONIZE\",\n                \"READ\",\n         \
-        \       \"WRITE\",\n                \"CHANGE_PERMISSIONS\"\n             \
-        \ ],\n              \"description\": \"Rights pertaining to the permissions\
-        \ entry:\\n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS`\
+        \       \"WRITE\",\n                \"CHANGE_PERMISSIONS\",\n            \
+        \    \"ADD_FILE\",\n                \"ADD_SUBDIR\",\n                \"ALL\"\
+        ,\n                \"NONE\"\n              ],\n              \"description\"\
+        : \"Rights pertaining to the permissions entry:\\n * `ADD_FILE` - Alias for\
+        \ MODIFY,\\n * `ADD_SUBDIR` - Alias for EXTEND,\\n * `ALL` - READ, WRITE,\
+        \ and CHANGE_PERMISSIONS,\\n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS`\
         \ - Rights to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
         n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
         \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
-        \ access,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read access,\\\
-        n * `READ_ATTR` - Attribute read access,\\n * `READ_DATA` - File read access,\\\
-        n * `READ_EA` - Extended attribute read access,\\n * `SYNCHRONIZE` - File\
-        \ synchronize access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL`\
-        \ - ACL write access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA`\
-        \ - Extended attribute write access,\\n * `WRITE_GROUP` - Group write access\"\
-        \n            }\n          }\n        }\n      }\n    },\n    \"access_based_enumeration_enabled\"\
-        : {\n      \"description\": \"Enable Access-based Enumeration on this SMB\
-        \ share\",\n      \"type\": \"boolean\"\n    },\n    \"default_file_create_mode\"\
-        : {\n      \"description\": \"Default POSIX file create mode bits on this\
+        \ access,\\n * `NONE` - No rights,\\n * `READ` - Read access rights,\\n *\
+        \ `READ_ACL` - ACL read access,\\n * `READ_ATTR` - Attribute read access,\\\
+        n * `READ_DATA` - File read access,\\n * `READ_EA` - Extended attribute read\
+        \ access,\\n * `SYNCHRONIZE` - File synchronize access,\\n * `WRITE` - Write\
+        \ access rights,\\n * `WRITE_ACL` - ACL write access,\\n * `WRITE_ATTR` -\
+        \ Attribute write access,\\n * `WRITE_EA` - Extended attribute write access,\\\
+        n * `WRITE_GROUP` - Group write access\"\n            }\n          }\n   \
+        \     }\n      }\n    },\n    \"access_based_enumeration_enabled\": {\n  \
+        \    \"description\": \"Enable Access-based Enumeration on this SMB share\"\
+        ,\n      \"type\": \"boolean\"\n    },\n    \"default_file_create_mode\":\
+        \ {\n      \"description\": \"Default POSIX file create mode bits on this\
         \ SMB share (octal, default 0644 if this field is empty)\",\n      \"type\"\
         : \"string\"\n    },\n    \"default_directory_create_mode\": {\n      \"description\"\
         : \"Default POSIX directory create mode bits on this SMB share (octal, default\
@@ -393,19 +400,19 @@ methods:
         \ to this share to be encrypted. Clients without encryption capabilities will\
         \ not be able to connect. Default is false if this field is empty.\",\n  \
         \    \"type\": \"boolean\"\n    },\n    \"allow_fs_path_create\": {\n    \
-        \  \"description\": \"If true, the server will create the file system path\
-        \ for the share if it does not already exist. If false, the file system path\
+        \  \"description\": \"If true, the server will create the filesystem path\
+        \ for the share if it does not already exist. If false, the filesystem path\
         \ must already exist. Default is false if this field is empty.\",\n      \"\
         type\": \"boolean\"\n    },\n    \"expand_fs_path_variables\": {\n      \"\
-        description\": \"If true, the server will expand %U variables in the file\
-        \ system path to username. Default is false if this field is empty.\",\n \
-        \     \"type\": \"boolean\"\n    },\n    \"offline_files_caching_mode\": {\n\
-        \      \"type\": \"string\",\n      \"enum\": [\n        \"NO_CACHING\",\n\
-        \        \"MANUAL_CACHING\",\n        \"AUTOMATIC_CACHING\"\n      ],\n  \
-        \    \"description\": \"Offline-files caching mode advertised to SMB clients:\
-        \ \\\"no_caching\\\" (no caching, the default), \\\"manual_caching\\\" (cache\
-        \ files the user designates as offline-available), or \\\"automatic_caching\\\
-        \" (cache files as they are opened).:\\n * `AUTOMATIC_CACHING` - SMB_OFFLINE_FILES_CACHING_MODE_AUTOMATIC_CACHING,\\\
+        description\": \"If true, the server will expand %U variables in the filesystem\
+        \ path to username. Default is false if this field is empty.\",\n      \"\
+        type\": \"boolean\"\n    },\n    \"offline_files_caching_mode\": {\n     \
+        \ \"type\": \"string\",\n      \"enum\": [\n        \"NO_CACHING\",\n    \
+        \    \"MANUAL_CACHING\",\n        \"AUTOMATIC_CACHING\"\n      ],\n      \"\
+        description\": \"Offline-files caching mode advertised to SMB clients: \\\"\
+        no_caching\\\" (no caching, the default), \\\"manual_caching\\\" (cache files\
+        \ the user designates as offline-available), or \\\"automatic_caching\\\"\
+        \ (cache files as they are opened).:\\n * `AUTOMATIC_CACHING` - SMB_OFFLINE_FILES_CACHING_MODE_AUTOMATIC_CACHING,\\\
         n * `MANUAL_CACHING` - SMB_OFFLINE_FILES_CACHING_MODE_MANUAL_CACHING,\\n *\
         \ `NO_CACHING` - SMB_OFFLINE_FILES_CACHING_MODE_NO_CACHING\"\n    }\n  }\n\
         }"
@@ -530,19 +537,19 @@ methods:
         \ to this share to be encrypted. Clients without encryption capabilities will\
         \ not be able to connect. Default is false if this field is empty.\",\n  \
         \    \"type\": \"boolean\"\n    },\n    \"allow_fs_path_create\": {\n    \
-        \  \"description\": \"If true, the server will create the file system path\
-        \ for the share if it does not already exist. If false, the file system path\
+        \  \"description\": \"If true, the server will create the filesystem path\
+        \ for the share if it does not already exist. If false, the filesystem path\
         \ must already exist. Default is false if this field is empty.\",\n      \"\
         type\": \"boolean\"\n    },\n    \"expand_fs_path_variables\": {\n      \"\
-        description\": \"If true, the server will expand %U variables in the file\
-        \ system path to username. Default is false if this field is empty.\",\n \
-        \     \"type\": \"boolean\"\n    },\n    \"offline_files_caching_mode\": {\n\
-        \      \"type\": \"string\",\n      \"enum\": [\n        \"NO_CACHING\",\n\
-        \        \"MANUAL_CACHING\",\n        \"AUTOMATIC_CACHING\"\n      ],\n  \
-        \    \"description\": \"Offline-files caching mode advertised to SMB clients:\
-        \ \\\"no_caching\\\" (no caching, the default), \\\"manual_caching\\\" (cache\
-        \ files the user designates as offline-available), or \\\"automatic_caching\\\
-        \" (cache files as they are opened).:\\n * `AUTOMATIC_CACHING` - SMB_OFFLINE_FILES_CACHING_MODE_AUTOMATIC_CACHING,\\\
+        description\": \"If true, the server will expand %U variables in the filesystem\
+        \ path to username. Default is false if this field is empty.\",\n      \"\
+        type\": \"boolean\"\n    },\n    \"offline_files_caching_mode\": {\n     \
+        \ \"type\": \"string\",\n      \"enum\": [\n        \"NO_CACHING\",\n    \
+        \    \"MANUAL_CACHING\",\n        \"AUTOMATIC_CACHING\"\n      ],\n      \"\
+        description\": \"Offline-files caching mode advertised to SMB clients: \\\"\
+        no_caching\\\" (no caching, the default), \\\"manual_caching\\\" (cache files\
+        \ the user designates as offline-available), or \\\"automatic_caching\\\"\
+        \ (cache files as they are opened).:\\n * `AUTOMATIC_CACHING` - SMB_OFFLINE_FILES_CACHING_MODE_AUTOMATIC_CACHING,\\\
         n * `MANUAL_CACHING` - SMB_OFFLINE_FILES_CACHING_MODE_MANUAL_CACHING,\\n *\
         \ `NO_CACHING` - SMB_OFFLINE_FILES_CACHING_MODE_NO_CACHING\"\n    }\n  }\n\
         }"
@@ -604,19 +611,22 @@ methods:
         \         \"EXECUTE\",\n                \"MODIFY\",\n                \"EXTEND\"\
         ,\n                \"DELETE_CHILD\",\n                \"SYNCHRONIZE\",\n \
         \               \"READ\",\n                \"WRITE\",\n                \"\
-        CHANGE_PERMISSIONS\"\n              ],\n              \"description\": \"\
-        Rights pertaining to the permissions entry:\\n * `CHANGE_OWNER` - Owner write\
-        \ access,\\n * `CHANGE_PERMISSIONS` - Rights to change permissions on file\
-        \ objects,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete from\
-        \ directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` - File\
-        \ extension access,\\n * `MODIFY` - File modification access,\\n * `READ`\
-        \ - Read access rights,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR`\
-        \ - Attribute read access,\\n * `READ_DATA` - File read access,\\n * `READ_EA`\
-        \ - Extended attribute read access,\\n * `SYNCHRONIZE` - File synchronize\
-        \ access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL` - ACL write\
-        \ access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA` - Extended\
-        \ attribute write access,\\n * `WRITE_GROUP` - Group write access\"\n    \
-        \        }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
+        CHANGE_PERMISSIONS\",\n                \"ADD_FILE\",\n                \"ADD_SUBDIR\"\
+        ,\n                \"ALL\",\n                \"NONE\"\n              ],\n\
+        \              \"description\": \"Rights pertaining to the permissions entry:\\\
+        n * `ADD_FILE` - Alias for MODIFY,\\n * `ADD_SUBDIR` - Alias for EXTEND,\\\
+        n * `ALL` - READ, WRITE, and CHANGE_PERMISSIONS,\\n * `CHANGE_OWNER` - Owner\
+        \ write access,\\n * `CHANGE_PERMISSIONS` - Rights to change permissions on\
+        \ file objects,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete\
+        \ from directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` -\
+        \ File extension access,\\n * `MODIFY` - File modification access,\\n * `NONE`\
+        \ - No rights,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read\
+        \ access,\\n * `READ_ATTR` - Attribute read access,\\n * `READ_DATA` - File\
+        \ read access,\\n * `READ_EA` - Extended attribute read access,\\n * `SYNCHRONIZE`\
+        \ - File synchronize access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL`\
+        \ - ACL write access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA`\
+        \ - Extended attribute write access,\\n * `WRITE_GROUP` - Group write access\"\
+        \n            }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"The network access control list (ACL) for this SMB share. If not specified,\
         \ the default is to allow any host.\",\n        \"type\": \"object\",\n  \
@@ -638,22 +648,26 @@ methods:
         ,\n                \"DELETE\",\n                \"EXECUTE\",\n           \
         \     \"MODIFY\",\n                \"EXTEND\",\n                \"DELETE_CHILD\"\
         ,\n                \"SYNCHRONIZE\",\n                \"READ\",\n         \
-        \       \"WRITE\",\n                \"CHANGE_PERMISSIONS\"\n             \
-        \ ],\n              \"description\": \"Rights pertaining to the permissions\
-        \ entry:\\n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS`\
+        \       \"WRITE\",\n                \"CHANGE_PERMISSIONS\",\n            \
+        \    \"ADD_FILE\",\n                \"ADD_SUBDIR\",\n                \"ALL\"\
+        ,\n                \"NONE\"\n              ],\n              \"description\"\
+        : \"Rights pertaining to the permissions entry:\\n * `ADD_FILE` - Alias for\
+        \ MODIFY,\\n * `ADD_SUBDIR` - Alias for EXTEND,\\n * `ALL` - READ, WRITE,\
+        \ and CHANGE_PERMISSIONS,\\n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS`\
         \ - Rights to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
         n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
         \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
-        \ access,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read access,\\\
-        n * `READ_ATTR` - Attribute read access,\\n * `READ_DATA` - File read access,\\\
-        n * `READ_EA` - Extended attribute read access,\\n * `SYNCHRONIZE` - File\
-        \ synchronize access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL`\
-        \ - ACL write access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA`\
-        \ - Extended attribute write access,\\n * `WRITE_GROUP` - Group write access\"\
-        \n            }\n          }\n        }\n      }\n    },\n    \"access_based_enumeration_enabled\"\
-        : {\n      \"description\": \"Enable Access-based Enumeration on this SMB\
-        \ share\",\n      \"type\": \"boolean\"\n    },\n    \"default_file_create_mode\"\
-        : {\n      \"description\": \"Default POSIX file create mode bits on this\
+        \ access,\\n * `NONE` - No rights,\\n * `READ` - Read access rights,\\n *\
+        \ `READ_ACL` - ACL read access,\\n * `READ_ATTR` - Attribute read access,\\\
+        n * `READ_DATA` - File read access,\\n * `READ_EA` - Extended attribute read\
+        \ access,\\n * `SYNCHRONIZE` - File synchronize access,\\n * `WRITE` - Write\
+        \ access rights,\\n * `WRITE_ACL` - ACL write access,\\n * `WRITE_ATTR` -\
+        \ Attribute write access,\\n * `WRITE_EA` - Extended attribute write access,\\\
+        n * `WRITE_GROUP` - Group write access\"\n            }\n          }\n   \
+        \     }\n      }\n    },\n    \"access_based_enumeration_enabled\": {\n  \
+        \    \"description\": \"Enable Access-based Enumeration on this SMB share\"\
+        ,\n      \"type\": \"boolean\"\n    },\n    \"default_file_create_mode\":\
+        \ {\n      \"description\": \"Default POSIX file create mode bits on this\
         \ SMB share (octal, default 0644 if this field is empty)\",\n      \"type\"\
         : \"string\"\n    },\n    \"default_directory_create_mode\": {\n      \"description\"\
         : \"Default POSIX directory create mode bits on this SMB share (octal, default\
@@ -662,19 +676,19 @@ methods:
         \ to this share to be encrypted. Clients without encryption capabilities will\
         \ not be able to connect. Default is false if this field is empty.\",\n  \
         \    \"type\": \"boolean\"\n    },\n    \"allow_fs_path_create\": {\n    \
-        \  \"description\": \"If true, the server will create the file system path\
-        \ for the share if it does not already exist. If false, the file system path\
+        \  \"description\": \"If true, the server will create the filesystem path\
+        \ for the share if it does not already exist. If false, the filesystem path\
         \ must already exist. Default is false if this field is empty.\",\n      \"\
         type\": \"boolean\"\n    },\n    \"expand_fs_path_variables\": {\n      \"\
-        description\": \"If true, the server will expand %U variables in the file\
-        \ system path to username. Default is false if this field is empty.\",\n \
-        \     \"type\": \"boolean\"\n    },\n    \"offline_files_caching_mode\": {\n\
-        \      \"type\": \"string\",\n      \"enum\": [\n        \"NO_CACHING\",\n\
-        \        \"MANUAL_CACHING\",\n        \"AUTOMATIC_CACHING\"\n      ],\n  \
-        \    \"description\": \"Offline-files caching mode advertised to SMB clients:\
-        \ \\\"no_caching\\\" (no caching, the default), \\\"manual_caching\\\" (cache\
-        \ files the user designates as offline-available), or \\\"automatic_caching\\\
-        \" (cache files as they are opened).:\\n * `AUTOMATIC_CACHING` - SMB_OFFLINE_FILES_CACHING_MODE_AUTOMATIC_CACHING,\\\
+        description\": \"If true, the server will expand %U variables in the filesystem\
+        \ path to username. Default is false if this field is empty.\",\n      \"\
+        type\": \"boolean\"\n    },\n    \"offline_files_caching_mode\": {\n     \
+        \ \"type\": \"string\",\n      \"enum\": [\n        \"NO_CACHING\",\n    \
+        \    \"MANUAL_CACHING\",\n        \"AUTOMATIC_CACHING\"\n      ],\n      \"\
+        description\": \"Offline-files caching mode advertised to SMB clients: \\\"\
+        no_caching\\\" (no caching, the default), \\\"manual_caching\\\" (cache files\
+        \ the user designates as offline-available), or \\\"automatic_caching\\\"\
+        \ (cache files as they are opened).:\\n * `AUTOMATIC_CACHING` - SMB_OFFLINE_FILES_CACHING_MODE_AUTOMATIC_CACHING,\\\
         n * `MANUAL_CACHING` - SMB_OFFLINE_FILES_CACHING_MODE_MANUAL_CACHING,\\n *\
         \ `NO_CACHING` - SMB_OFFLINE_FILES_CACHING_MODE_NO_CACHING\"\n    }\n  }\n\
         }"

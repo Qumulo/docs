@@ -37,9 +37,11 @@ optional_options:
   name: --admin-pbkdf2-num-iterations
   required: false
 - alternate: []
-  help: "Cluster node UUIDs and fault domains.  For each node, specify comma-separated\n\
-    \                tuple of (UUID, fault domain ID).  To create a cluster without\
-    \ fault domains,\n                specify None for the fault domain IDs."
+  help: 'Cluster node UUIDs and fault domains.  For each node, specify comma-separated
+
+    tuple of (UUID, fault domain ID).  To create a cluster without fault domains,
+
+    specify None for the fault domain IDs.'
   name: --node-uuids-and-fault-domains
   required: false
 - alternate: []
@@ -56,9 +58,12 @@ optional_options:
   name: --object-store-uris
   required: true
 - alternate: []
-  help: "Object store credentials for all object stores referenced by the URIs.  For\
-    \ each\n                unique store name, specify comma-separated tuple of (store\
-    \ name, acces key ID,\n                secret access key)."
+  help: 'Object store credentials for all object stores referenced by the URIs.  For
+    each
+
+    unique store name, specify comma-separated tuple of (store name, acces key ID,
+
+    secret access key).'
   name: --object-store-credentials
   required: false
 permalink: /qq-cli-command-guide/stratus/stratus_cluster_create.html

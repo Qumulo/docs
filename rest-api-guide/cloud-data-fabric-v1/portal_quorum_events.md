@@ -23,8 +23,9 @@ methods:
     - name: node-id
       description: Only return events recorded by this node.
       required: false
-    - name: fs-id
-      description: Only return events for this file system.
+    - name: filesystem-uuid
+      description: Only return events for the filesystem with this UUID, as reported
+        by the filesystem_uuid of a hub or spoke portal.
       required: false
     - name: limit
       description: Maximum entries returned, oldest first. Defaults to 1000.
@@ -47,27 +48,35 @@ methods:
         : \"object\",\n            \"properties\": {\n              \"portal_quorum_seq\"\
         : {\n                \"description\": \"portal_quorum_seq\",\n           \
         \     \"type\": \"string\"\n              }\n            }\n          },\n\
-        \          \"fs_id\": {\n            \"description\": \"File system the portal\
-        \ quorum serves\",\n            \"type\": \"number\"\n          },\n     \
-        \     \"total_clusters\": {\n            \"description\": \"Total clusters\
-        \ this node knows about, in quorum or not\",\n            \"type\": \"number\"\
-        \n          },\n          \"missing_clusters\": {\n            \"type\": \"\
-        array\",\n            \"items\": {\n              \"description\": \"Cluster\
-        \ UUIDs missing from the portal quorum\",\n              \"type\": \"string\"\
-        \n            }\n          },\n          \"end_reason\": {\n            \"\
-        description\": \"Why the portal quorum was abandoned; abandon events only\"\
-        ,\n            \"type\": \"string\"\n          },\n          \"uptime\": {\n\
-        \            \"description\": \"Seconds the portal quorum was active; abandon\
-        \ events only\",\n            \"type\": \"number\"\n          },\n       \
-        \   \"downtime\": {\n            \"description\": \"Seconds since the previous\
-        \ portal quorum abandoned; success events only\",\n            \"type\": \"\
-        number\"\n          },\n          \"formation_time\": {\n            \"description\"\
-        : \"Seconds this node spent starting; success events only\",\n           \
-        \ \"type\": \"number\"\n          }\n        }\n      }\n    },\n    \"nodes_queried\"\
-        : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
-        : \"Nodes whose event logs contributed; nodes outside cluster quorum are absent\
-        \ and their events are unavailable until they rejoin\",\n        \"type\"\
-        : \"number\"\n      }\n    }\n  }\n}"
+        \          \"filesystem_uuid\": {\n            \"description\": \"UUID of\
+        \ the filesystem the portal quorum serves\",\n            \"type\": \"string\"\
+        \n          },\n          \"total_clusters\": {\n            \"description\"\
+        : \"Total clusters this node knows about, in quorum or not\",\n          \
+        \  \"type\": \"number\"\n          },\n          \"missing_clusters\": {\n\
+        \            \"type\": \"array\",\n            \"items\": {\n            \
+        \  \"description\": \"Cluster UUIDs missing from the portal quorum\",\n  \
+        \            \"type\": \"string\"\n            }\n          },\n         \
+        \ \"end_reason\": {\n            \"description\": \"Why the portal quorum\
+        \ was abandoned; abandon events only\",\n            \"type\": \"string\"\n\
+        \          },\n          \"end_reason_kind\": {\n            \"type\": \"\
+        string\",\n            \"enum\": [\n              \"peer_requested\",\n  \
+        \            \"peer_disconnected\",\n              \"local_requested\"\n \
+        \           ],\n            \"description\": \"Who ended the portal quorum,\
+        \ as a cause rather than as text; abandon events only:\\n * `local_requested`\
+        \ - PORTAL_QUORUM_ABANDON_KIND_LOCAL_REQUESTED,\\n * `peer_disconnected` -\
+        \ PORTAL_QUORUM_ABANDON_KIND_PEER_DISCONNECTED,\\n * `peer_requested` - PORTAL_QUORUM_ABANDON_KIND_PEER_REQUESTED\"\
+        \n          },\n          \"uptime\": {\n            \"description\": \"Seconds\
+        \ the portal quorum was active; abandon events only\",\n            \"type\"\
+        : \"number\"\n          },\n          \"downtime\": {\n            \"description\"\
+        : \"Seconds since the previous portal quorum abandoned; success events only\"\
+        ,\n            \"type\": \"number\"\n          },\n          \"formation_time\"\
+        : {\n            \"description\": \"Seconds this node spent starting; success\
+        \ events only\",\n            \"type\": \"number\"\n          }\n        }\n\
+        \      }\n    },\n    \"nodes_queried\": {\n      \"type\": \"array\",\n \
+        \     \"items\": {\n        \"description\": \"Nodes whose event logs contributed;\
+        \ nodes outside cluster quorum are absent and their events are unavailable\
+        \ until they rejoin\",\n        \"type\": \"number\"\n      }\n    }\n  }\n\
+        }"
     responses:
     - code: '200'
       description: Return value on success

@@ -23,7 +23,7 @@ optional_options:
   name: --new-tenant-id
   required: false
 - alternate: []
-  help: Change file system path
+  help: Change filesystem path
   name: --fs-path
   required: false
 - alternate: []
@@ -64,7 +64,7 @@ optional_options:
   name: --restrictions
   required: false
 - alternate: []
-  help: Creates the specified file system path if it does not exist
+  help: Creates the specified filesystem path if it does not exist
   name: --create-fs-path
   required: false
 - alternate: []

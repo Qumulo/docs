@@ -1,6 +1,6 @@
 ---
 category: object
-command: object_bridge_create
+command: object_portal_create_bridge
 optional_options:
 - alternate: []
   help: 'Full bucket URI. Examples: https://my-bucket.s3.us-west-2.amazonaws.com/
@@ -24,16 +24,8 @@ optional_options:
   name: --delimiter
   required: false
 - alternate: []
-  help: Access key for private S3 endpoints. Omit for AWS ambient credentials.
-  name: --access-key-id
-  required: false
-- alternate: []
-  help: Secret key for private S3 endpoints. Omit for AWS ambient credentials.
-  name: --secret-access-key
-  required: false
-- alternate: []
   help: Azure Key Vault hostname (e.g. my-vault.vault.azure.net) from which to fetch
-    SAS tokens for an Azure Blob bucket. Mutually exclusive with --access-key-id/--secret-access-key.
+    SAS tokens for an Azure Blob bucket.
   name: --key-vault-hostname
   required: false
 - alternate: []
@@ -42,29 +34,28 @@ optional_options:
   name: --notification-queue-url
   required: false
 - alternate: []
-  help: Reject protocol data and namespace writes to the bridge while the bucket keeps
-    converging. File attributes stay writable.
-  name: --read-only
-  required: false
+  help: READ_ONLY rejects protocol data and namespace writes to the bridge while the
+    bucket keeps converging; file attributes stay writable. READ_WRITE_EXPORT leaves
+    both writable and requires bucket versioning. Immutable after creation.
+  name: --protocol-access
+  required: true
 - alternate: []
   help: Import file-mover object metadata (ownership, permissions, ACLs, timestamps)
     onto bridge inodes. AUTO translates objects matching a known mover dialect; OFF
     inherits everything from the parent directory. Immutable after creation.
   name: --metadata-import
   required: true
-permalink: /qq-cli-command-guide/object/object_bridge_create.html
+permalink: /qq-cli-command-guide/object/object_portal_create_bridge.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
-summary: This section explains how to use the <code>qq object_bridge_create</code>
+summary: This section explains how to use the <code>qq object_portal_create_bridge</code>
   command.
-synopsis: Test-only. Create a bridge filesystem rooted at an external object bucket.
-  The cluster must have been created with the object_portals test option enabled.
-title: qq object_bridge_create
-usage: "qq object_bridge_create [-h] --bucket-uri BUCKET_URI --mount-path MOUNT_PATH\
-  \ [--key-prefix KEY_PREFIX] [--delimiter DELIMITER] [--access-key-id ACCESS_KEY_ID]\
-  \ [--secret-access-key SECRET_ACCESS_KEY] [--key-vault-hostname KEY_VAULT_HOSTNAME]\n\
-  \    [--notification-queue-url NOTIFICATION_QUEUE_URL] [--read-only] --metadata-import\
-  \ {OFF,AUTO}"
+synopsis: Create a bridge filesystem rooted at an external object bucket.
+title: qq object_portal_create_bridge
+usage: "qq object_portal_create_bridge [-h] --bucket-uri BUCKET_URI --mount-path MOUNT_PATH\
+  \ [--key-prefix KEY_PREFIX] [--delimiter DELIMITER] [--key-vault-hostname KEY_VAULT_HOSTNAME]\
+  \ [--notification-queue-url NOTIFICATION_QUEUE_URL] --protocol-access\n    {READ_WRITE_EXPORT,READ_ONLY}\
+  \ --metadata-import {OFF,AUTO}"
 zendesk_source: qq CLI Command Guide
 
 ---

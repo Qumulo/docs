@@ -34,7 +34,7 @@ positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq fs_security_add_key</code>
   command.
-synopsis: Add a key to the file system key-store.
+synopsis: Add a key to the filesystem key-store.
 title: qq fs_security_add_key
 usage: qq fs_security_add_key [-h] --name NAME [--private-key-file PRIVATE_KEY_FILE]
   [--public-key PUBLIC_KEY] [--verification-signature VERIFICATION_SIGNATURE] [--comment

@@ -22,6 +22,10 @@ optional_options:
   help: Allow all IP addresses to query the Qumulo Authoritative DNS server
   name: --disable-host-restrictions
   required: false
+- alternate: []
+  help: How long resolvers may cache a record, from 0 to 3600 seconds.
+  name: --record-ttl-seconds
+  required: false
 permalink: /qq-cli-command-guide/authoritative/authoritative_dns_modify_settings.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
@@ -31,6 +35,7 @@ synopsis: Configure settings for Qumulo Authoritative DNS server
 title: qq authoritative_dns_modify_settings
 usage: qq authoritative_dns_modify_settings [-h] [--fqdn FQDN] [--enable] [--disable]
   [--host-restrictions HOST_RESTRICTIONS [HOST_RESTRICTIONS ...]] [--disable-host-restrictions]
+  [--record-ttl-seconds RECORD_TTL_SECONDS]
 zendesk_source: qq CLI Command Guide
 
 ---

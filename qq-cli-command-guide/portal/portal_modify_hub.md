@@ -18,9 +18,11 @@ optional_options:
   name: -n
   required: false
 - alternate: []
-  help: Let the spoke portal write to the portal directories. A read-write portal
-    cannot be made read-only again.
-  name: --make-read-write
+  help: Change the type of the portal. Setting read-write takes effect immediately,
+    as does setting read-only on a paused portal. Setting read-only on a read-write
+    portal starts a transition that drains outstanding spoke writes; the portal reports
+    the Quiescing state until the drain finishes.
+  name: --type
   required: false
 - alternate:
   - --spoke-hosts
@@ -48,10 +50,10 @@ permalink: /qq-cli-command-guide/portal/portal_modify_hub.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq portal_modify_hub</code> command.
-synopsis: Modify the spoke hosts and writability of a hub portal
+synopsis: Modify the spoke hosts and type of a hub portal
 title: qq portal_modify_hub
-usage: qq portal_modify_hub [-h] -i ID [-j] [-n] [--make-read-write] [-m SPOKE_HOSTS
-  | -a SPOKE_ADDRESS] [-p SPOKE_PORT]
+usage: qq portal_modify_hub [-h] -i ID [-j] [-n] [--type {read-write,read-only}] [-m
+  SPOKE_HOSTS | -a SPOKE_ADDRESS] [-p SPOKE_PORT]
 zendesk_source: qq CLI Command Guide
 
 ---

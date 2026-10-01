@@ -39,7 +39,7 @@ summary: This section explains how to use the <code>qq add_object_storage_uris</
   command.
 synopsis: Add object storage URIs and associated credentials for configuring the cluster's
   data persistence. As the system provisions additional storage capacity on the cluster
-  (which increases together with the clamp increase functionality), the file system
+  (which increases together with the clamp increase functionality), the filesystem
   recognizes and uses any new object storage URIs. Ensure that the new URIs point
   to empty S3 buckets or storage accounts and that the nodes on the cluster have sufficient
   permissions to perform LIST, PUT, GET, and DELETE operations on these buckets or

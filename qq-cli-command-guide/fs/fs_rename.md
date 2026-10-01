@@ -26,7 +26,7 @@ permalink: /qq-cli-command-guide/fs/fs_rename.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq fs_rename</code> command.
-synopsis: Rename a file system object
+synopsis: Rename a filesystem object
 title: qq fs_rename
 usage: qq fs_rename [-h] (--path PATH | --id ID) --source SOURCE --name NAME [--clobber]
 zendesk_source: qq CLI Command Guide

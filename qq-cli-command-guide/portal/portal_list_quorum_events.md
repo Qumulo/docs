@@ -20,8 +20,8 @@ optional_options:
   name: --node-id
   required: false
 - alternate: []
-  help: Only return events for this file system
-  name: --fs-id
+  help: Only return events for the filesystem with this UUID
+  name: --filesystem-uuid
   required: false
 - alternate: []
   help: Maximum entries returned, oldest first (default 1000)
@@ -36,7 +36,8 @@ synopsis: List recent portal quorum success and abandon events recorded by the n
   of this cluster
 title: qq portal_list_quorum_events
 usage: qq portal_list_quorum_events [-h] [--begin-time BEGIN_TIME] [--end-time END_TIME]
-  [--type {success,abandon}] [--node-id NODE_ID] [--fs-id FS_ID] [--limit LIMIT]
+  [--type {success,abandon}] [--node-id NODE_ID] [--filesystem-uuid FILESYSTEM_UUID]
+  [--limit LIMIT]
 zendesk_source: qq CLI Command Guide
 
 ---

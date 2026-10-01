@@ -33,9 +33,9 @@ methods:
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"The URI to the object storage that backs the Object Tier for the cluster\"\
         ,\n        \"type\": \"string\"\n      }\n    },\n    \"usable_capacity_clamp\"\
-        : {\n      \"description\": \"Usable capacity, in bytes, to clamp the file\
-        \ system to\",\n      \"type\": \"string\"\n    },\n    \"product_type\":\
-        \ {\n      \"type\": \"string\",\n      \"enum\": [\n        \"ACTIVE_WITH_STANDARD_STORAGE\"\
+        : {\n      \"description\": \"Usable capacity, in bytes, to clamp the filesystem\
+        \ to\",\n      \"type\": \"string\"\n    },\n    \"product_type\": {\n   \
+        \   \"type\": \"string\",\n      \"enum\": [\n        \"ACTIVE_WITH_STANDARD_STORAGE\"\
         ,\n        \"ACTIVE_WITH_INTELLIGENT_STORAGE\",\n        \"ACTIVE_WITH_HOT_STORAGE\"\
         ,\n        \"ARCHIVE_WITH_IA_STORAGE\",\n        \"ARCHIVE_WITH_GIR_STORAGE\"\
         ,\n        \"ARCHIVE_WITH_COLD_STORAGE\"\n      ],\n      \"description\"\

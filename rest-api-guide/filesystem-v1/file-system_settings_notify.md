@@ -1,5 +1,5 @@
 ---
-category: /File System V1
+category: /Filesystem V1
 methods:
   get:
     summary: Get FS notify related settings.
@@ -21,7 +21,7 @@ methods:
         \ This option provides full support for recursive change-notify requests.\
         \ The system pushes notifications for all descendants of the watched directory\
         \ to the watcher. Important: This configuration can affect system performance\
-        \ significantly. For example, watching the root of the file system creates\
+        \ significantly. For example, watching the root of the filesystem creates\
         \ a notification for every change on the entire cluster.\"\n    }\n  }\n}"
     responses:
     - code: '200'
@@ -50,7 +50,7 @@ methods:
         \ This option provides full support for recursive change-notify requests.\
         \ The system pushes notifications for all descendants of the watched directory\
         \ to the watcher. Important: This configuration can affect system performance\
-        \ significantly. For example, watching the root of the file system creates\
+        \ significantly. For example, watching the root of the filesystem creates\
         \ a notification for every change on the entire cluster.\"\n    }\n  }\n}"
     responses:
     - code: '200'
@@ -73,12 +73,11 @@ methods:
         \ This option provides full support for recursive change-notify requests.\
         \ The system pushes notifications for all descendants of the watched directory\
         \ to the watcher. Important: This configuration can affect system performance\
-        \ significantly. For example, watching the root of the file system creates\
+        \ significantly. For example, watching the root of the filesystem creates\
         \ a notification for every change on the entire cluster.\"\n    }\n  }\n}"
 rest_endpoint: /v1/file-system/settings/notify
 api_version: v1
-permalink: /rest-api-guide/file-system-v1/file-system_settings_notify.html
-sidebar: rest_api_guide_sidebar
-redirect_from: /rest-api-guide/file-system/file-system_settings_notify.html
 deprecated: false
+permalink: /rest-api-guide/filesystem-v1/file-system_settings_notify.html
+sidebar: rest_api_guide_sidebar
 ---

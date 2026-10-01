@@ -2,14 +2,14 @@
 category: /Cloud Data Fabric V1
 methods:
   get:
-    summary: Retrieve portal information for a file system.
+    summary: Retrieve portal information for a filesystem.
     parameters:
     - name: id
-      description: File System UUID
+      description: Filesystem UUID
       required: true
     response_body:
       schema: "{\n  \"description\": \"v1_portal_fs_info\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"uuid\": {\n      \"description\": \"File System\
+        ,\n  \"properties\": {\n    \"uuid\": {\n      \"description\": \"Filesystem\
         \ UUID\",\n      \"type\": \"string\"\n    },\n    \"usage_bytes\": {\n  \
         \    \"description\": \"Capacity used by portal data in bytes\",\n      \"\
         type\": \"string\"\n    }\n  }\n}"

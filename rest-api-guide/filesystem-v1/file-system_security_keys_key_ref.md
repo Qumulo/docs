@@ -1,8 +1,8 @@
 ---
-category: /File System V1
+category: /Filesystem V1
 methods:
   get:
-    summary: Get the file system public key by using the name or identifier of the
+    summary: Get the filesystem public key by using the name or identifier of the
       specified key.
     parameters:
     - name: key_ref
@@ -24,7 +24,7 @@ methods:
       description: Return value on success
     preview: false
   put:
-    summary: Put the file system public key by using the name or identifier of the
+    summary: Put the filesystem public key by using the name or identifier of the
       specified key.
     parameters:
     - name: key_ref
@@ -60,7 +60,7 @@ methods:
         \n    },\n    \"public_key\": {\n      \"description\": \"The contents of\
         \ the public key.\",\n      \"type\": \"string\"\n    }\n  }\n}"
   patch:
-    summary: Patch the file system public key by using the name or identifier of the
+    summary: Patch the filesystem public key by using the name or identifier of the
       specified key.
     parameters:
     - name: key_ref
@@ -96,8 +96,8 @@ methods:
         \n    },\n    \"public_key\": {\n      \"description\": \"The contents of\
         \ the public key.\",\n      \"type\": \"string\"\n    }\n  }\n}"
   delete:
-    summary: Delete the file system public key by using the name or identifier of
-      the specified key.
+    summary: Delete the filesystem public key by using the name or identifier of the
+      specified key.
     parameters:
     - name: key_ref
       description: The name or identifier of the key.
@@ -109,8 +109,7 @@ methods:
     preview: false
 rest_endpoint: /v1/file-system/security/keys/{key_ref}
 api_version: v1
-permalink: /rest-api-guide/file-system-v1/file-system_security_keys_key_ref.html
-sidebar: rest_api_guide_sidebar
-redirect_from: /rest-api-guide/file-system/file-system_security_keys_key_ref.html
 deprecated: false
+permalink: /rest-api-guide/filesystem-v1/file-system_security_keys_key_ref.html
+sidebar: rest_api_guide_sidebar
 ---

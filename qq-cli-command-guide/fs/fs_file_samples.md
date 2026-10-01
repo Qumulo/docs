@@ -20,7 +20,7 @@ permalink: /qq-cli-command-guide/fs/fs_file_samples.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq fs_file_samples</code> command.
-synopsis: Get a number of sample files from the file system
+synopsis: Get a number of sample files from the filesystem
 title: qq fs_file_samples
 usage: qq fs_file_samples [-h] (--path PATH | --id ID) --count COUNT [--sample-by
   {capacity,data,file,named_streams}]

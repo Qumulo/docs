@@ -1,5 +1,5 @@
 ---
-category: /File System V1
+category: /Filesystem V1
 methods:
   put:
     summary: Set atime-related settings.
@@ -75,8 +75,7 @@ methods:
     preview: false
 rest_endpoint: /v1/file-system/settings/atime
 api_version: v1
-permalink: /rest-api-guide/file-system-v1/file-system_settings_atime.html
-sidebar: rest_api_guide_sidebar
-redirect_from: /rest-api-guide/file-system/file-system_settings_atime.html
 deprecated: false
+permalink: /rest-api-guide/filesystem-v1/file-system_settings_atime.html
+sidebar: rest_api_guide_sidebar
 ---

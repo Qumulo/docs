@@ -6,7 +6,7 @@ methods:
       based on by-value property.
     parameters:
     - name: ref
-      description: The file ID or the absolute path to the file system object. File
+      description: The file ID or the absolute path to the filesystem object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.
@@ -56,7 +56,53 @@ methods:
         \ this file, or directory and all its children, in bytes\",\n        \"type\"\
         : \"string\"\n      },\n      \"num_named_streams\": {\n        \"description\"\
         : \"Total number of named streams in the directory\",\n        \"type\": \"\
-        string\"\n      }\n    }\n  }\n}"
+        string\"\n      },\n      \"external_objects\": {\n        \"description\"\
+        : \"Count and total size of the external objects that back this file, or directory\
+        \ and all its children, by tier class. Null when nothing is backed by an external\
+        \ object.\",\n        \"type\": \"object\",\n        \"properties\": {\n \
+        \         \"online_hot\": {\n            \"description\": \"online_hot\",\n\
+        \            \"type\": \"object\",\n            \"properties\": {\n      \
+        \        \"num_objects\": {\n                \"description\": \"Total number\
+        \ of external objects in this tier\",\n                \"type\": \"string\"\
+        \n              },\n              \"bytes\": {\n                \"description\"\
+        : \"Total size of the external objects in this tier, in bytes\",\n       \
+        \         \"type\": \"string\"\n              }\n            }\n         \
+        \ },\n          \"online_cold\": {\n            \"description\": \"online_cold\"\
+        ,\n            \"type\": \"object\",\n            \"properties\": {\n    \
+        \          \"num_objects\": {\n                \"description\": \"Total number\
+        \ of external objects in this tier\",\n                \"type\": \"string\"\
+        \n              },\n              \"bytes\": {\n                \"description\"\
+        : \"Total size of the external objects in this tier, in bytes\",\n       \
+        \         \"type\": \"string\"\n              }\n            }\n         \
+        \ },\n          \"auto_online\": {\n            \"description\": \"auto_online\"\
+        ,\n            \"type\": \"object\",\n            \"properties\": {\n    \
+        \          \"num_objects\": {\n                \"description\": \"Total number\
+        \ of external objects in this tier\",\n                \"type\": \"string\"\
+        \n              },\n              \"bytes\": {\n                \"description\"\
+        : \"Total size of the external objects in this tier, in bytes\",\n       \
+        \         \"type\": \"string\"\n              }\n            }\n         \
+        \ },\n          \"archive\": {\n            \"description\": \"archive\",\n\
+        \            \"type\": \"object\",\n            \"properties\": {\n      \
+        \        \"num_objects\": {\n                \"description\": \"Total number\
+        \ of external objects in this tier\",\n                \"type\": \"string\"\
+        \n              },\n              \"bytes\": {\n                \"description\"\
+        : \"Total size of the external objects in this tier, in bytes\",\n       \
+        \         \"type\": \"string\"\n              }\n            }\n         \
+        \ },\n          \"deep_archive\": {\n            \"description\": \"deep_archive\"\
+        ,\n            \"type\": \"object\",\n            \"properties\": {\n    \
+        \          \"num_objects\": {\n                \"description\": \"Total number\
+        \ of external objects in this tier\",\n                \"type\": \"string\"\
+        \n              },\n              \"bytes\": {\n                \"description\"\
+        : \"Total size of the external objects in this tier, in bytes\",\n       \
+        \         \"type\": \"string\"\n              }\n            }\n         \
+        \ },\n          \"unknown\": {\n            \"description\": \"unknown\",\n\
+        \            \"type\": \"object\",\n            \"properties\": {\n      \
+        \        \"num_objects\": {\n                \"description\": \"Total number\
+        \ of external objects in this tier\",\n                \"type\": \"string\"\
+        \n              },\n              \"bytes\": {\n                \"description\"\
+        : \"Total size of the external objects in this tier, in bytes\",\n       \
+        \         \"type\": \"string\"\n              }\n            }\n         \
+        \ }\n        }\n      }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success

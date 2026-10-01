@@ -1,8 +1,8 @@
 ---
-category: /File System V1
+category: /Filesystem V1
 methods:
   get:
-    summary: Get file system public key usage by using the name or identifier of the
+    summary: Get filesystem public key usage by using the name or identifier of the
       specified key.
     parameters:
     - name: key_ref
@@ -36,8 +36,7 @@ methods:
     preview: false
 rest_endpoint: /v1/file-system/security/keys/{key_ref}/usages
 api_version: v1
-permalink: /rest-api-guide/file-system-v1/file-system_security_keys_key_ref_usages.html
-sidebar: rest_api_guide_sidebar
-redirect_from: /rest-api-guide/file-system/file-system_security_keys_key_ref_usages.html
 deprecated: false
+permalink: /rest-api-guide/filesystem-v1/file-system_security_keys_key_ref_usages.html
+sidebar: rest_api_guide_sidebar
 ---

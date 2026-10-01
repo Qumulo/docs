@@ -6,7 +6,7 @@ methods:
       file must already exist, and the content-type of the request must be application/octet-stream.
     parameters:
     - name: ref
-      description: The file ID or the absolute path to the file system object. File
+      description: The file ID or the absolute path to the filesystem object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.
@@ -120,15 +120,13 @@ methods:
     - code: '200'
       description: Return value on success
     preview: false
-    request_body:
-      schema: "{\n  \"type\": \"object\"\n}"
   patch:
     summary: Set the contents of the file, at the given offset, to the body of the
       request. The target file must already exist, and the Content-Type of the request
       must be application/octet-stream.
     parameters:
     - name: ref
-      description: The file ID or the absolute path to the file system object. File
+      description: The file ID or the absolute path to the filesystem object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.
@@ -247,8 +245,6 @@ methods:
     - code: '200'
       description: Return value on success
     preview: false
-    request_body:
-      schema: "{\n  \"type\": \"object\"\n}"
   get:
     summary: Return the contents of the file as an HTTP octet stream. The etag returned
       by this method represents the whole state of this file. In another word, if
@@ -257,7 +253,7 @@ methods:
       is still intact.
     parameters:
     - name: ref
-      description: The file ID or the absolute path to the file system object. File
+      description: The file ID or the absolute path to the filesystem object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.

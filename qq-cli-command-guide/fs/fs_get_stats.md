@@ -10,7 +10,7 @@ permalink: /qq-cli-command-guide/fs/fs_get_stats.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq fs_get_stats</code> command.
-synopsis: Get file system statistics
+synopsis: Get filesystem statistics
 title: qq fs_get_stats
 usage: qq fs_get_stats [-h] [--json]
 zendesk_source: qq CLI Command Guide

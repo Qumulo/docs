@@ -2,13 +2,13 @@
 category: /Files V1
 methods:
   get:
-    summary: 'Streams notifications for file system activity, monitoring only the
-      files in the specified directory by using HTML server-sent events (SSE). The
-      SSE data payload contains JSON-encoded event objects. For example: [{"type":
-      <string>, "path": <string>, "stream_name": <optional string>}].'
+    summary: 'Streams notifications for filesystem activity, monitoring only the files
+      in the specified directory by using HTML server-sent events (SSE). The SSE data
+      payload contains JSON-encoded event objects. For example: [{"type": <string>,
+      "path": <string>, "stream_name": <optional string>}].'
     parameters:
     - name: ref
-      description: The file ID or the absolute path to the file system object. File
+      description: The file ID or the absolute path to the filesystem object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.

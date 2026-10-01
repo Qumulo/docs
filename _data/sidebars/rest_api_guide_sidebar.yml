@@ -588,46 +588,6 @@ entries:
   - folderitems:
     - apiversion: v1
       output: web,pdf
-      title: file-system
-      url: /rest-api-guide/file-system-v1/file-system.html
-    - apiversion: v1
-      output: web,pdf
-      title: file-system/security/keys
-      url: /rest-api-guide/file-system-v1/file-system_security_keys.html
-    - apiversion: v1
-      output: web,pdf
-      title: file-system/security/keys/{key_ref}
-      url: /rest-api-guide/file-system-v1/file-system_security_keys_key_ref.html
-    - apiversion: v1
-      output: web,pdf
-      title: file-system/security/keys/{key_ref}/key-replacement-challenge
-      url: /rest-api-guide/file-system-v1/file-system_security_keys_key_ref_key-replacement-challenge.html
-    - apiversion: v1
-      output: web,pdf
-      title: file-system/security/keys/{key_ref}/replace
-      url: /rest-api-guide/file-system-v1/file-system_security_keys_key_ref_replace.html
-    - apiversion: v1
-      output: web,pdf
-      title: file-system/security/keys/{key_ref}/usages
-      url: /rest-api-guide/file-system-v1/file-system_security_keys_key_ref_usages.html
-    - apiversion: v1
-      output: web,pdf
-      title: file-system/settings/atime
-      url: /rest-api-guide/file-system-v1/file-system_settings_atime.html
-    - apiversion: v1
-      output: web,pdf
-      title: file-system/settings/notify
-      url: /rest-api-guide/file-system-v1/file-system_settings_notify.html
-    - apiversion: v1
-      output: web,pdf
-      title: file-system/settings/permissions
-      url: /rest-api-guide/file-system-v1/file-system_settings_permissions.html
-    output: web,pdf
-    title: File System V1 (file-system)
-    url: /rest-api-guide/file-system-v1/
-  - folderitems:
-    - apiversion: v1
-      output: web,pdf
       title: files/locks/nfs4/byte-range
       url: /rest-api-guide/files-v1/files_locks_nfs4_byte-range.html
     - apiversion: v1
@@ -652,7 +612,6 @@ entries:
       url: /rest-api-guide/files-v1/files_resolve.html
     - apiversion: v1
       output: web,pdf
-      preview: true
       title: files/try-resolve
       url: /rest-api-guide/files-v1/files_try-resolve.html
     - apiversion: v1
@@ -795,6 +754,46 @@ entries:
     output: web,pdf
     title: Files V2 (files)
     url: /rest-api-guide/files-v2/
+  - folderitems:
+    - apiversion: v1
+      output: web,pdf
+      title: file-system
+      url: /rest-api-guide/filesystem-v1/file-system.html
+    - apiversion: v1
+      output: web,pdf
+      title: file-system/security/keys
+      url: /rest-api-guide/filesystem-v1/file-system_security_keys.html
+    - apiversion: v1
+      output: web,pdf
+      title: file-system/security/keys/{key_ref}
+      url: /rest-api-guide/filesystem-v1/file-system_security_keys_key_ref.html
+    - apiversion: v1
+      output: web,pdf
+      title: file-system/security/keys/{key_ref}/key-replacement-challenge
+      url: /rest-api-guide/filesystem-v1/file-system_security_keys_key_ref_key-replacement-challenge.html
+    - apiversion: v1
+      output: web,pdf
+      title: file-system/security/keys/{key_ref}/replace
+      url: /rest-api-guide/filesystem-v1/file-system_security_keys_key_ref_replace.html
+    - apiversion: v1
+      output: web,pdf
+      title: file-system/security/keys/{key_ref}/usages
+      url: /rest-api-guide/filesystem-v1/file-system_security_keys_key_ref_usages.html
+    - apiversion: v1
+      output: web,pdf
+      title: file-system/settings/atime
+      url: /rest-api-guide/filesystem-v1/file-system_settings_atime.html
+    - apiversion: v1
+      output: web,pdf
+      title: file-system/settings/notify
+      url: /rest-api-guide/filesystem-v1/file-system_settings_notify.html
+    - apiversion: v1
+      output: web,pdf
+      title: file-system/settings/permissions
+      url: /rest-api-guide/filesystem-v1/file-system_settings_permissions.html
+    output: web,pdf
+    title: Filesystem V1 (file-system)
+    url: /rest-api-guide/filesystem-v1/
   - folderitems:
     - apiversion: v1
       output: web,pdf
@@ -1092,6 +1091,31 @@ entries:
     output: web,pdf
     title: Node Management V1 (node)
     url: /rest-api-guide/node-management-v1/
+  - folderitems:
+    - apiversion: v1
+      output: web,pdf
+      preview: true
+      title: object-portal/bridges
+      url: /rest-api-guide/object-portals-v1/object-portal_bridges.html
+    - apiversion: v1
+      output: web,pdf
+      preview: true
+      title: object-portal/bridges/{filesystem_uuid}
+      url: /rest-api-guide/object-portals-v1/object-portal_bridges_filesystem_uuid.html
+    - apiversion: v1
+      output: web,pdf
+      preview: true
+      title: object-portal/notify
+      url: /rest-api-guide/object-portals-v1/object-portal_notify.html
+    - apiversion: v1
+      output: web,pdf
+      preview: true
+      title: object-portal/refresh
+      url: /rest-api-guide/object-portals-v1/object-portal_refresh.html
+    output: web,pdf
+    preview: true
+    title: Object Portals V1 (object-portal)
+    url: /rest-api-guide/object-portals-v1/
   - folderitems:
     - apiversion: v1
       output: web,pdf
