@@ -19,7 +19,6 @@ For information about upgrade types for each release, see <a href='mode-referenc
     </ul>{% endcapture %}
 {{site.data.alerts.important}}
 <ul>
-  <li>To upgrade from Qumulo 7.10.0, the tunable <code>use_openssl_crypto</code> must not be set to <code>true</code>.</li>
   <li>This release significantly shortens quorum formation time for Cloud Native Qumulo created on Qumulo Core versions lower than 7.10.0 and Stratus Accelerator clusters created on Qumulo Core versions lower than 7.9.2.</li>
   <li>
 {{ adjInfra }}
