@@ -12,6 +12,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 ## Qumulo Core 7.10.1
 {{ nexusLink }}
 
+### Features and Improvements
 {% capture adjInfra %}    <p>For Cloud Native Qumulo (CNQ) clusters that were:</p>
     <ul>
       <li><strong>Deployed on Qumulo Core lower than 7.4.3:</strong> If the clusters haven’t undergone a cluster redeployment on Qumulo Core 7.4.3 (or higher), they must complete the cluster redeployment process before upgrading to Qumulo Core 7.10.1 (or higher). This process retains your cluster’s configuration and all data.</li>
@@ -39,6 +40,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 ## Qumulo Core 7.10.0 (Quarterly)
 {{ nexusLink }}
 
+### Features and Improvements
 {{site.data.alerts.important}}
 <ul>
   <li>
@@ -64,6 +66,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 ## Qumulo Core 7.9.3.1
 {{ nexusLink }}
 
+### Features and Improvements
 {% capture mustWait %}For clusters running Qumulo Core 7.9.0 (and higher), you must wait for on-disk upgrades to complete before you can upgrade the cluster to a higher version (this process typically takes 1-2 days). To check whether a cluster is ready to be upgraded, you can use the Qumulo REST API or the <code>qq</code> CLI. For example:
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><code>POST /v2/upgrade/verify-image</code></pre></div></div>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><code>qq upgrade_verify_image \
@@ -95,6 +98,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 ## Qumulo Core 7.9.2.3
 {{ nexusLink }}
 
+### Features and Improvements
 {% capture betterStartup %}<strong>Cloud Native Qumulo (CNQ), Azure Native Qumulo (ANQ), and Stratus Accelerator clusters:</strong> Improved cluster start-up times.{% endcapture %}
 {% capture appHardInst %}<strong>Appliance Hardware Installations:</strong> Upgraded the host kernel on Ubuntu 24.04, from 6.8.0-85 to 6.8.0-117{% endcapture %}
 {% capture disableKernMod %}the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.{% endcapture %}
@@ -448,7 +452,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 ## Qumulo Core 7.7.2
 {{ nexusLink }}
 
-## Features and Improvements
+### Features and Improvements
 {% capture genoaFix %}This release resolves a kernel incompatibility with hardware platforms that use AMD EPYC 9004 Series (AMD Genoa and later) CPUs.{% endcapture %}
 {% include important.html content=genoaFix %}
 Significantly improved the performance of the incremental replication process for directories
