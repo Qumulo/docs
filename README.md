@@ -19,8 +19,11 @@ Welcome to the Qumulo Documentation Portal repository! This project uses docs-as
 ## Repository Maintainers
 The current owner and primary maintainer of this repository is [🍊&thinsp;Lucía M. Polis](https://github.com/shefulloflight).
 
-The secondary maintainer of this repository is [🍊&thinsp;Andrew Abrahamowicz](https://github.com/andrewabrahamowicz).
+The secondary maintainers of this repository are:
 
+* [🍊&thinsp;Andrew Abrahamowicz](https://github.com/andrewabrahamowicz)
+
+* [🍊&thinsp;Evan Urubio](https://github.com/eurubio)
 
 ## Contributing to this Project
 You can contribute content to this repository by sending feedback to this repository's maintainer or by opening a GitHub issue. Before you begin, familiarize yourself with our [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md) and [Contributing Guidelines](CONTRIBUTING.md).
