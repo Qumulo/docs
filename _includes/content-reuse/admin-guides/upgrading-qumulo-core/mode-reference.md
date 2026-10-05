@@ -4,13 +4,15 @@
 
 {{site.nexus.downloads}} {{site.loginRequired}}.
 
-## Qumulo Core Upgrade Modes
 For information about the most important features from each release, click the Qumulo Core version.
+
+
+## 7.10 Releases
 <table class="upgrade-mode">
   <thead>
-    <th style="width:33%">Version</th>
-    <th style="width:33%">Quarterly Upgrade</th>
-    <th style="width:33%">Upgrade Type</th>
+    <th class="rule-of-thirds">Version</th>
+    <th class="rule-of-thirds">Quarterly Upgrade</th>
+    <th class="rule-of-thirds">Upgrade Type</th>
   </thead>
   <tbody>
     <tr>
@@ -23,6 +25,18 @@ For information about the most important features from each release, click the Q
       <td><span class="emoji">✅</span></td>
       <td class="instant">Instant</td>
     </tr>
+  </tbody>
+</table>
+
+
+## 7.9 Releases
+<table class="upgrade-mode">
+  <thead>
+    <th class="rule-of-thirds">Version</th>
+    <th class="rule-of-thirds">Quarterly Upgrade</th>
+    <th class="rule-of-thirds">Upgrade Type</th>
+  </thead>
+  <tbody>
     <tr>
       <td><a href="feature-log.html#qumulo-core-7931">7.9.3.1</a></td>
       <td></td>
@@ -43,6 +57,18 @@ For information about the most important features from each release, click the Q
       <td><span class="emoji">✅</span></td>      
       <td class="platform">Platform</td>
     </tr>
+  </tbody>
+</table>
+
+
+## 7.8 Releases
+<table class="upgrade-mode">
+  <thead>
+    <th class="rule-of-thirds">Version</th>
+    <th class="rule-of-thirds">Quarterly Upgrade</th>
+    <th class="rule-of-thirds">Upgrade Type</th>
+  </thead>
+  <tbody>
     <tr>
       <td><a href="feature-log.html#qumulo-core-7843">7.8.4.3</a></td>
       <td></td>
@@ -68,6 +94,18 @@ For information about the most important features from each release, click the Q
       <td><span class="emoji">✅</span></td>
       <td class="instant">Instant</td>
     </tr>
+  </tbody>
+</table>
+
+
+## 7.7 Releases
+<table class="upgrade-mode">
+  <thead>
+    <th class="rule-of-thirds">Version</th>
+    <th class="rule-of-thirds">Quarterly Upgrade</th>
+    <th class="rule-of-thirds">Upgrade Type</th>
+  </thead>
+  <tbody>
     <tr>
       <td><a href="feature-log.html#qumulo-core-7751">7.7.5.1</a></td>
       <td></td>
@@ -101,6 +139,18 @@ For information about the most important features from each release, click the Q
     <tr>
       <td class="platform">Platform from<br>7.7.0 or 7.7.0.1</td>
     </tr>
+  </tbody>
+</table>
+
+
+## 7.6 Releases
+<table class="upgrade-mode">
+  <thead>
+    <th class="rule-of-thirds">Version</th>
+    <th class="rule-of-thirds">Quarterly Upgrade</th>
+    <th class="rule-of-thirds">Upgrade Type</th>
+  </thead>
+  <tbody>
     <tr>
       <td><a href="feature-log.html#qumulo-core-7641">7.6.4.1</a></td>
       <td></td>
@@ -126,6 +176,18 @@ For information about the most important features from each release, click the Q
       <td><span class="emoji">✅</span></td>
       <td class="instant">Instant</td>
     </tr>
+  </tbody>
+</table>
+
+
+## 7.5 Releases
+<table class="upgrade-mode">
+  <thead>
+    <th class="rule-of-thirds">Version</th>
+    <th class="rule-of-thirds">Quarterly Upgrade</th>
+    <th class="rule-of-thirds">Upgrade Type</th>
+  </thead>
+  <tbody>
     <tr>
       <td><a href="feature-log.html#qumulo-core-7552">7.5.5.2</a></td>
       <td></td>

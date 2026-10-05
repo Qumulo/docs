@@ -6,6 +6,5 @@ redirect_from:
   - /administrator-guide/upgrades/mode-reference.html
 platform: on-prem
 sidebar: administrator_guide_sidebar
-toc: false
 include_content: content-reuse/admin-guides/upgrading-qumulo-core/mode-reference.md
 ---

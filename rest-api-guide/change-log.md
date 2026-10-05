@@ -11,7 +11,9 @@ layout: page
 <style>div#toc{height:200px;overflow:auto;}</style>
 
 
-## Qumulo Core 7.10.1
+## 7.10 Releases
+
+### Qumulo Core 7.10.1
 {{ nexusLink }}
 <ul>
   <li>Added <code>GET | POST /v1/object-portal/bridges/</code></li>
@@ -125,7 +127,7 @@ layout: page
 </details>
 
 
-## Qumulo Core 7.10.0
+### Qumulo Core 7.10.0 (Quarterly)
 {{ nexusLink }}
 <ul>
   <li>Added <code>POST /v1/files/try-resolve</code></li>
@@ -133,12 +135,14 @@ layout: page
 </ul>
 
 
-## Qumulo Core 7.9.3.1
+## 7.9 Releases
+
+### Qumulo Core 7.9.3.1
 {{ nexusLink }}
 {{ noAPIchanges }}
 
 
-## Qumulo Core 7.9.2.3
+### Qumulo Core 7.9.2.3
 {{ nexusLink }}
 <ul>
   <li>Removed <code>/v1/portal/hubs/</code></li>
@@ -178,7 +182,7 @@ layout: page
 </details>
 
 
-## Qumulo Core 7.9.1.3
+### Qumulo Core 7.9.1.3
 {{ nexusLink }}
 <ul>
   <li>Removed <code>/v1/portal/quorum/events</code></li>
@@ -186,7 +190,7 @@ layout: page
 </ul>
 
 
-## Qumulo Core 7.9.0.4
+### Qumulo Core 7.9.0.4 (Quarterly)
 {{ nexusLink }}
 <ul>
   <li>Removed <code>/v1/snapshots/calculate-used-capacity</code></li>
@@ -245,7 +249,9 @@ layout: page
 </details>
 
 
-## Qumulo Core 7.8.4.3
+## 7.8 Releases
+
+### Qumulo Core 7.8.4.3
 {{ nexusLink }}
 <ul>
   <li>Added <code>GET /v2/time/default-settings</code></li>
@@ -255,7 +261,7 @@ layout: page
 </ul>
 
 
-## Qumulo Core 7.8.3.1
+### Qumulo Core 7.8.3.1
 {{ nexusLink }}
 <ul>
   <li>Added <code>POST /v1/files/{ref}/fetch-data</code></li>
@@ -263,17 +269,17 @@ layout: page
 </ul>
 
 
-## Qumulo Core 7.8.2.1
+### Qumulo Core 7.8.2.1
 {{ nexusLink }}
 {{ noAPIchanges }}
 
 
-## Qumulo Core 7.8.1.1
+### Qumulo Core 7.8.1.1
 {{ nexusLink }}
 {{ noAPIchanges }}
 
 
-## Qumulo Core 7.8.0.4 (Quarterly)
+### Qumulo Core 7.8.0.4 (Quarterly)
 {{ nexusLink }}
 <ul>
   <li>Added <code>GET | PATCH /v1/authoritative-dns/settings</code></li>
@@ -301,12 +307,14 @@ layout: page
 </details>
 
 
-## Qumulo Core 7.7.5.1
+## 7.7 Releases
+
+### Qumulo Core 7.7.5.1
 {{ nexusLink }}
 Added <code>GET /v1/object-storage/external-credentials-source</code>
 
 
-## Qumulo Core 7.7.4.1
+### Qumulo Core 7.7.4.1
 {{ nexusLink }}
 <ul>
   <li>Added <code>POST /v1/portal/ping</code></li>
@@ -363,7 +371,7 @@ Added <code>GET /v1/object-storage/external-credentials-source</code>
 </details>
 
 
-## Qumulo Core 7.7.3
+### Qumulo Core 7.7.3
 {{ nexusLink }}
 <ul>
   <li>
@@ -424,12 +432,12 @@ Added <code>GET /v1/object-storage/external-credentials-source</code>
 </ul>
 
 
-## Qumulo Core 7.7.2
+### Qumulo Core 7.7.2
 {{ nexusLink }}
 Added <code>POST /v2/cluster/data-core/create</code>
 
 
-## Qumulo Core 7.7.1.1
+### Qumulo Core 7.7.1.1
 {{ nexusLink }}
 <ul>
   <li>Added <code>GET | PATCH | PUT /v1/nexus/connection</code></li>
@@ -438,7 +446,7 @@ Added <code>POST /v2/cluster/data-core/create</code>
 </ul>
 
 
-## Qumulo Core 7.7.0.3 (Quarterly)
+### Qumulo Core 7.7.0.3 (Quarterly)
 {{ nexusLink }}
 <ul>
   <li>
@@ -453,12 +461,14 @@ Added <code>POST /v2/cluster/data-core/create</code>
 </ul>
 
 
-## Qumulo Core 7.6.4.1 
+## 7.6 Releases
+
+### Qumulo Core 7.6.4.1 
 {{ nexusLink }}
 {{ noAPIchanges }}
 
 
-## Qumulo Core 7.6.3.1
+### Qumulo Core 7.6.3.1
 {{ nexusLink }}
 <ul>
   <li>Added <code>POST /v2/cluster/unprotected-edge/create</code></li>
@@ -526,7 +536,7 @@ Added <code>POST /v2/cluster/data-core/create</code>
 </details>
 
 
-## Qumulo Core 7.6.2
+### Qumulo Core 7.6.2
 {{ nexusLink }}
 <ul>
   <li>Added <code>GET /v2/portal/hubs/</code></li>
@@ -546,17 +556,19 @@ Added <code>POST /v2/cluster/data-core/create</code>
 </details>
 
 
-## Qumulo Core 7.6.1.1
+### Qumulo Core 7.6.1.1
 {{ nexusLink }}
 Added <code>private</code> parameter to <code>POST /v1/s3/buckets/</code> request body
 
 
-## Qumulo Core 7.6.0.2 (Quarterly)
+### Qumulo Core 7.6.0.2 (Quarterly)
 {{ nexusLink }}
 {{ noAPIchanges }}
 
 
-## Qumulo Core 7.5.5.2
+## 7.5 Releases
+
+### Qumulo Core 7.5.5.2
 {{ nexusLink }}
 <ul>
   <li>Added <code>configured_dcs</code> parameter to <code>POST /v1/ad/dismiss-error</code> response</li>
@@ -564,22 +576,22 @@ Added <code>private</code> parameter to <code>POST /v1/s3/buckets/</code> reques
 </ul>
 
 
-## Qumulo Core 7.5.4.2
+### Qumulo Core 7.5.4.2
 {{ nexusLink }}
 {{ noAPIchanges }}
 
 
-## Qumulo Core 7.5.3
+### Qumulo Core 7.5.3
 {{ nexusLink }}
 {{ noAPIchanges }}
 
 
-## Qumulo Core 7.5.2
+### Qumulo Core 7.5.2
 {{ nexusLink }}
 {{ noAPIchanges }}
 
 
-## Qumulo Core 7.5.1.2
+### Qumulo Core 7.5.1.2
 {{ nexusLink }}
 <ul>
   <li>Added <code>GET | PUT /v3/network</code></li>
@@ -596,6 +608,6 @@ Added <code>private</code> parameter to <code>POST /v1/s3/buckets/</code> reques
 </details>
 
 
-## Qumulo Core 7.5.0.3 (Quarterly)
+### Qumulo Core 7.5.0.3 (Quarterly)
 {{ nexusLink }}
 {{ noAPIchanges }}

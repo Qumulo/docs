@@ -1,5 +1,4 @@
 <style>div#toc{height:200px;overflow:auto;}</style>
-
 {% if page.platform == 'on-prem' %}
 For information about upgrade types for each release, see <a href='mode-reference.html'>Qumulo Core Upgrade Mode Reference</a>.
 {% endif %}
@@ -9,10 +8,12 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {% capture platUpg %}This release of Qumulo Core is a _platform upgrade_ that requires either a complete reboot (rebooting all nodes in your cluster at the same time) or a rolling reboot (rebooting the nodes in your cluster one at a time).{% endcapture %}
 
 
-## Qumulo Core 7.10.1
+## 7.10 Releases
+
+### Qumulo Core 7.10.1
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {% capture adjInfra %}    <p>For Cloud Native Qumulo (CNQ) clusters that were:</p>
     <ul>
       <li><strong>Deployed on Qumulo Core lower than 7.4.3:</strong> If the clusters haven’t undergone a cluster redeployment on Qumulo Core 7.4.3 (or higher), they must complete the cluster redeployment process before upgrading to Qumulo Core 7.10.1 (or higher). This process retains your cluster’s configuration and all data.</li>
@@ -37,10 +38,14 @@ For information about upgrade types for each release, see <a href='mode-referenc
   * Moving IP addresses of a CNQ on Azure cluster
   * LDAP lookups and distinguished names containing a comma (`,`)
 
-## Qumulo Core 7.10.0 (Quarterly)
+#### Change Log
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7101)
+
+
+### Qumulo Core 7.10.0 (Quarterly)
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {{site.data.alerts.important}}
 <ul>
   <li>
@@ -62,11 +67,16 @@ For information about upgrade types for each release, see <a href='mode-referenc
   * Information about portal host cluster files and directories on **Analytics Activity** dashboards
 * **REST API:** Made improvements to Analytics and Files endpoints
 
+#### Change Log
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7100-quarterly)
 
-## Qumulo Core 7.9.3.1
+
+## 7.9 Releases
+
+### Qumulo Core 7.9.3.1
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {% capture mustWait %}For clusters running Qumulo Core 7.9.0 (and higher), you must wait for on-disk upgrades to complete before you can upgrade the cluster to a higher version (this process typically takes 1-2 days). To check whether a cluster is ready to be upgraded, you can use the Qumulo REST API or the <code>qq</code> CLI. For example:
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><code>POST /v2/upgrade/verify-image</code></pre></div></div>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><code>qq upgrade_verify_image \
@@ -94,11 +104,14 @@ For information about upgrade types for each release, see <a href='mode-referenc
   <li>Improved the responsiveness of certain operations that SMB, NFS3 and NFSv4.1 clients initiate after listing a directory</li>
 </ul>
 
+#### Change Log
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7931)
 
-## Qumulo Core 7.9.2.3
+
+### Qumulo Core 7.9.2.3
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {% capture betterStartup %}<strong>Cloud Native Qumulo (CNQ), Azure Native Qumulo (ANQ), and Stratus Accelerator clusters:</strong> Improved cluster start-up times.{% endcapture %}
 {% capture appHardInst %}<strong>Appliance Hardware Installations:</strong> Upgraded the host kernel on Ubuntu 24.04, from 6.8.0-85 to 6.8.0-117{% endcapture %}
 {% capture disableKernMod %}the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.{% endcapture %}
@@ -155,11 +168,13 @@ For information about upgrade types for each release, see <a href='mode-referenc
   * **Nexus Remote Support:** Can't connect when using a proxy configured with a `CNAME` record
   * **Nexus Agent:** Can't detect a cleanly closed connection to Nexus
 
+#### Change Log
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7923)
 
-## Qumulo Core 7.9.1.3
+### Qumulo Core 7.9.1.3
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {% capture snapDel %}delayed the system process that cleans up snapshots for certain cluster configurations, causing the system to reach the total snapshot limit{% endcapture %}
 {% capture couldCrash %}crash while upgrading on-disk structures in certain scenarios{% endcapture %}
 {{site.data.alerts.important}}
@@ -183,14 +198,14 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Resolved an issue with enumerating snapshots while using the NFSv3 and NFSv4.1 protocols
 * Resolved an issue with quorum formation caused by audit server address misconfiguration
 
-### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-791)
+#### Change Log
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7913)
 
 
-## Qumulo Core 7.9.0.4 (Quarterly)
+### Qumulo Core 7.9.0.4 (Quarterly)
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {{site.data.alerts.important}}
 <ul>
   <li>
@@ -310,15 +325,16 @@ For information about upgrade types for each release, see <a href='mode-referenc
   * Resolved an issue with restarting `systemd-networkd`
   * Resolved an issue with the `qq fs_list_locks --protocol smb --lock-type share-mode` command
 
-### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7902-quarterly)
+#### Change Log
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7904-quarterly)
 
 
+## 7.8 Releases
 
-## Qumulo Core 7.8.4.3
+### Qumulo Core 7.8.4.3
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {% capture availDelay %}This release resolves an issue with the upgrade process that previously caused the Qumulo cluster to become available after a delay.{% endcapture %}
 {{site.data.alerts.important}}
 <ul>
@@ -335,27 +351,27 @@ For information about upgrade types for each release, see <a href='mode-referenc
   * Updated and added new REST API endpoints
 * Resolved an issue with NFS export names when modifying a tenant
 
-### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7841)
+#### Change Log
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7843)
 
 
-## Qumulo Core 7.8.3.1
+### Qumulo Core 7.8.3.1
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {% include important.html content="This release resolves a memory management issue that previously could cause a Qumulo node to go offline." %}
 * Added SMB share-mode lock functionality across Cloud Data Fabric (CDF) portals
 * Added the ability to use caching without requiring clients to match the throughput of any Qumulo cluster type&mdash;and the corresponding REST API endpoint and `qq` CLI command
 * Added the ability to restart the container on _every_ node (rather than only on the specified node) in a cluster&mdash;and the corresponding REST API endpoint and `qq` CLI commands
 
-### Change Log
+#### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7831)
 
 
-## Qumulo Core 7.8.2.1
+### Qumulo Core 7.8.2.1
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {% capture unexpRest %}This release resolves an issue that could cause nodes in clusters with specific configurations to restart unexpectedly.{% endcapture %}
 {{site.data.alerts.important}}
 <ul>
@@ -368,26 +384,26 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Improved the stability and connectivity of portal relationships when multiple peer portal addresses
 * Improved the read performance for scenarios with intermittent connectivity issues that can cause a portal quorum event
 
-### Change Log
+#### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7821)
 
 
-## Qumulo Core 7.8.1.1
+### Qumulo Core 7.8.1.1
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {% include important.html content=unexpRest %}
 * Enabled **Try it out** functionality on the **APIs & Tools** Web UI page to work with `POST`, `PUT`, and `PATCH` requests after clicking **Use current session**
 * Deprecated some `/v1/portal` REST API endpoints and replaced others with `/v2/portal` endpoints that let you retrieve information about and create portals with multiple root directories
 
-### Change Log
+#### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7811)
 
 
-## Qumulo Core 7.8.0.4 (Quarterly)
+### Qumulo Core 7.8.0.4 (Quarterly)
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {% capture availDelay %}This release resolves an issue with the upgrade process that previously caused the Qumulo cluster to become available after a delay.{% endcapture %}
 {{site.data.alerts.important}}
 <ul>
@@ -405,14 +421,16 @@ For information about upgrade types for each release, see <a href='mode-referenc
   * Provide improved support for Windows Server DNS and stricter DNS resolvers
 * Added support for accepting and returning security identifiers (SIDs) with the `IdentifierAuthority` value larger than `255`
 
-### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7803-quarterly)
+#### Change Log
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7804-quarterly)
 
 
-## Qumulo Core 7.7.5.1
+## 7.7 Releases
+
+### Qumulo Core 7.7.5.1
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {% capture inconTrigg %}This release resolves an issue with an uncommon sequence of operations that previously could cause an internal encoding inconsistency.{% endcapture %}
 {% include important.html content=inconTrigg %}
 * Added expansion of the placeholder `%U` to a username for SMB shares
@@ -421,64 +439,64 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Resolved an issue with creating new files and then writing them to a spoke portal over SMB
 * Resolved an issue with the NFSv4.1 server not presenting the `INHERITED` flag on an Access Control Entry if the entry was inherited from a parent directory
 
-### Change Log
+#### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7751)
 
 
-## Qumulo Core 7.7.4.1
+### Qumulo Core 7.7.4.1
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {% include important.html content=inconTrigg %}
 * {{page.varNoPublicChanges}}
 * Added the `/v1/portal/ping` REST API endpoint and the `qq portal_ping` command
 * Changed how the `qq ad_cancel`, `ad_join`, `ad_leave`, and `ad_reconfigure` commands return the status of in-progress background operations
 
-### Change Log
+#### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7741)
 
 
-## Qumulo Core 7.7.3
+### Qumulo Core 7.7.3
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 * Updated the `/v3/smb/share/` REST API endpoint
 * Made Nexus security improvements
 
-### Change Log
+#### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-773)
 
 
-## Qumulo Core 7.7.2
+### Qumulo Core 7.7.2
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {% capture genoaFix %}This release resolves a kernel incompatibility with hardware platforms that use AMD EPYC 9004 Series (AMD Genoa and later) CPUs.{% endcapture %}
 {% include important.html content=genoaFix %}
 Significantly improved the performance of the incremental replication process for directories
 
-### Change Log
+#### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-772)
 
 
-## Qumulo Core 7.7.1.1
+### Qumulo Core 7.7.1.1
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {% include important.html content=genoaFix %}
 * Changed how NFS export host restrictions use `KRB*` keywords in Qumulo Core by allowing an additional match for hosts that authenticate by using a specific Kerberos flavor
 * Added REST API endpoints and `qq` CLI commands to support specifying a registration key that associates your Qumulo cluster with your Qumulo Nexus account
 * Changed `qq` CLI error messages to write to `stderr` instead of `stdout`
 * Resolved an S3 API issue with applications placing a trailing whitespace in the signed header field
 
-### Change Log
+#### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7711)
 
 
-## Qumulo Core 7.7.0.3 (Quarterly)
+### Qumulo Core 7.7.0.3 (Quarterly)
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {{site.data.alerts.important}}
 <ul>
   <li>{{ availDelay }}</li>
@@ -492,28 +510,30 @@ Significantly improved the performance of the incremental replication process fo
 * Removed and replaced `qq` CLI commands related to Snapshots functionality
 * Resolved an issue with case sensitivity in Domain Controller lists
 
-### Change Log
+#### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7703-quarterly)
 
 
-## Qumulo Core 7.6.4.1 
+## 7.6 Releases
+
+### Qumulo Core 7.6.4.1 
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {% include important.html content="This release resolves an issue that affects Azure Native Qumulo (ANQ) and Cloud Native Qumulo (CNQ) clusters. While this issue did not affect cluster data, it caused the system to not delete unneeded backing data. When certain accounts retained this data incorrectly, there was a potential increase in consumption of cloud resources." %}
 * Improved Cloud Data Fabric portal data synchronization speeds
 * Made improvements to the Network Configuration V3 REST APIs:
   * Moved a number of `/v3/network/*` REST APIs out of preview status
   * Added a number `qq network_*`, `qq portal_authorize_hub`, and `qq_snapshot_*` CLI commands
 
-### Change Log
+#### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7641)
 
 
-## Qumulo Core 7.6.3.1
+### Qumulo Core 7.6.3.1
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {% include important.html content="This release resolves an issue with Cloud Data Fabric where previously it was possible for a client connected through SMB to perform an operation on a file from a spoke portal after the same file was deleted from the hub portal, causing the cluster to become unavailable." %}
 * Made EdgeConnect (unprotected, single-node edge) clusters publicly available as bare-metal and VM deployments
   * Added the `cluster_type` metric to the Qumulo OpenMetrics API Specification
@@ -528,28 +548,28 @@ Significantly improved the performance of the incremental replication process fo
 * Limited the number of `bind_uri` entries to 3 for standalone LDAP queries
 * Made `qq` CLI and REST API changes to support the new EdgeConnect, CDF, S3 API, Active Directory, and LDAP functionality
 
-### Change Log
+#### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7631)
 
 
-## Qumulo Core 7.6.2
+### Qumulo Core 7.6.2
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 * Made improvements to Cloud Data Fabric:
   * Added the ability to configure up to 32 spoke portal root directories for each portal relationship
   * Made corresponding `/v2/portal/*` REST API and `qq portal_*` CLI changes
   * Changed some of the terminology concerning _portal relationship states_ and _portal root directory states_
 * Ensured that the `ListObjectsV2` S3 API action supports the `start-after` parameter
 
-### Change Log
+#### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-762)
 
 
-## Qumulo Core 7.6.1.1
+### Qumulo Core 7.6.1.1
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {{site.data.alerts.note}}
 This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual Enforcement Node (VEN) functionality that ensures network security within the container.
 <ul>
@@ -561,14 +581,14 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 * For Cloud Native Qumulo (CNQ), replaced two OpenMetrics metrics for node and drive failure
 * Resolved an issue with the REST API endpoint for unconfigured nodes
 
-### Change Log
+#### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7611)
 
 
-## Qumulo Core 7.6.0.2 (Quarterly)
+### Qumulo Core 7.6.0.2 (Quarterly)
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {{site.data.alerts.important}}
 <ul>
   <li>This release resolves an issue with the Qumulo Core upgrade process.</li>
@@ -581,28 +601,30 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 
 {% unless page.platform == 'cnq-gcp' %}
 
-### Change Log
+#### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7602-quarterly)
 
 
-## Qumulo Core 7.5.5.2
+## 7.5 Releases
+
+### Qumulo Core 7.5.5.2
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {% include important.html content="This release resolves an issue identified in Qumulo Core 7.5.4 where, under certain conditions, a node could become unavailable during an update." %}
 * Added the ability to specify a comma-separated list of bind URIs when configuring LDAP
 * Changed the error message when a user attempts to write to a read-only S3 bucket on a spoke portal
 * Resolved an issue with unexpected SAS controller behavior on hardware nodes
 * Added the ability for CNQ clusters to use the REST API and `qq` CLI to modify cloud monitoring settings
 
-### Change Log
+#### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7552)
 
 
-## Qumulo Core 7.5.4.2
+### Qumulo Core 7.5.4.2
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {{site.data.alerts.important}}
 <ul>
   <li>This release resolves an issue identified in Qumulo Core 7.5.4 where, under certain conditions, a node could become unavailable during an update.</li>
@@ -613,14 +635,14 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 * Improved the efficiency of parallel operations for workloads that perform a high number of small transactions on the spoke portal
 * Modified the `PutObject` S3 API action to accept the `x-amz-tagging` header that contains properly encoded key-value pairs
 
-### Change Log
+#### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7542)
 
 
-## Qumulo Core 7.5.3
+### Qumulo Core 7.5.3
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 * Made improvements to the S3 API:
   * Added the ability for the S3 API to access spoke portal data
   * Removed the requirement to have the `ObjectLockEnabled` setting for an S3 bucket from the `GetObjectRetention` and `GetObjectLegalHold` S3 API actions
@@ -629,14 +651,14 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
   * Active Directory for POSIX attributes where files have AD owners with numerous group memberships
 * Added an OpenMetrics metric for tracking shared data for a hub portal root directory
 
-### Change Log
+#### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-753)
 
 
-## Qumulo Core 7.5.2
+### Qumulo Core 7.5.2
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 * Added the ability to upgrade NeuralCache on Azure Native Qumulo (ANQ) and Cloud Native Qumulo (CNQ) instances deployed on Qumulo Core versions lower than 7.4.1
 * Added the ability to configure up to 32 hub portals and up to 32 spoke portals on the same cluster at the same time
 * Made improvements to the S3 API:
@@ -646,14 +668,14 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 * Added OpenMetrics for self-managed, on-premises clusters and CNQ instances
 * Added support for latest Western Digital Ultrastar DC SN640 SSD firmware
 
-### Change Log
+#### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-752)
 
 
-## Qumulo Core 7.5.1.2
+### Qumulo Core 7.5.1.2
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {% include important.html content="This release resolves an issue that previously caused an increase in logging output levels on CNQ and ANQ." %}
 * For CNQ on Oracle Cloud Infrastructure (OCI), added support for Cold clusters with an object tier for infrequent access to files and directories
 * Made improvements to the S3 API:
@@ -662,14 +684,14 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 * Modified `files` REST APIs to return entity tag (ETag) values correctly
 * Added support for latest Western Digital Ultrastar DC SN640 SSD firmware\
 
-### Change Log
+#### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7512)
 
 
-## Qumulo Core 7.5.0.3 (Quarterly)
+### Qumulo Core 7.5.0.3 (Quarterly)
 {{ nexusLink }}
 
-### Features and Improvements
+#### Features and Improvements
 {{site.data.alerts.important}}
 <ul>
   <li>This release resolves an issue with Authoritative DNS (QDNS) by reducing the amount of logging for the feature.</li>
@@ -693,6 +715,6 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 * Resolved an issue with incorrect drive types for nodes in on-premises clusters
 * Modified the `ListBuckets` S3 API action to use the `BucketPolicy` permission together with Role-Based Access Control (RBAC) in Qumulo Core
 
-### Change Log
+#### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7503-quarterly)
 {% endunless %}
