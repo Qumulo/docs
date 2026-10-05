@@ -8,22 +8,42 @@ jobs:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
-          ref: gh-pages
-          path: content
 
       - name: Prepare SSH key
         run: |
           echo "${{ secrets.DOCS_PUBLISH_KEY }}" > /tmp/key
           chmod 400 /tmp/key
 
-      - name: Push this upstream
+      - name: Push modified mainline and intact gh-pages branches from internal to public
         run: |
-          # git remote add -m gh-pages public git@github.com:Qumulo/docs
-          git -C content remote add -m gh-pages public git@github.com:Qumulo/docs
+          # Specify credentials
+          git config user.email "qontent@qumulo.com"
+          git config user.name "Team Qontent"
+
+          # Ensure local `gh-pages` branch exists in runner
+          git fetch origin gh-pages:gh-pages || true
+
+          # Define remote repository idempotently
+          git remote remove public >/dev/null 2>&1 || true
+          git remote add -m gh-pages public git@github.com:Qumulo/docs
+          
+          # Make temporary local `export` branch to avoid changing internal `mainline` branch
+          git checkout -B export mainline
+
+          # Commit changes without `.yml` workflow files to public `mainline` branch
+          git rm -f .github/workflows/*.yml || true
+          git add --all
+          git commit -m "Remove internal workflow files for public export" || true
+
+          # Force push temporary internal `export` branch to public `mainline` branch
+          git push --force public export:mainline
 
           # Force push internal `gh-pages` branch to public `gh-pages` branch
-          # git push --force public gh-pages
-          git -C content push --force public gh-pages
+          git push --force public gh-pages
+
+          # Clean up temporary `export` branch
+          git checkout mainline
+          git branch -D export || true          
         env:
           GIT_SSH_COMMAND: ssh -i /tmp/key
 
