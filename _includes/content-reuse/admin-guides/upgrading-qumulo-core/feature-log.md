@@ -46,8 +46,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
   * Deleting a portal relationship with open connections to a directory
   * Moving IP addresses of a CNQ on Azure cluster
   * LDAP lookups and distinguished names containing a comma (`,`)
-#### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7101)
+
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71011)
 
