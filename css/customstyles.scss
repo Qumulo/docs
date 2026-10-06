@@ -1066,18 +1066,18 @@ h1 {
 
 .breadcrumb > .active {color: #777 !important;}
 
-h1[id],
-h2[id],
-h3[id],
-h4[id],
-h5[id],
-h6[id],
-dt[id]{
-color: #333;
+h1[id],h2[id],h3[id],h4[id],h5[id],h6[id],
+h1,h2,h3,h4,h5,h6,
+dt[id] {
+  font-weight: bold;
 }
 
-h5 {
-    font-weight:bold;
+h2[id] {
+  color: #3b3b3b;
+}
+
+h3[id],h4[id],h5[id],h6[id] {
+  color: #525252;
 }
 
 .post-content img {
