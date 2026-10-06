@@ -13,7 +13,7 @@ layout: page
 
 ## 7.10 Releases
 
-### Qumulo Core 7.10.1
+### Qumulo Core 7.10.1.1
 {{ nexusLink }}
 <ul>
   <li>Added <code>GET | POST /v1/object-portal/bridges/</code></li>
@@ -127,7 +127,7 @@ layout: page
 </details>
 
 
-### Qumulo Core 7.10.0 (Quarterly)
+### Qumulo Core 7.10.0.1 (Quarterly)
 {{ nexusLink }}
 <ul>
   <li>Added <code>POST /v1/files/try-resolve</code></li>

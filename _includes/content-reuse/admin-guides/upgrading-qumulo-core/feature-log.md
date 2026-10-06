@@ -1,27 +1,36 @@
 <style>div#toc{height:200px;overflow:auto;}</style>
-{% if page.platform == 'on-prem' %}
-For information about upgrade types for each release, see <a href='mode-reference.html'>Qumulo Core Upgrade Mode Reference</a>.
-{% endif %}
 {% capture nexusLink %}<p>{{site.downloadsRelnotes}}{{site.loginRequired}}</p>{% endcapture %}
 {% comment %}For boilerplate text, use {{page.varNoPublicChanges}}{% endcomment %}
 {% capture noAPIchanges %}This release contains no REST API changes.{% endcapture %}
 {% capture platUpg %}This release of Qumulo Core is a _platform upgrade_ that requires either a complete reboot (rebooting all nodes in your cluster at the same time) or a rolling reboot (rebooting the nodes in your cluster one at a time).{% endcapture %}
 
+{% if page.platform == 'on-prem' %}
+For information about upgrade types for each release, see <a href='mode-reference.html'>Qumulo Core Upgrade Mode Reference</a>.
+{% endif %}
+
+{{ site.fixedInLatest }} <span class="fixed-in-latest">Fixed in latest version</span>
 
 ## 7.10 Releases
 
-### Qumulo Core 7.10.1
+### Qumulo Core 7.10.1.1
 {{ nexusLink }}
 
 #### Features and Improvements
+{% capture delSnap %}Resolves an issue that previously reduced the performance of the process that reclaims the capacity used by deleted snapshots on clusters with large numbers of deleted snapshots.{% endcapture %}
 {% capture adjInfra %}    <p>For Cloud Native Qumulo (CNQ) clusters that were:</p>
     <ul>
-      <li><strong>Deployed on Qumulo Core lower than 7.4.3:</strong> If the clusters haven’t undergone a cluster redeployment on Qumulo Core 7.4.3 (or higher), they must complete the cluster redeployment process before upgrading to Qumulo Core 7.10.1 (or higher). This process retains your cluster’s configuration and all data.</li>
+      <li><strong>Deployed on Qumulo Core lower than 7.4.3:</strong> If the clusters haven’t undergone a cluster infrastructure adjustment on Qumulo Core 7.4.3 (or higher), they must complete this process before upgrading to Qumulo Core 7.10.1 (or higher). The process retains your cluster’s configuration and all data.</li>
       <li><strong>Deployed or Adjusted Cluster Infrastructure on Qumulo Core 7.4.3 (and higher):</strong> No additional steps are required.</li>
     </ul>{% endcapture %}
 {{site.data.alerts.important}}
 <ul>
-  <li>This release significantly shortens quorum formation time for Cloud Native Qumulo created on Qumulo Core versions lower than 7.10.0 and Stratus Accelerator clusters created on Qumulo Core versions lower than 7.9.2.</li>
+  <li>
+    This release&hellip;
+    <ul>
+      <li class="fixed-in-latest">{{ site.fixedInLatest }} {{ delSnap }}</li>
+      <li>Significantly shortens quorum formation time for Cloud Native Qumulo created on Qumulo Core versions lower than 7.10.0 and Stratus Accelerator clusters created on Qumulo Core versions lower than 7.9.2.</li>
+    </ul>
+  </li>
   <li>
 {{ adjInfra }}
   </li>
@@ -37,20 +46,24 @@ For information about upgrade types for each release, see <a href='mode-referenc
   * Deleting a portal relationship with open connections to a directory
   * Moving IP addresses of a CNQ on Azure cluster
   * LDAP lookups and distinguished names containing a comma (`,`)
-
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7101)
+#### Change Log
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71011)
 
 
-### Qumulo Core 7.10.0 (Quarterly)
+### Qumulo Core 7.10.0.1 (Quarterly)
 {{ nexusLink }}
 
 #### Features and Improvements
 {{site.data.alerts.important}}
 <ul>
   <li>
-    <p>This release includes a cryptographic module compliant with <a target="_blank" href="https://csrc.nist.gov/pubs/fips/140-3/final">FIPS 140-3</a>.</p>
-    <p><strong>Upgrade Requirements:</strong> To be able to upgrade your cluster to Qumulo Core 7.10.0, you must ensure that all certificates on your cluster are compliant with FIPS 140-3. Non-compliant certificates can cause error messages beginning with <code>REPLACEMENT_ADVICE</code> or <code>MATCHING_KEY_ADVICE</code>.</p>
+    This release&hellip;
+    <ul>
+      <li class="fixed-in-latest">{{ site.fixedInLatest }} {{ delSnap }}</li>
+      <li>Includes a cryptographic module compliant with <a target="_blank" href="https://csrc.nist.gov/pubs/fips/140-3/final">FIPS 140-3</a>. To be able to upgrade your cluster to Qumulo Core 7.10.0.1, you must ensure that all certificates on your cluster are compliant with FIPS 140-3. Non-compliant certificates can cause error messages beginning with <code>REPLACEMENT_ADVICE</code> or <code>MATCHING_KEY_ADVICE</code>.</li>
+    </ul>
   </li>
   <li>
 {{ adjInfra }}
@@ -68,7 +81,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * **REST API:** Made improvements to Analytics and Files endpoints
 
 #### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7100-quarterly)
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71001-quarterly)
 
 
 ## 7.9 Releases

@@ -35,7 +35,7 @@ Qumulo Core creates an access key pair whenever an authorized user requests it. 
 
 The way in which Qumulo Core access keys let you access your Qumulo cluster makes the process similar to  the way in which [IAM Access Keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) let you access Amazon S3 resources. For this reason, applications that access objects stored in a Qumulo cluster can use the Qumulo S3 API similarly to the native Amazon S3 API.
 
-### How S3 Access Keys work with Identities
+### How S3 Access Keys Work with Identities
 An S3 access key doesn't grant any additional permissions. It associates an S3 API request with a specific [identity](#identity) known to the Qumulo cluster.
 
 When Qumulo Core processes a request, it evaluates permissions by using the Qumulo ACL (QACL) mechanism that operates like the access control list (ACL) mechanism that all file system protocols use. When the QACL grants or denies permissions to an associated identity, it also grants or denies the same permissions to the request being processed.
