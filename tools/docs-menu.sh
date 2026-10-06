@@ -1032,7 +1032,7 @@ while true; do
     echo -e "\033[1;33mIndex Documentation\033[0m"
     echo -e "30. 🔍\tIngest docs.qumulo.com into Vectara"
     echo -e "31. 🔍\tIngest care.qumulo.com into Vectara"
-    echo -e "31. 🔍\tIngest qumulo.com into Vectara"
+    echo -e "32. 🔍\tIngest qumulo.com into Vectara"
     echo
     echo -e "q.  👋\tQuit"
     echo
