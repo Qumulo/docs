@@ -2472,7 +2472,7 @@ $(document).ready(function() {
   <li><strong>Qumulo Authoritative DNS (QDNS):</strong> Configured QDNS to serve DNS records with a customizable TTL value and made a corresponding change to the <code class="language-plaintext highlighter-rouge">qq</code> CLI</li>
   <li><strong>Resolved Issues With:</strong>
     <ul>
-      <li>Writes to a spoke portal over S3</li>
+      <li>Writes to a spoke portal over S3 returning the <code class="language-plaintext highlighter-rouge">403 Forbidden</code> HTTP status code rather than the correct <code class="language-plaintext highlighter-rouge">501 Not Implemented</code> status code</li>
       <li>Deleting a portal relationship with open connections to a directory</li>
       <li>Moving IP addresses of a CNQ on Azure cluster</li>
       <li>LDAP lookups and distinguished names containing a comma (<code class="language-plaintext highlighter-rouge">,</code>)</li>
