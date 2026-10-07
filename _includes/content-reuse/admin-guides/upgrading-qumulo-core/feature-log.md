@@ -42,7 +42,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
   * Updated REST API endpoints and `qq` CLI commands related to portal connectivity, portal quorum events, and listing configuration status for hub portals and spoke portals
 * **Qumulo Authoritative DNS (QDNS):** Configured QDNS to serve DNS records with a customizable TTL value and made a corresponding change to the `qq` CLI
 * **Resolved Issues With:**
-  * Writes to a spoke portal over S3
+  * Writes to a spoke portal over S3 returning the `403 Forbidden` HTTP status code rather than the correct `501 Not Implemented` status code
   * Deleting a portal relationship with open connections to a directory
   * Moving IP addresses of a CNQ on Azure cluster
   * LDAP lookups and distinguished names containing a comma (`,`)
