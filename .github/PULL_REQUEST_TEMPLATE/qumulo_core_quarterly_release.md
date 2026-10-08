@@ -3,6 +3,8 @@
   - [ ] Corrections from stakeholders
 - [ ] Internal relnotes
   - [ ] Corrections from stakeholders
+- [ ] Quarterly relnotes
+  - [ ] Corrections from stakeholders
 
 ## Release Preparation
 - [ ] Feature log
