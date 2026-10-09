@@ -11,7 +11,7 @@ sidebar: cloud_native_aws_administrator_guide_sidebar
 For an overview of {{site.aws.cnqAWSshort}}, its prerequisites, and limits, see [How Cloud Native Qumulo Works](how-cloud-native-qumulo-works.html).
 
 {{site.data.alerts.important}}
-New {{site.cnqShort}} deployments use the <a href="https://qumulo.github.io/terraform-provider-qumulo-cloud/">Qumulo Terraform Provider</a>:
+New {{site.cnqShort}} deployments use the Qumulo Terraform Provider:
 <ul>
   <li>The Terraform Provider doesn't require downloading a Terraform bundle or staging an installer in an S3 bucket.</li>
   <li>Persistent storage and compute resources deploy in a single Terraform workspace and don't require configuring a cross-workspace remote state.</li>
