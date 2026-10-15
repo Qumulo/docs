@@ -20,7 +20,7 @@ layout: page
   <li>Added <code>WELL_KNOWN</code> enum value to <code>type</code> field in <code>GET /v1/files/{ref}/user-metadata/{type}/</code> response</li>
 </ul>
 
-### Qumulo Core 7.10.1.1
+### Qumulo Core 7.10.1.2
 {{ nexusLink }}
 <ul>
   <li>Added <code>GET | POST /v1/object-portal/bridges/</code> endpoint</li>
@@ -436,7 +436,7 @@ layout: page
   </ul>
 </details>
 
-### Qumulo Core 7.10.0.1 (Quarterly)
+### Qumulo Core 7.10.0.2 (Quarterly)
 {{ nexusLink }}
 <ul>
   <li>Added <code>POST /v1/files/try-resolve</code> endpoint</li>
