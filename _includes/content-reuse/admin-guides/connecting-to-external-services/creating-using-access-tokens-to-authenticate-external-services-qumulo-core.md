@@ -206,7 +206,7 @@ For example:
 ```
 
 ### To Retrieve Metadata for All Access Tokens
-Run the `qq auth_list_access_tokens` command.
+Run the {% include qq.html command="auth_list_access_tokens" %} command.
 
 {{site.data.alerts.important}}
 Listing access tokens <em>doesn't</em> return the bearer token required for authentication. {{site.varBearerTokenWarning}}

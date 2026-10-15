@@ -183,7 +183,7 @@ You can change the GCE instance type, node count, and to convert your cluster fr
 </ul>
 {{site.data.alerts.end}}
 
-Changing the GCE instance type of your {{site.gcp.cnqCNQshort}} cluster is a three-step process in which you create a new deployment in a new Terraform workspace and join the new GCE instances to a quorum, remove the existing GCE instances, and then clean up your GCS bucket policies.
+Changing the GCE instance type of your {{site.gcp.cnqGCPshort}} cluster is a three-step process in which you create a new deployment in a new Terraform workspace and join the new GCE instances to a quorum, remove the existing GCE instances, and then clean up your GCS bucket policies.
 
 #### Step 1: Create a New Deployment in a New Terraform Workspace
 1. To create a new Terraform workspace, run the `terraform workspace new my-new-workspace-name` command.

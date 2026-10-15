@@ -30,7 +30,7 @@ To view the fault tolerance of your Qumulo cluster:
 
 * **Web UI:** Navigate to the **Cluster Overview** page
 
-* **`qq` CLI:** Run the `qq protection_status_get` command
+* **`qq` CLI:** Run the {% include qq.html command="protection_status_get" %} command
 
 * **REST API:** Call the `/v1/cluster/protection/status` endpoint
 

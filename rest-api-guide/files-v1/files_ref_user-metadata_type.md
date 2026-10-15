@@ -33,15 +33,18 @@ methods:
         \ of user metadata entries.\",\n        \"type\": \"object\",\n        \"\
         properties\": {\n          \"type\": {\n            \"type\": \"string\",\n\
         \            \"enum\": [\n              \"GENERIC\",\n              \"S3\"\
-        \n            ],\n            \"description\": \"The type of user metadata.\
-        \ Generic user metadata is visible through the S3 api as object tags. S3 metadata\
-        \ is visible to the S3 protocol as object metadata.:\\n * `GENERIC` - API_FILES_USER_METADATA_TYPE_GENERIC,\\\
-        n * `S3` - API_FILES_USER_METADATA_TYPE_S3\"\n          },\n          \"key\"\
-        : {\n            \"description\": \"The key used to reference the user metadata.\"\
-        ,\n            \"type\": \"string\"\n          },\n          \"value\": {\n\
-        \            \"description\": \"The Base64-encoded value that the user-defined\
-        \ metadata entry stores.\",\n            \"type\": \"string\"\n          }\n\
-        \        }\n      }\n    }\n  }\n}"
+        ,\n              \"WELL_KNOWN\"\n            ],\n            \"description\"\
+        : \"The type of user metadata. Generic user metadata is visible through the\
+        \ S3 api as object tags. S3 metadata is visible to the S3 protocol as object\
+        \ metadata. Well-known metadata is a fixed set of keys that Qumulo Core defines:\
+        \ the standard S3 object headers, such as Content-Type, keyed by header name.:\\\
+        n * `GENERIC` - API_FILES_USER_METADATA_TYPE_GENERIC,\\n * `S3` - API_FILES_USER_METADATA_TYPE_S3,\\\
+        n * `WELL_KNOWN` - API_FILES_USER_METADATA_TYPE_WELL_KNOWN\"\n          },\n\
+        \          \"key\": {\n            \"description\": \"The key used to reference\
+        \ the user metadata.\",\n            \"type\": \"string\"\n          },\n\
+        \          \"value\": {\n            \"description\": \"The Base64-encoded\
+        \ value that the user-defined metadata entry stores.\",\n            \"type\"\
+        : \"string\"\n          }\n        }\n      }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success

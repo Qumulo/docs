@@ -10,7 +10,19 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 {{ site.fixedInLatest }} <span class="fixed-in-latest">Fixed in latest version</span>
 
+
 ## 7.10 Releases
+
+### Qumulo Core 7.10.2
+{{ nexusLink }}
+
+* **S3 API:** Configured the Qumulo S3 API to store and return the six AWS user-controlled system metadata headers
+* **Cloud Data Fabric (CDF):** Resolved performance issues for NFS delete operations on portal spokes
+* **General Improvements:** Updated Qumulo Core to Time Zone Database Release 2026e
+
+#### Change Log
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7102)
+
 
 ### Qumulo Core 7.10.1.1
 {{ nexusLink }}
@@ -335,7 +347,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * **Bug Fixes**
   * Resolved an issue with opening a TCP socket to the Azure Instance Metadata Service (IMDS)
   * Resolved an issue with restarting `systemd-networkd`
-  * Resolved an issue with the `qq fs_list_locks --protocol smb --lock-type share-mode` command
+  * Resolved an issue with the {% include qq.html command="fs_list_locks" %} command when using the `--protocol smb --lock-type share-mode` flags
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7904-quarterly)
@@ -461,7 +473,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 #### Features and Improvements
 {% include important.html content=inconTrigg %}
 * {{page.varNoPublicChanges}}
-* Added the `/v1/portal/ping` REST API endpoint and the `qq portal_ping` command
+* Added the `/v1/portal/ping` REST API endpoint and the {% include qq.html command="portal_ping" %} command
 * Changed how the `qq ad_cancel`, `ad_join`, `ad_leave`, and `ad_reconfigure` commands return the status of in-progress background operations
 
 #### Change Log

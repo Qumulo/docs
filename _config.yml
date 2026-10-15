@@ -412,9 +412,11 @@ s3:
     ListObjects: https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html
     ListObjectsV2: https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html
     ListParts: https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html
+    MultipartUpload: https://docs.aws.amazon.com/AmazonS3/latest/API/API_MultipartUpload.html
     PutLegalHold: https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLegalHold.html
     PutObject: https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html
     PutObjectRetention: https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectRetention.html
+    PutObjectTagging: https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html
     UploadPart: https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html
 
 azure:

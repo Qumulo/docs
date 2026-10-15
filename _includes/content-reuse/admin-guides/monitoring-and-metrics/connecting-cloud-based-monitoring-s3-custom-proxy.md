@@ -1,7 +1,7 @@
 In Qumulo Core 2.6.4 (and higher), you can specify a custom proxy for both Cloud-Based Monitoring and S3 in different ways.
 
 ## Configuring a Custom Proxy for Cloud-Based Monitoring and S3
-The following examples show some common configurations for custom proxies by using the `qq set_monitoring_conf` command.
+The following examples show some common configurations for custom proxies by using the {% include qq.html command="set_monitoring_conf" %} command.
 
 {% capture NoRemoteVPN %}{{page.varNoRemoteVPNforCustomProxy}}{% endcapture %}
 {% include important.html content=NoRemoteVPN %}
