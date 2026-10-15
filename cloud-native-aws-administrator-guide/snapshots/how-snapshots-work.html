@@ -2509,7 +2509,8 @@ $(document).ready(function() {
 
 <p>When you delete a snapshot, Qumulo Core removes the data which that snapshot references but retains the data which any other snapshot references. This ensures a full file representation within the remaining snapshots. Qumulo Core uses a background process to recover the storage that the snapshot had consumed.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> When you delete a snapshot, the background process might take some time. To track the reclaimed storage, run the <code class="language-plaintext highlighter-rouge">qq snapshot_get_total_used_capacity</code> command.</div>
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> When you delete a snapshot, the background process might take some time. To track the reclaimed storage, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/snapshot/snapshot_get_total_used_capacity.html"><code>qq snapshot_get_total_used_capacity</code></a>
+ command.</div>
 
 <h3 id="example-tracking-covering-snapshots-and-data-changes">Example: Tracking Covering Snapshots and Data Changes</h3>
 <p>For example, if you run the <a href="https://docs.qumulo.com/qq-cli-command-guide/snapshot/snapshot_get_total_used_capacity.html"><code>qq snapshot_get_total_used_capacity</code></a>

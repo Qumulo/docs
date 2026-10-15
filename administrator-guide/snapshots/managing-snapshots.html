@@ -2874,7 +2874,8 @@ $(document).ready(function() {
 <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Creating and modifying snapshot policies with an associated lock requires the <code class="language-plaintext highlighter-rouge">SNAPSHOT_LOCK</code> permission in addition to policy permissions.</div>
 
 <h3 id="create-snapshot-with-policy">Creating Snapshots on a Schedule by Using a Snapshot Policy</h3>
-<p>Run the <code class="language-plaintext highlighter-rouge">qq snapshot_create_policy</code> command to create a snapshot policy and specify the interval at which Qumulo Core takes and deletes snapshots.</p>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/snapshot/snapshot_create_policy.html"><code>qq snapshot_create_policy</code></a>
+ command to create a snapshot policy and specify the interval at which Qumulo Core takes and deletes snapshots.</p>
 
 <p>In the following example, we create a policy named <code class="language-plaintext highlighter-rouge">every_day</code> that takes a snapshot every midnight in the Pacific time zone and retains the snapshot for two days. Every new snapshot that this policy creates is locked with a key named <code class="language-plaintext highlighter-rouge">my-key-name</code>.  For more information, see <a href="locking-unlocking-snapshots.html">Locking and Unlocking Snapshots in Qumulo Core</a>.</p>
 
@@ -2921,7 +2922,8 @@ $(document).ready(function() {
 </code></pre></div></div>
 
 <h3 id="modifying-a-snapshots-expiration-time">Modifying a Snapshot’s Expiration Time</h3>
-<p>Run the <code class="language-plaintext highlighter-rouge">qq snapshot_modify_snapshot</code> command and specify the snapshot ID from the <strong>Saved Snapshots</strong> page in the Qumulo Core Web UI (for example, for the <code class="language-plaintext highlighter-rouge">1234567_replication_from_prod</code> snapshot, the ID is <code class="language-plaintext highlighter-rouge">1234567</code>).</p>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/snapshot/snapshot_modify_snapshot.html"><code>qq snapshot_modify_snapshot</code></a>
+ command and specify the snapshot ID from the <strong>Saved Snapshots</strong> page in the Qumulo Core Web UI (for example, for the <code class="language-plaintext highlighter-rouge">1234567_replication_from_prod</code> snapshot, the ID is <code class="language-plaintext highlighter-rouge">1234567</code>).</p>
 
 <p>In the following example, the snapshot with ID <code class="language-plaintext highlighter-rouge">1234567</code> never expires.</p>
 

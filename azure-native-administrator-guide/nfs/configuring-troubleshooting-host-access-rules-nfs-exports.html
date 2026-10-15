@@ -2533,7 +2533,8 @@ $(document).ready(function() {
 </span></code></pre></div>    </div>
   </li>
   <li>
-    <p>Run the <code class="language-plaintext highlighter-rouge">qq nfs_mod_export</code> command and specify the export path and the file with the host access rules. For example:</p>
+    <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_mod_export.html"><code>qq nfs_mod_export</code></a>
+ command and specify the export path and the file with the host access rules. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq nfs_mod_export <span class="se">\</span>
   <span class="nt">--export-path</span> / <span class="se">\</span>
@@ -2574,7 +2575,8 @@ $(document).ready(function() {
 
 <ol>
   <li>
-    <p>To view the NFS export’s host access rules, run the <code class="language-plaintext highlighter-rouge">qq nfs_get_export</code> command and specify the export path. For example:</p>
+    <p>To view the NFS export’s host access rules, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_get_export.html"><code>qq nfs_get_export</code></a>
+ command and specify the export path. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq nfs_get_export <span class="nt">--export-path</span> /
 </code></pre></div>    </div>
@@ -2640,7 +2642,8 @@ ID  Hosts                          Access Options
  command.</p>
       </li>
       <li>
-        <p>Run the <code class="language-plaintext highlighter-rouge">qq dns_resolve_hostnames</code> command and specify the hostname to perform a lookup for <code class="language-plaintext highlighter-rouge">user1.accounting.example.com</code>.</p>
+        <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/dns/dns_resolve_hostnames.html"><code>qq dns_resolve_hostnames</code></a>
+ command and specify the hostname to perform a lookup for <code class="language-plaintext highlighter-rouge">user1.accounting.example.com</code>.</p>
 
         <p>The following is example output.</p>
 
@@ -2652,7 +2655,8 @@ ID  Hosts                          Access Options
 </span></code></pre></div>        </div>
       </li>
       <li>
-        <p>Run the <code class="language-plaintext highlighter-rouge">qq dns_resolve_ips</code> command to find the hostname for your client’s IP address and:</p>
+        <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/dns/dns_resolve_ips.html"><code>qq dns_resolve_ips</code></a>
+ command to find the hostname for your client’s IP address and…</p>
 
         <ul>
           <li>
@@ -2672,7 +2676,8 @@ ID  Hosts                          Access Options
 
 <p>By increasing TTL, you can reduce the number of DNS requests that your cluster makes. However, this might cause your cluster to keep outdated results for a longer time. For the most optimal configuration, list your organization’s DNS servers first in your DNS configuration.</p>
 
-<p>To bypass DNS, you can set explicit IP-host mappings for your cluster by using the <code class="language-plaintext highlighter-rouge">qq dns_set_lookup_overrides</code> command. If Qumulo Core finds an override for an IP address or host, it uses the override instead of the DNS cache.</p>
+<p>To bypass DNS, you can set explicit IP-host mappings for your cluster by using the <a href="https://docs.qumulo.com/qq-cli-command-guide/dns/dns_set_lookup_overrides.html"><code>qq dns_set_lookup_overrides</code></a>
+ command. If Qumulo Core finds an override for an IP address or host, it uses the override instead of the DNS cache.</p>
 
 <p>In the following JSON example, the IP address <code class="language-plaintext highlighter-rouge">203.0.113.2</code> binds to the host <code class="language-plaintext highlighter-rouge">user3.accounting.qumulo.com</code> explicitly.</p>
 

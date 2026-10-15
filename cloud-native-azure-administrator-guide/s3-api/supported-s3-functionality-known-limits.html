@@ -2815,6 +2815,145 @@ $(document).ready(function() {
 
 <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Although Qumulo Core supports <code class="language-plaintext highlighter-rouge">Prefix</code> and <code class="language-plaintext highlighter-rouge">Delimiter</code> partially, it fully supports the most common use case: listing the contents of S3 buckets as a hierarchical file.</div>
 
+<h3 id="object-metadata">Object Metadata</h3>
+<p>Qumulo Core stores each kind of S3 object metadata as <a href="../metadata/managing-user-defined-metadata.html">user-defined metadata</a> in a separate keyspace.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>S3 Object Metadata</th>
+      <th>Appears to S3 Clients As&hellip;</th>
+      <th>Qumulo Core Keyspace</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>User-Defined Metadata</td>
+      <td><code>x-amz-meta-&ast;</code> headers</td>
+      <td><code>S3</code></td>
+    </tr>
+    <tr>
+      <td>Tags</td>
+      <td>
+        One of the following:
+        <ul>
+          <li><code>x-amz-tagging</code> header</li>
+          <li><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html"><code>PutObjectTagging</code></a> API action</li>
+        </ul>
+      </td>
+      <td><code>GENERIC</code></td>
+    </tr>
+    <tr>
+      <td>Standard object headers</td>
+      <td>
+        <ul>
+          <li><code>Cache-Control</code></li>
+          <li><code>Content-Disposition</code></li>
+          <li><code>Content-Encoding</code></li>
+          <li><code>Content-Language</code></li>
+          <li><code>Content-Type</code></li>
+          <li><code>Expires</code></li>
+        </ul>
+      </td>
+      <td><code>WELL_KNOWN</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="standard-object-headers-special-considerations">Special Considerations for Standard Object in Qumulo Core</h3>
+<p>This section describes the special considerations for how default header values, header storage and replication, and response header overrides work in Qumulo Core.</p>
+
+<h4 id="default-header-values">Default Header Values</h4>
+<ul>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">Content-Type</code>:</strong> If an object has no stored <code class="language-plaintext highlighter-rouge">Content-Type</code> value (for example, if it is a file written by using NFS or SMB or an object written by using a version of Qumulo Core lower than 7.10.2), the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"><code class="language-plaintext highlighter-rouge">GetObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html"><code class="language-plaintext highlighter-rouge">HeadObject</code></a> API actions return <code class="language-plaintext highlighter-rouge">Content-Type: binary/octet-stream</code>.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">Content-Encoding</code>:</strong> The AWS SDK adds <code class="language-plaintext highlighter-rouge">aws-chunked</code> to the <code class="language-plaintext highlighter-rouge">Content-Encoding</code> header of streaming uploads. Following Amazon S3 behavior, Qumulo Core removes <code class="language-plaintext highlighter-rouge">aws-chunked</code> from the stored value. If no other <code class="language-plaintext highlighter-rouge">Content-Encoding</code> value remains, Qumulo doesn’t store this header.</p>
+  </li>
+</ul>
+
+<h4 id="header-storage">Header Storage</h4>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
+<ul>
+  <li>In Qumulo Core 7.10.2 (and higher), the S3 API stores the <a target="_blank" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingMetadata.html#SysMetadata">system-defined metadata headers that users can control</a> and returns them in the responses of <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"><code>GetObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html"><code>HeadObject</code></a> API actions.</li>
+  <li>Lower versions of Qumulo Core accept these headers, don't store them, and return <code>Content-Type: binary/octet-stream</code> for every object.</li>
+</ul>
+</div>
+
+<ul>
+  <li>
+    <p><strong>Creating Objects:</strong></p>
+
+    <ul>
+      <li>
+        <p>Qumulo Core stores the headers from the requests of <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html"><code class="language-plaintext highlighter-rouge">PutObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html"><code class="language-plaintext highlighter-rouge">CreateMultipartUpload</code></a> API actions.</p>
+      </li>
+      <li>
+        <p>For multipart uploads, the request headers of <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html"><code class="language-plaintext highlighter-rouge">UploadPart</code></a> API actions don’t change the stored values.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Copying Objects:</strong></p>
+
+    <ul>
+      <li>
+        <p>The <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html"><code class="language-plaintext highlighter-rouge">CopyObject</code></a> API action copies the source object’s standard headers together with its user-defined metadata.</p>
+      </li>
+      <li>
+        <p>When you set the <code class="language-plaintext highlighter-rouge">x-amz-metadata-directive</code> header to <code class="language-plaintext highlighter-rouge">REPLACE</code>, Qumulo Core stores the standard headers and user-defined metadata from the request of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html"><code class="language-plaintext highlighter-rouge">CopyObject</code></a> API action.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="header-replication">Header Replication</h4>
+<ul>
+  <li>
+    <p>Qumulo Core <a href="../replicating-data/creating-managing-continuous-replication-relationship.html">continuous replication</a> copies the stored headers only to target clusters that run Qumulo Core 7.10.2 (or higher).</p>
+  </li>
+  <li>
+    <p>In Qumulo Core 7.10.2…</p>
+
+    <ul>
+      <li>
+        <p><a href="../replicating-data/shift-to-s3.html">Qumulo Shift-To</a> doesn’t send the stored headers to Amazon S3.</p>
+      </li>
+      <li>
+        <p><a href="../replicating-data/shift-from-s3.html">Qumulo Shift-From</a> doesn’t store the headers of the objects that it copies.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="response-header-overrides">Response Header Overrides</h4>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+Qumulo Core returns the <code>InvalidRequest</code> error when&hellip;
+<ul>
+  <li>An anonymous request uses any of the following query parameters</li>
+  <li>A request uses any other query parameter that begins with <code>response-</code></li>
+</ul>
+</div>
+
+<p>For presigned requests that use the following request types, you can use response header overrides as query parameters for the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"><code class="language-plaintext highlighter-rouge">GetObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html"><code class="language-plaintext highlighter-rouge">HeadObject</code></a> API actions.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">response-cache-control</code></li>
+  <li><code class="language-plaintext highlighter-rouge">response-content-disposition</code></li>
+  <li><code class="language-plaintext highlighter-rouge">response-content-encoding</code></li>
+  <li><code class="language-plaintext highlighter-rouge">response-content-language</code></li>
+  <li><code class="language-plaintext highlighter-rouge">response-content-type</code></li>
+  <li><code class="language-plaintext highlighter-rouge">response-expires</code></li>
+</ul>
+
+<p>For more information, see the following Amazon S3 documentation:</p>
+
+<ul>
+  <li><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html#:~:text=Overriding%20response%20header%20values%20through%20the%20request"><code class="language-plaintext highlighter-rouge">GetObject</code>: Overriding response header values through the request</a></li>
+  <li><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html#AmazonS3-HeadObject-request-uri-querystring-ResponseCacheControl"><code class="language-plaintext highlighter-rouge">HeadObject</code>: URI Request parameters (<code class="language-plaintext highlighter-rouge">response-&amp;ast;</code>)</a></li>
+</ul>
+
 <h3 id="request-authentication">Request Authentication</h3>
 <ul>
   <li>
@@ -2881,41 +3020,79 @@ $(document).ready(function() {
 <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If all objects in a bucket are under the same directory—none of the object keys have the slash (<code class="language-plaintext highlighter-rouge">/</code>) character in them—the maximum number of objects in the bucket is limited to the maximum number of files in a directory. For more information, see <a href="../getting-started/supported-configurations-known-limits.html">Supported Configurations and Known Limits for Qumulo Core</a>.</div>
 
 <h3 id="known-limits-for-s3-objects">Known Limits for S3 Objects</h3>
+<p>This section lists the known minimum and maximum limits for S3 objects.</p>
+
+<h4 id="minimum-limits">Minimum Limits</h4>
 
 <table>
 <thead>
   <tr>
-    <th style="width:33%">Limit</th>
-    <th style="width:33%">Qumulo Core</th>
-    <th style="width:33%">Amazon S3</th>
+    <th style="width:60%">Limit</th>
+    <th style="width:20%">Qumulo Core</th>
+    <th style="width:20%">Amazon S3</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td>Minimum object size</td>
+    <td>Object size</td>
     <td colspan="2" class="joined-cell">0 bytes</td>
   </tr>
   <tr>
-    <td>Maximum object size (by using <code>PutObject</code>)</td>
+    <td>Object key length</td>
+    <td colspan="2" class="joined-cell">1 character</td>
+  </tr>
+</tbody>
+</table>
+
+<h4 id="maximum-limits">Maximum Limits</h4>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
+<ul>    
+  <li>The size limits for user-defined metadata and for standard object headers are completely separate.</li>
+  <li>In Qumulo Core 7.10.2 (and higher), a request whose user-defined metadata or standard object headers exceed the size limit returns the <code>MetadataTooLarge</code> error.</li>
+  <li>A request with more than 100 user-defined metadata entries returns the <code>QumuloUserMetadataLimitExceeded</code> error.</li>
+</ul>   
+</div>
+
+<table>
+<thead>
+  <tr>
+    <th style="width:40%">Limit</th>
+    <th style="width:30%">Qumulo Core</th>
+    <th style="width:30%">Amazon S3</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Object size when using the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html"><code>PutObject</code></a> API action</td>
     <td colspan="2" class="joined-cell">5 GiB</td>
   </tr>
   <tr>
-    <td>Maximum object size (by using <code>MultipartUpload</code>)</td>
+    <td>Object size when using the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_MultipartUpload.html"><code>MultipartUpload</code></a> API action</td>
     <td colspan="2" class="joined-cell">48.8 TiB (10,000 * 5 GiB)</td>
     </tr>
   <tr>
-    <td>Minimum object key length</td>
-    <td colspan="2" class="joined-cell">1 character</td>
-  </tr>
-  <tr>
-    <td>Maximum object key length</td>
+    <td>Object key length</td>
     <td>1,530 characters, if there are no slash (<code>/</code>) characters in the key</td>
     <td>1,024 characters</td>
   </tr>
   <tr>
-    <td>Maximum object versions</td>
+    <td>Object versions</td>
     <td>4,294,967,296 (theoretical)</td>
     <td>Unlimited</td>
+  </tr>
+  <tr>
+    <td>Number of user-defined metadata (<code>x-amz-meta-&ast;</code>) entries</td>
+    <td>100</td>
+    <td>&mdash;</td>
+  </tr>
+  <tr>
+    <td>Size of user-defined metadata (<code>x-amz-meta-&ast;</code>) headers</td>
+    <td colspan="2" class="joined-cell">2 KiB (2,048 bytes) combined key bytes and value bytes</td>
+  </tr>
+  <tr>
+    <td>Size of <a href="#standard-object-headers-special-considerations">standard object headers</a></td>
+    <td colspan="2" class="joined-cell">2 KiB (2,048 bytes) combined header name bytes and value bytes</td>
   </tr>
 </tbody>
 </table>
@@ -2975,26 +3152,26 @@ $(document).ready(function() {
 </thead>
 <tbody>
   <tr>
-    <td>Object keys that <code>DeleteObjects</code> specifies</td>
+    <td>Object keys that the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjects.html"><code>DeleteObjects</code></a> API action specifies</td>
     <td>Nominally unlimited</td>
     <td>1,000</td>
   </tr>
   <tr>
-    <td>Buckets that <code>ListBuckets</code> returns</td>
+    <td>Buckets that the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html"><code>ListBuckets</code></a> API action returns</td>
     <td>16,000</td>
     <td>1,000</td>
   </tr>
   <tr>
-    <td>Objects that <code>ListObjects</code> and <code>ListObjectsV2</code> return</td>
+    <td>Objects that the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html"><code>ListObjects</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html"><code>ListObjectsV2</code></a> API actions return</td>
     <td colspan="2" class="joined-cell">1,000</td>
   </tr>
   <tr>
-    <td>Parts that <code>ListParts</code> returns</td>
+    <td>Parts that the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html"><code>ListParts</code></a> API action returns</td>
     <td>Unlimited</td>
     <td>1,000</td>
   </tr>
   <tr>
-    <td>Uploads that <code>ListMultipartUploads</code> returns</td>
+    <td>Uploads that the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html"><code>ListMultipartUploads</code></a> API action returns</td>
     <td colspan="2" class="joined-cell">1,000</td>
   </tr>
 </tbody>
@@ -3005,9 +3182,9 @@ $(document).ready(function() {
 <p>In addition, the following API actions have the Qumulo-specific maximum payload size limit of 10 MiB.</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">CompleteMultipartUpload</code></li>
-  <li><code class="language-plaintext highlighter-rouge">CreateBucket</code></li>
-  <li><code class="language-plaintext highlighter-rouge">DeleteObjects</code></li>
+  <li><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html"><code class="language-plaintext highlighter-rouge">CompleteMultipartUpload</code></a></li>
+  <li><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html"><code class="language-plaintext highlighter-rouge">CreateBucket</code></a></li>
+  <li><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjects.html"><code class="language-plaintext highlighter-rouge">DeleteObjects</code></a></li>
 </ul>
 
    

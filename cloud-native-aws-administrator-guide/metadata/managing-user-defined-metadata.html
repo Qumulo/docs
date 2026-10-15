@@ -2443,13 +2443,41 @@ $(document).ready(function() {
 </ul>
 
 <h2 id="keyspace">Keyspace Types and Functions</h2>
-<p>User-defined metadata in Qumulo Core is divided into <code class="language-plaintext highlighter-rouge">GENERIC</code> and <code class="language-plaintext highlighter-rouge">S3</code> <em>keyspaces</em>. Keyspaces work like <em>containers</em> for key-value pairs. The <code class="language-plaintext highlighter-rouge">S3</code> keyspace primarily supports the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html">S3 API</a>, which requires all files to have two sets of metadata in separate keyspaces.</p>
+<p>User-defined metadata in Qumulo Core is divided into <code class="language-plaintext highlighter-rouge">GENERIC</code>, <code class="language-plaintext highlighter-rouge">S3</code>, and <code class="language-plaintext highlighter-rouge">WELL_KNOWN</code> <em>keyspaces</em>. Keyspaces work like <em>containers</em> for key-value pairs. The <code class="language-plaintext highlighter-rouge">S3</code> and <code class="language-plaintext highlighter-rouge">WELL_KNOWN</code> keyspaces primarily support the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html">S3 API</a>, which requires all files to have separate sets of metadata in separate keyspaces.</p>
 
-<p>Keyspaces can hold approximately 17 trillion key-value pairs and have the following requirements:</p>
+<p>The <code class="language-plaintext highlighter-rouge">GENERIC</code> and <code class="language-plaintext highlighter-rouge">S3</code> keyspaces can hold approximately 17 trillion key-value pairs and have the following requirements:</p>
 
 <ul>
   <li>All keys within a keyspace must be unique.</li>
   <li>The keyspace and key are required to create or access a user-defined metadata entry.</li>
+</ul>
+
+<h3 id="well-known-keyspace">The WELL_KNOWN Keyspace</h3>
+<p>In Qumulo Core 7.10.2 (and higher), the <code class="language-plaintext highlighter-rouge">WELL_KNOWN</code> keyspace holds the <a href="../s3-api/supported-s3-functionality-known-limits.html#standard-object-headers-special-considerations">standard object headers</a> that the S3 API stores and returns for an object. The keyspace has the following requirements:</p>
+
+<ul>
+  <li>
+    The key must be one of the following:
+    
+<ul>
+  <li><code>Cache-Control</code></li>
+  <li><code>Content-Disposition</code></li>
+  <li><code>Content-Encoding</code></li>
+  <li><code>Content-Language</code></li>
+  <li><code>Content-Type</code></li>
+  <li><code>Expires</code></li>
+</ul>
+
+  </li>
+  <li>
+    The value:
+    <ul>
+      <li>Can be case-insensitive</li>
+      <li>Must contain UTF-8 text valid for the HTTP header field</li>
+      <li>Must not contain any control characters, except for the tab character</li>
+    </ul>
+  </li>
+  <li>The combined size of the key and value must not exceed 2,048 bytes.</li>
 </ul>
 
 <h2 id="managing-user-defined-metadata-by-using-the-qq-cli">Managing User-Defined Metadata by Using the qq CLI</h2>
@@ -2457,7 +2485,13 @@ $(document).ready(function() {
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
 <ul>
-  <li>All <code>qq</code> CLI commands default to using the <a href="#keyspace"><code>GENERIC</code> keyspace</a>. For the <code>S3</code> keyspace, use the <code>--s3</code> flag.</li>
+  <li>
+    All <code>qq</code> CLI commands default to using the <code>GENERIC</code> keyspace.
+    <ul>
+      <li>For the <code>S3</code> keyspace, use the <code>--s3</code> flag.</li>
+      <li>For the <a href="#well-known-keyspace"><code>WELL_KNOWN</code> keyspace</a>, use the <code>--well-known</code> flag.</li>
+    </ul>
+  </li>
   <li>In the following examples, you can specify the file path by using the <code>--path</code> flag or the file ID by using the <code>--id</code> flag.</li>
 </ul>
 </div>
@@ -2471,7 +2505,8 @@ $(document).ready(function() {
 </ul>
 
 <h3 id="to-create-a-generic-user-defined-metadata-entry-for-a-file-by-using-the-qq-cli">To Create a Generic User-Defined Metadata Entry for a File by Using the qq CLI</h3>
-<p>Run the <code class="language-plaintext highlighter-rouge">fs_set_user_metadata</code> command and specify the path to the file, the key, and the value. For example:</p>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_set_user_metadata.html"><code>qq fs_set_user_metadata</code></a>
+ command and specify the path to the file, the key, and the value. For example:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_set_user_metadata <span class="se">\</span>
   <span class="nt">--path</span> my-file <span class="se">\</span>
@@ -2485,7 +2520,8 @@ $(document).ready(function() {
  in the Qumulo <code>qq</code> CLI Command Guide.</p>
 
 <h3 id="to-retrieve-a-generic-user-defined-metadata-entry-for-a-file-by-using-the-qq-cli">To Retrieve a Generic User-Defined Metadata Entry for a File by Using the qq CLI</h3>
-<p>Use <code class="language-plaintext highlighter-rouge">fs_get_user_metadata</code> command and specify the path to the file and the key. For example:</p>
+<p>Use <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_get_user_metadata.html"><code>qq fs_get_user_metadata</code></a>
+ command and specify the path to the file and the key. For example:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_get_user_metadata <span class="se">\</span>
   <span class="nt">--path</span> my-file <span class="se">\</span>
@@ -2501,7 +2537,8 @@ $(document).ready(function() {
  in the Qumulo <code>qq</code> CLI Command Guide.</p>
 
 <h3 id="to-list-all-generic-user-defined-metadata-entries-for-a-file-by-using-the-qq-cli">To List All Generic User-Defined Metadata Entries for a File by Using the qq CLI</h3>
-<p>Run the <code class="language-plaintext highlighter-rouge">fs_list_user_metadata</code> command and specify the path to the file. For example:</p>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_list_user_metadata.html"><code>qq fs_list_user_metadata</code></a>
+ command and specify the path to the file. For example:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_list_user_metadata <span class="se">\</span>
   <span class="nt">--path</span> my-file
@@ -2516,50 +2553,92 @@ $(document).ready(function() {
  in the Qumulo <code>qq</code> CLI Command Guide.</p>
 
 <h3 id="to-delete-a-generic-user-defined-metadata-entry-for-a-file-by-using-the-qq-cli">To Delete a Generic User-Defined Metadata Entry for a File by Using the qq CLI</h3>
-<p>Run the <code class="language-plaintext highlighter-rouge">fs_delete_user_metadata</code> command and specify the path to the file and the key. For example:</p>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_delete_user_metadata.html"><code>qq fs_delete_user_metadata</code></a>
+ command and specify the path to the file and the key. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  qq fs_delete_user_metadata <span class="se">\</span>
-    <span class="nt">--path</span> my-file <span class="se">\</span>
-    <span class="nt">--key</span> my-key
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_delete_user_metadata <span class="se">\</span>
+  <span class="nt">--path</span> my-file <span class="se">\</span>
+  <span class="nt">--key</span> my-key
 </code></pre></div></div>
 
 <p>For more information, see <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_delete_user_metadata.html"><code>qq fs_delete_user_metadata</code></a>
  in the Qumulo <code>qq</code> CLI Command Guide.</p>
 
+<h3 id="to-change-standard-object-headers-by-using-the-qq-cli">To Change Standard Object Headers by Using the qq CLI</h3>
+<p>In Qumulo Core 7.10.2 (and higher), you can change the <a href="../s3-api/supported-s3-functionality-known-limits.html#standard-object-headers-special-considerations">standard object headers</a> that the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"><code class="language-plaintext highlighter-rouge">GetObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html"><code class="language-plaintext highlighter-rouge">HeadObject</code></a> S3 API actions returns for an object without rewriting the object.</p>
+
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Deleting the <code class="language-plaintext highlighter-rouge">content-type</code> key causes <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"><code class="language-plaintext highlighter-rouge">GetObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html"><code class="language-plaintext highlighter-rouge">HeadObject</code></a> API actions to return <code class="language-plaintext highlighter-rouge">Content-Type: binary/octet-stream</code> for the object.</div>
+
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_set_user_metadata.html"><code>qq fs_set_user_metadata</code></a>
+, specify the path to the object, the key and value for the headers, and the <code class="language-plaintext highlighter-rouge">--well-known</code> flag. For example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_set_user_metadata <span class="se">\</span>
+ <span class="nt">--path</span> /buckets/my-bucket/my-object.json <span class="se">\</span>
+ <span class="nt">--well-known</span> <span class="se">\</span>
+ <span class="nt">--key</span> content-type <span class="se">\</span>
+ <span class="nt">--value</span> application/json
+</code></pre></div></div>
+
+<h3 id="to-list-standard-object-headers-by-using-the-qq-cli">To List Standard Object Headers by Using the qq CLI</h3>
+<p>In Qumulo Core 7.10.2 (and higher), you can list the <a href="../s3-api/supported-s3-functionality-known-limits.html#standard-object-headers-special-considerations">standard object headers</a> that the S3 API returns for an object without rewriting the object.</p>
+
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_list_user_metadata.html"><code>qq fs_list_user_metadata</code></a>
+ command, specify the path to the object, and use the <code class="language-plaintext highlighter-rouge">--well-known</code> flag. For example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_list_user_metadata <span class="se">\</span>
+  <span class="nt">--path</span> /buckets/my-bucket/my-object.json <span class="se">\</span>
+  <span class="nt">--well-known</span>
+</code></pre></div></div>
+
 <h2 id="managing-user-defined-metadata-by-using-the-s3-api">Managing User-Defined Metadata by Using the S3 API</h2>
-<p>S3 categorizes metadata as:</p>
 
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> In Qumulo Core 6.3.2 (and higher) the <a href="../s3-api">Qumulo S3 API</a> supports user-defined metadata fully. For more information about how to access metadata by using the S3 API, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html">Amazon Simple Storage Service
+API Reference</a>.</div>
+
+<p>S3 categorizes metadata as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Metadata Category</th>
+      <th>Description</th>
+      <th>Maps To</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Metadata</td>
+      <td>Immutable metadata that remains for the life of the object</td>
+      <td><a href="#keyspace"><code>S3</code> keyspace</a></td>
+    </tr>
+    <tr>
+      <td>Tags</td>
+      <td>
+        Mutable metadata that doesn't impact the object's entity tag
+        <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Only tag values encoded by using UTF-8 are visible to the S3 API.</div>
+
+      </td>
+      <td><a href="#keyspace"><code>GENERIC</code> keyspace</a></td>
+    </tr>
+    <tr>
+      <td>Standard Object Headers</td>
+      <td>
+        Headers that the client specifies when it creates an object:
+        
 <ul>
-  <li>
-    <p><strong>Metadata</strong></p>
-
-    <ul>
-      <li>
-        <p>Immutable metadata that remains for the life of the object.</p>
-      </li>
-      <li>
-        <p>Qumulo Core maps metadata to the <a href="#keyspace"><code class="language-plaintext highlighter-rouge">S3</code> keyspace</a>.</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>Tags</strong></p>
-
-    <ul>
-      <li>
-        <p>Mutable metadata that doesn’t impact the object’s entity tag.</p>
-
-        <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Tag values that can’t be encoded by using UTF-8 aren’t visible to S3.</div>
-      </li>
-      <li>
-        <p>Qumulo Core maps tags to the <a href="#keyspace"><code class="language-plaintext highlighter-rouge">GENERIC</code> keyspace</a>.</p>
-      </li>
-    </ul>
-  </li>
+  <li><code>Cache-Control</code></li>
+  <li><code>Content-Disposition</code></li>
+  <li><code>Content-Encoding</code></li>
+  <li><code>Content-Language</code></li>
+  <li><code>Content-Type</code></li>
+  <li><code>Expires</code></li>
 </ul>
 
-<p>In Qumulo Core 6.3.2 (and higher) the <a href="../s3-api">Qumulo S3 API</a> supports user-defined metadata fully. For more information about how to access metadata by using the S3 API, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html">Amazon Simple Storage Service
-API Reference</a>.</p>
+      </td>
+      <td>Qumulo Core 7.10.2 (and higher): <a href="#well-known-keyspace"><code>WELL_KNOWN</code> keyspace</a></td>
+    </tr>
+  </tbody>
+</table>
 
    
 

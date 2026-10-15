@@ -2396,7 +2396,8 @@ $(document).ready(function() {
  commands require the <code class="language-plaintext highlighter-rouge">PRIVILEGE_ENCRYPTION_READ</code> privilege.</div>
 
 <h3 id="encryption-get-status">To View the Status of an Active Encryption Configuration</h3>
-<p>Run the <code class="language-plaintext highlighter-rouge">qq encryption_get_status</code> command.</p>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/encryption/encryption_get_status.html"><code>qq encryption_get_status</code></a>
+ command.</p>
 
 <p>The following is example output. The master key is stored locally.</p>
 
@@ -2420,7 +2421,8 @@ $(document).ready(function() {
 </span></code></pre></div></div>
 
 <h3 id="encryption-get-key-store">To View Detailed Information for an Active Encryption Configuration</h3>
-<p>Run the <code class="language-plaintext highlighter-rouge">qq encryption_get_key_store</code> command.</p>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/encryption/encryption_get_key_store.html"><code>qq encryption_get_key_store</code></a>
+ command.</p>
 
 <p>The following is example output. The master key is stored locally.</p>
 
@@ -2514,7 +2516,8 @@ $(document).ready(function() {
 <h3 id="to-rotate-master-keys-stored-locally">To Rotate Master Keys Stored Locally</h3>
 <ol>
   <li>
-    <p>Run the <code class="language-plaintext highlighter-rouge">qq rotate_encryption_keys</code> command.</p>
+    <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/rotate/rotate_encryption_keys.html"><code>qq rotate_encryption_keys</code></a>
+ command.</p>
 
     <p>When the process is complete, the command shows the <code class="language-plaintext highlighter-rouge">Key rotation complete</code> message.</p>
   </li>
@@ -2527,7 +2530,8 @@ $(document).ready(function() {
 <h3 id="to-rotate-master-keys-stored-in-a-key-management-server-kms">To Rotate Master Keys Stored in a Key Management Server (KMS)</h3>
 <ol>
   <li>
-    <p>Run the <code class="language-plaintext highlighter-rouge">qq rotate_encryption_keys</code> command and specify the key ID. For example:</p>
+    <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/rotate/rotate_encryption_keys.html"><code>qq rotate_encryption_keys</code></a>
+ command and specify the key ID. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq rotate_encryption_keys <span class="nt">--key-id</span> abcd-1234-efgh-5678
 </code></pre></div>    </div>

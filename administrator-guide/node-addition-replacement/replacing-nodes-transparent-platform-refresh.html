@@ -2781,7 +2781,8 @@ $(document).ready(function() {
 <h2 id="register-node-replacement-plan">Step 1: Register a Node Replacement Plan by Using the qq CLI</h2>
 <ol>
   <li>
-    <p>Run the <code class="language-plaintext highlighter-rouge">qq replace_nodes register_plan</code> command and the <code class="language-plaintext highlighter-rouge">--nodes-to-be-replaced</code> flag to specify the nodes to replace and the <code class="language-plaintext highlighter-rouge">--target-stripe-config</code> flag to specify the stripe configuration. For example:</p>
+    <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replace/replace_nodes.html"><code>qq replace_nodes</code></a>
+ <code class="language-plaintext highlighter-rouge">register_plan</code> command and the <code class="language-plaintext highlighter-rouge">--nodes-to-be-replaced</code> flag to specify the nodes to replace and the <code class="language-plaintext highlighter-rouge">--target-stripe-config</code> flag to specify the stripe configuration. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq replace_nodes register_plan <span class="se">\</span>
   <span class="nt">--nodes-to-be-replaced</span> 1 2 3 4 <span class="se">\</span>
@@ -2812,7 +2813,8 @@ $(document).ready(function() {
 <h2 id="execute-node-replacement-plan-steps">Step 2: Execute the Node Replacement Plan Steps by Using the qq CLI</h2>
 <ol>
   <li>
-    <p>Run the <code class="language-plaintext highlighter-rouge">qq replace_nodes add_nodes_and_replace</code> command to initiate each step, the <code class="language-plaintext highlighter-rouge">--nodes-being-replaced</code> flag to specify the nodes to replace, and the <code class="language-plaintext highlighter-rouge">--node-uuids</code> flag to specify the nodes to add during the current step.</p>
+    <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replace/replace_nodes.html"><code>qq replace_nodes</code></a>
+ <code class="language-plaintext highlighter-rouge">add_nodes_and_replace</code> command to initiate each step, the <code class="language-plaintext highlighter-rouge">--nodes-being-replaced</code> flag to specify the nodes to replace, and the <code class="language-plaintext highlighter-rouge">--node-uuids</code> flag to specify the nodes to add during the current step.</p>
 
     <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Qumulo Core adds nodes to the cluster in the order in which you list their UUIDs after the <code class="language-plaintext highlighter-rouge">--node-uuids</code> flag. When you begin the node replacement step, it isn’t possible to revert this operation or reorder nodes after adding them to a cluster.</div>
 

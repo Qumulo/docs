@@ -2700,9 +2700,6 @@ $(document).ready(function() {
 <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> All tenants share the cluster’s underlying file system, identity providers, role-based access control (RBAC) configuration, and other global settings.</div>
 
 <h2 id="prerequisites">Prerequisites</h2>
-
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> If your cluster runs a Qumulo Core version lower than 6.1.0.3, you must use the <code class="language-plaintext highlighter-rouge">qq multitenancy_enable</code> command to enable multitenancy for your cluster.</div>
-
 <p>To manage network multitenancy and tenants, your user must have membership in a Qumulo role with the following privileges.</p>
 
 <ul>
@@ -2720,7 +2717,8 @@ $(document).ready(function() {
 <h3 id="step-1-create-a-new-tenant">Step 1: Create a New Tenant</h3>
 <p>After you enable multitenancy for your cluster, you can create a new tenant.</p>
 
-<p>Run the <code class="language-plaintext highlighter-rouge">qq multitenancy_create_tenant</code> command and specify a name for your tenant. For example:</p>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_create_tenant.html"><code>qq multitenancy_create_tenant</code></a>
+ command and specify a name for your tenant. For example:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq multitenancy_create_tenant <span class="se">\</span>
   <span class="nt">--name</span> my_tenant
@@ -2756,7 +2754,8 @@ $(document).ready(function() {
 </code></pre></div></div>
 
 <h4 id="assigning-a-single-network-to-an-existing-tenant">Assigning a Single Network to an Existing Tenant</h4>
-<p>To assign a single network to a tenant, modify <em>the tenant that belongs to the network.</em> Run the <code class="language-plaintext highlighter-rouge">qq network_mod_network</code> command and specify the network and tenant ID.</p>
+<p>To assign a single network to a tenant, modify <em>the tenant that belongs to the network.</em> Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_network.html"><code>qq network_mod_network</code></a>
+ command and specify the network and tenant ID.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq network_mod_network <span class="se">\</span>
   <span class="nt">--network-id</span> 3 <span class="se">\</span>
@@ -2777,7 +2776,8 @@ $(document).ready(function() {
 </code></pre></div></div>
 
 <h4 id="unassigning-a-single-network-from-a-tenant">Unassigning a Single Network from a Tenant</h4>
-<p>To unassign a single network from a tenant, clear <em>the tenant that belongs to the network</em>. Run the <code class="language-plaintext highlighter-rouge">qq network_mod_network</code> command and specify the network and the <code class="language-plaintext highlighter-rouge">--clear-tenant-id</code> flag.</p>
+<p>To unassign a single network from a tenant, clear <em>the tenant that belongs to the network</em>. Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_network.html"><code>qq network_mod_network</code></a>
+ command and specify the network and the <code class="language-plaintext highlighter-rouge">--clear-tenant-id</code> flag.</p>
 
 <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> After you unassign a network from a tenant, you can assign it to another tenant.</div>
 
@@ -2787,7 +2787,8 @@ $(document).ready(function() {
 </code></pre></div></div>
 
 <h4 id="unassigning-all-networks-from-a-tenant">Unassigning All Networks from a Tenant</h4>
-<p>To unassign all networks from a tenant, clear <em>the networks that belong to the tenant</em>. Run the <code class="language-plaintext highlighter-rouge">qq multitenancy_modify_tenant</code> command and specify the tenant and network ID.</p>
+<p>To unassign all networks from a tenant, clear <em>the networks that belong to the tenant</em>. Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_modify_tenant.html"><code>qq multitenancy_modify_tenant</code></a>
+ command and specify the tenant and network ID.</p>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
 <ul>
@@ -2802,7 +2803,8 @@ $(document).ready(function() {
 </code></pre></div></div>
 
 <h4 id="moving-networks-between-tenants">Moving Networks between Tenants</h4>
-<p>Run the <code class="language-plaintext highlighter-rouge">qq network_mod_network</code> command and specify the network and target tenant.</p>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_network.html"><code>qq network_mod_network</code></a>
+ command and specify the network and target tenant.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq network_mod_network <span class="se">\</span>
   <span class="nt">--network-id</span> 2 <span class="se">\</span>

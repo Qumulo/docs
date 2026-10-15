@@ -8195,7 +8195,7 @@ $(document).ready(function() {
 
 
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq portal_modify_hub <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="nt">-i</span> ID <span class="o">[</span><span class="nt">-j</span><span class="o">]</span> <span class="o">[</span><span class="nt">-n</span><span class="o">]</span> <span class="o">[</span><span class="nt">--type</span> <span class="o">{</span>read-write,read-only<span class="o">}]</span> <span class="o">[</span><span class="nt">-m</span> SPOKE_HOSTS | <span class="nt">-a</span> SPOKE_ADDRESS] <span class="o">[</span><span class="nt">-p</span> SPOKE_PORT]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq portal_modify_hub <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="nt">-i</span> ID <span class="o">[</span><span class="nt">-j</span><span class="o">]</span> <span class="o">[</span><span class="nt">-n</span><span class="o">]</span> <span class="o">[</span><span class="nt">--type</span> <span class="o">{</span>read-write,read-only,paused<span class="o">}]</span> <span class="o">[</span><span class="nt">-m</span> SPOKE_HOSTS | <span class="nt">-a</span> SPOKE_ADDRESS] <span class="o">[</span><span class="nt">-p</span> SPOKE_PORT]
 </code></pre></div></div>
 
 
@@ -8260,7 +8260,7 @@ $(document).ready(function() {
       
     </td>
     <td>
-      Change the type of the portal. Setting read-write takes effect immediately, as does setting read-only on a paused portal. Setting read-only on a read-write portal starts a transition that drains outstanding spoke writes; the portal reports the Quiescing state until the drain finishes.
+      Change the type of the portal. A read-write spoke serves reads and writes, a read-only spoke serves reads, and a paused spoke refuses all client operations. Setting read-only or paused drains the spoke first; the portal reports Quiescing or Pausing until the drain finishes.
     </td>
   </tr>
 

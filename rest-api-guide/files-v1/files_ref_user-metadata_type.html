@@ -9069,9 +9069,10 @@ $(document).ready(function() {
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
               </span><span class="s2">"GENERIC"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"S3"</span><span class="w">
+              </span><span class="s2">"S3"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"WELL_KNOWN"</span><span class="w">
             </span><span class="p">],</span><span class="w">
-            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The type of user metadata. Generic user metadata is visible through the S3 api as object tags. S3 metadata is visible to the S3 protocol as object metadata.:</span><span class="se">\n</span><span class="s2"> * `GENERIC` - API_FILES_USER_METADATA_TYPE_GENERIC,</span><span class="se">\n</span><span class="s2"> * `S3` - API_FILES_USER_METADATA_TYPE_S3"</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The type of user metadata. Generic user metadata is visible through the S3 api as object tags. S3 metadata is visible to the S3 protocol as object metadata. Well-known metadata is a fixed set of keys that Qumulo Core defines: the standard S3 object headers, such as Content-Type, keyed by header name.:</span><span class="se">\n</span><span class="s2"> * `GENERIC` - API_FILES_USER_METADATA_TYPE_GENERIC,</span><span class="se">\n</span><span class="s2"> * `S3` - API_FILES_USER_METADATA_TYPE_S3,</span><span class="se">\n</span><span class="s2"> * `WELL_KNOWN` - API_FILES_USER_METADATA_TYPE_WELL_KNOWN"</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The key used to reference the user metadata."</span><span class="p">,</span><span class="w">

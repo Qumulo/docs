@@ -8195,7 +8195,7 @@ $(document).ready(function() {
 
 
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_delete_user_metadata <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="o">(</span><span class="nt">--path</span> PATH | <span class="nt">--id</span> ID<span class="o">)</span> <span class="o">[</span><span class="nt">--s3</span><span class="o">]</span> <span class="nt">--key</span> KEY
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_delete_user_metadata <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="o">(</span><span class="nt">--path</span> PATH | <span class="nt">--id</span> ID<span class="o">)</span> <span class="o">[</span><span class="nt">--s3</span> | <span class="nt">--well-known</span><span class="o">]</span> <span class="nt">--key</span> KEY
 </code></pre></div></div>
 
 
@@ -8246,10 +8246,26 @@ $(document).ready(function() {
       
     </td>
     <td>
-      In Qumulo Core, there are two types of user metadata, generic and S3.
-By default, qq CLI commands manipulate generic metadata.
-When you use the --s3 flag, Qumulo Core makes user metadata visible to the S3 protocol
-as object metadata.
+      Operate on S3 user metadata: the x-amz-meta-* headers of the object,
+keyed by the header name without the x-amz-meta- prefix. Without --s3 or --well-known,
+qq CLI commands manipulate generic metadata, which S3 shows as object tags.
+
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <code>--well-known</code>
+    </td>
+    <td>
+      
+        No
+      
+    </td>
+    <td>
+      Operate on well-known metadata, a fixed set of keys that Qumulo Core
+defines: the standard S3 object headers Cache-Control, Content-Disposition, Content-Encoding,
+Content-Language, Content-Type, and Expires.
 
     </td>
   </tr>

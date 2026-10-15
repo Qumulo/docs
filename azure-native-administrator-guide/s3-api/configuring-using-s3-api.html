@@ -2398,7 +2398,8 @@ $(document).ready(function() {
 </ul>
 
 <h2 id="step-2-enable-the-s3-api-for-your-qumulo-cluster">Step 2: Enable the S3 API for Your Qumulo Cluster</h2>
-<p>To let your Qumulo cluster accept S3 traffic, you must enable the S3 API by using the <code class="language-plaintext highlighter-rouge">qq s3_modify_settings --enable</code> command.</p>
+<p>To let your Qumulo cluster accept S3 traffic, you must enable the S3 API by using the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_modify_settings.html"><code>qq s3_modify_settings</code></a>
+ command with the <code class="language-plaintext highlighter-rouge">--enable</code> flag.</p>
 
 <p>After you run the command, all nodes in your cluster begin to accept S3 API traffic on TCP port 9000.</p>
 
