@@ -42,7 +42,7 @@ The best way to start exploring your Qumulo cluster by using the `qq` CLI is to 
 {% include tip.html content="To get a complete list of `qq` CLI commands, run the `qq --help` command." %}
 
 ### To Run qq CLI from a Remote Machine
-Run the `qq login` command and specify the IP address of one of the nodes in your cluster and your credentials. For example:
+Run the {% include qq.html command="login" %} command and specify the IP address of one of the nodes in your cluster and your credentials. For example:
 
 ```bash
 qq --host {{site.exampleIP0}} login \
@@ -53,4 +53,5 @@ qq --host {{site.exampleIP0}} login \
 ### To Run qq CLI from a Node in Your Cluster
 Use SSH to log in to one of the nodes in your cluster.
 
-{% include note.html content="It is possible to run `qq` CLI commands as the administrative Linux user. However, to do this, you must authenticate by using the `qq login` command." %}
+{% capture authN %}It is possible to run `qq` CLI commands as the administrative Linux user. However, to do this, you must authenticate by using the {% include qq.html command="login" %} command.{% endcapture %}
+{% include note.html content=authN %}

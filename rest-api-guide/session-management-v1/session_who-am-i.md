@@ -211,11 +211,11 @@ methods:
         n * `PRIVILEGE_SNAPSHOT_POLICY_READ` - View snapshot policies and status,\\\
         n * `PRIVILEGE_SNAPSHOT_POLICY_WRITE` - Create, modify, and delete snapshot\
         \ policies,\\n * `PRIVILEGE_SNAPSHOT_READ` - List snapshots and view their\
-        \ status and cached capacity. Does not affect the visibility of the virtual\
-        \ `.snapshot` directories,\\n * `PRIVILEGE_SNAPSHOT_WRITE` - Create, modify,\
-        \ and delete snapshots,\\n * `PRIVILEGE_SUPPORT_READ` - View support configuration\
-        \ and status,\\n * `PRIVILEGE_SUPPORT_WRITE` - Modify cloud-based monitoring\
-        \ and remote management,\\n * `PRIVILEGE_TENANT_READ` - View any tenant information,\\\
+        \ status and capacity. Does not affect the visibility of the virtual `.snapshot`\
+        \ directories,\\n * `PRIVILEGE_SNAPSHOT_WRITE` - Create, modify, and delete\
+        \ snapshots,\\n * `PRIVILEGE_SUPPORT_READ` - View support configuration and\
+        \ status,\\n * `PRIVILEGE_SUPPORT_WRITE` - Modify cloud-based monitoring and\
+        \ remote management,\\n * `PRIVILEGE_TENANT_READ` - View any tenant information,\\\
         n * `PRIVILEGE_TENANT_WRITE` - Create, edit or delete tenants,\\n * `PRIVILEGE_TEST_ONLY`\
         \ - Test only actions,\\n * `PRIVILEGE_TIME_READ` - View time and time settings,\\\
         n * `PRIVILEGE_TIME_WRITE` - Modify time settings,\\n * `PRIVILEGE_UNCONFIGURED_NODE_READ`\

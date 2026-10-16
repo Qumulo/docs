@@ -23,7 +23,7 @@ This section explains how to retrieve the status or detailed information about a
 {% include note.html content=requiredPrivileges %}
 
 ### To View the Status of an Active Encryption Configuration {#encryption-get-status}
-Run the `qq encryption_get_status` command.
+Run the {% include qq.html command="encryption_get_status" %} command.
 
 {{site.exampleOutput}} {{page.varLocalKey}}
 
@@ -49,7 +49,7 @@ Run the `qq encryption_get_status` command.
 ```
 
 ### To View Detailed Information for an Active Encryption Configuration {#encryption-get-key-store}
-Run the `qq encryption_get_key_store` command.
+Run the {% include qq.html command="encryption_get_key_store" %} command.
 
 {{site.exampleOutput}} {{page.varLocalKey}}
 
@@ -132,14 +132,14 @@ This section explains how to rotate the master key and check the encryption stat
 {% include caution.html content="[Qumulo Care](https://docs.qumulo.com/contacting-qumulo-care-team.html) team members can help you [rotate your master keys](#rotate-master-key). However, they don't have access to your encryption keys and can't retrieve them for you." %}
 
 ### To Rotate Master Keys Stored Locally
-1. Run the `qq rotate_encryption_keys` command.
+1. Run the {% include qq.html command="rotate_encryption_keys" %} command.
 
    When the process is complete, the command shows the `Key rotation complete` message.
 
 1. To view your cluster's encryption status and the last key rotation time, run {% include qq.html command="encryption_get_status" %}.
 
 ### To Rotate Master Keys Stored in a Key Management Server (KMS)
-1. Run the `qq rotate_encryption_keys` command and specify the key ID. For example:
+1. Run the {% include qq.html command="rotate_encryption_keys" %} command and specify the key ID. For example:
 
    ```bash
    qq rotate_encryption_keys --key-id {{site.exampleKeyID}}

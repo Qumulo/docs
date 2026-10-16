@@ -3,7 +3,8 @@ category: /Cluster Settings V2
 methods:
   put:
     summary: Set the SSL cipher suites that are accepted for TLS 1.2 and TLS 1.3 connections.
-      Note that ciphers required by Qumulo Core to function cannot be removed.
+      Note that ciphers required by Qumulo Core to function cannot be removed, and
+      RC4 and anonymous TLS 1.2 suites are refused.
     parameters:
     - name: If-Match
       description: ETag for expected version

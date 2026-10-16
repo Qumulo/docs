@@ -10,6 +10,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 {{ site.fixedInLatest }} <span class="fixed-in-latest">Fixed in latest version</span>
 
+
 ## 7.10 Releases
 
 ### Qumulo Core 7.10.3
@@ -20,7 +21,19 @@ For information about upgrade types for each release, see <a href='mode-referenc
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7103)
 
-### Qumulo Core 7.10.1.1
+
+### Qumulo Core 7.10.2
+{{ nexusLink }}
+
+* **S3 API:** Configured the Qumulo S3 API to store and return the six AWS user-controlled system metadata headers
+* **Cloud Data Fabric (CDF):** Resolved performance issues for NFS delete operations on portal spokes
+* **General Improvements:** Updated Qumulo Core to Time Zone Database Release 2026e
+
+#### Change Log
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7102)
+
+
+### Qumulo Core 7.10.1.2
 {{ nexusLink }}
 
 #### Features and Improvements
@@ -35,7 +48,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
   <li>
     This release&hellip;
     <ul>
-      <li class="fixed-in-latest">{{ site.fixedInLatest }} {{ delSnap }}</li>
+      <li>{{ delSnap }}</li>
       <li>Significantly shortens quorum formation time for Cloud Native Qumulo created on Qumulo Core versions lower than 7.10.0 and Stratus Accelerator clusters created on Qumulo Core versions lower than 7.9.2.</li>
     </ul>
   </li>
@@ -56,10 +69,10 @@ For information about upgrade types for each release, see <a href='mode-referenc
   * LDAP lookups and distinguished names containing a comma (`,`)
 
 #### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71011)
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71012)
 
 
-### Qumulo Core 7.10.0.1 (Quarterly)
+### Qumulo Core 7.10.0.2 (Quarterly)
 {{ nexusLink }}
 
 #### Features and Improvements
@@ -68,7 +81,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
   <li>
     This release&hellip;
     <ul>
-      <li class="fixed-in-latest">{{ site.fixedInLatest }} {{ delSnap }}</li>
+      <li>{{ delSnap }}</li>
       <li>Includes a cryptographic module compliant with <a target="_blank" href="https://csrc.nist.gov/pubs/fips/140-3/final">FIPS 140-3</a>. To be able to upgrade your cluster to Qumulo Core 7.10.0.1, you must ensure that all certificates on your cluster are compliant with FIPS 140-3. Non-compliant certificates can cause error messages beginning with <code>REPLACEMENT_ADVICE</code> or <code>MATCHING_KEY_ADVICE</code>.</li>
     </ul>
   </li>
@@ -88,7 +101,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * **REST API:** Made improvements to Analytics and Files endpoints
 
 #### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71001-quarterly)
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71002-quarterly)
 
 
 ## 7.9 Releases
@@ -343,7 +356,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * **Bug Fixes**
   * Resolved an issue with opening a TCP socket to the Azure Instance Metadata Service (IMDS)
   * Resolved an issue with restarting `systemd-networkd`
-  * Resolved an issue with the `qq fs_list_locks --protocol smb --lock-type share-mode` command
+  * Resolved an issue with the {% include qq.html command="fs_list_locks" %} command when using the `--protocol smb --lock-type share-mode` flags
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7904-quarterly)
@@ -469,7 +482,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 #### Features and Improvements
 {% include important.html content=inconTrigg %}
 * {{page.varNoPublicChanges}}
-* Added the `/v1/portal/ping` REST API endpoint and the `qq portal_ping` command
+* Added the `/v1/portal/ping` REST API endpoint and the {% include qq.html command="portal_ping" %} command
 * Changed how the `qq ad_cancel`, `ad_join`, `ad_leave`, and `ad_reconfigure` commands return the status of in-progress background operations
 
 #### Change Log

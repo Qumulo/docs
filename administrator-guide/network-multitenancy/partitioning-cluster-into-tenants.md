@@ -15,9 +15,6 @@ For each tenant, you can specify individual [management protocol access and conf
 
 
 ## Prerequisites
-{% capture lowerThan6103 %}If your cluster runs a Qumulo Core version lower than 6.1.0.3, you must use the `qq multitenancy_enable` command to enable multitenancy for your cluster.{% endcapture %}
-{% include important.html content=lowerThan6103 %}
-
 To manage network multitenancy and tenants, your user must have membership in a Qumulo role with the following privileges.
 
 * `PRIVILEGE_NETWORK_READ`: Viewing networks
@@ -33,7 +30,7 @@ This section explains the lifecycle of working with tenants, including creating 
 ### Step 1: Create a New Tenant
 After you enable multitenancy for your cluster, you can create a new tenant.
 
-Run the `qq multitenancy_create_tenant` command and specify a name for your tenant. For example:
+Run the {% include qq.html command="multitenancy_create_tenant" %} command and specify a name for your tenant. For example:
 
 ```bash
 $ qq multitenancy_create_tenant \
@@ -66,7 +63,7 @@ $ qq multitenancy_create_tenant \
 ```
 
 #### Assigning a Single Network to an Existing Tenant
-To assign a single network to a tenant, modify _the tenant that belongs to the network._ Run the `qq network_mod_network` command and specify the network and tenant ID.
+To assign a single network to a tenant, modify _the tenant that belongs to the network._ Run the {% include qq.html command="network_mod_network" %} command and specify the network and tenant ID.
 
 ```bash
 $ qq network_mod_network \
@@ -88,7 +85,7 @@ $ qq multitenancy_modify_tenant \
 ```
 
 #### Unassigning a Single Network from a Tenant
-To unassign a single network from a tenant, clear _the tenant that belongs to the network_. Run the `qq network_mod_network` command and specify the network and the `--clear-tenant-id` flag.
+To unassign a single network from a tenant, clear _the tenant that belongs to the network_. Run the {% include qq.html command="network_mod_network" %} command and specify the network and the `--clear-tenant-id` flag.
 
 {% capture unassignNetwork %}{{page.varUnassignNetwork}}{% endcapture %}
 {% include note.html content=unassignNetwork %}
@@ -100,7 +97,7 @@ $ qq network_mod_network \
 ```
 
 #### Unassigning All Networks from a Tenant
-To unassign all networks from a tenant, clear _the networks that belong to the tenant_. Run the `qq multitenancy_modify_tenant` command and specify the tenant and network ID.
+To unassign all networks from a tenant, clear _the networks that belong to the tenant_. Run the {% include qq.html command="multitenancy_modify_tenant" %} command and specify the tenant and network ID.
 
 {{site.data.alerts.note}}
 <ul>
@@ -116,7 +113,7 @@ $ qq multitenancy_modify_tenant \
 ```
 
 #### Moving Networks between Tenants
-Run the `qq network_mod_network` command and specify the network and target tenant.
+Run the {% include qq.html command="network_mod_network" %} command and specify the network and target tenant.
 
 ```bash
 $ qq network_mod_network \

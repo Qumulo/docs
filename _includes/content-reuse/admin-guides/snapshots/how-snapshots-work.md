@@ -48,7 +48,8 @@ More than one snapshot can reference _covered data_. It isn't possible to releas
 
 When you delete a snapshot, Qumulo Core removes the data which that snapshot references but retains the data which any other snapshot references. This ensures a full file representation within the remaining snapshots. Qumulo Core uses a background process to recover the storage that the snapshot had consumed.
 
-{% include note.html content="When you delete a snapshot, the background process might take some time. To track the reclaimed storage, run the `qq snapshot_get_total_used_capacity` command." %}
+{% capture snapDel %}When you delete a snapshot, the background process might take some time. To track the reclaimed storage, run the {% include qq.html command="snapshot_get_total_used_capacity" %} command.{% endcapture %}
+{% include note.html content=snapDel %}
 
 ### Example: Tracking Covering Snapshots and Data Changes
 For example, if you run the {% include qq.html command="snapshot_get_total_used_capacity" %} command, Qumulo Core shows that storage usage is 1,319,413,953,331 Bytes (1.2 TiB). This amount includes the total snapshot data and the covering snapshots.

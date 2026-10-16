@@ -255,7 +255,7 @@ To list all S3 access keys known to your Qumulo cluster, send a `GET` request to
 To revoke an S3 access key, you must delete the access key from your Qumulo cluster {{site.s3.permissions.APIorCLI}}. The {{site.s3.permissions.bucketsWrite}} is required.
 
 ### To Delete an S3 Access Key by Using the qq CLI
-Run the `qq s3_delete_access_key` command and specify the access key ID. For example:
+Run the {% include qq.html command="s3_delete_access_key" %} command and specify the access key ID. For example:
 
 ```bash
 $ qq s3_delete_access_key \

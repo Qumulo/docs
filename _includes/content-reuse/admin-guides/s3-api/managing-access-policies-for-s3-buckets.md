@@ -70,7 +70,7 @@ Policy statements for S3 buckets use the JSON format. For example:
 }
 ```
 
-To retrieve an example policy file, run the `qq s3_get_bucket_policy --example` command.
+To retrieve an example policy file, run the {% include qq.html command="s3_get_bucket_policy" %} command with the `--example` flag.
 
 The S3 bucket policy statement contains the following fields.
 

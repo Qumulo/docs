@@ -11,17 +11,24 @@ optional_options:
   name: --id
   required: false
 - alternate: []
-  help: 'In Qumulo Core, there are two types of user metadata, generic and S3.
+  help: 'Operate on S3 user metadata: the x-amz-meta-* headers of the object,
 
-    By default, qq CLI commands manipulate generic metadata.
+    keyed by the header name without the x-amz-meta- prefix. Without --s3 or --well-known,
 
-    When you use the --s3 flag, Qumulo Core makes user metadata visible to the S3
-    protocol
-
-    as object metadata.
+    qq CLI commands manipulate generic metadata, which S3 shows as object tags.
 
     '
   name: --s3
+  required: false
+- alternate: []
+  help: 'Operate on well-known metadata, a fixed set of keys that Qumulo Core
+
+    defines: the standard S3 object headers Cache-Control, Content-Disposition, Content-Encoding,
+
+    Content-Language, Content-Type, and Expires.
+
+    '
+  name: --well-known
   required: false
 - alternate: []
   help: 'Output the response in json.
@@ -48,8 +55,8 @@ summary: This section explains how to use the <code>qq fs_list_user_metadata</co
   command.
 synopsis: Retrieve user metadata of the specified type for a file
 title: qq fs_list_user_metadata
-usage: qq fs_list_user_metadata [-h] (--path PATH | --id ID) [--s3] [--json] [--snapshot
-  SNAPSHOT] [--hex | --base64]
+usage: qq fs_list_user_metadata [-h] (--path PATH | --id ID) [--s3 | --well-known]
+  [--json] [--snapshot SNAPSHOT] [--hex | --base64]
 zendesk_source: qq CLI Command Guide
 
 ---
