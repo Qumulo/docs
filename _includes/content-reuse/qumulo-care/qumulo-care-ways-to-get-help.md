@@ -12,7 +12,7 @@ The Qumulo Care Team is always here to help you. You can contact us by using any
 
   * **North America:** [+1 855 577 7544](tel:+18555777544)
 
-    * **U.S. Government Customers:** [+1 844 962 3777](tel:+18449623777)
+    * **U.S. Government Customers (GovCare):** [+1 855 977 7788](tel:+18559777788)
 
   * **United Kingdom:** [+44 808 164 6656](tel:+448081646656)
 
