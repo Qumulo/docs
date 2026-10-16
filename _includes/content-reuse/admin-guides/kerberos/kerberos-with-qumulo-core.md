@@ -6,7 +6,7 @@ Active Directory (AD) simplifies Kerberos requirements by providing [a globally 
 Qumulo Core supports three _flavors_ of Kerberos security that NFSv4.1 clients can use by specifying the following mount options:
 * `sec=krb5`: Provides user authentication only.
 * `sec=krb5i`: Provides authentication and message integrity by performing message signing for protection against man-in-the-middle attacks and message tampering.
-* `sec=krb5bp`: Provides privacy by encrypting all traffic between the client and server. This is the most secure mount option.
+* `sec=krb5p`: Provides privacy by encrypting all traffic between the client and server. This is the most secure mount option.
 
 ## Configuring Kerberos for Qumulo Core
 Qumulo Core 5.1.5 (and higher) supports Kerberos for authenticating AD users over NFSv4.1. The following is an overview of the Kerberos configuration process following the configuration of your AD domain.
