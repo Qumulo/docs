@@ -162,7 +162,7 @@ sweep_toolchain() {
 
 prune_docker() {
     start_in_docs_dir
-    docker builder prune && docker image prune && docker container prune
+    docker builder prune -af && docker image prune -f
 }
 
 no_toolchain() {
