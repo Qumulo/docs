@@ -113,7 +113,12 @@ This section explains how to create snapshots on a schedule, create a snapshot w
 {% include important.html content="Creating and modifying snapshot policies with an associated lock requires the `SNAPSHOT_LOCK` permission in addition to policy permissions." %}
 
 ### Creating Snapshots on a Schedule by Using a Snapshot Policy {#create-snapshot-with-policy}
-Run the {% include qq.html command="snapshot_create_policy" %} command to create a snapshot policy and specify the interval at which Qumulo Core takes and deletes snapshots.
+Run the {% include qq.html command="snapshot_create_policy" %} command to create a snapshot policy and specify one of the following intervals at which Qumulo Core takes and deletes snapshots:
+
+* `hourly_or_less`
+* `daily`
+* `monthly`
+* `yearly`
 
 In the following example, we create a policy named `every_day` that takes a snapshot every midnight in the Pacific time zone and retains the snapshot for two days. Every new snapshot that this policy creates is locked with a key named `my-key-name`.  {{page.varSeeLockUnlock}}
 
@@ -129,6 +134,14 @@ qq snapshot_create_policy daily \
   --lock-key my-key-name
 ```
 
+Run the {% include qq.html command="snapshot_modify_policy" %} command and specify one of the following actions for modifying an existing snapshot scheduling policy:
+
+* `change_to_hourly_or_less`
+* `change_to_daily`
+* `change_to_monthly`
+* `change_to_yearly`
+* `modify_non_schedule_fields`
+
 In the following example, we change a previously created policy with ID `1` to a policy named `hourly` that takes a snapshot every hour, but only during business hours (Monday to Friday, 8am to 6pm in the Pacific time zone), and retains snapshots for two days. Every new snapshot that this policy creates is unlocked (previously created snapshots remain locked). {{page.varSeeLockUnlock}}
 
 ```bash
@@ -143,6 +156,8 @@ qq snapshot_modify_policy change_to_hourly_or_less \
   --time-to-live 2days
   --clear-lock-key
 ```
+
+{% include tip.html content="To view the arguments specific to individual schedules, run any command with the `-h` flag." %}
 
 ### Creating an On-Demand Snapshot with an Expiration Time
 Run the `qq_snapshot_create_snapshot` command to specify an expiration date or expiration time before Qumulo Core deletes the snapshot.
