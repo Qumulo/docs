@@ -1071,6 +1071,19 @@ h1 {
 
 .breadcrumb > .active {color: #777 !important;}
 
+h1:first-of-type,
+h2:first-of-type,
+h3:first-of-type,
+h4:first-of-type,
+h5:first-of-type,
+h6:first-of-type {
+  margin-top: 20px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin-top: 30px;
+}
+
 h1[id],h2[id],h3[id],h4[id],h5[id],h6[id],
 h1,h2,h3,h4,h5,h6,
 dt[id] {

@@ -54,13 +54,13 @@
 
 ### Encryption in Transit
 
-* **Kerberos V5 Encryption:**
+**Kerberos V5 Encryption**
 
-  * AES128-CTS-HMAC-SHA1
+* AES128-CTS-HMAC-SHA1
 
-  * AES256-CTS-HMAC-SHA1
+* AES256-CTS-HMAC-SHA1
 
-  * RC4-HMAC-MD5
+* RC4-HMAC-MD5
 
 ### Host System Security
 
