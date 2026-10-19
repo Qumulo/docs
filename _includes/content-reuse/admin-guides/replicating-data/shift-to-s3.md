@@ -1,3 +1,5 @@
+{% capture sparseFiles %}<em>sparse files</em> (files whose unwritten zero regions are stored as metadata holes rather than actual disk blocks){% endcapture %}
+
 For more information about copying objects from S3 to Qumulo, see [Using Qumulo Shift-From for Amazon S3 to Copy Objects](/shift-from-s3.html).
 
 ## Prerequisites
@@ -164,7 +166,7 @@ This section explains which entity types Qumulo Core doesn't copy to an S3 bucke
       <td>S3 tags</td>
     </tr>
     <tr>
-      <td>Hole in sparse files</td>
+      <td>Hole in {{ sparseFiles }}</td>
       <td>
         Zero
         {% include note.html content="The system expands any holes." %}
@@ -310,11 +312,12 @@ We recommend the following best practices for working with Qumulo Shift-To for A
 * **Completed Jobs:** If you don't plan to use a Shift relationship to download updates from S3, delete the relationship to free up any storage associated with it.
 * **Concurrent Replication Relationships:** To increase parallelism, especially across distinct datasets, use concurrent replication relationships to S3. To avoid having a large number of concurrent operations impact client I/O to the Qumulo cluster, limit the number of concurrent replication relationships. While there is no hard limit, we don't recommend creating more than 100 concurrent replication relationships on a cluster (including both Shift and Qumulo local replication relationships).
 * **User Metadata Limits:** Amazon S3's limits on object metadata (up to 2 kB across key bytes and value bytes) and tagging (10 entries with a key size of 128 bytes and a value size of 256 bytes) are more restrictive than those of Qumulo Core. When a metadata entry exceeds one of these limits, Qumulo Core omits the entry from a replication job. For more information, see [User Defined Object Metadata](https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingMetadata.html#UserMetadata) and [Categorizing your storage using tags](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-tagging.html) in the Amazon Simple Storage Service User Guide.
+* **Sparse Files:** Amazon S3 has no concept of {{ sparseFiles }}. Because Qumulo Core expands holes in sparse files to zeros, the size of each resulting object in S3 is the file's logical size, not the space that the file uses on your cluster.
 
 
 ## Shift-to-S3 Restrictions
 * **Object-Locked Buckets:** You can't use buckets configured with S3 Object Lock and a default retention period for Shift-To. If possible, either remove the default retention period and set retention periods explicitly on objects uploaded outside of Shift or use a different S3 bucket without S3 Object Lock enabled. For more information, see [How S3 Object Lock works](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-overview.html) in the _Amazon Simple Storage Service User Guide_.
-* **File Size Limit:** The size of an individual file can't exceed 5 TiB (this is the maximum object size that S3 supports). There is no limit on the total size of all your files.
+* **File Size Limit:** The size of an individual file can't exceed 48.8 TiB (this is the maximum object size that Amazon S3 supports). There is no limit on the total size of all your files.
 * **File Path Limit:** The length of a file path must be shorter than 1,024 characters, including the configured object folder prefix, excluding the local directory path.
 * **Hard Links:** Qumulo Core 3.2.3 (and higher) supports hard links, up to the maximum object size that S3 supports.
 * **Objects Under the Same Key:** Unless an object contains Qumulo-specific hash metadata that matches a file, any object that exists under the same key that a new relationship replicates _is overwritten_. To retain older versions of overwritten objects, enable versioning for your S3 bucket. For more information, see [Using versioning in S3 buckets](https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectVersioning.html) in the _Amazon Simple Storage Service User Guide_.
