@@ -310,26 +310,6 @@ def generate_cli_bullets(curr_v, prev_v):
     added_names = set(c_c.keys()) - set(p_c.keys())
     common_names = set(c_c.keys()) & set(p_c.keys())
 
-    # Rename detection: only trust this when it's an unambiguous 1-for-1 swap
-    # with an identical flag set. Anything less certain falls back to plain
-    # Removed/Added lines rather than risk pairing the wrong commands.
-    rename_pair = None
-    if len(removed_names) == 1 and len(added_names) == 1:
-        old_name = next(iter(removed_names))
-        new_name = next(iter(added_names))
-        if set(all_options(p_c[old_name]).keys()) == set(all_options(c_c[new_name]).keys()):
-            rename_pair = (old_name, new_name)
-
-    if rename_pair:
-        old_name, new_name = rename_pair
-        removals_source = []
-        additions_source = []
-        removed_names = set()
-        added_names = set()
-        modifications.append(
-            f"Replaced `qq {old_name}` command with `qq {new_name}` command"
-        )
-
     for name in sorted(removed_names):
         removals.append(f"Removed `qq {name}` command")
     for name in sorted(added_names):
