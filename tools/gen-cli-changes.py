@@ -308,54 +308,51 @@ def load_commands(snapshot_dir, version):
     return {c['command']: c for c in data['commands']}
 
 
-
 def option_names(command):
     names = [o['name'] for o in command.get('positional_options', [])]
     names += [o['name'] for o in command.get('optional_options', [])]
     return names
 
 
-
 def diff_commands(old, new):
     added = sorted(set(new) - set(old))
     removed = sorted(set(old) - set(new))
+    changed = []
+    
+    for name in sorted(set(old) & set(new)):
+        before, after = old[name], new[name]
+        notes = []
 
-changed = []
-for name in sorted(set(old) & set(new)):
-    before, after = old[name], new[name]
-    notes = []
+        if before['synopsis'] != after['synopsis']:
+            notes.append(
+                'Synopsis changed from "%s" to "%s"' % (before['synopsis'], after['synopsis'])
+            )
 
-    if before['synopsis'] != after['synopsis']:
-        notes.append(
-            'Synopsis changed from "%s" to "%s"' % (before['synopsis'], after['synopsis'])
-        )
+        old_opts, new_opts = set(option_names(before)), set(option_names(after))
+        for opt in sorted(new_opts - old_opts):
+            notes.append('Added option `%s`' % opt)
+        for opt in sorted(old_opts - new_opts):
+            notes.append('Removed option `%s`' % opt)
 
-    old_opts, new_opts = set(option_names(before)), set(option_names(after))
-    for opt in sorted(new_opts - old_opts):
-        notes.append('Added option `%s`' % opt)
-    for opt in sorted(old_opts - new_opts):
-        notes.append('Removed option `%s`' % opt)
+        old_help = {
+            o['name']: o['help']
+            for o in before.get('positional_options', []) + before.get('optional_options', [])
+        }
+        new_help = {
+            o['name']: o['help']
+            for o in after.get('positional_options', []) + after.get('optional_options', [])
+        }
+        for opt in sorted(old_opts & new_opts):
+            if old_help.get(opt) != new_help.get(opt):
+                notes.append('Help text changed for `%s`' % opt)
 
-    old_help = {
-        o['name']: o['help']
-        for o in before.get('positional_options', []) + before.get('optional_options', [])
-    }
-    new_help = {
-        o['name']: o['help']
-        for o in after.get('positional_options', []) + after.get('optional_options', [])
-    }
-    for opt in sorted(old_opts & new_opts):
-        if old_help.get(opt) != new_help.get(opt):
-            notes.append('Help text changed for `%s`' % opt)
+        if not notes and before['usage'] != after['usage']:
+            notes.append('Usage string changed')
 
-    if not notes and before['usage'] != after['usage']:
-        notes.append('Usage string changed')
-
-    if notes:
-        changed.append((name, notes))
+        if notes:
+            changed.append((name, notes))
 
     return added, removed, changed
-
 
 
 def render_changelog(old_version, new_version, old, new):
@@ -363,96 +360,93 @@ def render_changelog(old_version, new_version, old, new):
 
     lines = ['# qq CLI Changes', '', '## %s (compared to %s)' % (new_version, old_version), '']
 
-if not (added or removed or changed):
-    lines += ['No CLI command changes.', '']
+    if not (added or removed or changed):
+        lines += ['No CLI command changes.', '']
+        return '\n'.join(lines)
+
+    if added:
+        lines += ['### Added Commands', '']
+        for name in added:
+            lines.append('- `qq %s` — %s' % (name, new[name]['synopsis']))
+        lines.append('')
+
+    if removed:
+        lines += ['### Removed Commands', '']
+        for name in removed:
+            lines.append('- `qq %s` — %s' % (name, old[name]['synopsis']))
+        lines.append('')
+
+    if changed:
+        lines += ['### Changed Commands', '']
+        for name, notes in changed:
+            lines.append('- `qq %s`' % name)
+            for note in notes:
+                lines.append('  - %s' % note)
+        lines.append('')
+
     return '\n'.join(lines)
-
-if added:
-    lines += ['### Added Commands', '']
-    for name in added:
-        lines.append('- `qq %s` — %s' % (name, new[name]['synopsis']))
-    lines.append('')
-
-if removed:
-    lines += ['### Removed Commands', '']
-    for name in removed:
-        lines.append('- `qq %s` — %s' % (name, old[name]['synopsis']))
-    lines.append('')
-
-if changed:
-    lines += ['### Changed Commands', '']
-    for name, notes in changed:
-        lines.append('- `qq %s`' % name)
-        for note in notes:
-            lines.append('  - %s' % note)
-    lines.append('')
-
-return '\n'.join(lines)
-
-
 
 
 def main():
-parser = argparse.ArgumentParser(
-description='Generate change-log.md for the qq CLI command surface.'
-)
-parser.add_argument(
-'versions', nargs='+', metavar='VERSION', help='Release version(s), e.g. 7.10.3'
-)
-parser.add_argument('--repo', default=DEFAULT_REPO, help='hg checkout (default: ~/src)')
-parser.add_argument(
-'--snapshot-dir',
-default='cli-snapshots',
-help='Snapshot cache directory (default: ./cli-snapshots)',
-)
-parser.add_argument(
-'--output', default='change-log.md', help='Changelog output file (default: ./change-log.md)'
-)
-parser.add_argument(
-'--qpython', default=DEFAULT_QPYTHON, help='qpython binary (default: %s)' % DEFAULT_QPYTHON
-)
-args = parser.parse_args()
-
-if not os.path.isdir(os.path.join(args.repo, '.hg')):
-    raise Failure(
-        'No Mercurial repository at %s.\n  Point at your checkout with --repo.' % args.repo
+    parser = argparse.ArgumentParser(
+        description='Generate change-log.md for the qq CLI command surface.'
     )
-if shutil.which('hg') is None:
-    raise Failure('`hg` is not on your PATH. Add /opt/qumulo/toolchain/bin to PATH.')
-
-print('Snapshots:')
-for version in sorted(args.versions, key=version_key):
-    ensure_snapshot(args.repo, version, args.snapshot_dir, args.qpython)
-
-available = cached_versions(args.snapshot_dir)
-if len(available) < 2:
-    raise Failure(
-        'Need at least two cached versions to produce a diff — only have %d (%s).\n'
-        '  Run this again with an older version to compare against.'
-        % (len(available), ', '.join(available) or 'none')
+    parser.add_argument(
+        'versions', nargs='+', metavar='VERSION', help='Release version(s), e.g. 7.10.3'
     )
+    parser.add_argument('--repo', default=DEFAULT_REPO, help='hg checkout (default: ~/src)')
+    parser.add_argument(
+        '--snapshot-dir',
+        default='cli-snapshots',
+        help='Snapshot cache directory (default: ./cli-snapshots)',
+    )
+    parser.add_argument(
+        '--output', default='change-log.md', help='Changelog output file (default: ./change-log.md)'
+    )
+    parser.add_argument(
+        '--qpython', default=DEFAULT_QPYTHON, help='qpython binary (default: %s)' % DEFAULT_QPYTHON
+    )
+    args = parser.parse_args()
 
-new_version, old_version = available[-1], available[-2]
-print('\nDiffing %s against %s' % (new_version, old_version))
+    if not os.path.isdir(os.path.join(args.repo, '.hg')):
+        raise Failure(
+            'No Mercurial repository at %s.\n  Point at your checkout with --repo.' % args.repo
+        )
+    if shutil.which('hg') is None:
+        raise Failure('`hg` is not on your PATH. Add /opt/qumulo/toolchain/bin to PATH.')
 
-text = render_changelog(
-    old_version,
-    new_version,
-    load_commands(args.snapshot_dir, old_version),
-    load_commands(args.snapshot_dir, new_version),
-)
-with open(args.output, 'w') as handle:
-    handle.write(text)
-print('Wrote %s' % args.output)
+    print('Snapshots:')
+    for version in sorted(args.versions, key=version_key):
+        ensure_snapshot(args.repo, version, args.snapshot_dir, args.qpython)
+
+    available = cached_versions(args.snapshot_dir)
+    if len(available) < 2:
+        raise Failure(
+            'Need at least two cached versions to produce a diff — only have %d (%s).\n'
+            '  Run this again with an older version to compare against.'
+            % (len(available), ', '.join(available) or 'none')
+        )
+
+    new_version, old_version = available[-1], available[-2]
+    print('\nDiffing %s against %s' % (new_version, old_version))
+
+    text = render_changelog(
+        old_version,
+        new_version,
+        load_commands(args.snapshot_dir, old_version),
+        load_commands(args.snapshot_dir, new_version),
+    )
+    with open(args.output, 'w') as handle:
+        handle.write(text)
+    print('Wrote %s' % args.output)
 
 
-
-if name == 'main':
-try:
-main()
-except Failure as failure:
-sys.stderr.write('\nERROR: %s\n' % failure)
-sys.exit(1)
-except KeyboardInterrupt:
-sys.stderr.write('\nInterrupted.\n')
-sys.exit(130)
+if __name__ == '__main__':
+    try:
+        main()
+    except Failure as failure:
+        sys.stderr.write('\nERROR: %s\n' % failure)
+        sys.exit(1)
+    except KeyboardInterrupt:
+        sys.stderr.write('\nInterrupted.\n')
+        sys.exit(130)
