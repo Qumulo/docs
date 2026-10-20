@@ -306,52 +306,64 @@ def generate_cli_bullets(curr_v, prev_v):
     c_c = curr_json.get("commands", {})
     p_c = prev_json.get("commands", {})
 
-    for name in sorted(set(c_c.keys()) | set(p_c.keys())):
-        cp = f"<code>qq {name}</code>"
-        if name not in c_c:
-            removals.append(f"Removed <code>qq {name}</code> command")
-            continue
-        if name not in p_c:
-            additions.append(f"Added {cp} command")
-            continue
-        
+    removed_names = set(p_c.keys()) - set(c_c.keys())
+    added_names = set(c_c.keys()) - set(p_c.keys())
+    common_names = set(c_c.keys()) & set(p_c.keys())
+
+    # Rename detection: only trust this when it's an unambiguous 1-for-1 swap
+    # with an identical flag set. Anything less certain falls back to plain
+    # Removed/Added lines rather than risk pairing the wrong commands.
+    rename_pair = None
+    if len(removed_names) == 1 and len(added_names) == 1:
+        old_name = next(iter(removed_names))
+        new_name = next(iter(added_names))
+        if set(all_options(p_c[old_name]).keys()) == set(all_options(c_c[new_name]).keys()):
+            rename_pair = (old_name, new_name)
+
+    if rename_pair:
+        old_name, new_name = rename_pair
+        removals_source = []
+        additions_source = []
+        removed_names = set()
+        added_names = set()
+        modifications.append(
+            f"Replaced `qq {old_name}` command with `qq {new_name}` command"
+        )
+
+    for name in sorted(removed_names):
+        removals.append(f"Removed `qq {name}` command")
+    for name in sorted(added_names):
+        additions.append(f"Added `qq {name}` command")
+
+    for name in sorted(common_names):
+        cp = f"`qq {name}`"
         c_obj, p_obj = c_c[name], p_c[name]
         cats = []
 
         c_opt_objs = all_options(c_obj)
         p_opt_objs = all_options(p_obj)
         c_opt, p_opt = set(c_opt_objs.keys()), set(p_opt_objs.keys())
-        
         if c_opt - p_opt:
-            cats.append(format_change_group("options", c_opt - p_opt, "added", cp, "        "))
+            cats.append(format_change_group(c_opt - p_opt, "added", cp, "        "))
         if p_opt - c_opt:
-            cats.append(format_change_group("options", p_opt - c_opt, "removed", cp, "        "))
+            cats.append(format_change_group(p_opt - c_opt, "removed", cp, "        "))
 
         for o_name in sorted(c_opt & p_opt):
             c_choices = set(c_opt_objs[o_name].get("choices") or [])
             p_choices = set(p_opt_objs[o_name].get("choices") or [])
             if c_choices - p_choices:
                 cats.append(
-                    format_choice_change_group(
-                        o_name, c_choices - p_choices, "added", cp, "options", "        "
-                    )
+                    format_choice_change_group(o_name, c_choices - p_choices, "added", cp, "        ")
                 )
             if p_choices - c_choices:
                 cats.append(
-                    format_choice_change_group(
-                        o_name, p_choices - c_choices, "removed", cp, "options", "        "
-                    )
+                    format_choice_change_group(o_name, p_choices - c_choices, "removed", cp, "        ")
                 )
-
-        c_syn = (c_obj.get("synopsis") or "").strip()
-        p_syn = (p_obj.get("synopsis") or "").strip()
-        if c_syn != p_syn:
-            cats.append(f"Changed the synopsis of {cp}")
 
         c_desc = (c_obj.get("description") or "").strip()
         p_desc = (p_obj.get("description") or "").strip()
         if c_desc != p_desc:
-            cats.append(f"Changed the help text for {cp}")
+            cats.append(f"Changed the description of {cp}")
 
         changed_help = set()
         for o_name in sorted(c_opt & p_opt):
@@ -362,13 +374,13 @@ def generate_cli_bullets(curr_v, prev_v):
         if changed_help:
             if len(changed_help) == 1:
                 item = list(changed_help)[0]
-                cats.append(f"Changed the help text for <code>{item}</code> option in {cp}")
+                cats.append(f"Changed the help text for `{item}` flag in {cp} command")
             else:
-                blk = f"Changed the help text for {cp} options:\n"
-                blk += "          <ul>\n"
+                blk = f"Changed the help text for {cp} flags:\n"
+                blk += "      <ul>\n"
                 for i in sorted(changed_help):
-                    blk += f"            <li><code>{i}</code></li>\n"
-                blk += "          </ul>"
+                    blk += f"        <li>`{i}`</li>\n"
+                blk += "      </ul>"
                 cats.append(blk)
 
         if len(cats) == 1:
@@ -391,16 +403,15 @@ def generate_cli_bullets(curr_v, prev_v):
             res += f"  <li>\n    {b}\n  </li>\n" if "\n" in b else f"  <li>{b}</li>\n"
         res += "</ul>"
         return res
-    
     visible, hidden = all_bullets[:3], all_bullets[3:]
     res = "<ul>\n"
     for b in visible:
         res += f"  <li>\n    {b}\n  </li>\n" if "\n" in b else f"  <li>{b}</li>\n"
     res += "</ul>\n"
-    res += "<details>\n  <summary>Click to expand</summary>\n  <ul>\n"
+    res += "\n  **Click to expand**\n  <ul>\n"
     for b in hidden:
         res += f"    <li>\n      {b}\n    </li>\n" if "\n" in b else f"    <li>{b}</li>\n"
-    res += "  </ul>\n</details>"
+    res += "  </ul>\n"
     return res
 
 def ensure_dependencies():
