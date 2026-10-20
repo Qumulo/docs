@@ -797,6 +797,56 @@ entries:
   - folderitems:
     - apiversion: v1
       output: web,pdf
+      preview: true
+      title: frozen/bridges
+      url: /rest-api-guide/frozen-v1/frozen_bridges.html
+    - apiversion: v1
+      output: web,pdf
+      preview: true
+      title: frozen/bridges/{filesystem_uuid}
+      url: /rest-api-guide/frozen-v1/frozen_bridges_filesystem_uuid.html
+    - apiversion: v1
+      output: web,pdf
+      preview: true
+      title: frozen/bridges/{filesystem_uuid}/jobs
+      url: /rest-api-guide/frozen-v1/frozen_bridges_filesystem_uuid_jobs.html
+    - apiversion: v1
+      output: web,pdf
+      preview: true
+      title: frozen/bridges/{filesystem_uuid}/jobs/{id}
+      url: /rest-api-guide/frozen-v1/frozen_bridges_filesystem_uuid_jobs_id.html
+    - apiversion: v1
+      output: web,pdf
+      preview: true
+      title: frozen/bridges/{filesystem_uuid}/jobs/{id}/cancel
+      url: /rest-api-guide/frozen-v1/frozen_bridges_filesystem_uuid_jobs_id_cancel.html
+    output: web,pdf
+    preview: true
+    title: Frozen V1 (frozen)
+    url: /rest-api-guide/frozen-v1/
+  - folderitems:
+    - apiversion: v1
+      output: web,pdf
+      preview: true
+      title: frozen/bridges/{filesystem_uuid}/deletes
+      url: /rest-api-guide/frozen-deletes-v1/frozen_bridges_filesystem_uuid_deletes.html
+    - apiversion: v1
+      output: web,pdf
+      preview: true
+      title: frozen/bridges/{filesystem_uuid}/deletes/{id}
+      url: /rest-api-guide/frozen-deletes-v1/frozen_bridges_filesystem_uuid_deletes_id.html
+    - apiversion: v1
+      output: web,pdf
+      preview: true
+      title: frozen/bridges/{filesystem_uuid}/deletes/{id}/cancel
+      url: /rest-api-guide/frozen-deletes-v1/frozen_bridges_filesystem_uuid_deletes_id_cancel.html
+    output: web,pdf
+    preview: true
+    title: Frozen Deletes V1 (frozen)
+    url: /rest-api-guide/frozen-deletes-v1/
+  - folderitems:
+    - apiversion: v1
+      output: web,pdf
       title: health/ssd-endurance
       url: /rest-api-guide/hardware-health-methods-v1/health_ssd-endurance.html
     output: web,pdf
@@ -1102,11 +1152,6 @@ entries:
       preview: true
       title: object-portal/bridges/{filesystem_uuid}
       url: /rest-api-guide/object-portals-v1/object-portal_bridges_filesystem_uuid.html
-    - apiversion: v1
-      output: web,pdf
-      preview: true
-      title: object-portal/notify
-      url: /rest-api-guide/object-portals-v1/object-portal_notify.html
     - apiversion: v1
       output: web,pdf
       preview: true

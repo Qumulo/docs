@@ -66,43 +66,93 @@ methods:
         \ of external objects in this tier\",\n                \"type\": \"string\"\
         \n              },\n              \"bytes\": {\n                \"description\"\
         : \"Total size of the external objects in this tier, in bytes\",\n       \
-        \         \"type\": \"string\"\n              }\n            }\n         \
-        \ },\n          \"online_cold\": {\n            \"description\": \"online_cold\"\
-        ,\n            \"type\": \"object\",\n            \"properties\": {\n    \
-        \          \"num_objects\": {\n                \"description\": \"Total number\
-        \ of external objects in this tier\",\n                \"type\": \"string\"\
-        \n              },\n              \"bytes\": {\n                \"description\"\
+        \         \"type\": \"string\"\n              },\n              \"unfilled_bytes\"\
+        : {\n                \"description\": \"The part of bytes that the files hold\
+        \ no blocks for, since no read or export has filled it yet, by copying or\
+        \ mapping it, so their capacity doesn't count it. Bytes a file has truncated\
+        \ away or punched out aren't read, so they don't count. A range a file maps\
+        \ to its external object, by a read or an export, counts in capacity instead,\
+        \ though its data lives in the object. A file from before an upgrade to a\
+        \ release with this field counts 0 until the cluster next reconciles it.\"\
+        ,\n                \"type\": \"string\"\n              }\n            }\n\
+        \          },\n          \"online_cold\": {\n            \"description\":\
+        \ \"online_cold\",\n            \"type\": \"object\",\n            \"properties\"\
+        : {\n              \"num_objects\": {\n                \"description\": \"\
+        Total number of external objects in this tier\",\n                \"type\"\
+        : \"string\"\n              },\n              \"bytes\": {\n             \
+        \   \"description\": \"Total size of the external objects in this tier, in\
+        \ bytes\",\n                \"type\": \"string\"\n              },\n     \
+        \         \"unfilled_bytes\": {\n                \"description\": \"The part\
+        \ of bytes that the files hold no blocks for, since no read or export has\
+        \ filled it yet, by copying or mapping it, so their capacity doesn't count\
+        \ it. Bytes a file has truncated away or punched out aren't read, so they\
+        \ don't count. A range a file maps to its external object, by a read or an\
+        \ export, counts in capacity instead, though its data lives in the object.\
+        \ A file from before an upgrade to a release with this field counts 0 until\
+        \ the cluster next reconciles it.\",\n                \"type\": \"string\"\
+        \n              }\n            }\n          },\n          \"auto_online\"\
+        : {\n            \"description\": \"auto_online\",\n            \"type\":\
+        \ \"object\",\n            \"properties\": {\n              \"num_objects\"\
+        : {\n                \"description\": \"Total number of external objects in\
+        \ this tier\",\n                \"type\": \"string\"\n              },\n \
+        \             \"bytes\": {\n                \"description\": \"Total size\
+        \ of the external objects in this tier, in bytes\",\n                \"type\"\
+        : \"string\"\n              },\n              \"unfilled_bytes\": {\n    \
+        \            \"description\": \"The part of bytes that the files hold no blocks\
+        \ for, since no read or export has filled it yet, by copying or mapping it,\
+        \ so their capacity doesn't count it. Bytes a file has truncated away or punched\
+        \ out aren't read, so they don't count. A range a file maps to its external\
+        \ object, by a read or an export, counts in capacity instead, though its data\
+        \ lives in the object. A file from before an upgrade to a release with this\
+        \ field counts 0 until the cluster next reconciles it.\",\n              \
+        \  \"type\": \"string\"\n              }\n            }\n          },\n  \
+        \        \"archive\": {\n            \"description\": \"archive\",\n     \
+        \       \"type\": \"object\",\n            \"properties\": {\n           \
+        \   \"num_objects\": {\n                \"description\": \"Total number of\
+        \ external objects in this tier\",\n                \"type\": \"string\"\n\
+        \              },\n              \"bytes\": {\n                \"description\"\
         : \"Total size of the external objects in this tier, in bytes\",\n       \
-        \         \"type\": \"string\"\n              }\n            }\n         \
-        \ },\n          \"auto_online\": {\n            \"description\": \"auto_online\"\
-        ,\n            \"type\": \"object\",\n            \"properties\": {\n    \
-        \          \"num_objects\": {\n                \"description\": \"Total number\
-        \ of external objects in this tier\",\n                \"type\": \"string\"\
-        \n              },\n              \"bytes\": {\n                \"description\"\
-        : \"Total size of the external objects in this tier, in bytes\",\n       \
-        \         \"type\": \"string\"\n              }\n            }\n         \
-        \ },\n          \"archive\": {\n            \"description\": \"archive\",\n\
-        \            \"type\": \"object\",\n            \"properties\": {\n      \
-        \        \"num_objects\": {\n                \"description\": \"Total number\
-        \ of external objects in this tier\",\n                \"type\": \"string\"\
-        \n              },\n              \"bytes\": {\n                \"description\"\
-        : \"Total size of the external objects in this tier, in bytes\",\n       \
-        \         \"type\": \"string\"\n              }\n            }\n         \
-        \ },\n          \"deep_archive\": {\n            \"description\": \"deep_archive\"\
-        ,\n            \"type\": \"object\",\n            \"properties\": {\n    \
-        \          \"num_objects\": {\n                \"description\": \"Total number\
-        \ of external objects in this tier\",\n                \"type\": \"string\"\
-        \n              },\n              \"bytes\": {\n                \"description\"\
-        : \"Total size of the external objects in this tier, in bytes\",\n       \
-        \         \"type\": \"string\"\n              }\n            }\n         \
-        \ },\n          \"unknown\": {\n            \"description\": \"unknown\",\n\
-        \            \"type\": \"object\",\n            \"properties\": {\n      \
-        \        \"num_objects\": {\n                \"description\": \"Total number\
-        \ of external objects in this tier\",\n                \"type\": \"string\"\
-        \n              },\n              \"bytes\": {\n                \"description\"\
-        : \"Total size of the external objects in this tier, in bytes\",\n       \
-        \         \"type\": \"string\"\n              }\n            }\n         \
-        \ }\n        }\n      }\n    }\n  }\n}"
+        \         \"type\": \"string\"\n              },\n              \"unfilled_bytes\"\
+        : {\n                \"description\": \"The part of bytes that the files hold\
+        \ no blocks for, since no read or export has filled it yet, by copying or\
+        \ mapping it, so their capacity doesn't count it. Bytes a file has truncated\
+        \ away or punched out aren't read, so they don't count. A range a file maps\
+        \ to its external object, by a read or an export, counts in capacity instead,\
+        \ though its data lives in the object. A file from before an upgrade to a\
+        \ release with this field counts 0 until the cluster next reconciles it.\"\
+        ,\n                \"type\": \"string\"\n              }\n            }\n\
+        \          },\n          \"deep_archive\": {\n            \"description\"\
+        : \"deep_archive\",\n            \"type\": \"object\",\n            \"properties\"\
+        : {\n              \"num_objects\": {\n                \"description\": \"\
+        Total number of external objects in this tier\",\n                \"type\"\
+        : \"string\"\n              },\n              \"bytes\": {\n             \
+        \   \"description\": \"Total size of the external objects in this tier, in\
+        \ bytes\",\n                \"type\": \"string\"\n              },\n     \
+        \         \"unfilled_bytes\": {\n                \"description\": \"The part\
+        \ of bytes that the files hold no blocks for, since no read or export has\
+        \ filled it yet, by copying or mapping it, so their capacity doesn't count\
+        \ it. Bytes a file has truncated away or punched out aren't read, so they\
+        \ don't count. A range a file maps to its external object, by a read or an\
+        \ export, counts in capacity instead, though its data lives in the object.\
+        \ A file from before an upgrade to a release with this field counts 0 until\
+        \ the cluster next reconciles it.\",\n                \"type\": \"string\"\
+        \n              }\n            }\n          },\n          \"unknown\": {\n\
+        \            \"description\": \"unknown\",\n            \"type\": \"object\"\
+        ,\n            \"properties\": {\n              \"num_objects\": {\n     \
+        \           \"description\": \"Total number of external objects in this tier\"\
+        ,\n                \"type\": \"string\"\n              },\n              \"\
+        bytes\": {\n                \"description\": \"Total size of the external\
+        \ objects in this tier, in bytes\",\n                \"type\": \"string\"\n\
+        \              },\n              \"unfilled_bytes\": {\n                \"\
+        description\": \"The part of bytes that the files hold no blocks for, since\
+        \ no read or export has filled it yet, by copying or mapping it, so their\
+        \ capacity doesn't count it. Bytes a file has truncated away or punched out\
+        \ aren't read, so they don't count. A range a file maps to its external object,\
+        \ by a read or an export, counts in capacity instead, though its data lives\
+        \ in the object. A file from before an upgrade to a release with this field\
+        \ counts 0 until the cluster next reconciles it.\",\n                \"type\"\
+        : \"string\"\n              }\n            }\n          }\n        }\n   \
+        \   }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success

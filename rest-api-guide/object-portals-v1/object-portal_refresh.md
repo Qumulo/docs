@@ -2,17 +2,20 @@
 category: /Object Portals V1
 methods:
   post:
-    summary: '[preview] Converge one object key against the bucket now, without waiting
-      for a change event. Works on a bridge with no event queue configured. A refresh
-      re-evaluates the key''s whole convergence state: it may create the file, resolve
-      a name conflict by displacement, refresh content and identity, re-import user
-      metadata, or -- when the object no longer exists in the bucket -- delete the
-      file, or drop a directory''s marker and remove a chain of empty parent directories.
-      Deletion is mode-independent: `mode` governs metadata application only. MERGE
-      (the default) leaves locally changed attributes alone; OVERWRITE discards them
-      for every attribute the object carries and cannot be undone. On a bridge created
-      with metadata_import=OFF the refresh still converges existence, content, and
-      identity, but imports no metadata. A bucket no bridge serves answers HTTP 404.'
+    summary: '[preview] Updates the bridge''s file or directory for one object now,
+      rather than when the bucket''s change notification arrives, and works on a bridge
+      with no notification queue. Use it when a file on the bridge doesn''t match
+      its object. If the object exists, the refresh creates or updates the file to
+      match it, including its content and metadata. If the object no longer exists,
+      the refresh deletes the file, or removes the directory, along with any parent
+      directories left empty. A file a client changed on the cluster is kept rather
+      than deleted, as long as the bucket still holds the object version the file
+      was read from. A bucket that refuses or fails the read answers HTTP 503 and
+      leaves the file as it is. `mode` controls only metadata: MERGE, the default,
+      keeps attributes changed on the cluster, and OVERWRITE replaces every attribute
+      the object carries, which can''t be undone. On a bridge created with `metadata_import`
+      OFF, the refresh updates the file''s existence and content but no metadata.
+      Returns HTTP 404 if no bridge serves the bucket.'
     parameters: []
     response_body: {}
     responses:

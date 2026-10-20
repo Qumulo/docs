@@ -24,20 +24,21 @@ methods:
         : {\n      \"description\": \"Stream ID of the source file. Defaults to default\
         \ stream.\",\n      \"type\": \"string\"\n    },\n    \"source_snapshot\"\
         : {\n      \"description\": \"Snapshot ID specifying the version of the file\
-        \ to copy from. Defaults to head version.\",\n      \"type\": \"number\"\n\
-        \    },\n    \"source_offset\": {\n      \"description\": \"Specifies the\
-        \ offset in bytes to start copying from. Defaults to 0.\",\n      \"type\"\
-        : \"string\"\n    },\n    \"target_offset\": {\n      \"description\": \"\
-        Specifies the offset in bytes to start copying to. Defaults to 0.\",\n   \
-        \   \"type\": \"string\"\n    },\n    \"length\": {\n      \"description\"\
-        : \"Specifies the maximum length of copy in bytes. Defaults to copy to the\
-        \ end of the source file. The server may not be able to copy the entire length\
-        \ requested. If that is the case, the response body returned can be used as\
-        \ request body for the remaining copy.\",\n      \"type\": \"string\"\n  \
-        \  },\n    \"source_etag\": {\n      \"description\": \"Expected ETag of the\
-        \ source file returned from /v1/files/{source-id}/info/attributes. If provided,\
-        \ this ETag will be validated against the server to ensure no intermediate\
-        \ change has occurred.\",\n      \"type\": \"string\"\n    }\n  }\n}"
+        \ to copy from. Defaults to head version. The source file must be on the primary\
+        \ filesystem when set.\",\n      \"type\": \"number\"\n    },\n    \"source_offset\"\
+        : {\n      \"description\": \"Specifies the offset in bytes to start copying\
+        \ from. Defaults to 0.\",\n      \"type\": \"string\"\n    },\n    \"target_offset\"\
+        : {\n      \"description\": \"Specifies the offset in bytes to start copying\
+        \ to. Defaults to 0.\",\n      \"type\": \"string\"\n    },\n    \"length\"\
+        : {\n      \"description\": \"Specifies the maximum length of copy in bytes.\
+        \ Defaults to copy to the end of the source file. The server may not be able\
+        \ to copy the entire length requested. If that is the case, the response body\
+        \ returned can be used as request body for the remaining copy.\",\n      \"\
+        type\": \"string\"\n    },\n    \"source_etag\": {\n      \"description\"\
+        : \"Expected ETag of the source file returned from /v1/files/{source-id}/info/attributes.\
+        \ If provided, this ETag will be validated against the server to ensure no\
+        \ intermediate change has occurred.\",\n      \"type\": \"string\"\n    }\n\
+        \  }\n}"
     responses:
     - code: '200'
       description: Return value on success
@@ -52,20 +53,21 @@ methods:
         : {\n      \"description\": \"Stream ID of the source file. Defaults to default\
         \ stream.\",\n      \"type\": \"string\"\n    },\n    \"source_snapshot\"\
         : {\n      \"description\": \"Snapshot ID specifying the version of the file\
-        \ to copy from. Defaults to head version.\",\n      \"type\": \"number\"\n\
-        \    },\n    \"source_offset\": {\n      \"description\": \"Specifies the\
-        \ offset in bytes to start copying from. Defaults to 0.\",\n      \"type\"\
-        : \"string\"\n    },\n    \"target_offset\": {\n      \"description\": \"\
-        Specifies the offset in bytes to start copying to. Defaults to 0.\",\n   \
-        \   \"type\": \"string\"\n    },\n    \"length\": {\n      \"description\"\
-        : \"Specifies the maximum length of copy in bytes. Defaults to copy to the\
-        \ end of the source file. The server may not be able to copy the entire length\
-        \ requested. If that is the case, the response body returned can be used as\
-        \ request body for the remaining copy.\",\n      \"type\": \"string\"\n  \
-        \  },\n    \"source_etag\": {\n      \"description\": \"Expected ETag of the\
-        \ source file returned from /v1/files/{source-id}/info/attributes. If provided,\
-        \ this ETag will be validated against the server to ensure no intermediate\
-        \ change has occurred.\",\n      \"type\": \"string\"\n    }\n  }\n}"
+        \ to copy from. Defaults to head version. The source file must be on the primary\
+        \ filesystem when set.\",\n      \"type\": \"number\"\n    },\n    \"source_offset\"\
+        : {\n      \"description\": \"Specifies the offset in bytes to start copying\
+        \ from. Defaults to 0.\",\n      \"type\": \"string\"\n    },\n    \"target_offset\"\
+        : {\n      \"description\": \"Specifies the offset in bytes to start copying\
+        \ to. Defaults to 0.\",\n      \"type\": \"string\"\n    },\n    \"length\"\
+        : {\n      \"description\": \"Specifies the maximum length of copy in bytes.\
+        \ Defaults to copy to the end of the source file. The server may not be able\
+        \ to copy the entire length requested. If that is the case, the response body\
+        \ returned can be used as request body for the remaining copy.\",\n      \"\
+        type\": \"string\"\n    },\n    \"source_etag\": {\n      \"description\"\
+        : \"Expected ETag of the source file returned from /v1/files/{source-id}/info/attributes.\
+        \ If provided, this ETag will be validated against the server to ensure no\
+        \ intermediate change has occurred.\",\n      \"type\": \"string\"\n    }\n\
+        \  }\n}"
 rest_endpoint: /v1/files/{ref}/copy-chunk
 api_version: v1
 permalink: /rest-api-guide/files-v1/files_ref_copy-chunk.html

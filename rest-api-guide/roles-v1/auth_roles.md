@@ -102,10 +102,11 @@ methods:
         \ - Provides read access to all files regardless of permissions,\\n * `PRIVILEGE_FS_ATTRIBUTES_READ`\
         \ - Read filesystem statistics,\\n * `PRIVILEGE_FS_DELETE_TREE_READ` - View\
         \ the status of directory tree delete operations,\\n * `PRIVILEGE_FS_DELETE_TREE_WRITE`\
-        \ - Use directory tree delete API. Granting this privilege allows the deletion\
-        \ of any file or directory on the cluster. File and directory permissions\
-        \ are not taken into account. Not required for `rm -r`.,\\n * `PRIVILEGE_FS_FILE_LOCK_WRITE`\
-        \ - Set or extend file lock retention periods and legal holds.,\\n * `PRIVILEGE_FS_KEY_MANAGEMENT_READ`\
+        \ - Use the directory tree delete API and the Frozen delete API. Granting\
+        \ this privilege allows the deletion of any file or directory on the cluster.\
+        \ File and directory permissions are not taken into account. Not required\
+        \ for `rm -r`.,\\n * `PRIVILEGE_FS_FILE_LOCK_WRITE` - Set or extend file lock\
+        \ retention periods and legal holds.,\\n * `PRIVILEGE_FS_KEY_MANAGEMENT_READ`\
         \ - Read and list public keys for various FS security features.,\\n * `PRIVILEGE_FS_KEY_MANAGEMENT_WRITE`\
         \ - Create and manage public keys for various FS security features.,\\n *\
         \ `PRIVILEGE_FS_LOCK_READ` - View NLM and SMB locks and waiters,\\n * `PRIVILEGE_FS_LOCK_WRITE`\
@@ -321,10 +322,11 @@ methods:
         \ - Provides read access to all files regardless of permissions,\\n * `PRIVILEGE_FS_ATTRIBUTES_READ`\
         \ - Read filesystem statistics,\\n * `PRIVILEGE_FS_DELETE_TREE_READ` - View\
         \ the status of directory tree delete operations,\\n * `PRIVILEGE_FS_DELETE_TREE_WRITE`\
-        \ - Use directory tree delete API. Granting this privilege allows the deletion\
-        \ of any file or directory on the cluster. File and directory permissions\
-        \ are not taken into account. Not required for `rm -r`.,\\n * `PRIVILEGE_FS_FILE_LOCK_WRITE`\
-        \ - Set or extend file lock retention periods and legal holds.,\\n * `PRIVILEGE_FS_KEY_MANAGEMENT_READ`\
+        \ - Use the directory tree delete API and the Frozen delete API. Granting\
+        \ this privilege allows the deletion of any file or directory on the cluster.\
+        \ File and directory permissions are not taken into account. Not required\
+        \ for `rm -r`.,\\n * `PRIVILEGE_FS_FILE_LOCK_WRITE` - Set or extend file lock\
+        \ retention periods and legal holds.,\\n * `PRIVILEGE_FS_KEY_MANAGEMENT_READ`\
         \ - Read and list public keys for various FS security features.,\\n * `PRIVILEGE_FS_KEY_MANAGEMENT_WRITE`\
         \ - Create and manage public keys for various FS security features.,\\n *\
         \ `PRIVILEGE_FS_LOCK_READ` - View NLM and SMB locks and waiters,\\n * `PRIVILEGE_FS_LOCK_WRITE`\
@@ -537,10 +539,11 @@ methods:
         \ - Provides read access to all files regardless of permissions,\\n * `PRIVILEGE_FS_ATTRIBUTES_READ`\
         \ - Read filesystem statistics,\\n * `PRIVILEGE_FS_DELETE_TREE_READ` - View\
         \ the status of directory tree delete operations,\\n * `PRIVILEGE_FS_DELETE_TREE_WRITE`\
-        \ - Use directory tree delete API. Granting this privilege allows the deletion\
-        \ of any file or directory on the cluster. File and directory permissions\
-        \ are not taken into account. Not required for `rm -r`.,\\n * `PRIVILEGE_FS_FILE_LOCK_WRITE`\
-        \ - Set or extend file lock retention periods and legal holds.,\\n * `PRIVILEGE_FS_KEY_MANAGEMENT_READ`\
+        \ - Use the directory tree delete API and the Frozen delete API. Granting\
+        \ this privilege allows the deletion of any file or directory on the cluster.\
+        \ File and directory permissions are not taken into account. Not required\
+        \ for `rm -r`.,\\n * `PRIVILEGE_FS_FILE_LOCK_WRITE` - Set or extend file lock\
+        \ retention periods and legal holds.,\\n * `PRIVILEGE_FS_KEY_MANAGEMENT_READ`\
         \ - Read and list public keys for various FS security features.,\\n * `PRIVILEGE_FS_KEY_MANAGEMENT_WRITE`\
         \ - Create and manage public keys for various FS security features.,\\n *\
         \ `PRIVILEGE_FS_LOCK_READ` - View NLM and SMB locks and waiters,\\n * `PRIVILEGE_FS_LOCK_WRITE`\

@@ -56,10 +56,11 @@ methods:
         ,\n            \"type\": \"string\"\n          }\n        }\n      },\n  \
         \    \"is_guest\": {\n        \"description\": \"is_guest\",\n        \"type\"\
         : \"boolean\"\n      },\n      \"is_encrypted\": {\n        \"description\"\
-        : \"is_encrypted\",\n        \"type\": \"boolean\"\n      },\n      \"share_names\"\
-        : {\n        \"type\": \"array\",\n        \"items\": {\n          \"description\"\
-        : \"share_names\",\n          \"type\": \"string\"\n        }\n      }\n \
-        \   }\n  }\n}"
+        : \"is_encrypted\",\n        \"type\": \"boolean\"\n      },\n      \"signing_required\"\
+        : {\n        \"description\": \"signing_required\",\n        \"type\": \"\
+        boolean\"\n      },\n      \"share_names\": {\n        \"type\": \"array\"\
+        ,\n        \"items\": {\n          \"description\": \"share_names\",\n   \
+        \       \"type\": \"string\"\n        }\n      }\n    }\n  }\n}"
 rest_endpoint: /v1/smb/sessions/close
 api_version: v1
 permalink: /rest-api-guide/smb-session-administration-v1/smb_sessions_close.html
