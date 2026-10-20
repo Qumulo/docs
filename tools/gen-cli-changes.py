@@ -1,452 +1,472 @@
-#!/usr/bin/env python3
-"""
-gen-cli-changes.py — generate change-log.md for the qq CLI command surface.
-
-Mirrors gen-api-changes.py: one cached JSON snapshot per release version,
-generated once and never regenerated, then a diff of the two newest snapshots.
-
-USAGE
-    python3 gen-cli-changes.py 7.10.3
-    python3 gen-cli-changes.py 7.9.1 7.10.0 7.10.3     # backfill several
-    python3 gen-cli-changes.py --repo ~/src 7.10.3
-
-    Options:
-      --repo PATH           hg checkout to extract from   (default: ~/src)
-      --snapshot-dir PATH   snapshot cache directory      (default: ./cli-snapshots)
-      --output PATH         changelog to write            (default: ./change-log.md)
-      --qpython PATH        qpython binary (default: /opt/qumulo/toolchain/bin/qpython)
-
-WHAT IT DOES
-    For each version not already cached:
-      1. resolve hg rev   (branch release-X.Y.Z, falling back to tag QumuloCore-X.Y.Z)
-      2. hg archive that rev's `qumulo/` subtree into a temp dir  (never `hg update`)
-      3. import it under qpython and introspect opts.Subcommand.__subclasses__()
-      4. write cli-snapshots/<version>.json
-    Then diffs the two newest cached snapshots into change-log.md.
-
-    Versions already cached cost nothing — no hg, no import.
-"""
-
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import json
 import os
 import re
 import shutil
 import subprocess
-import sys
 import tempfile
+from tqdm import tqdm
 
-DEFAULT_REPO = os.path.expanduser('~/src')
-DEFAULT_QPYTHON = '/opt/qumulo/toolchain/bin/qpython'
+TARGET_FILE = "qq-cli-command-guide/change-log.md"
+CACHE_DIR = "tools/.cli-change-cache"
+
+DEFAULT_REPO = os.environ.get("QUMULO_REPO", os.path.expanduser("~/src/qumulo"))
+DEFAULT_QPYTHON = os.environ.get("QPYTHON", "qpython")
 MIN_EXPECTED_COMMANDS = 50
 
+cli_data = {}
 
-class Failure(Exception):
-    """A clean, explainable failure. Printed as an error, not a traceback."""
-
-
-# --------------------------------------------------------------------------
-# The extractor. Written to a temp file and run under qpython inside the
-# archived tree. Field extraction is a faithful copy of
-# ~/src/tools/extract_cli_help.py (minus the Jekyll/doc-writing parts).
-# --------------------------------------------------------------------------
-
-EXTRACTOR = r'''
+EXTRACT_PROGRAM = r'''
 import argparse
 import json
 import sys
 
-try:
-    import qumulo.lib.opts as opts
-    import qumulo.lib.qq as qq  # noqa: F401  (registers the subcommands)
-except Exception as exc:
-    sys.stderr.write('IMPORT_FAILED: %s: %s\n' % (type(exc).__name__, exc))
-    sys.exit(3)
+import qumulo.lib.qq  # noqa: F401  (registers all subcommands)
+import qumulo.lib.opts as opts
 
-command_classes = sorted(opts.Subcommand.__subclasses__(), key=lambda i: getattr(i, 'NAME'))
 
-if len(command_classes) < MIN_EXPECTED:
-    sys.stderr.write(
-        'TOO_FEW_SUBCOMMANDS: found %d, expected at least %d\n'
-        % (len(command_classes), MIN_EXPECTED)
-    )
-    sys.exit(4)
+def expand(action, formatter):
+    try:
+        return formatter._expand_help(action)
+    except Exception:
+        return (action.help or "").strip()
 
-commands = []
-for cls in command_classes:
-    if '==SUPPRESS==' in cls.SYNOPSIS:
-        continue
 
-    parser = argparse.ArgumentParser(prog='qq %s' % cls.NAME)
-    cls.options(parser)
-
-    generated_usage = parser.format_usage()[7:].strip()
-    usage = '\n'.join(
-        ('    ' + line.strip()) if idx > 0 else line
-        for idx, line in enumerate(generated_usage.split('\n'))
-    )
-
-    hf = argparse.HelpFormatter(prog='unused')
-
-    commands.append(
-        {
-            'command': cls.NAME,
-            'category': cls.NAME.split('_')[0],
-            'synopsis': cls.SYNOPSIS,
-            'usage': usage,
-            'positional_options': [
-                {'name': opt.dest, 'help': hf._expand_help(opt), 'required': True}
-                for opt in parser._positionals._actions
-                if len(opt.option_strings) == 0
-                and opt.help
-                and '==SUPPRESS==' not in opt.help
-            ],
-            'optional_options': [
-                {
-                    'name': opt.option_strings[0],
-                    'alternate': opt.option_strings[1:],
-                    'help': hf._expand_help(opt),
-                    'required': opt.required,
-                }
-                for opt in parser._optionals._actions
-                if len(opt.option_strings) > 0
-                and '-h' not in opt.option_strings
-                and opt.help
-                and '==SUPPRESS==' not in opt.help
-            ],
+def dump_actions(actions, formatter):
+    out = {}
+    for action in actions:
+        if action.dest in ("help", "==SUPPRESS=="):
+            continue
+        name = max(action.option_strings, key=len) if action.option_strings else action.dest
+        out[name] = {
+            "dest": action.dest,
+            "option_strings": list(action.option_strings),
+            "metavar": action.metavar,
+            "required": bool(getattr(action, "required", False)),
+            "nargs": action.nargs if isinstance(action.nargs, (int, str)) else None,
+            "choices": sorted([str(c) for c in action.choices]) if action.choices else [],
+            "help": expand(action, formatter),
         }
-    )
+    return out
 
-json.dump({'version': VERSION, 'commands': commands}, sys.stdout, indent=2, sort_keys=True)
+
+commands = {}
+subclasses = opts.Subcommand.__subclasses__()
+for cls in subclasses:
+    name = getattr(cls, "NAME", None)
+    if not name:
+        continue
+    entry = {
+        "name": name,
+        "synopsis": (getattr(cls, "SYNOPSIS", "") or "").strip(),
+        "description": (getattr(cls, "DESCRIPTION", "") or "").strip(),
+        "usage": "",
+        "positional_options": {},
+        "optional_options": {},
+    }
+    try:
+        parser = argparse.ArgumentParser(prog="qq " + name, add_help=False)
+        cls.options(parser)
+        formatter = argparse.HelpFormatter(prog="unused")
+        entry["usage"] = parser.format_usage().strip()
+        entry["positional_options"] = dump_actions(parser._positionals._actions, formatter)
+        entry["optional_options"] = dump_actions(parser._optionals._actions, formatter)
+    except Exception as e:
+        entry["error"] = str(e)
+    commands[name] = entry
+
+json.dump({"subclass_count": len(subclasses), "commands": commands}, sys.stdout)
 '''
 
 
-# --------------------------------------------------------------------------
-# hg
-# --------------------------------------------------------------------------
-
-def run(cmd, cwd=None):
-    proc = subprocess.run(cmd, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    return proc.returncode, proc.stdout.decode('utf-8', 'replace'), proc.stderr.decode(
-        'utf-8', 'replace'
-    )
-
-
-def resolve_rev(repo, version):
-    """Prefer the release-X.Y.Z branch; fall back to the old QumuloCore-X.Y.Z tag."""
-    for rev in ('release-%s' % version, 'QumuloCore-%s' % version):
-        code, _, _ = run(['hg', 'log', '-r', rev, '-T', '{node}'], cwd=repo)
-        if code == 0:
-            return rev
-    raise Failure(
-        'Could not find release %s in %s.\n'
-        "  Tried hg branch 'release-%s' and hg tag 'QumuloCore-%s' — neither exists.\n"
-        '  Check the version number, or run `hg branches` in the repo to see what is '
-        'available.' % (version, repo, version, version)
-    )
-
-
-def archive_tree(repo, rev, dest):
-    code, _, err = run(
-        [
-            'hg',
-            'archive',
-            '-r',
-            rev,
-            '-I',
-            'glob:**/qumulo/**',
-            '-I',
-            'glob:qumulo/**',
-            '-I',
-            'glob:**/toolchain.json',
-            '-I',
-            'glob:toolchain.json',
-            dest,
-        ],
-        cwd=repo,
-    )
-    if code != 0:
-        raise Failure(
-            'hg archive failed for %s.\n  hg said: %s' % (rev, err.strip() or '(no output)')
-        )
-
-
-def find_package_root(archive_dir):
-    """Locate the directory containing qumulo/lib/qq.py. That dir is the PYTHONPATH root."""
-    for dirpath, _dirnames, filenames in os.walk(archive_dir):
-        if 'qq.py' in filenames:
-            # .../<root>/qumulo/lib/qq.py
-            lib = dirpath
-            pkg = os.path.dirname(lib)
-            root = os.path.dirname(pkg)
-            if os.path.basename(lib) == 'lib' and os.path.basename(pkg) == 'qumulo':
-                return root
-    raise Failure(
-        'The extracted source tree does not contain qumulo/lib/qq.py.\n'
-        '  Nothing to introspect — the archive step pulled an incomplete tree.\n'
-        '  This usually means the release predates the current source layout.'
-    )
-
-
-def find_toolchain_qpython(root, fallback):
-    """If the release pins a toolchain version, use that qpython; else use the default."""
-    tc = os.path.join(root, 'toolchain.json')
-    if not os.path.exists(tc):
-        return fallback
-    try:
-        with open(tc) as handle:
-            data = json.load(handle)
-    except Exception:
-        return fallback
-    ver = data.get('version') or data.get('toolchain_version')
-    if not ver:
-        return fallback
-    candidate = '/opt/qumulo/env/%s/bin/qpython' % ver
-    return candidate if os.path.exists(candidate) else fallback
-
-
-# --------------------------------------------------------------------------
-# snapshot generation
-# --------------------------------------------------------------------------
-
-def build_snapshot(repo, version, qpython):
-    rev = resolve_rev(repo, version)
-    tmp = tempfile.mkdtemp(prefix='qq-cli-%s-' % version)
-    try:
-        archive_tree(repo, rev, tmp)
-        root = find_package_root(tmp)
-        interpreter = find_toolchain_qpython(root, qpython)
-
-        if not os.path.exists(interpreter):
-            raise Failure(
-                'qpython not found at %s.\n'
-                '  Pass a different one with --qpython.' % interpreter
-            )
-
-        script = EXTRACTOR.replace('MIN_EXPECTED', str(MIN_EXPECTED_COMMANDS)).replace(
-            'VERSION', json.dumps(version)
-        )
-        script_path = os.path.join(tmp, '_extract_cli.py')
-        with open(script_path, 'w') as handle:
-            handle.write(script)
-
-        env = dict(os.environ)
-        env['PYTHONPATH'] = root
-        env['PYTHONDONTWRITEBYTECODE'] = '1'
-        proc = subprocess.run(
-            [interpreter, script_path],
-            env=env,
-            cwd=root,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-        )
-        out = proc.stdout.decode('utf-8', 'replace')
-        err = proc.stderr.decode('utf-8', 'replace').strip()
-
-        if proc.returncode == 3:
-            raise Failure(
-                'Could not import the qq CLI from release %s.\n'
-                '  %s\n'
-                '  The extracted tree is probably missing generated code '
-                '(qumulo/rest/*), which is built rather than checked in.' % (version, err)
-            )
-        if proc.returncode == 4:
-            raise Failure(
-                'The CLI introspection for release %s produced far too few commands.\n'
-                '  %s\n'
-                '  Refusing to cache a bad snapshot.' % (version, err)
-            )
-        if proc.returncode != 0:
-            raise Failure(
-                'CLI introspection failed for release %s (exit %d).\n  %s'
-                % (version, proc.returncode, err or '(no output)')
-            )
-
+def _resolve_rev(repo, version):
+    """Prefer the release-X.Y.Z branch; fall back to the QumuloCore-X.Y.Z tag."""
+    for candidate in (f"release-{version}", f"QumuloCore-{version}"):
         try:
-            return json.loads(out)
-        except ValueError:
-            raise Failure(
-                'CLI introspection for release %s did not return valid JSON.\n  %s'
-                % (version, err or out[:400])
+            r = subprocess.run(
+                ["hg", "--repository", repo, "log", "-r", candidate, "--template", "{node}"],
+                capture_output=True,
+                text=True,
+                timeout=120,
             )
+            if r.returncode == 0 and r.stdout.strip():
+                return r.stdout.strip()
+        except Exception:
+            continue
+    return None
+
+
+def _find_package_root(root):
+    """Locate the directory that is the parent of qumulo/ containing lib/qq.py."""
+    for dirpath, dirnames, filenames in os.walk(root):
+        if os.path.basename(dirpath) == "qumulo" and os.path.exists(
+            os.path.join(dirpath, "lib", "qq.py")
+        ):
+            return os.path.dirname(dirpath)
+        dirnames[:] = [d for d in dirnames if not d.startswith(".")]
+    return None
+
+
+def fetch_version(version, force):
+    """CLI analogue of the REST script's HTTP fetch: archive the release revision
+    out of hg (read-only -- we NEVER hg update) and introspect the qq subcommands.
+
+    NOTE: hg archive is a read-only operation against the repository, so
+    concurrent invocations are safe. We still cap the pool well below the REST
+    script's 10 workers because each task forks hg plus a qpython interpreter
+    rather than issuing a lightweight HTTP request.
+    """
+    if not version:
+        return
+    cache_path = os.path.join(CACHE_DIR, f"{version}.json")
+    if not force and os.path.exists(cache_path):
+        try:
+            with open(cache_path, "r") as f:
+                cli_data[version] = json.load(f)
+                return
+        except Exception:
+            pass
+    tmpdir = None
+    try:
+        rev = _resolve_rev(DEFAULT_REPO, version)
+        if not rev:
+            cli_data[version] = None
+            return
+        tmpdir = tempfile.mkdtemp(prefix=f"qq-cli-{version}-")
+        archive = subprocess.run(
+            [
+                "hg",
+                "--repository",
+                DEFAULT_REPO,
+                "archive",
+                "-r",
+                rev,
+                "-I",
+                "glob:**/qumulo/**",
+                "-I",
+                "glob:qumulo/**",
+                "-I",
+                "glob:**/toolchain.json",
+                "-I",
+                "glob:toolchain.json",
+                tmpdir,
+            ],
+            capture_output=True,
+            text=True,
+            timeout=900,
+        )
+        if archive.returncode != 0:
+            cli_data[version] = None
+            return
+        pkg_root = _find_package_root(tmpdir)
+        if not pkg_root:
+            cli_data[version] = None
+            return
+        env = dict(os.environ)
+        env["PYTHONPATH"] = pkg_root + os.pathsep + env.get("PYTHONPATH", "")
+        env["PYTHONDONTWRITEBYTECODE"] = "1"
+        proc = subprocess.run(
+            [DEFAULT_QPYTHON, "-c", EXTRACT_PROGRAM],
+            capture_output=True,
+            text=True,
+            cwd=pkg_root,
+            env=env,
+            timeout=600,
+        )
+        if proc.returncode != 0 or not proc.stdout.strip():
+            cli_data[version] = None
+            return
+        data = json.loads(proc.stdout)
+        if data.get("subclass_count", 0) < MIN_EXPECTED_COMMANDS:
+            cli_data[version] = None
+            return
+        os.makedirs(CACHE_DIR, exist_ok=True)
+        with open(cache_path, "w") as f:
+            json.dump(data, f)
+        cli_data[version] = data
+    except Exception:
+        cli_data[version] = None
     finally:
-        shutil.rmtree(tmp, ignore_errors=True)
+        if tmpdir:
+            shutil.rmtree(tmpdir, ignore_errors=True)
 
 
-def ensure_snapshot(repo, version, snapshot_dir, qpython):
-    path = os.path.join(snapshot_dir, '%s.json' % version)
-    if os.path.exists(path):
-        print('  %s: already cached (%s)' % (version, path))
-        return path
-    print('  %s: not cached — extracting (this is slow, but only happens once)' % version)
-    snapshot = build_snapshot(repo, version, qpython)
-    os.makedirs(snapshot_dir, exist_ok=True)
-    with open(path, 'w') as handle:
-        json.dump(snapshot, handle, indent=2, sort_keys=True)
-    print('  %s: cached %d commands' % (version, len(snapshot['commands'])))
-    return path
+def all_options(cmd):
+    """Positional and optional options merged into one name-keyed dict."""
+    if not isinstance(cmd, dict):
+        return {}
+    merged = {}
+    merged.update(cmd.get("positional_options") or {})
+    merged.update(cmd.get("optional_options") or {})
+    return merged
 
 
-# --------------------------------------------------------------------------
-# diffing
-# --------------------------------------------------------------------------
-
-def version_key(version):
-    return tuple(int(p) for p in re.findall(r'\d+', version))
-
-
-def cached_versions(snapshot_dir):
-    if not os.path.isdir(snapshot_dir):
-        return []
-    versions = [f[:-5] for f in os.listdir(snapshot_dir) if f.endswith('.json')]
-    return sorted(versions, key=version_key)
-
-
-def load_commands(snapshot_dir, version):
-    with open(os.path.join(snapshot_dir, '%s.json' % version)) as handle:
-        data = json.load(handle)
-    return {c['command']: c for c in data['commands']}
+def format_change_group(label, items, verb, command_path, base_indent=""):
+    count = len(items)
+    word = "option" if "option" in label.lower() else "argument"
+    plural = f"{word}s" if count > 1 else word
+    prep = "to" if verb == "added" else "from"
+    if count == 1:
+        item = list(items)[0]
+        return f"{verb.capitalize()} <code>{item}</code> {word} {prep} {command_path} {label}"
+    res = f"{verb.capitalize()} {plural} {prep} {command_path} {label}:\n"
+    res += f"{base_indent}  <ul>\n"
+    for i in sorted(items):
+        res += f"{base_indent}    <li><code>{i}</code></li>\n"
+    res += f"{base_indent}  </ul>"
+    return res
 
 
-def option_names(command):
-    names = [o['name'] for o in command.get('positional_options', [])]
-    names += [o['name'] for o in command.get('optional_options', [])]
-    return names
+def format_choice_change_group(target_name, items, verb, command_path, label, base_indent=""):
+    count = len(items)
+    word = "option" if "option" in label.lower() else "argument"
+    singular = "accepted value"
+    plural = "accepted values"
+    prep = "to" if verb == "added" else "from"
+    loc = f" {label}" if label else ""
+    display_name = target_name.split(".")[-1]
+    if count == 1:
+        item = list(items)[0]
+        return (
+            f"{verb.capitalize()} <code>{item}</code> {singular} {prep} "
+            f"<code>{display_name}</code> {word} in {command_path}{loc}"
+        )
+    res = (
+        f"{verb.capitalize()} {plural} {prep} <code>{display_name}</code> "
+        f"{word} in {command_path}{loc}:\n"
+    )
+    res += f"{base_indent}  <ul>\n"
+    for i in sorted(items):
+        res += f"{base_indent}    <li><code>{i}</code></li>\n"
+    res += f"{base_indent}  </ul>"
+    return res
 
 
-def diff_commands(old, new):
-    added = sorted(set(new) - set(old))
-    removed = sorted(set(old) - set(new))
-    changed = []
-    
-    for name in sorted(set(old) & set(new)):
-        before, after = old[name], new[name]
-        notes = []
+def generate_cli_bullets(curr_v, prev_v):
+    if not prev_v:
+        return "{{ noCLIchanges }}"
+    curr_json = cli_data.get(curr_v)
+    prev_json = cli_data.get(prev_v)
+    if not curr_json or not prev_json:
+        return "{{ noCLIchanges }}"
 
-        if before['synopsis'] != after['synopsis']:
-            notes.append(
-                'Synopsis changed from "%s" to "%s"' % (before['synopsis'], after['synopsis'])
-            )
+    removals, additions, modifications = [], [], []
+    c_c = curr_json.get("commands", {})
+    p_c = prev_json.get("commands", {})
 
-        old_opts, new_opts = set(option_names(before)), set(option_names(after))
-        for opt in sorted(new_opts - old_opts):
-            notes.append('Added option `%s`' % opt)
-        for opt in sorted(old_opts - new_opts):
-            notes.append('Removed option `%s`' % opt)
+    for name in sorted(set(c_c.keys()) | set(p_c.keys())):
+        cp = f"<code>qq {name}</code>"
+        if name not in c_c:
+            removals.append(f"Removed <code>qq {name}</code> command")
+            continue
+        if name not in p_c:
+            additions.append(f"Added {cp} command")
+            continue
 
-        old_help = {
-            o['name']: o['help']
-            for o in before.get('positional_options', []) + before.get('optional_options', [])
-        }
-        new_help = {
-            o['name']: o['help']
-            for o in after.get('positional_options', []) + after.get('optional_options', [])
-        }
-        for opt in sorted(old_opts & new_opts):
-            if old_help.get(opt) != new_help.get(opt):
-                notes.append('Help text changed for `%s`' % opt)
+        c_obj, p_obj = c_c[name], p_c[name]
+        cats = []
 
-        if not notes and before['usage'] != after['usage']:
-            notes.append('Usage string changed')
+        c_opt_objs = all_options(c_obj)
+        p_opt_objs = all_options(p_obj)
+        c_opt, p_opt = set(c_opt_objs.keys()), set(p_opt_objs.keys())
+        if c_opt - p_opt:
+            cats.append(format_change_group("options", c_opt - p_opt, "added", cp, "        "))
+        if p_opt - c_opt:
+            cats.append(format_change_group("options", p_opt - c_opt, "removed", cp, "        "))
 
-        if notes:
-            changed.append((name, notes))
+        for o_name in sorted(c_opt & p_opt):
+            c_choices = set(c_opt_objs[o_name].get("choices") or [])
+            p_choices = set(p_opt_objs[o_name].get("choices") or [])
+            if c_choices - p_choices:
+                cats.append(
+                    format_choice_change_group(
+                        o_name, c_choices - p_choices, "added", cp, "options", "        "
+                    )
+                )
+            if p_choices - c_choices:
+                cats.append(
+                    format_choice_change_group(
+                        o_name, p_choices - c_choices, "removed", cp, "options", "        "
+                    )
+                )
 
-    return added, removed, changed
+        c_syn = (c_obj.get("synopsis") or "").strip()
+        p_syn = (p_obj.get("synopsis") or "").strip()
+        if c_syn != p_syn:
+            cats.append(f"Changed the synopsis of {cp}")
 
+        c_desc = (c_obj.get("description") or "").strip()
+        p_desc = (p_obj.get("description") or "").strip()
+        if c_desc != p_desc:
+            cats.append(f"Changed the help text for {cp}")
 
-def render_changelog(old_version, new_version, old, new):
-    added, removed, changed = diff_commands(old, new)
+        changed_help = set()
+        for o_name in sorted(c_opt & p_opt):
+            if (c_opt_objs[o_name].get("help") or "").strip() != (
+                p_opt_objs[o_name].get("help") or ""
+            ).strip():
+                changed_help.add(o_name)
+        if changed_help:
+            if len(changed_help) == 1:
+                item = list(changed_help)[0]
+                cats.append(f"Changed the help text for <code>{item}</code> option in {cp}")
+            else:
+                blk = f"Changed the help text for {cp} options:\n"
+                blk += "          <ul>\n"
+                for i in sorted(changed_help):
+                    blk += f"            <li><code>{i}</code></li>\n"
+                blk += "          </ul>"
+                cats.append(blk)
 
-    lines = ['# qq CLI Changes', '', '## %s (compared to %s)' % (new_version, old_version), '']
+        if len(cats) == 1:
+            modifications.append(cats[0])
+        elif len(cats) > 1:
+            nested = f"Modified {cp}:\n      <ul>\n"
+            for cat in cats:
+                nested += f"        <li>{cat}</li>\n"
+            nested += "      </ul>"
+            modifications.append(nested)
 
-    if not (added or removed or changed):
-        lines += ['No CLI command changes.', '']
-        return '\n'.join(lines)
-
-    if added:
-        lines += ['### Added Commands', '']
-        for name in added:
-            lines.append('- `qq %s` — %s' % (name, new[name]['synopsis']))
-        lines.append('')
-
-    if removed:
-        lines += ['### Removed Commands', '']
-        for name in removed:
-            lines.append('- `qq %s` — %s' % (name, old[name]['synopsis']))
-        lines.append('')
-
-    if changed:
-        lines += ['### Changed Commands', '']
-        for name, notes in changed:
-            lines.append('- `qq %s`' % name)
-            for note in notes:
-                lines.append('  - %s' % note)
-        lines.append('')
-
-    return '\n'.join(lines)
+    all_bullets = removals + additions + modifications
+    if not all_bullets:
+        return "{{ noCLIchanges }}"
+    if len(all_bullets) == 1:
+        return all_bullets[0]
+    if len(all_bullets) <= 5:
+        res = "<ul>\n"
+        for b in all_bullets:
+            res += f"  <li>\n    {b}\n  </li>\n" if "\n" in b else f"  <li>{b}</li>\n"
+        res += "</ul>"
+        return res
+    visible, hidden = all_bullets[:3], all_bullets[3:]
+    res = "<ul>\n"
+    for b in visible:
+        res += f"  <li>\n    {b}\n  </li>\n" if "\n" in b else f"  <li>{b}</li>\n"
+    res += "</ul>\n"
+    res += "<details>\n  <summary>Click to expand</summary>\n  <ul>\n"
+    for b in hidden:
+        res += f"    <li>\n      {b}\n    </li>\n" if "\n" in b else f"    <li>{b}</li>\n"
+    res += "  </ul>\n</details>"
+    return res
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description='Generate change-log.md for the qq CLI command surface.'
-    )
-    parser.add_argument(
-        'versions', nargs='+', metavar='VERSION', help='Release version(s), e.g. 7.10.3'
-    )
-    parser.add_argument('--repo', default=DEFAULT_REPO, help='hg checkout (default: ~/src)')
-    parser.add_argument(
-        '--snapshot-dir',
-        default='cli-snapshots',
-        help='Snapshot cache directory (default: ./cli-snapshots)',
-    )
-    parser.add_argument(
-        '--output', default='change-log.md', help='Changelog output file (default: ./change-log.md)'
-    )
-    parser.add_argument(
-        '--qpython', default=DEFAULT_QPYTHON, help='qpython binary (default: %s)' % DEFAULT_QPYTHON
-    )
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--no-cache", action="store_true")
+    parser.add_argument("version", nargs="?", default=None)
     args = parser.parse_args()
+    target_v = args.version
+    
+    if not target_v:
+        while True:
+            choice = input(
+                "Which version of qq CLI docs to generate change log version for?"
+                " Enter a valid Qumulo Core version or q to quit: "
+            ).strip()
+            if choice == "q":
+                return
+            elif choice == "current" or re.match(r"^\d+\.\d+\.\d+(?:\.\d+)*$", choice):
+                target_v = choice
+                break
+            else:
+                print(
+                    f"Error: Invalid version format '{choice}'. Expected 'current' or"
+                    " 'N.N.N'."
+                )
+                
+    if not os.path.exists(TARGET_FILE):
+        return
+        
+    with open(TARGET_FILE, "r", encoding="utf-8") as f:
+        full_content = f.read()
+        
+    parts = full_content.split("---", 2)
+    if len(parts) < 3:
+        return
+        
+    yaml_header = "---" + parts[1] + "---"
+    body_content = parts[2]
+    
+    if target_v and target_v != "current":
+        mm_match = re.match(r"^(\d+\.\d+)", target_v)
+        major_minor = mm_match.group(1) if mm_match else target_v
+        parent_heading = f"## {major_minor} Releases"
+        header_pattern = rf"### Qumulo Core {re.escape(target_v)}\b"
+        nexus_pattern = rf"### Qumulo Core {re.escape(target_v)}\b(?:(?!### Qumulo Core)[\s\S])*?{{\{{\s*nexusLink\s*\}}}}"
+        has_header = re.search(header_pattern, body_content)
+        has_nexus = re.search(nexus_pattern, body_content)
+        
+        if not has_header:
+            parent_pattern = rf"## {re.escape(major_minor)} Releases\b"
+            has_parent = re.search(parent_pattern, body_content)
+            new_entry = f"### Qumulo Core {target_v}\n{{{{ nexusLink }}}}\n\n"
+            if has_parent:
+                body_content = re.sub(rf"({parent_pattern}\n*)", rf"\1\n{new_entry}", body_content, count=1)
+            else:
+                full_block = f"\n\n\n{parent_heading}\n\n{new_entry}"
+                topmost = re.search(r"(\n## \d+\.\d+ Releases|\n### Qumulo Core \d+\.\d+\.\d+)", body_content)
+                if topmost:
+                    pos = topmost.start()
+                    body_content = body_content[:pos] + full_block + body_content[pos:]
+                else:
+                    body_content = full_block + body_content
+        elif not has_nexus:
+            body_content = re.sub(rf"(### Qumulo Core {re.escape(target_v)}\b)", r"\1\n{{ nexusLink }}", body_content, count=1)
+            
+    all_versions = re.findall(r"### Qumulo Core (\d+\.\d+\.\d+(?:\.\d+)*)", body_content)
+    seen_groups = set()
+    for v in all_versions:
+        m = re.match(r"^(\d+\.\d+)", v)
+        if not m:
+            continue
+        group = m.group(1)
+        if group in seen_groups:
+            continue
+        seen_groups.add(group)
+        if not re.search(rf"^## {re.escape(group)} Releases\b", body_content, re.MULTILINE):
+            first_rel = re.search(rf"(\n*)(### Qumulo Core {re.escape(group)}\b)", body_content)
+            if first_rel:
+                pos = first_rel.start(2)
+                body_content = body_content[:pos] + f"\n\n\n## {group} Releases\n\n" + body_content[pos:]
 
-    if not os.path.isdir(os.path.join(args.repo, '.hg')):
-        raise Failure(
-            'No Mercurial repository at %s.\n  Point at your checkout with --repo.' % args.repo
-        )
-    if shutil.which('hg') is None:
-        raise Failure('`hg` is not on your PATH. Add /opt/qumulo/toolchain/bin to PATH.')
+    version_blocks = re.split(r"(\n### Qumulo Core \d+\.\d+\.\d+.*?\n)", body_content)
+    processed_body = [version_blocks[0]]
+    versions = re.findall(r"### Qumulo Core (\d+\.\d+\.\d+(?:\.\d+)*)", body_content)
+    
+    with ThreadPoolExecutor(max_workers=4) as exe:
+        list(tqdm(exe.map(lambda v: fetch_version(v, args.no_cache), versions), total=len(versions)))
+        
+    for i in range(1, len(version_blocks), 2):
+        header = version_blocks[i]
+        content = version_blocks[i + 1] if i + 1 < len(version_blocks) else ""
+        curr_v_match = re.search(r"(\d+\.\d+\.\d+(?:\.\d+)*)", header)
+        if curr_v_match:
+            curr_v = curr_v_match.group(1)
+            try:
+                idx = versions.index(curr_v)
+                prev_v = versions[idx + 1] if idx + 1 < len(versions) else None
+            except Exception:
+                prev_v = None
+            nexus_split = re.split(r"(\{\{\s*nexusLink\s*\}\})", content)
+            if len(nexus_split) >= 3:
+                pre_nexus = nexus_split[0]
+                nexus_tag = nexus_split[1]
+                post_nexus = nexus_split[2]
+                anchor_match = re.search(r"(\n\s*(?:##|###|\{%)[\s\S]*)", post_nexus)
+                trailing = anchor_match.group(1) if anchor_match else ""
+                new_bullets = generate_cli_bullets(curr_v, prev_v)
+                content = pre_nexus + nexus_tag + "\n" + new_bullets + "\n" + trailing
+        processed_body.append(header)
+        processed_body.append(content)
+        
+    final_output = yaml_header + "".join(processed_body)
+    final_output = re.sub(r"\n+## ", r"\n\n\n## ", final_output)
+    final_output = re.sub(r"\n{3,}(?!## )", "\n\n", final_output)
+    
+    with open(TARGET_FILE, "w", encoding="utf-8") as f:
+        f.write(final_output.strip() + "\n")
 
-    print('Snapshots:')
-    for version in sorted(args.versions, key=version_key):
-        ensure_snapshot(args.repo, version, args.snapshot_dir, args.qpython)
 
-    available = cached_versions(args.snapshot_dir)
-    if len(available) < 2:
-        raise Failure(
-            'Need at least two cached versions to produce a diff — only have %d (%s).\n'
-            '  Run this again with an older version to compare against.'
-            % (len(available), ', '.join(available) or 'none')
-        )
-
-    new_version, old_version = available[-1], available[-2]
-    print('\nDiffing %s against %s' % (new_version, old_version))
-
-    text = render_changelog(
-        old_version,
-        new_version,
-        load_commands(args.snapshot_dir, old_version),
-        load_commands(args.snapshot_dir, new_version),
-    )
-    with open(args.output, 'w') as handle:
-        handle.write(text)
-    print('Wrote %s' % args.output)
-
-
-if __name__ == '__main__':
-    try:
-        main()
-    except Failure as failure:
-        sys.stderr.write('\nERROR: %s\n' % failure)
-        sys.exit(1)
-    except KeyboardInterrupt:
-        sys.stderr.write('\nInterrupted.\n')
-        sys.exit(130)
+if __name__ == "__main__":
+    main()
