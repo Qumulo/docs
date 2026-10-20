@@ -171,7 +171,7 @@ def fetch_version(version, force):
     try:
         rev = _resolve_rev(DEFAULT_REPO, version)
         if not rev:
-            print(f"Warning: could not resolve a branch/tag for version {version}")
+            print(f"Warning: extractor failed for {version} (exit {proc.returncode}):\n{proc.stderr.strip()[-2000:]}")            
             cli_data[version] = None
             return
         if not rev:
