@@ -254,43 +254,42 @@ def all_options(cmd):
     return merged
 
 
-def format_change_group(label, items, verb, command_path, base_indent=""):
+# qq's docs refer to everything an option accepts -- "--foo" and "-foo" alike --
+# as a "flag", not "option"/"parameter"/"argument". Historical convention; match it.
+def format_change_group(items, verb, command_path, base_indent=""):
     count = len(items)
-    word = "option" if "option" in label.lower() else "argument"
-    plural = f"{word}s" if count > 1 else word
+    word = "flag" if count == 1 else "flags"
     prep = "to" if verb == "added" else "from"
     if count == 1:
         item = list(items)[0]
-        return f"{verb.capitalize()} <code>{item}</code> {word} {prep} {command_path} {label}"
-    res = f"{verb.capitalize()} {plural} {prep} {command_path} {label}:\n"
+        return f"{verb.capitalize()} `{item}` {word} {prep} {command_path} command"
+    res = f"{verb.capitalize()} {word} {prep} {command_path} command:\n"
     res += f"{base_indent}  <ul>\n"
     for i in sorted(items):
-        res += f"{base_indent}    <li><code>{i}</code></li>\n"
+        res += f"{base_indent}    <li>`{i}`</li>\n"
     res += f"{base_indent}  </ul>"
     return res
 
 
-def format_choice_change_group(target_name, items, verb, command_path, label, base_indent=""):
+def format_choice_change_group(target_name, items, verb, command_path, base_indent=""):
     count = len(items)
-    word = "option" if "option" in label.lower() else "argument"
     singular = "accepted value"
     plural = "accepted values"
     prep = "to" if verb == "added" else "from"
-    loc = f" {label}" if label else ""
     display_name = target_name.split(".")[-1]
     if count == 1:
         item = list(items)[0]
         return (
-            f"{verb.capitalize()} <code>{item}</code> {singular} {prep} "
-            f"<code>{display_name}</code> {word} in {command_path}{loc}"
+            f"{verb.capitalize()} `{item}` {singular} {prep} "
+            f"`{display_name}` flag in {command_path} command"
         )
     res = (
-        f"{verb.capitalize()} {plural} {prep} <code>{display_name}</code> "
-        f"{word} in {command_path}{loc}:\n"
+        f"{verb.capitalize()} {plural} {prep} `{display_name}` "
+        f"flag in {command_path} command:\n"
     )
     res += f"{base_indent}  <ul>\n"
     for i in sorted(items):
-        res += f"{base_indent}    <li><code>{i}</code></li>\n"
+        res += f"{base_indent}    <li>`{i}`</li>\n"
     res += f"{base_indent}  </ul>"
     return res
 
