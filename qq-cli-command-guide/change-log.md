@@ -2,7 +2,7 @@
 title: "Qumulo qq CLI Change Log"
 summary: "This section lists the qq CLI changes for each release of Qumulo Core."
 permalink: /qq-cli-command-guide/change-log.html
-sidebar: qq_cli_command_guide_sidebar
+sidebar: qq_cli_command_reference_sidebar
 layout: page
 ---
 
