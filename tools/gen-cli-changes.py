@@ -171,9 +171,9 @@ def fetch_version(version, force):
     try:
         rev = _resolve_rev(DEFAULT_REPO, version)
         if not rev:
-            print(f"Warning: extractor failed for {version} (exit {proc.returncode}):\n{proc.stderr.strip()[-2000:]}")            
-            cli_data[version] = None
-            return
+          print(f"Warning: could not resolve a branch/tag for version {version}")
+          cli_data[version] = None
+          return
         envdir = tempfile.mkdtemp(prefix=f"qq-cli-{version}-")
         _stage_env(DEFAULT_REPO, rev, envdir)
 
@@ -189,9 +189,9 @@ def fetch_version(version, force):
             timeout=600,
         )
         if proc.returncode != 0 or not proc.stdout.strip():
-            print(f"Warning: extractor failed for {version} (exit {proc.returncode}): {proc.stderr.strip()[:300]}")
+            print(f"Warning: extractor failed for {version} (exit {proc.returncode}):\n{proc.stderr.strip()[-2000:]}")
             cli_data[version] = None
-            return
+             return        
         data = json.loads(proc.stdout)
         if data.get("subclass_count", 0) < MIN_EXPECTED_COMMANDS:
             print(f"Warning: {version} only found {data.get('subclass_count', 0)} commands (expected >= {MIN_EXPECTED_COMMANDS})")
