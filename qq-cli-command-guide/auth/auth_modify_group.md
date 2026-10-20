@@ -1,0 +1,28 @@
+---
+category: auth
+command: auth_modify_group
+optional_options:
+- alternate: []
+  help: Name or ID of group to modify
+  name: --id
+  required: true
+- alternate: []
+  help: Change group's name
+  name: --name
+  required: false
+- alternate: []
+  help: Change the user's NFS gid (or specify "none" to remove)
+  name: --gid
+  required: false
+permalink: /qq-cli-command-guide/auth/auth_modify_group.html
+positional_options: []
+redirect_from:
+- /qq-cli-command-guide/auth/auth_mod_group.html
+sidebar: qq_cli_command_reference_sidebar
+summary: This section explains how to use the <code>qq auth_modify_group</code> command.
+synopsis: Modify a group
+title: qq auth_modify_group
+usage: qq auth_modify_group [-h] --id ID [--name NAME] [--gid GID]
+zendesk_source: qq CLI Command Guide
+
+---
