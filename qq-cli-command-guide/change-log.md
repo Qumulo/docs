@@ -30,7 +30,6 @@ layout: page
 
 ### Qumulo Core 7.9.3.1
 {{ nexusLink }}
-{{ noAPIchanges }}
 
 ### Qumulo Core 7.9.2.3
 {{ nexusLink }}
@@ -52,11 +51,9 @@ layout: page
 
 ### Qumulo Core 7.8.2.1
 {{ nexusLink }}
-{{ noAPIchanges }}
 
 ### Qumulo Core 7.8.1.1
 {{ nexusLink }}
-{{ noAPIchanges }}
 
 ### Qumulo Core 7.8.0.4 (Quarterly)
 {{ nexusLink }}
@@ -87,7 +84,6 @@ layout: page
 
 ### Qumulo Core 7.6.4.1 
 {{ nexusLink }}
-{{ noAPIchanges }}
 
 ### Qumulo Core 7.6.3.1
 {{ nexusLink }}
@@ -109,19 +105,15 @@ layout: page
 
 ### Qumulo Core 7.5.4.2
 {{ nexusLink }}
-{{ noAPIchanges }}
 
 ### Qumulo Core 7.5.3
 {{ nexusLink }}
-{{ noAPIchanges }}
 
 ### Qumulo Core 7.5.2
 {{ nexusLink }}
-{{ noAPIchanges }}
 
 ### Qumulo Core 7.5.1.2
 {{ nexusLink }}
 
 ### Qumulo Core 7.5.0.3 (Quarterly)
 {{ nexusLink }}
-{{ noAPIchanges }}
