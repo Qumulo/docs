@@ -174,9 +174,6 @@ def fetch_version(version, force):
             print(f"Warning: extractor failed for {version} (exit {proc.returncode}):\n{proc.stderr.strip()[-2000:]}")            
             cli_data[version] = None
             return
-        if not rev:
-            cli_data[version] = None
-            return
         envdir = tempfile.mkdtemp(prefix=f"qq-cli-{version}-")
         _stage_env(DEFAULT_REPO, rev, envdir)
 
