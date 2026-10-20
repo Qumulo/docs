@@ -25,6 +25,9 @@ entries:
     output: web
     title: Qumulo qq CLI Command Guide
     type: navi
+  - output: web
+    title: Change Log
+    url: /qq-cli-command-guide/change-log.html
   - folderitems:
     - output: web,pdf
       title: ad_cancel
