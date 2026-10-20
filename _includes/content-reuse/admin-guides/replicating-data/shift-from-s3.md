@@ -138,7 +138,7 @@ In Qumulo Core 7.10.3 (and higher):
 
 * The [Qumulo S3 API](../s3-api/supported-s3-functionality-known-limits.html#standard-object-headers) returns an object's original standard headers for the file that Shift-From creates for the object.
 
-* Because Amazon S3 reports a content type for every object, Shift-From stores `binary/octet-stream` as the `Content-Type` value for any object uploaded to Amazon S3 without a vallue.
+* Because Amazon S3 reports a content type for every object, Shift-From stores `binary/octet-stream` as the `Content-Type` value for any object uploaded to Amazon S3 without a value.
 
 * Shift-From doesn't store standard header values that the Qumulo S3 API can't return (such as values that use invalid UTF-8 encoding or values that exceed 2 KiB, including the header name).
 
