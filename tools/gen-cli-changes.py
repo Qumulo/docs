@@ -310,9 +310,9 @@ def load_commands(snapshot_dir, version):
 
 
 def option_names(command):
-names = [o['name'] for o in command.get('positional_options', [])]
-names += [o['name'] for o in command.get('optional_options', [])]
-return names
+    names = [o['name'] for o in command.get('positional_options', [])]
+    names += [o['name'] for o in command.get('optional_options', [])]
+    return names
 
 
 
