@@ -198,8 +198,9 @@ def fetch_version(version, force):
         with open(cache_path, "w") as f:
             json.dump(data, f)
         cli_data[version] = data
-    except Exception:
-        cli_data[version] = None
+    except Exception as e:
+        print(f"Warning: failed to fetch version {version}: {e}")
+        cli_data[version] = None    
     finally:
         if envdir:
             shutil.rmtree(envdir, ignore_errors=True)
@@ -389,10 +390,14 @@ def main():
                     " 'N.N.N'."
                 )
     if not os.path.exists(TARGET_FILE):
-        return
+        print(f"Error: Target file not found at '{TARGET_FILE}'. Run this from the docs-internal repo root.")
+        return    
     with open(TARGET_FILE, "r", encoding="utf-8") as f:
         full_content = f.read()
     parts = full_content.split("---", 2)
+    if len(parts) < 3:
+        print(f"Error: Could not find YAML frontmatter ('---' delimiters) in '{TARGET_FILE}'.")
+        return    
     if len(parts) < 3:
         return
     yaml_header = "---" + parts[1] + "---"
@@ -476,7 +481,7 @@ def main():
     
     with open(TARGET_FILE, "w", encoding="utf-8") as f:
         f.write(final_output.strip() + "\n")
-
+    print(f"Success: updated {TARGET_FILE}")
 
 if __name__ == "__main__":
     main()
