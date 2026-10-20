@@ -87,6 +87,34 @@ def _quoted(rev):
     expression (release MINUS 7.10.3) rather than a literal name."""
     return f"'{rev}'"
 
+def _resolve_dot_rev(repo, parent_branch, version):
+    """Find the commit on parent_branch where release.json was bumped to `version`."""
+    r = subprocess.run(
+        ["hg", "--repository", repo, "log", "-b", parent_branch, "--template", "{node}\n", "--", "release.json"],
+        cwd=repo,
+        capture_output=True,
+        text=True,
+        timeout=120,
+    )
+    if r.returncode != 0:
+        return None
+    for node in r.stdout.strip().splitlines():
+        cat = subprocess.run(
+            ["hg", "--repository", repo, "cat", "-r", node, "release.json"],
+            cwd=repo,
+            capture_output=True,
+            text=True,
+            timeout=60,
+        )
+        if cat.returncode != 0:
+            continue
+        try:
+            data = json.loads(cat.stdout)
+        except ValueError:
+            continue
+        if data.get("version") == version:
+            return node
+    return None
 
 def _resolve_rev(repo, version):
     """Prefer the release-X.Y.Z branch; fall back to the QumuloCore-X.Y.Z tag."""
@@ -102,6 +130,12 @@ def _resolve_rev(repo, version):
                 return candidate
         except Exception:
             continue
+    parts = version.split(".")
+    if len(parts) == 4:
+        parent_branch = f"release-{'.'.join(parts[:3])}"
+        node = _resolve_dot_rev(repo, parent_branch, version)
+        if node:
+            return node
     return None
 
 
