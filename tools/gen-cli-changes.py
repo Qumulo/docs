@@ -304,7 +304,8 @@ def cached_versions(snapshot_dir):
 
 def load_commands(snapshot_dir, version):
     with open(os.path.join(snapshot_dir, '%s.json' % version)) as handle:
-        data = json.load(handle)[12:45 PM]return {c['command']: c for c in data['commands']}
+        data = json.load(handle)
+    return {c['command']: c for c in data['commands']}
 
 
 
