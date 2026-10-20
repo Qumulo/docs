@@ -85,7 +85,7 @@ def _resolve_rev(repo, version):
     for candidate in (f"release-{version}", f"QumuloCore-{version}"):
         try:
             r = subprocess.run(
-                ["hg", "--repository", repo, "log", "-r", candidate, "--template", "{node}"],
+                ["hg", "--repository", repo, "log", "-r", f"'{candidate}'", "--template", "{node}"]
                 capture_output=True,
                 text=True,
                 timeout=120,
