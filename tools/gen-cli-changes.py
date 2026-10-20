@@ -11,7 +11,7 @@ from tqdm import tqdm
 TARGET_FILE = "qq-cli-command-guide/change-log.md"
 CACHE_DIR = "tools/.cli-change-cache"
 
-DEFAULT_REPO = os.environ.get("QUMULO_REPO", os.path.expanduser("~/src/qumulo"))
+DEFAULT_REPO = os.environ.get("QUMULO_REPO", os.path.expanduser("~/src"))
 DEFAULT_QPYTHON = os.environ.get("QPYTHON", "qpython")
 MIN_EXPECTED_COMMANDS = 50
 
