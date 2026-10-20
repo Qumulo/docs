@@ -24,10 +24,6 @@ layout: page
 
 ### Qumulo Core 7.10.0.2 (Quarterly)
 {{ nexusLink }}
-<ul>
-  <li>Added <code>POST /v1/files/try-resolve</code> endpoint</li>
-  <li>Added <code>portal_cache_size_bytes</code> parameter to <code>GET /v1/file-system</code> response</li>
-</ul>
 
 
 ## 7.9 Releases
@@ -41,10 +37,6 @@ layout: page
 
 ### Qumulo Core 7.9.1.3
 {{ nexusLink }}
-<ul>
-  <li>Removed <code>/v1/portal/quorum/events</code> endpoint</li>
-  <li>Added <code>lock</code> parameter to <code>PATCH /v1/files/{ref}/info/attributes</code> response</li>
-</ul>
 
 ### Qumulo Core 7.9.0.4 (Quarterly)
 {{ nexusLink }}
