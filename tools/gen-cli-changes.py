@@ -5,6 +5,7 @@ import os
 import re
 import shutil
 import subprocess
+import sys
 import tempfile
 from tqdm import tqdm
 
@@ -369,8 +370,33 @@ def generate_cli_bullets(curr_v, prev_v):
     res += "  </ul>\n</details>"
     return res
 
+def ensure_dependencies():
+    pip_names = {
+        "dataclasses_json": "dataclasses-json",
+        "dateutil": "python-dateutil",
+        "typing_extensions": "typing-extensions",
+    }
+    missing = []
+    for module_name in pip_names:
+        try:
+            __import__(module_name)
+        except ImportError:
+            missing.append(module_name)
+    if not missing:
+        return
+    to_install = [pip_names[m] for m in missing]
+    print(f"Missing required Python packages: {', '.join(to_install)}")
+    answer = input(f"Install them now with pip3 install {' '.join(to_install)}? (y/n): ").strip().lower()
+    if answer != "y":
+        print("Can't continue without these packages. Exiting.")
+        sys.exit(1)
+    result = subprocess.run([sys.executable, "-m", "pip", "install"] + to_install)
+    if result.returncode != 0:
+        print("pip install failed. Exiting.")
+        sys.exit(1)
 
 def main():
+    ensure_dependencies()
     parser = argparse.ArgumentParser()
     parser.add_argument("--no-cache", action="store_true")
     parser.add_argument("version", nargs="?", default=None)
