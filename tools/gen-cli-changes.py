@@ -317,8 +317,8 @@ def option_names(command):
 
 
 def diff_commands(old, new):
-added = sorted(set(new) - set(old))
-removed = sorted(set(old) - set(new))
+    added = sorted(set(new) - set(old))
+    removed = sorted(set(old) - set(new))
 
 changed = []
 for name in sorted(set(old) & set(new)):
@@ -354,14 +354,14 @@ for name in sorted(set(old) & set(new)):
     if notes:
         changed.append((name, notes))
 
-return added, removed, changed
+    return added, removed, changed
 
 
 
 def render_changelog(old_version, new_version, old, new):
-added, removed, changed = diff_commands(old, new)
+    added, removed, changed = diff_commands(old, new)
 
-lines = ['# qq CLI Changes', '', '## %s (compared to %s)' % (new_version, old_version), '']
+    lines = ['# qq CLI Changes', '', '## %s (compared to %s)' % (new_version, old_version), '']
 
 if not (added or removed or changed):
     lines += ['No CLI command changes.', '']
@@ -392,7 +392,7 @@ return '\n'.join(lines)
 
 
 
---------------------------------------------------------------------------def main():
+def main():
 parser = argparse.ArgumentParser(
 description='Generate change-log.md for the qq CLI command surface.'
 )
