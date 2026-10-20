@@ -12,12 +12,12 @@ TARGET_FILE = "qq-cli-command-guide/change-log.md"
 CACHE_DIR = "tools/.cli-change-cache"
 
 DEFAULT_REPO = os.environ.get("QUMULO_REPO", os.path.expanduser("~/src"))
-DEFAULT_QPYTHON = os.environ.get("QPYTHON", "qpython")
+DEFAULT_PYTHON = os.environ.get("QQ_PYTHON", "python3")
 MIN_EXPECTED_COMMANDS = 50
 
 cli_data = {}
 
-EXTRACT_PROGRAM = r'''
+EXTRACT_PROGRAM = r"""
 import argparse
 import json
 import sys
@@ -77,7 +77,14 @@ for cls in subclasses:
     commands[name] = entry
 
 json.dump({"subclass_count": len(subclasses), "commands": commands}, sys.stdout)
-'''
+"""
+
+
+def _quoted(rev):
+    """Wrap a branch/tag name in hg revset string-literal quotes. Needed because
+    bare hyphenated names like release-7.10.3 get parsed as a revset subtraction
+    expression (release MINUS 7.10.3) rather than a literal name."""
+    return f"'{rev}'"
 
 
 def _resolve_rev(repo, version):
@@ -85,37 +92,70 @@ def _resolve_rev(repo, version):
     for candidate in (f"release-{version}", f"QumuloCore-{version}"):
         try:
             r = subprocess.run(
-                ["hg", "--repository", repo, "log", "-r", f"'{candidate}'", "--template", "{node}"],
+                ["hg", "--repository", repo, "log", "-r", _quoted(candidate), "--template", "{node}"],
                 capture_output=True,
                 text=True,
                 timeout=120,
             )
             if r.returncode == 0 and r.stdout.strip():
-                return r.stdout.strip()
+                return candidate
         except Exception:
             continue
     return None
 
 
-def _find_package_root(root):
-    """Locate the directory that is the parent of qumulo/ containing lib/qq.py."""
-    for dirpath, dirnames, filenames in os.walk(root):
-        if os.path.basename(dirpath) == "qumulo" and os.path.exists(
-            os.path.join(dirpath, "lib", "qq.py")
-        ):
-            return os.path.dirname(dirpath)
-        dirnames[:] = [d for d in dirnames if not d.startswith(".")]
-    return None
+def _stage_env(repo, rev, envdir):
+    """Assemble a standalone, importable environment for this one revision:
+      envdir/qumulo/...            -- from cli/qumulo/** in the archive
+      envdir/qinternal/core/byte_units.py  -- the one cross-package file qumulo.rest
+                                           actually needs, pulled directly with hg cat
+      envdir/qinternal/__init__.py, envdir/qinternal/core/__init__.py  -- empty, just
+                                           so Python treats these as packages
+
+    This mirrors qinternal-hook.sh's install-time path remap (qinternal.X == repo-root
+    X/), but hand-assembled for just the files qq CLI introspection needs, instead of
+    copying the whole repo. Confirmed via hg files/hg cat that none of this is
+    build-generated -- it's a verbatim checked-in file, just outside the qumulo/ tree.
+    """
+    tmp_archive = os.path.join(envdir, "_archive")
+    archive = subprocess.run(
+        ["hg", "--repository", repo, "archive", "-r", _quoted(rev), "-I", "glob:cli/qumulo/**", tmp_archive],
+        cwd=repo,
+        capture_output=True,
+        text=True,
+        timeout=900,
+    )
+    if archive.returncode != 0:
+        raise RuntimeError(f"hg archive failed: {archive.stderr.strip()}")
+
+    src_qumulo = os.path.join(tmp_archive, "cli", "qumulo")
+    if not os.path.isdir(src_qumulo):
+        raise RuntimeError("archive did not contain cli/qumulo/")
+    shutil.move(src_qumulo, os.path.join(envdir, "qumulo"))
+    shutil.rmtree(tmp_archive, ignore_errors=True)
+
+    qinternal_core = os.path.join(envdir, "qinternal", "core")
+    os.makedirs(qinternal_core, exist_ok=True)
+    cat = subprocess.run(
+        ["hg", "--repository", repo, "cat", "-r", _quoted(rev), "core/byte_units.py"],
+        cwd=repo,
+        capture_output=True,
+        text=True,
+        timeout=120,
+    )
+    if cat.returncode != 0 or not cat.stdout.strip():
+        raise RuntimeError(f"hg cat core/byte_units.py failed: {cat.stderr.strip()}")
+    with open(os.path.join(qinternal_core, "byte_units.py"), "w") as f:
+        f.write(cat.stdout)
+
+    open(os.path.join(envdir, "qinternal", "__init__.py"), "w").close()
+    open(os.path.join(qinternal_core, "__init__.py"), "w").close()
 
 
 def fetch_version(version, force):
-    """CLI analogue of the REST script's HTTP fetch: archive the release revision
-    out of hg (read-only -- we NEVER hg update) and introspect the qq subcommands.
-
-    NOTE: hg archive is a read-only operation against the repository, so
-    concurrent invocations are safe. We still cap the pool well below the REST
-    script's 10 workers because each task forks hg plus a qpython interpreter
-    rather than issuing a lightweight HTTP request.
+    """CLI analogue of the REST script's HTTP fetch: stage a standalone importable
+    environment for this release (read-only hg archive/cat -- we NEVER hg update)
+    and introspect the qq subcommands.
     """
     if not version:
         return
@@ -127,50 +167,23 @@ def fetch_version(version, force):
                 return
         except Exception:
             pass
-    tmpdir = None
+    envdir = None
     try:
         rev = _resolve_rev(DEFAULT_REPO, version)
         if not rev:
             cli_data[version] = None
             return
-        tmpdir = tempfile.mkdtemp(prefix=f"qq-cli-{version}-")
-        archive = subprocess.run(
-            [
-                "hg",
-                "--repository",
-                DEFAULT_REPO,
-                "archive",
-                "-r",
-                rev,
-                "-I",
-                "glob:**/qumulo/**",
-                "-I",
-                "glob:qumulo/**",
-                "-I",
-                "glob:**/toolchain.json",
-                "-I",
-                "glob:toolchain.json",
-                tmpdir,
-            ],
-            capture_output=True,
-            text=True,
-            timeout=900,
-        )
-        if archive.returncode != 0:
-            cli_data[version] = None
-            return
-        pkg_root = _find_package_root(tmpdir)
-        if not pkg_root:
-            cli_data[version] = None
-            return
+        envdir = tempfile.mkdtemp(prefix=f"qq-cli-{version}-")
+        _stage_env(DEFAULT_REPO, rev, envdir)
+
         env = dict(os.environ)
-        env["PYTHONPATH"] = pkg_root + os.pathsep + env.get("PYTHONPATH", "")
+        env["PYTHONPATH"] = envdir + os.pathsep + env.get("PYTHONPATH", "")
         env["PYTHONDONTWRITEBYTECODE"] = "1"
         proc = subprocess.run(
-            [DEFAULT_QPYTHON, "-c", EXTRACT_PROGRAM],
+            [DEFAULT_PYTHON, "-c", EXTRACT_PROGRAM],
             capture_output=True,
             text=True,
-            cwd=pkg_root,
+            cwd=envdir,
             env=env,
             timeout=600,
         )
@@ -188,8 +201,8 @@ def fetch_version(version, force):
     except Exception:
         cli_data[version] = None
     finally:
-        if tmpdir:
-            shutil.rmtree(tmpdir, ignore_errors=True)
+        if envdir:
+            shutil.rmtree(envdir, ignore_errors=True)
 
 
 def all_options(cmd):
@@ -263,13 +276,14 @@ def generate_cli_bullets(curr_v, prev_v):
         if name not in p_c:
             additions.append(f"Added {cp} command")
             continue
-
+        
         c_obj, p_obj = c_c[name], p_c[name]
         cats = []
 
         c_opt_objs = all_options(c_obj)
         p_opt_objs = all_options(p_obj)
         c_opt, p_opt = set(c_opt_objs.keys()), set(p_opt_objs.keys())
+        
         if c_opt - p_opt:
             cats.append(format_change_group("options", c_opt - p_opt, "added", cp, "        "))
         if p_opt - c_opt:
@@ -339,6 +353,7 @@ def generate_cli_bullets(curr_v, prev_v):
             res += f"  <li>\n    {b}\n  </li>\n" if "\n" in b else f"  <li>{b}</li>\n"
         res += "</ul>"
         return res
+    
     visible, hidden = all_bullets[:3], all_bullets[3:]
     res = "<ul>\n"
     for b in visible:
@@ -357,7 +372,6 @@ def main():
     parser.add_argument("version", nargs="?", default=None)
     args = parser.parse_args()
     target_v = args.version
-    
     if not target_v:
         while True:
             choice = input(
@@ -374,17 +388,13 @@ def main():
                     f"Error: Invalid version format '{choice}'. Expected 'current' or"
                     " 'N.N.N'."
                 )
-                
     if not os.path.exists(TARGET_FILE):
         return
-        
     with open(TARGET_FILE, "r", encoding="utf-8") as f:
         full_content = f.read()
-        
     parts = full_content.split("---", 2)
     if len(parts) < 3:
         return
-        
     yaml_header = "---" + parts[1] + "---"
     body_content = parts[2]
     
@@ -393,10 +403,9 @@ def main():
         major_minor = mm_match.group(1) if mm_match else target_v
         parent_heading = f"## {major_minor} Releases"
         header_pattern = rf"### Qumulo Core {re.escape(target_v)}\b"
-        nexus_pattern = rf"### Qumulo Core {re.escape(target_v)}\b(?:(?!### Qumulo Core)[\s\S])*?{{\{{\s*nexusLink\s*\}}}}"
+        nexus_pattern = rf"### Qumulo Core {re.escape(target_v)}\b(?:(?!### Qumulo Core)[\s\S])*?\{{\{{\s*nexusLink\s*\}}\}}"
         has_header = re.search(header_pattern, body_content)
         has_nexus = re.search(nexus_pattern, body_content)
-        
         if not has_header:
             parent_pattern = rf"## {re.escape(major_minor)} Releases\b"
             has_parent = re.search(parent_pattern, body_content)
@@ -416,6 +425,7 @@ def main():
             
     all_versions = re.findall(r"### Qumulo Core (\d+\.\d+\.\d+(?:\.\d+)*)", body_content)
     seen_groups = set()
+
     for v in all_versions:
         m = re.match(r"^(\d+\.\d+)", v)
         if not m:
@@ -429,7 +439,7 @@ def main():
             if first_rel:
                 pos = first_rel.start(2)
                 body_content = body_content[:pos] + f"\n\n\n## {group} Releases\n\n" + body_content[pos:]
-
+                
     version_blocks = re.split(r"(\n### Qumulo Core \d+\.\d+\.\d+.*?\n)", body_content)
     processed_body = [version_blocks[0]]
     versions = re.findall(r"### Qumulo Core (\d+\.\d+\.\d+(?:\.\d+)*)", body_content)
