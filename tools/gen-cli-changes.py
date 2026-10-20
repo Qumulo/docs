@@ -390,7 +390,7 @@ def ensure_dependencies():
     if answer != "y":
         print("Can't continue without these packages. Exiting.")
         sys.exit(1)
-    result = subprocess.run([sys.executable, "-m", "pip", "install"] + to_install)
+    result = subprocess.run([sys.executable, "-m", "pip", "install", "--break-system-packages"] + to_install)
     if result.returncode != 0:
         print("pip install failed. Exiting.")
         sys.exit(1)
