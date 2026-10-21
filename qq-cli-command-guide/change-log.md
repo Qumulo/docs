@@ -170,53 +170,53 @@ layout: page
     <li>Added <code>total_capacity_and_unfilled_bytes</code> value to <code>qq fs_read_dir_aggregates --order-by</code> command</li>
     <li>
       Modified <code>qq object_portal_create_bridge</code> command:
-          <ul>
-            <li>
-              Added flags to <code>qq object_portal_create_bridge</code> command:
-              <ul>
-                <li><code>--allow-archived-metadata-changes</code></li>
-                <li><code>--disallow-archived-metadata-changes</code></li>
-              </ul>
-            </li>
-            <li>Added <code>FROZEN</code> value to <code>qq object_portal_create_bridge --protocol-access</code> command</li>
-            <li>
-              Changed help text for the following flags of the <code>qq object_portal_create_bridge</code> command:
-              <ul>
-                <li><code>--bucket-uri</code></li>
-                <li><code>--delimiter</code></li>
-                <li><code>--key-prefix</code></li>
-                <li><code>--key-vault-hostname</code></li>
-                <li><code>--metadata-import</code></li>
-                <li><code>--mount-path</code></li>
-                <li><code>--notification-queue-url</code></li>
-                <li><code>--protocol-access</code></li>
-              </ul>
-            </li>
-          </ul>
+      <ul>
+        <li>
+          Added flags to <code>qq object_portal_create_bridge</code> command:
+        <ul>
+          <li><code>--allow-archived-metadata-changes</code></li>
+          <li><code>--disallow-archived-metadata-changes</code></li>
+        </ul>
+        </li>
+        <li>Added <code>FROZEN</code> value to <code>qq object_portal_create_bridge --protocol-access</code> command</li>
+        <li>
+          Changed help text for the following flags of the <code>qq object_portal_create_bridge</code> command:
+        <ul>
+          <li><code>--bucket-uri</code></li>
+          <li><code>--delimiter</code></li>
+          <li><code>--key-prefix</code></li>
+          <li><code>--key-vault-hostname</code></li>
+          <li><code>--metadata-import</code></li>
+          <li><code>--mount-path</code></li>
+          <li><code>--notification-queue-url</code></li>
+          <li><code>--protocol-access</code></li>
+        </ul>
+        </li>
+      </ul>
     </li>
     <li>
       Modified <code>qq object_portal_delete_bridge</code> command:
-          <ul>
-            <li>Added <code>--force</code> flag to <code>qq object_portal_delete_bridge</code> command</li>
-            <li>Changed help text for <code>qq object_portal_delete_bridge --filesystem-uuid</code> command</li>
-          </ul>
+      <ul>
+        <li>Added <code>--force</code> flag to <code>qq object_portal_delete_bridge</code> command</li>
+        <li>Changed help text for <code>qq object_portal_delete_bridge --filesystem-uuid</code> command</li>
+      </ul>
     </li>
     <li>
       Changed help text for the following flags of the <code>qq object_portal_refresh</code> command:
-          <ul>
-            <li><code>--bucket-uri</code></li>
-            <li><code>--key</code></li>
-            <li><code>--mode</code></li>
-          </ul>
+      <ul>
+        <li><code>--bucket-uri</code></li>
+        <li><code>--key</code></li>
+        <li><code>--mode</code></li>
+      </ul>
     </li>
     <li>Changed help text for <code>qq portal_accept_hub --no-paths</code> command</li>
     <li>Changed help text for <code>qq portal_authorize_hub_root --no-paths</code> command</li>
     <li>
       Modified <code>qq portal_create</code> command:
-          <ul>
-            <li>Removed <code>--paused-spoke</code> flag from <code>qq portal_create</code> command</li>
-            <li>Changed help text for <code>qq portal_create --no-paths</code> command</li>
-          </ul>
+      <ul>
+        <li>Removed <code>--paused-spoke</code> flag from <code>qq portal_create</code> command</li>
+        <li>Changed help text for <code>qq portal_create --no-paths</code> command</li>
+      </ul>
     </li>
     <li>Changed help text for <code>qq portal_delete_hub --no-paths</code> command</li>
     <li>Changed help text for <code>qq portal_delete_spoke --no-paths</code> command</li>
@@ -241,10 +241,10 @@ layout: page
   <li>Removed <code>qq portal_modify_spoke_host</code> command</li>
   <li>
     Modified <code>qq fs_delete_user_metadata</code> command:
-        <ul>
-          <li>Added <code>--well-known</code> flag to <code>qq fs_delete_user_metadata</code> command</li>
-          <li>Changed help text for <code>qq fs_delete_user_metadata --s3</code> command</li>
-        </ul>
+    <ul>
+      <li>Added <code>--well-known</code> flag to <code>qq fs_delete_user_metadata</code> command</li>
+      <li>Changed help text for <code>qq fs_delete_user_metadata --s3</code> command</li>
+    </ul>
   </li>
 </ul>
 <details>
@@ -252,32 +252,32 @@ layout: page
   <ul>
     <li>
       Modified <code>qq fs_get_user_metadata</code> command:
-          <ul>
-            <li>Added <code>--well-known</code> flag to <code>qq fs_get_user_metadata</code> command</li>
-            <li>Changed help text for <code>qq fs_get_user_metadata --s3</code> command</li>
-          </ul>
+      <ul>
+        <li>Added <code>--well-known</code> flag to <code>qq fs_get_user_metadata</code> command</li>
+        <li>Changed help text for <code>qq fs_get_user_metadata --s3</code> command</li>
+      </ul>
     </li>
     <li>
       Modified <code>qq fs_list_user_metadata</code> command:
-          <ul>
-            <li>Added <code>--well-known</code> flag to <code>qq fs_list_user_metadata</code> command</li>
-            <li>Changed help text for <code>qq fs_list_user_metadata --s3</code> command</li>
-          </ul>
+      <ul>
+        <li>Added <code>--well-known</code> flag to <code>qq fs_list_user_metadata</code> command</li>
+        <li>Changed help text for <code>qq fs_list_user_metadata --s3</code> command</li>
+      </ul>
     </li>
     <li>
       Modified <code>qq fs_set_user_metadata</code> command:
-          <ul>
-            <li>Added <code>--well-known</code> flag to <code>qq fs_set_user_metadata</code> command</li>
-            <li>Changed help text for <code>qq fs_set_user_metadata --s3</code> command</li>
-          </ul>
+      <ul>
+        <li>Added <code>--well-known</code> flag to <code>qq fs_set_user_metadata</code> command</li>
+        <li>Changed help text for <code>qq fs_set_user_metadata --s3</code> command</li>
+      </ul>
     </li>
     <li>Added <code>--all</code> flag to <code>qq logout</code> command</li>
     <li>
       Modified <code>qq portal_modify_hub</code> command:
-          <ul>
-            <li>Added <code>paused</code> value to <code>qq portal_modify_hub --type</code> command</li>
-            <li>Changed help text for <code>qq portal_modify_hub --type</code> command</li>
-          </ul>
+      <ul>
+        <li>Added <code>paused</code> value to <code>qq portal_modify_hub --type</code> command</li>
+        <li>Changed help text for <code>qq portal_modify_hub --type</code> command</li>
+      </ul>
     </li>
   </ul>
 </details>
@@ -309,17 +309,17 @@ layout: page
     <li>Changed description of <code>qq fs_create_symlink</code> command</li>
     <li>
       Changed help text for the following flags of the <code>qq fs_delete</code> command:
-          <ul>
-            <li><code>--id</code></li>
-            <li><code>--path</code></li>
-          </ul>
+      <ul>
+        <li><code>--id</code></li>
+        <li><code>--path</code></li>
+      </ul>
     </li>
     <li>
       Added values to <code>qq fs_read_dir_aggregates --order-by</code> command:
-          <ul>
-            <li><code>total_external_object_bytes</code></li>
-            <li><code>total_external_objects</code></li>
-          </ul>
+      <ul>
+        <li><code>total_external_object_bytes</code></li>
+        <li><code>total_external_objects</code></li>
+      </ul>
     </li>
     <li>Changed description of <code>qq fs_security_add_key</code> command</li>
     <li>Changed description of <code>qq fs_set_notify_settings</code> command</li>
@@ -327,84 +327,84 @@ layout: page
     <li>Changed description of <code>qq multitenancy_create_tenant</code> command</li>
     <li>
       Changed help text for the following flags of the <code>qq nfs_add_export</code> command:
-          <ul>
-            <li><code>--create-fs-path</code></li>
-            <li><code>--fs-path</code></li>
-          </ul>
+      <ul>
+        <li><code>--create-fs-path</code></li>
+        <li><code>--fs-path</code></li>
+      </ul>
     </li>
     <li>
       Changed help text for the following flags of the <code>qq nfs_mod_export</code> command:
-          <ul>
-            <li><code>--create-fs-path</code></li>
-            <li><code>--fs-path</code></li>
-          </ul>
+      <ul>
+        <li><code>--create-fs-path</code></li>
+        <li><code>--fs-path</code></li>
+      </ul>
     </li>
     <li>
       Modified <code>qq portal_create</code> command:
-          <ul>
-            <li>
-              Added flags to <code>qq portal_create</code> command:
-              <ul>
-                <li><code>--paused-spoke</code></li>
-                <li><code>--suspended-spoke</code></li>
-              </ul>
-            </li>
-            <li>Changed help text for <code>qq portal_create --read-only-spoke</code> command</li>
-          </ul>
+      <ul>
+        <li>
+          Added flags to <code>qq portal_create</code> command:
+        <ul>
+          <li><code>--paused-spoke</code></li>
+          <li><code>--suspended-spoke</code></li>
+        </ul>
+        </li>
+        <li>Changed help text for <code>qq portal_create --read-only-spoke</code> command</li>
+      </ul>
     </li>
     <li>Removed <code>--dns-lookup</code> flag from <code>qq portal_list</code> command</li>
     <li>Removed <code>--dns-lookup</code> flag from <code>qq portal_list_hubs</code> command</li>
     <li>
       Modified <code>qq portal_list_quorum_events</code> command:
-          <ul>
-            <li>Added <code>--filesystem-uuid</code> flag to <code>qq portal_list_quorum_events</code> command</li>
-            <li>Removed <code>--fs-id</code> flag from <code>qq portal_list_quorum_events</code> command</li>
-          </ul>
+      <ul>
+        <li>Added <code>--filesystem-uuid</code> flag to <code>qq portal_list_quorum_events</code> command</li>
+        <li>Removed <code>--fs-id</code> flag from <code>qq portal_list_quorum_events</code> command</li>
+      </ul>
     </li>
     <li>Removed <code>--dns-lookup</code> flag from <code>qq portal_list_spokes</code> command</li>
     <li>
       Modified <code>qq portal_modify_hub</code> command:
-          <ul>
-            <li>Added <code>--type</code> flag to <code>qq portal_modify_hub</code> command</li>
-            <li>Removed <code>--make-read-write</code> flag from <code>qq portal_modify_hub</code> command</li>
-          </ul>
+      <ul>
+        <li>Added <code>--type</code> flag to <code>qq portal_modify_hub</code> command</li>
+        <li>Removed <code>--make-read-write</code> flag from <code>qq portal_modify_hub</code> command</li>
+      </ul>
     </li>
     <li>
       Modified <code>qq portal_modify_hub_host</code> command:
-          <ul>
-            <li>Added <code>--type</code> flag to <code>qq portal_modify_hub_host</code> command</li>
-            <li>Removed <code>--make-read-write</code> flag from <code>qq portal_modify_hub_host</code> command</li>
-          </ul>
+      <ul>
+        <li>Added <code>--type</code> flag to <code>qq portal_modify_hub_host</code> command</li>
+        <li>Removed <code>--make-read-write</code> flag from <code>qq portal_modify_hub_host</code> command</li>
+      </ul>
     </li>
     <li>
       Changed help text for the following flags of the <code>qq smb_add_share</code> command:
-          <ul>
-            <li><code>--create-fs-path</code></li>
-            <li><code>--expand-fs-path-variables</code></li>
-            <li><code>--fs-path</code></li>
-          </ul>
+      <ul>
+        <li><code>--create-fs-path</code></li>
+        <li><code>--expand-fs-path-variables</code></li>
+        <li><code>--fs-path</code></li>
+      </ul>
     </li>
     <li>
       Changed help text for the following flags of the <code>qq smb_mod_share</code> command:
-          <ul>
-            <li><code>--create-fs-path</code></li>
-            <li><code>--expand-fs-path-variables</code></li>
-            <li><code>--fs-path</code></li>
-          </ul>
+      <ul>
+        <li><code>--create-fs-path</code></li>
+        <li><code>--expand-fs-path-variables</code></li>
+        <li><code>--fs-path</code></li>
+      </ul>
     </li>
     <li>
       Modified <code>qq snapshot_lock_snapshot</code> command:
-          <ul>
-            <li>Changed description of <code>qq snapshot_lock_snapshot</code> command</li>
-            <li>Changed help text for <code>qq snapshot_lock_snapshot --lock-key</code> command</li>
-          </ul>
+      <ul>
+        <li>Changed description of <code>qq snapshot_lock_snapshot</code> command</li>
+        <li>Changed help text for <code>qq snapshot_lock_snapshot --lock-key</code> command</li>
+      </ul>
     </li>
     <li>
       Changed help text for the following flags of the <code>qq stratus_cluster_create</code> command:
-          <ul>
-            <li><code>--node-uuids-and-fault-domains</code></li>
-            <li><code>--object-store-credentials</code></li>
-          </ul>
+      <ul>
+        <li><code>--node-uuids-and-fault-domains</code></li>
+        <li><code>--object-store-credentials</code></li>
+      </ul>
     </li>
   </ul>
 </details>
@@ -415,16 +415,16 @@ layout: page
   <li>Added <code>qq fs_try_resolve_paths</code> command</li>
   <li>
     Modified <code>qq object_bridge_create</code> command:
-        <ul>
-          <li>Added <code>--metadata-import</code> flag to <code>qq object_bridge_create</code> command</li>
-          <li>
-            Changed help text for the following flags of the <code>qq object_bridge_create</code> command:
-            <ul>
-              <li><code>--key-prefix</code></li>
-              <li><code>--read-only</code></li>
-            </ul>
-          </li>
-        </ul>
+    <ul>
+      <li>Added <code>--metadata-import</code> flag to <code>qq object_bridge_create</code> command</li>
+      <li>
+        Changed help text for the following flags of the <code>qq object_bridge_create</code> command:
+      <ul>
+        <li><code>--key-prefix</code></li>
+        <li><code>--read-only</code></li>
+      </ul>
+      </li>
+    </ul>
   </li>
   <li>Changed help text for <code>qq portal_accept_hub --spoke-hosts</code> command</li>
 </ul>
@@ -433,10 +433,10 @@ layout: page
   <ul>
     <li>
       Changed help text for the following flags of the <code>qq portal_create</code> command:
-          <ul>
-            <li><code>--hub-hosts</code></li>
-            <li><code>--read-only-spoke</code></li>
-          </ul>
+      <ul>
+        <li><code>--hub-hosts</code></li>
+        <li><code>--read-only-spoke</code></li>
+      </ul>
     </li>
     <li>Changed help text for <code>qq portal_get_hub --dns-lookup</code> command</li>
     <li>Changed help text for <code>qq portal_get_spoke --dns-lookup</code> command</li>
@@ -445,17 +445,17 @@ layout: page
     <li>Changed help text for <code>qq portal_list_spokes --dns-lookup</code> command</li>
     <li>
       Modified <code>qq portal_modify_hub</code> command:
-          <ul>
-            <li>Added <code>--make-read-write</code> flag to <code>qq portal_modify_hub</code> command</li>
-            <li>Changed help text for <code>qq portal_modify_hub --spoke-hosts</code> command</li>
-          </ul>
+      <ul>
+        <li>Added <code>--make-read-write</code> flag to <code>qq portal_modify_hub</code> command</li>
+        <li>Changed help text for <code>qq portal_modify_hub --spoke-hosts</code> command</li>
+      </ul>
     </li>
     <li>
       Modified <code>qq portal_modify_hub_host</code> command:
-          <ul>
-            <li>Added <code>--make-read-write</code> flag to <code>qq portal_modify_hub_host</code> command</li>
-            <li>Changed help text for <code>qq portal_modify_hub_host --spoke-hosts</code> command</li>
-          </ul>
+      <ul>
+        <li>Added <code>--make-read-write</code> flag to <code>qq portal_modify_hub_host</code> command</li>
+        <li>Changed help text for <code>qq portal_modify_hub_host --spoke-hosts</code> command</li>
+      </ul>
     </li>
     <li>Changed help text for <code>qq portal_modify_spoke --hub-hosts</code> command</li>
     <li>Changed help text for <code>qq portal_modify_spoke_host --hub-hosts</code> command</li>
@@ -489,17 +489,17 @@ layout: page
   <li>Added <code>qq portal_list_quorum_events</code> command</li>
   <li>
     Changed help text for the following flags of the <code>qq multitenancy_nfs_modify_global_settings</code> command:
-        <ul>
-          <li><code>--disable-v4</code></li>
-          <li><code>--enable-v4</code></li>
-        </ul>
+    <ul>
+      <li><code>--disable-v4</code></li>
+      <li><code>--enable-v4</code></li>
+    </ul>
   </li>
   <li>
     Changed help text for the following flags of the <code>qq multitenancy_nfs_modify_settings</code> command:
-        <ul>
-          <li><code>--disable-v4</code></li>
-          <li><code>--enable-v4</code></li>
-        </ul>
+    <ul>
+      <li><code>--disable-v4</code></li>
+      <li><code>--enable-v4</code></li>
+    </ul>
   </li>
 </ul>
 <details>
@@ -507,10 +507,10 @@ layout: page
   <ul>
     <li>
       Changed help text for the following flags of the <code>qq nfs_modify_settings</code> command:
-          <ul>
-            <li><code>--disable-v4</code></li>
-            <li><code>--enable-v4</code></li>
-          </ul>
+      <ul>
+        <li><code>--disable-v4</code></li>
+        <li><code>--enable-v4</code></li>
+      </ul>
     </li>
     <li>Added <code>--notification-queue-url</code> flag to <code>qq object_bridge_create</code> command</li>
     <li>Added <code>--offline-files-caching-mode</code> flag to <code>qq smb_add_share</code> command</li>
@@ -524,16 +524,16 @@ layout: page
   <li>Removed <code>qq portal_list_quorum_events</code> command</li>
   <li>
     Modified <code>qq object_bridge_create</code> command:
-        <ul>
-          <li>
-            Added flags to <code>qq object_bridge_create</code> command:
-            <ul>
-              <li><code>--delimiter</code></li>
-              <li><code>--key-vault-hostname</code></li>
-            </ul>
-          </li>
-          <li>Changed help text for <code>qq object_bridge_create --bucket-uri</code> command</li>
-        </ul>
+    <ul>
+      <li>
+        Added flags to <code>qq object_bridge_create</code> command:
+      <ul>
+        <li><code>--delimiter</code></li>
+        <li><code>--key-vault-hostname</code></li>
+      </ul>
+      </li>
+      <li>Changed help text for <code>qq object_bridge_create --bucket-uri</code> command</li>
+    </ul>
   </li>
 </ul>
 
@@ -558,10 +558,10 @@ layout: page
     <li>Added <code>--skip-atime-update</code> flag to <code>qq fs_read</code> command</li>
     <li>
       Added flags to <code>qq fs_read_dir</code> command:
-          <ul>
-            <li><code>--include-acls</code></li>
-            <li><code>--skip-atime-update</code></li>
-          </ul>
+      <ul>
+        <li><code>--include-acls</code></li>
+        <li><code>--skip-atime-update</code></li>
+      </ul>
     </li>
   </ul>
 </details>
@@ -593,10 +593,10 @@ layout: page
     <li>Added <code>qq rdma_set_settings</code> command</li>
     <li>
       Added flags to <code>qq fs_walk_tree</code> command:
-          <ul>
-            <li><code>--fetch-data</code></li>
-            <li><code>--max-bytes-per-file</code></li>
-          </ul>
+      <ul>
+        <li><code>--fetch-data</code></li>
+        <li><code>--max-bytes-per-file</code></li>
+      </ul>
     </li>
   </ul>
 </details>
@@ -617,10 +617,10 @@ layout: page
     <li>Changed help text for <code>qq fs_set_user_metadata --s3</code> command</li>
     <li>
       Added flags to <code>qq fs_walk_tree</code> command:
-          <ul>
-            <li><code>--progress</code></li>
-            <li><code>--summary</code></li>
-          </ul>
+      <ul>
+        <li><code>--progress</code></li>
+        <li><code>--summary</code></li>
+      </ul>
     </li>
   </ul>
 </details>
@@ -638,10 +638,10 @@ layout: page
   <li>Added <code>qq stratus_cluster_create</code> command</li>
   <li>
     Added flags to <code>qq add_object_storage_uris</code> command:
-        <ul>
-          <li><code>--credentials</code></li>
-          <li><code>--credentials-file</code></li>
-        </ul>
+    <ul>
+      <li><code>--credentials</code></li>
+      <li><code>--credentials-file</code></li>
+    </ul>
   </li>
   <li>Added <code>--brief</code> flag to <code>qq portal_ping</code> command</li>
 </ul>
@@ -667,24 +667,24 @@ layout: page
     <li>Added <code>--no-wait</code> flag to <code>qq ad_reconfigure</code> command</li>
     <li>
       Added flags to <code>qq multitenancy_nfs_modify_global_settings</code> command:
-          <ul>
-            <li><code>--clear-idmap-domain</code></li>
-            <li><code>--idmap-domain</code></li>
-          </ul>
+      <ul>
+        <li><code>--clear-idmap-domain</code></li>
+        <li><code>--idmap-domain</code></li>
+      </ul>
     </li>
     <li>
       Added flags to <code>qq multitenancy_nfs_modify_settings</code> command:
-          <ul>
-            <li><code>--clear-idmap-domain</code></li>
-            <li><code>--idmap-domain</code></li>
-          </ul>
+      <ul>
+        <li><code>--clear-idmap-domain</code></li>
+        <li><code>--idmap-domain</code></li>
+      </ul>
     </li>
     <li>
       Added flags to <code>qq nfs_modify_settings</code> command:
-          <ul>
-            <li><code>--clear-idmap-domain</code></li>
-            <li><code>--idmap-domain</code></li>
-          </ul>
+      <ul>
+        <li><code>--clear-idmap-domain</code></li>
+        <li><code>--idmap-domain</code></li>
+      </ul>
     </li>
     <li>Changed help text for <code>qq portal_accept_hub --spoke-hosts</code> command</li>
     <li>Changed help text for <code>qq portal_create --hub-hosts</code> command</li>
@@ -770,10 +770,10 @@ layout: page
     <li>Added <code>qq network_status</code> command</li>
     <li>
       Changed help text for the following flags of the <code>qq modify_object_backed_cluster_membership</code> command:
-          <ul>
-            <li><code>--node-ips-and-fault-domains</code></li>
-            <li><code>--node-uuids-and-fault-domains</code></li>
-          </ul>
+      <ul>
+        <li><code>--node-ips-and-fault-domains</code></li>
+        <li><code>--node-uuids-and-fault-domains</code></li>
+      </ul>
     </li>
     <li>Changed help text for <code>qq s3_add_bucket --private</code> command</li>
   </ul>
@@ -793,54 +793,54 @@ layout: page
     <li>Added <code>--domain-controllers</code> flag to <code>qq ad_reconfigure</code> command</li>
     <li>
       Added values to <code>qq network_preview_add_network assigned_by</code> command:
-          <ul>
-            <li><code>dhcp</code></li>
-            <li><code>static</code></li>
-          </ul>
+      <ul>
+        <li><code>dhcp</code></li>
+        <li><code>static</code></li>
+      </ul>
     </li>
     <li>
       Modified <code>qq portal_accept_hub</code> command:
-          <ul>
-            <li>
-              Added flags to <code>qq portal_accept_hub</code> command:
-              <ul>
-                <li><code>--authorize-hub-roots</code></li>
-                <li><code>--spoke-hosts</code></li>
-              </ul>
-            </li>
-            <li>Changed help text for <code>qq portal_accept_hub --spoke-port</code> command</li>
-          </ul>
+      <ul>
+        <li>
+          Added flags to <code>qq portal_accept_hub</code> command:
+        <ul>
+          <li><code>--authorize-hub-roots</code></li>
+          <li><code>--spoke-hosts</code></li>
+        </ul>
+        </li>
+        <li>Changed help text for <code>qq portal_accept_hub --spoke-port</code> command</li>
+      </ul>
     </li>
     <li>
       Changed help text for the following flags of the <code>qq portal_authorize_hub</code> command:
-          <ul>
-            <li><code>--id</code></li>
-            <li><code>--json</code></li>
-            <li><code>--spoke-address</code></li>
-            <li><code>--spoke-port</code></li>
-          </ul>
+      <ul>
+        <li><code>--id</code></li>
+        <li><code>--json</code></li>
+        <li><code>--spoke-address</code></li>
+        <li><code>--spoke-port</code></li>
+      </ul>
     </li>
     <li>
       Modified <code>qq portal_create</code> command:
-          <ul>
-            <li>Added <code>--hub-hosts</code> flag to <code>qq portal_create</code> command</li>
-            <li>Changed help text for <code>qq portal_create --hub-port</code> command</li>
-          </ul>
+      <ul>
+        <li>Added <code>--hub-hosts</code> flag to <code>qq portal_create</code> command</li>
+        <li>Changed help text for <code>qq portal_create --hub-port</code> command</li>
+      </ul>
     </li>
     <li>Added <code>--spoke-root-path</code> flag to <code>qq portal_delete_spoke_root</code> command</li>
     <li>
       Modified <code>qq portal_modify_hub_host</code> command:
-          <ul>
-            <li>Added <code>--spoke-hosts</code> flag to <code>qq portal_modify_hub_host</code> command</li>
-            <li>Changed help text for <code>qq portal_modify_hub_host --spoke-port</code> command</li>
-          </ul>
+      <ul>
+        <li>Added <code>--spoke-hosts</code> flag to <code>qq portal_modify_hub_host</code> command</li>
+        <li>Changed help text for <code>qq portal_modify_hub_host --spoke-port</code> command</li>
+      </ul>
     </li>
     <li>
       Modified <code>qq portal_modify_spoke_host</code> command:
-          <ul>
-            <li>Added <code>--hub-hosts</code> flag to <code>qq portal_modify_spoke_host</code> command</li>
-            <li>Changed help text for <code>qq portal_modify_spoke_host --hub-port</code> command</li>
-          </ul>
+      <ul>
+        <li>Added <code>--hub-hosts</code> flag to <code>qq portal_modify_spoke_host</code> command</li>
+        <li>Changed help text for <code>qq portal_modify_spoke_host --hub-port</code> command</li>
+      </ul>
     </li>
   </ul>
 </details>
@@ -864,17 +864,17 @@ layout: page
     <li>Added <code>--no-paths</code> flag to <code>qq portal_create</code> command</li>
     <li>
       Added flags to <code>qq portal_delete_hub</code> command:
-          <ul>
-            <li><code>--json</code></li>
-            <li><code>--no-paths</code></li>
-          </ul>
+      <ul>
+        <li><code>--json</code></li>
+        <li><code>--no-paths</code></li>
+      </ul>
     </li>
     <li>
       Added flags to <code>qq portal_delete_spoke</code> command:
-          <ul>
-            <li><code>--json</code></li>
-            <li><code>--no-paths</code></li>
-          </ul>
+      <ul>
+        <li><code>--json</code></li>
+        <li><code>--no-paths</code></li>
+      </ul>
     </li>
     <li>Added <code>--no-paths</code> flag to <code>qq portal_get_hub</code> command</li>
     <li>Added <code>--no-paths</code> flag to <code>qq portal_get_spoke</code> command</li>
@@ -884,7 +884,9 @@ layout: page
 
 ### Qumulo Core 7.6.1.1
 {{ nexusLink }}
-Added <code>--private</code> flag to <code>qq s3_add_bucket</code> command
+<ul>
+  <li>Added <code>--private</code> flag to <code>qq s3_add_bucket</code> command</li>
+</ul>
 
 ### Qumulo Core 7.6.0.2 (Quarterly)
 {{ nexusLink }}
@@ -905,7 +907,9 @@ Added <code>--private</code> flag to <code>qq s3_add_bucket</code> command
 
 ### Qumulo Core 7.5.4.2
 {{ nexusLink }}
-Changed help text for <code>qq fs_read_dir_aggregates --recursive</code> command
+<ul>
+  <li>Changed help text for <code>qq fs_read_dir_aggregates --recursive</code> command</li>
+</ul>
 
 ### Qumulo Core 7.5.3
 {{ nexusLink }}

@@ -253,7 +253,7 @@ def all_flags(cmd):
     return merged
 
 
-def format_change_group(items, verb, command_path, base_indent=""):
+def format_change_group(items, verb, command_path):
     count = len(items)
     word = "flag" if count == 1 else "flags"
     prep = "to" if verb == "added" else "from"
@@ -261,14 +261,14 @@ def format_change_group(items, verb, command_path, base_indent=""):
         item = list(items)[0]
         return f"{verb.capitalize()} <code>{item}</code> {word} {prep} {command_path} command"
     res = f"{verb.capitalize()} {word} {prep} {command_path} command:\n"
-    res += f"{base_indent}<ul>\n"
+    res += "<ul>\n"
     for i in sorted(items):
-        res += f"{base_indent}  <li><code>{i}</code></li>\n"
-    res += f"{base_indent}</ul>"
+        res += f"  <li><code>{i}</code></li>\n"
+    res += "</ul>"
     return res
 
 
-def format_choice_change_group(target_name, items, verb, raw_command, base_indent=""):
+def format_choice_change_group(target_name, items, verb, raw_command):
     count = len(items)
     singular = "value"
     plural = "values"
@@ -284,10 +284,10 @@ def format_choice_change_group(target_name, items, verb, raw_command, base_inden
     res = (
         f"{verb.capitalize()} {plural} {prep} {combined_cmd} command:\n"
     )
-    res += f"{base_indent}<ul>\n"
+    res += "<ul>\n"
     for i in sorted(items):
-        res += f"{base_indent}  <li><code>{i}</code></li>\n"
-    res += f"{base_indent}</ul>"
+        res += f"  <li><code>{i}</code></li>\n"
+    res += "</ul>"
     return res
 
 
@@ -340,23 +340,21 @@ def generate_cli_bullets(curr_v, prev_v):
         p_opt_objs = all_flags(p_obj)
         c_opt, p_opt = set(c_opt_objs.keys()), set(p_opt_objs.keys())
         
-        # When printing out a whole block for 'cats', pre-indent so it aligns
-        # well inside the parent <li> wrapper.
         if c_opt - p_opt:
-            cats.append(format_change_group(c_opt - p_opt, "added", cp, "        "))
+            cats.append(format_change_group(c_opt - p_opt, "added", cp))
         if p_opt - c_opt:
-            cats.append(format_change_group(p_opt - c_opt, "removed", cp, "        "))
+            cats.append(format_change_group(p_opt - c_opt, "removed", cp))
 
         for o_name in sorted(c_opt & p_opt):
             c_choices = set(c_opt_objs[o_name].get("choices") or [])
             p_choices = set(p_opt_objs[o_name].get("choices") or [])
             if c_choices - p_choices:
                 cats.append(
-                    format_choice_change_group(o_name, c_choices - p_choices, "added", raw_cmd, "        ")
+                    format_choice_change_group(o_name, c_choices - p_choices, "added", raw_cmd)
                 )
             if p_choices - c_choices:
                 cats.append(
-                    format_choice_change_group(o_name, p_choices - c_choices, "removed", raw_cmd, "        ")
+                    format_choice_change_group(o_name, p_choices - c_choices, "removed", raw_cmd)
                 )
 
         c_desc = (c_obj.get("description") or "").strip()
@@ -376,45 +374,53 @@ def generate_cli_bullets(curr_v, prev_v):
                 cats.append(f"Changed help text for <code>{raw_cmd} {item}</code> command")
             else:
                 blk = f"Changed help text for the following flags of the {cp} command:\n"
-                blk += "        <ul>\n"
+                blk += "<ul>\n"
                 for i in sorted(changed_help):
-                    blk += f"          <li><code>{i}</code></li>\n"
-                blk += "        </ul>"
+                    blk += f"  <li><code>{i}</code></li>\n"
+                blk += "</ul>"
                 cats.append(blk)
 
         if len(cats) == 1:
             modifications.append(cats[0])
         elif len(cats) > 1:
-            nested = f"Modified {cp} command:\n        <ul>\n"
+            nested = f"Modified {cp} command:\n<ul>\n"
             for cat in cats:
                 if "\n" in cat:
-                    shifted_cat = cat.replace("\n", "\n    ")
-                    nested += f"          <li>\n            {shifted_cat}\n          </li>\n"
+                    shifted_cat = cat.replace("\n", "\n  ")
+                    nested += f"  <li>\n    {shifted_cat}\n  </li>\n"
                 else:
-                    nested += f"          <li>{cat}</li>\n"
-            nested += "        </ul>"
+                    nested += f"  <li>{cat}</li>\n"
+            nested += "</ul>"
             modifications.append(nested)
 
     all_bullets = removals + additions + modifications
     if not all_bullets:
         return "{{ noCLIchanges }}"
-    if len(all_bullets) == 1:
-        return all_bullets[0]
+        
     if len(all_bullets) <= 5:
         res = "<ul>\n"
         for b in all_bullets:
-            res += f"  <li>\n    {b}\n  </li>\n" if "\n" in b else f"  <li>{b}</li>\n"
+            if "\n" in b:
+                shifted_b = b.replace("\n", "\n    ")
+                res += f"  <li>\n    {shifted_b}\n  </li>\n"
+            else:
+                res += f"  <li>{b}</li>\n"
         res += "</ul>"
         return res
+        
     visible, hidden = all_bullets[:3], all_bullets[3:]
     res = "<ul>\n"
     for b in visible:
-        res += f"  <li>\n    {b}\n  </li>\n" if "\n" in b else f"  <li>{b}</li>\n"
+        if "\n" in b:
+            shifted_b = b.replace("\n", "\n    ")
+            res += f"  <li>\n    {shifted_b}\n  </li>\n"
+        else:
+            res += f"  <li>{b}</li>\n"
     res += "</ul>\n"
     res += "<details>\n  <summary>Click to expand</summary>\n  <ul>\n"
     for b in hidden:
         if "\n" in b:
-            shifted_b = b.replace("\n", "\n  ")
+            shifted_b = b.replace("\n", "\n      ")
             res += f"    <li>\n      {shifted_b}\n    </li>\n"
         else:
             res += f"    <li>{b}</li>\n"
