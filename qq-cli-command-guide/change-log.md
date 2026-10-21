@@ -15,6 +15,7 @@ layout: page
 
 ### Qumulo Core 7.10.3
 {{ nexusLink }}
+{% include important.html content="To better improve standardization and consistency, this release introduces new aliases for existing `qq` CLI command names. All existing commands continue to function as before." %}
 <ul>
   <li>Removed <code>qq ad_poll</code> command</li>
   <li>Removed <code>qq add_nodes</code> command</li>
