@@ -261,10 +261,10 @@ def format_change_group(items, verb, command_path):
         item = list(items)[0]
         return f"{verb.capitalize()} <code>{item}</code> {word} {prep} {command_path} command"
     res = f"{verb.capitalize()} {word} {prep} {command_path} command:\n"
-    res += "<ul>\n"
+    res += "  <ul>\n"
     for i in sorted(items):
-        res += f"  <li><code>{i}</code></li>\n"
-    res += "</ul>"
+        res += f"    <li><code>{i}</code></li>\n"
+    res += "  </ul>"
     return res
 
 
@@ -284,10 +284,10 @@ def format_choice_change_group(target_name, items, verb, raw_command):
     res = (
         f"{verb.capitalize()} {plural} {prep} {combined_cmd} command:\n"
     )
-    res += "<ul>\n"
+    res += "  <ul>\n"
     for i in sorted(items):
-        res += f"  <li><code>{i}</code></li>\n"
-    res += "</ul>"
+        res += f"    <li><code>{i}</code></li>\n"
+    res += "  </ul>"
     return res
 
 
@@ -374,23 +374,23 @@ def generate_cli_bullets(curr_v, prev_v):
                 cats.append(f"Changed help text for <code>{raw_cmd} {item}</code> command")
             else:
                 blk = f"Changed help text for the following flags of the {cp} command:\n"
-                blk += "<ul>\n"
+                blk += "  <ul>\n"
                 for i in sorted(changed_help):
-                    blk += f"  <li><code>{i}</code></li>\n"
-                blk += "</ul>"
+                    blk += f"    <li><code>{i}</code></li>\n"
+                blk += "  </ul>"
                 cats.append(blk)
 
         if len(cats) == 1:
             modifications.append(cats[0])
         elif len(cats) > 1:
-            nested = f"Modified {cp} command:\n<ul>\n"
+            nested = f"Modified {cp} command:\n  <ul>\n"
             for cat in cats:
                 if "\n" in cat:
-                    shifted_cat = cat.replace("\n", "\n  ")
-                    nested += f"  <li>\n    {shifted_cat}\n  </li>\n"
+                    shifted_cat = cat.replace("\n", "\n      ")
+                    nested += f"    <li>\n      {shifted_cat}\n    </li>\n"
                 else:
-                    nested += f"  <li>{cat}</li>\n"
-            nested += "</ul>"
+                    nested += f"    <li>{cat}</li>\n"
+            nested += "  </ul>"
             modifications.append(nested)
 
     all_bullets = removals + additions + modifications
@@ -554,10 +554,26 @@ def main():
                 pre_nexus = nexus_split[0]
                 nexus_tag = nexus_split[1]
                 post_nexus = nexus_split[2]
-                anchor_match = re.search(r"(\n\s*(?:##|###|\{%)[\s\S]*)", post_nexus)
-                trailing = anchor_match.group(1) if anchor_match else ""
+                
                 new_bullets = generate_cli_bullets(curr_v, prev_v)
-                content = pre_nexus + nexus_tag + "\n" + new_bullets + "\n" + trailing
+                
+                # Specifically isolate the old bullets so we don't wipe out custom prose / Jekyll tags.
+                old_bullets_start = re.search(r"(<ul>|\{\{\s*noCLIchanges\s*\}\})", post_nexus)
+                if old_bullets_start:
+                    pre_bullets = post_nexus[:old_bullets_start.start()]
+                    bullets_and_after = post_nexus[old_bullets_start.start():]
+                    
+                    after_match = re.search(r"(\n\s*(?:##|###|\{%)[\s\S]*)", bullets_and_after)
+                    post_bullets = after_match.group(1) if after_match else ""
+                    
+                    # Clean up spacing to perfectly sandwich the bullets
+                    pre_bullets = pre_bullets.rstrip() + "\n\n" if pre_bullets.strip() else "\n\n"
+                    post_bullets = "\n\n" + post_bullets.lstrip() if post_bullets.strip() else "\n"
+                    
+                    content = pre_nexus + nexus_tag + pre_bullets + new_bullets + post_bullets
+                else:
+                    pre_bullets = post_nexus.rstrip() + "\n\n" if post_nexus.strip() else "\n\n"
+                    content = pre_nexus + nexus_tag + pre_bullets + new_bullets + "\n"
         processed_body.append(header)
         processed_body.append(content)
         
