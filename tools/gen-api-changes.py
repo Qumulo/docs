@@ -341,7 +341,8 @@ def generate_api_bullets(curr_v, prev_v):
   if not all_bullets:
     return "{{ noAPIchanges }}"
   if len(all_bullets) == 1:
-    return all_bullets[0]
+    # Strip the 8-space base_indent so the HTML isn't indented into a Markdown code block
+    return all_bullets[0].replace("\n        ", "\n")
 
   if len(all_bullets) <= 5:
     res = "<ul>\n"
