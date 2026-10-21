@@ -17,83 +17,80 @@ layout: page
 {{ nexusLink }}
 {% include important.html content="To improve standardization and consistency, this release introduces new aliases for existing `qq` CLI command names. All existing commands continue to function as before." %}
 
-<ul>
-  <li>
-    Removed commands:
-    <ul>
-      <li><code>qq ad_poll</code></li>
-      <li><code>qq add_nodes</code></li>
-      <li><code>qq auth_add_group</code></li>
-      <li><code>qq auth_add_user</code></li>
-      <li><code>qq auth_list_group</code></li>
-      <li><code>qq auth_list_user</code></li>
-      <li><code>qq auth_mod_group</code></li>
-      <li><code>qq auth_mod_user</code></li>
-      <li><code>qq capacity_clamp_get</code></li>
-      <li><code>qq capacity_clamp_set</code></li>
-      <li><code>qq capacity_history_files_get</code></li>
-      <li><code>qq capacity_history_get</code></li>
-      <li><code>qq change_password</code></li>
-      <li><code>qq cluster_conf</code></li>
-      <li><code>qq cluster_slots</code></li>
-      <li><code>qq create_object_backed_cluster</code></li>
-      <li><code>qq current_activity_get</code></li>
-      <li><code>qq data_core_cluster_create</code></li>
-      <li><code>qq fs_security_add_key</code></li>
-      <li><code>qq fs_security_delete_key</code></li>
-      <li><code>qq fs_security_get_key</code></li>
-      <li><code>qq fs_security_get_key_replace_challenge</code></li>
-      <li><code>qq fs_security_get_key_usage</code></li>
-      <li><code>qq fs_security_list_keys</code></li>
-      <li><code>qq fs_security_modify_key</code></li>
-      <li><code>qq fs_security_replace_key</code></li>
-      <li><code>qq get_object_backed_nodes</code></li>
-      <li><code>qq get_object_storage_uris</code></li>
-      <li><code>qq get_vpn_keys</code></li>
-      <li><code>qq install_vpn_keys</code></li>
-      <li><code>qq ldap_update_settings</code></li>
-      <li><code>qq monitoring_conf</code></li>
-      <li><code>qq monitoring_status_get</code></li>
-      <li><code>qq network_backend_interfaces</code></li>
-      <li><code>qq network_frontend_interfaces</code></li>
-      <li><code>qq network_put_config</code></li>
-      <li><code>qq network_status</code></li>
-      <li><code>qq nfs_add_export</code></li>
-      <li><code>qq nfs_mod_export</code></li>
-      <li><code>qq nfs_mod_export_host_access</code></li>
-      <li><code>qq node_chassis_status_get</code></li>
-      <li><code>qq nodes_list</code></li>
-      <li><code>qq object_backed_fault_tolerance_get</code></li>
-      <li><code>qq protection_status_get</code></li>
-      <li><code>qq quota_update_quota</code></li>
-      <li><code>qq replace_nodes</code></li>
-      <li><code>qq replication_add_blackout_window</code></li>
-      <li><code>qq restriper_status</code></li>
-      <li><code>qq rotate_encryption_keys</code></li>
-      <li><code>qq s3_add_bucket</code></li>
-      <li><code>qq set_cluster_conf</code></li>
-      <li><code>qq set_monitoring_conf</code></li>
-      <li><code>qq set_node_identify_light</code></li>
-      <li><code>qq smb_add_share</code></li>
-      <li><code>qq smb_mod_share</code></li>
-      <li><code>qq smb_mod_share_permissions</code></li>
-      <li><code>qq static_ip_allocation</code></li>
-      <li><code>qq stratus_cluster_create</code></li>
-      <li><code>qq time_reset_configuration</code></li>
-      <li><code>qq time_series_get</code></li>
-      <li><code>qq time_status</code></li>
-      <li><code>qq unconfigured_nodes_list</code></li>
-      <li><code>qq unconfigured_upgrade_config</code></li>
-      <li><code>qq unconfigured_upgrade_config_set</code></li>
-      <li><code>qq unprotected_edge_cluster_create</code></li>
-      <li><code>qq who_am_i</code></li>
-    </ul>
-  </li>
-</ul>
-
 <details>
   <summary>Click to expand</summary>
   <ul>
+    <li>
+      Removed commands:
+      <ul>
+        <li><code>qq ad_poll</code></li>
+        <li><code>qq add_nodes</code></li>
+        <li><code>qq auth_add_group</code></li>
+        <li><code>qq auth_add_user</code></li>
+        <li><code>qq auth_list_group</code></li>
+        <li><code>qq auth_list_user</code></li>
+        <li><code>qq auth_mod_group</code></li>
+        <li><code>qq auth_mod_user</code></li>
+        <li><code>qq capacity_clamp_get</code></li>
+        <li><code>qq capacity_clamp_set</code></li>
+        <li><code>qq capacity_history_files_get</code></li>
+        <li><code>qq capacity_history_get</code></li>
+        <li><code>qq change_password</code></li>
+        <li><code>qq cluster_conf</code></li>
+        <li><code>qq cluster_slots</code></li>
+        <li><code>qq create_object_backed_cluster</code></li>
+        <li><code>qq current_activity_get</code></li>
+        <li><code>qq data_core_cluster_create</code></li>
+        <li><code>qq fs_security_add_key</code></li>
+        <li><code>qq fs_security_delete_key</code></li>
+        <li><code>qq fs_security_get_key</code></li>
+        <li><code>qq fs_security_get_key_replace_challenge</code></li>
+        <li><code>qq fs_security_get_key_usage</code></li>
+        <li><code>qq fs_security_list_keys</code></li>
+        <li><code>qq fs_security_modify_key</code></li>
+        <li><code>qq fs_security_replace_key</code></li>
+        <li><code>qq get_object_backed_nodes</code></li>
+        <li><code>qq get_object_storage_uris</code></li>
+        <li><code>qq get_vpn_keys</code></li>
+        <li><code>qq install_vpn_keys</code></li>
+        <li><code>qq ldap_update_settings</code></li>
+        <li><code>qq monitoring_conf</code></li>
+        <li><code>qq monitoring_status_get</code></li>
+        <li><code>qq network_backend_interfaces</code></li>
+        <li><code>qq network_frontend_interfaces</code></li>
+        <li><code>qq network_put_config</code></li>
+        <li><code>qq network_status</code></li>
+        <li><code>qq nfs_add_export</code></li>
+        <li><code>qq nfs_mod_export</code></li>
+        <li><code>qq nfs_mod_export_host_access</code></li>
+        <li><code>qq node_chassis_status_get</code></li>
+        <li><code>qq nodes_list</code></li>
+        <li><code>qq object_backed_fault_tolerance_get</code></li>
+        <li><code>qq protection_status_get</code></li>
+        <li><code>qq quota_update_quota</code></li>
+        <li><code>qq replace_nodes</code></li>
+        <li><code>qq replication_add_blackout_window</code></li>
+        <li><code>qq restriper_status</code></li>
+        <li><code>qq rotate_encryption_keys</code></li>
+        <li><code>qq s3_add_bucket</code></li>
+        <li><code>qq set_cluster_conf</code></li>
+        <li><code>qq set_monitoring_conf</code></li>
+        <li><code>qq set_node_identify_light</code></li>
+        <li><code>qq smb_add_share</code></li>
+        <li><code>qq smb_mod_share</code></li>
+        <li><code>qq smb_mod_share_permissions</code></li>
+        <li><code>qq static_ip_allocation</code></li>
+        <li><code>qq stratus_cluster_create</code></li>
+        <li><code>qq time_reset_configuration</code></li>
+        <li><code>qq time_series_get</code></li>
+        <li><code>qq time_status</code></li>
+        <li><code>qq unconfigured_nodes_list</code></li>
+        <li><code>qq unconfigured_upgrade_config</code></li>
+        <li><code>qq unconfigured_upgrade_config_set</code></li>
+        <li><code>qq unprotected_edge_cluster_create</code></li>
+        <li><code>qq who_am_i</code></li>
+      </ul>
+    </li>
     <li>
       Added commands:
       <ul>

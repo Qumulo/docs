@@ -471,9 +471,9 @@ def generate_cli_bullets(curr_v, prev_v):
         for b in all_bullets:
             lines_in_b = max(1, b.count("<li>"))
             # Keep showing items if we haven't hit 3 top-level items yet,
-            # AND it doesn't push the visible line count past 20
-            # (unless it's the very first item, which we always show)
-            if len(hidden) == 0 and len(visible) < 3 and (visible_lines + lines_in_b <= 20 or len(visible) == 0):
+            # AND the current item has 10 or fewer lines,
+            # AND adding it doesn't push the visible line count past 20.
+            if len(hidden) == 0 and len(visible) < 3 and lines_in_b <= 10 and (visible_lines + lines_in_b <= 20):
                 visible.append(b)
                 visible_lines += lines_in_b
             else:
@@ -634,7 +634,6 @@ def main():
                 
                 new_bullets = generate_cli_bullets(curr_v, prev_v)
                 
-                # Added <details> to regex so we don't accidentally split the tag!
                 old_bullets_start = re.search(r"(<details>|<ul>|\{\{\s*noCLIchanges\s*\}\})", post_nexus)
                 if old_bullets_start:
                     pre_bullets = post_nexus[:old_bullets_start.start()]
@@ -643,7 +642,6 @@ def main():
                     after_match = re.search(r"(\n\s*(?:##|###|\{%)[\s\S]*)", bullets_and_after)
                     post_bullets = after_match.group(1) if after_match else ""
                     
-                    # Clean up spacing to perfectly sandwich the bullets
                     pre_bullets = pre_bullets.rstrip() + "\n\n" if pre_bullets.strip() else "\n\n"
                     post_bullets = "\n\n" + post_bullets.lstrip() if post_bullets.strip() else "\n"
                     
