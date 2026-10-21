@@ -15,7 +15,7 @@ layout: page
 
 ### Qumulo Core 7.10.3
 {{ nexusLink }}
-{% include important.html content="To improve standardization and consistency, this release introduces new aliases for existing `qq` CLI command names. All existing commands continue to function as before." %}
+{% include important.html content="To improve standardization and consistency, this release introduces new aliases for existing `qq` CLI command names. All existing command names continue to function as before." %}
 
 <details>
   <summary>Click to expand</summary>
