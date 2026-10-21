@@ -143,9 +143,9 @@ def _stage_env(repo, rev, envdir):
     """Assemble a standalone, importable environment for this one revision:
       envdir/qumulo/...            -- from cli/qumulo/** in the archive
       envdir/qinternal/core/byte_units.py  -- the one cross-package file qumulo.rest
-        actually needs, pulled directly with hg cat
+                                           actually needs, pulled directly with hg cat
       envdir/qinternal/__init__.py, envdir/qinternal/core/__init__.py  -- empty, just
-        so Python treats these as packages
+                                           so Python treats these as packages
 
     This mirrors qinternal-hook.sh's install-time path remap (qinternal.X == repo-root
     X/), but hand-assembled for just the files qq CLI introspection needs, instead of
@@ -308,7 +308,9 @@ def generate_cli_bullets(curr_v, prev_v):
     added_names = set(c_c.keys()) - set(p_c.keys())
     common_names = set(c_c.keys()) & set(p_c.keys())
 
-    # Rename detection
+    # Rename detection: only trust this when it's an unambiguous 1-for-1 swap
+    # with an identical flag set. Anything less certain falls back to plain
+    # Removed/Added lines rather than risk pairing the wrong commands.
     rename_pair = None
     if len(removed_names) == 1 and len(added_names) == 1:
         old_name = next(iter(removed_names))
@@ -455,21 +457,25 @@ def generate_cli_bullets(curr_v, prev_v):
 
     all_bullets = final_bullets
 
-    # Weight-based Collapsing Logic
-    total_weight = sum(max(1, b.count("<li>")) for b in all_bullets)
+    # Smart Collapsing Logic: Count top-level blocks and apply a total line safety net
+    total_lines = sum(max(1, b.count("<li>")) for b in all_bullets)
     
     visible = []
     hidden = []
     
-    if total_weight <= 5:
+    # If it's 5 or fewer top-level items AND under 25 total lines, show everything
+    if len(all_bullets) <= 5 and total_lines <= 25:
         visible = all_bullets
     else:
-        visible_weight = 0
+        visible_lines = 0
         for b in all_bullets:
-            w = max(1, b.count("<li>"))
-            if len(hidden) == 0 and (visible_weight + w) <= 5:
+            lines_in_b = max(1, b.count("<li>"))
+            # Keep showing items if we haven't hit 3 top-level items yet,
+            # AND it doesn't push the visible line count past 20
+            # (unless it's the very first item, which we always show)
+            if len(hidden) == 0 and len(visible) < 3 and (visible_lines + lines_in_b <= 20 or len(visible) == 0):
                 visible.append(b)
-                visible_weight += w
+                visible_lines += lines_in_b
             else:
                 hidden.append(b)
 
@@ -486,7 +492,7 @@ def generate_cli_bullets(curr_v, prev_v):
         
     if hidden:
         if visible:
-            res += "\n"
+            res += "\n\n"
         res += "<details>\n  <summary>Click to expand</summary>\n  <ul>\n"
         for b in hidden:
             if "\n" in b:
@@ -628,7 +634,8 @@ def main():
                 
                 new_bullets = generate_cli_bullets(curr_v, prev_v)
                 
-                old_bullets_start = re.search(r"(<ul>|\{\{\s*noCLIchanges\s*\}\})", post_nexus)
+                # Added <details> to regex so we don't accidentally split the tag!
+                old_bullets_start = re.search(r"(<details>|<ul>|\{\{\s*noCLIchanges\s*\}\})", post_nexus)
                 if old_bullets_start:
                     pre_bullets = post_nexus[:old_bullets_start.start()]
                     bullets_and_after = post_nexus[old_bullets_start.start():]
@@ -636,6 +643,7 @@ def main():
                     after_match = re.search(r"(\n\s*(?:##|###|\{%)[\s\S]*)", bullets_and_after)
                     post_bullets = after_match.group(1) if after_match else ""
                     
+                    # Clean up spacing to perfectly sandwich the bullets
                     pre_bullets = pre_bullets.rstrip() + "\n\n" if pre_bullets.strip() else "\n\n"
                     post_bullets = "\n\n" + post_bullets.lstrip() if post_bullets.strip() else "\n"
                     

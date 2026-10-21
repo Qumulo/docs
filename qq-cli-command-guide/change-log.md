@@ -17,80 +17,83 @@ layout: page
 {{ nexusLink }}
 {% include important.html content="To improve standardization and consistency, this release introduces new aliases for existing `qq` CLI command names. All existing commands continue to function as before." %}
 
+<ul>
+  <li>
+    Removed commands:
+    <ul>
+      <li><code>qq ad_poll</code></li>
+      <li><code>qq add_nodes</code></li>
+      <li><code>qq auth_add_group</code></li>
+      <li><code>qq auth_add_user</code></li>
+      <li><code>qq auth_list_group</code></li>
+      <li><code>qq auth_list_user</code></li>
+      <li><code>qq auth_mod_group</code></li>
+      <li><code>qq auth_mod_user</code></li>
+      <li><code>qq capacity_clamp_get</code></li>
+      <li><code>qq capacity_clamp_set</code></li>
+      <li><code>qq capacity_history_files_get</code></li>
+      <li><code>qq capacity_history_get</code></li>
+      <li><code>qq change_password</code></li>
+      <li><code>qq cluster_conf</code></li>
+      <li><code>qq cluster_slots</code></li>
+      <li><code>qq create_object_backed_cluster</code></li>
+      <li><code>qq current_activity_get</code></li>
+      <li><code>qq data_core_cluster_create</code></li>
+      <li><code>qq fs_security_add_key</code></li>
+      <li><code>qq fs_security_delete_key</code></li>
+      <li><code>qq fs_security_get_key</code></li>
+      <li><code>qq fs_security_get_key_replace_challenge</code></li>
+      <li><code>qq fs_security_get_key_usage</code></li>
+      <li><code>qq fs_security_list_keys</code></li>
+      <li><code>qq fs_security_modify_key</code></li>
+      <li><code>qq fs_security_replace_key</code></li>
+      <li><code>qq get_object_backed_nodes</code></li>
+      <li><code>qq get_object_storage_uris</code></li>
+      <li><code>qq get_vpn_keys</code></li>
+      <li><code>qq install_vpn_keys</code></li>
+      <li><code>qq ldap_update_settings</code></li>
+      <li><code>qq monitoring_conf</code></li>
+      <li><code>qq monitoring_status_get</code></li>
+      <li><code>qq network_backend_interfaces</code></li>
+      <li><code>qq network_frontend_interfaces</code></li>
+      <li><code>qq network_put_config</code></li>
+      <li><code>qq network_status</code></li>
+      <li><code>qq nfs_add_export</code></li>
+      <li><code>qq nfs_mod_export</code></li>
+      <li><code>qq nfs_mod_export_host_access</code></li>
+      <li><code>qq node_chassis_status_get</code></li>
+      <li><code>qq nodes_list</code></li>
+      <li><code>qq object_backed_fault_tolerance_get</code></li>
+      <li><code>qq protection_status_get</code></li>
+      <li><code>qq quota_update_quota</code></li>
+      <li><code>qq replace_nodes</code></li>
+      <li><code>qq replication_add_blackout_window</code></li>
+      <li><code>qq restriper_status</code></li>
+      <li><code>qq rotate_encryption_keys</code></li>
+      <li><code>qq s3_add_bucket</code></li>
+      <li><code>qq set_cluster_conf</code></li>
+      <li><code>qq set_monitoring_conf</code></li>
+      <li><code>qq set_node_identify_light</code></li>
+      <li><code>qq smb_add_share</code></li>
+      <li><code>qq smb_mod_share</code></li>
+      <li><code>qq smb_mod_share_permissions</code></li>
+      <li><code>qq static_ip_allocation</code></li>
+      <li><code>qq stratus_cluster_create</code></li>
+      <li><code>qq time_reset_configuration</code></li>
+      <li><code>qq time_series_get</code></li>
+      <li><code>qq time_status</code></li>
+      <li><code>qq unconfigured_nodes_list</code></li>
+      <li><code>qq unconfigured_upgrade_config</code></li>
+      <li><code>qq unconfigured_upgrade_config_set</code></li>
+      <li><code>qq unprotected_edge_cluster_create</code></li>
+      <li><code>qq who_am_i</code></li>
+    </ul>
+  </li>
+</ul>
+
 <details>
   <summary>Click to expand</summary>
   <ul>
-    <li>
-      Removed commands:
-      <ul>
-        <li><code>qq ad_poll</code></li>
-        <li><code>qq add_nodes</code></li>
-        <li><code>qq auth_add_group</code></li>
-        <li><code>qq auth_add_user</code></li>
-        <li><code>qq auth_list_group</code></li>
-        <li><code>qq auth_list_user</code></li>
-        <li><code>qq auth_mod_group</code></li>
-        <li><code>qq auth_mod_user</code></li>
-        <li><code>qq capacity_clamp_get</code></li>
-        <li><code>qq capacity_clamp_set</code></li>
-        <li><code>qq capacity_history_files_get</code></li>
-        <li><code>qq capacity_history_get</code></li>
-        <li><code>qq change_password</code></li>
-        <li><code>qq cluster_conf</code></li>
-        <li><code>qq cluster_slots</code></li>
-        <li><code>qq create_object_backed_cluster</code></li>
-        <li><code>qq current_activity_get</code></li>
-        <li><code>qq data_core_cluster_create</code></li>
-        <li><code>qq fs_security_add_key</code></li>
-        <li><code>qq fs_security_delete_key</code></li>
-        <li><code>qq fs_security_get_key</code></li>
-        <li><code>qq fs_security_get_key_replace_challenge</code></li>
-        <li><code>qq fs_security_get_key_usage</code></li>
-        <li><code>qq fs_security_list_keys</code></li>
-        <li><code>qq fs_security_modify_key</code></li>
-        <li><code>qq fs_security_replace_key</code></li>
-        <li><code>qq get_object_backed_nodes</code></li>
-        <li><code>qq get_object_storage_uris</code></li>
-        <li><code>qq get_vpn_keys</code></li>
-        <li><code>qq install_vpn_keys</code></li>
-        <li><code>qq ldap_update_settings</code></li>
-        <li><code>qq monitoring_conf</code></li>
-        <li><code>qq monitoring_status_get</code></li>
-        <li><code>qq network_backend_interfaces</code></li>
-        <li><code>qq network_frontend_interfaces</code></li>
-        <li><code>qq network_put_config</code></li>
-        <li><code>qq network_status</code></li>
-        <li><code>qq nfs_add_export</code></li>
-        <li><code>qq nfs_mod_export</code></li>
-        <li><code>qq nfs_mod_export_host_access</code></li>
-        <li><code>qq node_chassis_status_get</code></li>
-        <li><code>qq nodes_list</code></li>
-        <li><code>qq object_backed_fault_tolerance_get</code></li>
-        <li><code>qq protection_status_get</code></li>
-        <li><code>qq quota_update_quota</code></li>
-        <li><code>qq replace_nodes</code></li>
-        <li><code>qq replication_add_blackout_window</code></li>
-        <li><code>qq restriper_status</code></li>
-        <li><code>qq rotate_encryption_keys</code></li>
-        <li><code>qq s3_add_bucket</code></li>
-        <li><code>qq set_cluster_conf</code></li>
-        <li><code>qq set_monitoring_conf</code></li>
-        <li><code>qq set_node_identify_light</code></li>
-        <li><code>qq smb_add_share</code></li>
-        <li><code>qq smb_mod_share</code></li>
-        <li><code>qq smb_mod_share_permissions</code></li>
-        <li><code>qq static_ip_allocation</code></li>
-        <li><code>qq stratus_cluster_create</code></li>
-        <li><code>qq time_reset_configuration</code></li>
-        <li><code>qq time_series_get</code></li>
-        <li><code>qq time_status</code></li>
-        <li><code>qq unconfigured_nodes_list</code></li>
-        <li><code>qq unconfigured_upgrade_config</code></li>
-        <li><code>qq unconfigured_upgrade_config_set</code></li>
-        <li><code>qq unprotected_edge_cluster_create</code></li>
-        <li><code>qq who_am_i</code></li>
-      </ul>
-    </li>
     <li>
       Added commands:
       <ul>
@@ -267,18 +270,18 @@ layout: page
       <li>Changed help text for <code>qq fs_delete_user_metadata --s3</code> command</li>
     </ul>
   </li>
+  <li>
+    Modified <code>qq fs_get_user_metadata</code> command:
+    <ul>
+      <li>Added <code>--well-known</code> flag to <code>qq fs_get_user_metadata</code> command</li>
+      <li>Changed help text for <code>qq fs_get_user_metadata --s3</code> command</li>
+    </ul>
+  </li>
 </ul>
 
 <details>
   <summary>Click to expand</summary>
   <ul>
-    <li>
-      Modified <code>qq fs_get_user_metadata</code> command:
-      <ul>
-        <li>Added <code>--well-known</code> flag to <code>qq fs_get_user_metadata</code> command</li>
-        <li>Changed help text for <code>qq fs_get_user_metadata --s3</code> command</li>
-      </ul>
-    </li>
     <li>
       Modified <code>qq fs_list_user_metadata</code> command:
       <ul>
@@ -307,36 +310,39 @@ layout: page
 ### Qumulo Core 7.10.1.2
 {{ nexusLink }}
 
+<ul>
+  <li>
+    Removed commands:
+    <ul>
+      <li><code>qq object_bridge_create</code></li>
+      <li><code>qq object_bridge_delete</code></li>
+      <li><code>qq object_bridge_export_job_run</code></li>
+      <li><code>qq object_bridge_export_rule_create</code></li>
+      <li><code>qq object_bridge_export_rule_delete</code></li>
+      <li><code>qq object_bridge_export_rule_get</code></li>
+      <li><code>qq object_bridge_export_rule_list</code></li>
+      <li><code>qq portal_get_file_system</code></li>
+      <li><code>qq portal_list_file_systems</code></li>
+    </ul>
+  </li>
+  <li>
+    Added commands:
+    <ul>
+      <li><code>qq object_portal_create_bridge</code></li>
+      <li><code>qq object_portal_delete_bridge</code></li>
+      <li><code>qq object_portal_get_bridge</code></li>
+      <li><code>qq object_portal_list_bridges</code></li>
+      <li><code>qq object_portal_refresh</code></li>
+      <li><code>qq portal_get_filesystem</code></li>
+      <li><code>qq portal_list_filesystems</code></li>
+    </ul>
+  </li>
+  <li>Added <code>--record-ttl-seconds</code> flag to <code>qq authoritative_dns_modify_settings</code> command</li>
+</ul>
+
 <details>
   <summary>Click to expand</summary>
   <ul>
-    <li>
-      Removed commands:
-      <ul>
-        <li><code>qq object_bridge_create</code></li>
-        <li><code>qq object_bridge_delete</code></li>
-        <li><code>qq object_bridge_export_job_run</code></li>
-        <li><code>qq object_bridge_export_rule_create</code></li>
-        <li><code>qq object_bridge_export_rule_delete</code></li>
-        <li><code>qq object_bridge_export_rule_get</code></li>
-        <li><code>qq object_bridge_export_rule_list</code></li>
-        <li><code>qq portal_get_file_system</code></li>
-        <li><code>qq portal_list_file_systems</code></li>
-      </ul>
-    </li>
-    <li>
-      Added commands:
-      <ul>
-        <li><code>qq object_portal_create_bridge</code></li>
-        <li><code>qq object_portal_delete_bridge</code></li>
-        <li><code>qq object_portal_get_bridge</code></li>
-        <li><code>qq object_portal_list_bridges</code></li>
-        <li><code>qq object_portal_refresh</code></li>
-        <li><code>qq portal_get_filesystem</code></li>
-        <li><code>qq portal_list_filesystems</code></li>
-      </ul>
-    </li>
-    <li>Added <code>--record-ttl-seconds</code> flag to <code>qq authoritative_dns_modify_settings</code> command</li>
     <li>
       Changed descriptions for commands:
       <ul>
@@ -468,25 +474,25 @@ layout: page
       </li>
     </ul>
   </li>
+  <li>
+    Changed help text for commands:
+    <ul>
+      <li><code>qq portal_accept_hub --spoke-hosts</code></li>
+      <li><code>qq portal_get_hub --dns-lookup</code></li>
+      <li><code>qq portal_get_spoke --dns-lookup</code></li>
+      <li><code>qq portal_list --dns-lookup</code></li>
+      <li><code>qq portal_list_hubs --dns-lookup</code></li>
+      <li><code>qq portal_list_spokes --dns-lookup</code></li>
+      <li><code>qq portal_modify_spoke --hub-hosts</code></li>
+      <li><code>qq portal_modify_spoke_host --hub-hosts</code></li>
+      <li><code>qq portal_ping --hosts</code></li>
+    </ul>
+  </li>
 </ul>
 
 <details>
   <summary>Click to expand</summary>
   <ul>
-    <li>
-      Changed help text for commands:
-      <ul>
-        <li><code>qq portal_accept_hub --spoke-hosts</code></li>
-        <li><code>qq portal_get_hub --dns-lookup</code></li>
-        <li><code>qq portal_get_spoke --dns-lookup</code></li>
-        <li><code>qq portal_list --dns-lookup</code></li>
-        <li><code>qq portal_list_hubs --dns-lookup</code></li>
-        <li><code>qq portal_list_spokes --dns-lookup</code></li>
-        <li><code>qq portal_modify_spoke --hub-hosts</code></li>
-        <li><code>qq portal_modify_spoke_host --hub-hosts</code></li>
-        <li><code>qq portal_ping --hosts</code></li>
-      </ul>
-    </li>
     <li>
       Changed help text for the following flags of the <code>qq portal_create</code> command:
       <ul>
@@ -517,23 +523,20 @@ layout: page
 ### Qumulo Core 7.9.3.1
 {{ nexusLink }}
 
-<details>
-  <summary>Click to expand</summary>
-  <ul>
-    <li>
-      Added commands:
-      <ul>
-        <li><code>qq object_bridge_delete</code></li>
-        <li><code>qq object_bridge_export_job_run</code></li>
-        <li><code>qq object_bridge_export_rule_create</code></li>
-        <li><code>qq object_bridge_export_rule_delete</code></li>
-        <li><code>qq object_bridge_export_rule_get</code></li>
-        <li><code>qq object_bridge_export_rule_list</code></li>
-      </ul>
-    </li>
-    <li>Added <code>--read-only</code> flag to <code>qq object_bridge_create</code> command</li>
-  </ul>
-</details>
+<ul>
+  <li>
+    Added commands:
+    <ul>
+      <li><code>qq object_bridge_delete</code></li>
+      <li><code>qq object_bridge_export_job_run</code></li>
+      <li><code>qq object_bridge_export_rule_create</code></li>
+      <li><code>qq object_bridge_export_rule_delete</code></li>
+      <li><code>qq object_bridge_export_rule_get</code></li>
+      <li><code>qq object_bridge_export_rule_list</code></li>
+    </ul>
+  </li>
+  <li>Added <code>--read-only</code> flag to <code>qq object_bridge_create</code> command</li>
+</ul>
 
 ### Qumulo Core 7.9.2.3
 {{ nexusLink }}
@@ -608,35 +611,29 @@ layout: page
       <li><code>qq snapshot_get_capacity_used_per_snapshot</code></li>
     </ul>
   </li>
+  <li>
+    Added commands:
+    <ul>
+      <li><code>qq audit_create_destination</code></li>
+      <li><code>qq audit_delete_destination</code></li>
+      <li><code>qq audit_get_destination</code></li>
+      <li><code>qq audit_get_destination_status</code></li>
+      <li><code>qq audit_list_destinations</code></li>
+      <li><code>qq audit_modify_destination</code></li>
+      <li><code>qq audit_set_destination</code></li>
+      <li><code>qq object_bridge_create</code></li>
+      <li><code>qq portal_list_quorum_events</code></li>
+    </ul>
+  </li>
+  <li>Added <code>--skip-atime-update</code> flag to <code>qq fs_read</code> command</li>
+  <li>
+    Added flags to <code>qq fs_read_dir</code> command:
+    <ul>
+      <li><code>--include-acls</code></li>
+      <li><code>--skip-atime-update</code></li>
+    </ul>
+  </li>
 </ul>
-
-<details>
-  <summary>Click to expand</summary>
-  <ul>
-    <li>
-      Added commands:
-      <ul>
-        <li><code>qq audit_create_destination</code></li>
-        <li><code>qq audit_delete_destination</code></li>
-        <li><code>qq audit_get_destination</code></li>
-        <li><code>qq audit_get_destination_status</code></li>
-        <li><code>qq audit_list_destinations</code></li>
-        <li><code>qq audit_modify_destination</code></li>
-        <li><code>qq audit_set_destination</code></li>
-        <li><code>qq object_bridge_create</code></li>
-        <li><code>qq portal_list_quorum_events</code></li>
-      </ul>
-    </li>
-    <li>Added <code>--skip-atime-update</code> flag to <code>qq fs_read</code> command</li>
-    <li>
-      Added flags to <code>qq fs_read_dir</code> command:
-      <ul>
-        <li><code>--include-acls</code></li>
-        <li><code>--skip-atime-update</code></li>
-      </ul>
-    </li>
-  </ul>
-</details>
 
 
 ## 7.8 Releases
@@ -659,29 +656,26 @@ layout: page
 ### Qumulo Core 7.8.3.1
 {{ nexusLink }}
 
-<details>
-  <summary>Click to expand</summary>
-  <ul>
-    <li>
-      Added commands:
-      <ul>
-        <li><code>qq container_restart_cluster</code></li>
-        <li><code>qq fs_fetch_file</code></li>
-        <li><code>qq fs_fetch_tree</code></li>
-        <li><code>qq rdma_get_settings</code></li>
-        <li><code>qq rdma_get_status</code></li>
-        <li><code>qq rdma_set_settings</code></li>
-      </ul>
-    </li>
-    <li>
-      Added flags to <code>qq fs_walk_tree</code> command:
-      <ul>
-        <li><code>--fetch-data</code></li>
-        <li><code>--max-bytes-per-file</code></li>
-      </ul>
-    </li>
-  </ul>
-</details>
+<ul>
+  <li>
+    Added commands:
+    <ul>
+      <li><code>qq container_restart_cluster</code></li>
+      <li><code>qq fs_fetch_file</code></li>
+      <li><code>qq fs_fetch_tree</code></li>
+      <li><code>qq rdma_get_settings</code></li>
+      <li><code>qq rdma_get_status</code></li>
+      <li><code>qq rdma_set_settings</code></li>
+    </ul>
+  </li>
+  <li>
+    Added flags to <code>qq fs_walk_tree</code> command:
+    <ul>
+      <li><code>--fetch-data</code></li>
+      <li><code>--max-bytes-per-file</code></li>
+    </ul>
+  </li>
+</ul>
 
 ### Qumulo Core 7.8.2.1
 {{ nexusLink }}
@@ -696,28 +690,22 @@ layout: page
       <li><code>qq fs_set_user_metadata --s3</code></li>
     </ul>
   </li>
+  <li>
+    Changed descriptions for commands:
+    <ul>
+      <li><code>qq fs_security_add_key</code></li>
+      <li><code>qq fs_security_get_key_replace_challenge</code></li>
+      <li><code>qq fs_security_replace_key</code></li>
+    </ul>
+  </li>
+  <li>
+    Added flags to <code>qq fs_walk_tree</code> command:
+    <ul>
+      <li><code>--progress</code></li>
+      <li><code>--summary</code></li>
+    </ul>
+  </li>
 </ul>
-
-<details>
-  <summary>Click to expand</summary>
-  <ul>
-    <li>
-      Changed descriptions for commands:
-      <ul>
-        <li><code>qq fs_security_add_key</code></li>
-        <li><code>qq fs_security_get_key_replace_challenge</code></li>
-        <li><code>qq fs_security_replace_key</code></li>
-      </ul>
-    </li>
-    <li>
-      Added flags to <code>qq fs_walk_tree</code> command:
-      <ul>
-        <li><code>--progress</code></li>
-        <li><code>--summary</code></li>
-      </ul>
-    </li>
-  </ul>
-</details>
 
 ### Qumulo Core 7.8.1.1
 {{ nexusLink }}
@@ -769,18 +757,18 @@ layout: page
       <li><code>qq ad_reconfigure</code></li>
     </ul>
   </li>
+  <li>
+    Added flags to <code>qq multitenancy_nfs_modify_global_settings</code> command:
+    <ul>
+      <li><code>--clear-idmap-domain</code></li>
+      <li><code>--idmap-domain</code></li>
+    </ul>
+  </li>
 </ul>
 
 <details>
   <summary>Click to expand</summary>
   <ul>
-    <li>
-      Added flags to <code>qq multitenancy_nfs_modify_global_settings</code> command:
-      <ul>
-        <li><code>--clear-idmap-domain</code></li>
-        <li><code>--idmap-domain</code></li>
-      </ul>
-    </li>
     <li>
       Added flags to <code>qq multitenancy_nfs_modify_settings</code> command:
       <ul>
@@ -849,31 +837,25 @@ layout: page
       <li><code>qq nexus_set_registration</code></li>
     </ul>
   </li>
+  <li>
+    Changed help text for commands:
+    <ul>
+      <li><code>qq nfs_add_export --restrictions</code></li>
+      <li><code>qq nfs_mod_export --restrictions</code></li>
+      <li><code>qq s3_modify_settings --insecure</code></li>
+    </ul>
+  </li>
+  <li>
+    Added <code>--dns-lookup</code> flag to commands:
+    <ul>
+      <li><code>qq portal_get_hub</code></li>
+      <li><code>qq portal_get_spoke</code></li>
+      <li><code>qq portal_list</code></li>
+      <li><code>qq portal_list_hubs</code></li>
+      <li><code>qq portal_list_spokes</code></li>
+    </ul>
+  </li>
 </ul>
-
-<details>
-  <summary>Click to expand</summary>
-  <ul>
-    <li>
-      Changed help text for commands:
-      <ul>
-        <li><code>qq nfs_add_export --restrictions</code></li>
-        <li><code>qq nfs_mod_export --restrictions</code></li>
-        <li><code>qq s3_modify_settings --insecure</code></li>
-      </ul>
-    </li>
-    <li>
-      Added <code>--dns-lookup</code> flag to commands:
-      <ul>
-        <li><code>qq portal_get_hub</code></li>
-        <li><code>qq portal_get_spoke</code></li>
-        <li><code>qq portal_list</code></li>
-        <li><code>qq portal_list_hubs</code></li>
-        <li><code>qq portal_list_spokes</code></li>
-      </ul>
-    </li>
-  </ul>
-</details>
 
 ### Qumulo Core 7.7.0.3 (Quarterly)
 {{ nexusLink }}
@@ -895,47 +877,44 @@ layout: page
 ### Qumulo Core 7.6.4.1 
 {{ nexusLink }}
 
-<details>
-  <summary>Click to expand</summary>
-  <ul>
-    <li>
-      Removed commands:
-      <ul>
-        <li><code>qq network_preview_add_network</code></li>
-        <li><code>qq network_preview_backend_interfaces</code></li>
-        <li><code>qq network_preview_delete_network</code></li>
-        <li><code>qq network_preview_frontend_interfaces</code></li>
-        <li><code>qq network_preview_get_config</code></li>
-        <li><code>qq network_preview_modify_interface</code></li>
-        <li><code>qq network_preview_modify_network</code></li>
-        <li><code>qq network_preview_put_config</code></li>
-        <li><code>qq network_preview_status</code></li>
-      </ul>
-    </li>
-    <li>
-      Added commands:
-      <ul>
-        <li><code>qq network_backend_interfaces</code></li>
-        <li><code>qq network_create_network</code></li>
-        <li><code>qq network_frontend_interfaces</code></li>
-        <li><code>qq network_get_config</code></li>
-        <li><code>qq network_modify_interface</code></li>
-        <li><code>qq network_modify_network</code></li>
-        <li><code>qq network_put_config</code></li>
-        <li><code>qq network_remove_network</code></li>
-        <li><code>qq network_status</code></li>
-      </ul>
-    </li>
-    <li>
-      Changed help text for the following flags of the <code>qq modify_object_backed_cluster_membership</code> command:
-      <ul>
-        <li><code>--node-ips-and-fault-domains</code></li>
-        <li><code>--node-uuids-and-fault-domains</code></li>
-      </ul>
-    </li>
-    <li>Changed help text for <code>qq s3_add_bucket --private</code> command</li>
-  </ul>
-</details>
+<ul>
+  <li>
+    Removed commands:
+    <ul>
+      <li><code>qq network_preview_add_network</code></li>
+      <li><code>qq network_preview_backend_interfaces</code></li>
+      <li><code>qq network_preview_delete_network</code></li>
+      <li><code>qq network_preview_frontend_interfaces</code></li>
+      <li><code>qq network_preview_get_config</code></li>
+      <li><code>qq network_preview_modify_interface</code></li>
+      <li><code>qq network_preview_modify_network</code></li>
+      <li><code>qq network_preview_put_config</code></li>
+      <li><code>qq network_preview_status</code></li>
+    </ul>
+  </li>
+  <li>
+    Added commands:
+    <ul>
+      <li><code>qq network_backend_interfaces</code></li>
+      <li><code>qq network_create_network</code></li>
+      <li><code>qq network_frontend_interfaces</code></li>
+      <li><code>qq network_get_config</code></li>
+      <li><code>qq network_modify_interface</code></li>
+      <li><code>qq network_modify_network</code></li>
+      <li><code>qq network_put_config</code></li>
+      <li><code>qq network_remove_network</code></li>
+      <li><code>qq network_status</code></li>
+    </ul>
+  </li>
+  <li>
+    Changed help text for the following flags of the <code>qq modify_object_backed_cluster_membership</code> command:
+    <ul>
+      <li><code>--node-ips-and-fault-domains</code></li>
+      <li><code>--node-uuids-and-fault-domains</code></li>
+    </ul>
+  </li>
+  <li>Changed help text for <code>qq s3_add_bucket --private</code> command</li>
+</ul>
 
 ### Qumulo Core 7.6.3.1
 {{ nexusLink }}
@@ -956,18 +935,18 @@ layout: page
       <li><code>qq ad_reconfigure</code></li>
     </ul>
   </li>
+  <li>
+    Added values to <code>qq network_preview_add_network assigned_by</code> command:
+    <ul>
+      <li><code>dhcp</code></li>
+      <li><code>static</code></li>
+    </ul>
+  </li>
 </ul>
 
 <details>
   <summary>Click to expand</summary>
   <ul>
-    <li>
-      Added values to <code>qq network_preview_add_network assigned_by</code> command:
-      <ul>
-        <li><code>dhcp</code></li>
-        <li><code>static</code></li>
-      </ul>
-    </li>
     <li>
       Modified <code>qq portal_accept_hub</code> command:
       <ul>
@@ -1026,31 +1005,31 @@ layout: page
       <li><code>qq portal_modify_spoke</code></li>
     </ul>
   </li>
+  <li>
+    Added commands:
+    <ul>
+      <li><code>qq portal_accept_hub</code></li>
+      <li><code>qq portal_authorize_hub_root</code></li>
+      <li><code>qq portal_delete_spoke_root</code></li>
+      <li><code>qq portal_deny_hub_root</code></li>
+      <li><code>qq portal_modify_hub_host</code></li>
+      <li><code>qq portal_modify_spoke_host</code></li>
+      <li><code>qq portal_propose_spoke_root</code></li>
+    </ul>
+  </li>
+  <li>
+    Added <code>--no-paths</code> flag to commands:
+    <ul>
+      <li><code>qq portal_create</code></li>
+      <li><code>qq portal_get_hub</code></li>
+      <li><code>qq portal_get_spoke</code></li>
+    </ul>
+  </li>
 </ul>
 
 <details>
   <summary>Click to expand</summary>
   <ul>
-    <li>
-      Added commands:
-      <ul>
-        <li><code>qq portal_accept_hub</code></li>
-        <li><code>qq portal_authorize_hub_root</code></li>
-        <li><code>qq portal_delete_spoke_root</code></li>
-        <li><code>qq portal_deny_hub_root</code></li>
-        <li><code>qq portal_modify_hub_host</code></li>
-        <li><code>qq portal_modify_spoke_host</code></li>
-        <li><code>qq portal_propose_spoke_root</code></li>
-      </ul>
-    </li>
-    <li>
-      Added <code>--no-paths</code> flag to commands:
-      <ul>
-        <li><code>qq portal_create</code></li>
-        <li><code>qq portal_get_hub</code></li>
-        <li><code>qq portal_get_spoke</code></li>
-      </ul>
-    </li>
     <li>
       Added flags to <code>qq portal_delete_hub</code> command:
       <ul>
@@ -1120,56 +1099,50 @@ layout: page
 ### Qumulo Core 7.5.2
 {{ nexusLink }}
 
-<details>
-  <summary>Click to expand</summary>
-  <ul>
-    <li>
-      Removed commands:
-      <ul>
-        <li><code>qq network_v3_add_network</code></li>
-        <li><code>qq network_v3_backend_interfaces</code></li>
-        <li><code>qq network_v3_delete_network</code></li>
-        <li><code>qq network_v3_frontend_interfaces</code></li>
-        <li><code>qq network_v3_get_config</code></li>
-        <li><code>qq network_v3_put_config</code></li>
-        <li><code>qq network_v3_status</code></li>
-      </ul>
-    </li>
-    <li>
-      Added commands:
-      <ul>
-        <li><code>qq network_preview_add_network</code></li>
-        <li><code>qq network_preview_backend_interfaces</code></li>
-        <li><code>qq network_preview_delete_network</code></li>
-        <li><code>qq network_preview_frontend_interfaces</code></li>
-        <li><code>qq network_preview_get_config</code></li>
-        <li><code>qq network_preview_put_config</code></li>
-        <li><code>qq network_preview_status</code></li>
-      </ul>
-    </li>
-  </ul>
-</details>
+<ul>
+  <li>
+    Removed commands:
+    <ul>
+      <li><code>qq network_v3_add_network</code></li>
+      <li><code>qq network_v3_backend_interfaces</code></li>
+      <li><code>qq network_v3_delete_network</code></li>
+      <li><code>qq network_v3_frontend_interfaces</code></li>
+      <li><code>qq network_v3_get_config</code></li>
+      <li><code>qq network_v3_put_config</code></li>
+      <li><code>qq network_v3_status</code></li>
+    </ul>
+  </li>
+  <li>
+    Added commands:
+    <ul>
+      <li><code>qq network_preview_add_network</code></li>
+      <li><code>qq network_preview_backend_interfaces</code></li>
+      <li><code>qq network_preview_delete_network</code></li>
+      <li><code>qq network_preview_frontend_interfaces</code></li>
+      <li><code>qq network_preview_get_config</code></li>
+      <li><code>qq network_preview_put_config</code></li>
+      <li><code>qq network_preview_status</code></li>
+    </ul>
+  </li>
+</ul>
 
 ### Qumulo Core 7.5.1.2
 {{ nexusLink }}
 
-<details>
-  <summary>Click to expand</summary>
-  <ul>
-    <li>
-      Added commands:
-      <ul>
-        <li><code>qq network_v3_add_network</code></li>
-        <li><code>qq network_v3_backend_interfaces</code></li>
-        <li><code>qq network_v3_delete_network</code></li>
-        <li><code>qq network_v3_frontend_interfaces</code></li>
-        <li><code>qq network_v3_get_config</code></li>
-        <li><code>qq network_v3_put_config</code></li>
-        <li><code>qq network_v3_status</code></li>
-      </ul>
-    </li>
-  </ul>
-</details>
+<ul>
+  <li>
+    Added commands:
+    <ul>
+      <li><code>qq network_v3_add_network</code></li>
+      <li><code>qq network_v3_backend_interfaces</code></li>
+      <li><code>qq network_v3_delete_network</code></li>
+      <li><code>qq network_v3_frontend_interfaces</code></li>
+      <li><code>qq network_v3_get_config</code></li>
+      <li><code>qq network_v3_put_config</code></li>
+      <li><code>qq network_v3_status</code></li>
+    </ul>
+  </li>
+</ul>
 
 ### Qumulo Core 7.5.0.3 (Quarterly)
 {{ nexusLink }}
