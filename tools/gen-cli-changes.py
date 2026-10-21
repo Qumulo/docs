@@ -17,6 +17,75 @@ DEFAULT_REPO = os.environ.get("QUMULO_REPO", os.path.expanduser("~/src"))
 DEFAULT_PYTHON = os.environ.get("QQ_PYTHON", "python3")
 MIN_EXPECTED_COMMANDS = 50
 
+# Alias exception map specifically for 7.10.3
+ALIAS_MAPPING_7_10_3 = {
+    "add_nodes": "cluster_add_nodes",
+    "auth_add_group": "auth_create_group",
+    "auth_add_user": "auth_create_user",
+    "auth_list_group": "auth_get_group",
+    "auth_list_user": "auth_get_user",
+    "auth_mod_group": "auth_modify_group",
+    "auth_mod_user": "auth_modify_user",
+    "capacity_clamp_get": "capacity_get_clamp",
+    "capacity_clamp_set": "capacity_set_clamp",
+    "capacity_history_files_get": "analytics_get_capacity_history_files",
+    "capacity_history_get": "analytics_get_capacity_history",
+    "change_password": "auth_change_password",
+    "cluster_conf": "cluster_get_config",
+    "cluster_slots": "cluster_get_slot_status",
+    "create_object_backed_cluster": "cluster_create_object_backed_cluster",
+    "current_activity_get": "analytics_get_current_activity",
+    "data_core_cluster_create": "cluster_create_data_core",
+    "fs_security_add_key": "encryption_add_key",
+    "fs_security_delete_key": "encryption_delete_key",
+    "fs_security_get_key": "encryption_get_key",
+    "fs_security_get_key_replace_challenge": "encryption_get_key_replace_challenge",
+    "fs_security_get_key_usage": "encryption_get_key_usage",
+    "fs_security_list_keys": "encryption_list_keys",
+    "fs_security_modify_key": "encryption_modify_key",
+    "fs_security_replace_key": "encryption_replace_key",
+    "get_object_backed_nodes": "cluster_get_object_backed_nodes",
+    "get_object_storage_uris": "cluster_get_object_storage_uris",
+    "get_vpn_keys": "support_get_vpn_keys",
+    "install_vpn_keys": "support_install_vpn_keys",
+    "ldap_update_settings": "ldap_modify_settings",
+    "monitoring_conf": "monitoring_get_config",
+    "monitoring_status_get": "monitoring_get_status",
+    "network_backend_interfaces": "network_list_backend_interfaces",
+    "network_frontend_interfaces": "network_list_frontend_interfaces",
+    "network_put_config": "network_modify_config",
+    "network_status": "network_get_status",
+    "nfs_add_export": "nfs_create_export",
+    "nfs_mod_export": "nfs_modify_export",
+    "nfs_mod_export_host_access": "nfs_modify_export_host_access",
+    "node_chassis_status_get": "cluster_get_node_chassis_status",
+    "nodes_list": "cluster_list_nodes",
+    "object_backed_fault_tolerance_get": "cluster_get_object_backed_fault_tolerance",
+    "protection_status_get": "cluster_get_protection_status",
+    "quota_update_quota": "quota_modify_quota",
+    "replace_nodes": "cluster_replace_nodes",
+    "replication_add_blackout_window": "replication_create_blackout_window",
+    "restriper_status": "restriper_get_status",
+    "rotate_encryption_keys": "encryption_rotate_keys",
+    "s3_add_bucket": "s3_create_bucket",
+    "set_cluster_conf": "cluster_set_config",
+    "set_monitoring_conf": "monitoring_set_config",
+    "set_node_identify_light": "cluster_set_node_identify_light",
+    "smb_add_share": "smb_create_share",
+    "smb_mod_share": "smb_modify_share",
+    "smb_mod_share_permissions": "smb_modify_share_permissions",
+    "static_ip_allocation": "network_get_static_ip_allocation",
+    "stratus_cluster_create": "cluster_create_stratus",
+    "time_reset_configuration": "time_reset_config",
+    "time_series_get": "analytics_get_time_series",
+    "time_status": "time_get_status",
+    "unconfigured_nodes_list": "cluster_list_unconfigured_nodes",
+    "unconfigured_upgrade_config": "unconfigured_upgrade_get_config",
+    "unconfigured_upgrade_config_set": "unconfigured_upgrade_set_config",
+    "unprotected_edge_cluster_create": "cluster_create_unprotected_edge",
+    "who_am_i": "auth_who_am_i"
+}
+
 cli_data = {}
 
 EXTRACT_PROGRAM = r"""
@@ -292,6 +361,18 @@ def format_choice_change_group(target_name, items, verb, raw_command):
     return res
 
 
+def generate_alias_table_7_10_3():
+    """Build the alphabetized markdown table for 7.10.3 aliases."""
+    lines = [
+        "| Previous `qq` CLI Command Name | New `qq` CLI Command Alias |",
+        "|---|---|"
+    ]
+    for old_cmd in sorted(ALIAS_MAPPING_7_10_3.keys()):
+        new_cmd = ALIAS_MAPPING_7_10_3[old_cmd]
+        lines.append(f"| `qq {old_cmd}` | `qq {new_cmd}` |")
+    return "\n".join(lines)
+
+
 def generate_cli_bullets(curr_v, prev_v):
     if not prev_v:
         return "{{ noCLIchanges }}"
@@ -308,9 +389,18 @@ def generate_cli_bullets(curr_v, prev_v):
     added_names = set(c_c.keys()) - set(p_c.keys())
     common_names = set(c_c.keys()) & set(p_c.keys())
 
-    # Rename detection: only trust this when it's an unambiguous 1-for-1 swap
-    # with an identical flag set. Anything less certain falls back to plain
-    # Removed/Added lines rather than risk pairing the wrong commands.
+    # Exception logic for 7.10.3 alias renaming hackathon
+    alias_table_md = ""
+    if curr_v == "7.10.3":
+        alias_table_md = generate_alias_table_7_10_3()
+        # Filter out old names from removals and new names from additions
+        old_aliases = set(ALIAS_MAPPING_7_10_3.keys())
+        new_aliases = set(ALIAS_MAPPING_7_10_3.values())
+        
+        removed_names = removed_names - old_aliases
+        added_names = added_names - new_aliases
+
+    # Rename detection
     rename_pair = None
     if len(removed_names) == 1 and len(added_names) == 1:
         old_name = next(iter(removed_names))
@@ -395,8 +485,6 @@ def generate_cli_bullets(curr_v, prev_v):
             modifications.append(nested)
 
     all_bullets = removals + additions + modifications
-    if not all_bullets:
-        return "{{ noCLIchanges }}"
 
     # Grouping Pass for parent-level bullets
     parsed_bullets = []
@@ -463,6 +551,9 @@ def generate_cli_bullets(curr_v, prev_v):
     visible = []
     hidden = []
     
+    if not all_bullets and not alias_table_md:
+        return "{{ noCLIchanges }}"
+
     # If it's 5 or fewer top-level items AND under 25 total lines, show everything
     if len(all_bullets) <= 5 and total_lines <= 25:
         visible = all_bullets
@@ -470,9 +561,6 @@ def generate_cli_bullets(curr_v, prev_v):
         visible_lines = 0
         for b in all_bullets:
             lines_in_b = max(1, b.count("<li>"))
-            # Keep showing items if we haven't hit 3 top-level items yet,
-            # AND the current item has 10 or fewer lines,
-            # AND adding it doesn't push the visible line count past 20.
             if len(hidden) == 0 and len(visible) < 3 and lines_in_b <= 10 and (visible_lines + lines_in_b <= 20):
                 visible.append(b)
                 visible_lines += lines_in_b
@@ -480,6 +568,9 @@ def generate_cli_bullets(curr_v, prev_v):
                 hidden.append(b)
 
     res = ""
+    if alias_table_md:
+        res += alias_table_md + "\n\n"
+
     if visible:
         res += "<ul>\n"
         for b in visible:
@@ -491,7 +582,7 @@ def generate_cli_bullets(curr_v, prev_v):
         res += "</ul>\n"
         
     if hidden:
-        if visible:
+        if visible or alias_table_md:
             res += "\n\n"
         res += "<details>\n  <summary>Click to expand</summary>\n  <ul>\n"
         for b in hidden:
@@ -634,7 +725,8 @@ def main():
                 
                 new_bullets = generate_cli_bullets(curr_v, prev_v)
                 
-                old_bullets_start = re.search(r"(<details>|<ul>|\{\{\s*noCLIchanges\s*\}\})", post_nexus)
+                # Match start of table, details, bullets, or noCLIchanges tag
+                old_bullets_start = re.search(r"(\|\s*Previous\s*`qq`|\<details\>|\<ul\>|\{\{\s*noCLIchanges\s*\}\})", post_nexus)
                 if old_bullets_start:
                     pre_bullets = post_nexus[:old_bullets_start.start()]
                     bullets_and_after = post_nexus[old_bullets_start.start():]
