@@ -60,19 +60,18 @@ for cls in subclasses:
         continue
     entry = {
         "name": name,
-        "synopsis": (getattr(cls, "SYNOPSIS", "") or "").strip(),
         "description": (getattr(cls, "DESCRIPTION", "") or "").strip(),
         "usage": "",
-        "positional_options": {},
-        "optional_options": {},
+        "positional_flags": {},
+        "optional_flags": {},
     }
     try:
         parser = argparse.ArgumentParser(prog="qq " + name, add_help=False)
         cls.options(parser)
         formatter = argparse.HelpFormatter(prog="unused")
         entry["usage"] = parser.format_usage().strip()
-        entry["positional_options"] = dump_actions(parser._positionals._actions, formatter)
-        entry["optional_options"] = dump_actions(parser._optionals._actions, formatter)
+        entry["positional_flags"] = dump_actions(parser._positionals._actions, formatter)
+        entry["optional_flags"] = dump_actions(parser._optionals._actions, formatter)
     except Exception as e:
         entry["error"] = str(e)
     commands[name] = entry
@@ -244,29 +243,27 @@ def fetch_version(version, force):
             shutil.rmtree(envdir, ignore_errors=True)
 
 
-def all_options(cmd):
-    """Positional and optional options merged into one name-keyed dict."""
+def all_flags(cmd):
+    """Positional and optional flags merged into one name-keyed dict."""
     if not isinstance(cmd, dict):
         return {}
     merged = {}
-    merged.update(cmd.get("positional_options") or {})
-    merged.update(cmd.get("optional_options") or {})
+    merged.update(cmd.get("positional_flags") or {})
+    merged.update(cmd.get("optional_flags") or {})
     return merged
 
 
-# qq's docs refer to everything an option accepts -- "--foo" and "-foo" alike --
-# as a "flag", not "option"/"parameter"/"argument". Historical convention; match it.
 def format_change_group(items, verb, command_path, base_indent=""):
     count = len(items)
     word = "flag" if count == 1 else "flags"
     prep = "to" if verb == "added" else "from"
     if count == 1:
         item = list(items)[0]
-        return f"{verb.capitalize()} `{item}` {word} {prep} {command_path} command"
+        return f"{verb.capitalize()} <code>{item}</code> {word} {prep} {command_path} command"
     res = f"{verb.capitalize()} {word} {prep} {command_path} command:\n"
     res += f"{base_indent}  <ul>\n"
     for i in sorted(items):
-        res += f"{base_indent}    <li>`{i}`</li>\n"
+        res += f"{base_indent}    <li><code>{i}</code></li>\n"
     res += f"{base_indent}  </ul>"
     return res
 
@@ -275,21 +272,21 @@ def format_choice_change_group(target_name, items, verb, command_path, base_inde
     count = len(items)
     singular = "accepted value"
     plural = "accepted values"
-    prep = "to" if verb == "added" else "from"
+    prep = "for"
     display_name = target_name.split(".")[-1]
     if count == 1:
         item = list(items)[0]
         return (
-            f"{verb.capitalize()} `{item}` {singular} {prep} "
-            f"`{display_name}` flag in {command_path} command"
+            f"{verb.capitalize()} <code>{item}</code> {singular} {prep} "
+            f"{command_path} <code>{display_name}</code> flag"
         )
     res = (
-        f"{verb.capitalize()} {plural} {prep} `{display_name}` "
-        f"flag in {command_path} command:\n"
+        f"{verb.capitalize()} {plural} {prep} {command_path} "
+        f"<code>{display_name}</code> flag:\n"
     )
     res += f"{base_indent}  <ul>\n"
     for i in sorted(items):
-        res += f"{base_indent}    <li>`{i}`</li>\n"
+        res += f"{base_indent}    <li><code>{i}</code></li>\n"
     res += f"{base_indent}  </ul>"
     return res
 
@@ -317,32 +314,31 @@ def generate_cli_bullets(curr_v, prev_v):
     if len(removed_names) == 1 and len(added_names) == 1:
         old_name = next(iter(removed_names))
         new_name = next(iter(added_names))
-        if set(all_options(p_c[old_name]).keys()) == set(all_options(c_c[new_name]).keys()):
+        if set(all_flags(p_c[old_name]).keys()) == set(all_flags(c_c[new_name]).keys()):
             rename_pair = (old_name, new_name)
 
     if rename_pair:
         old_name, new_name = rename_pair
-        removals_source = []
-        additions_source = []
         removed_names = set()
         added_names = set()
         modifications.append(
-            f"Replaced `qq {old_name}` command with `qq {new_name}` command"
+            f"Replaced <code>qq {old_name}</code> command with <code>qq {new_name}</code> command"
         )
 
     for name in sorted(removed_names):
-        removals.append(f"Removed `qq {name}` command")
+        removals.append(f"Removed <code>qq {name}</code> command")
     for name in sorted(added_names):
-        additions.append(f"Added `qq {name}` command")
+        additions.append(f"Added <code>qq {name}</code> command")
 
     for name in sorted(common_names):
-        cp = f"`qq {name}`"
+        cp = f"<code>qq {name}</code>"
         c_obj, p_obj = c_c[name], p_c[name]
         cats = []
 
-        c_opt_objs = all_options(c_obj)
-        p_opt_objs = all_options(p_obj)
+        c_opt_objs = all_flags(c_obj)
+        p_opt_objs = all_flags(p_obj)
         c_opt, p_opt = set(c_opt_objs.keys()), set(p_opt_objs.keys())
+        
         if c_opt - p_opt:
             cats.append(format_change_group(c_opt - p_opt, "added", cp, "        "))
         if p_opt - c_opt:
@@ -363,7 +359,7 @@ def generate_cli_bullets(curr_v, prev_v):
         c_desc = (c_obj.get("description") or "").strip()
         p_desc = (p_obj.get("description") or "").strip()
         if c_desc != p_desc:
-            cats.append(f"Changed the description of {cp}")
+            cats.append(f"Changed the description of {cp} command")
 
         changed_help = set()
         for o_name in sorted(c_opt & p_opt):
@@ -374,12 +370,12 @@ def generate_cli_bullets(curr_v, prev_v):
         if changed_help:
             if len(changed_help) == 1:
                 item = list(changed_help)[0]
-                cats.append(f"Changed the help text for `{item}` flag in {cp} command")
+                cats.append(f"Changed the help text for <code>{item}</code> flag in {cp} command")
             else:
                 blk = f"Changed the help text for {cp} flags:\n"
                 blk += "      <ul>\n"
                 for i in sorted(changed_help):
-                    blk += f"        <li>`{i}`</li>\n"
+                    blk += f"        <li><code>{i}</code></li>\n"
                 blk += "      </ul>"
                 cats.append(blk)
 
@@ -408,10 +404,10 @@ def generate_cli_bullets(curr_v, prev_v):
     for b in visible:
         res += f"  <li>\n    {b}\n  </li>\n" if "\n" in b else f"  <li>{b}</li>\n"
     res += "</ul>\n"
-    res += "\n  **Click to expand**\n  <ul>\n"
+    res += "<details>\n  <summary>Click to expand</summary>\n  <ul>\n"
     for b in hidden:
         res += f"    <li>\n      {b}\n    </li>\n" if "\n" in b else f"    <li>{b}</li>\n"
-    res += "  </ul>\n"
+    res += "  </ul>\n</details>\n"
     return res
 
 def ensure_dependencies():
