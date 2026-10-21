@@ -361,16 +361,40 @@ def format_choice_change_group(target_name, items, verb, raw_command):
     return res
 
 
-def generate_alias_table_7_10_3():
-    """Build the alphabetized markdown table for 7.10.3 aliases."""
-    lines = [
-        "| Previous `qq` CLI Command Name | New `qq` CLI Command Alias |",
-        "|---|---|"
-    ]
-    for old_cmd in sorted(ALIAS_MAPPING_7_10_3.keys()):
-        new_cmd = ALIAS_MAPPING_7_10_3[old_cmd]
-        lines.append(f"| `qq {old_cmd}` | `qq {new_cmd}` |")
-    return "\n".join(lines)
+def build_html_table(rows, base_indent=""):
+    """Helper to render a clean HTML table from list of (old, new) tuples with width:100% and 50/50 split."""
+    tbl = f'{base_indent}<table style="width: 100%;">\n'
+    tbl += f"{base_indent}  <thead>\n"
+    tbl += f"{base_indent}    <tr>\n"
+    tbl += f'{base_indent}      <th style="width: 50%;">Previous <code>qq</code> CLI Command Name</th>\n'
+    tbl += f'{base_indent}      <th style="width: 50%;">New <code>qq</code> CLI Command Alias</th>\n'
+    tbl += f"{base_indent}    </tr>\n"
+    tbl += f"{base_indent}  </thead>\n"
+    tbl += f"{base_indent}  <tbody>\n"
+    for old_cmd, new_cmd in rows:
+        tbl += f"{base_indent}    <tr>\n"
+        tbl += f"{base_indent}      <td><code>qq {old_cmd}</code></td>\n"
+        tbl += f"{base_indent}      <td><code>qq {new_cmd}</code></td>\n"
+        tbl += f"{base_indent}    </tr>\n"
+    tbl += f"{base_indent}  </tbody>\n"
+    tbl += f"{base_indent}</table>"
+    return tbl
+
+
+def generate_alias_tables_7_10_3(max_visible_rows=10):
+    """Build visible and hidden HTML tables for 7.10.3 aliases."""
+    sorted_pairs = [(old_cmd, ALIAS_MAPPING_7_10_3[old_cmd]) for old_cmd in sorted(ALIAS_MAPPING_7_10_3.keys())]
+    
+    if len(sorted_pairs) <= max_visible_rows:
+        return build_html_table(sorted_pairs), ""
+        
+    visible_pairs = sorted_pairs[:max_visible_rows]
+    hidden_pairs = sorted_pairs[max_visible_rows:]
+    
+    visible_html = build_html_table(visible_pairs, base_indent="")
+    hidden_html = build_html_table(hidden_pairs, base_indent="  ")
+    
+    return visible_html, hidden_html
 
 
 def generate_cli_bullets(curr_v, prev_v):
@@ -390,10 +414,10 @@ def generate_cli_bullets(curr_v, prev_v):
     common_names = set(c_c.keys()) & set(p_c.keys())
 
     # Exception logic for 7.10.3 alias renaming hackathon
-    alias_table_md = ""
+    visible_table_html = ""
+    hidden_table_html = ""
     if curr_v == "7.10.3":
-        alias_table_md = generate_alias_table_7_10_3()
-        # Filter out old names from removals and new names from additions
+        visible_table_html, hidden_table_html = generate_alias_tables_7_10_3(max_visible_rows=10)
         old_aliases = set(ALIAS_MAPPING_7_10_3.keys())
         new_aliases = set(ALIAS_MAPPING_7_10_3.values())
         
@@ -545,17 +569,19 @@ def generate_cli_bullets(curr_v, prev_v):
 
     all_bullets = final_bullets
 
-    # Smart Collapsing Logic: Count top-level blocks and apply a total line safety net
+    # Smart Collapsing Logic for Bullets
     total_lines = sum(max(1, b.count("<li>")) for b in all_bullets)
     
     visible = []
     hidden = []
     
-    if not all_bullets and not alias_table_md:
+    if not all_bullets and not visible_table_html:
         return "{{ noCLIchanges }}"
 
-    # If it's 5 or fewer top-level items AND under 25 total lines, show everything
-    if len(all_bullets) <= 5 and total_lines <= 25:
+    # If table split occurred, force all bullets into hidden
+    if hidden_table_html:
+        hidden = all_bullets
+    elif len(all_bullets) <= 5 and total_lines <= 25:
         visible = all_bullets
     else:
         visible_lines = 0
@@ -568,8 +594,8 @@ def generate_cli_bullets(curr_v, prev_v):
                 hidden.append(b)
 
     res = ""
-    if alias_table_md:
-        res += alias_table_md + "\n\n"
+    if visible_table_html:
+        res += visible_table_html + "\n\n"
 
     if visible:
         res += "<ul>\n"
@@ -581,17 +607,27 @@ def generate_cli_bullets(curr_v, prev_v):
                 res += f"  <li>{b}</li>\n"
         res += "</ul>\n"
         
-    if hidden:
-        if visible or alias_table_md:
+    if hidden or hidden_table_html:
+        if visible or visible_table_html:
             res += "\n\n"
-        res += "<details>\n  <summary>Click to expand</summary>\n  <ul>\n"
-        for b in hidden:
-            if "\n" in b:
-                shifted_b = b.replace("\n", "\n      ")
-                res += f"    <li>\n      {shifted_b}\n    </li>\n"
-            else:
-                res += f"    <li>{b}</li>\n"
-        res += "  </ul>\n</details>\n"
+        res += "<details>\n  <summary>Click to expand</summary>\n"
+        
+        if hidden_table_html:
+            res += hidden_table_html + "\n"
+            
+        if hidden:
+            if hidden_table_html:
+                res += "\n"
+            res += "  <ul>\n"
+            for b in hidden:
+                if "\n" in b:
+                    shifted_b = b.replace("\n", "\n      ")
+                    res += f"    <li>\n      {shifted_b}\n    </li>\n"
+                else:
+                    res += f"    <li>{b}</li>\n"
+            res += "  </ul>\n"
+            
+        res += "</details>\n"
         
     return res.strip()
 
@@ -726,7 +762,7 @@ def main():
                 new_bullets = generate_cli_bullets(curr_v, prev_v)
                 
                 # Match start of table, details, bullets, or noCLIchanges tag
-                old_bullets_start = re.search(r"(\|\s*Previous\s*`qq`|\<details\>|\<ul\>|\{\{\s*noCLIchanges\s*\}\})", post_nexus)
+                old_bullets_start = re.search(r"(<table>|<details>|\||<ul>|\{\{\s*noCLIchanges\s*\}\})", post_nexus)
                 if old_bullets_start:
                     pre_bullets = post_nexus[:old_bullets_start.start()]
                     bullets_and_after = post_nexus[old_bullets_start.start():]
