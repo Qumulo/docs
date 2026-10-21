@@ -143,9 +143,9 @@ def _stage_env(repo, rev, envdir):
     """Assemble a standalone, importable environment for this one revision:
       envdir/qumulo/...            -- from cli/qumulo/** in the archive
       envdir/qinternal/core/byte_units.py  -- the one cross-package file qumulo.rest
-                                           actually needs, pulled directly with hg cat
+        actually needs, pulled directly with hg cat
       envdir/qinternal/__init__.py, envdir/qinternal/core/__init__.py  -- empty, just
-                                           so Python treats these as packages
+        so Python treats these as packages
 
     This mirrors qinternal-hook.sh's install-time path remap (qinternal.X == repo-root
     X/), but hand-assembled for just the files qq CLI introspection needs, instead of
@@ -308,9 +308,7 @@ def generate_cli_bullets(curr_v, prev_v):
     added_names = set(c_c.keys()) - set(p_c.keys())
     common_names = set(c_c.keys()) & set(p_c.keys())
 
-    # Rename detection: only trust this when it's an unambiguous 1-for-1 swap
-    # with an identical flag set. Anything less certain falls back to plain
-    # Removed/Added lines rather than risk pairing the wrong commands.
+    # Rename detection
     rename_pair = None
     if len(removed_names) == 1 and len(added_names) == 1:
         old_name = next(iter(removed_names))
@@ -455,38 +453,50 @@ def generate_cli_bullets(curr_v, prev_v):
         else:
             final_bullets.append(b)
 
-    # Assign the nicely grouped bullets back to all_bullets
     all_bullets = final_bullets
 
-    if len(all_bullets) <= 5:
-        res = "<ul>\n"
+    # Weight-based Collapsing Logic
+    total_weight = sum(max(1, b.count("<li>")) for b in all_bullets)
+    
+    visible = []
+    hidden = []
+    
+    if total_weight <= 5:
+        visible = all_bullets
+    else:
+        visible_weight = 0
         for b in all_bullets:
+            w = max(1, b.count("<li>"))
+            if len(hidden) == 0 and (visible_weight + w) <= 5:
+                visible.append(b)
+                visible_weight += w
+            else:
+                hidden.append(b)
+
+    res = ""
+    if visible:
+        res += "<ul>\n"
+        for b in visible:
             if "\n" in b:
                 shifted_b = b.replace("\n", "\n    ")
                 res += f"  <li>\n    {shifted_b}\n  </li>\n"
             else:
                 res += f"  <li>{b}</li>\n"
-        res += "</ul>"
-        return res
+        res += "</ul>\n"
         
-    visible, hidden = all_bullets[:3], all_bullets[3:]
-    res = "<ul>\n"
-    for b in visible:
-        if "\n" in b:
-            shifted_b = b.replace("\n", "\n    ")
-            res += f"  <li>\n    {shifted_b}\n  </li>\n"
-        else:
-            res += f"  <li>{b}</li>\n"
-    res += "</ul>\n"
-    res += "<details>\n  <summary>Click to expand</summary>\n  <ul>\n"
-    for b in hidden:
-        if "\n" in b:
-            shifted_b = b.replace("\n", "\n      ")
-            res += f"    <li>\n      {shifted_b}\n    </li>\n"
-        else:
-            res += f"    <li>{b}</li>\n"
-    res += "  </ul>\n</details>\n"
-    return res
+    if hidden:
+        if visible:
+            res += "\n"
+        res += "<details>\n  <summary>Click to expand</summary>\n  <ul>\n"
+        for b in hidden:
+            if "\n" in b:
+                shifted_b = b.replace("\n", "\n      ")
+                res += f"    <li>\n      {shifted_b}\n    </li>\n"
+            else:
+                res += f"    <li>{b}</li>\n"
+        res += "  </ul>\n</details>\n"
+        
+    return res.strip()
 
 def ensure_dependencies():
     pip_names = {
@@ -618,7 +628,6 @@ def main():
                 
                 new_bullets = generate_cli_bullets(curr_v, prev_v)
                 
-                # Specifically isolate the old bullets so we don't wipe out custom prose / Jekyll tags.
                 old_bullets_start = re.search(r"(<ul>|\{\{\s*noCLIchanges\s*\}\})", post_nexus)
                 if old_bullets_start:
                     pre_bullets = post_nexus[:old_bullets_start.start()]
@@ -627,7 +636,6 @@ def main():
                     after_match = re.search(r"(\n\s*(?:##|###|\{%)[\s\S]*)", bullets_and_after)
                     post_bullets = after_match.group(1) if after_match else ""
                     
-                    # Clean up spacing to perfectly sandwich the bullets
                     pre_bullets = pre_bullets.rstrip() + "\n\n" if pre_bullets.strip() else "\n\n"
                     post_bullets = "\n\n" + post_bullets.lstrip() if post_bullets.strip() else "\n"
                     
