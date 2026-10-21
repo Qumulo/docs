@@ -1,4 +1,5 @@
 import argparse
+from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 import json
 import os
@@ -396,7 +397,67 @@ def generate_cli_bullets(curr_v, prev_v):
     all_bullets = removals + additions + modifications
     if not all_bullets:
         return "{{ noCLIchanges }}"
-        
+
+    # Grouping Pass for parent-level bullets
+    parsed_bullets = []
+    for b in all_bullets:
+        if "\n" not in b:
+            m1 = re.match(r"^(Removed|Added) (<code>qq [^<]+</code>) command$", b)
+            m2 = re.match(r"^Changed description of (<code>qq [^<]+</code>) command$", b)
+            m3 = re.match(r"^Changed help text for (<code>qq [^<]+</code>) command$", b)
+            m4 = re.match(r"^(Added|Removed) (<code>[^<]+</code>) value (to|from) (<code>qq [^<]+</code>) command$", b)
+            m5 = re.match(r"^(Added|Removed) (<code>[^<]+</code>) flag (to|from) (<code>qq [^<]+</code>) command$", b)
+            
+            if m1:
+                parsed_bullets.append((("command", m1.group(1)), m1.group(2), b))
+            elif m2:
+                parsed_bullets.append((("description", "Changed"), m2.group(1), b))
+            elif m3:
+                parsed_bullets.append((("help_text", "Changed"), m3.group(1), b))
+            elif m4:
+                parsed_bullets.append((("value", m4.group(1), m4.group(2)), m4.group(4), b))
+            elif m5:
+                parsed_bullets.append((("flag", m5.group(1), m5.group(2)), m5.group(4), b))
+            else:
+                parsed_bullets.append((None, None, b))
+        else:
+            parsed_bullets.append((None, None, b))
+
+    freq = Counter(k for k, _, _ in parsed_bullets if k)
+    
+    final_bullets = []
+    seen_groups = set()
+    for k, item, b in parsed_bullets:
+        if k and freq[k] > 1:
+            if k not in seen_groups:
+                seen_groups.add(k)
+                items = [i for key, i, _ in parsed_bullets if key == k]
+                
+                kind = k[0]
+                if kind == "command":
+                    header = f"{k[1]} commands:"
+                elif kind == "description":
+                    header = "Changed descriptions for commands:"
+                elif kind == "help_text":
+                    header = "Changed help text for commands:"
+                elif kind == "value":
+                    prep = "to" if k[1] == "Added" else "from"
+                    header = f"{k[1]} {k[2]} value {prep} commands:"
+                elif kind == "flag":
+                    prep = "to" if k[1] == "Added" else "from"
+                    header = f"{k[1]} {k[2]} flag {prep} commands:"
+                
+                nested = header + "\n<ul>\n"
+                for i in sorted(items):
+                    nested += f"  <li>{i}</li>\n"
+                nested += "</ul>"
+                final_bullets.append(nested)
+        else:
+            final_bullets.append(b)
+
+    # Assign the nicely grouped bullets back to all_bullets
+    all_bullets = final_bullets
+
     if len(all_bullets) <= 5:
         res = "<ul>\n"
         for b in all_bullets:
