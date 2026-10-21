@@ -1328,15 +1328,15 @@ Added <code>POST /v2/cluster/data-core/create</code> endpoint
 ### Qumulo Core 7.6.0.2 (Quarterly)
 {{ nexusLink }}
 Removed parameters from <code>POST /v1/smb/files/close</code> request body:
-          <ul>
-            <li><code>access_mask</code></li>
-            <li><code>file_number</code></li>
-            <li><code>num_byte_range_locks</code></li>
-            <li><code>num_notify_watches</code></li>
-            <li><code>owner</code></li>
-            <li><code>path</code></li>
-            <li><code>version</code></li>
-          </ul>
+  <ul>
+    <li><code>access_mask</code></li>
+    <li><code>file_number</code></li>
+    <li><code>num_byte_range_locks</code></li>
+    <li><code>num_notify_watches</code></li>
+    <li><code>owner</code></li>
+    <li><code>path</code></li>
+    <li><code>version</code></li>
+  </ul>
 
 
 ## 7.5 Releases
