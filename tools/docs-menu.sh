@@ -511,6 +511,15 @@ regen_api_change_log() {
     python3 tools/gen-api-changes.py
 }
 
+# Regenerate qq CLI change log
+regen_cli_change_log() {
+    start_in_docs_dir
+    check_tqdm || return 1
+
+    echo "Building qq CLI change log..."
+    python3 tools/gen-cli-changes.py
+}
+
 # Build HTML documentation by using Jekyll
 build_html_docs() {
     start_in_docs_dir
@@ -1008,31 +1017,32 @@ while true; do
     echo -e "15. 🆕\tList CLI documentation with appended content"
     echo
     echo -e "\033[1;33mGenerate Documentation\033[0m"
-    echo -e "16. ⚙️\tRegenerate CLI documentation"
-    echo -e "17. ⚙️\tRegenerate REST API documentation"
-    echo -e "18. ⚙️\tRegenerate REST API change log"
-    echo -e "19. ⚙️\tOnly build HTML documentation"
-    echo -e "20. ⚙️\tOnly build PDF documentation"
+    echo -e "16. ⚙️\tRegenerate qq CLI documentation"
+    echo -e "17. ⚙️\tRegenerate qq CLI change log"
+    echo -e "18. ⚙️\tRegenerate REST API documentation"
+    echo -e "19. ⚙️\tRegenerate REST API change log"
+    echo -e "20. ⚙️\tOnly build HTML documentation"
+    echo -e "21. ⚙️\tOnly build PDF documentation"
     echo
     echo -e "\033[1;33mPreview Documentation\033[0m"
-    echo -e "21. 🖥️\tOnly serve documentation locally (Tailscale over HTTPS)"
-    echo -e "22. 🖥️\tOnly serve documentation locally (Python over HTTP)"
-    echo -e "23. 🖥️\tBuild documentation and serve it locally (Tailscale over HTTPS)"
-    echo -e "24. 🖥️\tBuild documentation and serve it locally (Python over HTTP)"
-    echo -e "25. 🖥️\tBuild documentation and serve it locally (Jekyll with LiveReload over HTTP)"
+    echo -e "22. 🖥️\tOnly serve documentation locally (Tailscale over HTTPS)"
+    echo -e "23. 🖥️\tOnly serve documentation locally (Python over HTTP)"
+    echo -e "24. 🖥️\tBuild documentation and serve it locally (Tailscale over HTTPS)"
+    echo -e "25. 🖥️\tBuild documentation and serve it locally (Python over HTTP)"
+    echo -e "26. 🖥️\tBuild documentation and serve it locally (Jekyll with LiveReload over HTTP)"
     echo
     echo -e "\033[1;33mPublish Documentation\033[0m"
-    echo -e "26. 📣\tPublish release notes to Nexus" 
+    echo -e "27. 📣\tPublish release notes to Nexus" 
     echo
     echo -e "\033[1;33mTest Documentation\033[0m"
-    echo -e "27. 📋\tCheck documentation for spelling errors"
-    echo -e "28. 📋\tCheck documentation for script, link, and image errors"
-    echo -e "29. 📋\tCheck documentation for sidebar errors"
+    echo -e "28. 📋\tCheck documentation for spelling errors"
+    echo -e "29. 📋\tCheck documentation for script, link, and image errors"
+    echo -e "30. 📋\tCheck documentation for sidebar errors"
     echo
     echo -e "\033[1;33mIndex Documentation\033[0m"
-    echo -e "30. 🔍\tIngest docs.qumulo.com into Vectara"
-    echo -e "31. 🔍\tIngest care.qumulo.com into Vectara"
-    echo -e "32. 🔍\tIngest qumulo.com into Vectara"
+    echo -e "31. 🔍\tIngest docs.qumulo.com into Vectara"
+    echo -e "32. 🔍\tIngest care.qumulo.com into Vectara"
+    echo -e "33. 🔍\tIngest qumulo.com into Vectara"
     echo
     echo -e "q.  👋\tQuit"
     echo
@@ -1055,22 +1065,23 @@ while true; do
         14) determine_lowest_replication_version ;;
         15) find_modified_cli ;;
         16) regen_cli_docs ;;
-        17) regen_api_docs ;;
-        18) regen_api_change_log ;;
-        19) build_html_docs ;;
-        20) build_pdf_docs ;;
-        21) only_serve_docs_locally_tailscale ;;
-        22) only_serve_docs_locally_python ;;
-        23) build_serve_docs_locally_tailscale ;;
-        24) build_serve_docs_locally_python ;;
-        25) build_serve_docs_locally_jekyll ;;
-        26) publish_release_notes_to_nexus ;;
-        27) check_spelling_errors ;;
-        28) check_docs_errors ;;
-        29) check_sidebar_errors ;;
-        30) ingest_docs_portal ;;
-        31) ingest_care_portal ;;
-        32) ingest_corp_site ;;
+        17) regen_cli_change_log ;;
+        18) regen_api_docs ;;
+        19) regen_api_change_log ;;
+        20) build_html_docs ;;
+        21) build_pdf_docs ;;
+        22) only_serve_docs_locally_tailscale ;;
+        23) only_serve_docs_locally_python ;;
+        24) build_serve_docs_locally_tailscale ;;
+        25) build_serve_docs_locally_python ;;
+        26) build_serve_docs_locally_jekyll ;;
+        27) publish_release_notes_to_nexus ;;
+        28) check_spelling_errors ;;
+        29) check_docs_errors ;;
+        30) check_sidebar_errors ;;
+        31) ingest_docs_portal ;;
+        32) ingest_care_portal ;;
+        33) ingest_corp_site ;;
         q) exit ;;
         *) echo "You must enter a valid option." ;;
     esac
