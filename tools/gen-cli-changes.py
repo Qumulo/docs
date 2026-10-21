@@ -268,21 +268,21 @@ def format_change_group(items, verb, command_path, base_indent=""):
     return res
 
 
-def format_choice_change_group(target_name, items, verb, command_path, base_indent=""):
+def format_choice_change_group(target_name, items, verb, raw_command, base_indent=""):
     count = len(items)
-    singular = "accepted value"
-    plural = "accepted values"
-    prep = "for"
+    singular = "value"
+    plural = "values"
+    prep = "to" if verb == "added" else "from"
     display_name = target_name.split(".")[-1]
+    combined_cmd = f"<code>{raw_command} {display_name}</code>"
     if count == 1:
         item = list(items)[0]
         return (
             f"{verb.capitalize()} <code>{item}</code> {singular} {prep} "
-            f"{command_path} <code>{display_name}</code> flag"
+            f"{combined_cmd} command"
         )
     res = (
-        f"{verb.capitalize()} {plural} {prep} {command_path} "
-        f"<code>{display_name}</code> flag:\n"
+        f"{verb.capitalize()} {plural} {prep} {combined_cmd} command:\n"
     )
     res += f"{base_indent}  <ul>\n"
     for i in sorted(items):
@@ -332,6 +332,7 @@ def generate_cli_bullets(curr_v, prev_v):
 
     for name in sorted(common_names):
         cp = f"<code>qq {name}</code>"
+        raw_cmd = f"qq {name}"
         c_obj, p_obj = c_c[name], p_c[name]
         cats = []
 
@@ -349,17 +350,17 @@ def generate_cli_bullets(curr_v, prev_v):
             p_choices = set(p_opt_objs[o_name].get("choices") or [])
             if c_choices - p_choices:
                 cats.append(
-                    format_choice_change_group(o_name, c_choices - p_choices, "added", cp, "        ")
+                    format_choice_change_group(o_name, c_choices - p_choices, "added", raw_cmd, "        ")
                 )
             if p_choices - c_choices:
                 cats.append(
-                    format_choice_change_group(o_name, p_choices - c_choices, "removed", cp, "        ")
+                    format_choice_change_group(o_name, p_choices - c_choices, "removed", raw_cmd, "        ")
                 )
 
         c_desc = (c_obj.get("description") or "").strip()
         p_desc = (p_obj.get("description") or "").strip()
         if c_desc != p_desc:
-            cats.append(f"Changed the description of {cp} command")
+            cats.append(f"Changed description of {cp} command")
 
         changed_help = set()
         for o_name in sorted(c_opt & p_opt):
@@ -370,19 +371,19 @@ def generate_cli_bullets(curr_v, prev_v):
         if changed_help:
             if len(changed_help) == 1:
                 item = list(changed_help)[0]
-                cats.append(f"Changed the help text for <code>{item}</code> flag in {cp} command")
+                cats.append(f"Changed help text for <code>{raw_cmd} {item}</code> command")
             else:
-                blk = f"Changed the help text for {cp} flags:\n"
+                blk = "Changed help text for the following commands:\n"
                 blk += "      <ul>\n"
                 for i in sorted(changed_help):
-                    blk += f"        <li><code>{i}</code></li>\n"
+                    blk += f"        <li><code>{raw_cmd} {i}</code></li>\n"
                 blk += "      </ul>"
                 cats.append(blk)
 
         if len(cats) == 1:
             modifications.append(cats[0])
         elif len(cats) > 1:
-            nested = f"Modified {cp}:\n      <ul>\n"
+            nested = f"Modified {cp} command:\n      <ul>\n"
             for cat in cats:
                 nested += f"        <li>{cat}</li>\n"
             nested += "      </ul>"
