@@ -173,7 +173,7 @@ S3 categorizes metadata as follows:
       <td>Tags</td>
       <td>
         Mutable metadata that doesn't impact the object's entity tag
-        {% include important.html content="Only tag values encoded by using UTF-8 are visible to the S3 API." %}
+        {% include important.html content="Only tag values encoded with UTF-8 are visible to the S3 API." %}
       </td>
       <td><a href="#keyspace"><code>GENERIC</code> keyspace</a></td>
     </tr>
