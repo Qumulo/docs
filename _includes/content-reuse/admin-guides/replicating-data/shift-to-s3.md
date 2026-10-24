@@ -387,7 +387,7 @@ We recommend the following best practices for working with Qumulo Shift-To for A
 
   To set the `Content-Type` value for a file before replicating the file, use the {% include qq.html command="fs_set_user_metadata" %} command with the `--well-known` flag.
 
-  For more information, see [Managing Well-Known Metadata by Using the qq CLI](../metadata/managing-user-defined-metadata.html#well-known).
+  For more information, see [Managing Well-Known Metadata by Using the qq CLI](../metadata/managing-user-defined-metadata.html#well-known-keyspace).
 
 * **File Path Limit:** The length of a file path must be shorter than 1,024 characters, including the configured object folder prefix, excluding the local directory path.
 

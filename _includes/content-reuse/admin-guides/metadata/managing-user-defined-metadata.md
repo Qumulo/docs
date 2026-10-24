@@ -16,7 +16,7 @@ The `GENERIC` and `S3` keyspaces can hold approximately 17 trillion key-value pa
 * The keyspace and key are required to create or access a {{site.udm.l}} entry.
 
 ### The WELL_KNOWN Keyspace {#well-known-keyspace}
-In Qumulo Core 7.10.2 (and higher), the `WELL_KNOWN` keyspace holds the [standard object headers](../s3-api/supported-s3-functionality-known-limits.html#standard-object-headers-special-considerations) that the S3 API stores and returns for an object. The keyspace has the following requirements:
+In Qumulo Core 7.10.2 (and higher), the `WELL_KNOWN` keyspace holds the [standard object headers](../s3-api/supported-s3-functionality-known-limits.html#special-considerations-standard-object-headers) that the S3 API stores and returns for an object. The keyspace has the following requirements:
 
 {% capture keyType %}
 <ul>
@@ -121,7 +121,7 @@ qq fs_delete_user_metadata \
 For more information, see {% include qq.html command="fs_delete_user_metadata" %} in the {{site.guides.cli}}.
 
 ### To Change Standard Object Headers by Using the qq CLI
-In Qumulo Core 7.10.2 (and higher), you can change the [standard object headers](../s3-api/supported-s3-functionality-known-limits.html#standard-object-headers-special-considerations) that the [`GetObject`]({{site.s3.actions.GetObject}}) and [`HeadObject`]({{site.s3.actions.HeadObject}}) S3 API actions returns for an object without rewriting the object.
+In Qumulo Core 7.10.2 (and higher), you can change the [standard object headers](../s3-api/supported-s3-functionality-known-limits.html#special-considerations-standard-object-headers) that the [`GetObject`]({{site.s3.actions.GetObject}}) and [`HeadObject`]({{site.s3.actions.HeadObject}}) S3 API actions returns for an object without rewriting the object.
 
 {% capture delKey %}Deleting the `content-type` key causes [`GetObject`]({{site.s3.actions.GetObject}}) and [`HeadObject`]({{site.s3.actions.HeadObject}}) API actions to return `Content-Type: binary/octet-stream` for the object.{% endcapture %}
 {% include note.html content=delKey %}
@@ -137,7 +137,7 @@ qq fs_set_user_metadata \
 ```
 
 ### To List Standard Object Headers by Using the qq CLI
-In Qumulo Core 7.10.2 (and higher), you can list the [standard object headers](../s3-api/supported-s3-functionality-known-limits.html#standard-object-headers-special-considerations) that the S3 API returns for an object without rewriting the object.
+In Qumulo Core 7.10.2 (and higher), you can list the [standard object headers](../s3-api/supported-s3-functionality-known-limits.html#special-considerations-standard-object-headers) that the S3 API returns for an object without rewriting the object.
 
 Run the {% include qq.html command="fs_list_user_metadata" %} command, specify the path to the object, and use the `--well-known` flag. For example:
 
