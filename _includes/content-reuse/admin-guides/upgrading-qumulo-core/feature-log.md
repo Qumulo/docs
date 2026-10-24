@@ -17,6 +17,32 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {{ nexusLink }}
 
 #### Features and Improvements
+{{site.data.alerts.important}}
+To improve standardization and consistency, this release introduces new aliases for existing qq CLI command names.
+All existing command names continue to function as before.
+For a full list of changes, see [Qumulo Core 7.10.3](https://docs.qumulo.com/qq-cli-command-guide/change-log.md#qumulo-core-7103) in the Qumulo qq CLI Change Log.
+{{site.data.alerts.important}}
+
+* **Cloud Data Fabric:**
+
+  * Configured spoke portals to show a cached view of hub portal root directory paths
+
+  * In the Qumulo Core Web UI, on the **Spoke Portal <N>** page, replaced the **Hub Directory ID** column with the **Hub Directory** column and made related changes to the REST API and `qq` CLI
+
+* **CNQ on GCP:** Added support for GCS Coldline Storage on new CNQ on GCP clusters
+
+* **Snapshot Policies:**
+
+  * Added the yearly schedule to snapshot policies and made related changes to the REST API and `qq` CLI
+
+  * Changed the monthly schedule to accept the 28th day of the month
+
+  * Added subcommands to the `qq snapshot_create_policy` and `qq month_of_year` commands
+
+* **Shift-To and Shift-From:** Configured Shift to&hellip;
+  * Correctly store and send the six AWS user-controlled system metadata headers for a file's object
+
+  * Behave in compliance with Amazon S3 specifications
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7103)
