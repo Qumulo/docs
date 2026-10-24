@@ -27,7 +27,7 @@ For a full list of changes, see <a href="https://docs.qumulo.com/qq-cli-command-
 
   * Configured spoke portals to show a cached view of hub portal root directory paths
 
-  * In the Qumulo Core Web UI, on the **Spoke Portal <N>** page, replaced the **Hub Directory ID** column with the **Hub Directory** column and made related changes to the REST API and `qq` CLI
+  * In the Qumulo Core Web UI, on the **Spoke Portal &lt;N&gt;** page, replaced the **Hub Directory ID** column with the **Hub Directory** column and made related changes to the REST API and `qq` CLI
 
 * **CNQ on GCP:** Added support for GCS Coldline Storage on new CNQ on GCP clusters
 
