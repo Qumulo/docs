@@ -42,6 +42,7 @@ CMA
 CMEKs
 CMS
 CNQ
+Coldline
 CPUs
 CRC
 CSI
@@ -298,6 +299,7 @@ SSO
 StartTLS
 stateful
 subcommand
+subcommands
 Subnet
 subnets
 subtree
