@@ -1,7 +1,7 @@
 <style>div#toc{height:200px;overflow:auto;}</style>
 {% capture nexusLink %}<p>{{site.downloadsRelnotes}}{{site.loginRequired}}</p>{% endcapture %}
 {% comment %}For boilerplate text, use {{page.varNoPublicChanges}}{% endcomment %}
-{% capture majFixInt %}The majority of functionality and stability improvements in this Qumulo Core release are internal.{% endcapture %}
+{% capture majFixInt %}{{ site.fixedInLatest }} <span class="fixed-in-latest">The majority of functionality and stability improvements in this Qumulo Core release are internal.</span>{% endcapture %}
 {% capture noAPIchanges %}This release contains no REST API changes.{% endcapture %}
 {% capture platUpg %}This release of Qumulo Core is a _platform upgrade_ that requires either a complete reboot (rebooting all nodes in your cluster at the same time) or a rolling reboot (rebooting the nodes in your cluster one at a time).{% endcapture %}
 
@@ -14,15 +14,18 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 ## 7.10 Releases
 
-### Qumulo Core 7.10.2
+### Qumulo Core 7.10.2.1
 {{ nexusLink }}
 
+{{site.data.alerts.important}}
+{{ majFixInt }}
+{{site.data.alerts.end}}
 * **S3 API:** Configured the Qumulo S3 API to store and return the six AWS user-controlled system metadata headers
 * **Cloud Data Fabric (CDF):** Resolved performance issues for NFS delete operations on portal spokes
 * **General Improvements:** Updated Qumulo Core to Time Zone Database Release 2026e
 
 #### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7102)
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71021)
 
 
 ### Qumulo Core 7.10.1.3
@@ -37,7 +40,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
     </ul>{% endcapture %}
 {{site.data.alerts.important}}
 <ul>
-  <li>{{ site.fixedInLatest }} <span class="fixed-in-latest">{{ majFixInt }}</span></li>
+  <li>{{ majFixInt }}</li>
   <li>
     This release&hellip;
     <ul>
@@ -62,7 +65,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
   * LDAP lookups and distinguished names containing a comma (`,`)
 
 #### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71012)
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71013)
 
 
 ### Qumulo Core 7.10.0.3 (Quarterly)
@@ -71,7 +74,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 #### Features and Improvements
 {{site.data.alerts.important}}
 <ul>
-  <li>{{ site.fixedInLatest }} <span class="fixed-in-latest">{{ majFixInt }}</span></li>
+  <li>{{ majFixInt }}</li>
   <li>
     This release&hellip;
     <ul>
@@ -95,7 +98,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * **REST API:** Made improvements to Analytics and Files endpoints
 
 #### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71002-quarterly)
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71003-quarterly)
 
 
 ## 7.9 Releases

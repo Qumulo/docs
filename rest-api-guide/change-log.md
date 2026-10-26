@@ -13,7 +13,7 @@ layout: page
 
 ## 7.10 Releases
 
-### Qumulo Core 7.10.2
+### Qumulo Core 7.10.2.1
 {{ nexusLink }}
 <ul>
   <li>Added <code>WELL_KNOWN</code> enum value to <code>type</code> field in <code>GET /v1/files/{ref}/user-metadata/</code> response</li>
