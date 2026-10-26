@@ -25,7 +25,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7102)
 
 
-### Qumulo Core 7.10.1.2
+### Qumulo Core 7.10.1.3
 {{ nexusLink }}
 
 #### Features and Improvements
@@ -37,6 +37,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
     </ul>{% endcapture %}
 {{site.data.alerts.important}}
 <ul>
+  <li>{{ site.fixedInLatest }} <span class="fixed-in-latest">{{ majFixInt }}</span></li>
   <li>
     This release&hellip;
     <ul>
