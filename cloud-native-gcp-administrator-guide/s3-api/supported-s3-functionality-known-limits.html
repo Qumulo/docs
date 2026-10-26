@@ -2866,7 +2866,7 @@ $(document).ready(function() {
 <h4 id="default-header-values">Default Header Values</h4>
 <ul>
   <li>
-    <p><strong><code class="language-plaintext highlighter-rouge">Content-Type</code>:</strong> If an object has no stored <code class="language-plaintext highlighter-rouge">Content-Type</code> value (for example, if it is a file written by using NFS or SMB or an object written by using a version of Qumulo Core lower than 7.10.2), the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"><code class="language-plaintext highlighter-rouge">GetObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html"><code class="language-plaintext highlighter-rouge">HeadObject</code></a> API actions return <code class="language-plaintext highlighter-rouge">Content-Type: binary/octet-stream</code>.</p>
+    <p><strong><code class="language-plaintext highlighter-rouge">Content-Type</code>:</strong> If an object has no stored <code class="language-plaintext highlighter-rouge">Content-Type</code> value (for example, if it is a file written by using NFS or SMB or an object written by using a version of Qumulo Core lower than 7.10.2.1), the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"><code class="language-plaintext highlighter-rouge">GetObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html"><code class="language-plaintext highlighter-rouge">HeadObject</code></a> API actions return <code class="language-plaintext highlighter-rouge">Content-Type: binary/octet-stream</code>.</p>
   </li>
   <li>
     <p><strong><code class="language-plaintext highlighter-rouge">Content-Encoding</code>:</strong> The AWS SDK adds <code class="language-plaintext highlighter-rouge">aws-chunked</code> to the <code class="language-plaintext highlighter-rouge">Content-Encoding</code> header of streaming uploads. Following Amazon S3 behavior, Qumulo Core removes <code class="language-plaintext highlighter-rouge">aws-chunked</code> from the stored value. If no other <code class="language-plaintext highlighter-rouge">Content-Encoding</code> value remains, Qumulo doesn’t store this header.</p>
@@ -2876,7 +2876,7 @@ $(document).ready(function() {
 <h4 id="header-storage">Header Storage</h4>
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
 <ul>
-  <li>In Qumulo Core 7.10.2 (and higher), the S3 API stores the <a target="_blank" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingMetadata.html#SysMetadata">system-defined metadata headers that users can control</a> and returns them in the responses of <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"><code>GetObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html"><code>HeadObject</code></a> API actions.</li>
+  <li>In Qumulo Core 7.10.2.1 (and higher), the S3 API stores the <a target="_blank" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingMetadata.html#SysMetadata">system-defined metadata headers that users can control</a> and returns them in the responses of <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"><code>GetObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html"><code>HeadObject</code></a> API actions.</li>
   <li>Lower versions of Qumulo Core accept these headers, don't store them, and return <code>Content-Type: binary/octet-stream</code> for every object.</li>
 </ul>
 </div>
@@ -2911,10 +2911,10 @@ $(document).ready(function() {
 <h4 id="header-replication">Header Replication</h4>
 <ul>
   <li>
-    <p>Qumulo Core <a href="../replicating-data/creating-managing-continuous-replication-relationship.html">continuous replication</a> copies the stored headers only to target clusters that run Qumulo Core 7.10.2 (or higher).</p>
+    <p>Qumulo Core <a href="../replicating-data/creating-managing-continuous-replication-relationship.html">continuous replication</a> copies the stored headers only to target clusters that run Qumulo Core 7.10.2.1 (or higher).</p>
   </li>
   <li>
-    <p>In Qumulo Core 7.10.2…</p>
+    <p>In Qumulo Core 7.10.2.1…</p>
 
     <ul>
       <li>
@@ -3049,7 +3049,7 @@ Qumulo Core returns the <code>InvalidRequest</code> error when&hellip;
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
 <ul>    
   <li>The size limits for user-defined metadata and for standard object headers are completely separate.</li>
-  <li>In Qumulo Core 7.10.2 (and higher), a request whose user-defined metadata or standard object headers exceed the size limit returns the <code>MetadataTooLarge</code> error.</li>
+  <li>In Qumulo Core 7.10.2.1 (and higher), a request whose user-defined metadata or standard object headers exceed the size limit returns the <code>MetadataTooLarge</code> error.</li>
   <li>A request with more than 100 user-defined metadata entries returns the <code>QumuloUserMetadataLimitExceeded</code> error.</li>
 </ul>   
 </div>
