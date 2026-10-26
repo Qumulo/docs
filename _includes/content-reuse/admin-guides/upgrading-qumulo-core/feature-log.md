@@ -232,12 +232,13 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7913)
 
 
-### Qumulo Core 7.9.0.4 (Quarterly)
+### Qumulo Core 7.9.0.5 (Quarterly)
 {{ nexusLink }}
 
 #### Features and Improvements
 {{site.data.alerts.important}}
 <ul>
+  <li>{{ majFixInt }}</li>
   <li>
     This release makes critical improvements:
     <ul>

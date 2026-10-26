@@ -58,7 +58,7 @@ For information about the most important features from each release, click the Q
       <td class="instant">Instant</td>
     </tr>
     <tr>
-      <td><a href="feature-log.html#qumulo-core-7904-quarterly">7.9.0.4</a></td>
+      <td><a href="feature-log.html#qumulo-core-7905-quarterly">7.9.0.5</a></td>
       <td><span class="emoji">✅</span></td>      
       <td class="platform">Platform</td>
     </tr>

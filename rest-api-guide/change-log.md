@@ -497,7 +497,7 @@ layout: page
   <li>Added <code>lock</code> parameter to <code>PATCH /v1/files/{ref}/info/attributes</code> response</li>
 </ul>
 
-### Qumulo Core 7.9.0.4 (Quarterly)
+### Qumulo Core 7.9.0.5 (Quarterly)
 {{ nexusLink }}
 <ul>
   <li>Removed <code>/v1/snapshots/calculate-used-capacity</code> endpoint</li>
