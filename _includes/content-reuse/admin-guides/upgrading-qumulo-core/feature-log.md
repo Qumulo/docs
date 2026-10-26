@@ -1,6 +1,7 @@
 <style>div#toc{height:200px;overflow:auto;}</style>
 {% capture nexusLink %}<p>{{site.downloadsRelnotes}}{{site.loginRequired}}</p>{% endcapture %}
 {% comment %}For boilerplate text, use {{page.varNoPublicChanges}}{% endcomment %}
+{% capture majFixInt %}The majority of functionality and stability improvements in this Qumulo Core release are internal.{% endcapture %}
 {% capture noAPIchanges %}This release contains no REST API changes.{% endcapture %}
 {% capture platUpg %}This release of Qumulo Core is a _platform upgrade_ that requires either a complete reboot (rebooting all nodes in your cluster at the same time) or a rolling reboot (rebooting the nodes in your cluster one at a time).{% endcapture %}
 
@@ -63,12 +64,13 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71012)
 
 
-### Qumulo Core 7.10.0.2 (Quarterly)
+### Qumulo Core 7.10.0.3 (Quarterly)
 {{ nexusLink }}
 
 #### Features and Improvements
 {{site.data.alerts.important}}
 <ul>
+  <li>{{ site.fixedInLatest }} <span class="fixed-in-latest">{{ majFixInt }}</span></li>
   <li>
     This release&hellip;
     <ul>

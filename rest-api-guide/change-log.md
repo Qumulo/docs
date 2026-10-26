@@ -436,7 +436,7 @@ layout: page
   </ul>
 </details>
 
-### Qumulo Core 7.10.0.2 (Quarterly)
+### Qumulo Core 7.10.0.3 (Quarterly)
 {{ nexusLink }}
 <ul>
   <li>Added <code>POST /v1/files/try-resolve</code> endpoint</li>
