@@ -1,6 +1,7 @@
 <style>div#toc{height:200px;overflow:auto;}</style>
 {% capture nexusLink %}<p>{{site.downloadsRelnotes}}{{site.loginRequired}}</p>{% endcapture %}
 {% comment %}For boilerplate text, use {{page.varNoPublicChanges}}{% endcomment %}
+{% capture majFixInt %}{{ site.fixedInLatest }} <span class="fixed-in-latest">The majority of functionality and stability improvements in this Qumulo Core release are internal.</span>{% endcapture %}
 {% capture noAPIchanges %}This release contains no REST API changes.{% endcapture %}
 {% capture platUpg %}This release of Qumulo Core is a _platform upgrade_ that requires either a complete reboot (rebooting all nodes in your cluster at the same time) or a rolling reboot (rebooting the nodes in your cluster one at a time).{% endcapture %}
 
@@ -49,19 +50,22 @@ For a full list of changes, see <a href="https://docs.qumulo.com/qq-cli-command-
 * [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7103)
 
 
-### Qumulo Core 7.10.2
+### Qumulo Core 7.10.2.1
 {{ nexusLink }}
 
+{{site.data.alerts.important}}
+{{ majFixInt }}
+{{site.data.alerts.end}}
 * **S3 API:** Configured the Qumulo S3 API to store and return the six AWS user-controlled system metadata headers
 * **Cloud Data Fabric (CDF):** Resolved performance issues for NFS delete operations on portal spokes
 * **General Improvements:** Updated Qumulo Core to Time Zone Database Release 2026e
 
 #### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7102)
-* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7102)
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71021)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-71021)
 
 
-### Qumulo Core 7.10.1.2
+### Qumulo Core 7.10.1.3
 {{ nexusLink }}
 
 #### Features and Improvements
@@ -73,6 +77,7 @@ For a full list of changes, see <a href="https://docs.qumulo.com/qq-cli-command-
     </ul>{% endcapture %}
 {{site.data.alerts.important}}
 <ul>
+  <li>{{ majFixInt }}</li>
   <li>
     This release&hellip;
     <ul>
@@ -97,16 +102,17 @@ For a full list of changes, see <a href="https://docs.qumulo.com/qq-cli-command-
   * LDAP lookups and distinguished names containing a comma (`,`)
 
 #### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71012)
-* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-71012)
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71013)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-71013)
 
 
-### Qumulo Core 7.10.0.2 (Quarterly)
+### Qumulo Core 7.10.0.3 (Quarterly)
 {{ nexusLink }}
 
 #### Features and Improvements
 {{site.data.alerts.important}}
 <ul>
+  <li>{{ majFixInt }}</li>
   <li>
     This release&hellip;
     <ul>
@@ -130,8 +136,8 @@ For a full list of changes, see <a href="https://docs.qumulo.com/qq-cli-command-
 * **REST API:** Made improvements to Analytics and Files endpoints
 
 #### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71002-quarterly)
-* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-71002-quarterly)
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71003-quarterly)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-71003-quarterly)
 
 
 ## 7.9 Releases
@@ -269,12 +275,13 @@ For a full list of changes, see <a href="https://docs.qumulo.com/qq-cli-command-
 * [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7913)
 
 
-### Qumulo Core 7.9.0.4 (Quarterly)
+### Qumulo Core 7.9.0.5 (Quarterly)
 {{ nexusLink }}
 
 #### Features and Improvements
 {{site.data.alerts.important}}
 <ul>
+  <li>{{ majFixInt }}</li>
   <li>
     This release makes critical improvements:
     <ul>
@@ -393,8 +400,8 @@ For a full list of changes, see <a href="https://docs.qumulo.com/qq-cli-command-
   * Resolved an issue with the {% include qq.html command="fs_list_locks" %} command when using the `--protocol smb --lock-type share-mode` flags
 
 #### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7904-quarterly)
-* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7904-quarterly)
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7905-quarterly)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7905-quarterly)
 
 
 ## 7.8 Releases

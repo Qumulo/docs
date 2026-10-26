@@ -259,14 +259,14 @@ layout: page
   </ul>
 </details>
 
-### Qumulo Core 7.10.2
+### Qumulo Core 7.10.2.1
 {{ nexusLink }}
 <ul>
   <li>Added <code>WELL_KNOWN</code> enum value to <code>type</code> field in <code>GET /v1/files/{ref}/user-metadata/</code> response</li>
   <li>Added <code>WELL_KNOWN</code> enum value to <code>type</code> field in <code>GET /v1/files/{ref}/user-metadata/{type}/</code> response</li>
 </ul>
 
-### Qumulo Core 7.10.1.2
+### Qumulo Core 7.10.1.3
 {{ nexusLink }}
 <ul>
   <li>Added <code>GET | POST /v1/object-portal/bridges/</code> endpoint</li>
@@ -682,7 +682,7 @@ layout: page
   </ul>
 </details>
 
-### Qumulo Core 7.10.0.2 (Quarterly)
+### Qumulo Core 7.10.0.3 (Quarterly)
 {{ nexusLink }}
 <ul>
   <li>Added <code>POST /v1/files/try-resolve</code> endpoint</li>
@@ -743,7 +743,7 @@ layout: page
   <li>Added <code>lock</code> parameter to <code>PATCH /v1/files/{ref}/info/attributes</code> response</li>
 </ul>
 
-### Qumulo Core 7.9.0.4 (Quarterly)
+### Qumulo Core 7.9.0.5 (Quarterly)
 {{ nexusLink }}
 <ul>
   <li>Removed <code>/v1/snapshots/calculate-used-capacity</code> endpoint</li>

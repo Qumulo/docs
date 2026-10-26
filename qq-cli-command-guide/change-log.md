@@ -396,7 +396,7 @@ layout: page
   </ul>
 </details>
 
-### Qumulo Core 7.10.2
+### Qumulo Core 7.10.2.1
 {{ nexusLink }}
 
 <ul>
@@ -451,7 +451,7 @@ layout: page
   </ul>
 </details>
 
-### Qumulo Core 7.10.1.2
+### Qumulo Core 7.10.1.3
 {{ nexusLink }}
 
 <ul>
@@ -600,7 +600,7 @@ layout: page
   </ul>
 </details>
 
-### Qumulo Core 7.10.0.2 (Quarterly)
+### Qumulo Core 7.10.0.3 (Quarterly)
 {{ nexusLink }}
 
 <ul>
@@ -744,7 +744,7 @@ layout: page
   </li>
 </ul>
 
-### Qumulo Core 7.9.0.4 (Quarterly)
+### Qumulo Core 7.9.0.5 (Quarterly)
 {{ nexusLink }}
 
 <ul>

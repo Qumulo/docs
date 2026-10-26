@@ -423,14 +423,14 @@ Qumulo Core stores each kind of S3 object metadata as [{{site.udm.l}}](../metada
 This section describes the special considerations for how default header values, header storage and replication, and response header overrides work in Qumulo Core.
 
 #### Default Header Values
-* **`Content-Type`:** If an object has no stored `Content-Type` value (for example, if it is a file written by using NFS or SMB or an object written by using a version of Qumulo Core lower than 7.10.2), the [`GetObject`]({{site.s3.actions.GetObject}}) and [`HeadObject`]({{site.s3.actions.HeadObject}}) API actions return `Content-Type: binary/octet-stream`.
+* **`Content-Type`:** If an object has no stored `Content-Type` value (for example, if it is a file written by using NFS or SMB or an object written by using a version of Qumulo Core lower than 7.10.2.1), the [`GetObject`]({{site.s3.actions.GetObject}}) and [`HeadObject`]({{site.s3.actions.HeadObject}}) API actions return `Content-Type: binary/octet-stream`.
 
 * **`Content-Encoding`:** The AWS SDK adds `aws-chunked` to the `Content-Encoding` header of streaming uploads. Following Amazon S3 behavior, Qumulo Core removes `aws-chunked` from the stored value. If no other `Content-Encoding` value remains, Qumulo doesn't store this header.
 
 #### Header Storage
 {{site.data.alerts.note}}
 <ul>
-  <li>In Qumulo Core 7.10.2 (and higher), the S3 API stores the <a target="_blank" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingMetadata.html#SysMetadata">system-defined metadata headers that users can control</a> and returns them in the responses of <a href="{{site.s3.actions.GetObject}}"><code>GetObject</code></a> and <a href="{{site.s3.actions.HeadObject}}"><code>HeadObject</code></a> API actions.</li>
+  <li>In Qumulo Core 7.10.2.1 (and higher), the S3 API stores the <a target="_blank" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingMetadata.html#SysMetadata">system-defined metadata headers that users can control</a> and returns them in the responses of <a href="{{site.s3.actions.GetObject}}"><code>GetObject</code></a> and <a href="{{site.s3.actions.HeadObject}}"><code>HeadObject</code></a> API actions.</li>
   <li>Lower versions of Qumulo Core accept these headers, don't store them, and return <code>Content-Type: binary/octet-stream</code> for every object.</li>
 </ul>
 {{site.data.alerts.end}}
@@ -448,9 +448,9 @@ This section describes the special considerations for how default header values,
   * When you set the `x-amz-metadata-directive` header to `REPLACE`, Qumulo Core stores the standard headers and {{site.udm.l}} from the request of the [`CopyObject`]({{site.s3.actions.CopyObject}}) API action.
 
 #### Header Replication
-* Qumulo Core [continuous replication](../replicating-data/creating-managing-continuous-replication-relationship.html) copies the stored headers only to target clusters that run Qumulo Core 7.10.2 (or higher).
+* Qumulo Core [continuous replication](../replicating-data/creating-managing-continuous-replication-relationship.html) copies the stored headers only to target clusters that run Qumulo Core 7.10.2.1 (or higher).
 
-* In Qumulo Core 7.10.2&hellip;
+* In Qumulo Core 7.10.2.1&hellip;
 
   * [Qumulo Shift-To](../replicating-data/shift-to-s3.html) doesn't send the stored headers to Amazon S3.
 
@@ -563,7 +563,7 @@ This section lists the known minimum and maximum limits for S3 objects.
 {{site.data.alerts.note}}
 <ul>    
   <li>The size limits for {{site.udm.l}} and for standard object headers are completely separate.</li>
-  <li>In Qumulo Core 7.10.2 (and higher), a request whose {{site.udm.l}} or standard object headers exceed the size limit returns the <code>MetadataTooLarge</code> error.</li>
+  <li>In Qumulo Core 7.10.2.1 (and higher), a request whose {{site.udm.l}} or standard object headers exceed the size limit returns the <code>MetadataTooLarge</code> error.</li>
   <li>A request with more than 100 {{site.udm.l}} entries returns the <code>QumuloUserMetadataLimitExceeded</code> error.</li>
 </ul>   
 {{site.data.alerts.end}}

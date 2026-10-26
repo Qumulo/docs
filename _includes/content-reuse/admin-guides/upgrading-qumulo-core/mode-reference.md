@@ -21,17 +21,17 @@ For information about the most important features from each release, click the Q
       <td class="instant">Instant</td>
     </tr>
     <tr>
-      <td><a href="feature-log.html#qumulo-core-7102">7.10.2</a></td>
+      <td><a href="feature-log.html#qumulo-core-71021">7.10.2.1</a></td>
       <td></td>
       <td class="instant">Instant</td>
     </tr>
     <tr>
-      <td><a href="feature-log.html#qumulo-core-71012">7.10.1.2</a></td>
+      <td><a href="feature-log.html#qumulo-core-71013">7.10.1.3</a></td>
       <td></td>
       <td class="instant">Instant</td>
     </tr>
     <tr>
-      <td><a href="feature-log.html#qumulo-core-71002-quarterly">7.10.0.2</a></td>
+      <td><a href="feature-log.html#qumulo-core-71003-quarterly">7.10.0.3</a></td>
       <td><span class="emoji">✅</span></td>
       <td class="instant">Instant</td>
     </tr>
@@ -63,7 +63,7 @@ For information about the most important features from each release, click the Q
       <td class="instant">Instant</td>
     </tr>
     <tr>
-      <td><a href="feature-log.html#qumulo-core-7904-quarterly">7.9.0.4</a></td>
+      <td><a href="feature-log.html#qumulo-core-7905-quarterly">7.9.0.5</a></td>
       <td><span class="emoji">✅</span></td>      
       <td class="platform">Platform</td>
     </tr>
