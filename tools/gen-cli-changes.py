@@ -796,7 +796,7 @@ def main():
 
     versions_list = sorted(list(versions_to_fetch), key=parse_version_tuple, reverse=True)
     with ThreadPoolExecutor(max_workers=4) as exe:
-        list(tqdm(exe.map(lambda v: fetch_version(v, args.no_cache), versions_list), total=len(versions_list), desc="Introspecting CLI"))
+        list(tqdm(exe.map(lambda v: fetch_version(v, args.no_cache), versions_list), total=len(versions_list), desc=""))
 
     version_blocks = re.split(r"(\n### Qumulo Core \d+\.\d+\.\d+.*?\n)", body_content)
     processed_body = [version_blocks[0]]
