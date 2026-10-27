@@ -718,6 +718,7 @@ ingest_documentation() {
 
 # Ingest docs.qumulo.com into Vectara corpus 2
 ingest_docs_portal() {
+    local start_time=$SECONDS
     start_in_docs_dir
     echo "Ingesting docs.qumulo.com into Vectara corpus 2..."
     no_toolchain
@@ -733,6 +734,8 @@ ingest_docs_portal() {
 #      ingest_documentation "qumulo-documentation-portal.yaml"
 #    fi
     docker logs -f vingest-qumulo-documentation-portal
+    local duration=$(( SECONDS - start_time ))
+    echo "Completed in $(( duration / 60 ))m $(( duration % 60 ))s (${duration}s total)"
 }
 
 # Ingest care.qumulo.com into Vectara corpus 4
