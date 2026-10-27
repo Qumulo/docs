@@ -724,13 +724,14 @@ ingest_docs_portal() {
     check_vectara_ingest_repo
     check_secrets_toml
     check_qumulo_config_files
-    if [[ "$(hostname)" == *"plena-lucis"* ]]; then
-      ingest_documentation "qumulo-documentation-portal.yaml"
-    else
-      NUM_PROCS=$(printf "%.${2:-0}f" "$(bc <<< "0.625*$(nproc)")")
-      sed -i "s/^  ray_workers:.*/  ray_workers: ${NUM_PROCS}/" ~/git/vectara-ingest/config/qumulo-documentation-portal.yaml
-      ingest_documentation "qumulo-documentation-portal.yaml"
-    fi
+    ingest_documentation "qumulo-documentation-portal.yaml"
+#    if [[ "$(hostname)" == *"plena-lucis"* ]]; then
+#      ingest_documentation "qumulo-documentation-portal.yaml"
+#    else
+#      NUM_PROCS=$(printf "%.${2:-0}f" "$(bc <<< "0.625*$(nproc)")")
+#      sed -i "s/^  ray_workers:.*/  ray_workers: ${NUM_PROCS}/" ~/git/vectara-ingest/config/qumulo-documentation-portal.yaml
+#      ingest_documentation "qumulo-documentation-portal.yaml"
+#    fi
     docker logs -f vingest-qumulo-documentation-portal
 }
 
