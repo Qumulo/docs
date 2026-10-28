@@ -726,13 +726,6 @@ ingest_docs_portal() {
     check_secrets_toml
     check_qumulo_config_files
     ingest_documentation "qumulo-documentation-portal.yaml"
-#    if [[ "$(hostname)" == *"plena-lucis"* ]]; then
-#      ingest_documentation "qumulo-documentation-portal.yaml"
-#    else
-#      NUM_PROCS=$(printf "%.${2:-0}f" "$(bc <<< "0.625*$(nproc)")")
-#      sed -i "s/^  ray_workers:.*/  ray_workers: ${NUM_PROCS}/" ~/git/vectara-ingest/config/qumulo-documentation-portal.yaml
-#      ingest_documentation "qumulo-documentation-portal.yaml"
-#    fi
     docker logs -f vingest-qumulo-documentation-portal
     local duration=$(( SECONDS - start_time ))
     echo "Completed in $(( duration / 60 ))m $(( duration % 60 ))s (${duration}s total)"
@@ -740,38 +733,32 @@ ingest_docs_portal() {
 
 # Ingest care.qumulo.com into Vectara corpus 4
 ingest_care_portal() {
+    local start_time=$SECONDS
     start_in_docs_dir
     echo "Ingesting care.qumulo.com into Vectara..."
     no_toolchain
     check_vectara_ingest_repo
     check_secrets_toml
     check_qumulo_config_files
-    if [[ "$(hostname)" == *"plena-lucis"* ]]; then
-      ingest_documentation "qumulo-care.yaml"
-    else
-      NUM_PROCS=$(printf "%.${2:-0}f" "$(bc <<< "0.625*$(nproc)")")
-      sed -i "s/^  ray_workers:.*/  ray_workers: ${NUM_PROCS}/" ~/git/vectara-ingest/config/qumulo-care.yaml
-      ingest_documentation "qumulo-care.yaml"
-    fi
+    ingest_documentation "qumulo-care.yaml"
     docker logs -f vingest-qumulo-care
+    local duration=$(( SECONDS - start_time ))
+    echo "Completed in $(( duration / 60 ))m $(( duration % 60 ))s (${duration}s total)"
 }
 
 # Ingest qumulo.com into Vectara corpus 5
 ingest_corp_site() {
+    local start_time=$SECONDS
     start_in_docs_dir
     echo "Ingesting docs.qumulo.com into Vectara..."
     no_toolchain
     check_vectara_ingest_repo
     check_secrets_toml
     check_qumulo_config_files
-    if [[ "$(hostname)" == *"plena-lucis"* ]]; then
-      ingest_documentation "qumulo-main.yaml"
-    else
-      NUM_PROCS=$(printf "%.${2:-0}f" "$(bc <<< "0.625*$(nproc)")")
-      sed -i "s/^  ray_workers:.*/  ray_workers: ${NUM_PROCS}/" ~/git/vectara-ingest/config/qumulo-main.yaml
-      ingest_documentation "qumulo-main.yaml"
-    fi
-    docker logs -f vingest-qumulo-main
+    ingest_documentation "qumulo-main.yaml"
+    docker logs -f vingest-qumulo-care
+    local duration=$(( SECONDS - start_time ))
+    echo "Completed in $(( duration / 60 ))m $(( duration % 60 ))s (${duration}s total)"
 }
 
 # Check ingestion status
