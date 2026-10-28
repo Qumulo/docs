@@ -756,7 +756,7 @@ ingest_corp_site() {
     check_secrets_toml
     check_qumulo_config_files
     ingest_documentation "qumulo-main.yaml"
-    docker logs -f vingest-qumulo-care
+    docker logs -f vingest-qumulo-main
     local duration=$(( SECONDS - start_time ))
     echo "Completed in $(( duration / 60 ))m $(( duration % 60 ))s (${duration}s total)"
 }
