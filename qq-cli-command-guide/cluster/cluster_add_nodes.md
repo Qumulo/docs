@@ -47,8 +47,13 @@ summary: This section explains how to use the <code>qq cluster_add_nodes</code> 
 synopsis: Add unconfigured nodes to a Qumulo cluster
 title: qq cluster_add_nodes
 usage: "qq cluster_add_nodes [-h] (--node-uuids NODE_UUIDS [NODE_UUIDS ...] | --node-ips\
+<<<<<<< Updated upstream
   \ NODE_IPS [NODE_IPS ...] | --all-unconfigured) [--target-stripe-config BLOCKS_PER_STRIPE\
   \ DATA_BLOCKS_PER_STRIPE]\n    [--target-max-node-failures TARGET_MAX_NODE_FAILURES]\
+=======
+  \ NODE_IPS [NODE_IPS ...] | --all-unconfigured)\n    [--target-stripe-config BLOCKS_PER_STRIPE\
+  \ DATA_BLOCKS_PER_STRIPE] [--target-max-node-failures TARGET_MAX_NODE_FAILURES]\
+>>>>>>> Stashed changes
   \ [--dry-run] [--batch]"
 zendesk_source: qq CLI Command Guide
 

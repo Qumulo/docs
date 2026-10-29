@@ -76,9 +76,16 @@ sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq nfs_create_export</code> command.
 synopsis: Add a new NFS export
 title: qq nfs_create_export
+<<<<<<< Updated upstream
 usage: qq nfs_create_export [-h] --export-path EXPORT_PATH --fs-path FS_PATH [--tenant-id
   TENANT_ID] [--description DESCRIPTION] (--no-restrictions | --restrictions JSON_FILE_PATH)
   [--create-fs-path] [--fields-to-present-as-32-bit FIELD [FIELD ...]]
+=======
+usage: "qq nfs_create_export [-h] --export-path EXPORT_PATH --fs-path FS_PATH [--tenant-id\
+  \ TENANT_ID] [--description DESCRIPTION]\n    (--no-restrictions | --restrictions\
+  \ JSON_FILE_PATH) [--create-fs-path] [--fields-to-present-as-32-bit FIELD [FIELD\
+  \ ...]]"
+>>>>>>> Stashed changes
 zendesk_source: qq CLI Command Guide
 
 ---

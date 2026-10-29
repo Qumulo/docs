@@ -51,7 +51,11 @@ synopsis: Creates a Qumulo Data-Core Cluster
 title: qq cluster_create_data_core
 usage: "qq cluster_create_data_core [-h] --cluster-name CLUSTER_NAME [--admin-password\
   \ ADMIN_PASSWORD] [--accept-eula] [--reject-eula] [--node-uuids NODE_UUIDS [NODE_UUIDS\
+<<<<<<< Updated upstream
   \ ...]] [--blocks-per-stripe BLOCKS_PER_STRIPE]\n    [--max-drive-failures MAX_DRIVE_FAILURES]\
+=======
+  \ ...]]\n    [--blocks-per-stripe BLOCKS_PER_STRIPE] [--max-drive-failures MAX_DRIVE_FAILURES]\
+>>>>>>> Stashed changes
   \ [--max-node-failures MAX_NODE_FAILURES] [--all-unconfigured]"
 zendesk_source: qq CLI Command Guide
 

@@ -68,10 +68,18 @@ summary: This section explains how to use the <code>qq cluster_create_object_bac
 synopsis: Creates a Qumulo Object Backed Cluster
 title: qq cluster_create_object_backed_cluster
 usage: "qq cluster_create_object_backed_cluster [-h] --cluster-name CLUSTER_NAME [--admin-password\
+<<<<<<< Updated upstream
   \ ADMIN_PASSWORD] --host-instance-id HOST_INSTANCE_ID --object-storage-uris OBJECT_STORAGE_URIS\
   \ [OBJECT_STORAGE_URIS ...] --usable-capacity-clamp\n    USABLE_CAPACITY_CLAMP --product-type\
   \ PRODUCT_TYPE [--node-ips-and-fault-domains NODE_IPS_AND_FAULT_DOMAINS [NODE_IPS_AND_FAULT_DOMAINS\
   \ ...]] --accept-eula\n    [--azure-key-vault-uri KEY_VAULT | --key-vault KEY_VAULT]"
+=======
+  \ ADMIN_PASSWORD] --host-instance-id HOST_INSTANCE_ID --object-storage-uris\n  \
+  \  OBJECT_STORAGE_URIS [OBJECT_STORAGE_URIS ...] --usable-capacity-clamp USABLE_CAPACITY_CLAMP\
+  \ --product-type PRODUCT_TYPE\n    [--node-ips-and-fault-domains NODE_IPS_AND_FAULT_DOMAINS\
+  \ [NODE_IPS_AND_FAULT_DOMAINS ...]] --accept-eula\n    [--azure-key-vault-uri KEY_VAULT\
+  \ | --key-vault KEY_VAULT]"
+>>>>>>> Stashed changes
 zendesk_source: qq CLI Command Guide
 
 ---
