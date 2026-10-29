@@ -127,10 +127,6 @@ summary: This section explains how to use the <code>qq smb_create_share</code> c
 synopsis: Add a new SMB share
 title: qq smb_create_share
 usage: "qq smb_create_share [-h] [--tenant-id TENANT_ID] --name NAME --fs-path FS_PATH\
-  \ [--description DESCRIPTION] [--access-based-enumeration-enabled {true,false}]\n\
-  \    [--create-fs-path] [--expand-fs-path-variables] [--default-file-create-mode\
-  \ DEFAULT_FILE_CREATE_MODE]\n    [--default-directory-create-mode DEFAULT_DIRECTORY_CREATE_MODE]\
-  \ [--require-encryption {true,false}]\n    [--offline-files-caching-mode {no_caching,manual_caching,automatic_caching}]\
   \ [--json] [--no-access | --read-only | --all-access]\n    [--grant-read-access\
   \ TRUSTEE [TRUSTEE ...]] [--grant-read-write-access TRUSTEE [TRUSTEE ...]] [--grant-all-access\
   \ TRUSTEE [TRUSTEE ...]]\n    [--deny-access TRUSTEE [TRUSTEE ...]] [--full-control-hosts\
