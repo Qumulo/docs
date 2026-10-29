@@ -44,15 +44,9 @@ synopsis: Replace the specified key without affecting the snapshots and snapshot
   associated with it.
 title: qq encryption_replace_key
 usage: "qq encryption_replace_key [-h] -k KEY [--old-private-key-file OLD_PRIVATE_KEY_FILE]\
-<<<<<<< Updated upstream
-  \ [--replacement-private-key-file REPLACEMENT_PRIVATE_KEY_FILE] [--replacement-public-key\
-  \ REPLACEMENT_PUBLIC_KEY]\n    [--old-key-verification-signature OLD_KEY_VERIFICATION_SIGNATURE]\
-  \ [--replacement-key-verification-signature REPLACEMENT_KEY_VERIFICATION_SIGNATURE]\
-=======
   \ [--replacement-private-key-file REPLACEMENT_PRIVATE_KEY_FILE]\n    [--replacement-public-key\
   \ REPLACEMENT_PUBLIC_KEY] [--old-key-verification-signature OLD_KEY_VERIFICATION_SIGNATURE]\n\
   \    [--replacement-key-verification-signature REPLACEMENT_KEY_VERIFICATION_SIGNATURE]\
->>>>>>> Stashed changes
   \ [--json]"
 zendesk_source: qq CLI Command Guide
 
