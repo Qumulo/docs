@@ -2715,7 +2715,7 @@ $(document).ready(function() {
 </ul>
 
 <h3 id="well-known-keyspace">The WELL_KNOWN Keyspace</h3>
-<p>In Qumulo Core 7.10.2.1 (and higher), the <code class="language-plaintext highlighter-rouge">WELL_KNOWN</code> keyspace holds the <a href="../s3-api/supported-s3-functionality-known-limits.html#standard-object-headers-special-considerations">standard object headers</a> that the S3 API stores and returns for an object. The keyspace has the following requirements:</p>
+<p>In Qumulo Core 7.10.2.1 (and higher), the <code class="language-plaintext highlighter-rouge">WELL_KNOWN</code> keyspace holds the <a href="../s3-api/supported-s3-functionality-known-limits.html#special-considerations-standard-object-headers">standard object headers</a> that the S3 API stores and returns for an object. The keyspace has the following requirements:</p>
 
 <ul>
   <li>
@@ -2827,7 +2827,7 @@ $(document).ready(function() {
  in the Qumulo <code>qq</code> CLI Command Guide.</p>
 
 <h3 id="to-change-standard-object-headers-by-using-the-qq-cli">To Change Standard Object Headers by Using the qq CLI</h3>
-<p>In Qumulo Core 7.10.2.1 (and higher), you can change the <a href="../s3-api/supported-s3-functionality-known-limits.html#standard-object-headers-special-considerations">standard object headers</a> that the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"><code class="language-plaintext highlighter-rouge">GetObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html"><code class="language-plaintext highlighter-rouge">HeadObject</code></a> S3 API actions returns for an object without rewriting the object.</p>
+<p>In Qumulo Core 7.10.2.1 (and higher), you can change the <a href="../s3-api/supported-s3-functionality-known-limits.html#special-considerations-standard-object-headers">standard object headers</a> that the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"><code class="language-plaintext highlighter-rouge">GetObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html"><code class="language-plaintext highlighter-rouge">HeadObject</code></a> S3 API actions returns for an object without rewriting the object.</p>
 
 <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Deleting the <code class="language-plaintext highlighter-rouge">content-type</code> key causes <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"><code class="language-plaintext highlighter-rouge">GetObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html"><code class="language-plaintext highlighter-rouge">HeadObject</code></a> API actions to return <code class="language-plaintext highlighter-rouge">Content-Type: binary/octet-stream</code> for the object.</div>
 
@@ -2842,7 +2842,7 @@ $(document).ready(function() {
 </code></pre></div></div>
 
 <h3 id="to-list-standard-object-headers-by-using-the-qq-cli">To List Standard Object Headers by Using the qq CLI</h3>
-<p>In Qumulo Core 7.10.2.1 (and higher), you can list the <a href="../s3-api/supported-s3-functionality-known-limits.html#standard-object-headers-special-considerations">standard object headers</a> that the S3 API returns for an object without rewriting the object.</p>
+<p>In Qumulo Core 7.10.2.1 (and higher), you can list the <a href="../s3-api/supported-s3-functionality-known-limits.html#special-considerations-standard-object-headers">standard object headers</a> that the S3 API returns for an object without rewriting the object.</p>
 
 <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_list_user_metadata.html"><code>qq fs_list_user_metadata</code></a>
  command, specify the path to the object, and use the <code class="language-plaintext highlighter-rouge">--well-known</code> flag. For example:</p>
