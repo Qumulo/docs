@@ -419,7 +419,7 @@ Qumulo Core stores each kind of S3 object metadata as [{{site.udm.l}}](../metada
   </tbody>
 </table>
 
-### Special Considerations for Standard Object Headers in Qumulo Core {#special-considerations-standard-object-headers}
+### Special Considerations for Standard Object Headers in Qumulo Core {#standard-object-headers-special-considerations}
 This section describes the special considerations for how default header values, header storage and replication, and response header overrides work in Qumulo Core.
 
 #### Default Header Values

@@ -21,7 +21,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {{site.data.alerts.important}}
 To improve standardization and consistency, this release introduces new aliases for existing <code>qq</code> CLI command names.
 All existing command names continue to function as before.
-For a full list of changes, see <a href="https://docs.qumulo.com/qq-cli-command-guide/change-log.md#qumulo-core-7103">Qumulo Core 7.10.3</a> in the Qumulo <code>qq</code> CLI Change Log.
+For a full list of changes, see <a href="https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7103">Qumulo Core 7.10.3</a> in the Qumulo <code>qq</code> CLI Change Log.
 {{site.data.alerts.end}}
 
 * **Cloud Data Fabric:**
