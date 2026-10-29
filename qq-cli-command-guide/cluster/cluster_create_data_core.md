@@ -1,0 +1,62 @@
+---
+category: cluster
+command: cluster_create_data_core
+optional_options:
+- alternate:
+  - -n
+  help: Cluster Name
+  name: --cluster-name
+  required: true
+- alternate:
+  - -p
+  help: Administrator Password
+  name: --admin-password
+  required: false
+- alternate: []
+  help: Accept the EULA
+  name: --accept-eula
+  required: false
+- alternate: []
+  help: Reject the EULA
+  name: --reject-eula
+  required: false
+- alternate: []
+  help: Cluster node UUIDs
+  name: --node-uuids
+  required: false
+- alternate: []
+  help: Erasure coding stripe width
+  name: --blocks-per-stripe
+  required: false
+- alternate: []
+  help: Maximum allowable drive failures
+  name: --max-drive-failures
+  required: false
+- alternate: []
+  help: Maximum allowable node failures
+  name: --max-node-failures
+  required: false
+- alternate: []
+  help: Use all discoverable unconfigured nodes to make cluster
+  name: --all-unconfigured
+  required: false
+permalink: /qq-cli-command-guide/cluster/cluster_create_data_core.html
+positional_options: []
+redirect_from:
+- /qq-cli-command-guide/data/data_core_cluster_create.html
+sidebar: qq_cli_command_reference_sidebar
+summary: This section explains how to use the <code>qq cluster_create_data_core</code>
+  command.
+synopsis: Creates a Qumulo Data-Core Cluster
+title: qq cluster_create_data_core
+usage: "qq cluster_create_data_core [-h] --cluster-name CLUSTER_NAME [--admin-password\
+  \ ADMIN_PASSWORD] [--accept-eula] [--reject-eula] [--node-uuids NODE_UUIDS [NODE_UUIDS\
+<<<<<<< Updated upstream
+  \ ...]] [--blocks-per-stripe BLOCKS_PER_STRIPE]\n    [--max-drive-failures MAX_DRIVE_FAILURES]\
+=======
+  \ ...]]\n    [--blocks-per-stripe BLOCKS_PER_STRIPE] [--max-drive-failures MAX_DRIVE_FAILURES]\
+>>>>>>> Stashed changes
+  \ [--max-node-failures MAX_NODE_FAILURES] [--all-unconfigured]"
+zendesk_source: qq CLI Command Guide
+
+---

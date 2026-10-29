@@ -13,6 +13,252 @@ layout: page
 
 ## 7.10 Releases
 
+### Qumulo Core 7.10.3
+{{ nexusLink }}
+<ul>
+  <li>Removed <code>/v1/object-portal/notify</code> endpoint</li>
+  <li>Added <code>GET | POST /v1/frozen/bridges/</code> endpoint</li>
+  <li>Added <code>DELETE | GET /v1/frozen/bridges/{filesystem_uuid}</code> endpoint</li>
+</ul>
+<details>
+  <summary>Click to expand</summary>
+  <ul>
+    <li>Added <code>GET | POST /v1/frozen/bridges/{filesystem_uuid}/deletes/</code> endpoint</li>
+    <li>Added <code>DELETE | GET /v1/frozen/bridges/{filesystem_uuid}/deletes/{id}</code> endpoint</li>
+    <li>Added <code>POST /v1/frozen/bridges/{filesystem_uuid}/deletes/{id}/cancel</code> endpoint</li>
+    <li>Added <code>GET | POST /v1/frozen/bridges/{filesystem_uuid}/jobs/</code> endpoint</li>
+    <li>Added <code>DELETE | GET /v1/frozen/bridges/{filesystem_uuid}/jobs/{id}</code> endpoint</li>
+    <li>Added <code>POST /v1/frozen/bridges/{filesystem_uuid}/jobs/{id}/cancel</code> endpoint</li>
+    <li>
+      Modified <code>GET /v1/files/{ref}/aggregates/</code>:
+      <ul>
+        <li>Added <code>total_capacity_and_unfilled_bytes</code> enum value to <code>order-by</code> parameter in <code>GET /v1/files/{ref}/aggregates/</code> parameters</li>
+        <li>Added <code>unfilled_bytes</code> parameter to <code>GET /v1/files/{ref}/aggregates/</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>archival</code> parameter to <code>PATCH /v1/files/{ref}/data</code> response</li>
+    <li>Added <code>archival</code> parameter to <code>PUT /v1/files/{ref}/data</code> response</li>
+    <li>Added <code>archival</code> parameter to <code>GET /v1/files/{ref}/entries/</code> response</li>
+    <li>Added <code>archival</code> parameter to <code>POST /v1/files/{ref}/entries/</code> response</li>
+    <li>Added <code>archival</code> parameter to <code>PATCH /v1/files/{ref}/file-lock</code> response</li>
+    <li>Added <code>archival</code> parameter to <code>GET /v1/files/{ref}/info/attributes</code> response</li>
+    <li>Added <code>archival</code> parameter to <code>PATCH /v1/files/{ref}/info/attributes</code> response</li>
+    <li>Added <code>archival</code> parameter to <code>POST /v1/files/{ref}/punch-hole</code> response</li>
+    <li>
+      Modified <code>GET /v1/files/{ref}/recursive-aggregates/</code>:
+      <ul>
+        <li>Added <code>total_capacity_and_unfilled_bytes</code> enum value to <code>order-by</code> parameter in <code>GET /v1/files/{ref}/recursive-aggregates/</code> parameters</li>
+        <li>Added <code>unfilled_bytes</code> parameter to <code>GET /v1/files/{ref}/recursive-aggregates/</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>unfilled_bytes</code> parameter to <code>GET /v1/files/{ref}/sample/</code> response</li>
+    <li>
+      Modified <code>GET /v1/object-portal/bridges/</code>:
+      <ul>
+        <li>Added <code>allow_archived_metadata_changes</code> parameter to <code>GET /v1/object-portal/bridges/</code> response</li>
+        <li>Added <code>FROZEN</code> enum value to <code>protocol_access</code> field in <code>GET /v1/object-portal/bridges/</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>POST /v1/object-portal/bridges/</code>:
+      <ul>
+        <li>Added <code>allow_archived_metadata_changes</code> parameter to <code>POST /v1/object-portal/bridges/</code> request body</li>
+        <li>Added <code>FROZEN</code> enum value to <code>protocol_access</code> field in <code>POST /v1/object-portal/bridges/</code> request body</li>
+        <li>Added <code>allow_archived_metadata_changes</code> parameter to <code>POST /v1/object-portal/bridges/</code> <code>201</code> response</li>
+        <li>Added <code>FROZEN</code> enum value to <code>protocol_access</code> field in <code>POST /v1/object-portal/bridges/</code> <code>201</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>force</code> parameter to <code>DELETE /v1/object-portal/bridges/{filesystem_uuid}</code> parameters</li>
+    <li>
+      Modified <code>GET /v1/object-portal/bridges/{filesystem_uuid}</code>:
+      <ul>
+        <li>Added <code>allow_archived_metadata_changes</code> parameter to <code>GET /v1/object-portal/bridges/{filesystem_uuid}</code> response</li>
+        <li>Added <code>FROZEN</code> enum value to <code>protocol_access</code> field in <code>GET /v1/object-portal/bridges/{filesystem_uuid}</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>signing_required</code> parameter to <code>GET /v1/smb/sessions/</code> response</li>
+    <li>Added <code>signing_required</code> parameter to <code>POST /v1/smb/sessions/close</code> request body</li>
+    <li>
+      Modified <code>GET /v1/snapshots/policies/</code>:
+      <ul>
+        <li>Added <code>month_of_year</code> parameter to <code>GET /v1/snapshots/policies/</code> response</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>GET /v1/snapshots/policies/</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>POST /v1/snapshots/policies/</code>:
+      <ul>
+        <li>Added <code>month_of_year</code> parameter to <code>POST /v1/snapshots/policies/</code> request body</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>POST /v1/snapshots/policies/</code> request body</li>
+        <li>Added <code>month_of_year</code> parameter to <code>POST /v1/snapshots/policies/</code> response</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>POST /v1/snapshots/policies/</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>GET /v1/snapshots/policies/status/</code>:
+      <ul>
+        <li>Added <code>month_of_year</code> parameter to <code>GET /v1/snapshots/policies/status/</code> response</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>GET /v1/snapshots/policies/status/</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>GET /v1/snapshots/policies/status/{id}</code>:
+      <ul>
+        <li>Added <code>month_of_year</code> parameter to <code>GET /v1/snapshots/policies/status/{id}</code> response</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>GET /v1/snapshots/policies/status/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>GET /v1/snapshots/policies/{id}</code>:
+      <ul>
+        <li>Added <code>month_of_year</code> parameter to <code>GET /v1/snapshots/policies/{id}</code> response</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>GET /v1/snapshots/policies/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>PATCH /v1/snapshots/policies/{id}</code>:
+      <ul>
+        <li>Added <code>month_of_year</code> parameter to <code>PATCH /v1/snapshots/policies/{id}</code> request body</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>PATCH /v1/snapshots/policies/{id}</code> request body</li>
+        <li>Added <code>month_of_year</code> parameter to <code>PATCH /v1/snapshots/policies/{id}</code> response</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>PATCH /v1/snapshots/policies/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>PUT /v1/snapshots/policies/{id}</code>:
+      <ul>
+        <li>Added <code>month_of_year</code> parameter to <code>PUT /v1/snapshots/policies/{id}</code> request body</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>PUT /v1/snapshots/policies/{id}</code> request body</li>
+        <li>Added <code>month_of_year</code> parameter to <code>PUT /v1/snapshots/policies/{id}</code> response</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>PUT /v1/snapshots/policies/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>remote_root_path</code> parameter to <code>GET /v2/portal/spokes/</code> response</li>
+    <li>Added <code>remote_root_path</code> parameter to <code>POST /v2/portal/spokes/</code> response</li>
+    <li>Added <code>remote_root_path</code> parameter to <code>DELETE /v2/portal/spokes/{id}</code> <code>202</code> response</li>
+    <li>Added <code>remote_root_path</code> parameter to <code>GET /v2/portal/spokes/{id}</code> response</li>
+    <li>
+      Modified <code>PATCH /v2/portal/spokes/{id}</code>:
+      <ul>
+        <li>Added <code>remote_root_path</code> parameter to <code>PATCH /v2/portal/spokes/{id}</code> request body</li>
+        <li>Added <code>remote_root_path</code> parameter to <code>PATCH /v2/portal/spokes/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>remote_root_path</code> parameter to <code>POST /v2/portal/spokes/{id}/roots/</code> response</li>
+    <li>Added <code>remote_root_path</code> parameter to <code>DELETE /v2/portal/spokes/{id}/roots/{dir}</code> response</li>
+    <li>
+      Modified <code>GET /v2/snapshots/policies/</code>:
+      <ul>
+        <li>Added <code>month_of_year</code> parameter to <code>GET /v2/snapshots/policies/</code> response</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>GET /v2/snapshots/policies/</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>POST /v2/snapshots/policies/</code>:
+      <ul>
+        <li>Added <code>month_of_year</code> parameter to <code>POST /v2/snapshots/policies/</code> request body</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>POST /v2/snapshots/policies/</code> request body</li>
+        <li>Added <code>month_of_year</code> parameter to <code>POST /v2/snapshots/policies/</code> response</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>POST /v2/snapshots/policies/</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>GET /v2/snapshots/policies/status/</code>:
+      <ul>
+        <li>Added <code>month_of_year</code> parameter to <code>GET /v2/snapshots/policies/status/</code> response</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>GET /v2/snapshots/policies/status/</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>GET /v2/snapshots/policies/status/{id}</code>:
+      <ul>
+        <li>Added <code>month_of_year</code> parameter to <code>GET /v2/snapshots/policies/status/{id}</code> response</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>GET /v2/snapshots/policies/status/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>GET /v2/snapshots/policies/{id}</code>:
+      <ul>
+        <li>Added <code>month_of_year</code> parameter to <code>GET /v2/snapshots/policies/{id}</code> response</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>GET /v2/snapshots/policies/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>PATCH /v2/snapshots/policies/{id}</code>:
+      <ul>
+        <li>Added <code>month_of_year</code> parameter to <code>PATCH /v2/snapshots/policies/{id}</code> request body</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>PATCH /v2/snapshots/policies/{id}</code> request body</li>
+        <li>Added <code>month_of_year</code> parameter to <code>PATCH /v2/snapshots/policies/{id}</code> response</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>PATCH /v2/snapshots/policies/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>PUT /v2/snapshots/policies/{id}</code>:
+      <ul>
+        <li>Added <code>month_of_year</code> parameter to <code>PUT /v2/snapshots/policies/{id}</code> request body</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>PUT /v2/snapshots/policies/{id}</code> request body</li>
+        <li>Added <code>month_of_year</code> parameter to <code>PUT /v2/snapshots/policies/{id}</code> response</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>PUT /v2/snapshots/policies/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>GET /v3/snapshots/policies/</code>:
+      <ul>
+        <li>Added <code>month_of_year</code> parameter to <code>GET /v3/snapshots/policies/</code> response</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>GET /v3/snapshots/policies/</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>POST /v3/snapshots/policies/</code>:
+      <ul>
+        <li>Added <code>month_of_year</code> parameter to <code>POST /v3/snapshots/policies/</code> request body</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>POST /v3/snapshots/policies/</code> request body</li>
+        <li>Added <code>month_of_year</code> parameter to <code>POST /v3/snapshots/policies/</code> response</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>POST /v3/snapshots/policies/</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>GET /v3/snapshots/policies/status/</code>:
+      <ul>
+        <li>Added <code>month_of_year</code> parameter to <code>GET /v3/snapshots/policies/status/</code> response</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>GET /v3/snapshots/policies/status/</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>GET /v3/snapshots/policies/status/{id}</code>:
+      <ul>
+        <li>Added <code>month_of_year</code> parameter to <code>GET /v3/snapshots/policies/status/{id}</code> response</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>GET /v3/snapshots/policies/status/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>GET /v3/snapshots/policies/{id}</code>:
+      <ul>
+        <li>Added <code>month_of_year</code> parameter to <code>GET /v3/snapshots/policies/{id}</code> response</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>GET /v3/snapshots/policies/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>PATCH /v3/snapshots/policies/{id}</code>:
+      <ul>
+        <li>Added <code>month_of_year</code> parameter to <code>PATCH /v3/snapshots/policies/{id}</code> request body</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>PATCH /v3/snapshots/policies/{id}</code> request body</li>
+        <li>Added <code>month_of_year</code> parameter to <code>PATCH /v3/snapshots/policies/{id}</code> response</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>PATCH /v3/snapshots/policies/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>PUT /v3/snapshots/policies/{id}</code>:
+      <ul>
+        <li>Added <code>month_of_year</code> parameter to <code>PUT /v3/snapshots/policies/{id}</code> request body</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>PUT /v3/snapshots/policies/{id}</code> request body</li>
+        <li>Added <code>month_of_year</code> parameter to <code>PUT /v3/snapshots/policies/{id}</code> response</li>
+        <li>Added <code>SCHEDULE_YEARLY</code> enum value to <code>frequency</code> field in <code>PUT /v3/snapshots/policies/{id}</code> response</li>
+      </ul>
+    </li>
+  </ul>
+</details>
+
 ### Qumulo Core 7.10.2.1
 {{ nexusLink }}
 <ul>

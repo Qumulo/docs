@@ -419,7 +419,7 @@ Qumulo Core stores each kind of S3 object metadata as [{{site.udm.l}}](../metada
   </tbody>
 </table>
 
-### Special Considerations for Standard Object in Qumulo Core {#standard-object-headers-special-considerations}
+### Special Considerations for Standard Object Headers in Qumulo Core {#special-considerations-standard-object-headers}
 This section describes the special considerations for how default header values, header storage and replication, and response header overrides work in Qumulo Core.
 
 #### Default Header Values
@@ -605,7 +605,7 @@ This section lists the known minimum and maximum limits for S3 objects.
     <td colspan="2" class="joined-cell">2 KiB (2,048 bytes) combined key bytes and value bytes</td>
   </tr>
   <tr>
-    <td>Size of <a href="#standard-object-headers-special-considerations">standard object headers</a></td>
+    <td>Size of <a href="#special-considerations-standard-object-headers">standard object headers</a></td>
     <td colspan="2" class="joined-cell">2 KiB (2,048 bytes) combined header name bytes and value bytes</td>
   </tr>
 </tbody>

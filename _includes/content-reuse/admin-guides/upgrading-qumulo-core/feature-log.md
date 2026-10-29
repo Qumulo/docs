@@ -14,6 +14,42 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 ## 7.10 Releases
 
+### Qumulo Core 7.10.3
+{{ nexusLink }}
+
+#### Features and Improvements
+{{site.data.alerts.important}}
+To improve standardization and consistency, this release introduces new aliases for existing <code>qq</code> CLI command names.
+All existing command names continue to function as before.
+For a full list of changes, see <a href="https://docs.qumulo.com/qq-cli-command-guide/change-log.md#qumulo-core-7103">Qumulo Core 7.10.3</a> in the Qumulo <code>qq</code> CLI Change Log.
+{{site.data.alerts.end}}
+
+* **Cloud Data Fabric:**
+
+  * Configured spoke portals to show a cached view of hub portal root directory paths
+
+  * In the Qumulo Core Web UI, on the **Spoke Portal &lt;N&gt;** page, replaced the **Hub Directory ID** column with the **Hub Directory** column and made related changes to the REST API and `qq` CLI
+
+* **CNQ on GCP:** Added support for GCS Coldline Storage on new CNQ on GCP clusters
+
+* **Snapshot Policies:**
+
+  * Added the yearly schedule to snapshot policies and made related changes to the REST API and `qq` CLI
+
+  * Changed the monthly schedule to accept the 28th day of the month
+
+  * Added subcommands to the `qq snapshot_create_policy` and `qq month_of_year` commands
+
+* **Shift-To and Shift-From:** Configured Shift to&hellip;
+  * Correctly store and send the six AWS user-controlled system metadata headers for a file's object
+
+  * Behave in compliance with Amazon S3 specifications
+
+#### Change Log
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7103)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7103)
+
+
 ### Qumulo Core 7.10.2.1
 {{ nexusLink }}
 
@@ -26,6 +62,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71021)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-71021)
 
 
 ### Qumulo Core 7.10.1.3
@@ -66,6 +103,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71013)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-71013)
 
 
 ### Qumulo Core 7.10.0.3 (Quarterly)
@@ -99,6 +137,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71003-quarterly)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-71003-quarterly)
 
 
 ## 7.9 Releases
@@ -136,6 +175,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7931)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7931)
 
 
 ### Qumulo Core 7.9.2.3
@@ -200,6 +240,8 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7923)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7923)
+
 
 ### Qumulo Core 7.9.1.3
 {{ nexusLink }}
@@ -230,6 +272,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7913)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7913)
 
 
 ### Qumulo Core 7.9.0.5 (Quarterly)
@@ -357,7 +400,8 @@ For information about upgrade types for each release, see <a href='mode-referenc
   * Resolved an issue with the {% include qq.html command="fs_list_locks" %} command when using the `--protocol smb --lock-type share-mode` flags
 
 #### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7904-quarterly)
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7905-quarterly)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7905-quarterly)
 
 
 ## 7.8 Releases
@@ -384,6 +428,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7843)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7843)
 
 
 ### Qumulo Core 7.8.3.1
@@ -397,6 +442,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7831)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7831)
 
 
 ### Qumulo Core 7.8.2.1
@@ -417,6 +463,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7821)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7821)
 
 
 ### Qumulo Core 7.8.1.1
@@ -429,6 +476,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7811)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7811)
 
 
 ### Qumulo Core 7.8.0.4 (Quarterly)
@@ -454,7 +502,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7804-quarterly)
-
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7804-quarterly)
 
 ## 7.7 Releases
 
@@ -472,6 +520,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7751)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7751)
 
 
 ### Qumulo Core 7.7.4.1
@@ -485,6 +534,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7741)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7741)
 
 
 ### Qumulo Core 7.7.3
@@ -496,6 +546,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-773)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-773)
 
 
 ### Qumulo Core 7.7.2
@@ -508,6 +559,7 @@ Significantly improved the performance of the incremental replication process fo
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-772)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-772)
 
 
 ### Qumulo Core 7.7.1.1
@@ -522,7 +574,7 @@ Significantly improved the performance of the incremental replication process fo
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7711)
-
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7711)
 
 ### Qumulo Core 7.7.0.3 (Quarterly)
 {{ nexusLink }}
@@ -543,6 +595,7 @@ Significantly improved the performance of the incremental replication process fo
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7703-quarterly)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7703-quarterly)
 
 
 ## 7.6 Releases
@@ -559,6 +612,7 @@ Significantly improved the performance of the incremental replication process fo
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7641)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7641)
 
 
 ### Qumulo Core 7.6.3.1
@@ -581,6 +635,7 @@ Significantly improved the performance of the incremental replication process fo
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7631)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7631)
 
 
 ### Qumulo Core 7.6.2
@@ -595,6 +650,7 @@ Significantly improved the performance of the incremental replication process fo
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-762)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-762)
 
 
 ### Qumulo Core 7.6.1.1
@@ -614,6 +670,7 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7611)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7611)
 
 
 ### Qumulo Core 7.6.0.2 (Quarterly)
@@ -634,6 +691,7 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7602-quarterly)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7602-quarterly)
 
 
 ## 7.5 Releases
@@ -650,6 +708,7 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7552)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7552)
 
 
 ### Qumulo Core 7.5.4.2
@@ -668,6 +727,7 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7542)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7542)
 
 
 ### Qumulo Core 7.5.3
@@ -684,6 +744,7 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-753)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-753)
 
 
 ### Qumulo Core 7.5.2
@@ -701,6 +762,7 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-752)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-752)
 
 
 ### Qumulo Core 7.5.1.2
@@ -717,6 +779,7 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7512)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7512)
 
 
 ### Qumulo Core 7.5.0.3 (Quarterly)
@@ -748,4 +811,5 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 
 #### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7503-quarterly)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7503-quarterly)
 {% endunless %}

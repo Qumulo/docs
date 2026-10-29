@@ -15,7 +15,9 @@ methods:
         ,\n            \"enum\": [\n              \"PORTAL_READ_ONLY\",\n        \
         \      \"PORTAL_READ_WRITE\",\n              \"PORTAL_PAUSED\",\n        \
         \      \"PORTAL_SUSPENDED\"\n            ],\n            \"description\":\
-        \ \"Type of the portal (read-only or read-write):\\n * `PORTAL_PAUSED` - PORTAL_PAUSED,\\\
+        \ \"Type of the portal: read-write, read-only, paused or suspended. A paused\
+        \ or suspended spoke refuses all client operations. A suspended spoke can\
+        \ go offline without affecting the hub.:\\n * `PORTAL_PAUSED` - PORTAL_PAUSED,\\\
         n * `PORTAL_READ_ONLY` - PORTAL_READ_ONLY,\\n * `PORTAL_READ_WRITE` - PORTAL_READ_WRITE,\\\
         n * `PORTAL_SUSPENDED` - PORTAL_SUSPENDED\"\n          },\n          \"state\"\
         : {\n            \"type\": \"string\",\n            \"enum\": [\n        \
@@ -35,29 +37,29 @@ methods:
         \ use.,\\n * `DEGRADED` - A portal whose quorum is missing a cluster other\
         \ than this relationship's peer.,\\n * `DISCONNECTED` - A portal whose quorum\
         \ is missing this relationship's own peer.,\\n * `INACTIVE` - A portal that\
-        \ is not ready for use.\"\n          },\n          \"spoke_hosts\": {\n  \
-        \          \"type\": \"array\",\n            \"items\": {\n              \"\
-        description\": \"IP addresses and TCP ports of nodes in the remote cluster\"\
-        ,\n              \"type\": \"object\",\n              \"properties\": {\n\
-        \                \"address\": {\n                  \"description\": \"address\"\
-        ,\n                  \"type\": \"string\"\n                },\n          \
-        \      \"port\": {\n                  \"description\": \"port\",\n       \
-        \           \"type\": \"number\"\n                }\n              }\n   \
-        \         }\n          },\n          \"spoke_cluster_uuid\": {\n         \
-        \   \"description\": \"UUID of the cluster with the spoke portal\",\n    \
-        \        \"type\": \"string\"\n          },\n          \"spoke_cluster_name\"\
-        : {\n            \"description\": \"Name of the cluster with the spoke portal\"\
-        ,\n            \"type\": \"string\"\n          },\n          \"filesystem_uuid\"\
-        : {\n            \"description\": \"UUID of the filesystem shared with the\
-        \ spoke portal\",\n            \"type\": \"string\"\n          },\n      \
-        \    \"pending_roots\": {\n            \"type\": \"array\",\n            \"\
-        items\": {\n              \"description\": \"Set of hub root directories that\
-        \ are pending authorization\",\n              \"type\": \"string\"\n     \
-        \       }\n          },\n          \"authorized_roots\": {\n            \"\
-        type\": \"array\",\n            \"items\": {\n              \"description\"\
-        : \"Set of hub root directories that are authorized for access\",\n      \
-        \        \"type\": \"string\"\n            }\n          }\n        }\n   \
-        \   }\n    }\n  }\n}"
+        \ is not ready for use, or whose peer takes no part in the portal quorum.\"\
+        \n          },\n          \"spoke_hosts\": {\n            \"type\": \"array\"\
+        ,\n            \"items\": {\n              \"description\": \"IP addresses\
+        \ and TCP ports of nodes in the remote cluster\",\n              \"type\"\
+        : \"object\",\n              \"properties\": {\n                \"address\"\
+        : {\n                  \"description\": \"address\",\n                  \"\
+        type\": \"string\"\n                },\n                \"port\": {\n    \
+        \              \"description\": \"port\",\n                  \"type\": \"\
+        number\"\n                }\n              }\n            }\n          },\n\
+        \          \"spoke_cluster_uuid\": {\n            \"description\": \"UUID\
+        \ of the cluster with the spoke portal\",\n            \"type\": \"string\"\
+        \n          },\n          \"spoke_cluster_name\": {\n            \"description\"\
+        : \"Name of the cluster with the spoke portal\",\n            \"type\": \"\
+        string\"\n          },\n          \"filesystem_uuid\": {\n            \"description\"\
+        : \"UUID of the filesystem shared with the spoke portal\",\n            \"\
+        type\": \"string\"\n          },\n          \"pending_roots\": {\n       \
+        \     \"type\": \"array\",\n            \"items\": {\n              \"description\"\
+        : \"Set of hub root directories that are pending authorization\",\n      \
+        \        \"type\": \"string\"\n            }\n          },\n          \"authorized_roots\"\
+        : {\n            \"type\": \"array\",\n            \"items\": {\n        \
+        \      \"description\": \"Set of hub root directories that are authorized\
+        \ for access\",\n              \"type\": \"string\"\n            }\n     \
+        \     }\n        }\n      }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success

@@ -51,12 +51,12 @@ methods:
         \          \"filesystem_uuid\": {\n            \"description\": \"UUID of\
         \ the filesystem the portal quorum serves\",\n            \"type\": \"string\"\
         \n          },\n          \"total_clusters\": {\n            \"description\"\
-        : \"Total clusters this node knows about, in quorum or not\",\n          \
-        \  \"type\": \"number\"\n          },\n          \"missing_clusters\": {\n\
-        \            \"type\": \"array\",\n            \"items\": {\n            \
-        \  \"description\": \"Cluster UUIDs missing from the portal quorum\",\n  \
-        \            \"type\": \"string\"\n            }\n          },\n         \
-        \ \"end_reason\": {\n            \"description\": \"Why the portal quorum\
+        : \"Total participating clusters this node knows about, in quorum or not\"\
+        ,\n            \"type\": \"number\"\n          },\n          \"missing_clusters\"\
+        : {\n            \"type\": \"array\",\n            \"items\": {\n        \
+        \      \"description\": \"Cluster UUIDs missing from the portal quorum\",\n\
+        \              \"type\": \"string\"\n            }\n          },\n       \
+        \   \"end_reason\": {\n            \"description\": \"Why the portal quorum\
         \ was abandoned; abandon events only\",\n            \"type\": \"string\"\n\
         \          },\n          \"end_reason_kind\": {\n            \"type\": \"\
         string\",\n            \"enum\": [\n              \"peer_requested\",\n  \
