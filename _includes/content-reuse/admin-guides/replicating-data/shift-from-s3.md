@@ -136,7 +136,7 @@ Shift-From stores the metadata for each object as [{{site.udm.l}}](../metadata/m
 
 In Qumulo Core 7.10.3 (and higher):
 
-* The [Qumulo S3 API](../s3-api/supported-s3-functionality-known-limits.html#special-considerations-standard-object-headers) returns an object's original standard headers for the file that Shift-From creates for the object.
+* The [Qumulo S3 API](../s3-api/supported-s3-functionality-known-limits.html#standard-object-headers-special-considerations) returns an object's original standard headers for the file that Shift-From creates for the object.
 
 * Because Amazon S3 reports a content type for every object, Shift-From stores `binary/octet-stream` as the `Content-Type` value for any object uploaded to Amazon S3 without a value.
 

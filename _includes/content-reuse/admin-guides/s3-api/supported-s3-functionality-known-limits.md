@@ -605,7 +605,7 @@ This section lists the known minimum and maximum limits for S3 objects.
     <td colspan="2" class="joined-cell">2 KiB (2,048 bytes) combined key bytes and value bytes</td>
   </tr>
   <tr>
-    <td>Size of <a href="#special-considerations-standard-object-headers">standard object headers</a></td>
+    <td>Size of <a href="#standard-object-headers-special-considerations">standard object headers</a></td>
     <td colspan="2" class="joined-cell">2 KiB (2,048 bytes) combined header name bytes and value bytes</td>
   </tr>
 </tbody>
