@@ -125,7 +125,7 @@ fetch('/data/website.json')
 </noscript>
 
 <!-- Define page metadata -->
-<meta name="description" content="[preview] The following methods manage object portals: bridge filesystems rooted at external buckets, their export rules and jobs, and notification injection.">
+<meta name="description" content="[preview] The following methods manage object portals. An object portal presents a bucket, which here means an S3 bucket or an Azure Blob container, as a directory on the cluster called a bridge. The cluster reads files from the bucket as clients need them and picks up changes made in the bucket. Depending on the bridge's `protocol_access`, changes made on the cluster can be written back to the bucket. When the bucket refuses or fails a request, reads and listings on the bridge fail with an I/O error: STATUS_UNEXPECTED_IO_ERROR over SMB, NFS3ERR_IO or NFS4ERR_IO over NFS, InternalError over S3, and 550 over FTP. A method here that reads the bucket answers HTTP 503, whose message says only that the bucket failed the request, except that a create whose checks the bucket refuses, or an import whose manifest bucket the cluster can't open, answers HTTP 400.">
 <meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
 <meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
@@ -138,7 +138,7 @@ fetch('/data/website.json')
 <meta property="og:title" content="Object Portals V1 (object-portal) | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/rest-api-guide/object-portals-v1/">
 <meta property="og:site_name" content="Qumulo Documentation Portal">
-<meta property="og:description" content="[preview] The following methods manage object portals: bridge filesystems rooted at external buckets, their export rules and jobs, and notification injection.">
+<meta property="og:description" content="[preview] The following methods manage object portals. An object portal presents a bucket, which here means an S3 bucket or an Azure Blob container, as a directory on the cluster called a bridge. The cluster reads files from the bucket as clients need them and picks up changes made in the bucket. Depending on the bridge's `protocol_access`, changes made on the cluster can be written back to the bucket. When the bucket refuses or fails a request, reads and listings on the bridge fail with an I/O error: STATUS_UNEXPECTED_IO_ERROR over SMB, NFS3ERR_IO or NFS4ERR_IO over NFS, InternalError over S3, and 550 over FTP. A method here that reads the bucket answers HTTP 503, whose message says only that the bucket failed the request, except that a create whose checks the bucket refuses, or an import whose manifest bucket the cluster can't open, answers HTTP 400.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
@@ -149,7 +149,7 @@ fetch('/data/website.json')
 <meta name="twitter:title" content="Object Portals V1 (object-portal) | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/rest-api-guide/object-portals-v1/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="[preview] The following methods manage object portals: bridge filesystems rooted at external buckets, their export rules and jobs, and notification injection.">
+<meta name="twitter:description" content="[preview] The following methods manage object portals. An object portal presents a bucket, which here means an S3 bucket or an Azure Blob container, as a directory on the cluster called a bridge. The cluster reads files from the bucket as clients need them and picks up changes made in the bucket. Depending on the bridge's `protocol_access`, changes made on the cluster can be written back to the bucket. When the bucket refuses or fails a request, reads and listings on the bridge fail with an I/O error: STATUS_UNEXPECTED_IO_ERROR over SMB, NFS3ERR_IO or NFS4ERR_IO over NFS, InternalError over S3, and 550 over FTP. A method here that reads the bucket answers HTTP 503, whose message says only that the bucket failed the request, except that a create whose checks the bucket refuses, or an import whose manifest bucket the cluster can't open, answers HTTP 400.">
 <meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
 <meta property="twitter:domain" content="docs.qumulo.com">
 
@@ -4158,6 +4158,220 @@ fetch('/data/website.json')
   <li>
   
 
+  <a title="Frozen V1 (frozen)" href="/rest-api-guide/frozen-v1/" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Frozen (frozen)<span class="apiversion parentversion v1">V1</span><span class="apipreview parentpreview">preview</span>
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="frozen/bridges" href="/rest-api-guide/frozen-v1/frozen_bridges.html">
+              frozen/<wbr>bridges
+              <span class="tag-container">
+              
+                <span class="apiversion v1">v1</span>
+              
+              
+                <span class="apipreview">preview</span>
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="frozen/bridges/{filesystem_uuid}" href="/rest-api-guide/frozen-v1/frozen_bridges_filesystem_uuid.html">
+              frozen/<wbr>bridges/<wbr>{filesystem_uuid}
+              <span class="tag-container">
+              
+                <span class="apiversion v1">v1</span>
+              
+              
+                <span class="apipreview">preview</span>
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="frozen/bridges/{filesystem_uuid}/jobs" href="/rest-api-guide/frozen-v1/frozen_bridges_filesystem_uuid_jobs.html">
+              frozen/<wbr>bridges/<wbr>{filesystem_uuid}/<wbr>jobs
+              <span class="tag-container">
+              
+                <span class="apiversion v1">v1</span>
+              
+              
+                <span class="apipreview">preview</span>
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="frozen/bridges/{filesystem_uuid}/jobs/{id}" href="/rest-api-guide/frozen-v1/frozen_bridges_filesystem_uuid_jobs_id.html">
+              frozen/<wbr>bridges/<wbr>{filesystem_uuid}/<wbr>jobs/<wbr>{id}
+              <span class="tag-container">
+              
+                <span class="apiversion v1">v1</span>
+              
+              
+                <span class="apipreview">preview</span>
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="frozen/bridges/{filesystem_uuid}/jobs/{id}/cancel" href="/rest-api-guide/frozen-v1/frozen_bridges_filesystem_uuid_jobs_id_cancel.html">
+              frozen/<wbr>bridges/<wbr>{filesystem_uuid}/<wbr>jobs/<wbr>{id}/<wbr>cancel
+              <span class="tag-container">
+              
+                <span class="apiversion v1">v1</span>
+              
+              
+                <span class="apipreview">preview</span>
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Frozen Deletes V1 (frozen)" href="/rest-api-guide/frozen-deletes-v1/" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Frozen Deletes (frozen)<span class="apiversion parentversion v1">V1</span><span class="apipreview parentpreview">preview</span>
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="frozen/bridges/{filesystem_uuid}/deletes" href="/rest-api-guide/frozen-deletes-v1/frozen_bridges_filesystem_uuid_deletes.html">
+              frozen/<wbr>bridges/<wbr>{filesystem_uuid}/<wbr>deletes
+              <span class="tag-container">
+              
+                <span class="apiversion v1">v1</span>
+              
+              
+                <span class="apipreview">preview</span>
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="frozen/bridges/{filesystem_uuid}/deletes/{id}" href="/rest-api-guide/frozen-deletes-v1/frozen_bridges_filesystem_uuid_deletes_id.html">
+              frozen/<wbr>bridges/<wbr>{filesystem_uuid}/<wbr>deletes/<wbr>{id}
+              <span class="tag-container">
+              
+                <span class="apiversion v1">v1</span>
+              
+              
+                <span class="apipreview">preview</span>
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="frozen/bridges/{filesystem_uuid}/deletes/{id}/cancel" href="/rest-api-guide/frozen-deletes-v1/frozen_bridges_filesystem_uuid_deletes_id_cancel.html">
+              frozen/<wbr>bridges/<wbr>{filesystem_uuid}/<wbr>deletes/<wbr>{id}/<wbr>cancel
+              <span class="tag-container">
+              
+                <span class="apiversion v1">v1</span>
+              
+              
+                <span class="apipreview">preview</span>
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
   <a title="Hardware Health Methods V1 (health)" href="/rest-api-guide/hardware-health-methods-v1/" data-proofer-ignore>
   
   
@@ -5647,26 +5861,6 @@ fetch('/data/website.json')
           <li>
             <a title="object-portal/bridges/{filesystem_uuid}" href="/rest-api-guide/object-portals-v1/object-portal_bridges_filesystem_uuid.html">
               object-portal/<wbr>bridges/<wbr>{filesystem_uuid}
-              <span class="tag-container">
-              
-                <span class="apiversion v1">v1</span>
-              
-              
-                <span class="apipreview">preview</span>
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="object-portal/notify" href="/rest-api-guide/object-portals-v1/object-portal_notify.html">
-              object-portal/<wbr>notify
               <span class="tag-container">
               
                 <span class="apiversion v1">v1</span>
@@ -9067,6 +9261,10 @@ $(document).ready(function() {
     
                
     
+               
+    
+               
+    
       
         <ul>
           
@@ -9076,10 +9274,6 @@ $(document).ready(function() {
           
           
           <li><a href="/rest-api-guide/object-portals-v1/object-portal_bridges_filesystem_uuid.html">object-portal/bridges/{filesystem_uuid}</a><span class="apipreview-inline">preview</span></li>
-          
-          
-          
-          <li><a href="/rest-api-guide/object-portals-v1/object-portal_notify.html">object-portal/notify</a><span class="apipreview-inline">preview</span></li>
           
           
           
