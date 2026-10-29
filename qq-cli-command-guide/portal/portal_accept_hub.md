@@ -14,7 +14,7 @@ optional_options:
   required: false
 - alternate:
   - --no-paths
-  help: Do not attempt to resolve file IDs present on the local cluster to paths.
+  help: Show the file IDs of portal roots instead of their paths.
   name: -n
   required: false
 - alternate:

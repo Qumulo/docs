@@ -1,0 +1,8 @@
+---
+layout: landing_page
+sidebar: rest_api_guide_sidebar
+summary: "[preview] The following methods create, list and delete Frozen bridges and manage their freeze and thaw jobs. A Frozen bridge is a directory whose file data the cluster can move to the Azure Archive tier, Azure's lowest-cost storage, where data is offline. Qumulo manages the Azure storage behind a Frozen bridge. A freeze job moves the data of the files it covers to the Archive tier. From the moment a freeze job reaches a file, the file's data can't change: writes, truncates and SMB opens for write, append or overwrite fail with the protocol's offline error, though an NFSv4 OPEN for write fails with NFS4ERR_ACCESS, and an NFSv3 CREATE over the file with NFS3ERR_ACCES. Reads still work while the data uploads. Once the data is in the Archive tier, reads fail too, with STATUS_FILE_IS_OFFLINE over SMB, NFS3ERR_IO or NFS4ERR_IO over NFS, and 403 InvalidObjectState over S3. Unless the bridge was created with `allow_archived_metadata_changes`, clients can't change a frozen file's permissions, ownership, timestamps, other metadata or named streams either, though reads still move its access time. A thaw job brings a frozen file's data back online at the tier you choose, HOT by default, after which the file can be read and written again; Azure takes up to 15 hours at STANDARD priority. Clients can't delete a frozen file, or replace it with another file at its path; a Frozen delete, under deletes/, removes it. Azure charges an early-deletion fee for data that leaves the Archive tier within 180 days of entering it, including by a thaw."
+title: Frozen V1 (frozen)
+redirect_from:
+- /rest-api-guide/frozen/
+---

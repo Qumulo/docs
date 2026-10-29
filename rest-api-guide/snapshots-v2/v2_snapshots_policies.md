@@ -21,26 +21,27 @@ methods:
         \          \"schedule\": {\n            \"description\": \"The schedule according\
         \ to which to take snapshots under this policy.\",\n            \"type\":\
         \ \"object\",\n            \"properties\": {\n              \"id\": {\n  \
-        \              \"description\": \"Identifier for the snapshot policy's schedule.\
-        \ Only unique within the scope of a snapshot policy.\",\n                \"\
-        type\": \"number\"\n              },\n              \"creation_schedule\"\
-        : {\n                \"description\": \"Structure defining when to take snapshots\"\
-        ,\n                \"type\": \"object\",\n                \"properties\":\
-        \ {\n                  \"timezone\": {\n                    \"description\"\
-        : \"The time zone in which the schedule should be interpreted (e.g. America/Los_Angeles\
-        \ or UTC).\",\n                    \"type\": \"string\"\n                \
-        \  },\n                  \"frequency\": {\n                    \"type\": \"\
-        string\",\n                    \"enum\": [\n                      \"SCHEDULE_MONTHLY\"\
-        ,\n                      \"SCHEDULE_DAILY_OR_WEEKLY\",\n                 \
-        \     \"SCHEDULE_HOURLY_OR_LESS\"\n                    ],\n              \
-        \      \"description\": \"Coarse frequency (MONTHLY, DAILY_OR_WEEKLY, or HOURLY_OR_LESS)\
-        \ at which to take snapshot:\\n * `SCHEDULE_DAILY_OR_WEEKLY` - SCHEDULE_DAILY_OR_WEEKLY,\\\
-        n * `SCHEDULE_HOURLY_OR_LESS` - SCHEDULE_HOURLY_OR_LESS,\\n * `SCHEDULE_MONTHLY`\
-        \ - SCHEDULE_MONTHLY\"\n                  },\n                  \"hour\":\
-        \ {\n                    \"description\": \"For MONTHLY or DAILY_OR_WEEKLY\
-        \ frequency: Hour of day [0, 23] at which to take snapshot\",\n          \
-        \          \"type\": \"number\"\n                  },\n                  \"\
-        minute\": {\n                    \"description\": \"For MONTHLY or DAILY_OR_WEEKLY\
+        \              \"description\": \"Ununsed identifier for the snapshot policy's\
+        \ schedule. Always 1.\",\n                \"type\": \"number\"\n         \
+        \     },\n              \"creation_schedule\": {\n                \"description\"\
+        : \"Structure defining when to take snapshots\",\n                \"type\"\
+        : \"object\",\n                \"properties\": {\n                  \"timezone\"\
+        : {\n                    \"description\": \"The time zone in which the schedule\
+        \ should be interpreted (e.g. America/Los_Angeles or UTC).\",\n          \
+        \          \"type\": \"string\"\n                  },\n                  \"\
+        frequency\": {\n                    \"type\": \"string\",\n              \
+        \      \"enum\": [\n                      \"SCHEDULE_YEARLY\",\n         \
+        \             \"SCHEDULE_MONTHLY\",\n                      \"SCHEDULE_DAILY_OR_WEEKLY\"\
+        ,\n                      \"SCHEDULE_HOURLY_OR_LESS\"\n                   \
+        \ ],\n                    \"description\": \"Coarse frequency (YEARLY, MONTHLY,\
+        \ DAILY_OR_WEEKLY, or HOURLY_OR_LESS) at which to take snapshot:\\n * `SCHEDULE_DAILY_OR_WEEKLY`\
+        \ - SCHEDULE_DAILY_OR_WEEKLY,\\n * `SCHEDULE_HOURLY_OR_LESS` - SCHEDULE_HOURLY_OR_LESS,\\\
+        n * `SCHEDULE_MONTHLY` - SCHEDULE_MONTHLY,\\n * `SCHEDULE_YEARLY` - SCHEDULE_YEARLY\"\
+        \n                  },\n                  \"hour\": {\n                  \
+        \  \"description\": \"For YEARLY, MONTHLY, or DAILY_OR_WEEKLY frequency: Hour\
+        \ of day [0, 23] at which to take snapshot\",\n                    \"type\"\
+        : \"number\"\n                  },\n                  \"minute\": {\n    \
+        \                \"description\": \"For YEARLY, MONTHLY, or DAILY_OR_WEEKLY\
         \ frequency: minute of hour [0, 59] at which to take snapshot\",\n       \
         \             \"type\": \"number\"\n                  },\n               \
         \   \"on_days\": {\n                    \"type\": \"array\",\n           \
@@ -52,43 +53,46 @@ methods:
         \n                      ],\n                      \"description\": \"For DAILY_OR_WEEKLY\
         \ or HOURLY_OR_LESS frequency: list of days of the week on which to take snapshots.\
         \ Choose from SUN, MON, TUE, WED, THU, FRI, and/or SAT. EVERY_DAY can be used\
-        \ to specify all days. For MONTHLY frequency: LAST_DAY_OF_MONTH indicates\
-        \ that the snapshot should be taken only on the last day of the month.:\\\
-        n * `FRIDAY` - FRIDAY,\\n * `MONDAY` - MONDAY,\\n * `SATURDAY` - SATURDAY,\\\
-        n * `SUNDAY` - SUNDAY,\\n * `THURSDAY` - THURSDAY,\\n * `TUESDAY` - TUESDAY,\\\
-        n * `WEDNESDAY` - WEDNESDAY\"\n                    }\n                  },\n\
-        \                  \"day_of_month\": {\n                    \"description\"\
-        : \"For MONTHLY frequency: day of month on which to take snapshot. [1, 27]\
-        \ for specific day, 128 for last day of month.\",\n                    \"\
-        type\": \"number\"\n                  },\n                  \"window_start_hour\"\
+        \ to specify all days.:\\n * `FRIDAY` - FRIDAY,\\n * `MONDAY` - MONDAY,\\\
+        n * `SATURDAY` - SATURDAY,\\n * `SUNDAY` - SUNDAY,\\n * `THURSDAY` - THURSDAY,\\\
+        n * `TUESDAY` - TUESDAY,\\n * `WEDNESDAY` - WEDNESDAY\"\n                \
+        \    }\n                  },\n                  \"day_of_month\": {\n    \
+        \                \"description\": \"For MONTHLY or YEARLY frequency: day of\
+        \ month on which to take snapshot. 128 for last day of month. For a specific\
+        \ day: [1, 28] for MONTHLY, and [1, number of days in month_of_year] for YEARLY,\
+        \ with February limited to 28.\",\n                    \"type\": \"number\"\
+        \n                  },\n                  \"month_of_year\": {\n         \
+        \           \"description\": \"For YEARLY frequency: month of year [1, 12]\
+        \ in which to take snapshot\",\n                    \"type\": \"number\"\n\
+        \                  },\n                  \"window_start_hour\": {\n      \
+        \              \"description\": \"For HOURLY_OR_LESS frequency: hour of day\
+        \ [0, 23] for start of window during which to take snapshots\",\n        \
+        \            \"type\": \"number\"\n                  },\n                \
+        \  \"window_start_minute\": {\n                    \"description\": \"For\
+        \ HOURLY_OR_LESS frequency: minute of hour [0, 59] for start of window during\
+        \ which to take snapshots\",\n                    \"type\": \"number\"\n \
+        \                 },\n                  \"window_end_hour\": {\n         \
+        \           \"description\": \"For HOURLY_OR_LESS frequency: hour of day [0,\
+        \ 23] for end of window during which to take snapshots)\",\n             \
+        \       \"type\": \"number\"\n                  },\n                  \"window_end_minute\"\
         : {\n                    \"description\": \"For HOURLY_OR_LESS frequency:\
-        \ hour of day [0, 23] for start of window during which to take snapshots\"\
+        \ minute of hour [0, 59] for end of window during which to take snapshots\"\
         ,\n                    \"type\": \"number\"\n                  },\n      \
-        \            \"window_start_minute\": {\n                    \"description\"\
-        : \"For HOURLY_OR_LESS frequency: minute of hour [0, 59] for start of window\
-        \ during which to take snapshots\",\n                    \"type\": \"number\"\
-        \n                  },\n                  \"window_end_hour\": {\n       \
-        \             \"description\": \"For HOURLY_OR_LESS frequency: hour of day\
-        \ [0, 23] for end of window during which to take snapshots)\",\n         \
-        \           \"type\": \"number\"\n                  },\n                 \
-        \ \"window_end_minute\": {\n                    \"description\": \"For HOURLY_OR_LESS\
-        \ frequency: minute of hour [0, 59] for end of window during which to take\
-        \ snapshots\",\n                    \"type\": \"number\"\n               \
-        \   },\n                  \"fire_every_interval\": {\n                   \
-        \ \"type\": \"string\",\n                    \"enum\": [\n               \
-        \       \"FIRE_IN_MINUTES\",\n                      \"FIRE_IN_HOURS\"\n  \
-        \                  ],\n                    \"description\": \"For HOURLY_OR_LESS\
-        \ frequency: units for interval (MINUTES or HOURS) at which to take snapshot\
-        \ during specified window:\\n * `FIRE_IN_HOURS` - FIRE_IN_HOURS,\\n * `FIRE_IN_MINUTES`\
-        \ - FIRE_IN_MINUTES\"\n                  },\n                  \"fire_every\"\
-        : {\n                    \"description\": \"For HOURLY_OR_LESS frequency:\
-        \ value for interval [1, 99] at which to take snapshot during specified window\"\
-        ,\n                    \"type\": \"number\"\n                  }\n       \
-        \         }\n              },\n              \"expiration_time_to_live\":\
-        \ {\n                \"description\": \"Duration after which to expire snapshots\
-        \ created by this policy, in format <quantity><units>, where <quantity> is\
-        \ a positive integer less than 100 and <units> is one of [months, weeks, days,\
-        \ hours, minutes], e.g. 5days or 1hours. Empty string or never indicates snapshots\
+        \            \"fire_every_interval\": {\n                    \"type\": \"\
+        string\",\n                    \"enum\": [\n                      \"FIRE_IN_MINUTES\"\
+        ,\n                      \"FIRE_IN_HOURS\"\n                    ],\n     \
+        \               \"description\": \"For HOURLY_OR_LESS frequency: units for\
+        \ interval (MINUTES or HOURS) at which to take snapshot during specified window:\\\
+        n * `FIRE_IN_HOURS` - FIRE_IN_HOURS,\\n * `FIRE_IN_MINUTES` - FIRE_IN_MINUTES\"\
+        \n                  },\n                  \"fire_every\": {\n            \
+        \        \"description\": \"For HOURLY_OR_LESS frequency: value for interval\
+        \ [1, 99] at which to take snapshot during specified window\",\n         \
+        \           \"type\": \"number\"\n                  }\n                }\n\
+        \              },\n              \"expiration_time_to_live\": {\n        \
+        \        \"description\": \"Duration after which to expire snapshots created\
+        \ by this policy, in format <quantity><units>, where <quantity> is a positive\
+        \ integer less than 100 and <units> is one of [months, weeks, days, hours,\
+        \ minutes], e.g. 5days or 1hours. Empty string or never indicates snapshots\
         \ should never expire.\",\n                \"type\": \"string\"\n        \
         \      }\n            }\n          },\n          \"enabled\": {\n        \
         \    \"description\": \"Specifies whether taking snapshots is enabled for\
@@ -113,42 +117,45 @@ methods:
         \ under this policy.\",\n      \"type\": \"string\"\n    },\n    \"schedule\"\
         : {\n      \"description\": \"The schedule according to which to take snapshots\
         \ under this policy.\",\n      \"type\": \"object\",\n      \"properties\"\
-        : {\n        \"id\": {\n          \"description\": \"Identifier for the snapshot\
-        \ policy's schedule. Only unique within the scope of a snapshot policy.\"\
-        ,\n          \"type\": \"number\"\n        },\n        \"creation_schedule\"\
-        : {\n          \"description\": \"Structure defining when to take snapshots\"\
-        ,\n          \"type\": \"object\",\n          \"properties\": {\n        \
-        \    \"timezone\": {\n              \"description\": \"The time zone in which\
-        \ the schedule should be interpreted (e.g. America/Los_Angeles or UTC).\"\
-        ,\n              \"type\": \"string\"\n            },\n            \"frequency\"\
-        : {\n              \"type\": \"string\",\n              \"enum\": [\n    \
-        \            \"SCHEDULE_MONTHLY\",\n                \"SCHEDULE_DAILY_OR_WEEKLY\"\
+        : {\n        \"id\": {\n          \"description\": \"Ununsed identifier for\
+        \ the snapshot policy's schedule. Always 1.\",\n          \"type\": \"number\"\
+        \n        },\n        \"creation_schedule\": {\n          \"description\"\
+        : \"Structure defining when to take snapshots\",\n          \"type\": \"object\"\
+        ,\n          \"properties\": {\n            \"timezone\": {\n            \
+        \  \"description\": \"The time zone in which the schedule should be interpreted\
+        \ (e.g. America/Los_Angeles or UTC).\",\n              \"type\": \"string\"\
+        \n            },\n            \"frequency\": {\n              \"type\": \"\
+        string\",\n              \"enum\": [\n                \"SCHEDULE_YEARLY\"\
+        ,\n                \"SCHEDULE_MONTHLY\",\n                \"SCHEDULE_DAILY_OR_WEEKLY\"\
         ,\n                \"SCHEDULE_HOURLY_OR_LESS\"\n              ],\n       \
-        \       \"description\": \"Coarse frequency (MONTHLY, DAILY_OR_WEEKLY, or\
-        \ HOURLY_OR_LESS) at which to take snapshot:\\n * `SCHEDULE_DAILY_OR_WEEKLY`\
+        \       \"description\": \"Coarse frequency (YEARLY, MONTHLY, DAILY_OR_WEEKLY,\
+        \ or HOURLY_OR_LESS) at which to take snapshot:\\n * `SCHEDULE_DAILY_OR_WEEKLY`\
         \ - SCHEDULE_DAILY_OR_WEEKLY,\\n * `SCHEDULE_HOURLY_OR_LESS` - SCHEDULE_HOURLY_OR_LESS,\\\
-        n * `SCHEDULE_MONTHLY` - SCHEDULE_MONTHLY\"\n            },\n            \"\
-        hour\": {\n              \"description\": \"For MONTHLY or DAILY_OR_WEEKLY\
-        \ frequency: Hour of day [0, 23] at which to take snapshot\",\n          \
-        \    \"type\": \"number\"\n            },\n            \"minute\": {\n   \
-        \           \"description\": \"For MONTHLY or DAILY_OR_WEEKLY frequency: minute\
-        \ of hour [0, 59] at which to take snapshot\",\n              \"type\": \"\
-        number\"\n            },\n            \"on_days\": {\n              \"type\"\
-        : \"array\",\n              \"items\": {\n                \"type\": \"string\"\
-        ,\n                \"enum\": [\n                  \"SUNDAY\",\n          \
-        \        \"MONDAY\",\n                  \"TUESDAY\",\n                  \"\
-        WEDNESDAY\",\n                  \"THURSDAY\",\n                  \"FRIDAY\"\
-        ,\n                  \"SATURDAY\"\n                ],\n                \"\
-        description\": \"For DAILY_OR_WEEKLY or HOURLY_OR_LESS frequency: list of\
-        \ days of the week on which to take snapshots. Choose from SUN, MON, TUE,\
-        \ WED, THU, FRI, and/or SAT. EVERY_DAY can be used to specify all days. For\
-        \ MONTHLY frequency: LAST_DAY_OF_MONTH indicates that the snapshot should\
-        \ be taken only on the last day of the month.:\\n * `FRIDAY` - FRIDAY,\\n\
-        \ * `MONDAY` - MONDAY,\\n * `SATURDAY` - SATURDAY,\\n * `SUNDAY` - SUNDAY,\\\
+        n * `SCHEDULE_MONTHLY` - SCHEDULE_MONTHLY,\\n * `SCHEDULE_YEARLY` - SCHEDULE_YEARLY\"\
+        \n            },\n            \"hour\": {\n              \"description\":\
+        \ \"For YEARLY, MONTHLY, or DAILY_OR_WEEKLY frequency: Hour of day [0, 23]\
+        \ at which to take snapshot\",\n              \"type\": \"number\"\n     \
+        \       },\n            \"minute\": {\n              \"description\": \"For\
+        \ YEARLY, MONTHLY, or DAILY_OR_WEEKLY frequency: minute of hour [0, 59] at\
+        \ which to take snapshot\",\n              \"type\": \"number\"\n        \
+        \    },\n            \"on_days\": {\n              \"type\": \"array\",\n\
+        \              \"items\": {\n                \"type\": \"string\",\n     \
+        \           \"enum\": [\n                  \"SUNDAY\",\n                 \
+        \ \"MONDAY\",\n                  \"TUESDAY\",\n                  \"WEDNESDAY\"\
+        ,\n                  \"THURSDAY\",\n                  \"FRIDAY\",\n      \
+        \            \"SATURDAY\"\n                ],\n                \"description\"\
+        : \"For DAILY_OR_WEEKLY or HOURLY_OR_LESS frequency: list of days of the week\
+        \ on which to take snapshots. Choose from SUN, MON, TUE, WED, THU, FRI, and/or\
+        \ SAT. EVERY_DAY can be used to specify all days.:\\n * `FRIDAY` - FRIDAY,\\\
+        n * `MONDAY` - MONDAY,\\n * `SATURDAY` - SATURDAY,\\n * `SUNDAY` - SUNDAY,\\\
         n * `THURSDAY` - THURSDAY,\\n * `TUESDAY` - TUESDAY,\\n * `WEDNESDAY` - WEDNESDAY\"\
         \n              }\n            },\n            \"day_of_month\": {\n     \
-        \         \"description\": \"For MONTHLY frequency: day of month on which\
-        \ to take snapshot. [1, 27] for specific day, 128 for last day of month.\"\
+        \         \"description\": \"For MONTHLY or YEARLY frequency: day of month\
+        \ on which to take snapshot. 128 for last day of month. For a specific day:\
+        \ [1, 28] for MONTHLY, and [1, number of days in month_of_year] for YEARLY,\
+        \ with February limited to 28.\",\n              \"type\": \"number\"\n  \
+        \          },\n            \"month_of_year\": {\n              \"description\"\
+        : \"For YEARLY frequency: month of year [1, 12] in which to take snapshot\"\
         ,\n              \"type\": \"number\"\n            },\n            \"window_start_hour\"\
         : {\n              \"description\": \"For HOURLY_OR_LESS frequency: hour of\
         \ day [0, 23] for start of window during which to take snapshots\",\n    \
@@ -195,71 +202,75 @@ methods:
         \n    },\n    \"schedule\": {\n      \"description\": \"The schedule according\
         \ to which to take snapshots under this policy.\",\n      \"type\": \"object\"\
         ,\n      \"properties\": {\n        \"id\": {\n          \"description\":\
-        \ \"Identifier for the snapshot policy's schedule. Only unique within the\
-        \ scope of a snapshot policy.\",\n          \"type\": \"number\"\n       \
-        \ },\n        \"creation_schedule\": {\n          \"description\": \"Structure\
-        \ defining when to take snapshots\",\n          \"type\": \"object\",\n  \
-        \        \"properties\": {\n            \"timezone\": {\n              \"\
-        description\": \"The time zone in which the schedule should be interpreted\
-        \ (e.g. America/Los_Angeles or UTC).\",\n              \"type\": \"string\"\
-        \n            },\n            \"frequency\": {\n              \"type\": \"\
-        string\",\n              \"enum\": [\n                \"SCHEDULE_MONTHLY\"\
-        ,\n                \"SCHEDULE_DAILY_OR_WEEKLY\",\n                \"SCHEDULE_HOURLY_OR_LESS\"\
-        \n              ],\n              \"description\": \"Coarse frequency (MONTHLY,\
-        \ DAILY_OR_WEEKLY, or HOURLY_OR_LESS) at which to take snapshot:\\n * `SCHEDULE_DAILY_OR_WEEKLY`\
-        \ - SCHEDULE_DAILY_OR_WEEKLY,\\n * `SCHEDULE_HOURLY_OR_LESS` - SCHEDULE_HOURLY_OR_LESS,\\\
-        n * `SCHEDULE_MONTHLY` - SCHEDULE_MONTHLY\"\n            },\n            \"\
-        hour\": {\n              \"description\": \"For MONTHLY or DAILY_OR_WEEKLY\
+        \ \"Ununsed identifier for the snapshot policy's schedule. Always 1.\",\n\
+        \          \"type\": \"number\"\n        },\n        \"creation_schedule\"\
+        : {\n          \"description\": \"Structure defining when to take snapshots\"\
+        ,\n          \"type\": \"object\",\n          \"properties\": {\n        \
+        \    \"timezone\": {\n              \"description\": \"The time zone in which\
+        \ the schedule should be interpreted (e.g. America/Los_Angeles or UTC).\"\
+        ,\n              \"type\": \"string\"\n            },\n            \"frequency\"\
+        : {\n              \"type\": \"string\",\n              \"enum\": [\n    \
+        \            \"SCHEDULE_YEARLY\",\n                \"SCHEDULE_MONTHLY\",\n\
+        \                \"SCHEDULE_DAILY_OR_WEEKLY\",\n                \"SCHEDULE_HOURLY_OR_LESS\"\
+        \n              ],\n              \"description\": \"Coarse frequency (YEARLY,\
+        \ MONTHLY, DAILY_OR_WEEKLY, or HOURLY_OR_LESS) at which to take snapshot:\\\
+        n * `SCHEDULE_DAILY_OR_WEEKLY` - SCHEDULE_DAILY_OR_WEEKLY,\\n * `SCHEDULE_HOURLY_OR_LESS`\
+        \ - SCHEDULE_HOURLY_OR_LESS,\\n * `SCHEDULE_MONTHLY` - SCHEDULE_MONTHLY,\\\
+        n * `SCHEDULE_YEARLY` - SCHEDULE_YEARLY\"\n            },\n            \"\
+        hour\": {\n              \"description\": \"For YEARLY, MONTHLY, or DAILY_OR_WEEKLY\
         \ frequency: Hour of day [0, 23] at which to take snapshot\",\n          \
         \    \"type\": \"number\"\n            },\n            \"minute\": {\n   \
-        \           \"description\": \"For MONTHLY or DAILY_OR_WEEKLY frequency: minute\
-        \ of hour [0, 59] at which to take snapshot\",\n              \"type\": \"\
-        number\"\n            },\n            \"on_days\": {\n              \"type\"\
-        : \"array\",\n              \"items\": {\n                \"type\": \"string\"\
-        ,\n                \"enum\": [\n                  \"SUNDAY\",\n          \
-        \        \"MONDAY\",\n                  \"TUESDAY\",\n                  \"\
-        WEDNESDAY\",\n                  \"THURSDAY\",\n                  \"FRIDAY\"\
-        ,\n                  \"SATURDAY\"\n                ],\n                \"\
-        description\": \"For DAILY_OR_WEEKLY or HOURLY_OR_LESS frequency: list of\
-        \ days of the week on which to take snapshots. Choose from SUN, MON, TUE,\
-        \ WED, THU, FRI, and/or SAT. EVERY_DAY can be used to specify all days. For\
-        \ MONTHLY frequency: LAST_DAY_OF_MONTH indicates that the snapshot should\
-        \ be taken only on the last day of the month.:\\n * `FRIDAY` - FRIDAY,\\n\
-        \ * `MONDAY` - MONDAY,\\n * `SATURDAY` - SATURDAY,\\n * `SUNDAY` - SUNDAY,\\\
-        n * `THURSDAY` - THURSDAY,\\n * `TUESDAY` - TUESDAY,\\n * `WEDNESDAY` - WEDNESDAY\"\
-        \n              }\n            },\n            \"day_of_month\": {\n     \
-        \         \"description\": \"For MONTHLY frequency: day of month on which\
-        \ to take snapshot. [1, 27] for specific day, 128 for last day of month.\"\
-        ,\n              \"type\": \"number\"\n            },\n            \"window_start_hour\"\
-        : {\n              \"description\": \"For HOURLY_OR_LESS frequency: hour of\
-        \ day [0, 23] for start of window during which to take snapshots\",\n    \
-        \          \"type\": \"number\"\n            },\n            \"window_start_minute\"\
-        : {\n              \"description\": \"For HOURLY_OR_LESS frequency: minute\
-        \ of hour [0, 59] for start of window during which to take snapshots\",\n\
-        \              \"type\": \"number\"\n            },\n            \"window_end_hour\"\
-        : {\n              \"description\": \"For HOURLY_OR_LESS frequency: hour of\
-        \ day [0, 23] for end of window during which to take snapshots)\",\n     \
-        \         \"type\": \"number\"\n            },\n            \"window_end_minute\"\
-        : {\n              \"description\": \"For HOURLY_OR_LESS frequency: minute\
-        \ of hour [0, 59] for end of window during which to take snapshots\",\n  \
-        \            \"type\": \"number\"\n            },\n            \"fire_every_interval\"\
-        : {\n              \"type\": \"string\",\n              \"enum\": [\n    \
-        \            \"FIRE_IN_MINUTES\",\n                \"FIRE_IN_HOURS\"\n   \
-        \           ],\n              \"description\": \"For HOURLY_OR_LESS frequency:\
-        \ units for interval (MINUTES or HOURS) at which to take snapshot during specified\
-        \ window:\\n * `FIRE_IN_HOURS` - FIRE_IN_HOURS,\\n * `FIRE_IN_MINUTES` - FIRE_IN_MINUTES\"\
-        \n            },\n            \"fire_every\": {\n              \"description\"\
-        : \"For HOURLY_OR_LESS frequency: value for interval [1, 99] at which to take\
-        \ snapshot during specified window\",\n              \"type\": \"number\"\n\
-        \            }\n          }\n        },\n        \"expiration_time_to_live\"\
-        : {\n          \"description\": \"Duration after which to expire snapshots\
-        \ created by this policy, in format <quantity><units>, where <quantity> is\
-        \ a positive integer less than 100 and <units> is one of [months, weeks, days,\
-        \ hours, minutes], e.g. 5days or 1hours. Empty string or never indicates snapshots\
-        \ should never expire.\",\n          \"type\": \"string\"\n        }\n   \
-        \   }\n    },\n    \"enabled\": {\n      \"description\": \"Specifies whether\
-        \ snapshot taking is enabled for this policy (defaults to true).\",\n    \
-        \  \"type\": \"boolean\"\n    }\n  }\n}"
+        \           \"description\": \"For YEARLY, MONTHLY, or DAILY_OR_WEEKLY frequency:\
+        \ minute of hour [0, 59] at which to take snapshot\",\n              \"type\"\
+        : \"number\"\n            },\n            \"on_days\": {\n              \"\
+        type\": \"array\",\n              \"items\": {\n                \"type\":\
+        \ \"string\",\n                \"enum\": [\n                  \"SUNDAY\",\n\
+        \                  \"MONDAY\",\n                  \"TUESDAY\",\n         \
+        \         \"WEDNESDAY\",\n                  \"THURSDAY\",\n              \
+        \    \"FRIDAY\",\n                  \"SATURDAY\"\n                ],\n   \
+        \             \"description\": \"For DAILY_OR_WEEKLY or HOURLY_OR_LESS frequency:\
+        \ list of days of the week on which to take snapshots. Choose from SUN, MON,\
+        \ TUE, WED, THU, FRI, and/or SAT. EVERY_DAY can be used to specify all days.:\\\
+        n * `FRIDAY` - FRIDAY,\\n * `MONDAY` - MONDAY,\\n * `SATURDAY` - SATURDAY,\\\
+        n * `SUNDAY` - SUNDAY,\\n * `THURSDAY` - THURSDAY,\\n * `TUESDAY` - TUESDAY,\\\
+        n * `WEDNESDAY` - WEDNESDAY\"\n              }\n            },\n         \
+        \   \"day_of_month\": {\n              \"description\": \"For MONTHLY or YEARLY\
+        \ frequency: day of month on which to take snapshot. 128 for last day of month.\
+        \ For a specific day: [1, 28] for MONTHLY, and [1, number of days in month_of_year]\
+        \ for YEARLY, with February limited to 28.\",\n              \"type\": \"\
+        number\"\n            },\n            \"month_of_year\": {\n             \
+        \ \"description\": \"For YEARLY frequency: month of year [1, 12] in which\
+        \ to take snapshot\",\n              \"type\": \"number\"\n            },\n\
+        \            \"window_start_hour\": {\n              \"description\": \"For\
+        \ HOURLY_OR_LESS frequency: hour of day [0, 23] for start of window during\
+        \ which to take snapshots\",\n              \"type\": \"number\"\n       \
+        \     },\n            \"window_start_minute\": {\n              \"description\"\
+        : \"For HOURLY_OR_LESS frequency: minute of hour [0, 59] for start of window\
+        \ during which to take snapshots\",\n              \"type\": \"number\"\n\
+        \            },\n            \"window_end_hour\": {\n              \"description\"\
+        : \"For HOURLY_OR_LESS frequency: hour of day [0, 23] for end of window during\
+        \ which to take snapshots)\",\n              \"type\": \"number\"\n      \
+        \      },\n            \"window_end_minute\": {\n              \"description\"\
+        : \"For HOURLY_OR_LESS frequency: minute of hour [0, 59] for end of window\
+        \ during which to take snapshots\",\n              \"type\": \"number\"\n\
+        \            },\n            \"fire_every_interval\": {\n              \"\
+        type\": \"string\",\n              \"enum\": [\n                \"FIRE_IN_MINUTES\"\
+        ,\n                \"FIRE_IN_HOURS\"\n              ],\n              \"description\"\
+        : \"For HOURLY_OR_LESS frequency: units for interval (MINUTES or HOURS) at\
+        \ which to take snapshot during specified window:\\n * `FIRE_IN_HOURS` - FIRE_IN_HOURS,\\\
+        n * `FIRE_IN_MINUTES` - FIRE_IN_MINUTES\"\n            },\n            \"\
+        fire_every\": {\n              \"description\": \"For HOURLY_OR_LESS frequency:\
+        \ value for interval [1, 99] at which to take snapshot during specified window\"\
+        ,\n              \"type\": \"number\"\n            }\n          }\n      \
+        \  },\n        \"expiration_time_to_live\": {\n          \"description\":\
+        \ \"Duration after which to expire snapshots created by this policy, in format\
+        \ <quantity><units>, where <quantity> is a positive integer less than 100\
+        \ and <units> is one of [months, weeks, days, hours, minutes], e.g. 5days\
+        \ or 1hours. Empty string or never indicates snapshots should never expire.\"\
+        ,\n          \"type\": \"string\"\n        }\n      }\n    },\n    \"enabled\"\
+        : {\n      \"description\": \"Specifies whether snapshot taking is enabled\
+        \ for this policy (defaults to true).\",\n      \"type\": \"boolean\"\n  \
+        \  }\n  }\n}"
 rest_endpoint: /v2/snapshots/policies/
 api_version: v2
 permalink: /rest-api-guide/snapshots-v2/v2_snapshots_policies.html

@@ -119,15 +119,35 @@ methods:
         \      \"description\": \"The revision for changes to the underlying file\
         \ data.\",\n      \"type\": \"string\"\n    },\n    \"user_metadata_revision\"\
         : {\n      \"description\": \"The revision for changes to the user defined\
-        \ metadata of the file.\",\n      \"type\": \"string\"\n    },\n    \"lock\"\
-        : {\n      \"description\": \"When requested, the lock applied preventing\
-        \ file modification. Requires READ_ACL to read.\",\n      \"type\": \"object\"\
-        ,\n      \"properties\": {\n        \"retention_period\": {\n          \"\
-        description\": \"A permanent retention period preventing files from being\
-        \ deleted or modified. The period can only be extended.\",\n          \"type\"\
-        : \"string\"\n        },\n        \"legal_hold\": {\n          \"description\"\
-        : \"A removable lock under which files cannot be deleted or modified.\",\n\
-        \          \"type\": \"boolean\"\n        }\n      }\n    }\n  }\n}"
+        \ metadata of the file.\",\n      \"type\": \"string\"\n    },\n    \"archival\"\
+        : {\n      \"description\": \"Files and symlinks on an object bridge only:\
+        \ the archival status and storage tier of the object behind it, and the job\
+        \ that last set it. Null for directories and for anything on no bridge.\"\
+        ,\n      \"type\": \"object\",\n      \"properties\": {\n        \"status\"\
+        : {\n          \"type\": \"string\",\n          \"enum\": [\n            \"\
+        ONLINE\",\n            \"FREEZING\",\n            \"OFFLINE\",\n         \
+        \   \"RESTORING\"\n          ],\n          \"description\": \"Where the file\
+        \ stands between its object store's online and archive tiers:\\n * `FREEZING`\
+        \ - A freeze job has set the file, and its object isn't archived yet.,\\n\
+        \ * `OFFLINE` - Its object is in an archive tier, and can't be read until\
+        \ it's restored.,\\n * `ONLINE` - Readable without a restore, and no freeze\
+        \ job asks to archive it.,\\n * `RESTORING` - Its object is in an archive\
+        \ tier, and a restore is bringing it back online.\"\n        },\n        \"\
+        store_tier\": {\n          \"description\": \"The storage tier of the file's\
+        \ object, in the bridge's provider's terms, such as HOT, COOL, COLD or ARCHIVE\
+        \ on Azure, or null when the cluster hasn't learned it\",\n          \"type\"\
+        : \"string\"\n        },\n        \"job_id\": {\n          \"description\"\
+        : \"The freeze or thaw job that last set the file. Null if none has, or if\
+        \ a canceled or failed freeze released it\",\n          \"type\": \"string\"\
+        \n        }\n      }\n    },\n    \"lock\": {\n      \"description\": \"When\
+        \ requested, the lock applied preventing file modification. Requires READ_ACL\
+        \ to read.\",\n      \"type\": \"object\",\n      \"properties\": {\n    \
+        \    \"retention_period\": {\n          \"description\": \"A permanent retention\
+        \ period preventing files from being deleted or modified. The period can only\
+        \ be extended.\",\n          \"type\": \"string\"\n        },\n        \"\
+        legal_hold\": {\n          \"description\": \"A removable lock under which\
+        \ files cannot be deleted or modified.\",\n          \"type\": \"boolean\"\
+        \n        }\n      }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success
@@ -246,15 +266,35 @@ methods:
         \      \"description\": \"The revision for changes to the underlying file\
         \ data.\",\n      \"type\": \"string\"\n    },\n    \"user_metadata_revision\"\
         : {\n      \"description\": \"The revision for changes to the user defined\
-        \ metadata of the file.\",\n      \"type\": \"string\"\n    },\n    \"lock\"\
-        : {\n      \"description\": \"When requested, the lock applied preventing\
-        \ file modification. Requires READ_ACL to read.\",\n      \"type\": \"object\"\
-        ,\n      \"properties\": {\n        \"retention_period\": {\n          \"\
-        description\": \"A permanent retention period preventing files from being\
-        \ deleted or modified. The period can only be extended.\",\n          \"type\"\
-        : \"string\"\n        },\n        \"legal_hold\": {\n          \"description\"\
-        : \"A removable lock under which files cannot be deleted or modified.\",\n\
-        \          \"type\": \"boolean\"\n        }\n      }\n    }\n  }\n}"
+        \ metadata of the file.\",\n      \"type\": \"string\"\n    },\n    \"archival\"\
+        : {\n      \"description\": \"Files and symlinks on an object bridge only:\
+        \ the archival status and storage tier of the object behind it, and the job\
+        \ that last set it. Null for directories and for anything on no bridge.\"\
+        ,\n      \"type\": \"object\",\n      \"properties\": {\n        \"status\"\
+        : {\n          \"type\": \"string\",\n          \"enum\": [\n            \"\
+        ONLINE\",\n            \"FREEZING\",\n            \"OFFLINE\",\n         \
+        \   \"RESTORING\"\n          ],\n          \"description\": \"Where the file\
+        \ stands between its object store's online and archive tiers:\\n * `FREEZING`\
+        \ - A freeze job has set the file, and its object isn't archived yet.,\\n\
+        \ * `OFFLINE` - Its object is in an archive tier, and can't be read until\
+        \ it's restored.,\\n * `ONLINE` - Readable without a restore, and no freeze\
+        \ job asks to archive it.,\\n * `RESTORING` - Its object is in an archive\
+        \ tier, and a restore is bringing it back online.\"\n        },\n        \"\
+        store_tier\": {\n          \"description\": \"The storage tier of the file's\
+        \ object, in the bridge's provider's terms, such as HOT, COOL, COLD or ARCHIVE\
+        \ on Azure, or null when the cluster hasn't learned it\",\n          \"type\"\
+        : \"string\"\n        },\n        \"job_id\": {\n          \"description\"\
+        : \"The freeze or thaw job that last set the file. Null if none has, or if\
+        \ a canceled or failed freeze released it\",\n          \"type\": \"string\"\
+        \n        }\n      }\n    },\n    \"lock\": {\n      \"description\": \"When\
+        \ requested, the lock applied preventing file modification. Requires READ_ACL\
+        \ to read.\",\n      \"type\": \"object\",\n      \"properties\": {\n    \
+        \    \"retention_period\": {\n          \"description\": \"A permanent retention\
+        \ period preventing files from being deleted or modified. The period can only\
+        \ be extended.\",\n          \"type\": \"string\"\n        },\n        \"\
+        legal_hold\": {\n          \"description\": \"A removable lock under which\
+        \ files cannot be deleted or modified.\",\n          \"type\": \"boolean\"\
+        \n        }\n      }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success

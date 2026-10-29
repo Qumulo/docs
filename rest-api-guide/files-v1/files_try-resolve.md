@@ -31,8 +31,9 @@ methods:
         \ \"object\",\n  \"properties\": {\n    \"ids\": {\n      \"type\": \"array\"\
         ,\n      \"items\": {\n        \"description\": \"File IDs to resolve\",\n\
         \        \"type\": \"string\"\n      }\n    },\n    \"snapshot\": {\n    \
-        \  \"description\": \"Snapshot to resolve against. Defaults to the live filesystem.\"\
-        ,\n      \"type\": \"number\"\n    }\n  }\n}"
+        \  \"description\": \"The snapshot ID that specifies the version of the filesystem\
+        \ to use. If not specified, use the head version.\",\n      \"type\": \"string\"\
+        \n    }\n  }\n}"
 rest_endpoint: /v1/files/try-resolve
 api_version: v1
 deprecated: false

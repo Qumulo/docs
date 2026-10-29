@@ -25,6 +25,9 @@ positional_options:
 - help: The kind of network you want to add.
   name: assigned_by
   required: true
+redirect_from:
+- /qq-cli-command-guide/network/network_v3_modify_network.html
+- /qq-cli-command-guide/network/network_preview_modify_network.html
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq network_modify_network</code>
   command.

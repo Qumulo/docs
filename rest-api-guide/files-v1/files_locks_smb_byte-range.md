@@ -37,15 +37,16 @@ methods:
         : \"offset\",\n            \"type\": \"string\"\n          },\n          \"\
         size\": {\n            \"description\": \"size\",\n            \"type\": \"\
         string\"\n          },\n          \"owner_id\": {\n            \"description\"\
-        : \"The unique identifier for the process that owns the file lock.\",\n  \
-        \          \"type\": \"string\"\n          },\n          \"owner_name\": {\n\
-        \            \"description\": \"The name of the machine that owns the lock.\"\
-        ,\n            \"type\": \"string\"\n          },\n          \"owner_address\"\
-        : {\n            \"description\": \"The IP address to use for acquiring the\
-        \ file lock.\",\n            \"type\": \"string\"\n          },\n        \
-        \  \"node_address\": {\n            \"description\": \"The IP address of the\
-        \ node that receives the request.\",\n            \"type\": \"string\"\n \
-        \         }\n        }\n      }\n    }\n  }\n}"
+        : \"An opaque identifier for the owner of the file lock. Comparable only within\
+        \ the same lock type.\",\n            \"type\": \"string\"\n          },\n\
+        \          \"owner_name\": {\n            \"description\": \"The name of the\
+        \ machine that owns the lock.\",\n            \"type\": \"string\"\n     \
+        \     },\n          \"owner_address\": {\n            \"description\": \"\
+        The IP address to use for acquiring the file lock.\",\n            \"type\"\
+        : \"string\"\n          },\n          \"node_address\": {\n            \"\
+        description\": \"The IP address of the node that receives the request.\",\n\
+        \            \"type\": \"string\"\n          }\n        }\n      }\n    }\n\
+        \  }\n}"
     responses:
     - code: '200'
       description: Return value on success

@@ -5,7 +5,7 @@ optional_options:
 - alternate:
   - --json
   - --no-monitor
-  help: Skip montoring an in-flight upgrade and just return the raw status
+  help: Skip monitoring an in-flight upgrade and just return the raw status
   name: --raw
   required: false
 permalink: /qq-cli-command-guide/upgrade/upgrade_status.html

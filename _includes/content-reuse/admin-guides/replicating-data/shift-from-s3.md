@@ -95,6 +95,53 @@ Qumulo Core performs the following steps when it creates a Shift-From relationsh
 
    {% include note.html content="If you rename or move an object or local file between jobs, or if there are any metadata changes in S3 or Qumulo, the object is replicated again." %}
 
+### Copied Object Metadata {#object-metadata}
+Shift-From stores the metadata for each object as [{{site.udm.l}}](../metadata/managing-user-defined-metadata.html) for the created file.
+
+<table>
+  <thead>
+    <tr>
+      <th>Qumulo Core Keyspace</th>
+      <th>Amazon S3 Object Metadata</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>S3</code></td>
+      <td>User-defined metadata (<code>x-amz-meta-*</code> headers)</td>
+    </tr>
+    <tr>
+      <td><code>GENERIC</code></td>
+      <td>Tags</td>
+    </tr>
+    <tr>
+      <td>
+        <code>WELL_KNOWN</code><br>
+        (Qumulo Core 7.10.3 and higher)
+      </td>
+      <td>
+        Standard object headers:
+        <ul>
+          <li><code>Cache-Control</code></li>
+          <li><code>Content-Disposition</code></li>
+          <li><code>Content-Encoding</code></li>
+          <li><code>Content-Language</code></li>
+          <li><code>Content-Type</code></li>
+          <li><code>Expires</code></li>                                        
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+In Qumulo Core 7.10.3 (and higher):
+
+* The [Qumulo S3 API](../s3-api/supported-s3-functionality-known-limits.html#standard-object-headers-special-considerations) returns an object's original standard headers for the file that Shift-From creates for the object.
+
+* Because Amazon S3 reports a content type for every object, Shift-From stores `binary/octet-stream` as the `Content-Type` value for any object uploaded to Amazon S3 without a value.
+
+* Shift-From doesn't store standard header values that the Qumulo S3 API can't return (such as values that use invalid UTF-8 encoding or values that exceed 2 KiB, including the header name).
+
 ### Storing and Reusing Relationships
 The Shift-From relationship remains on the Qumulo cluster. You can monitor the completion status of a job, start new jobs for a relationship after the initial job finishes, and delete the relationship (when you no longer need the S3-folder-Qumulo-directory pair). To avoid redownloading objects that a previous copy job downloaded, relationships take up approximately 100 bytes for each object. To free this storage, you can delete relationships that you no longer need.
 

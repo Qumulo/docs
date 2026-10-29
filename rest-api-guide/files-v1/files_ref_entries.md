@@ -113,7 +113,27 @@ methods:
         \      \"description\": \"The revision for changes to the underlying file\
         \ data.\",\n      \"type\": \"string\"\n    },\n    \"user_metadata_revision\"\
         : {\n      \"description\": \"The revision for changes to the user defined\
-        \ metadata of the file.\",\n      \"type\": \"string\"\n    }\n  }\n}"
+        \ metadata of the file.\",\n      \"type\": \"string\"\n    },\n    \"archival\"\
+        : {\n      \"description\": \"Files and symlinks on an object bridge only:\
+        \ the archival status and storage tier of the object behind it, and the job\
+        \ that last set it. Null for directories and for anything on no bridge.\"\
+        ,\n      \"type\": \"object\",\n      \"properties\": {\n        \"status\"\
+        : {\n          \"type\": \"string\",\n          \"enum\": [\n            \"\
+        ONLINE\",\n            \"FREEZING\",\n            \"OFFLINE\",\n         \
+        \   \"RESTORING\"\n          ],\n          \"description\": \"Where the file\
+        \ stands between its object store's online and archive tiers:\\n * `FREEZING`\
+        \ - A freeze job has set the file, and its object isn't archived yet.,\\n\
+        \ * `OFFLINE` - Its object is in an archive tier, and can't be read until\
+        \ it's restored.,\\n * `ONLINE` - Readable without a restore, and no freeze\
+        \ job asks to archive it.,\\n * `RESTORING` - Its object is in an archive\
+        \ tier, and a restore is bringing it back online.\"\n        },\n        \"\
+        store_tier\": {\n          \"description\": \"The storage tier of the file's\
+        \ object, in the bridge's provider's terms, such as HOT, COOL, COLD or ARCHIVE\
+        \ on Azure, or null when the cluster hasn't learned it\",\n          \"type\"\
+        : \"string\"\n        },\n        \"job_id\": {\n          \"description\"\
+        : \"The freeze or thaw job that last set the file. Null if none has, or if\
+        \ a canceled or failed freeze released it\",\n          \"type\": \"string\"\
+        \n        }\n      }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success
@@ -319,26 +339,47 @@ methods:
         : \"The revision for changes to the underlying file data.\",\n           \
         \ \"type\": \"string\"\n          },\n          \"user_metadata_revision\"\
         : {\n            \"description\": \"The revision for changes to the user defined\
-        \ metadata of the file.\",\n            \"type\": \"string\"\n          }\n\
-        \        }\n      }\n    },\n    \"file_acls\": {\n      \"description\":\
-        \ \"Provides the ACL for each file. When include_acls is not requested, file_acls\
-        \ is null.\",\n      \"type\": \"object\",\n      \"properties\": {\n    \
-        \    \"acl_pool\": {\n          \"type\": \"array\",\n          \"items\"\
-        : {\n            \"description\": \"The ACL pool which acl_indices references.\
-        \ To retrieve the ACL for files[i] look up acl_pool[acl_indices[i]].\",\n\
-        \            \"type\": \"object\",\n            \"properties\": {\n      \
-        \        \"control\": {\n                \"type\": \"array\",\n          \
-        \      \"items\": {\n                  \"type\": \"string\",\n           \
-        \       \"enum\": [\n                    \"PRESENT\",\n                  \
-        \  \"DEFAULTED\",\n                    \"TRUSTED\",\n                    \"\
-        AUTO_INHERIT\",\n                    \"PROTECTED\"\n                  ],\n\
-        \                  \"description\": \"control:\\n * `AUTO_INHERIT` - Set whether\
-        \ the ACL was created through inheritance,\\n * `DEFAULTED` - Sets whether\
-        \ the ACL was established by default means,\\n * `PRESENT` - Set when ACL\
-        \ is present on the object,\\n * `PROTECTED` - Protects ACL from inherit operations,\\\
-        n * `TRUSTED` - Set when ACL is provided by a trusted source\"\n         \
-        \       }\n              },\n              \"posix_special_permissions\":\
-        \ {\n                \"type\": \"array\",\n                \"items\": {\n\
+        \ metadata of the file.\",\n            \"type\": \"string\"\n          },\n\
+        \          \"archival\": {\n            \"description\": \"Files and symlinks\
+        \ on an object bridge only: the archival status and storage tier of the object\
+        \ behind it, and the job that last set it. Null for directories and for anything\
+        \ on no bridge.\",\n            \"type\": \"object\",\n            \"properties\"\
+        : {\n              \"status\": {\n                \"type\": \"string\",\n\
+        \                \"enum\": [\n                  \"ONLINE\",\n            \
+        \      \"FREEZING\",\n                  \"OFFLINE\",\n                  \"\
+        RESTORING\"\n                ],\n                \"description\": \"Where\
+        \ the file stands between its object store's online and archive tiers:\\n\
+        \ * `FREEZING` - A freeze job has set the file, and its object isn't archived\
+        \ yet.,\\n * `OFFLINE` - Its object is in an archive tier, and can't be read\
+        \ until it's restored.,\\n * `ONLINE` - Readable without a restore, and no\
+        \ freeze job asks to archive it.,\\n * `RESTORING` - Its object is in an archive\
+        \ tier, and a restore is bringing it back online.\"\n              },\n  \
+        \            \"store_tier\": {\n                \"description\": \"The storage\
+        \ tier of the file's object, in the bridge's provider's terms, such as HOT,\
+        \ COOL, COLD or ARCHIVE on Azure, or null when the cluster hasn't learned\
+        \ it\",\n                \"type\": \"string\"\n              },\n        \
+        \      \"job_id\": {\n                \"description\": \"The freeze or thaw\
+        \ job that last set the file. Null if none has, or if a canceled or failed\
+        \ freeze released it\",\n                \"type\": \"string\"\n          \
+        \    }\n            }\n          }\n        }\n      }\n    },\n    \"file_acls\"\
+        : {\n      \"description\": \"Provides the ACL for each file. When include_acls\
+        \ is not requested, file_acls is null.\",\n      \"type\": \"object\",\n \
+        \     \"properties\": {\n        \"acl_pool\": {\n          \"type\": \"array\"\
+        ,\n          \"items\": {\n            \"description\": \"The ACL pool which\
+        \ acl_indices references. To retrieve the ACL for files[i] look up acl_pool[acl_indices[i]].\"\
+        ,\n            \"type\": \"object\",\n            \"properties\": {\n    \
+        \          \"control\": {\n                \"type\": \"array\",\n        \
+        \        \"items\": {\n                  \"type\": \"string\",\n         \
+        \         \"enum\": [\n                    \"PRESENT\",\n                \
+        \    \"DEFAULTED\",\n                    \"TRUSTED\",\n                  \
+        \  \"AUTO_INHERIT\",\n                    \"PROTECTED\"\n                \
+        \  ],\n                  \"description\": \"control:\\n * `AUTO_INHERIT` -\
+        \ Set whether the ACL was created through inheritance,\\n * `DEFAULTED` -\
+        \ Sets whether the ACL was established by default means,\\n * `PRESENT` -\
+        \ Set when ACL is present on the object,\\n * `PROTECTED` - Protects ACL from\
+        \ inherit operations,\\n * `TRUSTED` - Set when ACL is provided by a trusted\
+        \ source\"\n                }\n              },\n              \"posix_special_permissions\"\
+        : {\n                \"type\": \"array\",\n                \"items\": {\n\
         \                  \"type\": \"string\",\n                  \"enum\": [\n\
         \                    \"STICKY_BIT\",\n                    \"SET_GID\",\n \
         \                   \"SET_UID\"\n                  ],\n                  \"\
