@@ -43,7 +43,7 @@ def preprocess_content(content, filename, allowlist_words)
     .gsub(/`[^`\n]*`/, ' ')                                                           				# ` single-backtick inline code ` (single line only)
     .gsub(/<code[^>]*>[\s\S]*?<\/code>/m) { |m| "\n" * m.count("\n") }                				# <code> tags
     .gsub(/<pre[^>]*>[\s\S]*?<\/pre>/m) { |m| "\n" * m.count("\n") }                  				# <pre> tags
-    .gsub(/<style>.*?<\/style>/m) { |m| "\n" * m.count("\n") }                        				# <style> tags
+    .gsub(/<style[^>]*>[\s\S]*?<\/style>/m) { |m| "\n" * m.count("\n") }              				# <style> tags
 
   # Extract front matter values
   content = content.sub(/\A---[\s\S]*?---\n?/m) do |match|
@@ -54,16 +54,20 @@ def preprocess_content(content, filename, allowlist_words)
   content = content.gsub(/\{%\s*comment\s*%\}.*?\{%\s*endcomment\s*%\}/m) { |m| "\n" * m.count("\n") }
   content = content.gsub(/\{\{[\s\S]*?\}\}/m) { |m| "\n" * m.count("\n") }
 
-  # Strip JSON blocks { ... } inside {% capture %} ... {% endcapture %} while preserving line counts
+  # Discard CSS/style capture blocks entirely or strip JSON blocks { ... } inside captures while preserving line counts
   content = content.gsub(/\{%\s*capture\b[^%]*\%\}([\s\S]*?)\{%\s*endcapture\s*%\}/i) do |full_capture|
-    full_capture.gsub(/\{(?!%)(?>(?:[^{}]|(?:\g<0>))*)\}/m) do |json_match|
-      "\n" * json_match.count("\n")
+    if full_capture.match?(/\{%\s*capture\s+[\w\-]*?(?:css|style)[\w\-]*?\s*%\}/i)
+      "\n" * full_capture.count("\n")
+    else
+      full_capture.gsub(/\{(?!%)(?>(?:[^{}]|(?:\g<0>))*)\}/m) do |json_match|
+        "\n" * json_match.count("\n")
+      end
     end
   end
 
   # Process Liquid tags {% ... %}:
   # * Ignore logic/control tags (if, elsif, unless, assign, case, when, capture)
-  # * Ignore technical reference tags completely (qq, rest, rfc, image, shared_image, content-reuse)
+  # * Ignore technical reference & CSS injector tags completely (qq, rest, rfc, image, shared_image, inject_css, inject-css, content-reuse)
   # * Keep only quoted prose strings from include tags
   content = content.gsub(/\{%[\s\S]*?%\}/) do |tag|
     newlines = "\n" * tag.count("\n")
@@ -72,7 +76,7 @@ def preprocess_content(content, filename, allowlist_words)
       next " #{newlines}"
     end
 
-    if tag.match?(/\b(?:qq|rest|rfc|image|shared_image)\.html\b|content-reuse/i)
+    if tag.match?(/\b(?:qq|rest|rfc|image|shared_image|inject[_-]css)\.html\b|content-reuse/i)
       next " #{newlines}"
     end
 
