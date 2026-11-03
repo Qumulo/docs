@@ -6,9 +6,14 @@ sidebar: rest_api_guide_sidebar
 layout: page
 ---
 
+{% capture custom_css %}
+div#toc {
+  height:200px;
+  overflow:auto;
+}
+{% endcapture %}
+{% include inject_css.html css=custom_css %}
 {% capture noAPIchanges %}This release contains no REST API changes.{% endcapture %}
-
-<style>div#toc{height:200px;overflow:auto;}</style>
 
 
 ## 7.10 Releases

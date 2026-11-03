@@ -7,11 +7,12 @@ tocTrue: true
 isHomepage: true
 ---
 
-<style>
+{% capture custom_css %}
 #toc ul li:nth-child(-n+5) {
     display: none;
 }
-</style>
+{% endcapture %}
+{% include inject_css.html css=custom_css %}
 
 To get started, choose one of the following guides.
 

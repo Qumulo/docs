@@ -7,8 +7,13 @@ layout: page
 ---
 
 {% capture noCLIchanges %}This release contains no `qq` CLI changes.{% endcapture %}
-
-<style>div#toc{height:200px;overflow:auto;}</style>
+{% capture custom_css %}
+div#toc {
+  height:200px;
+  overflow:auto;
+}
+{% endcapture %}
+{% include inject_css.html css=custom_css %}
 
 
 ## 7.10 Releases

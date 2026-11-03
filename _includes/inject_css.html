@@ -1,0 +1,5 @@
+<script>
+  const styleEl = document.createElement('style');
+  styleEl.textContent = {{ include.css | jsonify }};
+  document.head.appendChild(styleEl);
+</script>

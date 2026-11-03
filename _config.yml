@@ -63,6 +63,8 @@ kramdown:
  auto_ids: true
  hard_wrap: false
  syntax_highlighter: rouge
+ html_to_native: true
+ format: html5
 
 # filter used to process markdown. note that kramdown differs from github-flavored markdown in some subtle ways
 

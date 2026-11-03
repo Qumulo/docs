@@ -1,4 +1,10 @@
-<style>div#toc{height:200px;overflow:auto;}</style>
+{% capture custom_css %}
+div#toc {
+  height: 200px;
+  overflow: auto;
+}
+{% endcapture %}
+{% include inject_css.html css=custom_css %}
 {% capture nexusLink %}<p>{{site.downloadsRelnotes}}{{site.loginRequired}}</p>{% endcapture %}
 {% comment %}For boilerplate text, use {{page.varNoPublicChanges}}{% endcomment %}
 {% capture majFixInt %}{{ site.fixedInLatest }} <span class="fixed-in-latest">The majority of functionality and stability improvements in this Qumulo Core release are internal.</span>{% endcapture %}

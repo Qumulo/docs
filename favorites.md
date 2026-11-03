@@ -6,8 +6,7 @@ search: exclude
 toc: false
 favoritesScripts: true
 ---
-
-<style>
+{% capture custom__css %}
 .githubEditButton {
   display: none !important;
 }
@@ -15,7 +14,8 @@ favoritesScripts: true
 #mysidebar {
   margin-top: -19px !important;
 }
-</style>
+{% endcapture %}
+{% include inject_css.html css=custom_css %}
 
 <div class="post-content">
   <p id="fav-empty">You haven't saved any favorites yet.<br>To save a page, navigate to it and then click <span class="fav-star-demo">&#9733;</span> to the right of the page title.</p>
