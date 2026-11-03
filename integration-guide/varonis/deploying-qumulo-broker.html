@@ -682,7 +682,9 @@ $(document).ready(function() {
   <li>
     <p>To configure the system to use the MariaDB database, edit the <code class="language-plaintext highlighter-rouge">/opt/qumulo/QumuloBroker/api/.env</code> file and specify the values for the <code class="language-plaintext highlighter-rouge">MYSQL_ROOT_PASSWORD</code> and <code class="language-plaintext highlighter-rouge">MYSQL_PASSWORD</code> variables.</p>
 
-    <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Leave the <code class="language-plaintext highlighter-rouge">MYSQL_DATABASE</code> and <code class="language-plaintext highlighter-rouge">MYSQL_USERNAME</code> variables unchanged.</div>
+    <div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Leave the <code class="language-plaintext highlighter-rouge">MYSQL_DATABASE</code> and <code class="language-plaintext highlighter-rouge">MYSQL_USERNAME</code> variables unchanged.
+    </div>
   </li>
 </ol>
 
@@ -739,7 +741,7 @@ Up 5 seconds   0.0.0.0:3306-&gt;3306/tcp, :::3306-&gt;3306/tcp       api-db-1
 
 <ol>
   <li>
-    <p>To configure audit logging on your Qumulo cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/audit/audit_set_syslog_config.html"><code>qq audit_set_syslog_config</code></a>
+    <p>To configure audit logging on your Qumulo cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/audit/audit_set_syslog_config.html"><code class="language-plaintext highlighter-rouge">qq audit_set_syslog_config</code></a>
  command with the <code class="language-plaintext highlighter-rouge">--enable</code> flag, use the <code class="language-plaintext highlighter-rouge">--json</code> flag to request logging in JSON format, and specify the IP address or hostname and port number for your Qumulo Broker machine. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq audit_set_syslog_config <span class="se">\</span>
@@ -752,7 +754,7 @@ Up 5 seconds   0.0.0.0:3306-&gt;3306/tcp, :::3306-&gt;3306/tcp       api-db-1
     <p>Qumulo Core enables audit logging for your cluster.</p>
   </li>
   <li>
-    <p>To confirm the audit logging configuration for your cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/audit/audit_get_syslog_config.html"><code>qq audit_get_syslog_config</code></a>
+    <p>To confirm the audit logging configuration for your cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/audit/audit_get_syslog_config.html"><code class="language-plaintext highlighter-rouge">qq audit_get_syslog_config</code></a>
  command.</p>
 
     <p>In the following example output, audit logging is enabled in JSON format.</p>
@@ -767,7 +769,7 @@ Up 5 seconds   0.0.0.0:3306-&gt;3306/tcp, :::3306-&gt;3306/tcp       api-db-1
 </span></code></pre></div>    </div>
   </li>
   <li>
-    <p>To confirm the connection between the Qumulo Broker and the <code class="language-plaintext highlighter-rouge">rsyslog</code> instance, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/audit/audit_get_syslog_status.html"><code>qq audit_get_syslog_status</code></a>
+    <p>To confirm the connection between the Qumulo Broker and the <code class="language-plaintext highlighter-rouge">rsyslog</code> instance, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/audit/audit_get_syslog_status.html"><code class="language-plaintext highlighter-rouge">qq audit_get_syslog_status</code></a>
  command.</p>
 
     <p>The command returns one of three possible values for the <code class="language-plaintext highlighter-rouge">connection_status</code> field:</p>
@@ -779,12 +781,12 @@ Up 5 seconds   0.0.0.0:3306-&gt;3306/tcp, :::3306-&gt;3306/tcp       api-db-1
       <li>
         <p><code class="language-plaintext highlighter-rouge">AUDIT_LOG_DISCONNECTED</code>: The <code class="language-plaintext highlighter-rouge">rsyslog</code> instance is disconnected from your Qumulo Broker. Your Qumulo cluster is configured to buffer all outgoing audit log messages until it fills its buffer. When the <code class="language-plaintext highlighter-rouge">rsyslog</code> instance reconnects to your Qumulo Broker the cluster attempts to send all buffered messages.</p>
 
-        <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Caution</b><br />
-<ul>
-  <li>When the message buffer fills up, Qumulo Core discards all new messages. To change the buffer size, configure `rsyslog` parameters.</li>
-  <li>If a power outage or cluster reboot occurs while Qumulo Core is waiting to send its messages, all unsent messages are lost.</li>
-</ul>
-</div>
+        <div class="alert alert-danger" role="alert">
+<em class="fa fa-exclamation-circle"></em> <strong>Caution</strong><br />           <ul>
+            <li>When the message buffer fills up, Qumulo Core discards all new messages. To change the buffer size, configure `rsyslog` parameters.</li>
+            <li>If a power outage or cluster reboot occurs while Qumulo Core is waiting to send its messages, all unsent messages are lost.</li>
+          </ul>
+        </div>
       </li>
       <li>
         <p><code class="language-plaintext highlighter-rouge">AUDIT_LOG_DISABLED</code>: Audit logging has been disabled explicitly for this Qumulo cluster.</p>
@@ -796,7 +798,9 @@ Up 5 seconds   0.0.0.0:3306-&gt;3306/tcp, :::3306-&gt;3306/tcp       api-db-1
 <h2 id="configure-rsyslog-communication">Step 4: Configure rsyslog to Communicate with Qumulo Broker</h2>
 <p>This section explains how to configure <code class="language-plaintext highlighter-rouge">rsyslog</code> on the Qumulo Broker machine.</p>
 
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Before you restart the <code class="language-plaintext highlighter-rouge">rsyslog</code> service to apply a new configuration, you must always <a href="#deploy-qumulo-broker">ensure that Qumulo Broker is deployed</a>.</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Before you restart the <code class="language-plaintext highlighter-rouge">rsyslog</code> service to apply a new configuration, you must always <a href="#deploy-qumulo-broker">ensure that Qumulo Broker is deployed</a>.
+</div>
 
 <ol>
   <li>

@@ -2695,12 +2695,12 @@ $(document).ready(function() {
 
    <p>This section explains how to replace nodes that have reached retirement or end of life by performing a two-stage transparent platform refresh on clusters that run Qumulo Core 6.1.0.3 (and higher).</p>
    
-     <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>Qumulo Core doesn't support replacing nodes in clusters with more than 100 nodes.</li>
-  <li>The total capacity of the planned cluster configuration can't be less than the total capacity of the current cluster configuration.</li>
-  <li>In Qumulo Core 6.1.2.2 (and higher), you can use the <code>qq</code> CLI to replace nodes. To replace nodes on a lower Qumulo Core version, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a>.</li>
-</ul>
+     <div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+    <li>Qumulo Core doesn't support replacing nodes in clusters with more than 100 nodes.</li>
+    <li>The total capacity of the planned cluster configuration can't be less than the total capacity of the current cluster configuration.</li>
+    <li>In Qumulo Core 6.1.2.2 (and higher), you can use the <code class="language-plaintext highlighter-rouge">qq</code> CLI to replace nodes. To replace nodes on a lower Qumulo Core version, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a>.</li>
+  </ul>
 </div>
 
 <h2 id="how-transparent-platform-refresh-works">How Transparent Platform Refresh Works</h2>
@@ -2723,7 +2723,9 @@ $(document).ready(function() {
 <h3 id="stage-2-execute-the-node-replacement-plan-steps">Stage 2: Execute the Node Replacement Plan Steps</h3>
 <p>In this stage, you <a href="#execute-node-replacement-plan-steps">execute the node replacement plan’s steps</a> and Qumulo Core performs data protection reconfiguration.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> It isn’t possible to add nodes or begin another node replacement step while a node replacement step is already in progress.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> It isn’t possible to add nodes or begin another node replacement step while a node replacement step is already in progress.
+</div>
 
 <p>There are two node replacement plan types:</p>
 
@@ -2783,7 +2785,7 @@ $(document).ready(function() {
 <h2 id="register-node-replacement-plan">Step 1: Register a Node Replacement Plan by Using the qq CLI</h2>
 <ol>
   <li>
-    <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replace/replace_nodes.html"><code>qq replace_nodes</code></a>
+    <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replace/replace_nodes.html"><code class="language-plaintext highlighter-rouge">qq replace_nodes</code></a>
  <code class="language-plaintext highlighter-rouge">register_plan</code> command and the <code class="language-plaintext highlighter-rouge">--nodes-to-be-replaced</code> flag to specify the nodes to replace and the <code class="language-plaintext highlighter-rouge">--target-stripe-config</code> flag to specify the stripe configuration. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq replace_nodes register_plan <span class="se">\</span>
@@ -2793,19 +2795,19 @@ $(document).ready(function() {
 
     <p>Qumulo Core stores the node replacement plan on your cluster.</p>
 
-    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>If your plan includes data protection reconfiguration, Qumulo Core records only the stripe configuration. You specify the node fault tolerance when you execute the plan steps.</li>
-  <li>If your plan doesn't include data protection reconfiguration, you can omit the <code>--target-stripe-config</code> flag.</li>
-  <li>To replace all nodes in the cluster, use the <code>--replace-all</code> flag instead of the <code>--nodes-to-be-replaced</code> flag.</li>
-</ul>
-</div>
+    <div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />       <ul>
+        <li>If your plan includes data protection reconfiguration, Qumulo Core records only the stripe configuration. You specify the node fault tolerance when you execute the plan steps.</li>
+        <li>If your plan doesn't include data protection reconfiguration, you can omit the <code class="language-plaintext highlighter-rouge">--target-stripe-config</code> flag.</li>
+        <li>To replace all nodes in the cluster, use the <code class="language-plaintext highlighter-rouge">--replace-all</code> flag instead of the <code class="language-plaintext highlighter-rouge">--nodes-to-be-replaced</code> flag.</li>
+      </ul>
+    </div>
   </li>
   <li>
     <p>Rack and wire your new nodes and then power them on.</p>
   </li>
   <li>
-    <p>To determine the UUIDs of the nodes to add to your cluster, run the <code>qq unconfigured_nodes_list</code> command.</p>
+    <p>To determine the UUIDs of the nodes to add to your cluster, run the <code class="language-plaintext highlighter-rouge">qq unconfigured_nodes_list</code> command.</p>
   </li>
   <li>
     <p>Write down the UUIDs of the nodes that you want to add to the cluster, in the order that you want to add them.</p>
@@ -2815,10 +2817,12 @@ $(document).ready(function() {
 <h2 id="execute-node-replacement-plan-steps">Step 2: Execute the Node Replacement Plan Steps by Using the qq CLI</h2>
 <ol>
   <li>
-    <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replace/replace_nodes.html"><code>qq replace_nodes</code></a>
+    <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replace/replace_nodes.html"><code class="language-plaintext highlighter-rouge">qq replace_nodes</code></a>
  <code class="language-plaintext highlighter-rouge">add_nodes_and_replace</code> command to initiate each step, the <code class="language-plaintext highlighter-rouge">--nodes-being-replaced</code> flag to specify the nodes to replace, and the <code class="language-plaintext highlighter-rouge">--node-uuids</code> flag to specify the nodes to add during the current step.</p>
 
-    <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Qumulo Core adds nodes to the cluster in the order in which you list their UUIDs after the <code class="language-plaintext highlighter-rouge">--node-uuids</code> flag. When you begin the node replacement step, it isn’t possible to revert this operation or reorder nodes after adding them to a cluster.</div>
+    <div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Qumulo Core adds nodes to the cluster in the order in which you list their UUIDs after the <code class="language-plaintext highlighter-rouge">--node-uuids</code> flag. When you begin the node replacement step, it isn’t possible to revert this operation or reorder nodes after adding them to a cluster.
+    </div>
 
     <p>If your plan includes data protection reconfiguration, use the <code class="language-plaintext highlighter-rouge">--reconfigure-data-protection</code> and <code class="language-plaintext highlighter-rouge">--target-max-node-failures</code> flags to initiate the reconfiguration during the current step. For example:</p>
 
@@ -2839,7 +2843,9 @@ With the selected node replacement step:
     Node fault tolerance level: 1 node
 </code></pre></div>    </div>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> To replace all nodes in the cluster, use the <code class="language-plaintext highlighter-rouge">--replace-all</code> flag instead of the <code class="language-plaintext highlighter-rouge">--nodes-being-replaced</code> flag.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> To replace all nodes in the cluster, use the <code class="language-plaintext highlighter-rouge">--replace-all</code> flag instead of the <code class="language-plaintext highlighter-rouge">--nodes-being-replaced</code> flag.
+    </div>
   </li>
   <li>
     <p>To confirm the reconfiguration with the selected node-replace and data protection configuration operations, enter <code class="language-plaintext highlighter-rouge">yes</code>.</p>
@@ -2851,7 +2857,9 @@ With the selected node replacement step:
 
     <p>After each node replacement step, Qumulo Core begins to migrate data from existing nodes in the background.</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This is a long process (that can take days or weeks). When the data migration is complete, Qumulo Core removes the nodes marked for replacement from the cluster. These nodes no longer appear on the <strong>Cluster</strong> page of the Qumulo Core Web UI.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This is a long process (that can take days or weeks). When the data migration is complete, Qumulo Core removes the nodes marked for replacement from the cluster. These nodes no longer appear on the <strong>Cluster</strong> page of the Qumulo Core Web UI.
+    </div>
   </li>
   <li>
     <p>Unrack the removed nodes from your data center.</p>
@@ -2865,20 +2873,22 @@ With the selected node replacement step:
 
 <ul>
   <li>
-    <p>To view the current node replacement plan, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replace/replace_nodes.html"><code>qq replace_nodes</code></a>
+    <p>To view the current node replacement plan, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replace/replace_nodes.html"><code class="language-plaintext highlighter-rouge">qq replace_nodes</code></a>
  command with the <code class="language-plaintext highlighter-rouge">get_plan</code> subcommand.</p>
 
     <p>If a node replacement step is in progress, the command shows the list of nodes in process of being replaced during the current step.</p>
   </li>
   <li>
-    <p>To edit the node replacement plan after you register it with your cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replace/replace_nodes.html"><code>qq replace_nodes</code></a>
+    <p>To edit the node replacement plan after you register it with your cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replace/replace_nodes.html"><code class="language-plaintext highlighter-rouge">qq replace_nodes</code></a>
  with the <code class="language-plaintext highlighter-rouge">register_plan</code> subcommand and <a href="#register-node-replacement-plan">a new node replacement plan</a>.</p>
   </li>
   <li>
-    <p>To cancel the current node replacement plan, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replace/replace_nodes.html"><code>qq replace_nodes</code></a>
+    <p>To cancel the current node replacement plan, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replace/replace_nodes.html"><code class="language-plaintext highlighter-rouge">qq replace_nodes</code></a>
  command with the <code class="language-plaintext highlighter-rouge">cancel_plan</code> subcommand.</p>
 
-    <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Canceling a node replacement plan after executing one or more steps might make it impossible to reregister and complete the plan.</div>
+    <div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Canceling a node replacement plan after executing one or more steps might make it impossible to reregister and complete the plan.
+    </div>
   </li>
 </ul>
 
@@ -2892,7 +2902,9 @@ With the selected node replacement step:
   <li>
     <p>Qumulo Core reencodes all data on your cluster and the Qumulo Core Web UI displays the message <strong>Reconfiguring data protection</strong>.</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> In certain scenarios, this stage might appear to pause while the system performs preparatory work on the cluster.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> In certain scenarios, this stage might appear to pause while the system performs preparatory work on the cluster.
+    </div>
 
     <p>When this stage is complete, your data is protected according to the cluster’s new configuration and the system begins to use the new drive and node fault tolerance levels.</p>
   </li>
@@ -2917,12 +2929,12 @@ With the selected node replacement step:
   </li>
 </ul>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>To avoid impact to front-end workloads, Qumulo Core slows down the reconfiguration process automatically.</li>
-  <li>When Qumulo Core finds missing nodes or drives, it pauses the reconfiguration process. When you replace or bring the nodes or drives online, the reconfiguration process continues.</li>
-  <li>It isn't possible to add or replace nodes during the reconfiguration process.</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>To avoid impact to front-end workloads, Qumulo Core slows down the reconfiguration process automatically.</li>
+    <li>When Qumulo Core finds missing nodes or drives, it pauses the reconfiguration process. When you replace or bring the nodes or drives online, the reconfiguration process continues.</li>
+    <li>It isn't possible to add or replace nodes during the reconfiguration process.</li>
+  </ul>
 </div>
 
 

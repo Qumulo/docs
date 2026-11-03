@@ -2711,7 +2711,9 @@ $(document).ready(function() {
       <li>Qumulo provides configurations only for tenants and floating IP addresses.</li>
     </ul>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can use Host-Managed Networking with or without the Qumulo REST API. However, using floating IP addresses requires tagging with alternative names and REST API access.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can use Host-Managed Networking with or without the Qumulo REST API. However, using floating IP addresses requires tagging with alternative names and REST API access.
+    </div>
 
     <p>To disable Host-Managed Networking, enable Qumulo-Managed Networking when you <a href="../getting-started/installing-product-package.html#install-qumulo-core-product-package">install the Qumulo Core Product Package</a>.</p>
   </li>
@@ -2765,7 +2767,9 @@ $(document).ready(function() {
       <li>
         <p>The permanent MAC address of the NIC and the corresponding alternative name</p>
 
-        <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> If you change the NIC in the node, you must update the <code class="language-plaintext highlighter-rouge">10-altname.link</code> file.</div>
+        <div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> If you change the NIC in the node, you must update the <code class="language-plaintext highlighter-rouge">10-altname.link</code> file.
+        </div>
 
         <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[Match]</span>
 <span class="py">PermanentMACAddress</span><span class="p">=</span><span class="s">b4:96:91:f6:33:1c</span>
@@ -2869,7 +2873,9 @@ $(document).ready(function() {
 <h3 id="to-assign-the-back-end-role-to-a-nic">To Assign the Back-End Role to a NIC</h3>
 <p>The back-end role instructs a NIC to facilitate inter-node communication. To assign this role, run the <code class="language-plaintext highlighter-rouge">ip link</code> command and specify the network interface name and the alternative name.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core permits only one interface to be tagged as <code class="language-plaintext highlighter-rouge">qumulo-backend</code>.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core permits only one interface to be tagged as <code class="language-plaintext highlighter-rouge">qumulo-backend</code>.
+</div>
 
 <p>In the following example, the network interface name is <code class="language-plaintext highlighter-rouge">eth1</code> and the alternative name is <code class="language-plaintext highlighter-rouge">qumulo-backend</code>.</p>
 
@@ -2882,86 +2888,91 @@ $(document).ready(function() {
 <p>This section gives examples of network configurations with and without alternative names for front-end client traffic, back-end inter-node traffic, and combined QFSD traffic.</p>
 
 <details>
-<summary>Click to expand</summary>
-<h4>Example Configurations with Alternative Names</h4>
-<ul>
-  <li>
-    <strong>Two Network Interfaces with a Link (Front-End and Back-End):</strong> In the following example, Qumulo Core labels interface <code>eth0</code> as <code>USE_FOR_FRONTEND</code> and <code>eth1</code> (the interface with a higher PCIe address) as <code>USE_FOR_BACKEND</code>.
-
-    <div class="language-bash highlighter-rouge"><div class="highlight">
-<pre class="highlight"><code><span class="nb">sudo</span> ip <span class="nb">link</span> <span class="se">\</span>
-  property add <span class="se">\</span>
-  dev eth0 <span class="se">\</span>
-  altname qumulo-frontend1</code></pre></div>
-    </div>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight">
-<pre class="highlight"><code><span class="nb">sudo</span> ip <span class="nb">link</span> <span class="se">\</span>
-  property add <span class="se">\</span>
-  dev eth1 <span class="se">\</span>
-  altname qumulo-backend</code></pre></div>
-    </div>
-  </li>
-  <li>
-    <strong>Two Network Interfaces with a Link (Front-End and Back-End on the Same Link):</strong> In the following example, Qumulo Core labels interface <code>eth0</code> with <code>USE_FOR_FRONTEND_AND_BACKEND</code>, and uses only <code>eth0</code> for QFSD traffic.
-
-    <div class="language-bash highlighter-rouge"><div class="highlight">
-<pre class="highlight"><code><span class="nb">sudo</span> ip <span class="nb">link</span> <span class="se">\</span>
-  property add <span class="se">\</span>
-  dev eth0 <span class="se">\</span>
-  altname qumulo-frontend1</code></pre></div>
-    </div>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight">
-<pre class="highlight"><code><span class="nb">sudo</span> ip <span class="nb">link</span> <span class="se">\</span>
-  property add <span class="se">\</span>
-  dev eth0 <span class="se">\</span>
-  altname qumulo-backend</code></pre></div>
-    </div>
-  </li>
-  <li>
-    <strong>Three Network Interfaces with a Link (Three Front-End and One Back-End on the Same Link):</strong> In the following example, Qumulo Core labels interfaces <code>eth0</code> and <code>eth1</code> as <code>USE_FOR_FRONTEND</code> and <code>eth2</code> as <code>USE_FOR_FRONTEND_AND_BACKEND</code>.
-
-  <div class="language-bash highlighter-rouge"><div class="highlight">
-<pre class="highlight"><code><span class="nb">sudo</span> ip <span class="nb">link</span> <span class="se">\</span>
-  property add <span class="se">\</span>
-  dev eth0 <span class="se">\</span>
-  altname qumulo-frontend1</code></pre></div>
-    </div>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight">
-<pre class="highlight"><code><span class="nb">sudo</span> ip <span class="nb">link</span> <span class="se">\</span>
-  property add <span class="se">\</span>
-  dev eth1 <span class="se">\</span>
-  altname qumulo-frontend2</code></pre></div>
-    </div>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight">
-<pre class="highlight"><code><span class="nb">sudo</span> ip <span class="nb">link</span> <span class="se">\</span>
-  property add <span class="se">\</span>
-  dev eth2 <span class="se">\</span>
-  altname qumulo-frontend3</code></pre></div>
-    </div>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight">
-<pre class="highlight"><code><span class="nb">sudo</span> ip <span class="nb">link</span> <span class="se">\</span>
-  property add <span class="se">\</span>
-  dev eth2 <span class="se">\</span>
-  altname qumulo-backend</code></pre></div>
-    </div>
-  </li>
-</ul>
-
-<h4>Example Network Interface Labels without Alternative Names</h4>
-<ul>
-  <li><strong>One Network Interface with a Link:</strong> Qumulo Core labels the interface with <code>USE_FOR_<wbr />FRONTEND_AND_<wbr />BACKEND</code>.</li>
-  <li><strong>Two Network Interfaces with a Link:</strong> Qumulo Core labels the interface with the lower PCIe address as <code>USE_FOR_<wbr />FRONTEND_AND_<wbr />BACKEND</code> and the interface with the higher PCIe address as <code>USE_FOR_<wbr />FRONTEND</code>.</li>
-  <li>
-    <p><strong>Three Network Interfaces with a Link:</strong> Qumulo Core labels the interface with the lowest PCIe address as <code>USE_FOR_<wbr />FRONTEND_AND_<wbr />BACKEND</code> and the interfaces with the next highest and the highest PCIe addresses as <code>USE_FOR_<wbr />FRONTEND</code>.</p>
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Although the interface with the lowest PCIe address is labeled for both front-end and back-end connections, only front-end traffic flows through this interface.</div>
-
-  </li>
-</ul>
+   <summary>
+Click to expand
+  </summary>
+   <h4 id="example-configurations-with-alternative-names">Example Configurations with Alternative Names</h4>
+   <ul>
+    <li><strong>Two Network Interfaces with a Link (Front-End and Back-End):</strong> In the following example, Qumulo Core labels interface <code class="language-plaintext highlighter-rouge">eth0</code> as <code class="language-plaintext highlighter-rouge">USE_FOR_FRONTEND</code> and <code class="language-plaintext highlighter-rouge">eth1</code> (the interface with a higher PCIe address) as <code class="language-plaintext highlighter-rouge">USE_FOR_BACKEND</code>.       <div class="language-bash highlighter-rouge">
+        <div class="highlight">
+          <div class="language-plaintext highlight highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ip link \
+  property add \
+  dev eth0 \
+  altname qumulo-frontend1</code></pre></div>          </div>
+        </div>
+      </div>
+      <div class="language-bash highlighter-rouge">
+        <div class="highlight">
+          <div class="language-plaintext highlight highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ip link \
+  property add \
+  dev eth1 \
+  altname qumulo-backend</code></pre></div>          </div>
+        </div>
+      </div>
+    </li>
+    <li><strong>Two Network Interfaces with a Link (Front-End and Back-End on the Same Link):</strong> In the following example, Qumulo Core labels interface <code class="language-plaintext highlighter-rouge">eth0</code> with <code class="language-plaintext highlighter-rouge">USE_FOR_FRONTEND_AND_BACKEND</code>, and uses only <code class="language-plaintext highlighter-rouge">eth0</code> for QFSD traffic.       <div class="language-bash highlighter-rouge">
+        <div class="highlight">
+          <div class="language-plaintext highlight highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ip link \
+  property add \
+  dev eth0 \
+  altname qumulo-frontend1</code></pre></div>          </div>
+        </div>
+      </div>
+      <div class="language-bash highlighter-rouge">
+        <div class="highlight">
+          <div class="language-plaintext highlight highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ip link \
+  property add \
+  dev eth0 \
+  altname qumulo-backend</code></pre></div>          </div>
+        </div>
+      </div>
+    </li>
+    <li><strong>Three Network Interfaces with a Link (Three Front-End and One Back-End on the Same Link):</strong> In the following example, Qumulo Core labels interfaces <code class="language-plaintext highlighter-rouge">eth0</code> and <code class="language-plaintext highlighter-rouge">eth1</code> as <code class="language-plaintext highlighter-rouge">USE_FOR_FRONTEND</code> and <code class="language-plaintext highlighter-rouge">eth2</code> as <code class="language-plaintext highlighter-rouge">USE_FOR_FRONTEND_AND_BACKEND</code>.       <div class="language-bash highlighter-rouge">
+        <div class="highlight">
+          <div class="language-plaintext highlight highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ip link \
+  property add \
+  dev eth0 \
+  altname qumulo-frontend1</code></pre></div>          </div>
+        </div>
+      </div>
+      <div class="language-bash highlighter-rouge">
+        <div class="highlight">
+          <div class="language-plaintext highlight highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ip link \
+  property add \
+  dev eth1 \
+  altname qumulo-frontend2</code></pre></div>          </div>
+        </div>
+      </div>
+      <div class="language-bash highlighter-rouge">
+        <div class="highlight">
+          <div class="language-plaintext highlight highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ip link \
+  property add \
+  dev eth2 \
+  altname qumulo-frontend3</code></pre></div>          </div>
+        </div>
+      </div>
+      <div class="language-bash highlighter-rouge">
+        <div class="highlight">
+          <div class="language-plaintext highlight highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ip link \
+  property add \
+  dev eth2 \
+  altname qumulo-backend</code></pre></div>          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+   <h4 id="example-network-interface-labels-without-alternative-names">Example Network Interface Labels without Alternative Names</h4>
+   <ul>
+    <li><strong>One Network Interface with a Link:</strong> Qumulo Core labels the interface with <code class="language-plaintext highlighter-rouge">USE_FOR_FRONTEND_AND_BACKEND</code>.</li>
+    <li><strong>Two Network Interfaces with a Link:</strong> Qumulo Core labels the interface with the lower PCIe address as <code class="language-plaintext highlighter-rouge">USE_FOR_FRONTEND_AND_BACKEND</code> and the interface with the higher PCIe address as <code class="language-plaintext highlighter-rouge">USE_FOR_FRONTEND</code>.</li>
+    <li>
+      <p><strong>Three Network Interfaces with a Link:</strong> Qumulo Core labels the interface with the lowest PCIe address as <code class="language-plaintext highlighter-rouge">USE_FOR_FRONTEND_AND_BACKEND</code> and the interfaces with the next highest and the highest PCIe addresses as <code class="language-plaintext highlighter-rouge">USE_FOR_FRONTEND</code>.</p>
+      <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Although the interface with the lowest PCIe address is labeled for both front-end and back-end connections, only front-end traffic flows through this interface.
+      </div>
+    </li>
+  </ul>
+ 
 </details>
 
    

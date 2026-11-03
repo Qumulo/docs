@@ -2696,14 +2696,18 @@ $(document).ready(function() {
    <p>This section explains the difference between Qumulo Core Instant Software Upgrades and Platform Upgrades and how to perform upgrades.</p>
    
      
-     <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>If you perform multiple upgrades back to back, you might encounter one or more platform upgrades in one of the incremental releases; you must install these upgrades before you continue. Before performing back to back upgrades, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a> for guidance.</li>
-  <li>If you don't see a rolling reboot option for a platform upgrade, refresh the page in your browser.</li>
-
-<li>If, while <a href="#upgrade-qq-cli">upgrading your Qumulo cluster by using the <code>qq</code> CLI</a>, you receive the following message, ensure that the upgrade file is located within the cluster's file system (for example, in an SMB share or an NFS export), not in the <code>/var/opt/qumulo/history</code> local system directory on an individual node. <div class="highlighter-rouge"><div class="highlight"><pre class="code-in-note highlight" style="position: relative;"><code>Error 400: upgrade_verify_error: You must use the same image version on all nodes in your cluster.</code></pre></div></div></li>
-  <li>To minimize upgrade-related disruptions for SMB clients, if your Qumulo cluster is configured in a <a href="../cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html">Cloud Data Fabric (CDF)</a> portal relationship, you must upgrade your spoke portal host clusters before you upgrade your hub portal host clusters.</li>
-</ul>
+     <div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+    <li>If you perform multiple upgrades back to back, you might encounter one or more platform upgrades in one of the incremental releases; you must install these upgrades before you continue. Before performing back to back upgrades, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a> for guidance.</li>
+    <li>If you don't see a rolling reboot option for a platform upgrade, refresh the page in your browser.</li>
+    <li>If, while <a href="#upgrade-qq-cli">upgrading your Qumulo cluster by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI</a>, you receive the following message, ensure that the upgrade file is located within the cluster's file system (for example, in an SMB share or an NFS export), not in the <code class="language-plaintext highlighter-rouge">/var/opt/qumulo/history</code> local system directory on an individual node.       <div class="highlighter-rouge">
+        <div class="highlight">
+          <div class="language-plaintext code-in-note highlight highlighter-rouge" style="position: relative;"><div class="highlight"><pre class="highlight"><code>Error 400: upgrade_verify_error: You must use the same image version on all nodes in your cluster.</code></pre></div>          </div>
+        </div>
+      </div>
+    </li>
+    <li>To minimize upgrade-related disruptions for SMB clients, if your Qumulo cluster is configured in a <a href="../cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html">Cloud Data Fabric (CDF)</a> portal relationship, you must upgrade your spoke portal host clusters before you upgrade your hub portal host clusters.</li>
+  </ul>
 </div>
 
 <p>For downloads, release notes, and upgrade paths for Qumulo Core releases, see <a target="_blank" href="https://nexus.qumulo.com/downloads">Qumulo Nexus</a> <span class="emoji">🔒</span>.</p>
@@ -2716,12 +2720,12 @@ $(document).ready(function() {
 
 <p>Because in Qumulo Core 3.3.2 (and higher), the Qumulo file and data protection systems are separate from the host in charge of running the operating system and the services specific to each hardware or cloud platform, and because these services run in a lightweight container (by using Ubuntu-native <a href="https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html"><code class="language-plaintext highlighter-rouge">systemd-nspawn</code></a> containerization) in the user space, it is possible to move quickly from one Qumulo Core version to another by loading a new container and pointing the runtime environment at updated software.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>Under certain conditions, an end-to-end instant software upgrade might take a little longer while Qumulo Core performs background tasks. This doesn't impact user experience.</li>
-  <li>Instant software upgrades don't impact existing support for the <code>qq</code> CLI or REST API commands.</li>
-  <li>A direct upgrade to Qumulo Core 3.3.3 <em>isn't</em> an instant software upgrade (it only establishes the framework for this functionality). Upgrading from Qumulo Core 3.3.2 to 3.3.3 is the first official, minimally disruptive instant software upgrade. Any subsequent upgrade, regardless of release, is an instant software upgrade unless we specify otherwise.</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>Under certain conditions, an end-to-end instant software upgrade might take a little longer while Qumulo Core performs background tasks. This doesn't impact user experience.</li>
+    <li>Instant software upgrades don't impact existing support for the <code class="language-plaintext highlighter-rouge">qq</code> CLI or REST API commands.</li>
+    <li>A direct upgrade to Qumulo Core 3.3.3 <em>isn't</em> an instant software upgrade (it only establishes the framework for this functionality). Upgrading from Qumulo Core 3.3.2 to 3.3.3 is the first official, minimally disruptive instant software upgrade. Any subsequent upgrade, regardless of release, is an instant software upgrade unless we specify otherwise.</li>
+  </ul>
 </div>
 
 <h3 id="platform-upgrade">Platform Upgrade</h3>
@@ -2729,12 +2733,12 @@ $(document).ready(function() {
 
 <p>The reboot process differentiates platform upgrades from instant software upgrades, where your nodes maintain the Linux operating system (and certain services that Qumulo Core relies on) during the upgrade process and where the underlying host changes less frequently than the container and the file and data protection systems.</p>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>If you perform multiple upgrades back to back, you might encounter one or more platform upgrades in one of the incremental releases; you must install these upgrades before you continue. Before performing back to back upgrades, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a> for guidance.</li>
-  <li>If you don't see a rolling reboot option for a platform upgrade, refresh the page in your browser.</li>
-  <li>Upgrading past a platform upgrade still requires a node reboot, even if you don't install the exact build. For example, if your cloud cluster runs Qumulo Core 4.0.0, installing Qumulo Core 4.1.0 triggers a platform upgrade, because the installation includes all changes contained in Qumulo Core 4.0.6 that is a platform upgrade.</li>
-</ul>
+<div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+    <li>If you perform multiple upgrades back to back, you might encounter one or more platform upgrades in one of the incremental releases; you must install these upgrades before you continue. Before performing back to back upgrades, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a> for guidance.</li>
+    <li>If you don't see a rolling reboot option for a platform upgrade, refresh the page in your browser.</li>
+    <li>Upgrading past a platform upgrade still requires a node reboot, even if you don't install the exact build. For example, if your cloud cluster runs Qumulo Core 4.0.0, installing Qumulo Core 4.1.0 triggers a platform upgrade, because the installation includes all changes contained in Qumulo Core 4.0.6 that is a platform upgrade.</li>
+  </ul>
 </div>
 
 <h2 id="understanding-the-upgrade-phases">Understanding the Upgrade Phases</h2>
@@ -2770,12 +2774,12 @@ $(document).ready(function() {
 </span></code></pre></div></div>
 
 <h2 id="upgrading-your-qumulo-cluster">Upgrading Your Qumulo Cluster</h2>
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>To allow certain background processes to run, multiple sequential Qumulo Core upgrades might require a waiting period between specific releases. Before installing multiple Qumulo Core releases within an extended maintenance window, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a>.</li>
-  <li>When the node to which you are connected reboots, the Qumulo Core Web UI might redirect you to the <strong>Cluster is booting...</strong> page. To view the reboot status, you can connect to a different node or wait until the current node goes online and then click <strong>Support &gt; Software Upgrade</strong>.</li>
-  <li>During rolling reboots, the system reboots one or more nodes (depending on the configured protection level) in the cluster in succession. If your cluster is under heavy load due to write or delete operations, this process can take a long time.</li>
-</ul>
+<div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+    <li>To allow certain background processes to run, multiple sequential Qumulo Core upgrades might require a waiting period between specific releases. Before installing multiple Qumulo Core releases within an extended maintenance window, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a>.</li>
+    <li>When the node to which you are connected reboots, the Qumulo Core Web UI might redirect you to the <strong>Cluster is booting...</strong> page. To view the reboot status, you can connect to a different node or wait until the current node goes online and then click <strong>Support &gt; Software Upgrade</strong>.</li>
+    <li>During rolling reboots, the system reboots one or more nodes (depending on the configured protection level) in the cluster in succession. If your cluster is under heavy load due to write or delete operations, this process can take a long time.</li>
+  </ul>
 </div>
 
 <h3 id="upgrade-web-ui">To Upgrade Your Qumulo Cluster by Using the Qumulo Core Web UI</h3>
@@ -2827,12 +2831,12 @@ $(document).ready(function() {
 
 <h3 id="upgrade-qq-cli">To Upgrade Your Qumulo Cluster by Using the qq CLI</h3>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>For two-phase upgrades, there is no client downtime during the <em>prepare</em> phase, only during the commit phase.</li>
-  <li>You can disable the CLI progress bar by adding the <code>--no-monitor</code> flag to your command. If you do this, it isn't possible to cancel the upgrade process after it begins.</li>
-  <li>Qumulo Core reboots a number of nodes (depending on the protection level configured on your cluster) in succession. This requires the restriper job to finish before Qumulo Core can continue to the next node in the cluster. If your cluster is under heavy load from write or delete operations, this process can take a long time.</li>
-</ul>
+<div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+    <li>For two-phase upgrades, there is no client downtime during the <em>prepare</em> phase, only during the commit phase.</li>
+    <li>You can disable the CLI progress bar by adding the <code class="language-plaintext highlighter-rouge">--no-monitor</code> flag to your command. If you do this, it isn't possible to cancel the upgrade process after it begins.</li>
+    <li>Qumulo Core reboots a number of nodes (depending on the protection level configured on your cluster) in succession. This requires the restriper job to finish before Qumulo Core can continue to the next node in the cluster. If your cluster is under heavy load from write or delete operations, this process can take a long time.</li>
+  </ul>
 </div>
 
 <ol>
@@ -2904,7 +2908,9 @@ $(document).ready(function() {
 
     <p>When the CLI progress bar shows that the upgrade is complete, Qumulo Core restarts your cluster.</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can disable the CLI progress bar by adding the <code>--no-monitor</code> flag to your command. If you do this, it isn’t possible to cancel the upgrade process after it begins.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can disable the CLI progress bar by adding the <code class="language-plaintext highlighter-rouge">--no-monitor</code> flag to your command. If you do this, it isn’t possible to cancel the upgrade process after it begins.
+    </div>
   </li>
 </ol>
 

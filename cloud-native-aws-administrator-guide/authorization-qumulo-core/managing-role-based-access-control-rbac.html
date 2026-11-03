@@ -2436,18 +2436,20 @@ $(document).ready(function() {
      
      <p>To share management responsibilities with others, you can grant specific privileges to a user or group—locally or through Active Directory—by using RBAC.</p>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>For changes to take effect, a user account with newly assigned roles must log out of Qumulo Core and then log back in (or its sessions must time out).</li>
-  <li>Because certain privileges (such as replication-write privileges) can overwrite or move data to a location where a user has greater (or total) permissions, use special care when you grant privileges to roles and users.</li>
-</ul>
+<div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+    <li>For changes to take effect, a user account with newly assigned roles must log out of Qumulo Core and then log back in (or its sessions must time out).</li>
+    <li>Because certain privileges (such as replication-write privileges) can overwrite or move data to a location where a user has greater (or total) permissions, use special care when you grant privileges to roles and users.</li>
+  </ul>
 </div>
 
 <h2 id="built-in-roles">Built-In Roles</h2>
 <p>Qumulo Core includes <em>built-in roles</em> that provide predefined privileges for common administrative operations to typical access control personas. This section explains the use cases and the authorization scope for each built-in role.</p>
 
 <h3 id="administrators">Administrators</h3>
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Only the default administrator account can access a Qumulo cluster by using SSH.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Only the default administrator account can access a Qumulo cluster by using SSH.
+</div>
 
 <p>This role is suitable for system administrators. Users with this role have full access to, and control of, the cluster, including:</p>
 
@@ -2471,25 +2473,22 @@ $(document).ready(function() {
 <h3 id="observers">Observers</h3>
 <p>This role is suitable for users or groups who can access the Qumulo Core Web UI and read-only REST APIs (with the exception of <code class="language-plaintext highlighter-rouge">DEBUG</code> REST APIs and authentication settings).</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>Clusters that run Qumulo Core 3.0.5 (and higher) don't assign the Observers role automatically and non-administrative users don't have access to the Qumulo Core Web UI or read-only APIs (unless you explicitly assign the necessary role to specific usernames).</li>
-  <li>It is possible to assign both Data-Administrators and Observers roles to a single user. This can give the user the ability to manage data on your Qumulo cluster by using the Qumulo Core Web UI without full administrative access.</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>Clusters that run Qumulo Core 3.0.5 (and higher) don't assign the Observers role automatically and non-administrative users don't have access to the Qumulo Core Web UI or read-only APIs (unless you explicitly assign the necessary role to specific usernames).</li>
+    <li>It is possible to assign both Data-Administrators and Observers roles to a single user. This can give the user the ability to manage data on your Qumulo cluster by using the Qumulo Core Web UI without full administrative access.</li>
+  </ul>
 </div>
 
 <h3 id="qumulo-support">Qumulo-Support</h3>
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-
-
-  <li>The built-in <code>Qumulo-Support</code> RBAC role doesn't include file-level access to your cluster's data.</li>    
-  <li>When you <a href="../monitoring-and-metrics/enabling-nexus-remote-support.html">register your Qumulo cluster with Nexus to enable Remote Support</a>, Qumulo Core assigns the <code>qumulosupport:everyone</code> trustee to the <code>Qumulo-Support</code> RBAC role. You can assign other roles to this trustee.</li>  
-  <li>If you delete the default assignment, Qumulo Core removes all the permissions that the Qumulo Care Team requires to support your Qumulo cluster.</li>
-  <li>You can <a href="#custom-roles">create a custom RBAC role</a> for the Qumulo Care Team and assign the <code>qumulosupport:everyone</code> trustee to this custom role.</li>
-  <li>If you use a custom RBAC role for the Qumulo Care Team, review any changes to the built-in <code>Qumulo-Support</code> role after upgrading your Qumulo cluster and apply these changes to your custom RBAC role.</li>
-
-</ul>
+<div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+    <li>The built-in <code class="language-plaintext highlighter-rouge">Qumulo-Support</code> RBAC role doesn't include file-level access to your cluster's data.</li>
+    <li>When you <a href="../monitoring-and-metrics/enabling-nexus-remote-support.html">register your Qumulo cluster with Nexus to enable Remote Support</a>, Qumulo Core assigns the <code class="language-plaintext highlighter-rouge">qumulosupport:everyone</code> trustee to the <code class="language-plaintext highlighter-rouge">Qumulo-Support</code> RBAC role. You can assign other roles to this trustee.</li>
+    <li>If you delete the default assignment, Qumulo Core removes all the permissions that the Qumulo Care Team requires to support your Qumulo cluster.</li>
+    <li>You can <a href="#custom-roles">create a custom RBAC role</a> for the Qumulo Care Team and assign the <code class="language-plaintext highlighter-rouge">qumulosupport:everyone</code> trustee to this custom role.</li>
+    <li>If you use a custom RBAC role for the Qumulo Care Team, review any changes to the built-in <code class="language-plaintext highlighter-rouge">Qumulo-Support</code> role after upgrading your Qumulo cluster and apply these changes to your custom RBAC role.</li>
+  </ul>
 </div>
 
 <p>This role is suitable for members of the Qumulo Care Team who access and support your Qumulo cluster. Users with this role have:</p>
@@ -2501,23 +2500,23 @@ $(document).ready(function() {
 </ul>
 
 <h2 id="custom-roles">Custom Roles</h2>
-<p>For information about managing RBAC and creating custom roles by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI, see the following sections in the Qumulo <code>qq</code> CLI Command Guide:</p>
+<p>For information about managing RBAC and creating custom roles by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI, see the following sections in the Qumulo <code class="language-plaintext highlighter-rouge">qq</code> CLI Command Guide:</p>
 
 <ul>
   <li>
-    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_assign_role.html"><code>qq auth_assign_role</code></a></p>
+    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_assign_role.html"><code class="language-plaintext highlighter-rouge">qq auth_assign_role</code></a></p>
   </li>
   <li>
-    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_create_role.html"><code>qq auth_create_role</code></a></p>
+    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_create_role.html"><code class="language-plaintext highlighter-rouge">qq auth_create_role</code></a></p>
   </li>
   <li>
-    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_list_privileges.html"><code>qq auth_list_privileges</code></a></p>
+    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_list_privileges.html"><code class="language-plaintext highlighter-rouge">qq auth_list_privileges</code></a></p>
   </li>
   <li>
-    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_modify_role.html"><code>qq auth_modify_role</code></a></p>
+    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_modify_role.html"><code class="language-plaintext highlighter-rouge">qq auth_modify_role</code></a></p>
   </li>
   <li>
-    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_unassign_role.html"><code>qq auth_unassign_role</code></a></p>
+    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_unassign_role.html"><code class="language-plaintext highlighter-rouge">qq auth_unassign_role</code></a></p>
   </li>
 </ul>
 
@@ -2538,8 +2537,10 @@ $(document).ready(function() {
   <li>
     <p>In the <strong>Add Member to &lt;Role Type&gt;</strong> dialog box, enter the <strong>Trustee</strong> and then click <strong>Yes, Add Member</strong>.</p>
 
-    <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> For examples of valid trustees, click <img class="inline" src="/images/shared-images/admin-guides/question-mark.png" alt="Question Mark" style="max-width: 40px" />
-.</div>
+    <div class="alert alert-success" role="alert">
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> For examples of valid trustees, click <img class="inline" src="/images/shared-images/admin-guides/question-mark.png" alt="Question Mark" style="max-width: 40px" />
+.
+    </div>
   </li>
   <li>
     <p>Click <strong>Yes, Assign Role</strong>.</p>

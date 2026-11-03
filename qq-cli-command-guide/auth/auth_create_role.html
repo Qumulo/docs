@@ -8143,13 +8143,13 @@ $(document).ready(function() {
 </code></pre></div></div>
 
 <h2 id="to-create-a-custom-qumulo-core-role-with-multiple-privileges">To Create a Custom Qumulo Core Role with Multiple Privileges</h2>
-<p>For this operation, you must run the <a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_list_privileges.html"><code>qq auth_list_privileges</code></a>
- and <a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_create_role.html"><code>qq auth_create_role</code></a>
+<p>For this operation, you must run the <a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_list_privileges.html"><code class="language-plaintext highlighter-rouge">qq auth_list_privileges</code></a>
+ and <a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_create_role.html"><code class="language-plaintext highlighter-rouge">qq auth_create_role</code></a>
  commands.</p>
 
 <ol>
   <li>
-    <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_list_privileges.html"><code>qq auth_list_privileges</code></a>
+    <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_list_privileges.html"><code class="language-plaintext highlighter-rouge">qq auth_list_privileges</code></a>
  command and use <code class="language-plaintext highlighter-rouge">grep</code> to write only the privileges that contain the word <code class="language-plaintext highlighter-rouge">WRITE</code> to the <code class="language-plaintext highlighter-rouge">privileges.txt</code> file. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq auth_list_privileges | <span class="se">\</span>
@@ -8157,7 +8157,7 @@ $(document).ready(function() {
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_create_role.html"><code>qq auth_create_role</code></a>
+    <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_create_role.html"><code class="language-plaintext highlighter-rouge">qq auth_create_role</code></a>
  command and specify the <code class="language-plaintext highlighter-rouge">privileges.txt</code> file to create a custom role. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq auth_create_role <span class="nt">-r</span> <span class="s2">"Write-Everything"</span> <span class="se">\</span>

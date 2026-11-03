@@ -2698,11 +2698,15 @@ $(document).ready(function() {
      <h2 id="how-qumulo-core-ensures-fault-tolerance">How Qumulo Core Ensures Fault Tolerance</h2>
 <p>Qumulo Core protects your cluster with a <code class="language-plaintext highlighter-rouge">6,4</code> <em>erasure coding</em> (2 concurrent drive failures or 1 node failure), at minimum. When a drive fails, Qumulo Core begins to rebuild the data that was previously stored on the failed drive.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> When Qumulo Core finishes reprotecting the drive, it resets the fault tolerance for the cluster, regardless of whether you have replaced the failed drive.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> When Qumulo Core finishes reprotecting the drive, it resets the fault tolerance for the cluster, regardless of whether you have replaced the failed drive.
+</div>
 
 <p>As a cluster increases in size, Qumulo Core makes additional fault tolerance options available during the cluster creation process. After creating a cluster, you can use <a href="../node-addition-replacement/adding-nodes-adaptive-data-protection.html">Adaptive Data Protection</a> to include the cluster’s fault tolerance during node-add procedures.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Depending on a cluster’s size constraints, certain configurations (such as 1 concurrent drive failure or 4 node failures) might not be possible.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Depending on a cluster’s size constraints, certain configurations (such as 1 concurrent drive failure or 4 node failures) might not be possible.
+</div>
 
 <p>To view the fault tolerance of your Qumulo cluster:</p>
 
@@ -2711,7 +2715,7 @@ $(document).ready(function() {
     <p><strong>Web UI:</strong> Navigate to the <strong>Cluster Overview</strong> page</p>
   </li>
   <li>
-    <p><strong><code class="language-plaintext highlighter-rouge">qq</code> CLI:</strong> Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/protection/protection_status_get.html"><code>qq protection_status_get</code></a>
+    <p><strong><code class="language-plaintext highlighter-rouge">qq</code> CLI:</strong> Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/protection/protection_status_get.html"><code class="language-plaintext highlighter-rouge">qq protection_status_get</code></a>
  command</p>
   </li>
   <li>
@@ -2726,11 +2730,11 @@ $(document).ready(function() {
 
 <p>The following sections describe various drive and node failure protection configurations and how they correspond to failure scenarios and data protection states.</p>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>The number of failures listed in the <strong>Failure Scenario</strong> column pertains to how many simultaneous node or drive failures can occur <em>as part of a single quorum event,</em> not as a cumulative number of events for the cluster. If a cluster can form a quorum, its file data remains consistent and intact regardless of number of cumulative node or drive failures in a given quorum.</li>
-  <li>For certain cluster configurations, the amount of space reserved for reprotect operations (that run after a drive fails) can significantly exceed the cluster's drive fault tolerance. As long as the number of simultaneous drive failures doesn't exceed the cluster's drive fault tolerance, Qumulo Core can perform reprotect operations on the cluster until the space reserved for these operations is depleted.</li>
-</ul>
+<div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+    <li>The number of failures listed in the <strong>Failure Scenario</strong> column pertains to how many simultaneous node or drive failures can occur <em>as part of a single quorum event,</em> not as a cumulative number of events for the cluster. If a cluster can form a quorum, its file data remains consistent and intact regardless of number of cumulative node or drive failures in a given quorum.</li>
+    <li>For certain cluster configurations, the amount of space reserved for reprotect operations (that run after a drive fails) can significantly exceed the cluster's drive fault tolerance. As long as the number of simultaneous drive failures doesn't exceed the cluster's drive fault tolerance, Qumulo Core can perform reprotect operations on the cluster until the space reserved for these operations is depleted.</li>
+  </ul>
 </div>
 
 <h2 id="2-drive-1-node-protection-21">2-Drive, 1-Node Protection (2,1)</h2>
@@ -2761,14 +2765,11 @@ $(document).ready(function() {
       <td>The data is protected. The cluster is at risk of going into read-only mode.</td>
     </tr>
     <tr>
-      <td>
-        3 or more drive failures,<br />
-        or multiple node failures
-      </td>
+      <td>3 or more drive failures,<br /> or multiple node failures</td>
       <td><span class="emoji">🚩</span> High</td>
       <td>The data is unavailable but intact.</td>
     </tr>
-  </tbody>    
+  </tbody>
 </table>
 
 <h2 id="2-drive-2-node-protection-22">2-Drive, 2-Node Protection (2,2)</h2>
@@ -2799,10 +2800,7 @@ $(document).ready(function() {
       <td>The data is protected. The cluster is at risk of going into read-only mode.</td>
     </tr>
     <tr>
-      <td>
-        3 or more drive failures,<br />
-        or more than 2 node failures
-      </td>
+      <td>3 or more drive failures,<br /> or more than 2 node failures</td>
       <td><span class="emoji">🚩</span> High</td>
       <td>The data is unavailable but intact.</td>
     </tr>
@@ -2837,14 +2835,11 @@ $(document).ready(function() {
       <td>The data is protected. The cluster is at risk of going into read-only mode.</td>
     </tr>
     <tr>
-      <td>
-        4 or more drive failures,<br />
-        or multiple node failures
-      </td>
+      <td>4 or more drive failures,<br /> or multiple node failures</td>
       <td><span class="emoji">🚩</span> High</td>
       <td>The data is unavailable but intact.</td>
     </tr>
-  </tbody>    
+  </tbody>
 </table>
 
 <h2 id="3-drive-3-node-protection-33">3-Drive, 3-Node Protection (3,3)</h2>
@@ -2858,7 +2853,7 @@ $(document).ready(function() {
       <th style="width:42%">Data Protection State</th>
     </tr>
   </thead>
-  <tbody>  
+  <tbody>
     <tr>
       <td>1 or 2 drive failures</td>
       <td><span class="emoji">⬇️</span> Low</td>
@@ -2875,10 +2870,7 @@ $(document).ready(function() {
       <td>The data is protected. The cluster is at risk of going into read-only mode.</td>
     </tr>
     <tr>
-      <td>
-        4 or more drive failures,<br />
-        or more than 3 node failures
-      </td>
+      <td>4 or more drive failures,<br /> or more than 3 node failures</td>
       <td><span class="emoji">🚩</span> High</td>
       <td>The data is unavailable but intact.</td>
     </tr>
@@ -2896,7 +2888,7 @@ $(document).ready(function() {
       <th style="width:42%">Data Protection State</th>
     </tr>
   </thead>
-  <tbody>  
+  <tbody>
     <tr>
       <td>1 or 2 drive failure</td>
       <td><span class="emoji">⬇️</span> Low</td>
@@ -2913,10 +2905,7 @@ $(document).ready(function() {
       <td>The data is protected. The cluster is at risk of going into read-only mode.</td>
     </tr>
     <tr>
-      <td>
-        5 or more drive failures,<br />
-        or more than 2 node failures
-      </td>
+      <td>5 or more drive failures,<br /> or more than 2 node failures</td>
       <td><span class="emoji">🚩</span> High</td>
       <td>The data is unavailable but intact.</td>
     </tr>
@@ -2951,10 +2940,7 @@ $(document).ready(function() {
       <td>The data is protected. The cluster is at risk of going into read-only mode.</td>
     </tr>
     <tr>
-      <td>
-        5 or more drive failures,<br />
-        or more than 4 node failures
-      </td>
+      <td>5 or more drive failures,<br /> or more than 4 node failures</td>
       <td><span class="emoji">🚩</span> High</td>
       <td>The data is unavailable but intact.</td>
     </tr>

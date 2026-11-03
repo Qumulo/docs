@@ -8135,12 +8135,12 @@ $(document).ready(function() {
 <p>For more information, see <a href="https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html">Using SMB Host Restrictions in Qumulo Core</a> in the Qumulo Administrator Guide.</p>
 
 <h4 id="to-modify-host-restrictions-for-an-existing-smb-share">To Modify Host Restrictions for an Existing SMB Share</h4>
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>The <code>qq smb_add_share</code> and <code>qq smb_mod_share</code> commands use the same flags.</li>
-  <li>If you specify new host restrictions, they overwrite any existing host restrictions. You must explicitly specify which host restrictions to retain.</li>
-  <li>If you don't include any flags, no changes take place.</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>The <code class="language-plaintext highlighter-rouge">qq smb_add_share</code> and <code class="language-plaintext highlighter-rouge">qq smb_mod_share</code> commands use the same flags.</li>
+    <li>If you specify new host restrictions, they overwrite any existing host restrictions. You must explicitly specify which host restrictions to retain.</li>
+    <li>If you don't include any flags, no changes take place.</li>
+  </ul>
 </div>
 
 <p>Run the <code class="language-plaintext highlighter-rouge">qq smb_mod_share</code> command and specify the path, share name, and <a href="https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html#how-smb-host-restriction-precedence-works">host restriction level</a>. In the following example, Qumulo Core grants hosts 203.0.113.0/16 and 203.0.113.0/24 full control, and denies all other hosts.</p>

@@ -2375,8 +2375,8 @@ $(document).ready(function() {
    <p>This section explains how <a href='https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html'>Amazon S3 Versioning</a> works in Qumulo Core and how to configure S3 bucket versioning by using the Qumulo REST API or <code>qq</code> CLI or by using the S3 API directly.</p>
    
      
-     <p>You can configure S3 bucket versioning by using the Qumulo REST API or <code>qq</code> CLI. For more information, see <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_modify_bucket.html"><code>qq s3_modify_bucket</code></a>
- in the Qumulo <code>qq</code> CLI Command Guide. You can also use the S3 API directly.</p>
+     <p>You can configure S3 bucket versioning by using the Qumulo REST API or <code class="language-plaintext highlighter-rouge">qq</code> CLI. For more information, see <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_modify_bucket.html"><code class="language-plaintext highlighter-rouge">qq s3_modify_bucket</code></a>
+ in the Qumulo <code class="language-plaintext highlighter-rouge">qq</code> CLI Command Guide. You can also use the S3 API directly.</p>
 
 <p>For information about S3 bucket versioning limits, see <a href="supported-s3-functionality-known-limits.html#versioning">Supported Functionality and Limits</a>.</p>
 
@@ -2389,17 +2389,19 @@ $(document).ready(function() {
   <li>
     <p>The versioned files are stored in <code class="language-plaintext highlighter-rouge">/dir/.s3-versioning~/obj</code>.</p>
 
-    <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Because <code class="language-plaintext highlighter-rouge">.s3-versioning~</code> is a normal, hidden directory, visible and accessible to other protocols. To ensure consistent S3 API behavior, we strongly recommend avoiding the use of other protocols to write to the directory. Any protocol can read from the directory safely.</div>
+    <div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Because <code class="language-plaintext highlighter-rouge">.s3-versioning~</code> is a normal, hidden directory, visible and accessible to other protocols. To ensure consistent S3 API behavior, we strongly recommend avoiding the use of other protocols to write to the directory. Any protocol can read from the directory safely.
+    </div>
   </li>
   <li>
     <p>An object with the object store key <code class="language-plaintext highlighter-rouge">dir/obj</code> has two versions: <code class="language-plaintext highlighter-rouge">12345a6b-7c89-0d12-3456-78fe9012f345</code> and <code class="language-plaintext highlighter-rouge">abcde1f2-g3hi-j4kl-mnop-qr56stuv7wxy</code>.</p>
 
-    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>To access a specific version of a file by using CLI or REST API, specify the version ID. </li>
-  <li>To access the <em>head version</em> (current version) of a file, omit the version ID.</li>
-</ul>
-</div>
+    <div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />       <ul>
+        <li>To access a specific version of a file by using CLI or REST API, specify the version ID.</li>
+        <li>To access the <em>head version</em> (current version) of a file, omit the version ID.</li>
+      </ul>
+    </div>
   </li>
   <li>
     <p>The system-created hard link points to the latest version of the object.</p>

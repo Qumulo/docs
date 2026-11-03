@@ -2419,7 +2419,9 @@ $(document).ready(function() {
    
      
      
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo provides REST access to the same <a href="how-file-system-change-notifications-work.html">change notification system</a> that backs SMB2 <code class="language-plaintext highlighter-rouge">CHANGE_NOTIFY</code>. Because the notification interface and types are easier to work with compared to SMB2, we recommend programming by using REST rather than SMB <code class="language-plaintext highlighter-rouge">CHANGE_NOTIFY</code>.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo provides REST access to the same <a href="how-file-system-change-notifications-work.html">change notification system</a> that backs SMB2 <code class="language-plaintext highlighter-rouge">CHANGE_NOTIFY</code>. Because the notification interface and types are easier to work with compared to SMB2, we recommend programming by using REST rather than SMB <code class="language-plaintext highlighter-rouge">CHANGE_NOTIFY</code>.
+</div>
 
 <p>Qumulo Core streams notifications to the client by using HTML server-sent events (SSE). For more information about the SSE syntax, see <a href="https://html.spec.whatwg.org/multipage/server-sent-events.html#server-sent-events">Server-sent events</a> in the HTML Living Standard documentation.</p>
 
@@ -2434,11 +2436,11 @@ $(document).ready(function() {
 
 <p>Qumulo Core continues to stream events until the client closes the connection.</p>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>Standard file system permissions apply to API requests for non-recursive watching: The system compares the authenticated user that makes the API request with the defined access control list (ACL) permissions for the file and grants or denies access access. The authenticated user must have permission to read a directory in order to request notifications for its changes.</li>
-  <li>Because of the complexity of representing and enforcing a permissions model for an arbitrary subtree of the file system, recursive notification requests require an authenticated API user to have the <code>DATA_ADMINISTRATOR</code> privilege. This requirement remains true even if you configure your Qumulo cluster to ignore the recursive notification mode.</li>
-</ul>
+<div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+    <li>Standard file system permissions apply to API requests for non-recursive watching: The system compares the authenticated user that makes the API request with the defined access control list (ACL) permissions for the file and grants or denies access access. The authenticated user must have permission to read a directory in order to request notifications for its changes.</li>
+    <li>Because of the complexity of representing and enforcing a permissions model for an arbitrary subtree of the file system, recursive notification requests require an authenticated API user to have the <code class="language-plaintext highlighter-rouge">DATA_ADMINISTRATOR</code> privilege. This requirement remains true even if you configure your Qumulo cluster to ignore the recursive notification mode.</li>
+  </ul>
 </div>
 
 <h2 id="sse-event-payload-structure">How SSE Event Payloads are Structured for Recursive Notification Requests</h2>
@@ -2547,7 +2549,7 @@ $(document).ready(function() {
     <td>
       <p>A directory has been moved from the listed location.</p>
       
-      <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The combination of the <code>*_moved_to</code> and <code>*_moved_from</code> notification type constitutes the renaming of the listed directory.</div>
+      <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The combination of the <code class="language-plaintext highlighter-rouge">*_moved_to</code> and <code class="language-plaintext highlighter-rouge">*_moved_from</code> notification type constitutes the renaming of the listed directory.</div>
 
     </td>
   </tr>
@@ -2555,7 +2557,7 @@ $(document).ready(function() {
     <td><code>child_dir_moved_to</code></td>
     <td>
       <p>A directory has been moved to the listed location.</p>
-      <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The combination of the <code>*_moved_to</code> and <code>*_moved_from</code> notification type constitutes the renaming of the listed directory.</div>
+      <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The combination of the <code class="language-plaintext highlighter-rouge">*_moved_to</code> and <code class="language-plaintext highlighter-rouge">*_moved_from</code> notification type constitutes the renaming of the listed directory.</div>
 
     </td>
   </tr>
@@ -2563,7 +2565,7 @@ $(document).ready(function() {
     <td><code>child_extra_attrs_changed</code></td>
     <td>
       <p>The additional attributes for the listed file or directory have been modified.</p>
-      <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The additional attributes are Windows-specific <em>extra file attributes</em> which include <code>HIDDEN</code>, <code>READ_ONLY</code>, and so on. For more information, see <a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/ca28ec38-f155-4768-81d6-4bfeb8586fc9">File Attributes</a> in the Microsoft Open Attributes documentation.</div>
+      <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The additional attributes are Windows-specific <em>extra file attributes</em> which include <code class="language-plaintext highlighter-rouge">HIDDEN</code>, <code class="language-plaintext highlighter-rouge">READ_ONLY</code>, and so on. For more information, see <a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/ca28ec38-f155-4768-81d6-4bfeb8586fc9">File Attributes</a> in the Microsoft Open Attributes documentation.</div>
 
     </td>
   </tr>  
@@ -2580,7 +2582,7 @@ $(document).ready(function() {
     <td>
       <p>A file has been moved from the listed location.</p>
       
-      <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The combination of the <code>*_moved_to</code> and <code>*_moved_from</code> notification type constitutes the renaming of the listed file.</div>
+      <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The combination of the <code class="language-plaintext highlighter-rouge">*_moved_to</code> and <code class="language-plaintext highlighter-rouge">*_moved_from</code> notification type constitutes the renaming of the listed file.</div>
 
     </td>
   </tr>
@@ -2588,7 +2590,7 @@ $(document).ready(function() {
     <td><code>child_file_moved_to</code></td>
     <td>
       <p>A file has been moved from the listed location.</p>
-      <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The combination of the <code>*_moved_to</code> and <code>*_moved_from</code> notification type constitutes the renaming of the listed file.</div>
+      <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The combination of the <code class="language-plaintext highlighter-rouge">*_moved_to</code> and <code class="language-plaintext highlighter-rouge">*_moved_from</code> notification type constitutes the renaming of the listed file.</div>
 
     </td>
   </tr>
@@ -2632,7 +2634,7 @@ $(document).ready(function() {
     <td><code>self_removed</code></td>
     <td>
       <p>The directory from which then system streams notifications has been removed from the file system.</p>
-      <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> No notifications follow a <code>self_removed</code> notification.</div>
+      <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> No notifications follow a <code class="language-plaintext highlighter-rouge">self_removed</code> notification.</div>
 
     </td>
   </tr>
@@ -2640,7 +2642,7 @@ $(document).ready(function() {
 </table>
 
 <h2 id="streaming-change-notifications-by-using-the-qq-cli">Streaming Change Notifications by Using the qq CLI</h2>
-<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_notify.html"><code>qq fs_notify</code></a>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_notify.html"><code class="language-plaintext highlighter-rouge">qq fs_notify</code></a>
  command and specify the path to a directory. For example:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_notify <span class="nt">--path</span> /my/directory

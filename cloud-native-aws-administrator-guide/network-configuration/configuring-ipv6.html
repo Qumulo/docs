@@ -2434,20 +2434,20 @@ $(document).ready(function() {
    <p>This section explains how to configure IPv6 in Qumulo Core by configuring the default gateway and maximum transmission unit (MTU).</p>
    
      
-     <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>The Qumulo Core Web UI doesn't show the default gateway for IPv6.</li>
-  <li>As for IPv4, you can configure one untagged IPv6 network by using VLAN 0 or multiple tagged networks by using VLAN 1-4094 statically.</li>
-  <li>It is possible to configure an IPv4 network alongside an IPv6 network on any VLAN.</li>
-  <li>Currently, Qumulo Core doesn't support VPN connections by using IPv6.</li>
-</ul>
+     <div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>The Qumulo Core Web UI doesn't show the default gateway for IPv6.</li>
+    <li>As for IPv4, you can configure one untagged IPv6 network by using VLAN 0 or multiple tagged networks by using VLAN 1-4094 statically.</li>
+    <li>It is possible to configure an IPv4 network alongside an IPv6 network on any VLAN.</li>
+    <li>Currently, Qumulo Core doesn't support VPN connections by using IPv6.</li>
+  </ul>
 </div>
 
 <h2 id="to-configure-ipv6-by-using-the-qq-cli">To Configure IPv6 by Using the qq CLI</h2>
 
 <ol>
   <li>
-    <p>To specify the default gateway for IPv4 and IPv6 traffic, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_interface.html"><code>qq network_mod_interface</code></a>
+    <p>To specify the default gateway for IPv4 and IPv6 traffic, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_interface.html"><code class="language-plaintext highlighter-rouge">qq network_mod_interface</code></a>
  command. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq network_mod_interface <span class="nt">--default-gateway</span> 192.168.0.1 <span class="se">\</span>
@@ -2456,7 +2456,7 @@ $(document).ready(function() {
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>To specify IPv6 addresses for your Qumulo cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_network.html"><code>qq network_mod_network</code></a>
+    <p>To specify IPv6 addresses for your Qumulo cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_network.html"><code class="language-plaintext highlighter-rouge">qq network_mod_network</code></a>
  command to modify the default network configuration. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq network_mod_network <span class="nt">--network-id</span> 1 <span class="se">\</span>
@@ -2469,10 +2469,12 @@ $(document).ready(function() {
   <span class="nt">--dns-search-domains</span> example.com
 </code></pre></div>    </div>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For IPv6 networks, you can specify subnets by using CIDR notation (for example, <code class="language-plaintext highlighter-rouge">2001:DB8/32</code>) or by using a standard netmask (for example, <code class="language-plaintext highlighter-rouge">ffff:ffff:ffff:ffff::</code>).</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For IPv6 networks, you can specify subnets by using CIDR notation (for example, <code class="language-plaintext highlighter-rouge">2001:DB8/32</code>) or by using a standard netmask (for example, <code class="language-plaintext highlighter-rouge">ffff:ffff:ffff:ffff::</code>).
+    </div>
   </li>
   <li>
-    <p>To verify the configuration and confirm the assigned IPv6 addresses, uses the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_poll.html"><code>qq network_poll</code></a>
+    <p>To verify the configuration and confirm the assigned IPv6 addresses, uses the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_poll.html"><code class="language-plaintext highlighter-rouge">qq network_poll</code></a>
  command.</p>
   </li>
   <li>

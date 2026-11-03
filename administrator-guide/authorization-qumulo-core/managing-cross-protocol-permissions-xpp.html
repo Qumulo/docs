@@ -2703,11 +2703,11 @@ $(document).ready(function() {
 
 <p>When there are no cross-protocol interactions, Qumulo Core operates according to precise protocol specifications. When protocol conflicts arise, XPP minimizes the possibility of application incompatibility.</p>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>XPP doesn't break compatibility with previous Qumulo Core releases.</li>
-  <li>Changing permissions mode doesn't change the rights for existing files in your file system. These changes take place during future operations that modify file permissions.</li>
-</ul>
+<div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+    <li>XPP doesn't break compatibility with previous Qumulo Core releases.</li>
+    <li>Changing permissions mode doesn't change the rights for existing files in your file system. These changes take place during future operations that modify file permissions.</li>
+  </ul>
 </div>
 
 <p>For more information, see <a href="https://care.qumulo.com/s/article/Cross-Protocol-Permissions-XPP-in-Common-Scenarios">Cross-Protocol Permissions (XPP) in Common Scenarios</a>.</p>
@@ -2739,39 +2739,36 @@ $(document).ready(function() {
 <h2 id="to-manage-cross-protocol-permissions-xpp">To Manage Cross-Protocol Permissions (XPP)</h2>
 <p>XPP is enabled on new Qumulo clusters by default.</p>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>When you disable or enable XPP, the change takes effect immediately, without Qumulo Core scanning the directory tree. Existing file and directory permissions remain unaffected unless&mdash;or until&mdash;your workflow modifies them.</li>
-  <li>It is important to remember that the <code>native</code> sub-command is a simple means of handling mixed protocol permissions by keeping the most recent change to a file's or directory's permissions. While this is sufficient for most scenarios that don't require cross-protocol use, disabling XPP can cause issues to occur for mixed-protocol workloads when POSIX-mode bits can replace SMB access control lists (ACLs), or the other way around.</li>
-  <li>Before enabling XPP in a production environment, we recommend <a href="../snapshots/managing-snapshots.html">create a snapshot</a> of your file system.</li>
-</ul>
+<div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+    <li>When you disable or enable XPP, the change takes effect immediately, without Qumulo Core scanning the directory tree. Existing file and directory permissions remain unaffected unless—or until—your workflow modifies them.</li>
+    <li>It is important to remember that the <code class="language-plaintext highlighter-rouge">native</code> sub-command is a simple means of handling mixed protocol permissions by keeping the most recent change to a file's or directory's permissions. While this is sufficient for most scenarios that don't require cross-protocol use, disabling XPP can cause issues to occur for mixed-protocol workloads when POSIX-mode bits can replace SMB access control lists (ACLs), or the other way around.</li>
+    <li>Before enabling XPP in a production environment, we recommend <a href="../snapshots/managing-snapshots.html">create a snapshot</a> of your file system.</li>
+  </ul>
 </div>
 
 <ul>
   <li>
-    <p>To disable XPP, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_set_permissions_settings.html"><code>qq fs_set_permissions_settings</code></a>
+    <p>To disable XPP, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_set_permissions_settings.html"><code class="language-plaintext highlighter-rouge">qq fs_set_permissions_settings</code></a>
  <code class="language-plaintext highlighter-rouge">native</code> command.</p>
   </li>
   <li>
-    <p>To enable XPP, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_set_permissions_settings.html"><code>qq fs_set_permissions_settings</code></a>
+    <p>To enable XPP, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_set_permissions_settings.html"><code class="language-plaintext highlighter-rouge">qq fs_set_permissions_settings</code></a>
  <code class="language-plaintext highlighter-rouge">cross_protocol</code> command.</p>
   </li>
   <li>
-    <p>To check the current permissions mode, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_get_permissions_settings.html"><code>qq fs_get_permissions_settings</code></a>
+    <p>To check the current permissions mode, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_get_permissions_settings.html"><code class="language-plaintext highlighter-rouge">qq fs_get_permissions_settings</code></a>
  command.</p>
   </li>
 </ul>
 
 <h2 id="best-practices-for-using-ssh-with-cross-protocol-permissions-xpp-mode">Best Practices for Using SSH with Cross-Protocol Permissions (XPP) Mode</h2>
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-XPP Mode can "reveal" the permissions that Native Permission Mode "hides" by translating the access control entry (ACE) rights for users or groups that aren't the file or group owners to the <code>Others</code> POSIX-mode bits, which:
-
-<ul>
-  <li>Helps avoid potential interoperability issues with POSIX applications that might misbehave if XPP Mode <em>appears</em> to deny access (which is actually permitted)</li>
-  <li>Ensures that XPP doesn't provide a false sense of security by accurately reflecting actual access rights in the <code>Others</code> POSIX mode bits</li>
-</ul>
-
-This behavior can trigger security checks from SSH or SSHD when you attempt to access NFSv4.1 home directories.
+<div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br /> XPP Mode can "reveal" the permissions that Native Permission Mode "hides" by translating the access control entry (ACE) rights for users or groups that aren't the file or group owners to the <code class="language-plaintext highlighter-rouge">Others</code> POSIX-mode bits, which:   <ul>
+    <li>Helps avoid potential interoperability issues with POSIX applications that might misbehave if XPP Mode <em>appears</em> to deny access (which is actually permitted)</li>
+    <li>Ensures that XPP doesn't provide a false sense of security by accurately reflecting actual access rights in the <code class="language-plaintext highlighter-rouge">Others</code> POSIX mode bits</li>
+  </ul>
+ This behavior can trigger security checks from SSH or SSHD when you attempt to access NFSv4.1 home directories.
 </div>
 
 <ul>
@@ -2791,28 +2788,32 @@ This behavior can trigger security checks from SSH or SSHD when you attempt to a
       <li>
         <p>If anyone other than the owner of the <code class="language-plaintext highlighter-rouge">authorized_keys</code> file must be able to modify the file, disable the security check by setting the <code class="language-plaintext highlighter-rouge">StrictModes</code> configuration option to <code class="language-plaintext highlighter-rouge">no</code> in the <code class="language-plaintext highlighter-rouge">/etc/ssh/sshd_config</code> file on every SSH server.</p>
 
-        <div class="alert alert-danger" role="alert"><span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br /> Disabling the <code class="language-plaintext highlighter-rouge">StrictModes</code> configuration option disables OpenSSH permission checks entirely, for <em>all</em> of the files that it checks.</div>
+        <div class="alert alert-danger" role="alert">
+<span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br /> Disabling the <code class="language-plaintext highlighter-rouge">StrictModes</code> configuration option disables OpenSSH permission checks entirely, for <em>all</em> of the files that it checks.
+        </div>
       </li>
     </ul>
   </li>
 </ul>
 
 <h2 id="troubleshooting-the-permissions-for-a-file-or-directory">Troubleshooting the Permissions for a File or Directory</h2>
-<p>Explain Permissions Tools is a suite of diagnostic utilities that examines a file or directory and explains the structure of permissions for the file or directory. For more information, see the following sections in the Qumulo <code>qq</code> CLI Command Guide:</p>
+<p>Explain Permissions Tools is a suite of diagnostic utilities that examines a file or directory and explains the structure of permissions for the file or directory. For more information, see the following sections in the Qumulo <code class="language-plaintext highlighter-rouge">qq</code> CLI Command Guide:</p>
 
 <ul>
   <li>
-    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_acl_explain_chmod.html"><code>qq fs_acl_explain_chmod</code></a></p>
+    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_acl_explain_chmod.html"><code class="language-plaintext highlighter-rouge">qq fs_acl_explain_chmod</code></a></p>
   </li>
   <li>
-    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_acl_explain_posix_mode.html"><code>qq fs_acl_explain_posix_mode</code></a></p>
+    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_acl_explain_posix_mode.html"><code class="language-plaintext highlighter-rouge">qq fs_acl_explain_posix_mode</code></a></p>
   </li>
   <li>
-    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_acl_explain_rights.html"><code>qq fs_acl_explain_rights</code></a></p>
+    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_acl_explain_rights.html"><code class="language-plaintext highlighter-rouge">qq fs_acl_explain_rights</code></a></p>
   </li>
 </ul>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If an inheritable ACL is set on home directories, it will generally be necessary to fix permissions on new private key files before they are usable.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If an inheritable ACL is set on home directories, it will generally be necessary to fix permissions on new private key files before they are usable.
+</div>
 
 
    

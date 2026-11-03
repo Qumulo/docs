@@ -2698,7 +2698,9 @@ $(document).ready(function() {
      
      <h2 id="how-continuous-replication-works">How Continuous Replication Works</h2>
 
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Qumulo Core supports replication between different versions only if either the source or target cluster is running Qumulo Core 2.12.0 (or higher). For more information, see <a href="../upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.html">Replication Version Requirements and Upgrade Recommendations</a>.</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Qumulo Core supports replication between different versions only if either the source or target cluster is running Qumulo Core 2.12.0 (or higher). For more information, see <a href="../upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.html">Replication Version Requirements and Upgrade Recommendations</a>.
+</div>
 
 <p>Continuous replication takes a snapshot of the data in a directory on the <em>source cluster</em> and transfers it to a directory on the <em>target cluster</em>. While continuous replication runs, Qumulo Core scans modified files for any changed regions and transfer only these changes to the target cluster.</p>
 
@@ -2707,17 +2709,17 @@ $(document).ready(function() {
 <h2 id="prerequisites">Prerequisites</h2>
 <p>The following privileges are required for continuous replication.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>We don't recommend granting the following privileges to specific users because they grant administrative access to your cluster.</li>
-  <li>
-    <p>The following privileges grant user access to Qumulo Core functionality beyond replication relationship management:</p>
-    <ul>
-      <li><code>PRIVILEGE_REPLICATION_SOURCE_WRITE</code>: Grants the permission to access any data on a cluster, regardless of file or directory permissions</li>
-      <li><code>PRIVILEGE_REPLICATION_TARGET_WRITE</code>: Grants the permission to authorize replication relationships to any target directory on a cluster</li>
-    </ul>
-  </li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>We don't recommend granting the following privileges to specific users because they grant administrative access to your cluster.</li>
+    <li>
+      <p>The following privileges grant user access to Qumulo Core functionality beyond replication relationship management:</p>
+      <ul>
+        <li><code class="language-plaintext highlighter-rouge">PRIVILEGE_REPLICATION_SOURCE_WRITE</code>: Grants the permission to access any data on a cluster, regardless of file or directory permissions</li>
+        <li><code class="language-plaintext highlighter-rouge">PRIVILEGE_REPLICATION_TARGET_WRITE</code>: Grants the permission to authorize replication relationships to any target directory on a cluster</li>
+      </ul>
+    </li>
+  </ul>
 </div>
 
 <ul>
@@ -2736,7 +2738,9 @@ $(document).ready(function() {
 </ul>
 
 <h2 id="create-replication-relationship">To Create a Replication Relationship</h2>
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> A replication job doesn’t begin until you authorize the relationship on the target cluster.</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> A replication job doesn’t begin until you authorize the relationship on the target cluster.
+</div>
 
 <ol>
   <li>
@@ -2761,17 +2765,19 @@ $(document).ready(function() {
       <li>
         <p>For <strong>Target Address</strong>, enter one of the IP addresses from a node on the target cluster.</p>
 
-        <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> We recommend using a floating IP address.</div>
+        <div class="alert alert-success" role="alert">
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> We recommend using a floating IP address.
+        </div>
       </li>
       <li>
         <p>For <strong>Port Number</strong>, click <strong>Default (3712)</strong> or enter a custom port.</p>
 
-        <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>Every node on the target cluster uses port 3712 to listen for incoming replication connections.</li>
-  <li>If a source cluster is unable to reach a target cluster on port 3712, you must configure your firewall, by mapping an external IP address and port number to the target cluster's IP address and port number.</li>
-</ul>
-</div>
+        <div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />           <ul>
+            <li>Every node on the target cluster uses port 3712 to listen for incoming replication connections.</li>
+            <li>If a source cluster is unable to reach a target cluster on port 3712, you must configure your firewall, by mapping an external IP address and port number to the target cluster's IP address and port number.</li>
+          </ul>
+        </div>
       </li>
     </ol>
   </li>
@@ -2781,7 +2787,9 @@ $(document).ready(function() {
   <li>
     <p>(Optional) To add another blackout window, click <strong>Add Blackout Window</strong>.</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can add up to ten blackout windows. For more information, see <a href="https://care.qumulo.com/hc/en-us/articles/360019101513">Replication: Blackout Windows</a> on Qumulo Care.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can add up to ten blackout windows. For more information, see <a href="https://care.qumulo.com/hc/en-us/articles/360019101513">Replication: Blackout Windows</a> on Qumulo Care.
+    </div>
   </li>
   <li>
     <p>To replicate files by using locally-owned NFS IDs, under <strong>Map Local User/Group IDs to Associated NFS IDs</strong>, click Enabled.</p>
@@ -2797,7 +2805,9 @@ $(document).ready(function() {
 </ol>
 
 <h2 id="to-authorize-a-replication-relationship">To Authorize a Replication Relationship</h2>
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If your cluster is currently in a blackout window or if continuous replication for the replication relationship is disabled, replication doesn’t begin. For more information, see <a href="https://care.qumulo.com/hc/en-us/articles/360019101513">Replication: Blackout Windows</a> on Qumulo Care.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If your cluster is currently in a blackout window or if continuous replication for the replication relationship is disabled, replication doesn’t begin. For more information, see <a href="https://care.qumulo.com/hc/en-us/articles/360019101513">Replication: Blackout Windows</a> on Qumulo Care.
+</div>
 
 <ol>
   <li>
@@ -2861,7 +2871,9 @@ $(document).ready(function() {
 
     <p>A progress bar in the <strong>Status</strong> column indicates the replication process.</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The replication process percentage considers the number of files to be replicated <em>and</em> the amount of data to be transferred.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The replication process percentage considers the number of files to be replicated <em>and</em> the amount of data to be transferred.
+    </div>
   </li>
   <li>
     <p>To review the throughput, run time, and data statistics for the replication job in progress, click <strong>Details</strong>.</p>
@@ -2869,7 +2881,9 @@ $(document).ready(function() {
 </ol>
 
 <h2 id="to-modify-a-replication-relationship">To Modify a Replication Relationship</h2>
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> It isn’t possible to edit the source and target directory paths. To make these changes, you must create a new replication relationship.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> It isn’t possible to edit the source and target directory paths. To make these changes, you must create a new replication relationship.
+</div>
 
 <ol>
   <li>
@@ -2910,10 +2924,8 @@ $(document).ready(function() {
   <li><strong>Continuous Replication:</strong> Depending on applications in use while a replication job runs, continuous replication increases the load on the cluster and can cause latency delays.</li>
   <li><strong>Local Users and Groups:</strong> Continuous replication doesn't support replicating local user or group information and fails when it encounters a file associated with local users or groups.</li>
   <li><strong>Target Directory Permissions</strong> When you create a replication relationship, Qumulo Core updates these permissions from read-write to read-only. When you delete the relationship, the permissions revert to read-write automatically.</li>
-
   <li><strong>Root Directory:</strong> Including this directory makes the entire target cluster read-only and might prohibit administrative functions such as upgrades. For more information, see <a href="../upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.html">Replication Version Requirements and Upgrade Recommendations</a></li>
   <li><strong>Upgrades During Replication:</strong> Before you perform any Qumulo Core upgrades, you must wait until the replication job is complete. Upgrading Qumulo Core while a replication job is in progress causes the job to fail. When both clusters return to a state where replication is possible (the versions are the same), continuous replication can continue.</li>
-
 </ul>
 
    

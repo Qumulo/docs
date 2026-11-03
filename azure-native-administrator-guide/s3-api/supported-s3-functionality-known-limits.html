@@ -2378,171 +2378,171 @@ $(document).ready(function() {
      <h2 id="supported-s3-api-actions">Supported S3 API Actions</h2>
 <p>The following table lists the S3 API actions that Qumulo Core supports and the version from which support begins. For the full list of S3 API actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_Operations.html">Actions</a> in the Amazon Simple Storage Service API Reference.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>The S3 API became generally available in Qumulo Core 5.3.3. This guide doesn't document enabling or using API actions that became available with preview functionality in versions of Qumulo Core lower than 5.3.3.</li>
-  <li>The Qumulo S3 protocol creates data that supports all file system functionality, such as quotas, snapshots, replication, and Cloud Data Fabric functionality.</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>The S3 API became generally available in Qumulo Core 5.3.3. This guide doesn't document enabling or using API actions that became available with preview functionality in versions of Qumulo Core lower than 5.3.3.</li>
+    <li>The Qumulo S3 protocol creates data that supports all file system functionality, such as quotas, snapshots, replication, and Cloud Data Fabric functionality.</li>
+  </ul>
 </div>
 
 <table>
-    <thead>
-      <tr>
-        <th>API Action</th>
-        <th>Supported from Qumulo Core Version</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>AbortMultipartUpload</code></td>
-        <td>5.3.3</td>
-      </tr>
-      <tr>
-        <td><code>CompleteMultipartUpload</code></td>
-        <td>5.3.3</td>
-      </tr>
-      <tr>
-        <td><code>CopyObject</code></td>
-        <td>5.3.3</td>
-      </tr>
-      <tr>
-        <td><code>CreateBucket</code></td>
-        <td class="fade-row">5.2.3</td>
-      </tr>
-      <tr>
-        <td><code>CreateMultipartUpload</code></td>
-        <td>5.3.3</td>
-      </tr>
-      <tr>
-        <td><code>DeleteBucket</code></td>
-        <td class="fade-row">5.2.4</td>
-      </tr>
-      <tr>
-        <td><code>DeleteBucketPolicy</code></td>
-        <td>7.0.1.1</td>
-      </tr>    
-      <tr>
-        <td><code>DeleteBucketVersioning</code></td>
-        <td>7.1.2</td>
-      </tr>
-      <tr>
-        <td><code>DeleteObject</code></td>
-        <td class="fade-row">5.2.1</td>
-      </tr>
-      <tr>
-        <td><code>DeleteObjects</code></td>
-        <td class="fade-row">5.2.2</td>
-      </tr>
-      <tr>
-        <td><code>DeleteObjectTagging</code></td>
-        <td>6.3.2</td>
-      </tr>
-      <tr>
-        <td><code>GetBucketAcl</code></td>
-        <td>6.1.1</td>
-      </tr>
-      <tr>
-        <td><code>GetBucketLocation</code></td>
-        <td class="fade-row">5.1.2</td>
-      </tr>
-      <tr>
-        <td><code>GetBucketPolicy</code></td>
-        <td>7.0.0.1</td>
-      </tr>    
-      <tr>
-        <td><code>GetBucketVersioning</code></td>
-        <td>7.1.2</td>
-      </tr>
-      <tr>
-        <td><code>GetObject</code></td>
-        <td class="fade-row">5.0.4</td>
-      </tr>
-      <tr>
-        <td><code>GetObjectAcl</code></td>
-        <td>6.1.1</td>
-      </tr>    
-      <tr>
-        <td><code>GetObjectLegalHold</code></td>
-        <td>7.2.3.2</td>
-      </tr>
-      <tr>
-        <td><code>GetObjectLockConfiguration</code></td>
-        <td>7.0.0.1</td>
-      </tr>    
-      <tr>
-        <td><code>GetObjectRetention</code></td>
-        <td>7.2.1.1</td>
-      </tr>
-      <tr>
-        <td><code>GetObjectTagging</code></td>
-        <td>7.1.2</td>
-      </tr>
-      <tr>
-        <td><code>HeadBucket</code></td>
-        <td class="fade-row">5.1.2</td>
-      </tr>
-      <tr>
-        <td><code>HeadObject</code></td>
-        <td class="fade-row">5.0.4</td>
-      </tr>
-      <tr>
-        <td><code>ListBuckets</code></td>
-        <td class="fade-row">5.0.4</td>
-      </tr>
-      <tr>
-        <td><code>ListMultipartUploads</code></td>
-        <td>5.3.3</td>
-      </tr>
-      <tr>
-        <td><code>ListObjects</code></td>
-        <td class="fade-row">5.0.5</td>
-      </tr>
-      <tr>
-        <td><code>ListObjectsV2</code></td>
-        <td class="fade-row">5.0.4</td>
-      </tr>
-      <tr>
-        <td><code>ListParts</code></td>
-        <td>5.3.3</td>
-      </tr>
-      <tr>
-        <td><code>PutBucketPolicy</code></td>
-        <td>7.0.1.1</td>
-      </tr>
-      <tr>
-        <td><code>PutBucketVersioning</code></td>
-        <td>7.1.2</td>
-      </tr>
-      <tr>
-        <td><code>PutObject</code></td>
-        <td class="fade-row">5.2.1</td>
-      </tr>
-      <tr>
-        <td><code>PutObjectLegalHold</code></td>
-        <td>7.2.3.2</td>
-      </tr>    
-      <tr>
-        <td><code>PutObjectLockConfiguration</code></td>
-        <td>7.2.3.2</td>
-      </tr>
-      <tr>
-        <td><code>PutObjectRetention</code></td>
-        <td>7.2.1.1</td>
-      </tr>
-      <tr>
-        <td><code>PutObjectTagging</code></td>
-        <td>6.3.2</td>
-      </tr>
-      <tr>
-        <td><code>UploadPart</code></td>
-        <td>5.3.3</td>
-      </tr>
-      <tr>
-        <td><code>UploadPartCopy</code></td>
-        <td>6.0.2</td>
-      </tr>
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th>API Action</th>
+      <th>Supported from Qumulo Core Version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">AbortMultipartUpload</code></td>
+      <td>5.3.3</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">CompleteMultipartUpload</code></td>
+      <td>5.3.3</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">CopyObject</code></td>
+      <td>5.3.3</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">CreateBucket</code></td>
+      <td class="fade-row">5.2.3</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">CreateMultipartUpload</code></td>
+      <td>5.3.3</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">DeleteBucket</code></td>
+      <td class="fade-row">5.2.4</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">DeleteBucketPolicy</code></td>
+      <td>7.0.1.1</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">DeleteBucketVersioning</code></td>
+      <td>7.1.2</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">DeleteObject</code></td>
+      <td class="fade-row">5.2.1</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">DeleteObjects</code></td>
+      <td class="fade-row">5.2.2</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">DeleteObjectTagging</code></td>
+      <td>6.3.2</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">GetBucketAcl</code></td>
+      <td>6.1.1</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">GetBucketLocation</code></td>
+      <td class="fade-row">5.1.2</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">GetBucketPolicy</code></td>
+      <td>7.0.0.1</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">GetBucketVersioning</code></td>
+      <td>7.1.2</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">GetObject</code></td>
+      <td class="fade-row">5.0.4</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">GetObjectAcl</code></td>
+      <td>6.1.1</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">GetObjectLegalHold</code></td>
+      <td>7.2.3.2</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">GetObjectLockConfiguration</code></td>
+      <td>7.0.0.1</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">GetObjectRetention</code></td>
+      <td>7.2.1.1</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">GetObjectTagging</code></td>
+      <td>7.1.2</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">HeadBucket</code></td>
+      <td class="fade-row">5.1.2</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">HeadObject</code></td>
+      <td class="fade-row">5.0.4</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ListBuckets</code></td>
+      <td class="fade-row">5.0.4</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ListMultipartUploads</code></td>
+      <td>5.3.3</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ListObjects</code></td>
+      <td class="fade-row">5.0.5</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ListObjectsV2</code></td>
+      <td class="fade-row">5.0.4</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ListParts</code></td>
+      <td>5.3.3</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">PutBucketPolicy</code></td>
+      <td>7.0.1.1</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">PutBucketVersioning</code></td>
+      <td>7.1.2</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">PutObject</code></td>
+      <td class="fade-row">5.2.1</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">PutObjectLegalHold</code></td>
+      <td>7.2.3.2</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">PutObjectLockConfiguration</code></td>
+      <td>7.2.3.2</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">PutObjectRetention</code></td>
+      <td>7.2.1.1</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">PutObjectTagging</code></td>
+      <td>6.3.2</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">UploadPart</code></td>
+      <td>5.3.3</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">UploadPartCopy</code></td>
+      <td>6.0.2</td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="unsupported-s3-functionality">Unsupported S3 Functionality</h2>
 <p>The following table lists some of the S3 API functionality that Qumulo Core doesn’t support.</p>
@@ -2614,12 +2614,12 @@ $(document).ready(function() {
 <p>This section describes the most important S3 API limitations in Qumulo Core.</p>
 
 <h3 id="authentication">Authentication</h3>
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>Qumulo Core supports only AWS Signature Version 4 (SigV4). AWS Signature Version 2 (SigV2) is unsupported.</li>
-  <li>Attempting to use the <code>CRC32</code> or <code>CRC32C</code> header value or the <code>STREAMING-UNSIGNED-PAYLOAD-TRAILER</code> header value with an unsupported checksum format returns the error <code>QumuloUnsupportedTrailerChecksumFormat</code>.</li>
-  <li>Attempting to use the <code>x-amz-content-sha256</code> header with an unsupported value returns the error <code>AuthorizationHeaderMalformed</code>.</li>
-</ul>
+<div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+    <li>Qumulo Core supports only AWS Signature Version 4 (SigV4). AWS Signature Version 2 (SigV2) is unsupported.</li>
+    <li>Attempting to use the <code class="language-plaintext highlighter-rouge">CRC32</code> or <code class="language-plaintext highlighter-rouge">CRC32C</code> header value or the <code class="language-plaintext highlighter-rouge">STREAMING-UNSIGNED-PAYLOAD-TRAILER</code> header value with an unsupported checksum format returns the error <code class="language-plaintext highlighter-rouge">QumuloUnsupportedTrailerChecksumFormat</code>.</li>
+    <li>Attempting to use the <code class="language-plaintext highlighter-rouge">x-amz-content-sha256</code> header with an unsupported value returns the error <code class="language-plaintext highlighter-rouge">AuthorizationHeaderMalformed</code>.</li>
+  </ul>
 </div>
 
 <h4 id="supported-streaming-unsigned-payload-trailer-checksum-formats">Supported STREAMING-UNSIGNED-PAYLOAD-TRAILER Checksum Formats</h4>
@@ -2630,7 +2630,7 @@ $(document).ready(function() {
 
 <h4 id="supported-x-amz-content-sha256-header-values">Supported x-amz-content-sha256 Header Values</h4>
 <ul>
-  <li><code>&lt;actual payload checksum&gt;</code></li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;actual payload checksum&gt;</code></li>
   <li><code class="language-plaintext highlighter-rouge">UNSIGNED-PAYLOAD</code></li>
   <li><code class="language-plaintext highlighter-rouge">STREAMING-UNSIGNED-PAYLOAD-TRAILER</code></li>
   <li><code class="language-plaintext highlighter-rouge">STREAMING-AWS4-HMAC-SHA256-PAYLOAD</code></li>
@@ -2653,20 +2653,20 @@ $(document).ready(function() {
   <tr>
     <td><code>CRC32</code></td>
     <td><span class="emoji">❌</span></td>
-    <td>&mdash;</td>
-    <td>&mdash;</td>
+    <td>—</td>
+    <td>—</td>
   </tr>
   <tr>
     <td><code>CRC32C</code></td>
     <td><span class="emoji">❌</span></td>
-    <td>&mdash;</td>
-    <td>&mdash;</td>
+    <td>—</td>
+    <td>—</td>
   </tr>
   <tr>
     <td><code>&lt;actual payload checksum&gt;</code></td>
     <td><span class="emoji">✅</span></td>
     <td>Sending a payload in a single chunk</td>
-    <td>&mdash;</td>
+    <td>—</td>
   </tr>
   <tr>
     <td><code>UNSIGNED-PAYLOAD</code></td>
@@ -2720,17 +2720,15 @@ $(document).ready(function() {
 <h3 id="etags">ETags</h3>
 <p>RESTful APIs, such as the Qumulo Core S3 API, use HTTP <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag">ETags</a> to identify different resource versions. When working with files by using Qumulo Core, each time a file’s contents change (regardless of protocol), the value of its ETag changes as well.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>Certain applications might assume that S3 object ETags contain the MD5 checksum of the object's contents. Such applications might not function properly with the Qumulo S3 API.</li>
-  <li>
-    To maintain data integrity, we recommend that applications do one of the following:
-    <ul>
-      <li><a href="configuring-using-s3-api.html">Configure HTTPS for the S3 API</a></li>
-      <li>Include the <code>Content-MD5</code> header with the checksum of the object's contents</li>
-    </ul>
-  </li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>Certain applications might assume that S3 object ETags contain the MD5 checksum of the object's contents. Such applications might not function properly with the Qumulo S3 API.</li>
+    <li>To maintain data integrity, we recommend that applications do one of the following:       <ul>
+        <li><a href="configuring-using-s3-api.html">Configure HTTPS for the S3 API</a></li>
+        <li>Include the <code class="language-plaintext highlighter-rouge">Content-MD5</code> header with the checksum of the object's contents</li>
+      </ul>
+    </li>
+  </ul>
 </div>
 
 <ul>
@@ -2746,33 +2744,35 @@ $(document).ready(function() {
 <p>The S3 API supports listing objects in a bucket by using the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html"><code class="language-plaintext highlighter-rouge">ListObjects</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html"><code class="language-plaintext highlighter-rouge">ListObjectsV2</code></a> API actions.</p>
 
 <table>
-<thead>
-  <tr>
-    <th style="width:33%">Function</th>
-    <th style="width:33%">Qumulo Core</th>
-    <th style="width:33%">Amazon S3</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>Returning results</td>
-    <td>Consistent but non-alphabetical order</td>
-    <td>Alphabetical order, by object key</td>
-  </tr>
-  <tr>
-    <td>Arbitrary prefix</td>
-    <td>Partial support for <code>Prefix</code>, only if <code>Prefix</code> is a path to a file or directory under the <a href="creating-managing-s3-buckets.html#bucket-root">bucket root directory</a></td>
-    <td><code>Prefix</code> limits results to object keys that begin with the prefix</td>
-  </tr>
-  <tr>
-    <td>Arbitrary delimiter</td>
-    <td>Only the slash (<code>/</code>) character can act as <code>Delimiter</code></td>
-    <td><code>Delimiter</code> groups results into common prefixes</td>
-  </tr>
-</tbody>
+  <thead>
+    <tr>
+      <th style="width:33%">Function</th>
+      <th style="width:33%">Qumulo Core</th>
+      <th style="width:33%">Amazon S3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Returning results</td>
+      <td>Consistent but non-alphabetical order</td>
+      <td>Alphabetical order, by object key</td>
+    </tr>
+    <tr>
+      <td>Arbitrary prefix</td>
+      <td>Partial support for <code class="language-plaintext highlighter-rouge">Prefix</code>, only if <code class="language-plaintext highlighter-rouge">Prefix</code> is a path to a file or directory under the <a href="creating-managing-s3-buckets.html#bucket-root">bucket root directory</a></td>
+      <td><code class="language-plaintext highlighter-rouge">Prefix</code> limits results to object keys that begin with the prefix</td>
+    </tr>
+    <tr>
+      <td>Arbitrary delimiter</td>
+      <td>Only the slash (<code class="language-plaintext highlighter-rouge">/</code>) character can act as <code class="language-plaintext highlighter-rouge">Delimiter</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Delimiter</code> groups results into common prefixes</td>
+    </tr>
+  </tbody>
 </table>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Although Qumulo Core supports <code class="language-plaintext highlighter-rouge">Prefix</code> and <code class="language-plaintext highlighter-rouge">Delimiter</code> partially, it fully supports the most common use case: listing the contents of S3 buckets as a hierarchical file.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Although Qumulo Core supports <code class="language-plaintext highlighter-rouge">Prefix</code> and <code class="language-plaintext highlighter-rouge">Delimiter</code> partially, it fully supports the most common use case: listing the contents of S3 buckets as a hierarchical file.
+</div>
 
 <h3 id="object-metadata">Object Metadata</h3>
 <p>Qumulo Core stores each kind of S3 object metadata as <a href="../metadata/managing-user-defined-metadata.html">user-defined metadata</a> in a separate keyspace.</p>
@@ -2781,14 +2781,14 @@ $(document).ready(function() {
   <thead>
     <tr>
       <th>S3 Object Metadata</th>
-      <th>Appears to S3 Clients As&hellip;</th>
+      <th>Appears to S3 Clients As…</th>
       <th>Qumulo Core Keyspace</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>User-Defined Metadata</td>
-      <td><code>x-amz-meta-&ast;</code> headers</td>
+      <td><code>x-amz-meta-&amp;ast;</code> headers</td>
       <td><code>S3</code></td>
     </tr>
     <tr>
@@ -2833,11 +2833,11 @@ $(document).ready(function() {
 </ul>
 
 <h4 id="header-storage">Header Storage</h4>
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>In Qumulo Core 7.10.2.1 (and higher), the S3 API stores the <a target="_blank" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingMetadata.html#SysMetadata">system-defined metadata headers that users can control</a> and returns them in the responses of <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"><code>GetObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html"><code>HeadObject</code></a> API actions.</li>
-  <li>Lower versions of Qumulo Core accept these headers, don't store them, and return <code>Content-Type: binary/octet-stream</code> for every object.</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>In Qumulo Core 7.10.2.1 (and higher), the S3 API stores the <a target="_blank" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingMetadata.html#SysMetadata">system-defined metadata headers that users can control</a> and returns them in the responses of <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"><code class="language-plaintext highlighter-rouge">GetObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html"><code class="language-plaintext highlighter-rouge">HeadObject</code></a> API actions.</li>
+    <li>Lower versions of Qumulo Core accept these headers, don't store them, and return <code class="language-plaintext highlighter-rouge">Content-Type: binary/octet-stream</code> for every object.</li>
+  </ul>
 </div>
 
 <ul>
@@ -2887,12 +2887,11 @@ $(document).ready(function() {
 </ul>
 
 <h4 id="response-header-overrides">Response Header Overrides</h4>
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-Qumulo Core returns the <code>InvalidRequest</code> error when&hellip;
-<ul>
-  <li>An anonymous request uses any of the following query parameters</li>
-  <li>A request uses any other query parameter that begins with <code>response-</code></li>
-</ul>
+<div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br /> Qumulo Core returns the <code class="language-plaintext highlighter-rouge">InvalidRequest</code> error when…   <ul>
+    <li>An anonymous request uses any of the following query parameters</li>
+    <li>A request uses any other query parameter that begins with <code class="language-plaintext highlighter-rouge">response-</code></li>
+  </ul>
 </div>
 
 <p>For presigned requests that use the following request types, you can use response header overrides as query parameters for the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"><code class="language-plaintext highlighter-rouge">GetObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html"><code class="language-plaintext highlighter-rouge">HeadObject</code></a> API actions.</p>
@@ -2921,7 +2920,7 @@ Qumulo Core returns the <code>InvalidRequest</code> error when&hellip;
     <p>If your application attempts to use a previous Amazon signature version, you receive a <code class="language-plaintext highlighter-rouge">400 Bad Request</code> response with the error code <code class="language-plaintext highlighter-rouge">AuthorizationHeaderMalformed</code>.</p>
   </li>
   <li>
-    <p>Qumulo Core accepts only presigned requests where the <code>X-Amz-Expires</code> query parameter is set to a value of up to 604,800 seconds (7 days).</p>
+    <p>Qumulo Core accepts only presigned requests where the <code class="language-plaintext highlighter-rouge">X-Amz-Expires</code> query parameter is set to a value of up to 604,800 seconds (7 days).</p>
   </li>
 </ul>
 
@@ -2976,7 +2975,9 @@ Qumulo Core returns the <code>InvalidRequest</code> error when&hellip;
 </tbody>
 </table>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If all objects in a bucket are under the same directory—none of the object keys have the slash (<code class="language-plaintext highlighter-rouge">/</code>) character in them—the maximum number of objects in the bucket is limited to the maximum number of files in a directory. For more information, see <a href="../getting-started/supported-configurations-known-limits.html">Supported Configurations and Known Limits for Qumulo Core</a>.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If all objects in a bucket are under the same directory—none of the object keys have the slash (<code class="language-plaintext highlighter-rouge">/</code>) character in them—the maximum number of objects in the bucket is limited to the maximum number of files in a directory. For more information, see <a href="../getting-started/supported-configurations-known-limits.html">Supported Configurations and Known Limits for Qumulo Core</a>.
+</div>
 
 <h3 id="known-limits-for-s3-objects">Known Limits for S3 Objects</h3>
 <p>This section lists the known minimum and maximum limits for S3 objects.</p>
@@ -3005,12 +3006,12 @@ Qumulo Core returns the <code>InvalidRequest</code> error when&hellip;
 
 <h4 id="maximum-limits">Maximum Limits</h4>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>    
-  <li>The size limits for user-defined metadata and for standard object headers are completely separate.</li>
-  <li>In Qumulo Core 7.10.2.1 (and higher), a request whose user-defined metadata or standard object headers exceed the size limit returns the <code>MetadataTooLarge</code> error.</li>
-  <li>A request with more than 100 user-defined metadata entries returns the <code>QumuloUserMetadataLimitExceeded</code> error.</li>
-</ul>   
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>The size limits for user-defined metadata and for standard object headers are completely separate.</li>
+    <li>In Qumulo Core 7.10.2.1 (and higher), a request whose user-defined metadata or standard object headers exceed the size limit returns the <code class="language-plaintext highlighter-rouge">MetadataTooLarge</code> error.</li>
+    <li>A request with more than 100 user-defined metadata entries returns the <code class="language-plaintext highlighter-rouge">QumuloUserMetadataLimitExceeded</code> error.</li>
+  </ul>
 </div>
 
 <table>
@@ -3041,12 +3042,12 @@ Qumulo Core returns the <code>InvalidRequest</code> error when&hellip;
     <td>Unlimited</td>
   </tr>
   <tr>
-    <td>Number of user-defined metadata (<code>x-amz-meta-&ast;</code>) entries</td>
+    <td>Number of user-defined metadata (<code>x-amz-meta-&amp;ast;</code>) entries</td>
     <td>100</td>
-    <td>&mdash;</td>
+    <td>—</td>
   </tr>
   <tr>
-    <td>Size of user-defined metadata (<code>x-amz-meta-&ast;</code>) headers</td>
+    <td>Size of user-defined metadata (<code>x-amz-meta-&amp;ast;</code>) headers</td>
     <td colspan="2" class="joined-cell">2 KiB (2,048 bytes) combined key bytes and value bytes</td>
   </tr>
   <tr>
@@ -3094,7 +3095,7 @@ Qumulo Core returns the <code>InvalidRequest</code> error when&hellip;
   <tr>
     <td>Additional part size requirements</td>
     <td>Must be a multiple of 4 KiB (4,096 bytes), except for the last part of an upload</td>
-    <td>&mdash;</td>
+    <td>—</td>
   </tr>
 </tbody>
 </table>
@@ -3136,7 +3137,9 @@ Qumulo Core returns the <code>InvalidRequest</code> error when&hellip;
 </tbody>
 </table>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> <code class="language-plaintext highlighter-rouge">DeleteObjects</code> is subject to a 10 MiB request payload limit in Qumulo Core. This provides a practical upper limit on the number of object keys that the API action can specify.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> <code class="language-plaintext highlighter-rouge">DeleteObjects</code> is subject to a 10 MiB request payload limit in Qumulo Core. This provides a practical upper limit on the number of object keys that the API action can specify.
+</div>
 
 <p>In addition, the following API actions have the Qumulo-specific maximum payload size limit of 10 MiB.</p>
 

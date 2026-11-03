@@ -2461,12 +2461,12 @@ $(document).ready(function() {
       </li>
     </ul>
 
-    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>For any changes to take effect, user accounts with newly assigned roles must log out and log back in (or their sessions must time out).</li>
-  <li>Use special care when granting privileges to roles and users because certain privileges (such as replication-write privileges) can use system privileges to overwrite or move data to a location where a user has greater permissions. This can give a user access to all directories and files in a cluster regardless of any specific file and directory settings.</li>
-</ul>
-</div>
+    <div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />       <ul>
+        <li>For any changes to take effect, user accounts with newly assigned roles must log out and log back in (or their sessions must time out).</li>
+        <li>Use special care when granting privileges to roles and users because certain privileges (such as replication-write privileges) can use system privileges to overwrite or move data to a location where a user has greater permissions. This can give a user access to all directories and files in a cluster regardless of any specific file and directory settings.</li>
+      </ul>
+    </div>
   </li>
   <li>
     <p>An existing bucket with contents in Amazon S3</p>
@@ -2522,18 +2522,16 @@ $(document).ready(function() {
 </span></code></pre></div></div>
 
 <h2 id="how-shift-to-relationships-work">How Shift-To Relationships Work</h2>
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>
-    This process &hellip;
-    <ul>
-      <li>Doesn't encode or transform your data; it only replicates the data in a regular file's primary stream</li>
-      <li>Excludes alternate data streams and file system metadata such as access control lists (ACLs)</li>
-      <li>Preserves S3 metadata, generic user metadata, and (in Qumulo Core 7.10.3 and higher) well-known metadata</li>
-    </ul>
-  </li>
-  <li>To avoid transferring data across the public Internet, a server-side S3 copy operation also copies any hard links to files in the local replication directory to S3 as full copies of objects, with identical contents and metadata.</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>This process …       <ul>
+        <li>Doesn't encode or transform your data; it only replicates the data in a regular file's primary stream</li>
+        <li>Excludes alternate data streams and file system metadata such as access control lists (ACLs)</li>
+        <li>Preserves S3 metadata, generic user metadata, and (in Qumulo Core 7.10.3 and higher) well-known metadata</li>
+      </ul>
+    </li>
+    <li>To avoid transferring data across the public Internet, a server-side S3 copy operation also copies any hard links to files in the local replication directory to S3 as full copies of objects, with identical contents and metadata.</li>
+  </ul>
 </div>
 
 <p>Qumulo Core performs the following steps when it creates a Shift-To relationship.</p>
@@ -2548,7 +2546,9 @@ $(document).ready(function() {
   <li>
     <p>Starts a job by using one of the nodes in the Qumulo cluster.</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If you perform multiple Shift operations, Qumulo Core uses multiple nodes.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If you perform multiple Shift operations, Qumulo Core uses multiple nodes.
+    </div>
   </li>
   <li>
     <p>To ensure that the copy is point-in-time consistent, takes a temporary snapshot of the directory (for example, named <code class="language-plaintext highlighter-rouge">replication_to_bucket_my_bucket</code>).</p>
@@ -2567,7 +2567,9 @@ $(document).ready(function() {
   <li>
     <p>Checks whether a file is already replicated. If the object exists in the remote S3 bucket, and neither the file nor the object are modified since the last successful replication, its data isn’t retransferred to S3.</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Shift never deletes files in the remote S3 folder, even if the files are removed from the local directory since the last replication.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Shift never deletes files in the remote S3 folder, even if the files are removed from the local directory since the last replication.
+    </div>
   </li>
   <li>
     <p>Deletes the temporary snapshot.</p>
@@ -2595,7 +2597,9 @@ $(document).ready(function() {
   <li>
     <p>Directory</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For objects created for files, the system preserves the directory structure in the object key.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For objects created for files, the system preserves the directory structure in the object key.
+    </div>
   </li>
   <li>
     <p>Hard link to a <a href="https://gcc.gnu.org/onlinedocs/gnat_rm/Reading-and-Writing-Non-Regular-Files.html">non-regular file</a></p>
@@ -2791,7 +2795,7 @@ $(document).ready(function() {
 <p>This section describes how to use the Qumulo CLI 3.2.5 (and higher) to copy files from a Qumulo cluster to Amazon S3, review Shift relationship details, stop a running copy job, repeat a completed copy job, and delete a relationship.</p>
 
 <h3 id="copying-files-from-amazon-s3">Copying Files from Amazon S3</h3>
-<p>To copy files, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replication/replication_create_object_relationship.html"><code>qq replication_create_object_relationship</code></a>
+<p>To copy files, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replication/replication_create_object_relationship.html"><code class="language-plaintext highlighter-rouge">qq replication_create_object_relationship</code></a>
  command and specify the following:</p>
 <ul>
   <li>Local directory path on Qumulo cluster</li>
@@ -2834,22 +2838,22 @@ $(document).ready(function() {
 <h3 id="viewing-configuration-details-and-status-of-shift-relationships">Viewing Configuration Details and Status of Shift Relationships</h3>
 <ul>
   <li>
-    <p>To view configuration details for all Shift relationships, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replication/replication_list_object_relationships.html"><code>qq replication_list_object_relationships</code></a>
+    <p>To view configuration details for all Shift relationships, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replication/replication_list_object_relationships.html"><code class="language-plaintext highlighter-rouge">qq replication_list_object_relationships</code></a>
  command.</p>
   </li>
   <li>
-    <p>To view configuration details for a specific relationship, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replication/replication_get_object_relationship.html"><code>qq replication_get_object_relationship</code></a>
+    <p>To view configuration details for a specific relationship, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replication/replication_get_object_relationship.html"><code class="language-plaintext highlighter-rouge">qq replication_get_object_relationship</code></a>
  command followed by the <code class="language-plaintext highlighter-rouge">--id</code> and the Shift relationship ID (GUID), for example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> qq replication_get_object_relationship <span class="nt">--id</span> 1c23b4ed-5c67-8f90-1e23-a4f5f6ceff78
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>To view the status of a specific relationship, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replication/replication_get_object_relationship_status.html"><code>qq replication_get_object_relationship_status</code></a>
+    <p>To view the status of a specific relationship, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replication/replication_get_object_relationship_status.html"><code class="language-plaintext highlighter-rouge">qq replication_get_object_relationship_status</code></a>
  command followed by the <code class="language-plaintext highlighter-rouge">--id</code> and the Shift relationship ID.</p>
   </li>
   <li>
-    <p>To view the status of all relationships, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replication/replication_list_object_relationship_statuses.html"><code>qq replication_list_object_relationship_statuses</code></a>
+    <p>To view the status of all relationships, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replication/replication_list_object_relationship_statuses.html"><code class="language-plaintext highlighter-rouge">qq replication_list_object_relationship_statuses</code></a>
  command.</p>
 
     <p>The CLI returns the details of all relationships in JSON format, for example:</p>
@@ -2891,7 +2895,9 @@ $(document).ready(function() {
 </span></code></pre></div>    </div>
     <p>The <code class="language-plaintext highlighter-rouge">state</code> field shows the <code class="language-plaintext highlighter-rouge">REPLICATION_RUNNING</code> status and the <code class="language-plaintext highlighter-rouge">current_job</code> field shows the job’s progress. When Qumulo Core copies files from S3, details for the most recently completed job become available in the <code class="language-plaintext highlighter-rouge">last_job</code> field, the <code class="language-plaintext highlighter-rouge">state</code> field changes to <code class="language-plaintext highlighter-rouge">REPLICATION_NOT_RUNNING</code>, and the <code class="language-plaintext highlighter-rouge">current_job</code> field reverts to <code class="language-plaintext highlighter-rouge">null</code>.</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If you already ran a job for a relationship, it is possible for both the <code class="language-plaintext highlighter-rouge">current_job</code> and <code class="language-plaintext highlighter-rouge">last_job</code> fields to be non-null while you run a new job.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If you already ran a job for a relationship, it is possible for both the <code class="language-plaintext highlighter-rouge">current_job</code> and <code class="language-plaintext highlighter-rouge">last_job</code> fields to be non-null while you run a new job.
+    </div>
 
     <p>The <code class="language-plaintext highlighter-rouge">bytes_total</code> and <code class="language-plaintext highlighter-rouge">files_total</code> fields represent the total amount of data and number of files to be transferred by a Shift job. The <code class="language-plaintext highlighter-rouge">bytes_remaining</code> and <code class="language-plaintext highlighter-rouge">files_remaining</code> fields show the amount of data and number of files not yet transferred. The values of these four fields don’t stabilize until the work estimation for the job is complete.</p>
 
@@ -2900,11 +2906,11 @@ $(document).ready(function() {
 </ul>
 
 <h3 id="stopping-a-copy-job-in-progress">Stopping a Copy Job in Progress</h3>
-<p>To stop a copy job already in progress, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replication/replication_abort_object_replication.html"><code>qq replication_abort_object_replication</code></a>
+<p>To stop a copy job already in progress, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replication/replication_abort_object_replication.html"><code class="language-plaintext highlighter-rouge">qq replication_abort_object_replication</code></a>
  command and use the <code class="language-plaintext highlighter-rouge">--id</code> flag to specify the Shift relationship ID.</p>
 
 <h3 id="repeating-a-completed-copy-job">Repeating a Completed Copy Job</h3>
-<p>To repeat a completed copy job, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replication/replication_start_object_relationship.html"><code>qq replication_start_object_relationship</code></a>
+<p>To repeat a completed copy job, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replication/replication_start_object_relationship.html"><code class="language-plaintext highlighter-rouge">qq replication_start_object_relationship</code></a>
  command and use the <code class="language-plaintext highlighter-rouge">--id</code> flag to specify the Shift relationship ID.</p>
 
 <p>This command begins a new job for the existing relationship and downloads any content that changed in the S3 bucket or on the Qumulo cluster since the time the previous job ran.</p>
@@ -2912,7 +2918,9 @@ $(document).ready(function() {
 <h3 id="deleting-a-shift-relationship">Deleting a Shift Relationship</h3>
 <p>After your copy job is complete, you can delete your Shift relationship. To do this, run the <code class="language-plaintext highlighter-rouge">replication_delete_object_relationship</code> command and use the <code class="language-plaintext highlighter-rouge">--id</code> flag to specify the Shift relationship ID.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can run this command only against a relationship that doesn’t have any active jobs running.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can run this command only against a relationship that doesn’t have any active jobs running.
+</div>
 
 <p>This command removes the copy job’s record, leaving locally stored objects unchanged. Any storage that the relationship used to track downloaded objects becomes available when you delete the relationship.</p>
 
@@ -3004,13 +3012,15 @@ $(document).ready(function() {
           <li>
             <p>Any object uploaded from a cluster running a version of Qumulo Core lower than 7.10.3</p>
 
-            <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> A browser can interpret such an object as binary data.</div>
+            <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> A browser can interpret such an object as binary data.
+            </div>
           </li>
         </ul>
       </li>
     </ul>
 
-    <p>To set the <code class="language-plaintext highlighter-rouge">Content-Type</code> value for a file before replicating the file, use the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_set_user_metadata.html"><code>qq fs_set_user_metadata</code></a>
+    <p>To set the <code class="language-plaintext highlighter-rouge">Content-Type</code> value for a file before replicating the file, use the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_set_user_metadata.html"><code class="language-plaintext highlighter-rouge">qq fs_set_user_metadata</code></a>
  command with the <code class="language-plaintext highlighter-rouge">--well-known</code> flag.</p>
 
     <p>For more information, see <a href="../metadata/managing-user-defined-metadata.html#well-known-keyspace">Managing Well-Known Metadata by Using the qq CLI</a>.</p>

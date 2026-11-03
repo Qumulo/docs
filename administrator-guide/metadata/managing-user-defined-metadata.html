@@ -2720,22 +2720,16 @@ $(document).ready(function() {
 <p>In Qumulo Core 7.10.2.1 (and higher), the <code class="language-plaintext highlighter-rouge">WELL_KNOWN</code> keyspace holds the <a href="../s3-api/supported-s3-functionality-known-limits.html#special-considerations-standard-object-headers">standard object headers</a> that the S3 API stores and returns for an object. The keyspace has the following requirements:</p>
 
 <ul>
-  <li>
-    The key must be one of the following:
-    
-<ul>
-  <li><code>Cache-Control</code></li>
-  <li><code>Content-Disposition</code></li>
-  <li><code>Content-Encoding</code></li>
-  <li><code>Content-Language</code></li>
-  <li><code>Content-Type</code></li>
-  <li><code>Expires</code></li>
-</ul>
-
+  <li>The key must be one of the following:     <ul>
+      <li><code class="language-plaintext highlighter-rouge">Cache-Control</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Content-Disposition</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Content-Encoding</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Content-Language</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Content-Type</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Expires</code></li>
+    </ul>
   </li>
-  <li>
-    The value:
-    <ul>
+  <li>The value:     <ul>
       <li>Can be case-insensitive</li>
       <li>Must contain UTF-8 text valid for the HTTP header field</li>
       <li>Must not contain any control characters, except for the tab character</li>
@@ -2747,17 +2741,15 @@ $(document).ready(function() {
 <h2 id="managing-user-defined-metadata-by-using-the-qq-cli">Managing User-Defined Metadata by Using the qq CLI</h2>
 <p>This section explains how to create, retrieve, list, and delete user-defined metadata by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>
-    All <code>qq</code> CLI commands default to using the <code>GENERIC</code> keyspace.
-    <ul>
-      <li>For the <code>S3</code> keyspace, use the <code>--s3</code> flag.</li>
-      <li>For the <a href="#well-known-keyspace"><code>WELL_KNOWN</code> keyspace</a>, use the <code>--well-known</code> flag.</li>
-    </ul>
-  </li>
-  <li>In the following examples, you can specify the file path by using the <code>--path</code> flag or the file ID by using the <code>--id</code> flag.</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>All <code class="language-plaintext highlighter-rouge">qq</code> CLI commands default to using the <code class="language-plaintext highlighter-rouge">GENERIC</code> keyspace.       <ul>
+        <li>For the <code class="language-plaintext highlighter-rouge">S3</code> keyspace, use the <code class="language-plaintext highlighter-rouge">--s3</code> flag.</li>
+        <li>For the <a href="#well-known-keyspace"><code class="language-plaintext highlighter-rouge">WELL_KNOWN</code> keyspace</a>, use the <code class="language-plaintext highlighter-rouge">--well-known</code> flag.</li>
+      </ul>
+    </li>
+    <li>In the following examples, you can specify the file path by using the <code class="language-plaintext highlighter-rouge">--path</code> flag or the file ID by using the <code class="language-plaintext highlighter-rouge">--id</code> flag.</li>
+  </ul>
 </div>
 
 <h3 id="prerequisites">Prerequisites</h3>
@@ -2769,7 +2761,7 @@ $(document).ready(function() {
 </ul>
 
 <h3 id="to-create-a-generic-user-defined-metadata-entry-for-a-file-by-using-the-qq-cli">To Create a Generic User-Defined Metadata Entry for a File by Using the qq CLI</h3>
-<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_set_user_metadata.html"><code>qq fs_set_user_metadata</code></a>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_set_user_metadata.html"><code class="language-plaintext highlighter-rouge">qq fs_set_user_metadata</code></a>
  command and specify the path to the file, the key, and the value. For example:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_set_user_metadata <span class="se">\</span>
@@ -2778,13 +2770,13 @@ $(document).ready(function() {
   <span class="nt">--value</span> my-value
 </code></pre></div></div>
 
-<p>To specify a non-text value for the user-defined metadata, use the <code>--base64-value</code> or <code>--hex-value</code> flag.</p>
+<p>To specify a non-text value for the user-defined metadata, use the <code class="language-plaintext highlighter-rouge">--base64-value</code> or <code class="language-plaintext highlighter-rouge">--hex-value</code> flag.</p>
 
-<p>For more information, see <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_set_user_metadata.html"><code>qq fs_set_user_metadata</code></a>
- in the Qumulo <code>qq</code> CLI Command Guide.</p>
+<p>For more information, see <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_set_user_metadata.html"><code class="language-plaintext highlighter-rouge">qq fs_set_user_metadata</code></a>
+ in the Qumulo <code class="language-plaintext highlighter-rouge">qq</code> CLI Command Guide.</p>
 
 <h3 id="to-retrieve-a-generic-user-defined-metadata-entry-for-a-file-by-using-the-qq-cli">To Retrieve a Generic User-Defined Metadata Entry for a File by Using the qq CLI</h3>
-<p>Use <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_get_user_metadata.html"><code>qq fs_get_user_metadata</code></a>
+<p>Use <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_get_user_metadata.html"><code class="language-plaintext highlighter-rouge">qq fs_get_user_metadata</code></a>
  command and specify the path to the file and the key. For example:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_get_user_metadata <span class="se">\</span>
@@ -2793,15 +2785,15 @@ $(document).ready(function() {
 </code></pre></div></div>
 
 <ul>
-  <li>To specify a non-text value for the user-defined metadata, use the <code>--base64-value</code> or <code>--hex-value</code> flag.</li>
-  <li>To access the user-defined metadata within a file snapshot, use the <code>--snapshot</code> flag and specify the shapshot ID.</li>
+  <li>To specify a non-text value for the user-defined metadata, use the <code class="language-plaintext highlighter-rouge">--base64-value</code> or <code class="language-plaintext highlighter-rouge">--hex-value</code> flag.</li>
+  <li>To access the user-defined metadata within a file snapshot, use the <code class="language-plaintext highlighter-rouge">--snapshot</code> flag and specify the shapshot ID.</li>
 </ul>
 
-<p>For more information, see <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_get_user_metadata.html"><code>qq fs_get_user_metadata</code></a>
- in the Qumulo <code>qq</code> CLI Command Guide.</p>
+<p>For more information, see <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_get_user_metadata.html"><code class="language-plaintext highlighter-rouge">qq fs_get_user_metadata</code></a>
+ in the Qumulo <code class="language-plaintext highlighter-rouge">qq</code> CLI Command Guide.</p>
 
 <h3 id="to-list-all-generic-user-defined-metadata-entries-for-a-file-by-using-the-qq-cli">To List All Generic User-Defined Metadata Entries for a File by Using the qq CLI</h3>
-<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_list_user_metadata.html"><code>qq fs_list_user_metadata</code></a>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_list_user_metadata.html"><code class="language-plaintext highlighter-rouge">qq fs_list_user_metadata</code></a>
  command and specify the path to the file. For example:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_list_user_metadata <span class="se">\</span>
@@ -2809,15 +2801,15 @@ $(document).ready(function() {
 </code></pre></div></div>
 
 <ul>
-  <li>To specify a non-text value for the user-defined metadata, use the <code>--base64-value</code> or <code>--hex-value</code> flag.</li>
-  <li>To access the user-defined metadata within a file snapshot, use the <code>--snapshot</code> flag and specify the shapshot ID.</li>
+  <li>To specify a non-text value for the user-defined metadata, use the <code class="language-plaintext highlighter-rouge">--base64-value</code> or <code class="language-plaintext highlighter-rouge">--hex-value</code> flag.</li>
+  <li>To access the user-defined metadata within a file snapshot, use the <code class="language-plaintext highlighter-rouge">--snapshot</code> flag and specify the shapshot ID.</li>
 </ul>
 
-<p>For more information, see <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_list_user_metadata.html"><code>qq fs_list_user_metadata</code></a>
- in the Qumulo <code>qq</code> CLI Command Guide.</p>
+<p>For more information, see <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_list_user_metadata.html"><code class="language-plaintext highlighter-rouge">qq fs_list_user_metadata</code></a>
+ in the Qumulo <code class="language-plaintext highlighter-rouge">qq</code> CLI Command Guide.</p>
 
 <h3 id="to-delete-a-generic-user-defined-metadata-entry-for-a-file-by-using-the-qq-cli">To Delete a Generic User-Defined Metadata Entry for a File by Using the qq CLI</h3>
-<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_delete_user_metadata.html"><code>qq fs_delete_user_metadata</code></a>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_delete_user_metadata.html"><code class="language-plaintext highlighter-rouge">qq fs_delete_user_metadata</code></a>
  command and specify the path to the file and the key. For example:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_delete_user_metadata <span class="se">\</span>
@@ -2825,15 +2817,17 @@ $(document).ready(function() {
   <span class="nt">--key</span> my-key
 </code></pre></div></div>
 
-<p>For more information, see <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_delete_user_metadata.html"><code>qq fs_delete_user_metadata</code></a>
- in the Qumulo <code>qq</code> CLI Command Guide.</p>
+<p>For more information, see <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_delete_user_metadata.html"><code class="language-plaintext highlighter-rouge">qq fs_delete_user_metadata</code></a>
+ in the Qumulo <code class="language-plaintext highlighter-rouge">qq</code> CLI Command Guide.</p>
 
 <h3 id="to-change-standard-object-headers-by-using-the-qq-cli">To Change Standard Object Headers by Using the qq CLI</h3>
 <p>In Qumulo Core 7.10.2.1 (and higher), you can change the <a href="../s3-api/supported-s3-functionality-known-limits.html#special-considerations-standard-object-headers">standard object headers</a> that the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"><code class="language-plaintext highlighter-rouge">GetObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html"><code class="language-plaintext highlighter-rouge">HeadObject</code></a> S3 API actions returns for an object without rewriting the object.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Deleting the <code class="language-plaintext highlighter-rouge">content-type</code> key causes <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"><code class="language-plaintext highlighter-rouge">GetObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html"><code class="language-plaintext highlighter-rouge">HeadObject</code></a> API actions to return <code class="language-plaintext highlighter-rouge">Content-Type: binary/octet-stream</code> for the object.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Deleting the <code class="language-plaintext highlighter-rouge">content-type</code> key causes <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"><code class="language-plaintext highlighter-rouge">GetObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html"><code class="language-plaintext highlighter-rouge">HeadObject</code></a> API actions to return <code class="language-plaintext highlighter-rouge">Content-Type: binary/octet-stream</code> for the object.
+</div>
 
-<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_set_user_metadata.html"><code>qq fs_set_user_metadata</code></a>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_set_user_metadata.html"><code class="language-plaintext highlighter-rouge">qq fs_set_user_metadata</code></a>
 , specify the path to the object, the key and value for the headers, and the <code class="language-plaintext highlighter-rouge">--well-known</code> flag. For example:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_set_user_metadata <span class="se">\</span>
@@ -2846,7 +2840,7 @@ $(document).ready(function() {
 <h3 id="to-list-standard-object-headers-by-using-the-qq-cli">To List Standard Object Headers by Using the qq CLI</h3>
 <p>In Qumulo Core 7.10.2.1 (and higher), you can list the <a href="../s3-api/supported-s3-functionality-known-limits.html#special-considerations-standard-object-headers">standard object headers</a> that the S3 API returns for an object without rewriting the object.</p>
 
-<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_list_user_metadata.html"><code>qq fs_list_user_metadata</code></a>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_list_user_metadata.html"><code class="language-plaintext highlighter-rouge">qq fs_list_user_metadata</code></a>
  command, specify the path to the object, and use the <code class="language-plaintext highlighter-rouge">--well-known</code> flag. For example:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_list_user_metadata <span class="se">\</span>
@@ -2856,8 +2850,10 @@ $(document).ready(function() {
 
 <h2 id="managing-user-defined-metadata-by-using-the-s3-api">Managing User-Defined Metadata by Using the S3 API</h2>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> In Qumulo Core 6.3.2 (and higher) the <a href="../s3-api">Qumulo S3 API</a> supports user-defined metadata fully. For more information about how to access metadata by using the S3 API, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html">Amazon Simple Storage Service
-API Reference</a>.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> In Qumulo Core 6.3.2 (and higher) the <a href="../s3-api">Qumulo S3 API</a> supports user-defined metadata fully. For more information about how to access metadata by using the S3 API, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html">Amazon Simple Storage Service
+API Reference</a>.
+</div>
 
 <p>S3 categorizes metadata as follows:</p>
 

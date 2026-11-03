@@ -2711,7 +2711,9 @@ $(document).ready(function() {
 
 <p>A cluster can operate with an offline node until its SSD space fills up. When a cluster has no more free space, the cluster goes into read-only (<code class="language-plaintext highlighter-rouge">ENOSPC</code>) state until the node comes back online and all nodes rejoin the quorum.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The amount of time that users have before the cluster enters the <code class="language-plaintext highlighter-rouge">ENOSPC</code> state depends on the rate at which data is being added to or modified within the cluster.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The amount of time that users have before the cluster enters the <code class="language-plaintext highlighter-rouge">ENOSPC</code> state depends on the rate at which data is being added to or modified within the cluster.
+</div>
 
 <h2 id="known-limits-for-ssd-usage">Known Limits for SSD Usage</h2>
 <p>The following known limits apply to both hybrid and all-flash nodes. However, certain functionality is specific to certain node types.</p>
@@ -2726,12 +2728,16 @@ $(document).ready(function() {
   <li>
     <p><strong>Write Priority:</strong> While a hybrid node is offline, the cluster writes data only to SSD space on the remaining nodes.</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This is standard functionality for all-flash nodes.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This is standard functionality for all-flash nodes.
+    </div>
   </li>
   <li>
     <p><strong>Temporarily Reduced Capacity:</strong> When a Qumulo cluster uses only SSD space during a node’s downtime, it is possible for the cluster to reach its SSD space limits before reaching the full theoretical capacity.</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This effect is more apparent on hybrid nodes.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This effect is more apparent on hybrid nodes.
+    </div>
   </li>
 </ul>
 

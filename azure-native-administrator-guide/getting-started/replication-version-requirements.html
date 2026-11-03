@@ -2385,17 +2385,19 @@ $(document).ready(function() {
 
 <p>The following example shows replication options for a cluster running the quarterly 5.1.0 version.</p>
 
-<blockquote>4.3.0 (q) <span class="thick-arrow-left">&#10148;</span> 5.0.0 (q) <span class="thick-arrow-left">&#10148;</span><span class="highlight-version"> 5.1.0 (q) </span><span class="thick-arrow-right">&#10148;</span> 5.2.0 (q) <span class="thick-arrow-right">&#10148;</span> 5.3.0 (q)</blockquote>
+<blockquote>
+4.3.0 (q) <span class="thick-arrow-left">➤</span> 5.0.0 (q) <span class="thick-arrow-left">➤</span><span class="highlight-version"> 5.1.0 (q) </span><span class="thick-arrow-right">➤</span> 5.2.0 (q) <span class="thick-arrow-right">➤</span> 5.3.0 (q)</blockquote>
 
 <p>The following example shows replication options for a cluster running the non-quarterly 5.1.1 version</p>
 
-<blockquote>5.0.0 (q) <span class="thick-arrow-left">&#10148;</span> 5.1.0 (q) <span class="thick-arrow-left">&#10148;</span><span class="highlight-version"> 5.1.1 </span><span class="thick-arrow-right">&#10148;</span> 5.2.0 (q) <span class="thick-arrow-right">&#10148;</span> 5.3.0 (q)</blockquote>
+<blockquote>
+5.0.0 (q) <span class="thick-arrow-left">➤</span> 5.1.0 (q) <span class="thick-arrow-left">➤</span><span class="highlight-version"> 5.1.1 </span><span class="thick-arrow-right">➤</span> 5.2.0 (q) <span class="thick-arrow-right">➤</span> 5.3.0 (q)</blockquote>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>From version 5.0.1, Qumulo Core blocks replication between unsupported versions. For example, version 5.0.1 can't replicate with versions before 4.3.0 or after 5.2.0.</li>
-  <li>In this scenario, version 5.2.0 is a hard limit. Versions 5.2.1 (and higher) can't replicate with versions 5.0.1 (or lower).</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>From version 5.0.1, Qumulo Core blocks replication between unsupported versions. For example, version 5.0.1 can't replicate with versions before 4.3.0 or after 5.2.0.</li>
+    <li>In this scenario, version 5.2.0 is a hard limit. Versions 5.2.1 (and higher) can't replicate with versions 5.0.1 (or lower).</li>
+  </ul>
 </div>
 
 <h2 id="replication-for-qumulo-core-2110-to-500">Replication for Qumulo Core 2.11.0 to 5.0.0</h2>

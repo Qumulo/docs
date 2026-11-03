@@ -2703,17 +2703,18 @@ $(document).ready(function() {
 <p>Because Qumulo has no control over the host operating system (OS), the following are the main differences in functionality between the two.</p>
 
 <details>
-<summary>Click to expand</summary>
-<ul>
-  <li><strong>Web UI:</strong> The Qumulo Core Product Package has no kiosk mode. The Qumulo Core Web UI runs directly on your node.</li>  
-  <li><strong>Well-Known <code>admin</code> User:</strong> When you use the Qumulo Core Product Package, changing the <code>admin</code> user's password has no effect on the host OS. You must create your own users on the host OS.</li>
-  <li><strong>Automatic SSH Configuration:</strong> Any SSH configuration set by using <a target="_blank" href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/"><code>multitenancy</code></a> REST APIs have no effect on the host OS. You must configure SSH on the host OS.</li>
-  <li>
-    <strong>System Partitions and Directories:</strong> The Qumulo Core Product Package has no <code>/config</code> partition for storing logs and container images or <code>/history</code> partitions for storing configuration files.
-    <p>The Qumulo Core container stores logs and container images in the <code>/var/opt/qumulo/history</code> directory and configuration files in the <code>/etc/qumulo</code> directory. You can also configure your own mounts and partitions on the host OS.</p>
-  </li>
-  <li><strong>Core Dump Handler:</strong> You must configure the core dump handler on the host OS. For more information, see <a target="_blank" href="https://man7.org/linux/man-pages/man5/core.5.html"><code>core</code> Linux Manual Page</a>.</li>
-</ul>
+   <summary>
+Click to expand
+  </summary>
+   <ul>
+    <li><strong>Web UI:</strong> The Qumulo Core Product Package has no kiosk mode. The Qumulo Core Web UI runs directly on your node.</li>
+    <li><strong>Well-Known <code class="language-plaintext highlighter-rouge">admin</code> User:</strong> When you use the Qumulo Core Product Package, changing the <code class="language-plaintext highlighter-rouge">admin</code> user's password has no effect on the host OS. You must create your own users on the host OS.</li>
+    <li><strong>Automatic SSH Configuration:</strong> Any SSH configuration set by using <a target="_blank" href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/"><code class="language-plaintext highlighter-rouge">multitenancy</code></a> REST APIs have no effect on the host OS. You must configure SSH on the host OS.</li>
+    <li><strong>System Partitions and Directories:</strong> The Qumulo Core Product Package has no <code class="language-plaintext highlighter-rouge">/config</code> partition for storing logs and container images or <code class="language-plaintext highlighter-rouge">/history</code> partitions for storing configuration files.       <p>The Qumulo Core container stores logs and container images in the <code class="language-plaintext highlighter-rouge">/var/opt/qumulo/history</code> directory and configuration files in the <code class="language-plaintext highlighter-rouge">/etc/qumulo</code> directory. You can also configure your own mounts and partitions on the host OS.</p>
+    </li>
+    <li><strong>Core Dump Handler:</strong> You must configure the core dump handler on the host OS. For more information, see <a target="_blank" href="https://man7.org/linux/man-pages/man5/core.5.html"><code class="language-plaintext highlighter-rouge">core</code> Linux Manual Page</a>.</li>
+  </ul>
+ 
 </details>
 
 <p>For more information, see <a href="https://docs.qumulo.com/hardware-guide/getting-started/creating-usb-drive-installer.html">Creating a Qumulo Core USB Drive Installer</a> in the Qumulo Hardware Servicing Guide.</p>
@@ -2725,8 +2726,10 @@ $(document).ready(function() {
 <p>Ensure that your host system meets the minimum requirements.</p>
 
 <details>
-<summary>Click to expand</summary>
-<table>
+   <summary>
+Click to expand
+  </summary>
+   <table>
   <tr>
      <th>Requirement</th>
      <th>Description</th>
@@ -2811,31 +2814,37 @@ $(document).ready(function() {
     </td>     
   </tr>  
 </table>
+ 
 </details>
 
 <h3 id="step-2-prepare-the-host-operating-system">Step 2: Prepare the Host Operating System</h3>
 <p>Before configuring your host operating system (OS) for installing the Qumulo Core Product Package, certain Linux distributions require some preliminary configuration.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Ubuntu doesn’t require any additional configuration. Continue to <a href="#choose-networking-mode">Choose a Networking Mode</a>.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Ubuntu doesn’t require any additional configuration. Continue to <a href="#choose-networking-mode">Choose a Networking Mode</a>.
+</div>
 
 <h4 id="to-prepare-a-rocky-or-red-hat-enterprise-linux-rhel-93-system">To Prepare a Rocky or Red Hat Enterprise Linux (RHEL) 9.3 System</h4>
 <details>
-<summary>Click to expand</summary>
-<ul>
-  <li>
-    To enable the <code>io_uring</code> kernel interface, use the <code>sysctl</code> command. For example:
-    <code>sudo sysctl -w kernel.io_uring_disabled=0</code>
-  </li>
-  <li>Set SELinux to permissive mode. For more information, see <a target="_blank" href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/8/html/using_selinux/changing-selinux-states-and-modes_using-selinux">Changing SELinux States and Modes</a> in the Red Hat Documentation.</li>
-</ul>
+   <summary>
+Click to expand
+  </summary>
+   <ul>
+    <li>To enable the <code class="language-plaintext highlighter-rouge">io_uring</code> kernel interface, use the <code class="language-plaintext highlighter-rouge">sysctl</code> command. For example: <code class="language-plaintext highlighter-rouge">sudo sysctl -w kernel.io_uring_disabled=0</code></li>
+    <li>Set SELinux to permissive mode. For more information, see <a target="_blank" href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/8/html/using_selinux/changing-selinux-states-and-modes_using-selinux">Changing SELinux States and Modes</a> in the Red Hat Documentation.</li>
+  </ul>
+ 
 </details>
 
 <h4 id="to-prepare-a-debian-11-system">To Prepare a Debian 11 System</h4>
 <details>
-<summary>Click to expand</summary>
-<ul>
-  <li>To ensure that you have the features that the Qumulo Core Product Package requires, update the 5.10 kernel that Debian 11 ships with to a newer kernel, such as 6.1.0 (and higher). For more information, see <a target="_blank" href="https://wiki.debian.org/HowToUpgradeKernel">How to Upgrade the Linux Kernel</a> in the Debian documentation.</li>
-</ul>  
+   <summary>
+Click to expand
+  </summary>
+   <ul>
+    <li>To ensure that you have the features that the Qumulo Core Product Package requires, update the 5.10 kernel that Debian 11 ships with to a newer kernel, such as 6.1.0 (and higher). For more information, see <a target="_blank" href="https://wiki.debian.org/HowToUpgradeKernel">How to Upgrade the Linux Kernel</a> in the Debian documentation.</li>
+  </ul>
+ 
 </details>
 
 <h3 id="choose-networking-mode">Step 3: Choose a Networking Mode</h3>
@@ -2852,7 +2861,9 @@ $(document).ready(function() {
       <li>Qumulo provides configurations only for tenants and floating IP addresses.</li>
     </ul>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can use Host-Managed Networking with or without the Qumulo REST API. However, using floating IP addresses requires tagging with alternative names and REST API access.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can use Host-Managed Networking with or without the Qumulo REST API. However, using floating IP addresses requires tagging with alternative names and REST API access.
+    </div>
 
     <p>To disable Host-Managed Networking, enable Qumulo-Managed Networking when you <a href="#install-qumulo-core-product-package">install the Qumulo Core Product Package</a>.</p>
   </li>
@@ -2865,19 +2876,21 @@ $(document).ready(function() {
       <li>You can change only a limited number of settings.</li>
     </ul>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> To ensure that Qumulo Core has full control over network configuration, disable or remove the default network configuration tool (such as ENI, netplan.io, NetworkManager) before you install the Qumulo Core Product Package.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> To ensure that Qumulo Core has full control over network configuration, disable or remove the default network configuration tool (such as ENI, netplan.io, NetworkManager) before you install the Qumulo Core Product Package.
+    </div>
 
     <p>To enable Host-Managed Networking for Qumulo Core versions lower than 7.8.0.4, enable Qumulo-Managed Networking when you <a href="#install-qumulo-core-product-package">install the Qumulo Core Product Package</a>.</p>
   </li>
 </ul>
 
 <h2 id="install-qumulo-core-product-package">To Install the Qumulo Core Product Package</h2>
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip</b><br />
-<ul>
-  <li>Use the latest, official image available for your Linux distribution on the distribution's website or cloud marketplace.</li>
-  <li>In Qumulo Core versions lower than 7.8.0.4, the default networking mode is Qumulo-Managed Networking. To run the installation with Host-Managed Networking, set the <code>QUMULO_NETWORK_MANAGED_BY_HOST</code> environment variable to <code>true</code>.</li>
-  <li>To avoid the <code>Download is performed unsandboxed as root</code> notice, run <code>qumulo-core.deb</code> from the <code>/tmp</code> directory.</li>
-</ul>
+<div class="alert alert-success" role="alert">
+<em class="fa fa-check-square-o"></em> <strong>Tip</strong><br />   <ul>
+    <li>Use the latest, official image available for your Linux distribution on the distribution's website or cloud marketplace.</li>
+    <li>In Qumulo Core versions lower than 7.8.0.4, the default networking mode is Qumulo-Managed Networking. To run the installation with Host-Managed Networking, set the <code class="language-plaintext highlighter-rouge">QUMULO_NETWORK_MANAGED_BY_HOST</code> environment variable to <code class="language-plaintext highlighter-rouge">true</code>.</li>
+    <li>To avoid the <code class="language-plaintext highlighter-rouge">Download is performed unsandboxed as root</code> notice, run <code class="language-plaintext highlighter-rouge">qumulo-core.deb</code> from the <code class="language-plaintext highlighter-rouge">/tmp</code> directory.</li>
+  </ul>
 </div>
 
 <ol>
@@ -2920,14 +2933,14 @@ $(document).ready(function() {
 </ol>
 
 <h2 id="upgrading-the-qumulo-core-product-package">Upgrading the Qumulo Core Product Package</h2>
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>Don't attempt to upgrade the Qumulo Core Produce Package by installing a newer <code>.deb</code> or <code>.rpm</code> package on your system.</li>  
-  <li>You must upgrade all the nodes in your cluster at the same time, by using the Qumulo Core Web UI, Qumulo REST API, or the <code>qq</code> CLI. The Qumulo Core Product Package doesn't support upgrading individual nodes and attempting to do so takes the cluster offline.</li>
-</ul>
+<div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+    <li>Don't attempt to upgrade the Qumulo Core Produce Package by installing a newer <code class="language-plaintext highlighter-rouge">.deb</code> or <code class="language-plaintext highlighter-rouge">.rpm</code> package on your system.</li>
+    <li>You must upgrade all the nodes in your cluster at the same time, by using the Qumulo Core Web UI, Qumulo REST API, or the <code class="language-plaintext highlighter-rouge">qq</code> CLI. The Qumulo Core Product Package doesn't support upgrading individual nodes and attempting to do so takes the cluster offline.</li>
+  </ul>
 </div>
 
-<p>Qumulo Core Product Package upgrades follow the standard <a href="../upgrading-qumulo-core/performing-upgrades.html">Qumulo Core upgrade process</a>. All Qumulo Core Product Package upgrades are <a href="/administrator-guide/upgrading-qumulo-core/performing-upgrades.html#instant-software-upgrade">instant software upgrades</a> and never require a node to reboot (however, you can use the the Qumulo REST API or <a href="https://docs.qumulo.com/qq-cli-command-guide/reboot/reboot_start.html"><code>qq reboot_start</code></a>
+<p>Qumulo Core Product Package upgrades follow the standard <a href="../upgrading-qumulo-core/performing-upgrades.html">Qumulo Core upgrade process</a>. All Qumulo Core Product Package upgrades are <a href="/administrator-guide/upgrading-qumulo-core/performing-upgrades.html#instant-software-upgrade">instant software upgrades</a> and never require a node to reboot (however, you can use the the Qumulo REST API or <a href="https://docs.qumulo.com/qq-cli-command-guide/reboot/reboot_start.html"><code class="language-plaintext highlighter-rouge">qq reboot_start</code></a>
  command to perform a manual or rolling reboot).</p>
 
 <h2 id="troubleshooting-the-qumulo-core-product-package">Troubleshooting the Qumulo Core Product Package</h2>

@@ -2451,7 +2451,9 @@ $(document).ready(function() {
       <li>
         <p>If your AD deployment can <strong>Use Active Directory for POSIX attributes</strong> assigning Unix UID and GID attributes to user objects, click <strong>Yes</strong>.</p>
 
-        <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Assigning Unix UID and GID attributes to user objects allows a Qumulo cluster to enforce permissions correctly regardless of the protocol that a client uses to access cluster data.</div>
+        <div class="alert alert-success" role="alert">
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Assigning Unix UID and GID attributes to user objects allows a Qumulo cluster to enforce permissions correctly regardless of the protocol that a client uses to access cluster data.
+        </div>
       </li>
       <li>
         <p>To allow Qumulo Core to follow LDAP referrals to Parent Domains, Child Domains, or Domains in the same Forest, for <strong>Search Trusted Domains</strong>, click <strong>Yes</strong>.</p>
@@ -2462,7 +2464,9 @@ $(document).ready(function() {
         <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OU=Staff;DC=ad;DC=example;DC=com
 </code></pre></div>        </div>
 
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This setting doesn’t affect SMB authentication.</div>
+        <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This setting doesn’t affect SMB authentication.
+        </div>
       </li>
       <li>
         <p>Click <strong>Join</strong>.</p>
@@ -2475,7 +2479,7 @@ $(document).ready(function() {
 <p>You can configure your Qumulo cluster to use an allowlist of DCs for LDAP queries and Netlogon authentication by using the Qumulo REST API or the <code class="language-plaintext highlighter-rouge">qq</code> CLI.</p>
 
 <h3 id="to-specify-dcs-when-joining-a-domain">To Specify DCs When Joining a Domain</h3>
-<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/ad/ad_join.html"><code>qq ad_join</code></a>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/ad/ad_join.html"><code class="language-plaintext highlighter-rouge">qq ad_join</code></a>
  command, specify the domain name, the username, and a comma-separated list of DCs. For example:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq ad_join <span class="se">\</span>
@@ -2484,22 +2488,24 @@ $(document).ready(function() {
   <span class="nt">--domain-controllers</span> dc1.example.com,dc2.example.com
 </code></pre></div></div>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>You can specify a maximum of 3 DCs.</li>
-  <li>The DCs that you specify must reside in the same domain that you cluster joins to.</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>You can specify a maximum of 3 DCs.</li>
+    <li>The DCs that you specify must reside in the same domain that you cluster joins to.</li>
+  </ul>
 </div>
 
 <h3 id="to-change-dcs-after-joining-a-domain">To Change DCs After Joining a Domain</h3>
-<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/ad/ad_reconfigure.html"><code>qq ad_reconfigure</code></a>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/ad/ad_reconfigure.html"><code class="language-plaintext highlighter-rouge">qq ad_reconfigure</code></a>
  command and specify a comma-separated list of DCs. For example:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq ad_reconfigure <span class="se">\</span>
   <span class="nt">--domain-controllers</span> dc1.example.com,dc2.example.com
 </code></pre></div></div>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The DCs that you specify must reside in the same domain that you cluster joins to.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The DCs that you specify must reside in the same domain that you cluster joins to.
+</div>
 
 
    

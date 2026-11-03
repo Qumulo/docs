@@ -940,18 +940,18 @@ $(document).ready(function() {
 
    <p>This section explains how to upgrade Qumulo Alerts from the beta version.</p>
    
-     <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>Whereas the beta version of Qumulo Alerts uses JSON files for configuration, the public version of Qumulo Alerts uses its API or the <code>alerts</code> CLI to store configuration information in a database.</li>
-  <li>It isn't possible to upgrade from the beta version of Qumulo Alerts to the public version automatically. To enable upgrades from a beta version, you must perform the following manual steps.</li>
-</ul>
+     <div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>Whereas the beta version of Qumulo Alerts uses JSON files for configuration, the public version of Qumulo Alerts uses its API or the <code class="language-plaintext highlighter-rouge">alerts</code> CLI to store configuration information in a database.</li>
+    <li>It isn't possible to upgrade from the beta version of Qumulo Alerts to the public version automatically. To enable upgrades from a beta version, you must perform the following manual steps.</li>
+  </ul>
 </div>
 
 <h2 id="to-prepare-for-upgrading-qumulo-alerts-from-the-beta-version">To Prepare for Upgrading Qumulo Alerts from the Beta Version</h2>
 
 <ol>
   <li>
-    <p>To shut down Qumulo Alerts, navigate to its directory and run the <code>./stop-docker-qumulo-alerts.sh</code> command.</p>
+    <p>To shut down Qumulo Alerts, navigate to its directory and run the <code class="language-plaintext highlighter-rouge">./stop-docker-qumulo-alerts.sh</code> command.</p>
   </li>
   <li>
     <p>Copy the information from the <code class="language-plaintext highlighter-rouge">user_token</code> field located in the <code class="language-plaintext highlighter-rouge">QumuloAlerts/config/alerts/QumuloAlerts.json</code> file.</p>

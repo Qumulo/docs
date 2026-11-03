@@ -2444,7 +2444,9 @@ $(document).ready(function() {
       <li>
         <p>For <strong>Bind Username</strong>, enter the username for logging in to LDAP services.</p>
 
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This username must have the permission to search within the provided DN.</div>
+        <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This username must have the permission to search within the provided DN.
+        </div>
       </li>
       <li>
         <p>For <strong>Bind Password</strong>, enter the password that corresponds to the username.</p>
@@ -2452,12 +2454,12 @@ $(document).ready(function() {
       <li>
         <p>(Optional) For <strong>Encrypt Connection</strong>, click <strong>Yes</strong>.</p>
 
-        <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>By default, Qumulo requires an encrypted connection to connect to LDAP (either LDAPS or StartTLS). If you disable the option to connect without TLS, you might expose credentials over your network.</li>
-  <li>To use encrypted connections, you must <a href="../authentication-qumulo-core/installing-signed-ssl-certificate.html">install a valid certificate for your LDAP server</a>.</li>
-</ul>
-</div>
+        <div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br />           <ul>
+            <li>By default, Qumulo requires an encrypted connection to connect to LDAP (either LDAPS or StartTLS). If you disable the option to connect without TLS, you might expose credentials over your network.</li>
+            <li>To use encrypted connections, you must <a href="../authentication-qumulo-core/installing-signed-ssl-certificate.html">install a valid certificate for your LDAP server</a>.</li>
+          </ul>
+        </div>
       </li>
       <li>
         <p>Click <strong>Save</strong>.</p>

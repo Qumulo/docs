@@ -680,22 +680,32 @@ $(document).ready(function() {
 
 <p>The following architecture diagram shows the workflow between Qumulo Broker and Qumulo Core.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> We recommend installing Qumulo Broker and Varonis in the same VLAN or VPC.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> We recommend installing Qumulo Broker and Varonis in the same VLAN or VPC.
+</div>
 
-<figure><span class="enlargeimage" data-url="/integration-guide/varonis/images/qumulo-broker-with-qumulo-core.png"><a target="_blank" rel="noopener" href="/integration-guide/varonis/images/qumulo-broker-with-qumulo-core.png"><img class="docimage" src="images/qumulo-broker-with-qumulo-core.png" alt="An Architecture Diagram of Integration Between Qumulo Broker and Qumulo Core" /></a></span></figure>
+<figure>
+<span class="enlargeimage" data-url="/integration-guide/varonis/images/qumulo-broker-with-qumulo-core.png"><a target="_blank" rel="noopener" href="/integration-guide/varonis/images/qumulo-broker-with-qumulo-core.png"><img class="docimage" src="images/qumulo-broker-with-qumulo-core.png" alt="An Architecture Diagram of Integration Between Qumulo Broker and Qumulo Core" /></a></span>
+</figure>
 
-<div class="alert alert-info" role="alert" id="integration-architecture-diagram"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Although Qumulo currently is certified only for the Varonis SaaS offering, you can configure and use the SaaS offering with an on-premises Qumulo cluster.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Although Qumulo currently is certified only for the Varonis SaaS offering, you can configure and use the SaaS offering with an on-premises Qumulo cluster.
+</div>
 
 <h3 id="qumulo-broker">How Qumulo Broker Gathers, Processes, and Emits Data</h3>
 <p>In Qumulo Core, each audit log has a specific logging requirement (for example, certain log types include only specific fields). Although normally Qumulo Core outputs audit logs in CSV format, it can output these additional fields in JSON format. For more information, see <a href="deploying-qumulo-broker.html#configure-audit-logging">Configure Qumulo Audit Logging by Using the qq CLI</a>.</p>
 
 <p>Typically, Qumulo Core sends the audit logs to a single remote <code class="language-plaintext highlighter-rouge">syslog</code> instance. In the Qumulo-Varonis integration, Qumulo Broker receives the audit logs from multiple Qumulo clusters, converts them to various formats, and then sends them to Varonis.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core can send audit logs to only one target <code class="language-plaintext highlighter-rouge">syslog</code> instance. For information about sending your Qumulo audit logs to different target systems in addition to Varonis, see <a href="deploying-qumulo-broker.html#rsyslog-with-multiple-clusters">Configuring <code class="language-plaintext highlighter-rouge">rsyslog</code> to Communicate with Multiple Clusters</a>.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core can send audit logs to only one target <code class="language-plaintext highlighter-rouge">syslog</code> instance. For information about sending your Qumulo audit logs to different target systems in addition to Varonis, see <a href="deploying-qumulo-broker.html#rsyslog-with-multiple-clusters">Configuring <code class="language-plaintext highlighter-rouge">rsyslog</code> to Communicate with Multiple Clusters</a>.
+</div>
 
 <p>The following architecture diagram shows how Qumulo Broker gathers, processes, and sends data.</p>
 
-<figure><span class="enlargeimage" data-url="/integration-guide/varonis/images/how-qumulo-broker-works.png"><a target="_blank" rel="noopener" href="/integration-guide/varonis/images/how-qumulo-broker-works.png"><img class="docimage" src="images/how-qumulo-broker-works.png" alt="An Architecture Diagram that Shows how Qumulo Broker Gathers, Processes, and Sends Data" /></a></span></figure>
+<figure>
+<span class="enlargeimage" data-url="/integration-guide/varonis/images/how-qumulo-broker-works.png"><a target="_blank" rel="noopener" href="/integration-guide/varonis/images/how-qumulo-broker-works.png"><img class="docimage" src="images/how-qumulo-broker-works.png" alt="An Architecture Diagram that Shows how Qumulo Broker Gathers, Processes, and Sends Data" /></a></span>
+</figure>
 
 <h2 id="qumulo-broker-specifications">Qumulo Broker Specifications</h2>
 <p>This section describes the specifications for Qumulo Broker, including system requirements, prerequisites, firewall definitions, and supported operations. Deploy Qumulo Broker on a stand-alone machine (or virtual machine) so that it sits between your Qumulo cluster and Varonis. For more information, see the <a href="#integration-architecture-diagram">Qumulo-Varonis integration architecture diagram</a>.</p>
@@ -740,7 +750,7 @@ $(document).ready(function() {
   <thead>
     <tr>
       <th>Port</th>
-      <th>Protocol</th>	    
+      <th>Protocol</th>
       <th>Source IP address</th>
       <th>Destination IP address</th>
       <th>Description</th>
@@ -749,35 +759,35 @@ $(document).ready(function() {
   <tbody>
     <tr>
       <td>22</td>
-      <td>TCP</td>	    
+      <td>TCP</td>
       <td>The system administrator's machine</td>
-      <td>Qumulo Broker</td>	    	    
+      <td>Qumulo Broker</td>
       <td>Qumulo Broker SSH connection</td>
     </tr>
     <tr>
       <td>443</td>
-      <td>TCP</td>	    
+      <td>TCP</td>
       <td>Qumulo Broker</td>
-      <td>GitHub and Docker Hub</td>	    
+      <td>GitHub and Docker Hub</td>
       <td>Temporary GitHub and Docker Hub connections from Qumulo Broker</td>
-    </tr>	  
+    </tr>
     <tr>
-      <td>443</td>	    
-      <td>TCP</td>	    
+      <td>443</td>
+      <td>TCP</td>
       <td>Varonis</td>
       <td>Qumulo Broker</td>
       <td>Qumulo Broker API calls</td>
-    </tr>		  
+    </tr>
     <tr>
-      <td>514</td>	    
-      <td>TCP</td>	    
+      <td>514</td>
+      <td>TCP</td>
       <td>Qumulo Core (persistent and floating IP addresses)</td>
       <td>Qumulo Broker</td>
-      <td>Qumulo Broker <code>syslog</code> connection</td>
+      <td>Qumulo Broker <code class="language-plaintext highlighter-rouge">syslog</code> connection</td>
     </tr>
     <tr>
       <td>8000</td>
-      <td>TCP</td>	    
+      <td>TCP</td>
       <td>Qumulo Broker IP address</td>
       <td>Qumulo Core persistent and floating IP addresses</td>
       <td>Qumulo Core API calls from Qumulo Broker</td>

@@ -2425,7 +2425,7 @@ $(document).ready(function() {
 
 <ol>
   <li>
-    <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_get_settings.html"><code>qq nfs_get_settings</code></a>
+    <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_get_settings.html"><code class="language-plaintext highlighter-rouge">qq nfs_get_settings</code></a>
  command to get the current settings.</p>
 
     <p>The following is example output.</p>
@@ -2449,7 +2449,9 @@ $(document).ready(function() {
   <li>
     <p>To harden security, configure your cluster to use only Kerberos by disabling <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> (without changing <code class="language-plaintext highlighter-rouge">AUTH_KRB5</code>). For example:</p>
 
-    <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Because it uses authentication based on a simple UID and GID passed over the wire in plain text, RPC <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> is inherently insecure. In a trusted environment, <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> might be sufficient for enforcing basic permissions and preventing good-faith actors from making mistakes. In all other cases, you must treat <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> as if it provides <em>no security whatsoever</em>.</div>
+    <div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Because it uses authentication based on a simple UID and GID passed over the wire in plain text, RPC <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> is inherently insecure. In a trusted environment, <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> might be sufficient for enforcing basic permissions and preventing good-faith actors from making mistakes. In all other cases, you must treat <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> as if it provides <em>no security whatsoever</em>.
+    </div>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq nfs_modify_settings <span class="nt">--disable-auth-sys</span>  
 <span class="o">{</span>
@@ -2473,7 +2475,7 @@ $(document).ready(function() {
       </thead>
       <tbody>
         <tr>
-          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code>qq nfs_modify_settings</code></a></td>
+          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq nfs_modify_settings</code></a></td>
           <td> </td>
         </tr>
         <tr>
@@ -2481,7 +2483,7 @@ $(document).ready(function() {
           <td>Enables <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> without changing <code class="language-plaintext highlighter-rouge">AUTH_KRB5</code></td>
         </tr>
         <tr>
-          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code>qq nfs_modify_settings</code></a></td>
+          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq nfs_modify_settings</code></a></td>
           <td> </td>
         </tr>
         <tr>
@@ -2489,7 +2491,7 @@ $(document).ready(function() {
           <td>Enables <code class="language-plaintext highlighter-rouge">AUTH_KRB5</code> without changing <code class="language-plaintext highlighter-rouge">AUTH_SYS</code></td>
         </tr>
         <tr>
-          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code>qq nfs_modify_settings</code></a></td>
+          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq nfs_modify_settings</code></a></td>
           <td> </td>
         </tr>
         <tr>
@@ -2497,7 +2499,7 @@ $(document).ready(function() {
           <td>Enables <code class="language-plaintext highlighter-rouge">AUTH_KRB5P</code> without changing <code class="language-plaintext highlighter-rouge">AUTH_SYS</code></td>
         </tr>
         <tr>
-          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code>qq nfs_modify_settings</code></a></td>
+          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq nfs_modify_settings</code></a></td>
           <td> </td>
         </tr>
         <tr>
@@ -2505,7 +2507,7 @@ $(document).ready(function() {
           <td>Enables <code class="language-plaintext highlighter-rouge">AUTH_KRB5I</code> without changing <code class="language-plaintext highlighter-rouge">AUTH_SYS</code></td>
         </tr>
         <tr>
-          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code>qq nfs_modify_settings</code></a></td>
+          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq nfs_modify_settings</code></a></td>
           <td> </td>
         </tr>
         <tr>
@@ -2513,7 +2515,7 @@ $(document).ready(function() {
           <td>Enables NFSv4.1</td>
         </tr>
         <tr>
-          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code>qq nfs_modify_settings</code></a></td>
+          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq nfs_modify_settings</code></a></td>
           <td> </td>
         </tr>
         <tr>
@@ -2521,7 +2523,7 @@ $(document).ready(function() {
           <td>Disables NFSv4.1</td>
         </tr>
         <tr>
-          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code>qq nfs_modify_settings</code></a></td>
+          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq nfs_modify_settings</code></a></td>
           <td> </td>
         </tr>
         <tr>
@@ -2529,7 +2531,7 @@ $(document).ready(function() {
           <td>Disables <code class="language-plaintext highlighter-rouge">AUTH_KRB5</code> without changing <code class="language-plaintext highlighter-rouge">AUTH_SYS</code></td>
         </tr>
         <tr>
-          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code>qq nfs_modify_settings</code></a></td>
+          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq nfs_modify_settings</code></a></td>
           <td> </td>
         </tr>
         <tr>
@@ -2537,7 +2539,7 @@ $(document).ready(function() {
           <td>Disables <code class="language-plaintext highlighter-rouge">AUTH_KRB5P</code> without changing <code class="language-plaintext highlighter-rouge">AUTH_SYS</code></td>
         </tr>
         <tr>
-          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code>qq nfs_modify_settings</code></a></td>
+          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq nfs_modify_settings</code></a></td>
           <td> </td>
         </tr>
         <tr>
@@ -2549,12 +2551,12 @@ $(document).ready(function() {
   </li>
 </ol>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>Security configuration options apply to <em>all</em> versions of NFS (NFSv3 and NFSv4.1). Thus, disabling <code>AUTH_SYS</code> also disables NFSv3, because <code>AUTH_SYS</code> is the only <a href="../kerberos/kerberos-with-qumulo-core.html#choosing-a-kerberos-security-flavor">Kerberos security flavor</a> that NFSv3 supports by design.</li>
-  <li>In a secure environment, where Kerberos is required, <code>AUTH_SYS</code> NFSv3 connections aren't allowed.</li>
-  <li>These configuration options apply cluster-wide to all NFS exports and files.</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>Security configuration options apply to <em>all</em> versions of NFS (NFSv3 and NFSv4.1). Thus, disabling <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> also disables NFSv3, because <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> is the only <a href="../kerberos/kerberos-with-qumulo-core.html#choosing-a-kerberos-security-flavor">Kerberos security flavor</a> that NFSv3 supports by design.</li>
+    <li>In a secure environment, where Kerberos is required, <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> NFSv3 connections aren't allowed.</li>
+    <li>These configuration options apply cluster-wide to all NFS exports and files.</li>
+  </ul>
 </div>
 
 <h2 id="configuring-export-configuration">Configuring Export Configuration</h2>

@@ -2420,7 +2420,9 @@ $(document).ready(function() {
      
      <p>Qumulo Core supports the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">multipart upload functionality</a> of the S3 API, which lets you upload objects to a bucket in parts and then, at a later time, combine these parts into a single object.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For objects above a certain size (typically, larger than 100 MiB), applications often use the multipart S3 uploads, rather than the <code class="language-plaintext highlighter-rouge">PutObject</code> S3 API action. The limitation for the <code class="language-plaintext highlighter-rouge">PutObject</code> action is 5 GiB. For more information about how Qumulo handles this type of operation, see <a href="#system-initiated-uploads">System-Initiated Multipart S3 Uploads</a>.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For objects above a certain size (typically, larger than 100 MiB), applications often use the multipart S3 uploads, rather than the <code class="language-plaintext highlighter-rouge">PutObject</code> S3 API action. The limitation for the <code class="language-plaintext highlighter-rouge">PutObject</code> action is 5 GiB. For more information about how Qumulo handles this type of operation, see <a href="#system-initiated-uploads">System-Initiated Multipart S3 Uploads</a>.
+</div>
 
 <h2 id="prerequisites">Prerequisites</h2>
 <p>To manage multipart S3 uploads by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI, you need the following <a href="../authorization-qumulo-core/managing-role-based-access-control-rbac.html">role-based access control (RBAC)</a> privileges:</p>
@@ -2447,7 +2449,9 @@ $(document).ready(function() {
   <li>
     <p>Multipart upload data isn’t visible in the Qumulo file system, and isn’t included in file system snapshots, until you complete the upload successfully by making a call to the <code class="language-plaintext highlighter-rouge">CompleteMultipartUpload</code> S3 API.</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> When you view the breakdown of a Qumulo cluster’s capacity by using the Qumulo Core Web UI, REST API, or <code class="language-plaintext highlighter-rouge">qq</code> CLI, Qumulo Core doesn’t distinguish between capacity that the file system and incomplete multipart uploads use.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> When you view the breakdown of a Qumulo cluster’s capacity by using the Qumulo Core Web UI, REST API, or <code class="language-plaintext highlighter-rouge">qq</code> CLI, Qumulo Core doesn’t distinguish between capacity that the file system and incomplete multipart uploads use.
+    </div>
   </li>
   <li>
     <p>Qumulo Core doesn’t delete multipart data unless it <a href="#cleaning-up-uploads-automatically">aborts and cleans up the multipart upload automatically</a> or you <a href="#cleaning-up-uploads-manually">abort and clean up the multipart upload manually</a>.</p>
@@ -2463,21 +2467,23 @@ $(document).ready(function() {
 
 <p>However, if Qumulo Core is unable to clean up the incomplete upload data immediately, it cleans up the incomplete upload data in the background, <a href="#cleaning-up-uploads-automatically">according to the expiry interval</a>.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The process for background clean-up after incomplete and user-initiated uploads is the same. For more information, see <a href="#cleaning-up-uploads-automatically">Aborting and Cleaning Up Multipart S3 Uploads Automatically</a>.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The process for background clean-up after incomplete and user-initiated uploads is the same. For more information, see <a href="#cleaning-up-uploads-automatically">Aborting and Cleaning Up Multipart S3 Uploads Automatically</a>.
+</div>
 
 <h2 id="listing-uploads">Listing Incomplete Multipart S3 Uploads</h2>
 <p>You can list the incomplete multipart uploads for a single S3 bucket by using the Qumulo REST API or <code class="language-plaintext highlighter-rouge">qq</code> CLI.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>If you use the <code>ListMultipartUploads</code> S3 API action, the system doesn't show <a href="#system-initiated-uploads">system-initiated uploads</a> or how much space the uploads use on your cluster.</li>
-  <li>If you use the Qumulo REST API or <code>qq</code> CLI, Qumulo Core shows <a href="#system-initiated-uploads">system-initiated uploads</a> and how much space each upload uses on your cluster.</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>If you use the <code class="language-plaintext highlighter-rouge">ListMultipartUploads</code> S3 API action, the system doesn't show <a href="#system-initiated-uploads">system-initiated uploads</a> or how much space the uploads use on your cluster.</li>
+    <li>If you use the Qumulo REST API or <code class="language-plaintext highlighter-rouge">qq</code> CLI, Qumulo Core shows <a href="#system-initiated-uploads">system-initiated uploads</a> and how much space each upload uses on your cluster.</li>
+  </ul>
 </div>
 
 <ul>
   <li>
-    <p>To list incomplete uploads by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_list_uploads.html"><code>qq s3_list_uploads</code></a>
+    <p>To list incomplete uploads by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_list_uploads.html"><code class="language-plaintext highlighter-rouge">qq s3_list_uploads</code></a>
  command and specify the bucket name. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq s3_list_uploads <span class="se">\</span>
@@ -2557,7 +2563,7 @@ $(document).ready(function() {
 
 <p>When Qumulo Core removes a multipart upload, it frees up the space that the upload uses on the cluster. You can configure the expiry interval by using the Qumulo REST API or <code class="language-plaintext highlighter-rouge">qq</code> CLI.</p>
 
-<p>To configure the expiry interval for all current and future multipart uploads by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_modify_settings.html"><code>qq s3_modify_settings</code></a>
+<p>To configure the expiry interval for all current and future multipart uploads by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq s3_modify_settings</code></a>
  command and the <code class="language-plaintext highlighter-rouge">--multipart-upload-expiry-interval</code> flag and specify one of the following:</p>
 
 <ul>
@@ -2592,11 +2598,13 @@ $(document).ready(function() {
 <h2 id="cleaning-up-uploads-manually">Aborting or Cleaning Up Multipart S3 Uploads Manually</h2>
 <p>Use the Qumulo REST API or <code class="language-plaintext highlighter-rouge">qq</code> CLI to abort and clean up the upload. You need the bucket name and upload ID. For more information about looking up this information, see <a href="#listing-uploads">Listing Incomplete Multipart S3 Uploads</a>.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If you are an administrative user or the user who initiated the upload, you can use the <code class="language-plaintext highlighter-rouge">AbortMultipartUpload</code> S3 API action. In addition to the bucket name and upload ID, you also need the object key for the upload.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If you are an administrative user or the user who initiated the upload, you can use the <code class="language-plaintext highlighter-rouge">AbortMultipartUpload</code> S3 API action. In addition to the bucket name and upload ID, you also need the object key for the upload.
+</div>
 
 <ul>
   <li>
-    <p>To abort an upload by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_abort_upload.html"><code>qq s3_abort_upload</code></a>
+    <p>To abort an upload by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_abort_upload.html"><code class="language-plaintext highlighter-rouge">qq s3_abort_upload</code></a>
  command and specify the upload ID. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq s3_abort_upload <span class="se">\</span>

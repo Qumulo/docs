@@ -2377,7 +2377,9 @@ $(document).ready(function() {
      
      <p>The <code class="language-plaintext highlighter-rouge">qq</code> CLI supports <a href="https://docs.python.org/3/library/argparse.html">Python <code class="language-plaintext highlighter-rouge">argparse</code> completion</a> that helps you use the CLI more effectively. This section explains how to enable automatic command completion for the <code class="language-plaintext highlighter-rouge">qq</code> CLI and for command aliases.</p>
 
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> The following procedures apply to running the <code class="language-plaintext highlighter-rouge">qq</code> CLI on Linux, macOS, and Windows Subsystem for Linux. Don’t run these commands on Qumulo nodes</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> The following procedures apply to running the <code class="language-plaintext highlighter-rouge">qq</code> CLI on Linux, macOS, and Windows Subsystem for Linux. Don’t run these commands on Qumulo nodes
+</div>
 
 <h2 id="to-enable-autocomplete-for-the-qq-cli">To Enable Autocomplete for the qq CLI</h2>
 
@@ -2388,7 +2390,9 @@ $(document).ready(function() {
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>argcomplete
 </code></pre></div>    </div>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core supports <code class="language-plaintext highlighter-rouge">argcomplete</code> 2.0.0 and higher.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core supports <code class="language-plaintext highlighter-rouge">argcomplete</code> 2.0.0 and higher.
+    </div>
   </li>
   <li>
     <p>Activate the <code class="language-plaintext highlighter-rouge">argcomplete</code> package.</p>
@@ -2437,7 +2441,9 @@ $(document).ready(function() {
 
 <p>To ensure that your <code class="language-plaintext highlighter-rouge">argcomplete</code> configuration works with <code class="language-plaintext highlighter-rouge">qq</code> CLI command aliases, you must perform additional configuration and add a third-party helper script to your system.</p>
 
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Before you begin, review the source code of the <a href="https://github.com/cykerway/complete-alias/blob/master/complete_alias">complete-alias</a> helper script. Qumulo doesn’t contribute to, maintain, or take responsibility for this script.</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Before you begin, review the source code of the <a href="https://github.com/cykerway/complete-alias/blob/master/complete_alias">complete-alias</a> helper script. Qumulo doesn’t contribute to, maintain, or take responsibility for this script.
+</div>
 
 <h3 id="to-enable-autocomplete-for-qq-cli-command-aliases">To Enable Autocomplete for qq CLI Command Aliases</h3>
 
@@ -2451,7 +2457,9 @@ COMPAL_AUTO_UNMASK=1
 source ~/.bash_completion.d/complete_alias
 </code></pre></div>    </div>
 
-    <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Don’t reload your shell profile yet.</div>
+    <div class="alert alert-success" role="alert">
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Don’t reload your shell profile yet.
+    </div>
   </li>
   <li>
     <p>Create a directory for the <code class="language-plaintext highlighter-rouge">complete-alias</code> daemon and download the script to it.</p>

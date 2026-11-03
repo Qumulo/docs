@@ -2696,7 +2696,9 @@ $(document).ready(function() {
    <p>This section explains how to install VPN keys obtained from the Qumulo Care Team on your Qumulo cluster, over a network. You can install the VPN keys by using the <code>qq</code> CLI from a machine on the same network as your cluster or from one of your nodes.</p>
    
      
-<div class="alert alert-danger" role="alert"><span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br /> Follow these steps only if a member of the Qumulo Care Team instructs you to do so. Performing these steps incorrectly can cause network performance, connectivity, and data integrity issues. It can also expose your cluster to unauthorized access. For help with this task, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a>.</div>
+<div class="alert alert-danger" role="alert">
+<span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br /> Follow these steps only if a member of the Qumulo Care Team instructs you to do so. Performing these steps incorrectly can cause network performance, connectivity, and data integrity issues. It can also expose your cluster to unauthorized access. For help with this task, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a>.
+</div>
 
 <h2 id="prerequisites">Prerequisites</h2>
 <p>Before you begin, make sure that you have done the following.</p>
@@ -2728,7 +2730,9 @@ $(document).ready(function() {
   </li>
 </ul>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If your firewall performs stateful packet inspection (also known as <em>SPI</em> or <em>deep-packet inspection</em>), you must allow OpenVPN (SSL VPN) explicitly, rather than only open port 443.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If your firewall performs stateful packet inspection (also known as <em>SPI</em> or <em>deep-packet inspection</em>), you must allow OpenVPN (SSL VPN) explicitly, rather than only open port 443.
+</div>
 
 <h2 id="to-install-vpn-keys-from-a-networked-machine">To Install VPN Keys from a Networked Machine</h2>
 <ol>
@@ -2744,7 +2748,9 @@ $(document).ready(function() {
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq <span class="nt">--host</span> 203.0.113.0 login
 </code></pre></div>    </div>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Your user must have <code class="language-plaintext highlighter-rouge">PRIVILEGE_SUPPORT_WRITE</code> and <code class="language-plaintext highlighter-rouge">PRIVILEGE_SUPPORT_READ</code>.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Your user must have <code class="language-plaintext highlighter-rouge">PRIVILEGE_SUPPORT_WRITE</code> and <code class="language-plaintext highlighter-rouge">PRIVILEGE_SUPPORT_READ</code>.
+    </div>
   </li>
   <li>
     <p>To install the VPN keys on your cluster, specify your cluster’s IP address and the path to the directory that contains the VPN keys. For example:</p>
@@ -2753,7 +2759,7 @@ $(document).ready(function() {
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>To verify that the VPN keys installed correctly, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/node/node_state_get.html"><code>get_vpn_keys</code></a> command. For example:</p>
+    <p>To verify that the VPN keys installed correctly, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/node/node_state_get.html"><code class="language-plaintext highlighter-rouge">get_vpn_keys</code></a> command. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq <span class="nt">--host</span> 203.0.113.0 get_vpn_keys
 </code></pre></div>    </div>
@@ -2764,7 +2770,9 @@ $(document).ready(function() {
 </ol>
 
 <h2 id="to-install-vpn-keys-from-a-node">To Install VPN Keys from a Node</h2>
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> On macOS and Linux, you can use the <code class="language-plaintext highlighter-rouge">scp</code> and <code class="language-plaintext highlighter-rouge">ssh</code> tools. On Windows Server 2022, Windows Server 2019, and Windows 10 (build 1809 and higher), we recommend <a href="https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse">installing OpenSSH</a>.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> On macOS and Linux, you can use the <code class="language-plaintext highlighter-rouge">scp</code> and <code class="language-plaintext highlighter-rouge">ssh</code> tools. On Windows Server 2022, Windows Server 2019, and Windows 10 (build 1809 and higher), we recommend <a href="https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse">installing OpenSSH</a>.
+</div>
 
 <ol>
   <li>
@@ -2794,7 +2802,7 @@ $(document).ready(function() {
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>To verify that the VPN keys installed correctly, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/node/node_state_get.html"><code>get_vpn_keys</code></a> command. For example:</p>
+    <p>To verify that the VPN keys installed correctly, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/node/node_state_get.html"><code class="language-plaintext highlighter-rouge">get_vpn_keys</code></a> command. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>qq get_vpn_keys
 </code></pre></div>    </div>
@@ -2805,7 +2813,7 @@ $(document).ready(function() {
 
 <ol>
   <li>
-    <p>To retrieve your cluster ID, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/node/node_state_get.html"><code>qq node_state_get</code></a>
+    <p>To retrieve your cluster ID, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/node/node_state_get.html"><code class="language-plaintext highlighter-rouge">qq node_state_get</code></a>
  command.</p>
   </li>
   <li>

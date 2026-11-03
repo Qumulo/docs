@@ -8131,22 +8131,26 @@ $(document).ready(function() {
 
 <h2 id="examples">Examples</h2>
 
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> We strongly recommend piping <code class="language-plaintext highlighter-rouge">qq</code> CLI commands to <code class="language-plaintext highlighter-rouge">jq</code> by using the <code class="language-plaintext highlighter-rouge">--stream</code> flag to avoid excessive memory use.</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> We strongly recommend piping <code class="language-plaintext highlighter-rouge">qq</code> CLI commands to <code class="language-plaintext highlighter-rouge">jq</code> by using the <code class="language-plaintext highlighter-rouge">--stream</code> flag to avoid excessive memory use.
+</div>
 
 <h3 id="to-recursively-add-a-new-acl-with-multithreading">To Recursively Add a New ACL with Multithreading</h3>
-<p>For this operation, you must run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_walk_tree.html"><code>qq fs_walk_tree</code></a>
- and <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_modify_acl.html"><code>qq fs_modify_acl</code></a>
+<p>For this operation, you must run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_walk_tree.html"><code class="language-plaintext highlighter-rouge">qq fs_walk_tree</code></a>
+ and <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_modify_acl.html"><code class="language-plaintext highlighter-rouge">qq fs_modify_acl</code></a>
  commands.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For very large directories, we recommend running the following command <a href="https://linuxize.com/post/how-to-use-linux-screen/">in a screen session</a>.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For very large directories, we recommend running the following command <a href="https://linuxize.com/post/how-to-use-linux-screen/">in a screen session</a>.
+</div>
 
 <ol>
   <li>
     <p>Ensure that the <code class="language-plaintext highlighter-rouge">jq</code> tool is installed on your system.</p>
   </li>
   <li>
-    <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_walk_tree.html"><code>qq fs_walk_tree</code></a>
- command and use the <code class="language-plaintext highlighter-rouge">--path</code> flag to specify the path for the ACL. To extract the path for each item into an array, pipe the command to the <code class="language-plaintext highlighter-rouge">jq</code> tool. To modify the ACL for each path, pipe the command to <code class="language-plaintext highlighter-rouge">xargs</code> which in turn runs the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_set_acl.html"><code>qq fs_set_acl</code></a>
+    <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_walk_tree.html"><code class="language-plaintext highlighter-rouge">qq fs_walk_tree</code></a>
+ command and use the <code class="language-plaintext highlighter-rouge">--path</code> flag to specify the path for the ACL. To extract the path for each item into an array, pipe the command to the <code class="language-plaintext highlighter-rouge">jq</code> tool. To modify the ACL for each path, pipe the command to <code class="language-plaintext highlighter-rouge">xargs</code> which in turn runs the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_set_acl.html"><code class="language-plaintext highlighter-rouge">qq fs_set_acl</code></a>
  command on each path. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_walk_tree <span class="nt">--path</span> /my_path | <span class="se">\</span>
@@ -8162,8 +8166,8 @@ $(document).ready(function() {
 </ol>
 
 <h3 id="to-recursively-apply-a-permissions-template">To Recursively Apply a Permissions Template</h3>
-<p>For this operation, you must run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_walk_tree.html"><code>qq fs_walk_tree</code></a>
- and <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_modify_acl.html"><code>qq fs_modify_acl</code></a>
+<p>For this operation, you must run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_walk_tree.html"><code class="language-plaintext highlighter-rouge">qq fs_walk_tree</code></a>
+ and <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_modify_acl.html"><code class="language-plaintext highlighter-rouge">qq fs_modify_acl</code></a>
  commands.</p>
 
 <ol>
@@ -8171,7 +8175,7 @@ $(document).ready(function() {
     <p>Ensure that the <code class="language-plaintext highlighter-rouge">jq</code> tool is installed on your system.</p>
   </li>
   <li>
-    <p>Use a new or existing file with the necessary permissions to capture the ACL and save it in JSON format by using the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_get_acl.html"><code>qq fs_get_acl</code></a>
+    <p>Use a new or existing file with the necessary permissions to capture the ACL and save it in JSON format by using the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_get_acl.html"><code class="language-plaintext highlighter-rouge">qq fs_get_acl</code></a>
  command. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_get_acl <span class="nt">--path</span> /path_to_acl_source <span class="se">\</span>
@@ -8179,8 +8183,8 @@ $(document).ready(function() {
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>To apply the captured ACL, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_walk_tree.html"><code>qq fs_walk_tree</code></a>
- command and use the <code class="language-plaintext highlighter-rouge">--path</code> flag to specify the path for the ACL. To extract the path for each item into an array, pipe the command to the <code class="language-plaintext highlighter-rouge">jq</code> tool. To modify the ACL for each path, pipe the command to <code class="language-plaintext highlighter-rouge">xargs</code> which in turn runs the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_set_acl.html"><code>qq fs_set_acl</code></a>
+    <p>To apply the captured ACL, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_walk_tree.html"><code class="language-plaintext highlighter-rouge">qq fs_walk_tree</code></a>
+ command and use the <code class="language-plaintext highlighter-rouge">--path</code> flag to specify the path for the ACL. To extract the path for each item into an array, pipe the command to the <code class="language-plaintext highlighter-rouge">jq</code> tool. To modify the ACL for each path, pipe the command to <code class="language-plaintext highlighter-rouge">xargs</code> which in turn runs the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_set_acl.html"><code class="language-plaintext highlighter-rouge">qq fs_set_acl</code></a>
  command on each path.</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_walk_tree <span class="nt">--path</span> /my_target_path | <span class="se">\</span>
@@ -8193,12 +8197,12 @@ $(document).ready(function() {
 </ol>
 
 <h3 id="to-recursively-modify-smb-attributes">To Recursively Modify SMB Attributes</h3>
-<p>For this operation, you must run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_walk_tree.html"><code>qq fs_walk_tree</code></a>
- and <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_modify_acl.html"><code>qq fs_modify_acl</code></a>
+<p>For this operation, you must run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_walk_tree.html"><code class="language-plaintext highlighter-rouge">qq fs_walk_tree</code></a>
+ and <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_modify_acl.html"><code class="language-plaintext highlighter-rouge">qq fs_modify_acl</code></a>
  commands.</p>
 
-<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_walk_tree.html"><code>qq fs_walk_tree</code></a>
- command and use the <code class="language-plaintext highlighter-rouge">--path</code> flag to specify the path for the ACL. To extract the path for each item into an array, pipe the command to the <code class="language-plaintext highlighter-rouge">jq</code> tool. To modify the ACL for each path, pipe the command to <code class="language-plaintext highlighter-rouge">xargs</code> which in turn runs the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_set_acl.html"><code>qq fs_set_acl</code></a>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_walk_tree.html"><code class="language-plaintext highlighter-rouge">qq fs_walk_tree</code></a>
+ command and use the <code class="language-plaintext highlighter-rouge">--path</code> flag to specify the path for the ACL. To extract the path for each item into an array, pipe the command to the <code class="language-plaintext highlighter-rouge">jq</code> tool. To modify the ACL for each path, pipe the command to <code class="language-plaintext highlighter-rouge">xargs</code> which in turn runs the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_set_acl.html"><code class="language-plaintext highlighter-rouge">qq fs_set_acl</code></a>
  command on each path.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_walk_tree <span class="nt">--path</span> /my_path | <span class="se">\</span>

@@ -2422,7 +2422,9 @@ $(document).ready(function() {
   </li>
 </ul>
 
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> If you don’t specify a host access rule, Qumulo Core allows access to all IP addresses.</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> If you don’t specify a host access rule, Qumulo Core allows access to all IP addresses.
+</div>
 
 <h3 id="restricting-access-by-the-nfs-clients-kerberos-security-flavor">Restricting Access by the NFS Client’s Kerberos Security Flavor</h3>
 <p>In Qumulo Core 7.7.1.1 (and higher), it is possible to further restrict access to NFSv4.1 clients that use the following <a href="../kerberos/kerberos-with-qumulo-core.html#choosing-a-kerberos-security-flavor">Kerberos security flavors</a>:</p>
@@ -2535,7 +2537,7 @@ $(document).ready(function() {
 </span></code></pre></div>    </div>
   </li>
   <li>
-    <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_mod_export.html"><code>qq nfs_mod_export</code></a>
+    <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_mod_export.html"><code class="language-plaintext highlighter-rouge">qq nfs_mod_export</code></a>
  command and specify the export path and the file with the host access rules. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq nfs_mod_export <span class="se">\</span>
@@ -2571,13 +2573,15 @@ $(document).ready(function() {
 <h2 id="to-troubleshoot-host-access-rules-for-an-nfs-export">To Troubleshoot Host Access Rules for an NFS Export</h2>
 <p>This section describes the troubleshooting steps for a scenario in which an NFS client can’t mount or access an NFS export.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Currently, if you use multiple DNS servers, the <a href="https://docs.qumulo.com/qq-cli-command-guide/dns/dns_resolve_hostnames.html"><code>qq dns_resolve_hostnames</code></a>
- and <a href="https://docs.qumulo.com/qq-cli-command-guide/dns/dns_resolve_ips.html"><code>qq dns_resolve_ips</code></a>
- commands aren't tenant-aware and might not return the same results as the DNS resolution mechanism in NFS.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Currently, if you use multiple DNS servers, the <a href="https://docs.qumulo.com/qq-cli-command-guide/dns/dns_resolve_hostnames.html"><code class="language-plaintext highlighter-rouge">qq dns_resolve_hostnames</code></a>
+ and <a href="https://docs.qumulo.com/qq-cli-command-guide/dns/dns_resolve_ips.html"><code class="language-plaintext highlighter-rouge">qq dns_resolve_ips</code></a>
+ commands aren't tenant-aware and might not return the same results as the DNS resolution mechanism in NFS.
+</div>
 
 <ol>
   <li>
-    <p>To view the NFS export’s host access rules, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_get_export.html"><code>qq nfs_get_export</code></a>
+    <p>To view the NFS export’s host access rules, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_get_export.html"><code class="language-plaintext highlighter-rouge">qq nfs_get_export</code></a>
  command and specify the export path. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq nfs_get_export <span class="nt">--export-path</span> /
@@ -2606,7 +2610,7 @@ ID  Hosts                          Access Options
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>To find the client’s hostname, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/dns/dns_resolve_ips.html"><code>qq dns_resolve_ips</code></a>
+    <p>To find the client’s hostname, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/dns/dns_resolve_ips.html"><code class="language-plaintext highlighter-rouge">qq dns_resolve_ips</code></a>
  command and specify the client’s IP address. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq dns_resolve_ips <span class="nt">--ips</span> 203.0.113.2
@@ -2631,7 +2635,7 @@ ID  Hosts                          Access Options
         <p>Ensure the NFS client configuration entry is correct.</p>
       </li>
       <li>
-        <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/dns/dns_resolve_ips.html"><code>qq dns_resolve_ips</code></a>
+        <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/dns/dns_resolve_ips.html"><code class="language-plaintext highlighter-rouge">qq dns_resolve_ips</code></a>
  command to verify that the IP address maps to the correct name.</p>
       </li>
       <li>
@@ -2640,11 +2644,11 @@ ID  Hosts                          Access Options
       <li>
         <p>Ensure that your Qumulo cluster’s DNS cache isn’t out of date, for example, if <code class="language-plaintext highlighter-rouge">203.0.113.2</code> should resolve to <code class="language-plaintext highlighter-rouge">user1.accounting.example.com</code>.</p>
 
-        <p>To reset your Qumulo cluster’s DNS cache, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/dns/dns_clear_cache.html"><code>qq dns_clear_cache</code></a>
+        <p>To reset your Qumulo cluster’s DNS cache, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/dns/dns_clear_cache.html"><code class="language-plaintext highlighter-rouge">qq dns_clear_cache</code></a>
  command.</p>
       </li>
       <li>
-        <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/dns/dns_resolve_hostnames.html"><code>qq dns_resolve_hostnames</code></a>
+        <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/dns/dns_resolve_hostnames.html"><code class="language-plaintext highlighter-rouge">qq dns_resolve_hostnames</code></a>
  command and specify the hostname to perform a lookup for <code class="language-plaintext highlighter-rouge">user1.accounting.example.com</code>.</p>
 
         <p>The following is example output.</p>
@@ -2657,7 +2661,7 @@ ID  Hosts                          Access Options
 </span></code></pre></div>        </div>
       </li>
       <li>
-        <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/dns/dns_resolve_ips.html"><code>qq dns_resolve_ips</code></a>
+        <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/dns/dns_resolve_ips.html"><code class="language-plaintext highlighter-rouge">qq dns_resolve_ips</code></a>
  command to find the hostname for your client’s IP address and…</p>
 
         <ul>
@@ -2678,7 +2682,7 @@ ID  Hosts                          Access Options
 
 <p>By increasing TTL, you can reduce the number of DNS requests that your cluster makes. However, this might cause your cluster to keep outdated results for a longer time. For the most optimal configuration, list your organization’s DNS servers first in your DNS configuration.</p>
 
-<p>To bypass DNS, you can set explicit IP-host mappings for your cluster by using the <a href="https://docs.qumulo.com/qq-cli-command-guide/dns/dns_set_lookup_overrides.html"><code>qq dns_set_lookup_overrides</code></a>
+<p>To bypass DNS, you can set explicit IP-host mappings for your cluster by using the <a href="https://docs.qumulo.com/qq-cli-command-guide/dns/dns_set_lookup_overrides.html"><code class="language-plaintext highlighter-rouge">qq dns_set_lookup_overrides</code></a>
  command. If Qumulo Core finds an override for an IP address or host, it uses the override instead of the DNS cache.</p>
 
 <p>In the following JSON example, the IP address <code class="language-plaintext highlighter-rouge">203.0.113.2</code> binds to the host <code class="language-plaintext highlighter-rouge">user3.accounting.qumulo.com</code> explicitly.</p>

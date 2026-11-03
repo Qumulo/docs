@@ -943,9 +943,9 @@ $(document).ready(function() {
      <p>You can configure quota monitoring by using <em>thresholds</em>.</p>
 
 <ul>
-  <li>For the <code>--warning</code> flag, the threshold must be lower than the thresholds of both the <code>--error</code> and <code>--critical</code> flags.</li>
-  <li>For the <code>--error</code> flag, the threshold must be lower than the threshold of the <code>--critical</code> flag.</li>
-  <li>For the <code>--critical</code> flag, the threshold must be greater than the thresholds of both the <code>--warning</code> and <code>--error</code> flags.</li>
+  <li>For the <code class="language-plaintext highlighter-rouge">--warning</code> flag, the threshold must be lower than the thresholds of both the <code class="language-plaintext highlighter-rouge">--error</code> and <code class="language-plaintext highlighter-rouge">--critical</code> flags.</li>
+  <li>For the <code class="language-plaintext highlighter-rouge">--error</code> flag, the threshold must be lower than the threshold of the <code class="language-plaintext highlighter-rouge">--critical</code> flag.</li>
+  <li>For the <code class="language-plaintext highlighter-rouge">--critical</code> flag, the threshold must be greater than the thresholds of both the <code class="language-plaintext highlighter-rouge">--warning</code> and <code class="language-plaintext highlighter-rouge">--error</code> flags.</li>
 </ul>
 
 <p>You can configure unattached quotas or attach them to a Qumulo cluster.</p>
@@ -983,7 +983,9 @@ $(document).ready(function() {
   <span class="nt">--cluster-include</span> cluster.example.com
 </code></pre></div></div>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> When you add a quota and attach it to a Qumulo cluster, the <code class="language-plaintext highlighter-rouge">alerts</code> CLI doesn’t list the cluster.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> When you add a quota and attach it to a Qumulo cluster, the <code class="language-plaintext highlighter-rouge">alerts</code> CLI doesn’t list the cluster.
+</div>
 
 <p>The following is example output.</p>
 

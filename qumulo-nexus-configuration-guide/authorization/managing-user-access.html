@@ -748,7 +748,9 @@ $(document).ready(function() {
      <h2 id="how-user-roles-work-in-qumulo-nexus">How User Roles Work in Qumulo Nexus</h2>
 <p>Nexus roles are preconfigured for specific user tasks in your Nexus organization.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can assign multiple roles to a single user. The permissions granted by these roles are cumulative.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can assign multiple roles to a single user. The permissions granted by these roles are cumulative.
+</div>
 
 <ul>
   <li>
@@ -760,13 +762,12 @@ $(document).ready(function() {
   <li>
     <p><strong>Cluster API Access:</strong> For users with <a href="../authentication/index.html">configured SSO</a> and <a href="https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html">role-based access control (RBAC) configured for the Qumulo cluster</a>, access to <a href="../monitoring-and-metrics/enabling-nexus-remote-support-and-remote-management.html#enable-nexus-remote-management">Nexus Remote Management</a></p>
 
-    <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-To be able to work with <a href="../monitoring-and-metrics/enabling-nexus-remote-support-and-remote-management.html">Nexus Remote Management</a>:
-<ul>
-  <li>SSO users must have the Cluster API Access role and either the <code>View</code> or <code>Admin</code> role assigned.</li>
-  <li>The user's email address in Nexus and Active Directory (AD) for the Qumulo cluster must match. The AD user must also have RBAC configured in Qumulo Core&lt;/a&gt;.</li>
-</ul>
-</div>
+    <div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br /> To be able to work with <a href="../monitoring-and-metrics/enabling-nexus-remote-support-and-remote-management.html">Nexus Remote Management</a>:       <ul>
+        <li>SSO users must have the Cluster API Access role and either the <code class="language-plaintext highlighter-rouge">View</code> or <code class="language-plaintext highlighter-rouge">Admin</code> role assigned.</li>
+        <li>The user's email address in Nexus and Active Directory (AD) for the Qumulo cluster must match. The AD user must also have RBAC configured in Qumulo Core&lt;/a&gt;.</li>
+      </ul>
+    </div>
   </li>
   <li>
     <p><strong>Cluster Management Admin:</strong> Full ability to create and destroy only Qumulo clusters created by using Nexus</p>
@@ -820,7 +821,9 @@ To be able to work with <a href="../monitoring-and-metrics/enabling-nexus-remote
   <li>
     <p>In the <strong>Add Users</strong> side panel, for <strong>Email Address</strong>, enter one or more email addresses.</p>
 
-    <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Separate multiple email addresses with commas (<code class="language-plaintext highlighter-rouge">,</code>).</div>
+    <div class="alert alert-success" role="alert">
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Separate multiple email addresses with commas (<code class="language-plaintext highlighter-rouge">,</code>).
+    </div>
   </li>
   <li>
     <p>(Optional) For SSO users, leave <strong>Do not add as SSO user</strong> unchecked.</p>
@@ -869,11 +872,11 @@ To be able to work with <a href="../monitoring-and-metrics/enabling-nexus-remote
 <p>The <strong>Users</strong> page lists the <strong>Role</strong> assigned to the user.</p>
 
 <h3 id="to-remove-a-user">To Remove a User</h3>
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>Removing a user from your identity provider (IdP) doesn't revoke user access immediately because existing sessions and access tokens remain active until they expire.</li>
-  <li>To revoke user access immediately, you must remove the user directly from Nexus.</li> 
-</ul>
+<div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+    <li>Removing a user from your identity provider (IdP) doesn't revoke user access immediately because existing sessions and access tokens remain active until they expire.</li>
+    <li>To revoke user access immediately, you must remove the user directly from Nexus.</li>
+  </ul>
 </div>
 
 <ol>

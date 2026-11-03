@@ -940,15 +940,17 @@ $(document).ready(function() {
 
    <p>This section explains how to integrate an email server with Qumulo Alerts and test the integration.</p>
    
-     <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> After May 2022, only organizations with access to the Google Admin Console can use SMTP relay to <a href="https://support.google.com/a/answer/2956491?hl=en">Route outgoing SMTP relay messages through Google</a>.</div>
+     <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> After May 2022, only organizations with access to the Google Admin Console can use SMTP relay to <a href="https://support.google.com/a/answer/2956491?hl=en">Route outgoing SMTP relay messages through Google</a>.
+</div>
 
 <h2 id="to-integrate-an-email-server-with-qumulo-alerts-and-test-the-integration-by-using-the-qumulo-alerts-web-ui">To Integrate an Email Server with Qumulo Alerts and Test the Integration by Using the Qumulo Alerts Web UI</h2>
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>Depending on your SMTP server configuration, the <strong>Username</strong>, <strong>Password</strong>, and <strong>Security</strong> fields might be optional.</li>
-  <li>For more information about locales, see <a href="../getting-started/supported-language-locales.html">What Language Locales Qumulo Alerts Supports</a>. The consumer processes for <a href="../configuring-integrations/email-server.html">email</a>, <a href="../configuring-integrations/ifttt.html">IFTTT</a>, and <a href="../configuring-integrations/sms-clicksend.html">SMS (ClickSend)</a> integrations translate messages into the recipient's native language.</li>
-  <li>For more information about time zones, see <a href="../getting-started/supported-language-locales.html#converting-time-zones">Converting Time Zones</a>.</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>Depending on your SMTP server configuration, the <strong>Username</strong>, <strong>Password</strong>, and <strong>Security</strong> fields might be optional.</li>
+    <li>For more information about locales, see <a href="../getting-started/supported-language-locales.html">What Language Locales Qumulo Alerts Supports</a>. The consumer processes for <a href="../configuring-integrations/email-server.html">email</a>, <a href="../configuring-integrations/ifttt.html">IFTTT</a>, and <a href="../configuring-integrations/sms-clicksend.html">SMS (ClickSend)</a> integrations translate messages into the recipient's native language.</li>
+    <li>For more information about time zones, see <a href="../getting-started/supported-language-locales.html#converting-time-zones">Converting Time Zones</a>.</li>
+  </ul>
 </div>
 
 <ol>
@@ -977,7 +979,9 @@ $(document).ready(function() {
       <li>
         <p>(Optional) For <strong>Password</strong>, enter the password for SMTP authentication.</p>
 
-        <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To keep the current password, leave <strong>Password</strong> empty.</div>
+        <div class="alert alert-success" role="alert">
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To keep the current password, leave <strong>Password</strong> empty.
+        </div>
       </li>
       <li>
         <p>For <strong>To Address (used only for testing the connection)</strong>, enter the email address to receive the test message when you click <strong>Test Connection</strong>.</p>
@@ -1011,12 +1015,12 @@ $(document).ready(function() {
 </ol>
 
 <h2 id="to-integrate-an-email-server-with-qumulo-alerts-and-test-the-integration-by-using-the-alerts-cli">To Integrate an Email Server with Qumulo Alerts and Test the Integration by Using the alerts CLI</h2>
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>Depending on the type of SMTP email server that you use, the <code>--login</code>, <code>--password</code>, and <code>--security</code> flags might be optional.</li>
-  <li>For more information about locales, see <a href="../getting-started/supported-language-locales.html">What Language Locales Qumulo Alerts Supports</a>. The consumer processes for <a href="../configuring-integrations/email-server.html">email</a>, <a href="../configuring-integrations/ifttt.html">IFTTT</a>, and <a href="../configuring-integrations/sms-clicksend.html">SMS (ClickSend)</a> integrations translate messages into the recipient's native language.</li>
-  <li>For more information about time zones, see <a href="../getting-started/supported-language-locales.html#converting-time-zones">Converting Time Zones</a>.</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>Depending on the type of SMTP email server that you use, the <code class="language-plaintext highlighter-rouge">--login</code>, <code class="language-plaintext highlighter-rouge">--password</code>, and <code class="language-plaintext highlighter-rouge">--security</code> flags might be optional.</li>
+    <li>For more information about locales, see <a href="../getting-started/supported-language-locales.html">What Language Locales Qumulo Alerts Supports</a>. The consumer processes for <a href="../configuring-integrations/email-server.html">email</a>, <a href="../configuring-integrations/ifttt.html">IFTTT</a>, and <a href="../configuring-integrations/sms-clicksend.html">SMS (ClickSend)</a> integrations translate messages into the recipient's native language.</li>
+    <li>For more information about time zones, see <a href="../getting-started/supported-language-locales.html#converting-time-zones">Converting Time Zones</a>.</li>
+  </ul>
 </div>
 
 <ol>
@@ -1050,7 +1054,7 @@ $(document).ready(function() {
   <li>
     <p>Run the <code class="language-plaintext highlighter-rouge">./alerts email_server_test</code> command.</p>
 
-    <p>A successful response returns the <code>[{ "ok"&colon; true }]</code> JSON output.</p>
+    <p>A successful response returns the <code class="language-plaintext highlighter-rouge">[{ "ok"&amp;colon; true }]</code> JSON output.</p>
   </li>
 </ol>
 

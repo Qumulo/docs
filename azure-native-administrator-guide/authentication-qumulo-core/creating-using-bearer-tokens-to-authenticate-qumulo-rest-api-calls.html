@@ -2382,7 +2382,9 @@ $(document).ready(function() {
 <h2 id="creating-a-bearer-token">Creating a Bearer Token</h2>
 <p>To create a bearer token, you can use the Qumulo REST API or Qumulo Core Web UI.</p>
 
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Only administrative users (or users with <code class="language-plaintext highlighter-rouge">PRIVILEGE_ACCESS_TOKENS_WRITE</code>) can create bearer tokens.</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Only administrative users (or users with <code class="language-plaintext highlighter-rouge">PRIVILEGE_ACCESS_TOKENS_WRITE</code>) can create bearer tokens.
+</div>
 
 <h3 id="to-create-a-bearer-token-by-using-the-rest-api">To Create a Bearer Token by Using the REST API</h3>
 <p>Begin an authentication session by calling the <code class="language-plaintext highlighter-rouge">/v1/session/login</code> REST API endpoint and specify the username and password. For example:</p>

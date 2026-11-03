@@ -8135,7 +8135,9 @@ $(document).ready(function() {
 
 <h3 id="to-create-an-smb-share-with-host-restrictions">To Create an SMB Share with Host Restrictions</h3>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The <code>qq smb_add_share</code> and <code>qq smb_mod_share</code> commands use the same flags.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The <code class="language-plaintext highlighter-rouge">qq smb_add_share</code> and <code class="language-plaintext highlighter-rouge">qq smb_mod_share</code> commands use the same flags.
+</div>
 
 <p>Run the <code class="language-plaintext highlighter-rouge">qq smb_add_share</code> command and specify the path, share name, and <a href="https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html#how-smb-host-restriction-precedence-works">host restriction level</a>. In the following example, Qumulo Core grants hosts 203.0.113.42 and 203.0.113.84 full control, all hosts in 203.0.113.0/24 read-only access, and denies all other hosts.</p>
 

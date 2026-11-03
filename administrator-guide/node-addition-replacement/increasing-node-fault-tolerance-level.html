@@ -2704,19 +2704,21 @@ $(document).ready(function() {
   </li>
 </ul>
 
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> We strongly recommend contacting the <a href="/contacting-qumulo-care-team.html">Qumulo Care Team</a> before proceeding with cluster expansion.</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> We strongly recommend contacting the <a href="/contacting-qumulo-care-team.html">Qumulo Care Team</a> before proceeding with cluster expansion.
+</div>
 
 <h2 id="to-reconfigure-your-clusters-node-fault-tolerance-level">To Reconfigure Your Cluster’s Node Fault Tolerance Level</h2>
 <ol>
   <li>
     <p>Follow the instructions in <a href="adding-nodes-existing-cluster.html">Adding Nodes to an Existing Qumulo Cluster</a>.</p>
 
-    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>When a trade-off between increasing node fault tolerance and maximizing usable capacity is available for your cluster, the <strong>Cluster &gt; Add Nodes</strong> page shows the <strong>Accept a trade-off in the increase of usable capacity</strong> checkbox.</li>
-  <li>When a trade-off isn't available, the page shows an message which indicates that it is possible to increase the node fault tolerance level.</li>
-</ul>
-</div>
+    <div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />       <ul>
+        <li>When a trade-off between increasing node fault tolerance and maximizing usable capacity is available for your cluster, the <strong>Cluster &gt; Add Nodes</strong> page shows the <strong>Accept a trade-off in the increase of usable capacity</strong> checkbox.</li>
+        <li>When a trade-off isn't available, the page shows an message which indicates that it is possible to increase the node fault tolerance level.</li>
+      </ul>
+    </div>
   </li>
   <li>
     <p>Before you click <strong>Yes</strong> in the <strong>Add &lt;N&gt; nodes to cluster &lt;MyCluster&gt;?</strong> dialog box, check that the projected capacity matches the expected capacity.</p>

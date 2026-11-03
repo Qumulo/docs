@@ -2420,19 +2420,21 @@ $(document).ready(function() {
      
      <p>Depending on the configuration of your Qumulo cluster, you can grant full access, read-only access, deny specific hosts, or deny all access. It is also possible to configure a Qumulo cluster to prevent shares which a client can’t access from being enumerated.</p>
 
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Because host restrictions interact with user or group share permissions and file permissions on the basis of <em>least privilege</em>, in order for Qumulo Core to grant a privilege for a particular file, the file’s permissions, the share’s user permissions, and the share’s host permissions must <em>all</em> permit the privilege.</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Because host restrictions interact with user or group share permissions and file permissions on the basis of <em>least privilege</em>, in order for Qumulo Core to grant a privilege for a particular file, the file’s permissions, the share’s user permissions, and the share’s host permissions must <em>all</em> permit the privilege.
+</div>
 
 <p>Host restrictions apply in the order in which you write them, from top to bottom. For example, if you deny a privilege to a host at the beginning of the permission list, and a later entry allows the same privilege to the same host, Qumulo Core doesn’t grant the privilege.</p>
 
 <h2 id="how-smb-host-restriction-precedence-works">How SMB Host Restriction Precedence Works</h2>
 <p>When you create or modify an SMB share, you can use one of the following SMB host restrictions, listed here in order of precedence.</p>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>If you don't specify any of the following restrictions, the SMB share gives all hosts full control</li>
-  <li>If you specify one of the following restrictions, the SMB share denies access to any hosts that you don't specify.</li>
-  <li>If you specify multiple addresses or ranges, separate them by using <em>spaces</em>.</li>
-</ul>
+<div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+    <li>If you don't specify any of the following restrictions, the SMB share gives all hosts full control</li>
+    <li>If you specify one of the following restrictions, the SMB share denies access to any hosts that you don't specify.</li>
+    <li>If you specify multiple addresses or ranges, separate them by using <em>spaces</em>.</li>
+  </ul>
 </div>
 
 <ol>
@@ -2448,27 +2450,31 @@ $(document).ready(function() {
   <li>
     <p><strong>Full Access:</strong> IP address ranges to which Qumulo Core permits full access</p>
 
-    <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> The file’s permissions and the share’s user permissions must also grant full access.</div>
+    <div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> The file’s permissions and the share’s user permissions must also grant full access.
+    </div>
   </li>
 </ol>
 
 <h2 id="hiding-an-smb-share">Managing SMB Host Restrictions by Using the qq CLI</h2>
-<p>For information about viewing, modifying, and removing host restrictions and hiding SMB shares from unauthorized hosts by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI, see the following sections in the Qumulo <code>qq</code> CLI Command Guide:</p>
+<p>For information about viewing, modifying, and removing host restrictions and hiding SMB shares from unauthorized hosts by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI, see the following sections in the Qumulo <code class="language-plaintext highlighter-rouge">qq</code> CLI Command Guide:</p>
 
 <ul>
   <li>
-    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/smb/smb_add_share.html"><code>qq smb_add_share</code></a></p>
+    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/smb/smb_add_share.html"><code class="language-plaintext highlighter-rouge">qq smb_add_share</code></a></p>
   </li>
   <li>
-    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/smb/smb_list_share.html"><code>qq smb_list_share</code></a></p>
+    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/smb/smb_list_share.html"><code class="language-plaintext highlighter-rouge">qq smb_list_share</code></a></p>
   </li>
   <li>
-    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/smb/smb_mod_share.html"><code>qq smb_mod_share</code></a></p>
+    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/smb/smb_mod_share.html"><code class="language-plaintext highlighter-rouge">qq smb_mod_share</code></a></p>
   </li>
   <li>
-    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/smb/smb_modify_settings.html"><code>qq smb_modify_settings</code></a></p>
+    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/smb/smb_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq smb_modify_settings</code></a></p>
 
-    <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To hide an SMB share in the Qumulo Core Web UI, append <code class="language-plaintext highlighter-rouge">$</code> to its name. To access the share, you must use the fully qualified domain name (FQDN). For example: <code class="language-plaintext highlighter-rouge">\\storage.example.com\MyShare$</code>.</div>
+    <div class="alert alert-success" role="alert">
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To hide an SMB share in the Qumulo Core Web UI, append <code class="language-plaintext highlighter-rouge">$</code> to its name. To access the share, you must use the fully qualified domain name (FQDN). For example: <code class="language-plaintext highlighter-rouge">\\storage.example.com\MyShare$</code>.
+    </div>
   </li>
 </ul>
 

@@ -2434,7 +2434,9 @@ $(document).ready(function() {
    <p>By connecting the Shared Folders Microsoft Management Console (MMC) Snap-In to your Qumulo cluster, you can manage file shares centrally.</p>
    
      
-     <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> To perform the following operations, you must use a Qumulo Core account with the Administrators or Data Administrators role.</div>
+     <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> To perform the following operations, you must use a Qumulo Core account with the Administrators or Data Administrators role.
+</div>
 
 <h2 id="prerequisites">Prerequisites</h2>
 <p>Windows 7, Windows Server 2008 R2 (or higher)</p>
@@ -2467,7 +2469,9 @@ $(document).ready(function() {
       <li>
         <p>Under <strong>This snap-in will always manage</strong>, click <strong>Another computer</strong> and enter your cluster’s hostname, for example <code class="language-plaintext highlighter-rouge">mycluster.example.com</code>.</p>
 
-        <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Don’t place a slash (<code class="language-plaintext highlighter-rouge">/</code>) after your cluster’s hostname. Although the Shared Folders snap-in doesn’t display an error message in case of failure, adding the slash after the hostname causes the operation to fail.</div>
+        <div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Don’t place a slash (<code class="language-plaintext highlighter-rouge">/</code>) after your cluster’s hostname. Although the Shared Folders snap-in doesn’t display an error message in case of failure, adding the slash after the hostname causes the operation to fail.
+        </div>
       </li>
       <li>
         <p>Under <strong>View</strong>, click <strong>All</strong>.</p>
@@ -2486,7 +2490,9 @@ $(document).ready(function() {
 
 <h2 id="to-connect-your-qumulo-cluster-to-a-share-on-your-windows-machine">To Connect Your Qumulo Cluster to a Share on Your Windows Machine</h2>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Shared folder permissions are unrelated to NTFS access control lists (ACLs).</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Shared folder permissions are unrelated to NTFS access control lists (ACLs).
+</div>
 
 <ol>
   <li>
@@ -2495,7 +2501,9 @@ $(document).ready(function() {
   <li>
     <p>In the <strong>Create a Shared Folder Wizard: Folder Path</strong> dialog box, for <strong>Folder path</strong>, specify the path for the SMB share (for example <code class="language-plaintext highlighter-rouge">C:\Users\Jennifer\Reports</code>) and then click <strong>Next</strong>.</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If you click <strong>Browse…</strong>, you might see the <strong>q$</strong> parent item in the directory tree. The is the root (<code class="language-plaintext highlighter-rouge">/</code>) of the file system.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If you click <strong>Browse…</strong>, you might see the <strong>q$</strong> parent item in the directory tree. The is the root (<code class="language-plaintext highlighter-rouge">/</code>) of the file system.
+    </div>
   </li>
   <li>
     <p>In the <strong>Create a Shared Folder Wizard: Name, Description, and Settings</strong> dialog box:</p>
@@ -2528,7 +2536,9 @@ $(document).ready(function() {
       <li>
         <p><strong>Customize permissions</strong></p>
 
-        <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> We recommend clicking <strong>Customize permissions</strong> and then, in the dialog box, giving <strong>Full Control</strong> to the group <strong>Everyone</strong>.</div>
+        <div class="alert alert-success" role="alert">
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> We recommend clicking <strong>Customize permissions</strong> and then, in the dialog box, giving <strong>Full Control</strong> to the group <strong>Everyone</strong>.
+        </div>
       </li>
     </ul>
   </li>
@@ -2549,22 +2559,22 @@ $(document).ready(function() {
   <li>
     <p>In the <strong>File Properties</strong> dialog box, on the <strong>General</strong> tab, you can edit properties such as <strong>Share name</strong>, <strong>Folder path</strong>,  <strong>Description</strong>, and <strong>User Limit</strong>.</p>
 
-    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>The settings of the <strong>User limit</strong> and <strong>Offline Settings...</strong> properties have no effect on your Qumulo cluster.</li>
-  <li>The path <code>C:\</code> represents the root (<code>/</code>) of your Qumulo file system.</li>
-</ul>
-</div>
+    <div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />       <ul>
+        <li>The settings of the <strong>User limit</strong> and <strong>Offline Settings...</strong> properties have no effect on your Qumulo cluster.</li>
+        <li>The path <code class="language-plaintext highlighter-rouge">C:\</code> represents the root (<code class="language-plaintext highlighter-rouge">/</code>) of your Qumulo file system.</li>
+      </ul>
+    </div>
   </li>
   <li>
     <p>On the <strong>Share Permissions</strong> tab, ensure that the permissions for various users and groups are correct.</p>
 
-    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>It is possible to add local users and groups from your Qumulo cluster by prefixing them with the name of your cluster followed by a backslash (<code>\</code>). For example: <code>accounting\admin</code></li>
-  <li>Because, if you <em>don't</em> select <strong>Full Control</strong>, there is a minor mismatch between the rights that Windows Change Permissions grants and the Qumulo Core Web UI <code>Write</code> permissions. For this reason, share permissions configured by using the MMC appear with an asterisk (<code>*</code>) in the Qumulo Core Web UI. We recommend using Qumulo Core to configure share permissions.</li>
-</ul>
-</div>
+    <div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />       <ul>
+        <li>It is possible to add local users and groups from your Qumulo cluster by prefixing them with the name of your cluster followed by a backslash (<code class="language-plaintext highlighter-rouge">\</code>). For example: <code class="language-plaintext highlighter-rouge">accounting\admin</code></li>
+        <li>Because, if you <em>don't</em> select <strong>Full Control</strong>, there is a minor mismatch between the rights that Windows Change Permissions grants and the Qumulo Core Web UI <code class="language-plaintext highlighter-rouge">Write</code> permissions. For this reason, share permissions configured by using the MMC appear with an asterisk (<code class="language-plaintext highlighter-rouge">*</code>) in the Qumulo Core Web UI. We recommend using Qumulo Core to configure share permissions.</li>
+      </ul>
+    </div>
   </li>
   <li>
     <p>On the <strong>Security</strong> tab, ensure that the file permissions for the directory subtree under the share are connected.</p>
@@ -2572,7 +2582,9 @@ $(document).ready(function() {
   <li>
     <p>To save changes, click <strong>Apply</strong>.It is possible to add local users and groups from your Qumulo cluster by prefixing them with the name of your cluster followed by a backslash (<code class="language-plaintext highlighter-rouge">\</code>). For example: <code class="language-plaintext highlighter-rouge">accounting\admin</code></p>
 
-    <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> For a Qumulo cluster with default settings, applying changes results in an error for the <code class="language-plaintext highlighter-rouge">.snapshots</code> meta-directory. It is safe to click <strong>Continue</strong> each time this error occurs.</div>
+    <div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> For a Qumulo cluster with default settings, applying changes results in an error for the <code class="language-plaintext highlighter-rouge">.snapshots</code> meta-directory. It is safe to click <strong>Continue</strong> each time this error occurs.
+    </div>
   </li>
 </ol>
 

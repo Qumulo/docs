@@ -2434,7 +2434,9 @@ $(document).ready(function() {
    <p>This section explains how to configure a single namespace on your Qumulo cluster to configure round-robin DNS on a domain controller running Windows Server 2008 R2 (or higher).</p>
    
      
-     <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> To perform the following operations, you must be a member of the Domain Admins, Enterprise Admins, or DnsAdmins group.</div>
+     <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> To perform the following operations, you must be a member of the Domain Admins, Enterprise Admins, or DnsAdmins group.
+</div>
 
 <h2 id="step-1-confirm-that-round-robin-dns-support-is-enabled">Step 1: Confirm that Round-Robin DNS Support is Enabled</h2>
 
@@ -2462,12 +2464,16 @@ $(document).ready(function() {
   <li>
     <p>For <strong>Name</strong>, enter the hostname (virtual name) for clients that connect to your Qumulo cluster.</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Don’t enter the hostname of another existing server.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Don’t enter the hostname of another existing server.
+    </div>
   </li>
   <li>
     <p>Enter the first floating IP address for one of the nodes in your cluster.</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Use only floating IP addresses for round-robin DNS entries.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Use only floating IP addresses for round-robin DNS entries.
+    </div>
   </li>
   <li>
     <p>Repeat these steps for each floating IP address that belongs to a node in your cluster.</p>

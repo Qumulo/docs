@@ -2393,7 +2393,9 @@ $(document).ready(function() {
       <li>
         <p>Select a <strong>Resource group</strong> or click <strong>Create new</strong>.</p>
 
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> A <em>resource group</em> is a container that holds related Azure resources. We recommend creating a resource group exclusive to your Qumulo infrastructure.</div>
+        <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> A <em>resource group</em> is a container that holds related Azure resources. We recommend creating a resource group exclusive to your Qumulo infrastructure.
+        </div>
       </li>
     </ol>
   </li>
@@ -2416,7 +2418,9 @@ $(document).ready(function() {
 
         <p>Azure pins the service resources in a region to this availability zone.</p>
 
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> By creating all your Qumulo resources within the same availability zone, Azure can reduce latency.</div>
+        <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> By creating all your Qumulo resources within the same availability zone, Azure can reduce latency.
+        </div>
       </li>
     </ol>
   </li>
@@ -2473,7 +2477,9 @@ $(document).ready(function() {
           </li>
         </ul>
 
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can associate only one delegated subnet with one service instance.</div>
+        <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can associate only one delegated subnet with one service instance.
+        </div>
       </li>
     </ol>
   </li>
@@ -2491,7 +2497,9 @@ $(document).ready(function() {
 <h3 id="viewing-the-ip-addresses-of-your-service">Viewing the IP Addresses of Your Service</h3>
 <p>To view the IP addresses associated with your service, click <strong>IP Addresses</strong> on the sidebar.</p>
 
-<div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> We recommend using round-robin DNS to <a href="virtual-networking-prerequisites-azure-native-qumulo.html#load-balanced-endpoints">load balance</a> traffic across your service IP addresses.</div>
+<div class="alert alert-success" role="alert">
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> We recommend using round-robin DNS to <a href="virtual-networking-prerequisites-azure-native-qumulo.html#load-balanced-endpoints">load balance</a> traffic across your service IP addresses.
+</div>
 
 <h3 id="to-log-in-to-the-qumulo-core-web-ui">To Log in to the Qumulo Core Web UI</h3>
 <p>To log in to the Qumulo Core Web UI, you must identify your service endpoint.</p>
@@ -2506,12 +2514,12 @@ $(document).ready(function() {
   <li>
     <p>Enter the URL into a browser from a machine that runs, or is connected to, the virtual network where you deployed ANQ.</p>
 
-    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>If you connect from a machine that is in a different virtual network, establish <a href="https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview">virtual network peering</a> between the two virtual networks.</li>
-  <li>If you connect from an on-premises machine, ensure that you connect by using <a href="https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways">Azure VPN Gateway</a> or <a href="https://learn.microsoft.com/en-us/azure/expressroute/expressroute-introduction">Azure ExpressRoute</a>.</li>
-</ul>
-</div>
+    <div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />       <ul>
+        <li>If you connect from a machine that is in a different virtual network, establish <a href="https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview">virtual network peering</a> between the two virtual networks.</li>
+        <li>If you connect from an on-premises machine, ensure that you connect by using <a href="https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways">Azure VPN Gateway</a> or <a href="https://learn.microsoft.com/en-us/azure/expressroute/expressroute-introduction">Azure ExpressRoute</a>.</li>
+      </ul>
+    </div>
   </li>
   <li>
     <p>When the page prompts you for a <strong>Username</strong>, enter <code class="language-plaintext highlighter-rouge">admin</code>.</p>

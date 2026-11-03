@@ -2436,24 +2436,26 @@ $(document).ready(function() {
      
      <p>In Qumulo Core 5.1.0 (and higher), clusters have an optional <em>inactivity timeout</em> that logs users out of the Qumulo Core Web UI if they don’t interact with it for a specified amount of time.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> During the final minute of the timeout period, the <strong>Your Session is About to Expire</strong> dialog box appears. The dialog box shows a countdown and lets the user renew the session or log out immediately. When deciding on the timeout length, take your users’ needs into consideration.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> During the final minute of the timeout period, the <strong>Your Session is About to Expire</strong> dialog box appears. The dialog box shows a countdown and lets the user renew the session or log out immediately. When deciding on the timeout length, take your users’ needs into consideration.
+</div>
 
 <h2 id="to-set-the-qumulo-core-web-ui-inactivity-timeout">To Set the Qumulo Core Web UI Inactivity Timeout</h2>
-<p>To set an inactivity timeout, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/web/web_ui_modify_settings.html"><code>qq web_ui_modify_settings</code></a>
+<p>To set an inactivity timeout, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/web/web_ui_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq web_ui_modify_settings</code></a>
  command and use the <code class="language-plaintext highlighter-rouge">--inactivity-timeout</code> flag to specify the timeout in minutes. For example:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq web_ui_modify_settings <span class="nt">--inactivity-timeout</span> 15
 </code></pre></div></div>
 
 <h2 id="to-clear-the-qumulo-core-web-ui-inactivity-timeout">To Clear the Qumulo Core Web UI Inactivity Timeout</h2>
-<p>To clear an inactivity timeout, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/web/web_ui_modify_settings.html"><code>qq web_ui_modify_settings</code></a>
+<p>To clear an inactivity timeout, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/web/web_ui_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq web_ui_modify_settings</code></a>
  command and use the <code class="language-plaintext highlighter-rouge">--disable-inactivity-timeout</code> flag.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq web_ui_modify_settings <span class="nt">--disable-inactivity-timeout</span>
 </code></pre></div></div>
 
 <h2 id="to-view-the-current-web-ui-inactivity-timeout">To View the Current Web UI Inactivity Timeout</h2>
-<p>To view the current inactivity timeout, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/web/web_ui_get_settings.html"><code>qq web_ui_get_settings</code></a>
+<p>To view the current inactivity timeout, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/web/web_ui_get_settings.html"><code class="language-plaintext highlighter-rouge">qq web_ui_get_settings</code></a>
  command:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq web_ui_get_settings

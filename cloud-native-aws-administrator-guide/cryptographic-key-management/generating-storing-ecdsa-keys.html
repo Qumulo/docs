@@ -2436,11 +2436,11 @@ $(document).ready(function() {
      
      <p>In Qumulo Core 6.1.0 (and higher), you can store multiple ECDSA public keys in the Qumulo file system key store and use these keys to protect file system resources.</p>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>Currently, Qumulo Core supports only 256-bit ECDSA keys in <code>.pem</code> and <code>.der</code> formats. Qumulo Core doesn't support storing ECDSA keys of other lengths and formats.</li>
-  <li>No KMS system shows the private key. To sign messages later, write down the key ID in the responses from key generation commands.</li>  
-</ul>
+<div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+    <li>Currently, Qumulo Core supports only 256-bit ECDSA keys in <code class="language-plaintext highlighter-rouge">.pem</code> and <code class="language-plaintext highlighter-rouge">.der</code> formats. Qumulo Core doesn't support storing ECDSA keys of other lengths and formats.</li>
+    <li>No KMS system shows the private key. To sign messages later, write down the key ID in the responses from key generation commands.</li>
+  </ul>
 </div>
 
 <h2 id="generating-ecdsa-private-key">Generating an ECDSA Private Key</h2>
@@ -2612,11 +2612,11 @@ WXYza1BCdEfGHIjkOlMnOpqr1STUvW3XYzAB6c8DefghIJkEXAMPLE==
 
 <p>You can use your private key to generate a verification signature and then provide this signature to Qumulo Core in Base64 encoding.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>When you add a new key, the key name is the security challenge.</li>
-  <li>When you replace an existing key or unlock a snapshot, the <code>qq</code> CLI command provides the challenge.</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>When you add a new key, the key name is the security challenge.</li>
+    <li>When you replace an existing key or unlock a snapshot, the <code class="language-plaintext highlighter-rouge">qq</code> CLI command provides the challenge.</li>
+  </ul>
 </div>
 
 <h3 id="to-sign-a-security-challenge-by-using-linux-cli-tools">To Sign a Security Challenge by Using Linux CLI Tools</h3>
@@ -2627,7 +2627,9 @@ WXYza1BCdEfGHIjkOlMnOpqr1STUvW3XYzAB6c8DefghIJkEXAMPLE==
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"This is my challenge."</span> <span class="o">&gt;</span> /tmp/challenge.out
 </code></pre></div>    </div>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The <code class="language-plaintext highlighter-rouge">-n</code> flag ensures that there are no newline characters following the challenge.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The <code class="language-plaintext highlighter-rouge">-n</code> flag ensures that there are no newline characters following the challenge.
+    </div>
   </li>
   <li>
     <p>To sign the challenge, run the <code class="language-plaintext highlighter-rouge">openssl</code> tool and specify the path to the private key. For example:</p>
@@ -2687,7 +2689,9 @@ WXYza1BCdEfGHIjkOlMnOpqr1STUvW3XYzAB6c8DefghIJkEXAMPLE==
 </ol>
 
 <h3 id="to-sign-a-security-challenge-by-using-the-azure-key-vault">To Sign a Security Challenge by Using the Azure Key Vault</h3>
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> The Azure API requires a security challenge as a UrlBase64-encoded SHA-256 digest.</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> The Azure API requires a security challenge as a UrlBase64-encoded SHA-256 digest.
+</div>
 
 <ol>
   <li>

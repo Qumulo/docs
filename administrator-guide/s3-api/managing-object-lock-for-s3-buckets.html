@@ -2702,7 +2702,7 @@ $(document).ready(function() {
     <p>Before you can enable Object Lock for an S3 bucket, you must first <a href="managing-s3-bucket-versioning.html">enable S3 Bucket versioning</a>.</p>
   </li>
   <li>
-    <p>Qumulo Core supports <code>aws</code> CLI</p>
+    <p>Qumulo Core supports <code class="language-plaintext highlighter-rouge">aws</code> CLI</p>
   </li>
 </ul>
 
@@ -2713,14 +2713,18 @@ $(document).ready(function() {
   <li>
     <p><strong>Lock with manual retention period:</strong> This configuration specifies a fixed period of time during which an object remains locked. Qumulo Core supports <em>compliance mode,</em> a type of retention period which prevents a protected object version from being overwritten or deleted by any user.</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Currently, Qumulo Core doesn’t support governance mode.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Currently, Qumulo Core doesn’t support governance mode.
+    </div>
 
     <p>To configure a lock with a manual compliance mode retention period, use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectRetention.html"><code class="language-plaintext highlighter-rouge">PutObjectRetention</code></a> S3 API action or specify the configuration in the headers of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html"><code class="language-plaintext highlighter-rouge">CreateMultipartUpload</code></a>, <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html"><code class="language-plaintext highlighter-rouge">CopyObject</code></a>, or <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html"><code class="language-plaintext highlighter-rouge">PutObject</code></a> S3 API action.</p>
   </li>
   <li>
     <p><strong>Lock with default retention period:</strong> This configuration is similar to that of a lock with a manual retention period. It ensures that the S3 bucket locks any new object added to it.</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Specifying a manual retention period while creating a new object in an S3 bucket overrides the default retention period.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Specifying a manual retention period while creating a new object in an S3 bucket overrides the default retention period.
+    </div>
   </li>
   <li>
     <p><strong>Legal hold:</strong> This configuration ensures that an object remains locked without an expiration date, until you remove the hold.</p>
@@ -2736,13 +2740,13 @@ $(document).ready(function() {
 
 <ul>
   <li>
-    <p><a href="https://docs.qumulo.com/rest-api-guide/s3-server-methods/s3_buckets.html"><code>GET /v1/s3/buckets</code></a>
- and <a href="https://docs.qumulo.com/rest-api-guide/s3-server-methods/s3_buckets.html"><code>POST /v1/s3/buckets</code></a>
+    <p><a href="https://docs.qumulo.com/rest-api-guide/s3-server-methods/s3_buckets.html"><code class="language-plaintext highlighter-rouge">GET /v1/s3/buckets</code></a>
+ and <a href="https://docs.qumulo.com/rest-api-guide/s3-server-methods/s3_buckets.html"><code class="language-plaintext highlighter-rouge">POST /v1/s3/buckets</code></a>
  REST APIs</p>
   </li>
   <li>
-    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_modify_bucket.html"><code>qq s3_modify_bucket</code></a>
- and <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_add_bucket.html"><code>qq s3_add_bucket</code></a>
+    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_modify_bucket.html"><code class="language-plaintext highlighter-rouge">qq s3_modify_bucket</code></a>
+ and <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_add_bucket.html"><code class="language-plaintext highlighter-rouge">qq s3_add_bucket</code></a>
  CLI commands</p>
   </li>
   <li>
@@ -2755,7 +2759,7 @@ $(document).ready(function() {
 
 <ul>
   <li>
-    <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_file_get_attr.html"><code>qq fs_file_get_attr</code></a>
+    <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_file_get_attr.html"><code class="language-plaintext highlighter-rouge">qq fs_file_get_attr</code></a>
  command and use the <code class="language-plaintext highlighter-rouge">--retrieve-file-lock</code> flag. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq fs_file_get_attr <span class="nt">--retrieve-file-lock</span> <span class="nt">--path</span> /demo

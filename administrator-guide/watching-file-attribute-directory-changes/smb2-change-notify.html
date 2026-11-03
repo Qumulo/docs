@@ -2697,14 +2697,16 @@ $(document).ready(function() {
    
      
      
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo provides REST access to the same <a href="how-file-system-change-notifications-work.html">change notification system</a> that backs SMB2 <code class="language-plaintext highlighter-rouge">CHANGE_NOTIFY</code>. Because the notification interface and types are easier to work with compared to SMB2, we recommend programming by using REST rather than SMB <code class="language-plaintext highlighter-rouge">CHANGE_NOTIFY</code>.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo provides REST access to the same <a href="how-file-system-change-notifications-work.html">change notification system</a> that backs SMB2 <code class="language-plaintext highlighter-rouge">CHANGE_NOTIFY</code>. Because the notification interface and types are easier to work with compared to SMB2, we recommend programming by using REST rather than SMB <code class="language-plaintext highlighter-rouge">CHANGE_NOTIFY</code>.
+</div>
 
-<p>Qumulo Core can watch for changes in file attributes and directory entries with a combination of SMB2 <a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-smb2/598f395a-e7a2-4cc8-afb3-ccb30dd2df7c"><code>CHANGE_NOTIFY</code></a> filters. Depending on the requested filter—and activity in the file system—an SMB client or an application remains current by receiving a variety of notifications.</p>
+<p>Qumulo Core can watch for changes in file attributes and directory entries with a combination of SMB2 <a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-smb2/598f395a-e7a2-4cc8-afb3-ccb30dd2df7c"><code class="language-plaintext highlighter-rouge">CHANGE_NOTIFY</code></a> filters. Depending on the requested filter—and activity in the file system—an SMB client or an application remains current by receiving a variety of notifications.</p>
 
 <p>Commonly, these requests help limit the amount of traffic required to keep a current cache of entries for an open directory. The requests also help operating system applications such as Windows Explorer and macOS Finder update automatically when changes take place. It is also possible to make requests programmatically. For more information about language bindings, see the Windows Protocol documentation, such as <a href="https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-readdirectorychangesw"><code class="language-plaintext highlighter-rouge">ReadDirectoryChangesW</code> function (<code class="language-plaintext highlighter-rouge">winbase.h</code>)</a> for Win32 and <a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.filesystemwatcher?view=net-7.0"><code class="language-plaintext highlighter-rouge">FileSystemWatcher</code> Class</a> for .NET.</p>
 
 <h2 id="completion-filter-types">Completion Filter Types</h2>
-<p>Each request uses a <em>completion filter</em> to specify the events to watch for. When events occur, the system batches them into a <code class="language-plaintext highlighter-rouge">NOTIFY</code> response that contains a list of <code class="language-plaintext highlighter-rouge">FILE_ACTION</code> items, each tagged with the names of changed entries. As long as the handle for the watched directory remains open, events queue up on the server, so that no events are lost between <code>NOTIFY</code> requests.</p>
+<p>Each request uses a <em>completion filter</em> to specify the events to watch for. When events occur, the system batches them into a <code class="language-plaintext highlighter-rouge">NOTIFY</code> response that contains a list of <code class="language-plaintext highlighter-rouge">FILE_ACTION</code> items, each tagged with the names of changed entries. As long as the handle for the watched directory remains open, events queue up on the server, so that no events are lost between <code class="language-plaintext highlighter-rouge">NOTIFY</code> requests.</p>
 
 <ul>
   <li><strong>Watching for Name Changes:</strong> A name change can include four event types.
@@ -2727,7 +2729,9 @@ $(document).ready(function() {
       <li>Security (the permissions or access control list for the file or directory)</li>
     </ul>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo doesn’t support mutating extended attributes (EA). If the system requests only the <code>FILE_NOTIFY_CHANGE_EA</code> filter, no events propagate.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo doesn’t support mutating extended attributes (EA). If the system requests only the <code class="language-plaintext highlighter-rouge">FILE_NOTIFY_CHANGE_EA</code> filter, no events propagate.
+    </div>
   </li>
 </ul>
 
@@ -2746,15 +2750,15 @@ $(document).ready(function() {
   <tr>
     <td>
       <p>The following filters watch for name changes (<code>readdir-without-attrs</code>).</p>      
-      <p>&bull;&nbsp;<code>FILE_NOTIFY_CHANGE_DIR_NAME</code></p>        
-      <p>&bull;&nbsp;<code>FILE_NOTIFY_CHANGE_FILE_NAME</code></p>  
+      <p>• <code>FILE_NOTIFY_CHANGE_DIR_NAME</code></p>        
+      <p>• <code>FILE_NOTIFY_CHANGE_FILE_NAME</code></p>  
     </td>
     <td>
-      <p>&bull;&nbsp;<code>FILE_ACTION_ADDED</code></p>
-      <p>&bull;&nbsp;<code>FILE_ACTION_MODIFIED</code></p>
-      <p>&bull;&nbsp;<code>FILE_ACTION_REMOVED</code></p>        
-      <p>&bull;&nbsp;<code>FILE_ACTION_RENAMED_NEW_NAME</code></p>
-      <p>&bull;&nbsp;<code>FILE_ACTION_RENAMED_OLD_NAME</code></p>
+      <p>• <code>FILE_ACTION_ADDED</code></p>
+      <p>• <code>FILE_ACTION_MODIFIED</code></p>
+      <p>• <code>FILE_ACTION_REMOVED</code></p>        
+      <p>• <code>FILE_ACTION_RENAMED_NEW_NAME</code></p>
+      <p>• <code>FILE_ACTION_RENAMED_OLD_NAME</code></p>
     </td>
     <td>
       <p>When Qumulo Core watches names, it notifies the client when there is an added, removed, or renamed file or directory in the watched directory.</p>
@@ -2767,14 +2771,14 @@ $(document).ready(function() {
   <tr>
     <td>
       <p>The following filters watch for metadata changes (<code>readdir-with-attrs</code>).</p>        
-      <p>&bull;&nbsp;<code>FILE_NOTIFY_CHANGE_ATTRIBUTES</code></p>
-      <p>&bull;&nbsp;<code>FILE_NOTIFY_CHANGE_CREATION</code></p>
-      <p>&bull;&nbsp;<code>FILE_NOTIFY_CHANGE_SECURITY</code></p>        
-      <p>&bull;&nbsp;<code>FILE_NOTIFY_CHANGE_SIZE</code></p>
-      <p>&bull;&nbsp;<code>FILE_NOTIFY_CHANGE_LAST_ACCESS</code></p>
-      <p>&bull;&nbsp;<code>FILE_NOTIFY_CHANGE_LAST_WRITE</code></p>
+      <p>• <code>FILE_NOTIFY_CHANGE_ATTRIBUTES</code></p>
+      <p>• <code>FILE_NOTIFY_CHANGE_CREATION</code></p>
+      <p>• <code>FILE_NOTIFY_CHANGE_SECURITY</code></p>        
+      <p>• <code>FILE_NOTIFY_CHANGE_SIZE</code></p>
+      <p>• <code>FILE_NOTIFY_CHANGE_LAST_ACCESS</code></p>
+      <p>• <code>FILE_NOTIFY_CHANGE_LAST_WRITE</code></p>
       
-      <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo doesn’t support mutating extended attributes (EA). If the system requests only the <code>FILE_NOTIFY_CHANGE_EA</code> filter, no events propagate.</div>
+      <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo doesn’t support mutating extended attributes (EA). If the system requests only the <code class="language-plaintext highlighter-rouge">FILE_NOTIFY_CHANGE_EA</code> filter, no events propagate.</div>
     
     </td>
     <td>
@@ -2789,14 +2793,14 @@ $(document).ready(function() {
   <tr>
     <td>
       <p>The following filters watch for alternative data stream (ADS) changes (<code>readdir-attrs-and-stream-names</code>).</p>      
-      <p>&bull;&nbsp;<code>FILE_NOTIFY_CHANGE_STREAM_NAME</code></p>
-      <p>&bull;&nbsp;<code>FILE_NOTIFY_CHANGE_STREAM_SIZE</code></p>
-      <p>&bull;&nbsp;<code>FILE_NOTIFY_CHANGE_STREAM_WRITE</code></p>
+      <p>• <code>FILE_NOTIFY_CHANGE_STREAM_NAME</code></p>
+      <p>• <code>FILE_NOTIFY_CHANGE_STREAM_SIZE</code></p>
+      <p>• <code>FILE_NOTIFY_CHANGE_STREAM_WRITE</code></p>
     </td>
     <td>
-      <p>&bull;&nbsp;<code>FILE_ACTION_ADDED_STREAM</code></p>
-      <p>&bull;&nbsp;<code>FILE_ACTION_REMOVED_STREAM</code></p>
-      <p>&bull;&nbsp;<code>FILE_ACTION_MODIFIED_STREAM</code></p>      
+      <p>• <code>FILE_ACTION_ADDED_STREAM</code></p>
+      <p>• <code>FILE_ACTION_REMOVED_STREAM</code></p>
+      <p>• <code>FILE_ACTION_MODIFIED_STREAM</code></p>      
     </td>
     <td>
       <p>Consider the following example command.</p>
@@ -2808,7 +2812,9 @@ $(document).ready(function() {
 </tbody>
 </table>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If you don’t supply a filter, the SMB server accepts the request but doesn’t send any notifications.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If you don’t supply a filter, the SMB server accepts the request but doesn’t send any notifications.
+</div>
 
 <h2 id="re-enumerating-changes-after-the-status_enum_dir-error">Re-Enumerating Changes after the STATUS_ENUM_DIR Error</h2>
 <p>If the SMB client can’t keep up with the notification stream from the server, the server returns the <code class="language-plaintext highlighter-rouge">STATUS_ENUM_DIR</code> error code to the client and stops sending notifications.</p>

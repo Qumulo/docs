@@ -983,7 +983,9 @@ $(document).ready(function() {
   <li>
     <p><a href="https://docs.docker.com/compose/install/linux/">Docker Compose Plugin</a></p>
 
-    <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Qumulo Alerts requires the Docker Compose Plugin to operate correctly.</div>
+    <div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Qumulo Alerts requires the Docker Compose Plugin to operate correctly.
+    </div>
   </li>
 </ul>
 
@@ -1015,7 +1017,7 @@ $(document).ready(function() {
     <p>To connect to a node in your cluster as the <code class="language-plaintext highlighter-rouge">root</code> user, use SSH and then run the <code class="language-plaintext highlighter-rouge">sudo -s</code> command.</p>
   </li>
   <li>
-    <p>To create a local user, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_add_user.html"><code>qq auth_add_user</code></a>
+    <p>To create a local user, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_add_user.html"><code class="language-plaintext highlighter-rouge">qq auth_add_user</code></a>
  command and specify a name and password.</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq auth_add_user <span class="nt">--name</span> QumuloAlerts <span class="se">\</span>
@@ -1055,7 +1057,9 @@ $(document).ready(function() {
       <li>
         <p>Enter <code class="language-plaintext highlighter-rouge">QumuloAlerts</code>.</p>
 
-        <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Because Qumulo Alerts verifies that it has sufficient role permissions before starting, this name is required.</div>
+        <div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Because Qumulo Alerts verifies that it has sufficient role permissions before starting, this name is required.
+        </div>
       </li>
       <li>
         <p>Enter a description, for example <code class="language-plaintext highlighter-rouge">This account lets an administrator restrict the privileges of the QumuloAlerts user.</code></p>
@@ -1066,58 +1070,58 @@ $(document).ready(function() {
     <p>For <strong>Privileges</strong>, click all of the following:</p>
 
     <ul class="improve-mobile collapse-scroll">
-  <li><code>ACCESS_TOKENS_READ</code>: View any access tokens present in the system</li>
-  <li><code>AD_READ</code>: Read Qumulo Active Directory Settings</li>
-  <li><code>ANALYTICS_READ</code>: Read cluster analytics</li>
-  <li><code>AUDIT_READ</code>: Read audit settings</li>
-  <li><code>CHECKSUMMING_READ</code>: View the status of checksumming</li>
-  <li><code>CLUSTER_READ</code>: View nodes, disks, protection status, and SSL certificate</li>
-  <li><code>DNS_READ</code>: Read DNS setting</li>
-  <li><code>ENCRYPTION_READ</code>: View the status of at rest encryption</li>
-  <li><code>FILE_READ_ACCESS</code>: Provides read access to all files regardless of permissions</li>
-  <li><code>FS_ATTRIBUTES_READ</code>: Read file system statistics</li>
-  <li><code>FS_DELETE_TREE_READ</code>: View the status of directory tree delete operations</li>
-  <li><code>FS_KEY_MANAGEMENT_READ</code>: Read and list public keys for various FS security features</li>
-  <li><code>FS_LOCK_READ</code>: View NLM and SMB locks and waiters</li>
-  <li><code>FS_SETTINGS_READ</code>: View file system permissions settings</li>
-  <li><code>FTP_READ</code>: View FTP status and settings</li>
-  <li><code>IDENTITY_MAPPING_READ</code>: Get AD/LDAP User Defined Mappings</li>
-  <li><code>IDENTITY_READ</code>: Use Qumulo's identity lookup and translation APIs</li>
-  <li><code>KERBEROS_KEYTAB_READ</code>: View Kerberos keytab</li>
-  <li><code>KERBEROS_SETTINGS_READ</code>: Read Kerberos settings</li>
-  <li><code>LDAP_READ</code>: View LDAP settings</li>
-  <li><code>LOCAL_GROUP_READ</code>: View local groups and members</li>
-  <li><code>LOCAL_USER_READ</code>: Get information about local users</li>
-  <li><code>METRICS_READ</code>: Get all metrics</li>
-  <li><code>NETWORK_IP_ALLOCATION_READ</code>: View network IP address allocations</li>
-  <li><code>NETWORK_READ</code>: Read network status and settings</li>
-  <li><code>NFS_EXPORT_READ</code>: Read network status and settings</li>
-  <li><code>NFS_SETTINGS_READ</code>: Internal-Only&lt;/code&gt;: View NFS server settings</li>
-  <li><code>QUOTA_READ</code>: View all file system quotas</li>
-  <li><code>REBOOT_READ</code>: View Reboot Status</li>
-  <li><code>RECONCILER_READ</code>: View reconciler status and metrics</li>
-  <li><code>REPLICATION_OBJECT_READ</code>: View object store relationship settings and status</li>
-  <li><code>REPLICATION_SOURCE_READ</code>: View source relationship settings and status</li>
-  <li><code>REPLICATION_TARGET_READ</code>: View target relationship settings and status</li>
-  <li><code>ROLE_READ</code>: View roles and assignments</li>
-  <li><code>S3_BUCKETS_READ</code>: View all S3 buckets present in the system</li>
-  <li><code>S3_CREDENTIALS_READ</code>: View any S3 access key present in the system</li>
-  <li><code>S3_SETTINGS_READ</code>: View S3 server settings</li>
-  <li><code>S3_UPLOADS_READ</code>: View all S3 uploads present in the system.</li>
-  <li><code>SAML_SETTINGS_READ</code>: View SAML integration settings</li>
-  <li><code>SMB_FILE_HANDLE_READ</code>: List open SMB file handles</li>
-  <li><code>SMB_SESSION_READ</code>: List logged on SMB sessions</li>
-  <li><code>SMB_SHARE_READ</code>: View configuration of SMB shares and SMB server settings</li>
-  <li><code>SNAPSHOT_CALCULATE_USED_CAPACITY_READ</code>: Recalculate capacity usage of snapshots</li>
-  <li><code>SNAPSHOT_DIFFERENCE_READ</code>: View the changes between snapshots</li>
-  <li><code>SNAPSHOT_POLICY_READ</code>: View snapshot policies and status</li>
-  <li><code>SNAPSHOT_READ</code>: List snapshots and view their status and cached capacity.</li>
-  <li><code>SUPPORT_READ</code>: View support configuration and status</li>
-  <li><code>TENANT_READ</code>: View any tenant information</li>
-  <li><code>TIME_READ</code>: View time and time settings</li>
-  <li><code>UNCONFIGURED_NODE_READ</code>: List unconfigured Qumulo nodes</li>
-  <li><code>UPGRADE_READ</code>: View upgrade configuration and status</li>
-</ul>
+      <li><code class="language-plaintext highlighter-rouge">ACCESS_TOKENS_READ</code>: View any access tokens present in the system</li>
+      <li><code class="language-plaintext highlighter-rouge">AD_READ</code>: Read Qumulo Active Directory Settings</li>
+      <li><code class="language-plaintext highlighter-rouge">ANALYTICS_READ</code>: Read cluster analytics</li>
+      <li><code class="language-plaintext highlighter-rouge">AUDIT_READ</code>: Read audit settings</li>
+      <li><code class="language-plaintext highlighter-rouge">CHECKSUMMING_READ</code>: View the status of checksumming</li>
+      <li><code class="language-plaintext highlighter-rouge">CLUSTER_READ</code>: View nodes, disks, protection status, and SSL certificate</li>
+      <li><code class="language-plaintext highlighter-rouge">DNS_READ</code>: Read DNS setting</li>
+      <li><code class="language-plaintext highlighter-rouge">ENCRYPTION_READ</code>: View the status of at rest encryption</li>
+      <li><code class="language-plaintext highlighter-rouge">FILE_READ_ACCESS</code>: Provides read access to all files regardless of permissions</li>
+      <li><code class="language-plaintext highlighter-rouge">FS_ATTRIBUTES_READ</code>: Read file system statistics</li>
+      <li><code class="language-plaintext highlighter-rouge">FS_DELETE_TREE_READ</code>: View the status of directory tree delete operations</li>
+      <li><code class="language-plaintext highlighter-rouge">FS_KEY_MANAGEMENT_READ</code>: Read and list public keys for various FS security features</li>
+      <li><code class="language-plaintext highlighter-rouge">FS_LOCK_READ</code>: View NLM and SMB locks and waiters</li>
+      <li><code class="language-plaintext highlighter-rouge">FS_SETTINGS_READ</code>: View file system permissions settings</li>
+      <li><code class="language-plaintext highlighter-rouge">FTP_READ</code>: View FTP status and settings</li>
+      <li><code class="language-plaintext highlighter-rouge">IDENTITY_MAPPING_READ</code>: Get AD/LDAP User Defined Mappings</li>
+      <li><code class="language-plaintext highlighter-rouge">IDENTITY_READ</code>: Use Qumulo's identity lookup and translation APIs</li>
+      <li><code class="language-plaintext highlighter-rouge">KERBEROS_KEYTAB_READ</code>: View Kerberos keytab</li>
+      <li><code class="language-plaintext highlighter-rouge">KERBEROS_SETTINGS_READ</code>: Read Kerberos settings</li>
+      <li><code class="language-plaintext highlighter-rouge">LDAP_READ</code>: View LDAP settings</li>
+      <li><code class="language-plaintext highlighter-rouge">LOCAL_GROUP_READ</code>: View local groups and members</li>
+      <li><code class="language-plaintext highlighter-rouge">LOCAL_USER_READ</code>: Get information about local users</li>
+      <li><code class="language-plaintext highlighter-rouge">METRICS_READ</code>: Get all metrics</li>
+      <li><code class="language-plaintext highlighter-rouge">NETWORK_IP_ALLOCATION_READ</code>: View network IP address allocations</li>
+      <li><code class="language-plaintext highlighter-rouge">NETWORK_READ</code>: Read network status and settings</li>
+      <li><code class="language-plaintext highlighter-rouge">NFS_EXPORT_READ</code>: Read network status and settings</li>
+      <li><code class="language-plaintext highlighter-rouge">NFS_SETTINGS_READ</code>: Internal-Only&lt;/code&gt;: View NFS server settings</li>
+      <li><code class="language-plaintext highlighter-rouge">QUOTA_READ</code>: View all file system quotas</li>
+      <li><code class="language-plaintext highlighter-rouge">REBOOT_READ</code>: View Reboot Status</li>
+      <li><code class="language-plaintext highlighter-rouge">RECONCILER_READ</code>: View reconciler status and metrics</li>
+      <li><code class="language-plaintext highlighter-rouge">REPLICATION_OBJECT_READ</code>: View object store relationship settings and status</li>
+      <li><code class="language-plaintext highlighter-rouge">REPLICATION_SOURCE_READ</code>: View source relationship settings and status</li>
+      <li><code class="language-plaintext highlighter-rouge">REPLICATION_TARGET_READ</code>: View target relationship settings and status</li>
+      <li><code class="language-plaintext highlighter-rouge">ROLE_READ</code>: View roles and assignments</li>
+      <li><code class="language-plaintext highlighter-rouge">S3_BUCKETS_READ</code>: View all S3 buckets present in the system</li>
+      <li><code class="language-plaintext highlighter-rouge">S3_CREDENTIALS_READ</code>: View any S3 access key present in the system</li>
+      <li><code class="language-plaintext highlighter-rouge">S3_SETTINGS_READ</code>: View S3 server settings</li>
+      <li><code class="language-plaintext highlighter-rouge">S3_UPLOADS_READ</code>: View all S3 uploads present in the system.</li>
+      <li><code class="language-plaintext highlighter-rouge">SAML_SETTINGS_READ</code>: View SAML integration settings</li>
+      <li><code class="language-plaintext highlighter-rouge">SMB_FILE_HANDLE_READ</code>: List open SMB file handles</li>
+      <li><code class="language-plaintext highlighter-rouge">SMB_SESSION_READ</code>: List logged on SMB sessions</li>
+      <li><code class="language-plaintext highlighter-rouge">SMB_SHARE_READ</code>: View configuration of SMB shares and SMB server settings</li>
+      <li><code class="language-plaintext highlighter-rouge">SNAPSHOT_CALCULATE_USED_CAPACITY_READ</code>: Recalculate capacity usage of snapshots</li>
+      <li><code class="language-plaintext highlighter-rouge">SNAPSHOT_DIFFERENCE_READ</code>: View the changes between snapshots</li>
+      <li><code class="language-plaintext highlighter-rouge">SNAPSHOT_POLICY_READ</code>: View snapshot policies and status</li>
+      <li><code class="language-plaintext highlighter-rouge">SNAPSHOT_READ</code>: List snapshots and view their status and cached capacity.</li>
+      <li><code class="language-plaintext highlighter-rouge">SUPPORT_READ</code>: View support configuration and status</li>
+      <li><code class="language-plaintext highlighter-rouge">TENANT_READ</code>: View any tenant information</li>
+      <li><code class="language-plaintext highlighter-rouge">TIME_READ</code>: View time and time settings</li>
+      <li><code class="language-plaintext highlighter-rouge">UNCONFIGURED_NODE_READ</code>: List unconfigured Qumulo nodes</li>
+      <li><code class="language-plaintext highlighter-rouge">UPGRADE_READ</code>: View upgrade configuration and status</li>
+    </ul>
   </li>
   <li>
     <p>Click <strong>Save</strong>.</p>
@@ -1151,8 +1155,8 @@ $(document).ready(function() {
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-As soon as you receive your bearer token, record it in a safe place. If you misplace the bearer token, you can't retrieve it at a later time. You must create a new access token.
+<div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br /> As soon as you receive your bearer token, record it in a safe place. If you misplace the bearer token, you can't retrieve it at a later time. You must create a new access token.
 </div>
 
 <p>For more information, see <a href="https://docs.qumulo.com/administrator-guide/connecting-to-external-services/creating-using-access-tokens-to-authenticate-external-services-qumulo-core.html">Using Qumulo Core Access Tokens</a> in the Qumulo On-Premises Administrator Guide.</p>
@@ -1171,7 +1175,9 @@ As soon as you receive your bearer token, record it in a safe place. If you misp
 <p>This section explains how to log in to Qumulo Alerts by using the Web UI or the <code class="language-plaintext highlighter-rouge">alerts</code> CLI.</p>
 
 <h3 id="to-log-in-to-the-qumulo-alerts-web-ui">To Log In to the Qumulo Alerts Web UI</h3>
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The Qumulo Alerts Web UI is available in Qumulo Alerts 7.2.1 (and higher).</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The Qumulo Alerts Web UI is available in Qumulo Alerts 7.2.1 (and higher).
+</div>
 
 <ol>
   <li>

@@ -2778,7 +2778,9 @@ $(document).ready(function() {
   <li>
     <p><strong>Domain Functional Level:</strong> Microsoft Windows Server 2008 R2 (and higher)</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core doesn’t support Samba Domain Controllers.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core doesn’t support Samba Domain Controllers.
+    </div>
   </li>
   <li>
     <p><strong>LDAP Servers:</strong> OpenLDAP for Group Expansion</p>
@@ -2858,12 +2860,16 @@ $(document).ready(function() {
   <li>
     <p><strong>Characters in a file path component (file or directory):</strong> 255</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Limited by protocol</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Limited by protocol
+    </div>
   </li>
   <li>
     <p><strong>Characters in a full path (path name):</strong> 32,760</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Limited by protocol</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Limited by protocol
+    </div>
   </li>
   <li>
     <p><strong>Hard links for each file:</strong> 1,024</p>
@@ -2880,7 +2886,9 @@ $(document).ready(function() {
   <li>
     <p><strong>Replication relationships:</strong> 100</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If a directory is more than 100 levels below the file system root directory, it isn’t possible to use it as a replication source.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If a directory is more than 100 levels below the file system root directory, it isn’t possible to use it as a replication source.
+    </div>
   </li>
   <li>
     <p><strong>Snapshots:</strong> 40,000</p>
@@ -2888,12 +2896,16 @@ $(document).ready(function() {
   <li>
     <p><strong>Quotas:</strong> 4.3 billion</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This approximate value of 2<sup>32</sup> is equivalent to the possible maximum of directories or the entire inode space.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This approximate value of 2<sup>32</sup> is equivalent to the possible maximum of directories or the entire inode space.
+    </div>
   </li>
   <li>
     <p><strong>S3 Bucket object versions:</strong> Unlimited</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Theoretically, 4,294,967,296</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Theoretically, 4,294,967,296
+    </div>
   </li>
 </ul>
 
@@ -2910,8 +2922,10 @@ $(document).ready(function() {
   <li>
     <p><strong>Groups:</strong> 16</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> When not using LDAP or Active Directory for <a target="_blank" href="https://www.ietf.org/rfc/rfc2307.txt">RFC 2307</a>
- attributes</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> When not using LDAP or Active Directory for <a target="_blank" href="https://www.ietf.org/rfc/rfc2307.txt">RFC 2307</a>
+ attributes
+    </div>
   </li>
   <li>
     <p><strong>NFSv4.1 connections for each node:</strong> 1,000</p>
@@ -2919,7 +2933,9 @@ $(document).ready(function() {
   <li>
     <p><strong>TCP sockets for each node:</strong> 8,000</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> A client configured by using the NFS <code class="language-plaintext highlighter-rouge">nconnect</code> mount option uses multiple sockets.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> A client configured by using the NFS <code class="language-plaintext highlighter-rouge">nconnect</code> mount option uses multiple sockets.
+    </div>
   </li>
 </ul>
 
@@ -2932,7 +2948,9 @@ $(document).ready(function() {
   <li>
     <p><strong>TCP sockets for each node:</strong> 5,000</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> A client configured with the SMB Multichannel feature uses multiple sockets.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> A client configured with the SMB Multichannel feature uses multiple sockets.
+    </div>
   </li>
 </ul>
 
@@ -2941,7 +2959,9 @@ $(document).ready(function() {
   <li>
     <p><strong>TCP sockets for each node:</strong> 8,000</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> By default, a maximum of 5,000 connections can execute actively.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> By default, a maximum of 5,000 connections can execute actively.
+    </div>
   </li>
   <li>
     <p><strong>Presigned URL expiration (<code class="language-plaintext highlighter-rouge">X-Amz-Expires</code>):</strong> 604,800 seconds (7 days)</p>

@@ -2419,7 +2419,7 @@ $(document).ready(function() {
    
      <p>For an overview of CNQ on GCP, its prerequisites, and limits, see <a href="how-cloud-native-qumulo-works.html">How Cloud Native Qumulo Works</a>.</p>
 
-<p>The <code>qumulo-terraform-gcp-&lt;x.y&gt;.zip</code> file (the version in the file name corresponds to the provisioning scripts, not to the Qumulo Core version) contains comprehensive Terraform configurations that let you deploy GCS buckets and then create a CNQ cluster with 1 or 3–24 instances that have fully elastic compute and capacity.</p>
+<p>The <code class="language-plaintext highlighter-rouge">qumulo-terraform-gcp-&lt;x.y&gt;.zip</code> file (the version in the file name corresponds to the provisioning scripts, not to the Qumulo Core version) contains comprehensive Terraform configurations that let you deploy GCS buckets and then create a CNQ cluster with 1 or 3–24 instances that have fully elastic compute and capacity.</p>
 
 <h2 id="prerequisites">Prerequisites</h2>
 <p>This section explains the prerequisites to deploying CNQ on GCP.</p>
@@ -2431,26 +2431,25 @@ $(document).ready(function() {
   <li>
     <p>To allow your Qumulo cluster to report metrics to Qumulo, your VPC must have outbound Internet connectivity through a Cloud NAT gateway. Your instance shares no file data during this process.</p>
 
-    <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-Connectivity to the following endpoints is required for a successful deployment of a Qumulo instance and quorum formation:
-<ul>
-  <li><code>api.missionq.qumulo.com</code></li>
-  <li><code>api.nexus.qumulo.com</code></li>
-</ul>
-</div>
+    <div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br /> Connectivity to the following endpoints is required for a successful deployment of a Qumulo instance and quorum formation:       <ul>
+        <li><code class="language-plaintext highlighter-rouge">api.missionq.qumulo.com</code></li>
+        <li><code class="language-plaintext highlighter-rouge">api.nexus.qumulo.com</code></li>
+      </ul>
+    </div>
   </li>
   <li>
     <p>To enable the following services for your Google Cloud project, use the <code class="language-plaintext highlighter-rouge">gcloud services enable</code> command:</p>
 
     <ul class="two-columns">
-  <li><code>cloudkms.googleapis.com</code></li>
-  <li><code>compute.googleapis.com</code></li>
-  <li><code>logging.googleapis.com</code></li>
-  <li><code>monitoring.googleapis.com</code></li>
-  <li><code>secretmanager.googleapis.com</code></li>
-  <li><code>storage-api.googleapis.com</code>: Required only if you store your Terraform state in GCS buckets</li>
-  <li><code>storage.googleapis.com</code></li>
-</ul>
+      <li><code class="language-plaintext highlighter-rouge">cloudkms.googleapis.com</code></li>
+      <li><code class="language-plaintext highlighter-rouge">compute.googleapis.com</code></li>
+      <li><code class="language-plaintext highlighter-rouge">logging.googleapis.com</code></li>
+      <li><code class="language-plaintext highlighter-rouge">monitoring.googleapis.com</code></li>
+      <li><code class="language-plaintext highlighter-rouge">secretmanager.googleapis.com</code></li>
+      <li><code class="language-plaintext highlighter-rouge">storage-api.googleapis.com</code>: Required only if you store your Terraform state in GCS buckets</li>
+      <li><code class="language-plaintext highlighter-rouge">storage.googleapis.com</code></li>
+    </ul>
   </li>
   <li>
     <p>To configure IAM, add the least-privilege role configurations appropriate for your organization to separate service accounts:</p>
@@ -2460,24 +2459,24 @@ Connectivity to the following endpoints is required for a successful deployment 
         <p><strong>Terraform Deployment Service Account</strong></p>
 
         <ul class="two-columns">
-  <li><code>roles/cloudkms.crypto<wbr />Key<wbr />Encrypter<wbr />Decrypter</code>: Required only if you use customer-managed encryption keys (CMEKs)</li>
-  <li><code>roles/compute.admin</code></li>
-  <li><code>roles/iam.serviceAccountUser</code></li>
-  <li><code>roles/logging.configWriter</code>: Required only for creating log sinks</li>
-  <li><code>roles/monitoring.editor</code>: Required only for creating dashboards and alerts</li>
-  <li><code>roles/resourcemanager.projectIamAdmin</code></li>
-  <li><code>roles/secretmanager.admin</code></li>
-  <li><code>roles/storage.admin</code></li>
-</ul>
+          <li><code class="language-plaintext highlighter-rouge">roles/cloudkms.cryptoKeyEncrypterDecrypter</code>: Required only if you use customer-managed encryption keys (CMEKs)</li>
+          <li><code class="language-plaintext highlighter-rouge">roles/compute.admin</code></li>
+          <li><code class="language-plaintext highlighter-rouge">roles/iam.serviceAccountUser</code></li>
+          <li><code class="language-plaintext highlighter-rouge">roles/logging.configWriter</code>: Required only for creating log sinks</li>
+          <li><code class="language-plaintext highlighter-rouge">roles/monitoring.editor</code>: Required only for creating dashboards and alerts</li>
+          <li><code class="language-plaintext highlighter-rouge">roles/resourcemanager.projectIamAdmin</code></li>
+          <li><code class="language-plaintext highlighter-rouge">roles/secretmanager.admin</code></li>
+          <li><code class="language-plaintext highlighter-rouge">roles/storage.admin</code></li>
+        </ul>
       </li>
       <li>
         <p><strong>Virtual Machine (Node) Service Account</strong></p>
 
         <ul>
-  <li><code>roles/compute.viewer</code>: Required only for instance metadata introspection</li>
-  <li><code>roles/secretmanager.secretAccessor</code></li>
-  <li><code>roles/storage.objectViewer</code></li>
-</ul>
+          <li><code class="language-plaintext highlighter-rouge">roles/compute.viewer</code>: Required only for instance metadata introspection</li>
+          <li><code class="language-plaintext highlighter-rouge">roles/secretmanager.secretAccessor</code></li>
+          <li><code class="language-plaintext highlighter-rouge">roles/storage.objectViewer</code></li>
+        </ul>
       </li>
     </ul>
   </li>
@@ -2508,26 +2507,26 @@ Connectivity to the following endpoints is required for a successful deployment 
 
 <ol>
   <li>
-    <p>To check whether the Provisioner is still running, use the <code>gcloud compute instances list</code> command and specify your deployment's name and the format. For example:</p>
+    <p>To check whether the Provisioner is still running, use the <code class="language-plaintext highlighter-rouge">gcloud compute instances list</code> command and specify your deployment's name and the format. For example:</p>
     <div class="highlight">
-      <pre class="highlight">gcloud compute instances \
+      <div class="language-plaintext highlight highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcloud compute instances \
   list --filter="mydeploymentname-ABCDE01EG2H" \
-  --format="table(name,zone,status)"</pre>
+  --format="table(name,zone,status)"</code></pre></div>      </div>
     </div>
   </li>
   <li>
     <p>Do one of the following:</p>
     <ul>
       <li>
-        <p>If the Provisioner's status is <code>RUNNING</code>, you can retrieve the last console logs for troubleshooting by using the <code>gcloud compute instances get-serial-port-output</code> command and specify your deployment's name and the availability zone. For example:</p>
+        <p>If the Provisioner's status is <code class="language-plaintext highlighter-rouge">RUNNING</code>, you can retrieve the last console logs for troubleshooting by using the <code class="language-plaintext highlighter-rouge">gcloud compute instances get-serial-port-output</code> command and specify your deployment's name and the availability zone. For example:</p>
         <div class="highlight">
-          <pre class="highlight">gcloud compute instances
+          <div class="language-plaintext highlight highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcloud compute instances
   get-serial-port-output "mydeploymentname-ABCDE01EG2H" \
   --zone us-central1-a \
-  --port 1 | tail -n 100</pre>
+  --port 1 | tail -n 100</code></pre></div>          </div>
         </div>
       </li>
-      <li>If the Provisioner's status is <code>TERMINATED</code>, you can check the Firestore database named after the unique deployment name of your persistent storage.</li>
+      <li>If the Provisioner's status is <code class="language-plaintext highlighter-rouge">TERMINATED</code>, you can check the Firestore database named after the unique deployment name of your persistent storage.</li>
     </ul>
   </li>
 </ol>
@@ -2554,7 +2553,9 @@ Connectivity to the following endpoints is required for a successful deployment 
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> gs://my-gcs-bucket-name/my-prefix/qumulo-core-install/7.6.0
 </code></pre></div>    </div>
 
-    <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Make a new subdirectory for every new release of Qumulo Core.</div>
+    <div class="alert alert-success" role="alert">
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Make a new subdirectory for every new release of Qumulo Core.
+    </div>
   </li>
   <li>
     <p>Copy <code class="language-plaintext highlighter-rouge">qumulo-core.deb</code> or <code class="language-plaintext highlighter-rouge">qumulo-core.rpm</code> into the directory named after the Qumulo Core version (in this example, it is <code class="language-plaintext highlighter-rouge">7.5.0</code>).</p>
@@ -2611,7 +2612,9 @@ Connectivity to the following endpoints is required for a successful deployment 
       <li>
         <p>To store the Terraform state locally, set the <code class="language-plaintext highlighter-rouge">tf_persistent_storage_backend_type</code> variable to <code class="language-plaintext highlighter-rouge">local</code>.</p>
 
-        <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> For production deployments, we don’t recommend storing the Terraform state locally. Instead, use the S3 backend and enable versioning on the state bucket. This configuration makes it possible to recover a previous state file if a particular state becomes corrupted or gets overwritten.</div>
+        <div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> For production deployments, we don’t recommend storing the Terraform state locally. Instead, use the S3 backend and enable versioning on the state bucket. This configuration makes it possible to recover a previous state file if a particular state becomes corrupted or gets overwritten.
+        </div>
       </li>
     </ul>
   </li>
@@ -2630,7 +2633,9 @@ Connectivity to the following endpoints is required for a successful deployment 
       <li>
         <p>Set the <code class="language-plaintext highlighter-rouge">soft_capacity_limit</code> to <code class="language-plaintext highlighter-rouge">500</code> (or higher).</p>
 
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This value specifies the initial capacity limit of your Qumulo clusters (in TB). It is possible to increase this limit at any time.</div>
+        <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This value specifies the initial capacity limit of your Qumulo clusters (in TB). It is possible to increase this limit at any time.
+        </div>
       </li>
     </ol>
   </li>
@@ -2642,10 +2647,10 @@ Connectivity to the following endpoints is required for a successful deployment 
     <p>To authenticate to your GCP account, use the <code class="language-plaintext highlighter-rouge">gcloud</code> CLI.</p>
   </li>
   <li>
-    <p>Run the <code>terraform apply</code> command.</p>
+    <p>Run the <code class="language-plaintext highlighter-rouge">terraform apply</code> command.</p>
   </li>
   <li>
-    <p>Review the Terraform execution plan and then enter <code>yes</code>.</p>
+    <p>Review the Terraform execution plan and then enter <code class="language-plaintext highlighter-rouge">yes</code>.</p>
 
     <p>Terraform creates resources according to the execution plan and displays:</p>
 
@@ -2676,14 +2681,16 @@ deployment_unique_name = "mydeploymentname-ABCDE01EG2H"
 <p>This section explains how to deploy compute and cache resources for a Qumulo cluster by using a Ubuntu image and the Qumulo Core <code class="language-plaintext highlighter-rouge">.deb</code> installer.</p>
 
 <h3 id="recommendations">Recommendations</h3>
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> We strongly recommend reviewing the following recommendations before beginning this process.</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> We strongly recommend reviewing the following recommendations before beginning this process.
+</div>
 
 <ul>
   <li>
     <p>Provisioning completes successfully when the Provisioner shuts down automatically. If the Provisioner doesn’t shut down, the provisioning cycle has failed and you must troubleshoot it. To monitor the Provisioner’s status, you can watch the Terraform operations in your terminal or <a href="#monitor-provisioner-status">monitor the Provisioner in the GCP Console</a>.</p>
   </li>
   <li>
-    <p>The first variable in the example configuration files in the <code class="language-plaintext highlighter-rouge">qumulo-terraform-gcp</code> repository is <code class="language-plaintext highlighter-rouge">deployment_name</code>. To help avoid conflicts between resource labels and other deployment components, Terraform ignores the <code>deployment_name</code> value and generates a <code>deployment_unique_name</code> variable. Terraform appends a random, alphanumeric value to the variable and then tags all future resources with this value. The <code>deployment_unique_name</code> variable never changes during subsequent Terraform deployments.</p>
+    <p>The first variable in the example configuration files in the <code class="language-plaintext highlighter-rouge">qumulo-terraform-gcp</code> repository is <code class="language-plaintext highlighter-rouge">deployment_name</code>. To help avoid conflicts between resource labels and other deployment components, Terraform ignores the <code class="language-plaintext highlighter-rouge">deployment_name</code> value and generates a <code class="language-plaintext highlighter-rouge">deployment_unique_name</code> variable. Terraform appends a random, alphanumeric value to the variable and then tags all future resources with this value. The <code class="language-plaintext highlighter-rouge">deployment_unique_name</code> variable never changes during subsequent Terraform deployments.</p>
   </li>
   <li>
     <p>If you plan to deploy multiple Qumulo clusters, give the <code class="language-plaintext highlighter-rouge">q_cluster_name</code> variable a unique name for each cluster.</p>
@@ -2702,7 +2709,9 @@ deployment_unique_name = "mydeploymentname-ABCDE01EG2H"
       <li>
         <p>To store the Terraform state locally, comment the sections that begin with <code class="language-plaintext highlighter-rouge">backend "gcp" {</code> and <code class="language-plaintext highlighter-rouge">data "terraform_remote_state" "persistent_storage_gcs" {</code> and uncomment the section that contains <code class="language-plaintext highlighter-rouge">backend = "local"</code>.</p>
 
-        <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> For production deployments, we don’t recommend storing the Terraform state locally. Instead, use the S3 backend and enable versioning on the state bucket. This configuration makes it possible to recover a previous state file if a particular state becomes corrupted or gets overwritten.</div>
+        <div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> For production deployments, we don’t recommend storing the Terraform state locally. Instead, use the S3 backend and enable versioning on the state bucket. This configuration makes it possible to recover a previous state file if a particular state becomes corrupted or gets overwritten.
+        </div>
       </li>
     </ul>
   </li>
@@ -2717,10 +2726,10 @@ deployment_unique_name = "mydeploymentname-ABCDE01EG2H"
     <p>For more information, see <code class="language-plaintext highlighter-rouge">README.pdf</code> in <code class="language-plaintext highlighter-rouge">qumulo-terraform-gcp-&lt;x.y&gt;.zip</code>.</p>
   </li>
   <li>
-    <p>Run the <code>terraform apply</code> command.</p>
+    <p>Run the <code class="language-plaintext highlighter-rouge">terraform apply</code> command.</p>
   </li>
   <li>
-    <p>Review the Terraform execution plan and then enter <code>yes</code>.</p>
+    <p>Review the Terraform execution plan and then enter <code class="language-plaintext highlighter-rouge">yes</code>.</p>
 
     <p>Terraform creates resources according to the execution plan and displays:</p>
 
@@ -2734,7 +2743,9 @@ deployment_unique_name = "mydeploymentname-ABCDE01EG2H"
       <li>
         <p>The floating IP addresses for your Qumulo cluster</p>
 
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You must specify the floating IP addresses in your <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file explicitly.</div>
+        <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You must specify the floating IP addresses in your <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file explicitly.
+        </div>
       </li>
       <li>
         <p>The primary (static) IP addresses for your Qumulo cluster</p>
@@ -2778,7 +2789,9 @@ qumulo_private_url_node1 = "https://203.0.113.5"
   <li>
     <p>To log in to your cluster’s Web UI, use the endpoint from the Terraform output and the username and password that you have configured.</p>
 
-    <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> If you change the administrative password for your cluster by using the Qumulo Core Web UI, <code class="language-plaintext highlighter-rouge">qq</code> CLI, or REST API after deployment, you must update your password in GCP Secrets Manager.</div>
+    <div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> If you change the administrative password for your cluster by using the Qumulo Core Web UI, <code class="language-plaintext highlighter-rouge">qq</code> CLI, or REST API after deployment, you must update your password in GCP Secrets Manager.
+    </div>
 
     <p>You can use the Qumulo Core Web UI to create and manage <a href="../nfs/creating-nfs-export.html">NFS exports</a>, <a href="../smb/creating-smb-share.html">SMB shares</a>, <a href="../snapshots/managing-snapshots.html">snapshots</a>, and <a href="../replicating-data/creating-managing-continuous-replication-relationship.html">continuous replication relationships</a>. You can also <a href="../authentication-qumulo-core/configuring-ad.html">join your cluster to Active Directory</a>, <a href="../authentication-qumulo-core/configuring-ldap.html">configure LDAP</a>, and <a href="../">perform many other operations</a>.</p>
   </li>
@@ -2791,7 +2804,9 @@ qumulo_private_url_node1 = "https://203.0.113.5"
 <p>This section describes the common actions you can perform on a CNQ cluster after deploying it.</p>
 
 <h3 id="adding-node-to-existing-cluster">Adding Nodes to an Existing Cluster</h3>
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> To add nodes to an existing cluster, the total node count must be greater than that of the current deployment.</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> To add nodes to an existing cluster, the total node count must be greater than that of the current deployment.
+</div>
 
 <ol>
   <li>Edit the <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file.
@@ -2800,9 +2815,9 @@ qumulo_private_url_node1 = "https://203.0.113.5"
       <li>Set the <code class="language-plaintext highlighter-rouge">q_cluster_version</code> to the Qumulo Core version that your cluster is running.</li>
     </ol>
   </li>
-  <li>Run the <code>terraform apply</code> command.</li>
+  <li>Run the <code class="language-plaintext highlighter-rouge">terraform apply</code> command.</li>
   <li>
-    <p>Review the Terraform execution plan and then enter <code>yes</code>.</p>
+    <p>Review the Terraform execution plan and then enter <code class="language-plaintext highlighter-rouge">yes</code>.</p>
 
     <p>Terraform displays an additional primary (static) IP for the new node. For example:</p>
 
@@ -2824,14 +2839,16 @@ qumulo_private_url_node1 = "https://203.0.113.5"
 
 <h4 id="step-1-remove-nodes-from-the-clusters-quorum">Step 1: Remove Nodes from the Cluster’s Quorum</h4>
 
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> You must perform this step while the cluster is running.</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> You must perform this step while the cluster is running.
+</div>
 
 <ol>
   <li>
     <p>Edit the <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file and set the value of <code class="language-plaintext highlighter-rouge">q_target_node_count</code> to a lower number of nodes.</p>
   </li>
   <li>
-    <p>Run the <code>terraform apply</code> command.</p>
+    <p>Run the <code class="language-plaintext highlighter-rouge">terraform apply</code> command.</p>
   </li>
   <li>
     <p>Review the nodes to be removed and then enter <code class="language-plaintext highlighter-rouge">yes</code>.</p>
@@ -2892,7 +2909,7 @@ qumulo_private_url_node1 = "https://203.0.113.10"
     </ol>
   </li>
   <li>
-    <p>Run the <code>terraform apply</code> command.</p>
+    <p>Run the <code class="language-plaintext highlighter-rouge">terraform apply</code> command.</p>
   </li>
   <li>
     <p>Review the resources to be removed and then enter <code class="language-plaintext highlighter-rouge">yes</code>.</p>
@@ -2956,9 +2973,9 @@ qumulo_private_url_node1 = "https://203.0.113.10"
 <ol>
   <li>Edit the <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file in the <code class="language-plaintext highlighter-rouge">persistent-storage</code> directory and set the <code class="language-plaintext highlighter-rouge">soft_capacity_limit</code> variable to a higher value.</li>
   <li>
-    <p>Run the <code>terraform apply</code> command.</p>
+    <p>Run the <code class="language-plaintext highlighter-rouge">terraform apply</code> command.</p>
 
-    <p>Review the Terraform execution plan and then enter <code>yes</code>.</p>
+    <p>Review the Terraform execution plan and then enter <code class="language-plaintext highlighter-rouge">yes</code>.</p>
 
     <p>Terraform creates new GCS buckets as necessary and displays:</p>
 
@@ -3001,9 +3018,9 @@ soft_capacity_limit = "1000 TB"
 <ol>
   <li>Navigate to the root directory of the <code class="language-plaintext highlighter-rouge">qumulo-terraform-gcp-&lt;x.y&gt;</code> repository.</li>
   <li>
-    <p>Run the <code>terraform apply</code> command.</p>
+    <p>Run the <code class="language-plaintext highlighter-rouge">terraform apply</code> command.</p>
 
-    <p>Review the Terraform execution plan and then enter <code>yes</code>.</p>
+    <p>Review the Terraform execution plan and then enter <code class="language-plaintext highlighter-rouge">yes</code>.</p>
 
     <p>Terraform updates the necessary IAM roles and GCS bucket policies, adds GCS buckets to the persistent storage list for the cluster, increases the soft capacity limit, and displays the <code class="language-plaintext highlighter-rouge">Apply complete!</code> message.</p>
 
@@ -3014,11 +3031,11 @@ soft_capacity_limit = "1000 TB"
 <h3 id="changing-the-gce-instance-type-of-your-cnq-on-gcp-cluster">Changing the GCE Instance Type of Your CNQ on GCP Cluster</h3>
 <p>You can change the GCE instance type, node count, and to convert your cluster from single-zone to multi-zone, or the other way around.</p>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>To minimize potential availability interruptions, you must perform the <em>cluster replacement procedure</em> as a two-quorum event. For example, if you stop the existing GCE instances by using the GCP Console and change the GCE instance types, two quorum events occur <em>for each node</em> and the read and write cache isn't optimized for the GCE instance type.</li>
-  <li>Performing the cluster replacement procedure ensures that the required GCE instance types are available in advance.</li>
-</ul>
+<div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+    <li>To minimize potential availability interruptions, you must perform the <em>cluster replacement procedure</em> as a two-quorum event. For example, if you stop the existing GCE instances by using the GCP Console and change the GCE instance types, two quorum events occur <em>for each node</em> and the read and write cache isn't optimized for the GCE instance type.</li>
+    <li>Performing the cluster replacement procedure ensures that the required GCE instance types are available in advance.</li>
+  </ul>
 </div>
 
 <p>Changing the GCE instance type of your CNQ on GCP cluster is a three-step process in which you create a new deployment in a new Terraform workspace and join the new GCE instances to a quorum, remove the existing GCE instances, and then clean up your GCS bucket policies.</p>
@@ -3036,7 +3053,9 @@ soft_capacity_limit = "1000 TB"
       <li>
         <p>Specify the value for the <code class="language-plaintext highlighter-rouge">gcp_zones</code> variable.</p>
 
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For multi-zone deployments, specify values as a comma-delimited list.</div>
+        <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For multi-zone deployments, specify values as a comma-delimited list.
+        </div>
       </li>
       <li>
         <p>Specify the value for the <code class="language-plaintext highlighter-rouge">q_instance_type</code> variable.</p>
@@ -3052,12 +3071,14 @@ soft_capacity_limit = "1000 TB"
       </li>
     </ol>
 
-    <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Leave the other variables unchanged.</div>
+    <div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Leave the other variables unchanged.
+    </div>
   </li>
   <li>
-    <p>Run the <code>terraform apply</code> command.</p>
+    <p>Run the <code class="language-plaintext highlighter-rouge">terraform apply</code> command.</p>
 
-    <p>Review the Terraform execution plan and then enter <code>yes</code>.</p>
+    <p>Review the Terraform execution plan and then enter <code class="language-plaintext highlighter-rouge">yes</code>.</p>
 
     <p>Terraform creates resources according to the execution plan and displays:</p>
 
@@ -3115,9 +3136,9 @@ qumulo_private_url_node1 = "https://203.0.113.10"
   <li>To select the previous Terraform workspace (for example, <code class="language-plaintext highlighter-rouge">default</code>), run the <code class="language-plaintext highlighter-rouge">terraform workspace select default</code> command.</li>
   <li>To ensure that the correct workspace is selected, run the <code class="language-plaintext highlighter-rouge">terraform workspace show</code> command.</li>
   <li>
-    <p>Run the <code>terraform destroy</code> command.</p>
+    <p>Run the <code class="language-plaintext highlighter-rouge">terraform destroy</code> command.</p>
 
-    <p>Review the Terraform execution plan and then enter <code>yes</code>.</p>
+    <p>Review the Terraform execution plan and then enter <code class="language-plaintext highlighter-rouge">yes</code>.</p>
 
     <p>Terraform displays the <code class="language-plaintext highlighter-rouge">Destroy complete!</code> message with a count of destroyed resources.</p>
 
@@ -3125,7 +3146,9 @@ qumulo_private_url_node1 = "https://203.0.113.10"
   </li>
 </ol>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The persistent storage deployment remains in its original Terraform workspace. You can perform the next cluster replacement procedure in the <code class="language-plaintext highlighter-rouge">default</code> workspace.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The persistent storage deployment remains in its original Terraform workspace. You can perform the next cluster replacement procedure in the <code class="language-plaintext highlighter-rouge">default</code> workspace.
+</div>
 
 <h4 id="step-3-clean-up-gcs-bucket-policies">Step 3: Clean Up GCS Bucket Policies</h4>
 <ol>
@@ -3133,9 +3156,9 @@ qumulo_private_url_node1 = "https://203.0.113.10"
   <li>To select your new Terraform workspace, run the <code class="language-plaintext highlighter-rouge">terraform workspace select &lt;my-new-workspace-name&gt;</code> command.</li>
   <li>Edit the <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file and set the <code class="language-plaintext highlighter-rouge">q_replacement_cluster</code> variable to <code class="language-plaintext highlighter-rouge">false</code>.</li>
   <li>
-    <p>Run the <code>terraform apply</code> command. This ensures that the GCS bucket policies have least privilege.</p>
+    <p>Run the <code class="language-plaintext highlighter-rouge">terraform apply</code> command. This ensures that the GCS bucket policies have least privilege.</p>
 
-    <p>Review the Terraform execution plan and then enter <code>yes</code>.</p>
+    <p>Review the Terraform execution plan and then enter <code class="language-plaintext highlighter-rouge">yes</code>.</p>
 
     <p>Terraform displays the <code class="language-plaintext highlighter-rouge">Apply complete!</code> message with a count of destroyed resources.</p>
   </li>
@@ -3144,27 +3167,27 @@ qumulo_private_url_node1 = "https://203.0.113.10"
 <h3 id="deleting-existing-cluster">Deleting an Existing Cluster</h3>
 <p>Deleting a cluster is a two-step process in which you delete your cluster’s compute and cache resources and then delete your persistent storage.</p>
 
-<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Caution</b><br />
-<ul>
-  <li>When you no longer need your cluster, you must back up all important data on the cluster safely before deleting the cluster.</li>
-  <li>When you delete your cluster's cache and computer resources, it isn't possible to access your persistent storage anymore.</li>
-</ul>
+<div class="alert alert-danger" role="alert">
+<em class="fa fa-exclamation-circle"></em> <strong>Caution</strong><br />   <ul>
+    <li>When you no longer need your cluster, you must back up all important data on the cluster safely before deleting the cluster.</li>
+    <li>When you delete your cluster's cache and computer resources, it isn't possible to access your persistent storage anymore.</li>
+  </ul>
 </div>
 
 <h4 id="step-1-to-delete-your-clusters-compute-and-cache-resources">Step 1: To Delete Your Cluster’s Compute and Cache Resources</h4>
 <ol>
   <li>After you back up your data safely, edit your <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file and set the <code class="language-plaintext highlighter-rouge">term_protection</code> variable to <code class="language-plaintext highlighter-rouge">false</code>.</li>
   <li>
-    <p>Run the <code>terraform apply</code> command.</p>
+    <p>Run the <code class="language-plaintext highlighter-rouge">terraform apply</code> command.</p>
 
-    <p>Review the Terraform execution plan and then enter <code>yes</code>.</p>
+    <p>Review the Terraform execution plan and then enter <code class="language-plaintext highlighter-rouge">yes</code>.</p>
 
     <p>Terraform displays the <code class="language-plaintext highlighter-rouge">Apply complete!</code> message with a count of changed resources.</p>
   </li>
   <li>
-    <p>Run the <code>terraform destroy</code> command.</p>
+    <p>Run the <code class="language-plaintext highlighter-rouge">terraform destroy</code> command.</p>
 
-    <p>Review the Terraform execution plan and then enter <code>yes</code>.</p>
+    <p>Review the Terraform execution plan and then enter <code class="language-plaintext highlighter-rouge">yes</code>.</p>
 
     <p>Terraform deletes all of your cluster’s compute and cache resources and displays the <code class="language-plaintext highlighter-rouge">Destroy complete!</code> message and a count of destroyed resources.</p>
   </li>
@@ -3175,16 +3198,16 @@ qumulo_private_url_node1 = "https://203.0.113.10"
   <li>Navigate to the <code class="language-plaintext highlighter-rouge">persistent-storage</code> directory.</li>
   <li>Edit your <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file and set the <code class="language-plaintext highlighter-rouge">prevent_destroy</code> parameter to <code class="language-plaintext highlighter-rouge">false</code>.</li>
   <li>
-    <p>Run the <code>terraform apply</code> command.</p>
+    <p>Run the <code class="language-plaintext highlighter-rouge">terraform apply</code> command.</p>
 
-    <p>Review the Terraform execution plan and then enter <code>yes</code>.</p>
+    <p>Review the Terraform execution plan and then enter <code class="language-plaintext highlighter-rouge">yes</code>.</p>
 
     <p>Terraform displays the <code class="language-plaintext highlighter-rouge">Apply complete!</code> message with a count of changed resources.</p>
   </li>
   <li>
-    <p>Run the <code>terraform destroy</code> command.</p>
+    <p>Run the <code class="language-plaintext highlighter-rouge">terraform destroy</code> command.</p>
 
-    <p>Review the Terraform execution plan and then enter <code>yes</code>.</p>
+    <p>Review the Terraform execution plan and then enter <code class="language-plaintext highlighter-rouge">yes</code>.</p>
 
     <p>Terraform deletes all of your cluster’s persistent storage and displays the <code class="language-plaintext highlighter-rouge">Destroy complete!</code> message and a count of destroyed resources.</p>
   </li>

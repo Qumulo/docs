@@ -2440,7 +2440,9 @@ $(document).ready(function() {
 
 <h2 id="reference-architecture">Reference Architecture</h2>
 
-<figure><span class="enlargeimage" data-url="/images/shared-images/admin-guides/getting-started/cloud-native-qumulo-on-aws-architecture.png"><a target="_blank" rel="noopener" href="/images/shared-images/admin-guides/getting-started/cloud-native-qumulo-on-aws-architecture.png"><img class="docimage" src="/images/shared-images/admin-guides/getting-started/cloud-native-qumulo-on-aws-architecture.png" alt="Cloud Native Qumulo on AWS Architecture Diagram" /></a></span></figure>
+<figure>
+<span class="enlargeimage" data-url="/images/shared-images/admin-guides/getting-started/cloud-native-qumulo-on-aws-architecture.png"><a target="_blank" rel="noopener" href="/images/shared-images/admin-guides/getting-started/cloud-native-qumulo-on-aws-architecture.png"><img class="docimage" src="/images/shared-images/admin-guides/getting-started/cloud-native-qumulo-on-aws-architecture.png" alt="Cloud Native Qumulo on AWS Architecture Diagram" /></a></span>
+</figure>
 
 <h2 id="deploying-cnq-on-aws">Deploying CNQ on AWS</h2>
 <p>This section outlines the process of configuring and deploying CNQ on AWS.</p>
@@ -2470,7 +2472,9 @@ $(document).ready(function() {
   <li>
     <p><strong>Elastic Block Storage (EBS) gp3 EBS Volume Optimization:</strong> When you use configurations with IOPS or throughput values greater than the defaults of 125 IOPS and 3000 MiB/s, you must ensure that your EBS volumes complete their optimization before you run high performance tasks.</p>
 
-    <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Because all volumes for a Qumulo cluster are tagged with the same deployment name, you can use the deployment name to filter volumes in the AWS Console.</div>
+    <div class="alert alert-success" role="alert">
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Because all volumes for a Qumulo cluster are tagged with the same deployment name, you can use the deployment name to filter volumes in the AWS Console.
+    </div>
   </li>
   <li>
     <p><strong>Amazon S3 Bucket Warm-Up:</strong> Because CNQ on AWS uses S3 buckets for backing storage, the S3 buckets are subject to throttling prior to partition scale-up.</p>

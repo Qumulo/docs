@@ -2697,11 +2697,11 @@ $(document).ready(function() {
    
      <p>After you <a href="partitioning-cluster-into-tenants.html">create tenants</a> on your Qumulo cluster, you can manage access for clients that connect to the cluster from the tenant’s network by enabling or disabling the management protocols for each tenant.</p>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>Access to a management protocol lets a client use the protocol to view and modify resources across the entire cluster, not only within the client's tenant.</li>
-  <li>If you disable a management protocol, you can still access your cluster by using a physical or remote console.</li>
-</ul>
+<div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+    <li>Access to a management protocol lets a client use the protocol to view and modify resources across the entire cluster, not only within the client's tenant.</li>
+    <li>If you disable a management protocol, you can still access your cluster by using a physical or remote console.</li>
+  </ul>
 </div>
 
 <h2 id="prerequisites">Prerequisites</h2>
@@ -2721,7 +2721,7 @@ $(document).ready(function() {
 
 <ul>
   <li>
-    <p>To enable REST API access, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_modify_tenant.html"><code>qq multitenancy_modify_tenant</code></a>
+    <p>To enable REST API access, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_modify_tenant.html"><code class="language-plaintext highlighter-rouge">qq multitenancy_modify_tenant</code></a>
  command, specify the tenant ID, and use the <code class="language-plaintext highlighter-rouge">--enable-rest-api</code> flag.</p>
   </li>
   <li>
@@ -2739,11 +2739,13 @@ $(document).ready(function() {
 <h2 id="enabling-and-disabling-web-ui-access">Enabling and Disabling Web UI Access</h2>
 <p>The Qumulo Core Web UI lets you manage clusters from a browser.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Enabling Web UI access doesn’t require enabling REST API access.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Enabling Web UI access doesn’t require enabling REST API access.
+</div>
 
 <ul>
   <li>
-    <p>To enable Web UI access, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_modify_tenant.html"><code>qq multitenancy_modify_tenant</code></a>
+    <p>To enable Web UI access, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_modify_tenant.html"><code class="language-plaintext highlighter-rouge">qq multitenancy_modify_tenant</code></a>
  command, specify the tenant ID, and use the <code class="language-plaintext highlighter-rouge">--enable-web-ui</code> flag.</p>
   </li>
   <li>
@@ -2761,11 +2763,13 @@ $(document).ready(function() {
 <h2 id="enabling-and-disabling-ssh-access">Enabling and Disabling SSH Access</h2>
 <p>SSH lets you view logs and use the <code class="language-plaintext highlighter-rouge">qq</code> CLI by using a client to connect to nodes in a cluster remotely.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Enabling SSH access doesn’t require enabling REST API access.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Enabling SSH access doesn’t require enabling REST API access.
+</div>
 
 <ul>
   <li>
-    <p>To enable SSH access, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_modify_tenant.html"><code>qq multitenancy_modify_tenant</code></a>
+    <p>To enable SSH access, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_modify_tenant.html"><code class="language-plaintext highlighter-rouge">qq multitenancy_modify_tenant</code></a>
  command, specify the tenant ID, and use the <code class="language-plaintext highlighter-rouge">--enable-ssh</code> flag.</p>
   </li>
   <li>
@@ -2785,7 +2789,7 @@ $(document).ready(function() {
 
 <ul>
   <li>
-    <p>To enable replication access, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_modify_tenant.html"><code>qq multitenancy_modify_tenant</code></a>
+    <p>To enable replication access, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_modify_tenant.html"><code class="language-plaintext highlighter-rouge">qq multitenancy_modify_tenant</code></a>
  command, specify the tenant ID, and use the <code class="language-plaintext highlighter-rouge">--enable-replication</code> flag.</p>
   </li>
   <li>

@@ -2419,11 +2419,11 @@ $(document).ready(function() {
    
      
      
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>Communication <em>between</em> nodes in a cluster must be possible on any port.</li>
-  <li>Active Directory authentication services require their own network port range. For an authoritative list, see <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772723%28v=ws.10%29?redirectedfrom=MSDN">Active Directory and Active Directory Domain Service Port Requirements</a> in the Windows Server 2008 R2 and Windows Server 2008 documentation.</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>Communication <em>between</em> nodes in a cluster must be possible on any port.</li>
+    <li>Active Directory authentication services require their own network port range. For an authoritative list, see <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772723%28v=ws.10%29?redirectedfrom=MSDN">Active Directory and Active Directory Domain Service Port Requirements</a> in the Windows Server 2008 R2 and Windows Server 2008 documentation.</li>
+  </ul>
 </div>
 
 <h2 id="networking-ports-for-inbound-connections">Networking Ports for Inbound Connections</h2>
@@ -2512,8 +2512,8 @@ $(document).ready(function() {
 
 <h2 id="networking-ports-for-outbound-connections">Networking Ports for Outbound Connections</h2>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-For cluster formation and inter-node communication, Qumulo Core requires unblocked IPv4 traffic in the local subnet.
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br /> For cluster formation and inter-node communication, Qumulo Core requires unblocked IPv4 traffic in the local subnet.
 </div>
 
 <table>
@@ -2543,7 +2543,7 @@ For cluster formation and inter-node communication, Qumulo Core requires unblock
           <code>rpcbind</code> or <code>portmapper</code> for NSM and NLM
         </p>
         <p>
-          <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Depending on the client <code>portmapper</code> configuration, Qumulo Core might require additional ports.</div>
+          <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Depending on the client <code class="language-plaintext highlighter-rouge">portmapper</code> configuration, Qumulo Core might require additional ports.</div>
 
         </p>
       </td>

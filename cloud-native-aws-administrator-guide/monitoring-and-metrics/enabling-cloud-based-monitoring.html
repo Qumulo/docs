@@ -2438,7 +2438,9 @@ $(document).ready(function() {
 <h2 id="how-cloud-based-monitoring-works">How Cloud-Based Monitoring Works</h2>
 <p>Cloud-Based Monitoring (which includes Nexus Monitoring functionality) sends telemetry data to Qumulo to allow the Qumulo Care Team to monitor your Qumulo cluster proactively. All connections are encrypted with TLS.</p>
 
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Cloud-Based Monitoring and Nexus Monitoring <em>don’t</em> collect file names, path names, client IP addresses, or account credentials.</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Cloud-Based Monitoring and Nexus Monitoring <em>don’t</em> collect file names, path names, client IP addresses, or account credentials.
+</div>
 
 <p>We use a proprietary application that aggregates diagnostic cluster data and alerts the Qumulo Care Team if an issue arises. Depending on the issue severity and cluster state, a member of the Qumulo Care Team reaches out. For more information, see:</p>
 
@@ -2522,28 +2524,27 @@ $(document).ready(function() {
 <p>Before you can use Cloud-Based Monitoring, you must enable the following destination hostnames for TCP on port 443:</p>
 
 <table>
-    <thead>
-      <tr>
-        <th style="width:40%">Hostname</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>api.missionq.qumulo.com</code></td>
-        <td>Cloud-Based Monitoring connectivity</td>
-      </tr>  
-      <tr>
-        <td><code>monitor.qumulo.com</code></td>
-        <td>Cloud-Based Monitoring log uploads</td>
-      </tr>
-      <tr>
-        <td><code>api.nexus.qumulo.com</code></td>
-        <td>Nexus Monitoring connectivity</td>
-      </tr>
-
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th style="width:40%">Hostname</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">api.missionq.qumulo.com</code></td>
+      <td>Cloud-Based Monitoring connectivity</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">monitor.qumulo.com</code></td>
+      <td>Cloud-Based Monitoring log uploads</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">api.nexus.qumulo.com</code></td>
+      <td>Nexus Monitoring connectivity</td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="enabling-cloud-based-monitoring">Enabling Cloud-Based Monitoring</h2>
 <p>You can enable Cloud-Based Monitoring by using the Qumulo Core Web UI or the <code class="language-plaintext highlighter-rouge">qq</code> CLI.</p>
@@ -2574,16 +2575,14 @@ $(document).ready(function() {
 <p>If your configuration is valid, the Qumulo Core Web UI shows the status <strong>Enabled | Connected</strong>.</p>
 
 <h3 id="to-enable-cloud-based-monitoring-by-using-the-qq-cli">To Enable Cloud-Based Monitoring by Using the qq CLI</h3>
-<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/set/set_monitoring_conf.html"><code>qq set_monitoring_conf</code></a>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/set/set_monitoring_conf.html"><code class="language-plaintext highlighter-rouge">qq set_monitoring_conf</code></a>
  command with the <code class="language-plaintext highlighter-rouge">--enabled</code> flag.</p>
 
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip</b><br />
-<ul>
-  <li>To disable Cloud-Based Monitoring, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/set/set_monitoring_conf.html"><code>qq set_monitoring_conf</code></a>
- command with the <code>--disabled</code> flag.</li>
-  <li>To check the status of Cloud-Based Monitoring, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/monitoring/monitoring_status_get.html"><code>qq monitoring_status_get</code></a>
- command.</li>
-</ul>
+<div class="alert alert-success" role="alert">
+<em class="fa fa-check-square-o"></em> <strong>Tip</strong><br />   <ul>
+    <li>To disable Cloud-Based Monitoring, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/set/set_monitoring_conf.html"><code class="language-plaintext highlighter-rouge">qq set_monitoring_conf</code></a> command with the <code class="language-plaintext highlighter-rouge">--disabled</code> flag.</li>
+    <li>To check the status of Cloud-Based Monitoring, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/monitoring/monitoring_status_get.html"><code class="language-plaintext highlighter-rouge">qq monitoring_status_get</code></a> command.</li>
+  </ul>
 </div>
 
 

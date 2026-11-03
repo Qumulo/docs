@@ -2471,7 +2471,9 @@ A::EVERYONE@:rtncy
 </ul>
 
 <h3 id="configuring-access-control-entries-aces-and-trustee-representation">Configuring Access Control Entries (ACEs) and Trustee Representation</h3>
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The following guidance applies to all <code class="language-plaintext highlighter-rouge">nfs4_acl</code> scenarios, including getting, editing, and setting the ACL.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The following guidance applies to all <code class="language-plaintext highlighter-rouge">nfs4_acl</code> scenarios, including getting, editing, and setting the ACL.
+</div>
 
 <p>There are four fields in the <code class="language-plaintext highlighter-rouge">nfs4_acl</code> syntax, separated by colons (<code class="language-plaintext highlighter-rouge">:</code>):</p>
 
@@ -2485,7 +2487,9 @@ A::EVERYONE@:rtncy
 <h4 id="ace-type">ACE Type</h4>
 <p>In <a href="#showing-the-acl-of-a-file">the example of the file ACL</a>, all three ACEs are set to <code class="language-plaintext highlighter-rouge">A</code> (allow).</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core supports only <code class="language-plaintext highlighter-rouge">A</code> and <code class="language-plaintext highlighter-rouge">D</code> ACEs.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core supports only <code class="language-plaintext highlighter-rouge">A</code> and <code class="language-plaintext highlighter-rouge">D</code> ACEs.
+</div>
 
 <ul>
   <li><strong>A:</strong> Allow</li>
@@ -2497,16 +2501,18 @@ A::EVERYONE@:rtncy
 <h4 id="additional-ace-flags">Additional ACE Flags</h4>
 <p>In <a href="#showing-the-acl-of-a-file">the example of the file ACL</a>, the second ACE has the flag <code class="language-plaintext highlighter-rouge">g</code> that shows that the ID in the following part represents a <em>group</em> (rather than a user).</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core doesn’t support The <code class="language-plaintext highlighter-rouge">S</code> and <code class="language-plaintext highlighter-rouge">F</code> flags.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core doesn’t support The <code class="language-plaintext highlighter-rouge">S</code> and <code class="language-plaintext highlighter-rouge">F</code> flags.
+</div>
 
 <h4 id="the-trustee-to-which-the-ace-applies">The Trustee to Which the ACE Applies</h4>
 <p>You can use the following trustee representation formats.</p>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>Be careful when you copy <em>local users and groups</em> across different Qumulo clusters manually. Aside from UIDs and GIDs, local users and groups are the only identity types in this table that aren't globally unique (because a user or group name represents them). If the destination cluster interprets the named user or group differently, the permissions you set might be unexpected.</li>
-  <li>This consideration doesn't apply to replication copies of local user or group trustees.</li>
-</ul>
+<div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+    <li>Be careful when you copy <em>local users and groups</em> across different Qumulo clusters manually. Aside from UIDs and GIDs, local users and groups are the only identity types in this table that aren't globally unique (because a user or group name represents them). If the destination cluster interprets the named user or group differently, the permissions you set might be unexpected.</li>
+    <li>This consideration doesn't apply to replication copies of local user or group trustees.</li>
+  </ul>
 </div>
 
 <table>
@@ -2614,7 +2620,9 @@ A::EVERYONE@:rtncy&lt;/code&gt;
   </li>
 </ul>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Because the <code class="language-plaintext highlighter-rouge">EVERYONE@</code> identifier includes the owner and group of a file and the <code class="language-plaintext highlighter-rouge">other</code> bits of a mode don’t apply to the owner or group, the permissions you grant to the <code class="language-plaintext highlighter-rouge">EVERYONE@</code> identifier are more broad than a mode’s <code class="language-plaintext highlighter-rouge">other</code> bits.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Because the <code class="language-plaintext highlighter-rouge">EVERYONE@</code> identifier includes the owner and group of a file and the <code class="language-plaintext highlighter-rouge">other</code> bits of a mode don’t apply to the owner or group, the permissions you grant to the <code class="language-plaintext highlighter-rouge">EVERYONE@</code> identifier are more broad than a mode’s <code class="language-plaintext highlighter-rouge">other</code> bits.
+</div>
 
 <h2 id="using-nfsv41-acls-with-smb-access-control">Using NFSv4.1 ACLs with SMB Access Control</h2>
 <p>NFSv4.1 ACLs are interoperable with SMB access controls. You can write and read by using both protocols. When you edit over NFS, the system represents SMB SIDs Kerberos principals.</p>

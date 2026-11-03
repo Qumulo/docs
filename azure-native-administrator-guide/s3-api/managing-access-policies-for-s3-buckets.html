@@ -2379,22 +2379,22 @@ $(document).ready(function() {
 
 <p>Managing access policies for S3 buckets in Qumulo clusters is similar to managing SMB share access, only with a larger set of items that you can specify in the <a href="#actions"><code class="language-plaintext highlighter-rouge">Actions</code></a> field of the <a href="#access-policy-statements">policy statement</a>.</p>
 
-<p>For information about working with access policies for S3 buckets and for <code class="language-plaintext highlighter-rouge">qq</code> CLI examples, see the following sections in the Qumulo <code>qq</code> CLI Command Guide:</p>
+<p>For information about working with access policies for S3 buckets and for <code class="language-plaintext highlighter-rouge">qq</code> CLI examples, see the following sections in the Qumulo <code class="language-plaintext highlighter-rouge">qq</code> CLI Command Guide:</p>
 <ul>
   <li>
-    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_get_bucket_policy.html"><code>qq s3_get_bucket_policy</code></a></p>
+    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_get_bucket_policy.html"><code class="language-plaintext highlighter-rouge">qq s3_get_bucket_policy</code></a></p>
   </li>
   <li>
-    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_set_bucket_policy.html"><code>qq s3_set_bucket_policy</code></a></p>
+    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_set_bucket_policy.html"><code class="language-plaintext highlighter-rouge">qq s3_set_bucket_policy</code></a></p>
   </li>
   <li>
-    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_modify_bucket_policy.html"><code>qq s3_modify_bucket_policy</code></a></p>
+    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_modify_bucket_policy.html"><code class="language-plaintext highlighter-rouge">qq s3_modify_bucket_policy</code></a></p>
   </li>
   <li>
-    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_delete_bucket_policy.html"><code>qq s3_delete_bucket_policy</code></a></p>
+    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_delete_bucket_policy.html"><code class="language-plaintext highlighter-rouge">qq s3_delete_bucket_policy</code></a></p>
   </li>
   <li>
-    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_bucket_policy_explain_access.html"><code>qq s3_bucket_policy_explain_access</code></a></p>
+    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_bucket_policy_explain_access.html"><code class="language-plaintext highlighter-rouge">qq s3_bucket_policy_explain_access</code></a></p>
   </li>
 </ul>
 
@@ -2426,8 +2426,8 @@ $(document).ready(function() {
 </ul>
 
 <h2 id="anonymous-access-to-s3-buckets">Anonymous Access to S3 Buckets</h2>
-<p>By default, S3 buckets in a Qumulo cluster are in a <em>no policy</em> state, in which Qumulo Core disallows unsigned, anonymous requests and the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_get_bucket_policy.html"><code>qq s3_get_bucket_policy</code></a>
- command returns <code>{}</code>.</p>
+<p>By default, S3 buckets in a Qumulo cluster are in a <em>no policy</em> state, in which Qumulo Core disallows unsigned, anonymous requests and the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_get_bucket_policy.html"><code class="language-plaintext highlighter-rouge">qq s3_get_bucket_policy</code></a>
+ command returns <code class="language-plaintext highlighter-rouge">{}</code>.</p>
 
 <p>In Qumulo Core, anonymous S3 connections use the system <code class="language-plaintext highlighter-rouge">Guest</code> account, which is restricted to read-only S3 API actions. To permit anonymous access in an S3 bucket policy, grant access to one of the following principals:</p>
 
@@ -2468,7 +2468,7 @@ $(document).ready(function() {
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<p>To retrieve an example policy file, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_get_bucket_policy.html"><code>qq s3_get_bucket_policy</code></a>
+<p>To retrieve an example policy file, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_get_bucket_policy.html"><code class="language-plaintext highlighter-rouge">qq s3_get_bucket_policy</code></a>
  command with the <code class="language-plaintext highlighter-rouge">--example</code> flag.</p>
 
 <p>The S3 bucket policy statement contains the following fields.</p>
@@ -2531,12 +2531,12 @@ $(document).ready(function() {
 <h2 id="actions">S3 API Action Permissions Supported in Qumulo Core</h2>
 <p>The following table describes the subset of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/list_amazons3.html#amazons3-actions-as-permissions">Amazon S3 API action permissions</a> which Qumulo Core access policies support.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>Certain permissions (such as <code>s3:AbortMultipartUpload</code>) grant permission to both S3 API and Qumulo REST API variants of an API call.</li>
-  <li>Certain permissions (such as <code>s3:GetBucketAcl</code>) grant permission to S3 APIs that are currently implemented partially within Qumulo Core.</li>
-  <li><code>s3:*</code> matches all S3 API actions.</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>Certain permissions (such as <code class="language-plaintext highlighter-rouge">s3:AbortMultipartUpload</code>) grant permission to both S3 API and Qumulo REST API variants of an API call.</li>
+    <li>Certain permissions (such as <code class="language-plaintext highlighter-rouge">s3:GetBucketAcl</code>) grant permission to S3 APIs that are currently implemented partially within Qumulo Core.</li>
+    <li><code class="language-plaintext highlighter-rouge">s3:*</code> matches all S3 API actions.</li>
+  </ul>
 </div>
 
 <table>

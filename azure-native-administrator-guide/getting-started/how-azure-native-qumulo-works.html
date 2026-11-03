@@ -2397,12 +2397,12 @@ $(document).ready(function() {
 <h3 id="anq-feature-comparison">Feature Comparison with Qumulo on Other Platforms</h3>
 <p>The following table compares the features of ANQ with those of Qumulo on other platforms.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<p>Because ANQ is a fully managed service, direct access to hosts with SSH is unavailable. To configure the service, you can use:</p>
-<ul>
-  <li><a href="https://docs.qumulo.com/administrator-guide/qq-cli/getting-started.html"><code>qq</code>CLI</a>&mdash;from a remote machine</li>
-  <li>Qumulo Core Web UI&mdash;by using any of the service's IP addresses</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <p>Because ANQ is a fully managed service, direct access to hosts with SSH is unavailable. To configure the service, you can use:</p>
+  <ul>
+    <li><a href="https://docs.qumulo.com/administrator-guide/qq-cli/getting-started.html"><code class="language-plaintext highlighter-rouge">qq</code>CLI</a>—from a remote machine</li>
+    <li>Qumulo Core Web UI—by using any of the service's IP addresses</li>
+  </ul>
 </div>
 
 <table>
@@ -2416,63 +2416,63 @@ $(document).ready(function() {
   <tbody>
     <tr>
       <td>Automatic deployment</td>
-      <td>&#10003;</td>
-      <td></td>
+      <td>✓</td>
+      <td> </td>
     </tr>
     <tr>
       <td>Automatic infrastructure replacement</td>
-      <td>&#10003;</td>
-      <td></td>
-    </tr>    
+      <td>✓</td>
+      <td> </td>
+    </tr>
     <tr>
       <td>Automatic updates</td>
-      <td>&#10003;</td>
-      <td></td>
+      <td>✓</td>
+      <td> </td>
     </tr>
     <tr>
       <td>Availability in Cloud Marketplace</td>
-      <td>&#10003;</td>
-      <td></td>
-    </tr>  
+      <td>✓</td>
+      <td> </td>
+    </tr>
     <tr>
       <td>Customer support</td>
-      <td>&#10003;</td>
-      <td>&#10003;</td>
+      <td>✓</td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>Integration with Azure Portal</td>
-      <td>&#10003;</td>
-      <td></td>
-    </tr>      
+      <td>✓</td>
+      <td> </td>
+    </tr>
     <tr>
       <td>Payment for preprovisioned file system capacity</td>
-      <td></td>
-      <td>&#10003;</td>
+      <td> </td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>Payment for used storage space only</td>
-      <td>&#10003;</td>
-      <td></td>
-    </tr>    
+      <td>✓</td>
+      <td> </td>
+    </tr>
     <tr>
       <td>Performance scales elastically at any capacity</td>
-      <td>&#10003;</td>
-      <td></td>
+      <td>✓</td>
+      <td> </td>
     </tr>
     <tr>
       <td>Performance scales with provisioned capacity</td>
-      <td></td>
-      <td>&#10003;</td>
+      <td> </td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>Qumulo Core features</td>
-      <td>&#10003;</td>
-      <td>&#10003;</td>      
+      <td>✓</td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>Simple and fast deployment under 15 Minutes</td>
-      <td>&#10003;</td>
-      <td></td>
+      <td>✓</td>
+      <td> </td>
     </tr>
   </tbody>
 </table>
@@ -2480,7 +2480,9 @@ $(document).ready(function() {
 <h3 id="floating-ip-addresses-and-elastic-scaling">Floating IP Addresses and Elastic Scaling</h3>
 <p>When ANQ adjusts cluster performance to meet workflow demands, Qumulo Core redistributes floating IP addresses across compute resources. This process maintains both availability and performance by working with the Microsoft Azure network control plane.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Acknowledgment of floating IP address reassignment can take between 1 and 30 seconds during the scaling process.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Acknowledgment of floating IP address reassignment can take between 1 and 30 seconds during the scaling process.
+</div>
 
 <h3 id="known-limits">Known Limits</h3>
 <ul>
@@ -2500,7 +2502,9 @@ $(document).ready(function() {
 <h2 id="using-cold-workloads">Using Azure Native Qumulo Cold Workloads</h2>
 <p>ANQ Cold uses Azure Blob Storage Cold Tier and has the same data integrity as ANQ Hot, a slightly lower (99% rather than 99.9%) guaranteed availability, and a sustained high performance and read throughput. ANQ Cold is designed for workloads in which the majority of the data is written once, read infrequently, and retained for a long time period.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> When Azure Blob Storage Cold Tier causes an availability event, it affects only the data within the files, not the metadata. While the data of a specific file might become unavailable, the file system and data within other files remain accessible.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> When Azure Blob Storage Cold Tier causes an availability event, it affects only the data within the files, not the metadata. While the data of a specific file might become unavailable, the file system and data within other files remain accessible.
+</div>
 
 <h2 id="deploying-azure-native-qumulo">Deploying Azure Native Qumulo</h2>
 <p>This section outlines the process of configuring and deploying ANQ. For detailed instructions, see <a href="deploying-instance-azure-native-qumulo.html">Deploying and Viewing Information about Your Azure Native Qumulo Instance</a>.</p>
@@ -2547,7 +2551,9 @@ $(document).ready(function() {
       </li>
     </ul>
 
-    <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To automate the creation of ANQ instances for long-term use cases and for short-term components of automated storage workflows, use <a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview">Azure Resource Manager</a>.</div>
+    <div class="alert alert-success" role="alert">
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To automate the creation of ANQ instances for long-term use cases and for short-term components of automated storage workflows, use <a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview">Azure Resource Manager</a>.
+    </div>
   </li>
 </ol>
 
@@ -2567,140 +2573,140 @@ $(document).ready(function() {
     <tr>
       <td>US (Arizona)</td>
       <td>West US 3</td>
-      <td>&#10003;</td>
-      <td>&#10003;</td>
+      <td>✓</td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>US (California)</td>
       <td>West US</td>
-      <td>&#10003;&#10033;</td>
-      <td>&#10003;&#10033;</td>
-    </tr>    
+      <td>✓✱</td>
+      <td>✓✱</td>
+    </tr>
     <tr>
       <td>US (Illinois)</td>
       <td>North Central US</td>
-      <td>&#10003;&#10033;</td>
-      <td>&#10003;&#10033;</td>
-    </tr>    
+      <td>✓✱</td>
+      <td>✓✱</td>
+    </tr>
     <tr>
       <td>US (Iowa)</td>
       <td>Central US</td>
-      <td>&#10003;</td>
-      <td>&#10003;</td>
+      <td>✓</td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>US (Texas)</td>
       <td>South Central US</td>
-      <td>&#10003;</td>
-      <td>&#10003;</td>
-    </tr>    
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
     <tr>
       <td>US (Virginia)</td>
       <td>East US</td>
-      <td>&#10003;</td>
-      <td>&#10003;</td>
+      <td>✓</td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>US (Virginia)</td>
       <td>East US 2</td>
-      <td>&#10003;</td>
-      <td>&#10003;</td>
+      <td>✓</td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>US (Washington)</td>
       <td>West US 2</td>
-      <td>&#10003;</td>
-      <td>&#10003;</td>
+      <td>✓</td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>Canada (Toronto)</td>
       <td>Canada Central</td>
-      <td>&#10003;</td>
-      <td>&#10003;</td>
+      <td>✓</td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>Europe (Frankfurt)</td>
       <td>Germany West Central</td>
-      <td>&#10003;</td>
-      <td>&#10003;</td>
+      <td>✓</td>
+      <td>✓</td>
     </tr>
     <tr>
-      <td>Europe (G&auml;vle)</td>
+      <td>Europe (Gävle)</td>
       <td>Sweden Central</td>
-      <td>&#10003;</td>
-      <td>&#10003;</td>
+      <td>✓</td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>Europe (Ireland)</td>
       <td>North Europe</td>
-      <td>&#10003;</td>
-      <td>&#10003;</td>
+      <td>✓</td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>Europe (Netherlands)</td>
       <td>West Europe</td>
-      <td>&#10003;</td>
-      <td>&#10003;</td>
-    </tr>    
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
     <tr>
       <td>Europe (Oslo)</td>
       <td>Norway East</td>
-      <td>&#10003;</td>
-      <td>&#10003;</td>
-    </tr>    
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
     <tr>
       <td>Europe (Paris)</td>
       <td>France Central</td>
-      <td>&#10003;</td>
-      <td>&#10003;</td>
+      <td>✓</td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>Europe (Zurich)</td>
       <td>Switzerland North</td>
-      <td>&#10003;</td>
-      <td>&#10003;</td>
+      <td>✓</td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>UK (London)</td>
       <td>UK South</td>
-      <td>&#10003;</td>
-      <td>&#10003;</td>
+      <td>✓</td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>Australia (New South Wales)</td>
       <td>Australia East</td>
-      <td>&#10003;</td>
-      <td>&#10003;</td>
+      <td>✓</td>
+      <td>✓</td>
     </tr>
     <tr>
-      <td>Brazil (S&atilde;o Paulo State)</td>
+      <td>Brazil (São Paulo State)</td>
       <td>Brazil South</td>
-      <td>&#10003;</td>
-      <td>&#10003;</td>
+      <td>✓</td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>India (Pune)</td>
       <td>Central India</td>
-      <td>&#10003;</td>
-      <td>&#10003;</td>
+      <td>✓</td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>Japan (Tokyo, Saitama)</td>
       <td>Japan East</td>
-      <td>&#10003;</td>
-      <td>&#10003;</td>
+      <td>✓</td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>Korea (Seoul)</td>
       <td>Korea Central</td>
-      <td>&#10003;</td>
-      <td>&#10003;</td>
+      <td>✓</td>
+      <td>✓</td>
     </tr>
     <tr>
       <td>UAE (Dubai)</td>
       <td>UAE North</td>
-      <td>&#10003;</td>
-      <td>&#10003;</td>
+      <td>✓</td>
+      <td>✓</td>
     </tr>
   </tbody>
 </table>
@@ -2708,7 +2714,9 @@ $(document).ready(function() {
 <h2 id="usage-billing-and-metering-for-azure-native-qumulo">Usage Billing and Metering for Azure Native Qumulo</h2>
 <p>Once an hour, every deployed ANQ Hot and Cold instance reports a metering event to Azure Marketplace.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For more information about pay-as-you-go price estimates, see the <a href="https://azure.qumulo.com/calculator">Pricing and Performance Calculator</a>.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For more information about pay-as-you-go price estimates, see the <a href="https://azure.qumulo.com/calculator">Pricing and Performance Calculator</a>.
+</div>
 
 <h3 id="billing-for-anq-cold-instances">Billing for ANQ Cold Instances</h3>
 <p>ANQ Cold instances:</p>
@@ -2744,7 +2752,9 @@ $(document).ready(function() {
   </li>
 </ul>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Because the throughput of an instance can vary significantly within an hour, Qumulo Core samples the used throughput every minute, rounds the computed throughput value to 1 GBps, and then multiplies it by the used capacity during this minute.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Because the throughput of an instance can vary significantly within an hour, Qumulo Core samples the used throughput every minute, rounds the computed throughput value to 1 GBps, and then multiplies it by the used capacity during this minute.
+</div>
 
 
    

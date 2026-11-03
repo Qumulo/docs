@@ -2380,28 +2380,28 @@ $(document).ready(function() {
 
 <p>This section explains the differences between the levels of detail of audit logs in <a href="#details-in-syslog-csv-format"><code class="language-plaintext highlighter-rouge">syslog</code> CSV</a>, <a href="#details-in-syslog-json-format"><code class="language-plaintext highlighter-rouge">syslog</code> JSON</a>, and <a href="#details-in-cloudwatch-json-format">CloudWatch JSON</a> formats. (In general, the <code class="language-plaintext highlighter-rouge">syslog</code> CSV and CloudWatch JSON formats contain an identical number of fields, some named differently, while the <code class="language-plaintext highlighter-rouge">syslog</code> JSON format has additional audit logging information.)</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>A Qumulo cluster uses the static IP address assigned to each of its nodes to send audit logs to the audit log server.</li>
-  <li>
-    <p>Qumulo Core doesn't parse, analyze, index, or visualize the data. For more information, see the following articles on Qumulo Care:</p>
-    <ul>
-      <li><a target="_blank" href="https://care.qumulo.com/s/article/Sending-Audit-Logs-for-a-Qumulo-Cloud-Cluster-to-CloudWatch">Sending Audit Logs for a Qumulo Cloud Cluster to Amazon CloudWatch</a></li>
-      <li><a target="_blank" href="https://care.qumulo.com/s/article/Qumulo-Core-Audit-Logging-with-Elasticsearch">Using Qumulo Core Audit Logging with Elasticsearch</a></li>
-      <li><a target="_blank" href="https://care.qumulo.com/s/article/Using-Splunk-with-Qumulo-Core-Audit-Logging">Using Splunk with Qumulo Core Audit Logging</a></li>
-    </ul>
-  </li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>A Qumulo cluster uses the static IP address assigned to each of its nodes to send audit logs to the audit log server.</li>
+    <li>
+      <p>Qumulo Core doesn't parse, analyze, index, or visualize the data. For more information, see the following articles on Qumulo Care:</p>
+      <ul>
+        <li><a target="_blank" href="https://care.qumulo.com/s/article/Sending-Audit-Logs-for-a-Qumulo-Cloud-Cluster-to-CloudWatch">Sending Audit Logs for a Qumulo Cloud Cluster to Amazon CloudWatch</a></li>
+        <li><a target="_blank" href="https://care.qumulo.com/s/article/Qumulo-Core-Audit-Logging-with-Elasticsearch">Using Qumulo Core Audit Logging with Elasticsearch</a></li>
+        <li><a target="_blank" href="https://care.qumulo.com/s/article/Using-Splunk-with-Qumulo-Core-Audit-Logging">Using Splunk with Qumulo Core Audit Logging</a></li>
+      </ul>
+    </li>
+  </ul>
 </div>
 
 <h2 id="details-in-syslog-csv-format">Details Included in the Default syslog CSV Format</h2>
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>Because the user ID, path fields, and secondary path fields can contain characters that must be escaped (such as quotation marks and commas), you must enclose these fields in quotation marks.</li>
-  <li>Qumulo Core system strips out the <code>\n</code> and <code>\r</code> newline characters from the user ID, file path, and secondary file path fields.</li>
-  <li>Both <code>syslog</code> CSV and <code>syslog</code> JSON formats deduplicate repeated file reads. However, for metadata changes&mdash;such as modifications to an access-control list (ACL)&mdash;only the <code>syslog</code> CSV deduplicates repeated operations.</li>
-  <li>Unlike the <a href="#details-in-syslog-json-format">`syslog` JSON format</a>, the `syslog` CSV format has only values (no keys) and the fields are empty when unused. The following table helps explain the fields and their possible values.</li> 
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>Because the user ID, path fields, and secondary path fields can contain characters that must be escaped (such as quotation marks and commas), you must enclose these fields in quotation marks.</li>
+    <li>Qumulo Core system strips out the <code class="language-plaintext highlighter-rouge">\n</code> and <code class="language-plaintext highlighter-rouge">\r</code> newline characters from the user ID, file path, and secondary file path fields.</li>
+    <li>Both <code class="language-plaintext highlighter-rouge">syslog</code> CSV and <code class="language-plaintext highlighter-rouge">syslog</code> JSON formats deduplicate repeated file reads. However, for metadata changes—such as modifications to an access-control list (ACL)—only the <code class="language-plaintext highlighter-rouge">syslog</code> CSV deduplicates repeated operations.</li>
+    <li>Unlike the <a href="#details-in-syslog-json-format">`syslog` JSON format</a>, the `syslog` CSV format has only values (no keys) and the fields are empty when unused. The following table helps explain the fields and their possible values.</li>
+  </ul>
 </div>
 
 <p>By default, Qumulo Core formats audit log messages in the <code class="language-plaintext highlighter-rouge">syslog</code> CSV format, prefaced by the date, time, and the name of the machine that issues the operation. The <code class="language-plaintext highlighter-rouge">syslog</code> CSV format includes the following fields in the following order within the log message body.</p>
@@ -2497,7 +2497,7 @@ $(document).ready(function() {
     <td>File Path</td>
     <td>
       The path to the file on which the system performed an operation.
-      <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For files accessed by using a snapshot, the system prefixes the path with <code>/.snapshot</code>. (This is the same path prefix that the system uses to access snapshotted files through NFSv3 and SMB.)</div>
+      <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For files accessed by using a snapshot, the system prefixes the path with <code class="language-plaintext highlighter-rouge">/.snapshot</code>. (This is the same path prefix that the system uses to access snapshotted files through NFSv3 and SMB.)</div>
 </td>
     <td>String in quotation marks</td>
   </tr>
@@ -2524,7 +2524,9 @@ Jun 6 14:55:24 my-machine qumulo 203.0.113.0,"system",internal,remote_syslog_shu
 <h2 id="details-in-syslog-json-format">Details Included in the syslog JSON Format</h2>
 <p>You can configure Qumulo Core to format audit log messages in the <code class="language-plaintext highlighter-rouge">syslog</code> JSON format. The fields in this format are similar to <a href="#details-in-syslog-csv-format">the fields that the <code class="language-plaintext highlighter-rouge">syslog</code> CSV format provides</a>, with the following exceptions.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The <code class="language-plaintext highlighter-rouge">syslog</code> JSON format isn’t available in the Qumulo Core Web UI.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The <code class="language-plaintext highlighter-rouge">syslog</code> JSON format isn’t available in the Qumulo Core Web UI.
+</div>
 
 <table>
   <tr>
@@ -2588,9 +2590,12 @@ Jun 6 14:55:24 my-machine qumulo 203.0.113.0,"system",internal,remote_syslog_shu
 
 <p>For example:</p>
 
-<div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> The following example is too wide for the page. To explore this example, click <strong>Reading Mode</strong> or scroll the example horizontally.</div>
+<div class="alert alert-success" role="alert">
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> The following example is too wide for the page. To explore this example, click <strong>Reading Mode</strong> or scroll the example horizontally.
+</div>
 
-<div class="highlight"><pre class="highlight wide-example">Jun 6 14:52:28 my-machine qumulo {"user_id": {"auth_id": "1", "sid": "S-1-5-21-9876543210-5678901234-1234567890-1", "name": "system"}, "user_ip": "203.0.113.0", "protocol": "internal", "operation": "remote_syslog_startup", "status": "ok", "details": {}}
+<div class="highlight">
+  <div class="language-plaintext highlight wide-example highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Jun 6 14:52:28 my-machine qumulo {"user_id": {"auth_id": "1", "sid": "S-1-5-21-9876543210-5678901234-1234567890-1", "name": "system"}, "user_ip": "203.0.113.0", "protocol": "internal", "operation": "remote_syslog_startup", "status": "ok", "details": {}}
 Jun 6 14:52:28 my-machine qumulo {"user_id": {"sid": "S-1-5-21-9876543210-5678901234-1234567890-500", "auth_id": "500", "name": "AD\alice"}, "user_ip": "203.0.113.0", "protocol": "api", "operation": "audit_modify_syslog_config", "status": "ok", "details": {"second_extra_name": "", "extra_name": ""}}
 Jun 6 14:52:40 my-machine qumulo {"user_id": {"auth_id": "500", "name": "AD\alice", "sid": "S-1-5-21-9876543210-5678901234-1234567890-500"}, "user_ip": "203.0.113.0", "protocol": "api", "operation": "rest_login", "status": "ok", "details": {"second_extra_name": "", "extra_name": ""}}
 Jun 6 14:53:22 my-machine qumulo {"user_id": {"sid": "S-1-5-21-9876543210-5678901234-1234567890-500", "name": "AD\alice", "auth_id": "500"}, "user_ip": "203.0.113.0", "protocol": "api", "operation": "fs_read_metadata", "status": "ok", "details": {"path": "/my_file", "file_id": "4"}}
@@ -2598,35 +2603,41 @@ Jun 6 14:53:22 my-machine qumulo {"user_id": {"name": "AD\alice", "sid": "S-1-5-
 Jun 6 14:53:22 my-machine qumulo {"user_id": {"auth_id": "500", "sid": "S-1-5-21-9876543210-5678901234-1234567890-500", "name": "AD\alice"}, "user_ip": "203.0.113.0", "protocol": "api", "operation": "fs_write_data", "status": "ok", "details": {"path": "/my_file", "size": 261456, "file_id": "4", "offset": 0, "file_size": 261456}}
 Jun 6 14:54:05 my-machine qumulo {"user_id": {"name": "AD\alice", "auth_id": "500", "sid": "S-1-5-21-9876543210-5678901234-1234567890-500"}, "user_ip": "203.0.113.0", "protocol": "api", "operation": "fs_rename", "status": "fs_entry_exists_error", "details": {"path": "/my_file", "target": "/another_file", "file_id": "4"}}
 Jun 6 14:55:24 my-machine qumulo {"user_id": {"sid": "S-1-5-21-9876543210-5678901234-1234567890-500", "auth_id": "500", "name": "AD\alice"}, "user_ip": "203.0.113.0", "protocol": "api", "operation": "begin_audit_modify_syslog_config", "status": "ok", "details": {"second_extra_name": "", "extra_name": ""}}
-Jun 6 14:55:24 my-machine qumulo {"user_id": {"auth_id": "1", "sid": "S-1-5-21-9876543210-5678901234-1234567890-1", "name": "system"}, "user_ip": "203.0.113.0", "protocol": "internal", "operation": "remote_syslog_shutdown", "status": "ok", "details": {}}</pre></div>
+Jun 6 14:55:24 my-machine qumulo {"user_id": {"auth_id": "1", "sid": "S-1-5-21-9876543210-5678901234-1234567890-1", "name": "system"}, "user_ip": "203.0.113.0", "protocol": "internal", "operation": "remote_syslog_shutdown", "status": "ok", "details": {}}</code></pre></div>  </div>
+</div>
 
 <h2 id="details-in-cloudwatch-json-format">Details Included in the Amazon CloudWatch JSON Format</h2>
 <p>You can configure Qumulo Core to format audit log messages in the Amazon CloudWatch JSON format.</p>
 
-<div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To download the audit log from the CloudWatch console, on the left navigation panel click <strong>Logs &gt; Log groups</strong>, click a log group, and then on the <strong>Log events</strong> page click <strong>Actions &gt; Copy search results (ASCII)</strong>.</div>
+<div class="alert alert-success" role="alert">
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To download the audit log from the CloudWatch console, on the left navigation panel click <strong>Logs &gt; Log groups</strong>, click a log group, and then on the <strong>Log events</strong> page click <strong>Actions &gt; Copy search results (ASCII)</strong>.
+</div>
 
 <p>Rather than preface each line of CSV or JSON with the date and time, CloudWatch creates an ASCII table, which contains Unix timestamps in its first column. The second column contains the fields that are similar to the fields that both <a href="#details-in-syslog-csv-format">the <code class="language-plaintext highlighter-rouge">syslog</code> CSV format</a> and <a href="#details-in-syslog-json-format">the <code class="language-plaintext highlighter-rouge">syslog</code> JSON format</a> provide, with the following exceptions.</p>
 
 <ul>
   <li>
-    <p>The <code>result</code> field replaces the Operation Status or <code>status</code> field.</p>
+    <p>The <code class="language-plaintext highlighter-rouge">result</code> field replaces the Operation Status or <code class="language-plaintext highlighter-rouge">status</code> field.</p>
   </li>
   <li>
-    <p>The <code>object_id</code> field replaces the File ID <code>file_id</code> field.</p>
+    <p>The <code class="language-plaintext highlighter-rouge">object_id</code> field replaces the File ID <code class="language-plaintext highlighter-rouge">file_id</code> field.</p>
   </li>
   <li>
-    <p>The <code>path_1</code> field replaces the File Path or <code>path</code> field.</p>
+    <p>The <code class="language-plaintext highlighter-rouge">path_1</code> field replaces the File Path or <code class="language-plaintext highlighter-rouge">path</code> field.</p>
   </li>
   <li>
-    <p>The <code>path_2</code> field replaces the Target File Path or <code>target</code> field.</p>
+    <p>The <code class="language-plaintext highlighter-rouge">path_2</code> field replaces the Target File Path or <code class="language-plaintext highlighter-rouge">target</code> field.</p>
   </li>
 </ul>
 
 <p>For example:</p>
 
-<div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> The following example is too wide for the page. To explore this example, click <strong>Reading Mode</strong> or scroll the example horizontally.</div>
+<div class="alert alert-success" role="alert">
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> The following example is too wide for the page. To explore this example, click <strong>Reading Mode</strong> or scroll the example horizontally.
+</div>
 
-<div class="highlight"><pre class="highlight wide-example">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<div class="highlight">
+  <div class="language-plaintext highlight wide-example highlighter-rouge"><div class="highlight"><pre class="highlight"><code>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 |   timestamp   |                                                                                         message                                                                                    |
 |---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1717679548000 | {"ip_address": "203.0.113.0", "user": "system", "protocol": "internal", "operation": "remote_syslog_startup", "result": "ok", "object_id": "", "path_1": "", "path_2": ""}         |
@@ -2638,7 +2649,8 @@ Jun 6 14:55:24 my-machine qumulo {"user_id": {"auth_id": "1", "sid": "S-1-5-21-9
 | 1717679645000 | {"ip_address": "203.0.113.0", "user": "AD\alice", "protocol": "api", "operation": "fs_rename", "result": "ok", "object_id": "3", "path_1": "/my_file", "path_2": "/another_file"}  |
 | 1717679724000 | {"ip_address": "203.0.113.0", "user": "AD\alice", "protocol": "api", "operation": "begin_audit_modify_syslog_config", "result": "ok", "object_id": "", "path_1": "", "path_2": ""} |
 | 1717679724000 | {"ip_address": "203.0.113.0", "user": "system", "protocol": "internal", "operation": "remote_syslog_shutdown", "result": "ok", "object_id": "", "path_1": "", "path_2": ""}        |
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</pre></div>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</code></pre></div>  </div>
+</div>
 
 <h2 id="operation-types-in-audit-logging">Operation Types in Audit Logging</h2>
 <p>This following operation types are included in Qumulo Core audit logging.</p>

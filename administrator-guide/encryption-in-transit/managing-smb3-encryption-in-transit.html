@@ -2700,11 +2700,11 @@ $(document).ready(function() {
 
 <p>For all clusters created by using Qumulo Core 3.1.5 (and higher), <a href="/administrator-guide/encryption-at-rest/managing-encryption-at-rest.html">Qumulo Core enables at-rest encryption automatically</a>.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>Clients that connect to your cluster can send encrypted or unencrypted packets when your cluster doesn't require encryption.</li>
-  <li>It isn't necessary to use signing as a share-level protection mechanism if you set <strong>Require Encryption</strong> for a specific SMB share or if you configure cluster-level SMB encryption.</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>Clients that connect to your cluster can send encrypted or unencrypted packets when your cluster doesn't require encryption.</li>
+    <li>It isn't necessary to use signing as a share-level protection mechanism if you set <strong>Require Encryption</strong> for a specific SMB share or if you configure cluster-level SMB encryption.</li>
+  </ul>
 </div>
 
 <h2 id="how-cluster-level-and-share-level-encryption-settings-interact-in-qumulo-core">How Cluster-Level and Share-Level Encryption Settings Interact in Qumulo Core</h2>
@@ -2787,14 +2787,14 @@ $(document).ready(function() {
 
 <h3 id="to-configure-cluster-level-and-share-level-encryption-by-using-the-qq-cli">To Configure Cluster-Level and Share-Level Encryption by Using the qq CLI</h3>
 
-<p>For information about configuring cluster-level and share-level encryption by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI, see the following sections in the Qumulo <code>qq</code> CLI Command Guide.</p>
+<p>For information about configuring cluster-level and share-level encryption by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI, see the following sections in the Qumulo <code class="language-plaintext highlighter-rouge">qq</code> CLI Command Guide.</p>
 
 <ul>
   <li>
-    <p><strong>Cluster-Level Encryption:</strong> <a href="https://docs.qumulo.com/qq-cli-command-guide/smb/smb_modify_settings.html"><code>qq smb_modify_settings</code></a></p>
+    <p><strong>Cluster-Level Encryption:</strong> <a href="https://docs.qumulo.com/qq-cli-command-guide/smb/smb_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq smb_modify_settings</code></a></p>
   </li>
   <li>
-    <p><strong>Share-Level Encryption:</strong> <a href="https://docs.qumulo.com/qq-cli-command-guide/smb/smb_mod_share.html"><code>qq smb_mod_share</code></a></p>
+    <p><strong>Share-Level Encryption:</strong> <a href="https://docs.qumulo.com/qq-cli-command-guide/smb/smb_mod_share.html"><code class="language-plaintext highlighter-rouge">qq smb_mod_share</code></a></p>
   </li>
 </ul>
 
@@ -2803,8 +2803,8 @@ $(document).ready(function() {
 
 <p>To avoid potential performance impact, you can prohibit Qumulo Core from advertising its encryption capabilities by turning off SMB3 negotiation.</p>
 
-<p>For more information, see <a href="https://docs.qumulo.com/qq-cli-command-guide/smb/smb_modify_settings.html"><code>qq smb_modify_settings</code></a>
- in the Qumulo <code>qq</code> CLI Command Guide.</p>
+<p>For more information, see <a href="https://docs.qumulo.com/qq-cli-command-guide/smb/smb_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq smb_modify_settings</code></a>
+ in the Qumulo <code class="language-plaintext highlighter-rouge">qq</code> CLI Command Guide.</p>
 
 <h2 id="checking-encryption-of-smb3-session">Checking Encryption of SMB3 Session</h2>
 <p>To check whether an SMB3 client session is encrypted, run the <code class="language-plaintext highlighter-rouge">Get-SmbConnection</code> PowerShell command. For example:</p>

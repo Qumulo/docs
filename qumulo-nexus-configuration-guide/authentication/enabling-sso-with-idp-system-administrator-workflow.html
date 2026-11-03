@@ -782,19 +782,21 @@ $(document).ready(function() {
 <strong>https://mysubdomain.nexus.qumulo.com/api/v1/auth/saml/acs/</strong></p>
     </blockquote>
 
-    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
- <li>Record these values and provide them to the system administrator who manages your organization's IdP.</li>
- <li>If the subdomain that you want to use is unavailable, choose another subdomain or <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a>.</li>
-</ul>
-</div>
+    <div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />       <ul>
+        <li>Record these values and provide them to the system administrator who manages your organization's IdP.</li>
+        <li>If the subdomain that you want to use is unavailable, choose another subdomain or <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a>.</li>
+      </ul>
+    </div>
   </li>
 </ol>
 
 <h2 id="configure-identity-provider">Step 2: Configure an Identity Provider (IdP) for Qumulo Nexus</h2>
 <p>After you perform the initial SSO configuration in Nexus, you must configure your IdP.</p>
 
-<div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> If you work together with a storage administrator who manages your organization’s Nexus account, she provides you with the SP Entity ID and ACS URL.</div>
+<div class="alert alert-success" role="alert">
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> If you work together with a storage administrator who manages your organization’s Nexus account, she provides you with the SP Entity ID and ACS URL.
+</div>
 
 <h3 id="to-configure-your-idp-for-nexus">To Configure Your IdP for Nexus</h3>
 
@@ -809,7 +811,9 @@ $(document).ready(function() {
       <li>
         <p>Add Qumulo Nexus as a service provider by using the SP Entity ID and ACS URL from your Nexus account.</p>
 
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If your IdP is joined to Active Directory (AD), configure the IdP to send the User Principal Name (UPN) as the primary name identifier. This lets the Qumulo cluster use the information provided by the IdP to identify an authenticated user and any remote management actions that she performs on the cluster.</div>
+        <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If your IdP is joined to Active Directory (AD), configure the IdP to send the User Principal Name (UPN) as the primary name identifier. This lets the Qumulo cluster use the information provided by the IdP to identify an authenticated user and any remote management actions that she performs on the cluster.
+        </div>
       </li>
       <li>
         <p>Map the IdP attributes for user email, first name, and last name to the <code class="language-plaintext highlighter-rouge">email</code>, <code class="language-plaintext highlighter-rouge">firstName</code>, and <code class="language-plaintext highlighter-rouge">lastName</code> Nexus attributes.</p>
@@ -827,7 +831,9 @@ $(document).ready(function() {
   <li>
     <p><strong>Microsoft Entra/Azure Active Directory:</strong> <a href="https://learn.microsoft.com/en-us/entra/identity-platform/saml-claims-customization">Customize SAML token claims</a> in the Microsoft Entra documentation</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Because Qumulo Nexus SSO integration requires specifying attributes without a namespace, make sure you clear the <strong>Namespace</strong> field when you specify an attribute in Microsoft Entra.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Because Qumulo Nexus SSO integration requires specifying attributes without a namespace, make sure you clear the <strong>Namespace</strong> field when you specify an attribute in Microsoft Entra.
+    </div>
   </li>
   <li>
     <p><strong>Google Workspace:</strong> <a href="https://support.google.com/a/answer/6087519">Set up your own custom SAML app</a> in the Google Workspace Admin Help documentation</p>
@@ -840,7 +846,9 @@ $(document).ready(function() {
   </li>
 </ul>
 
-<div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> If you work together with a storage administrator who manages your organization’s Nexus account, provide her with the IdP Metadata URL.</div>
+<div class="alert alert-success" role="alert">
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> If you work together with a storage administrator who manages your organization’s Nexus account, provide her with the IdP Metadata URL.
+</div>
 
 <h2 id="final-sso-configuration">Step 3: Perform Final Single Sign-On (SSO) Configuration in Qumulo Nexus</h2>
 

@@ -2376,17 +2376,19 @@ $(document).ready(function() {
    
      <p>ANQ v2 introduces a file system architecture that offers improved performance and flexibility for file systems of any size. For this reason, we eliminated the concept of <em>total available capacity.</em> You pay only for the data you store and, separately, for the throughput you use.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>We describe the performance of your ANQ v2 instance in terms of throughput (bytes per second), IOPS, and operation latency.</li>
-  <li>Because ANQ v2 is a distributed file system, it is very effective for servicing multi-stream workloads with multiple clients or threads. The throughput and IOPS for single-stream and low-concurrency workloads might be lower than the performance characteristics listed in this section.</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>We describe the performance of your ANQ v2 instance in terms of throughput (bytes per second), IOPS, and operation latency.</li>
+    <li>Because ANQ v2 is a distributed file system, it is very effective for servicing multi-stream workloads with multiple clients or threads. The throughput and IOPS for single-stream and low-concurrency workloads might be lower than the performance characteristics listed in this section.</li>
+  </ul>
 </div>
 
 <h2 id="throughput-performance">Throughput Performance</h2>
 <p>ANQ v2 instances can perform at above 100 Gbps with high-concurrency, multi-stream workloads. However, when you provision an ANQ v2 instance, Qumulo sets a default service limit of about 4 GBps. If you have a workload that needs higher sustained or peak throughput peak, email <a href="mailto:azure@qumulo.com">Azure Native Qumulo Support</a> to raise this service limit.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The default service limit isn’t a hard cap. In certain scenarios, it might be possible to reach a throughput higher than 4 GBps with default configuration.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The default service limit isn’t a hard cap. In certain scenarios, it might be possible to reach a throughput higher than 4 GBps with default configuration.
+</div>
 
 <h2 id="iops-performance">IOPS Performance</h2>
 <p>By default, ANQ v2 is optimized for high-throughput (rather than high-IOPS) workloads.</p>

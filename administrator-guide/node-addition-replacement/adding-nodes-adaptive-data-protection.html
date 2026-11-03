@@ -2702,16 +2702,20 @@ $(document).ready(function() {
     <p>Depending on your cluster, Qumulo Core shows configuration options that offer better fault tolerance levels, better storage efficiency, or both benefits. To enable Adaptive Data Protection for your cluster, you must <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a>.</p>
   </li>
   <li>
-    <p>In Qumulo Core 6.1.2 (and higher), you can change your cluster’s data protection configuration when you add or replace nodes by using the <code>qq</code> CLI.</p>
+    <p>In Qumulo Core 6.1.2 (and higher), you can change your cluster’s data protection configuration when you add or replace nodes by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI.</p>
   </li>
 </ul>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Your cluster’s usable capacity doesn’t increase until the data protection reconfiguration is complete. Because data protection reconfiguration is a long process (that can take days or weeks), we don’t recommend beginning this process when your cluster is nearly running out of usable capacity. In this scenario, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a>.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Your cluster’s usable capacity doesn’t increase until the data protection reconfiguration is complete. Because data protection reconfiguration is a long process (that can take days or weeks), we don’t recommend beginning this process when your cluster is nearly running out of usable capacity. In this scenario, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a>.
+</div>
 
 <h2 id="to-add-a-node-with-adaptive-data-protection-to-a-qumulo-cluster">To Add a Node with Adaptive Data Protection to a Qumulo Cluster</h2>
 <p>A cluster’s data protection configuration includes the stripe configuration (for example, <code class="language-plaintext highlighter-rouge">10.8</code>) and the node fault tolerance level.</p>
 
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Ensure that your configuration and node order are correct. Unless you add more nodes, it isn’t possible to revert this operation or reorder nodes after adding them to a cluster.</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Ensure that your configuration and node order are correct. Unless you add more nodes, it isn’t possible to revert this operation or reorder nodes after adding them to a cluster.
+</div>
 
 <ol>
   <li>
@@ -2721,13 +2725,13 @@ $(document).ready(function() {
     <p>Rack and wire your new nodes and then power them on.</p>
   </li>
   <li>
-    <p>To determine the UUIDs of the nodes to add to your cluster, run the <code>qq unconfigured_nodes_list</code> command.</p>
+    <p>To determine the UUIDs of the nodes to add to your cluster, run the <code class="language-plaintext highlighter-rouge">qq unconfigured_nodes_list</code> command.</p>
   </li>
   <li>
     <p>Write down the UUIDs of the nodes that you want to add to the cluster, in the order that you want to add them.</p>
   </li>
   <li>
-    <p>To add your nodes to the cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/add/add_nodes.html"><code>qq add_nodes</code></a>
+    <p>To add your nodes to the cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/add/add_nodes.html"><code class="language-plaintext highlighter-rouge">qq add_nodes</code></a>
  command and specify the node UUIDs (their ordering in the command determines their ordering in the cluster), the configuration type, and the node fault tolerance level.</p>
 
     <p>In the following example, we change the stripe configuration to 10.8 and the node fault tolerance level to 2 nodes.</p>
@@ -2764,7 +2768,9 @@ With the selected node-add operation and data protection reconfiguration:
   <li>
     <p>Qumulo Core reencodes all data on your cluster and the Qumulo Core Web UI displays the message <strong>Reconfiguring data protection</strong>.</p>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> In certain scenarios, this stage might appear to pause while the system performs preparatory work on the cluster.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> In certain scenarios, this stage might appear to pause while the system performs preparatory work on the cluster.
+    </div>
 
     <p>When this stage is complete, your data is protected according to the cluster’s new configuration and the system begins to use the new drive and node fault tolerance levels.</p>
   </li>
@@ -2789,12 +2795,12 @@ With the selected node-add operation and data protection reconfiguration:
   </li>
 </ul>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>To avoid impact to front-end workloads, Qumulo Core slows down the reconfiguration process automatically.</li>
-  <li>When Qumulo Core finds missing nodes or drives, it pauses the reconfiguration process. When you replace or bring the nodes or drives online, the reconfiguration process continues.</li>
-  <li>It isn't possible to add or replace nodes during the reconfiguration process.</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>To avoid impact to front-end workloads, Qumulo Core slows down the reconfiguration process automatically.</li>
+    <li>When Qumulo Core finds missing nodes or drives, it pauses the reconfiguration process. When you replace or bring the nodes or drives online, the reconfiguration process continues.</li>
+    <li>It isn't possible to add or replace nodes during the reconfiguration process.</li>
+  </ul>
 </div>
 
 

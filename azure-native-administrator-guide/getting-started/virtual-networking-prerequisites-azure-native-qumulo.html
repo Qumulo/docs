@@ -2398,16 +2398,18 @@ $(document).ready(function() {
 <h3 id="creating-owner-and-contributor-roles">Creating Owner and Contributor Roles</h3>
 <p>The service requires an owner or contributor role with access to your Azure subscription.</p>
 
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> A custom role must have write permissions to the resource groups in which you create your <a href="https://learn.microsoft.com/en-us/azure/virtual-network/subnet-delegation-overview">delegated subnet</a> and service.</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> A custom role must have write permissions to the resource groups in which you create your <a href="https://learn.microsoft.com/en-us/azure/virtual-network/subnet-delegation-overview">delegated subnet</a> and service.
+</div>
 
 <h3 id="creating-a-dedicated-subnet">Creating A Dedicated Subnet</h3>
 <p>The service requires a dedicated subnet.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>Your subnet address range should be at least <code>/24</code> (it should contain at least 256 IP addresses, including 251 free IP addresses and 5 IP addresses reserved for Azure.)</li>
-  <li>Your subnet must be in the same region as the ANQ file system.</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>Your subnet address range should be at least <code class="language-plaintext highlighter-rouge">/24</code> (it should contain at least 256 IP addresses, including 251 free IP addresses and 5 IP addresses reserved for Azure.)</li>
+    <li>Your subnet must be in the same region as the ANQ file system.</li>
+  </ul>
 </div>
 
 <h4 id="to-create-a-dedicated-subnet-automatically">To Create a Dedicated Subnet Automatically</h4>
@@ -2450,19 +2452,25 @@ $(document).ready(function() {
 <h3 id="load-balanced-endpoints">Load-Balancing ANQ Endpoints</h3>
 <p>Qumulo provisions multiple endpoints to allow access to ANQ. Every endpoint appears in the Azure Portal as a network interface with an IP address. Qumulo creates a managed resource group under your subscription for these endpoints.</p>
 
-<div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To view links to your managed resource groups and network interfaces, use the <strong>Portal</strong> view of your <code class="language-plaintext highlighter-rouge">Qumulo.Storage/fileSystems</code> resource.</div>
+<div class="alert alert-success" role="alert">
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To view links to your managed resource groups and network interfaces, use the <strong>Portal</strong> view of your <code class="language-plaintext highlighter-rouge">Qumulo.Storage/fileSystems</code> resource.
+</div>
 
 <p>To avoid the bandwidth limits of individual endpoints, use <a href="https://en.wikipedia.org/wiki/Round-robin_DNS">round-robin DNS</a> to distribute your workload traffic across your endpoints.</p>
 
 <h2 id="configuring-virtual-networking">Configuring Virtual Networking</h2>
 <p>This section provides an overview of configuring virtual networking for ANQ, including configuration of network security groups, route tables, and back- and front-end networking.</p>
 
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> To enforce network policies for traffic to and from the service, you can apply network security groups and route tables to a <a href="https://learn.microsoft.com/en-us/azure/virtual-network/subnet-delegation-overview">delegated subnet</a>.</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> To enforce network policies for traffic to and from the service, you can apply network security groups and route tables to a <a href="https://learn.microsoft.com/en-us/azure/virtual-network/subnet-delegation-overview">delegated subnet</a>.
+</div>
 
 <h3 id="configuring-network-security-groups">Configuring Network Security Groups</h3>
 <p><em>Network security groups</em> let administrators enforce networking traffic rules. You can assign network security groups to individual network interfaces or to entire subnets.</p>
 
-<div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Because it is possible to create or remove network interfaces from an ANQ instance, we recommend assigning security groups to a delegated subnet.</div>
+<div class="alert alert-success" role="alert">
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Because it is possible to create or remove network interfaces from an ANQ instance, we recommend assigning security groups to a delegated subnet.
+</div>
 
 <p>To ensure that your configuration doesn’t block a specific protocol, follow the guidance in <a href="../network-configuration/required-ports.html">Required Networking Ports for Qumulo Core</a>.</p>
 

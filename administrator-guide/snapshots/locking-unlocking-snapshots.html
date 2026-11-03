@@ -2766,10 +2766,12 @@ $(document).ready(function() {
 <h2 id="locking-unlocking-snapshots">Locking and Unlocking Snapshots by Using the qq CLI</h2>
 <p>This section explains how to lock and unlock snapshots by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI.</p>
 
-<div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To list your snapshots and their lock statuses, use the <code class="language-plaintext highlighter-rouge">sudo qq snapshot_list_statuses | egrep 'lock_key|source_file_path'</code> command.</div>
+<div class="alert alert-success" role="alert">
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To list your snapshots and their lock statuses, use the <code class="language-plaintext highlighter-rouge">sudo qq snapshot_list_statuses | egrep 'lock_key|source_file_path'</code> command.
+</div>
 
 <h3 id="lock-snapshot-qq-cli">Locking a Snapshot</h3>
-<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/snapshot/snapshot_lock_snapshot.html"><code>qq snapshot_lock_snapshot</code></a>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/snapshot/snapshot_lock_snapshot.html"><code class="language-plaintext highlighter-rouge">qq snapshot_lock_snapshot</code></a>
  command and specify the snapshot ID and either the key ID or key name. For example:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq snapshot_lock_snapshot <span class="se">\</span>
@@ -2780,9 +2782,11 @@ $(document).ready(function() {
 <h3 id="unlock-snapshot-qq-cli">Unlocking a Snapshot</h3>
 <p>Unlocking a snapshot requires proving that you can sign a challenge by using the same key that locked the snapshot.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Before you begin, install the <a target="_blank" href="https://pypi.org/project/cryptography/">Python <code class="language-plaintext highlighter-rouge">cryptography</code> library</a>.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Before you begin, install the <a target="_blank" href="https://pypi.org/project/cryptography/">Python <code class="language-plaintext highlighter-rouge">cryptography</code> library</a>.
+</div>
 
-<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/snapshot/snapshot_unlock_snapshot.html"><code>qq snapshot_unlock_snapshot</code></a>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/snapshot/snapshot_unlock_snapshot.html"><code class="language-plaintext highlighter-rouge">qq snapshot_unlock_snapshot</code></a>
  command and specify the snapshot ID and the path to the private key file. For example:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq snapshot_unlock_snapshot <span class="se">\</span>
@@ -2811,7 +2815,7 @@ $(document).ready(function() {
 </ul>
 
 <h3 id="retrieve-relationship-id">Retrieving the Relationship ID from the Source Cluster</h3>
-<p>Before you begin, retrieve the relationship ID from the source cluster by using the <a href="https://docs.qumulo.com/qq-cli-command-guide/replication/replication_list_source_relationship_statuses.html"><code>qq replication_list_source_relationship_statuses</code></a>
+<p>Before you begin, retrieve the relationship ID from the source cluster by using the <a href="https://docs.qumulo.com/qq-cli-command-guide/replication/replication_list_source_relationship_statuses.html"><code class="language-plaintext highlighter-rouge">qq replication_list_source_relationship_statuses</code></a>
  command.</p>
 
 <p>If the command returns multiple relationships, you can pipe the command to the following <code class="language-plaintext highlighter-rouge">jq</code> query to sort the output. The first column lists the replication IDs.</p>
@@ -2827,7 +2831,7 @@ $(document).ready(function() {
 </code></pre></div></div>
 
 <h3 id="associate-lock-key-with-replication-target-relationship">Associating a Lock Key with a Replication Target Relationship</h3>
-<p>On the target cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replication/replication_set_target_relationship_lock.html"><code>qq replication_set_target_relationship_lock</code></a>
+<p>On the target cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replication/replication_set_target_relationship_lock.html"><code class="language-plaintext highlighter-rouge">qq replication_set_target_relationship_lock</code></a>
  command and specify the relationship ID and key name or ID. For example:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq replication_set_target_relationship_lock <span class="se">\</span>
@@ -2836,7 +2840,7 @@ $(document).ready(function() {
 </code></pre></div></div>
 
 <h3 id="disassociating-lock-key-from-replication-target-relationship">Disassociating a Lock Key from a Replication Target Relationship</h3>
-<p>On the target cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replication/replication_set_target_relationship_lock.html"><code>qq replication_set_target_relationship_lock</code></a>
+<p>On the target cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/replication/replication_set_target_relationship_lock.html"><code class="language-plaintext highlighter-rouge">qq replication_set_target_relationship_lock</code></a>
  command, specify the relationship ID, and use the <code class="language-plaintext highlighter-rouge">--clear-lock-key</code> flag. For example:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq replication_set_target_relationship_lock <span class="se">\</span>

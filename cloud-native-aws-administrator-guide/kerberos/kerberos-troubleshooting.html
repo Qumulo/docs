@@ -2444,9 +2444,9 @@ $(document).ready(function() {
   <li>
     <p>In the <code class="language-plaintext highlighter-rouge">[gssd]</code> section of the <code class="language-plaintext highlighter-rouge">/etc/nfs.conf</code> file, set <code class="language-plaintext highlighter-rouge">verbosity=9</code> and <code class="language-plaintext highlighter-rouge">rpc-verbosity=9</code>.</p>
 
-    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-In versions of Ubuntu lower than 22.04 (and possibly on other Linux distributions), you can't use the <code>/etc/nfs.conf</code> file to configure <code>gssd</code>. If this is the case for your system, we recommend starting the <code>rpc.gssd</code> service by using the <code>-n</code> flag.
-</div>
+    <div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br /> In versions of Ubuntu lower than 22.04 (and possibly on other Linux distributions), you can't use the <code class="language-plaintext highlighter-rouge">/etc/nfs.conf</code> file to configure <code class="language-plaintext highlighter-rouge">gssd</code>. If this is the case for your system, we recommend starting the <code class="language-plaintext highlighter-rouge">rpc.gssd</code> service by using the <code class="language-plaintext highlighter-rouge">-n</code> flag.
+    </div>
   </li>
   <li>
     <p>Turn on <code class="language-plaintext highlighter-rouge">rpcdebug</code>, for example:</p>
@@ -2475,7 +2475,9 @@ In versions of Ubuntu lower than 22.04 (and possibly on other Linux distribution
 <h3 id="differentiating-client-and-cluster-issues">Differentiating Client and Cluster Issues</h3>
 <p>To resolve this issue, determine whether it is with the client or with the cluster by running the <code class="language-plaintext highlighter-rouge">nfs4_getfacl</code> command on a file. If the presentation in the ACL editor appears correct, the issue is with the client. Otherwise, the issue is with the cluster.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The ACL editor doesn’t perform any ID mapping. It only passes ACE trustees through, in plaintext.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The ACL editor doesn’t perform any ID mapping. It only passes ACE trustees through, in plaintext.
+</div>
 
 <h3 id="resolving-client-side-issues">Resolving Client-Side Issues</h3>
 <p>If the issue is with the client, it is most often an ID mapping issue. Confirm that your mappings are configured correctly. For more information, see <a href="https://care.qumulo.com/hc/en-us/articles/360017705814">User-Defined Identity Mappings</a> on Qumulo Care.</p>

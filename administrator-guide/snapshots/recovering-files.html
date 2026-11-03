@@ -2700,11 +2700,11 @@ $(document).ready(function() {
 
 <p>Inside the <code class="language-plaintext highlighter-rouge">.snapshot</code> directory, directories with snapshot IDs represent various snapshots. The <em>modified</em> timestamp of a directory is the time at which Qumulo Core took the snapshot.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>When you use NFS on Linux and macOS (even if you configure your system to show hidden files), the <code>.snapshot</code> directory doesn't appear when you list a directory's contents. You must navigate to the <code>.snapshot</code> directory explicitly.</li>
-  <li>When you use SMB, the <code>.snapshot</code> directory appears only at the root of the share in Finder or File Explorer. In other directories, you must navigate to the <code>.snapshot</code> directory explicitly.</li>  
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>When you use NFS on Linux and macOS (even if you configure your system to show hidden files), the <code class="language-plaintext highlighter-rouge">.snapshot</code> directory doesn't appear when you list a directory's contents. You must navigate to the <code class="language-plaintext highlighter-rouge">.snapshot</code> directory explicitly.</li>
+    <li>When you use SMB, the <code class="language-plaintext highlighter-rouge">.snapshot</code> directory appears only at the root of the share in Finder or File Explorer. In other directories, you must navigate to the <code class="language-plaintext highlighter-rouge">.snapshot</code> directory explicitly.</li>
+  </ul>
 </div>
 
 <h2 id="to-recover-files-on-linux-or-macos-by-using-the-command-line">To Recover Files on Linux or macOS by Using the Command Line</h2>
@@ -2720,7 +2720,9 @@ $(document).ready(function() {
   </li>
 </ol>
 
-<div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To see the <code class="language-plaintext highlighter-rouge">.snapshot</code> directory at the root of the share, show hidden files by pressing <strong>⌘ + Shift + .</strong></div>
+<div class="alert alert-success" role="alert">
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To see the <code class="language-plaintext highlighter-rouge">.snapshot</code> directory at the root of the share, show hidden files by pressing <strong>⌘ + Shift + .</strong>
+</div>
 
 <h2 id="to-recover-files-on-macos-by-using-finder">To Recover Files on macOS by Using Finder</h2>
 <ol>
@@ -2733,7 +2735,9 @@ $(document).ready(function() {
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/Volumes/MyShareName/.snapshot
 </code></pre></div>    </div>
 
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You must specify the <code class="language-plaintext highlighter-rouge">.snapshot</code> directory from the root of the share.</div>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You must specify the <code class="language-plaintext highlighter-rouge">.snapshot</code> directory from the root of the share.
+    </div>
   </li>
   <li>
     <p>Locate the file or directory to recover and copy it to a new location.</p>

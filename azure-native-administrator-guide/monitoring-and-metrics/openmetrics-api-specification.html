@@ -2399,8 +2399,8 @@ $(document).ready(function() {
     <tr>
       <td><a id="metric-type-counter"></a><code>counter</code></td>
       <td>
-        An integer that increases monotonically from zero, stored in <code>&lt;metric_name&gt;&lowbar;count</code>.
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> During normal operation, the value of <code>counter</code> never decreases.</div>
+        An integer that increases monotonically from zero, stored in <code>&lt;metric_name&gt;&amp;lowbar;count</code>.
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> During normal operation, the value of <code class="language-plaintext highlighter-rouge">counter</code> never decreases.</div>
 
       </td>
     </tr>
@@ -2408,7 +2408,7 @@ $(document).ready(function() {
       <td><a id="metric-type-gauge"></a><code>gauge</code></td>
       <td>
         A value that represents a single integer (similar to <code>counter</code>), stored in <code>&lt;metric_name&gt;</code>.
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> During normal operation, the value of a <code>gauge</code> metric might increase or decrease.</div>
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> During normal operation, the value of a <code class="language-plaintext highlighter-rouge">gauge</code> metric might increase or decrease.</div>
 
       </td>
     </tr>
@@ -2416,14 +2416,14 @@ $(document).ready(function() {
       <td><a id="metric-type-histogram"></a><code>histogram</code></td>
       <td>
         <p>A representation of a series of <em>buckets</em>, where each bucket tracks values within a specific range.</p>
-        <p>A histogram has a <code>count</code> field and a <code>sum</code> field, stored in <code>&lt;metric_name&gt;&lowbar;count</code> (the total number of samples) and <code>&lt;metric_name&gt;&lowbar;sum</code> (the sum of all samples). Qumulo Core emits a single bucket that contains all samples.</p>
-        <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> You can use <code>histogram</code> metrics to keep track of averages by dividing the <code>sum</code> field by the <code>count</code> field.</div>
+        <p>A histogram has a <code>count</code> field and a <code>sum</code> field, stored in <code>&lt;metric_name&gt;&amp;lowbar;count</code> (the total number of samples) and <code>&lt;metric_name&gt;&amp;lowbar;sum</code> (the sum of all samples). Qumulo Core emits a single bucket that contains all samples.</p>
+        <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> You can use <code class="language-plaintext highlighter-rouge">histogram</code> metrics to keep track of averages by dividing the <code class="language-plaintext highlighter-rouge">sum</code> field by the <code class="language-plaintext highlighter-rouge">count</code> field.</div>
 
       </td>
     </tr>
     <tr>
       <td><a id="metric-type-info"></a><code>info</code></td>
-      <td>Informational text about the system, stored in <code>&lt;metric_name&gt;&lowbar;info</code>. An <code>info</code> metric always has a value of <code>1</code> and labels that contain detailed information.</td>
+      <td>Informational text about the system, stored in <code>&lt;metric_name&gt;&amp;lowbar;info</code>. An <code>info</code> metric always has a value of <code>1</code> and labels that contain detailed information.</td>
     </tr>
   </tbody>
 </table>
@@ -2442,7 +2442,7 @@ $(document).ready(function() {
       <th class="width-30">Metric Name</th>
       <th class="width-13">Metric Type</th>
       <th>Labels</th>
-      <th class="width-10">Suppor&shy;ted from Qumulo Core Version</th>
+      <th class="width-10">Suppor­ted from Qumulo Core Version</th>
       <th class="width-20">Description</th>
     </tr>
   </thead>
@@ -2460,7 +2460,7 @@ $(document).ready(function() {
           <li class="pdf-friendly"><code>uuid</code></li>
           <li class="pdf-friendly">
             <code>version</code>
-            <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Don’t confuse this label for the <em>Qumulo Core version</em> with the identically named label for the <em>kernel version</em> for the <code>qumulo_kernel</code> metric.</div>
+            <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Don’t confuse this label for the <em>Qumulo Core version</em> with the identically named label for the <em>kernel version</em> for the <code class="language-plaintext highlighter-rouge">qumulo_kernel</code> metric.</div>
 
           </li>
         </ul>
@@ -2511,7 +2511,7 @@ $(document).ready(function() {
     <tr>
       <td><code>qumulo_fault_tolerance_metrics_current_remaining_disk_failures</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
-      <td>&mdash;</td>
+      <td>—</td>
       <td>7.5.2</td>
       <td>The current number of disk failures that the cluster can tolerate.</td>
     </tr>
@@ -2519,7 +2519,7 @@ $(document).ready(function() {
     <tr>
       <td><code>qumulo_fault_tolerance_metrics_current_remaining_fault_domain_failures</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
-      <td>&mdash;</td>
+      <td>—</td>
       <td>7.5.2</td>
       <td>
         The current number of fault domain failures that the cluster can tolerate.
@@ -2529,14 +2529,14 @@ $(document).ready(function() {
     <tr>
       <td><code>qumulo_fault_tolerance_metrics_current_remaining_node_failures</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
-      <td>&mdash;</td>
+      <td>—</td>
       <td>7.5.2</td>
       <td>The current number of node failures that the cluster can tolerate.</td>
     </tr>
     <tr>
       <td><code>qumulo_fs_capacity_bytes</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
-      <td>&mdash;</td>
+      <td>—</td>
       <td>5.3.0</td>
       <td>The total cluster space, in bytes</td>
     </tr>
@@ -2567,7 +2567,7 @@ $(document).ready(function() {
     <tr>
       <td><code>qumulo_fs_free_bytes</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
-      <td>&mdash;</td>
+      <td>—</td>
       <td>5.3.0</td>
       <td>
         The free space on the cluster, in bytes
@@ -2603,7 +2603,7 @@ $(document).ready(function() {
     <tr>
       <td><code>qumulo_fs_snapshots</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
-      <td>&mdash;</td>
+      <td>—</td>
       <td>5.3.0</td>
       <td>The number of snapshots on the cluster</td>
     </tr>

@@ -2706,7 +2706,9 @@ $(document).ready(function() {
 
 <p>Whenever this user identity is required (for example, to check permissions), Qumulo Core uses the established mapping to retrieve the entire identity for the user by referencing the NFS UIDs and GIDs, and all SIDs, including the group IDs of any relevant parent groups.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The full credential expansion method lets your Qumulo Core cluster support more than 16 group memberships for your NFS users, as long as Active Directory manages the group memberships.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The full credential expansion method lets your Qumulo Core cluster support more than 16 group memberships for your NFS users, as long as Active Directory manages the group memberships.
+</div>
 
 <h2 id="enabling-active-directory-for-posix-attributes-in-qumulo-core">Enabling Active Directory for POSIX Attributes in Qumulo Core</h2>
 <p>This section explains how to enable Active Directory for POSIX attributes in Qumulo Core by using the Qumulo Core Web UI and Qumulo REST API.</p>
@@ -2773,7 +2775,9 @@ $(document).ready(function() {
   <li><strong>Windows NT SID to All Related Identities:</strong> <code class="language-plaintext highlighter-rouge">/v1/auth/sids/:id:/related-identities</code></li>
 </ul>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> It is possible for one UID to be mapped to multiple SIDs.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> It is possible for one UID to be mapped to multiple SIDs.
+</div>
 
 <p>To retrieve related identities, use the <code class="language-plaintext highlighter-rouge">/v1/auth/auth-ids/:id:/related-identities</code> REST API endpoint.</p>
 

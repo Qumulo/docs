@@ -2731,10 +2731,12 @@ $(document).ready(function() {
 <p>This section explains how to enable the NFS protocol for a tenant, the difference between global settings and settings for each tenant, and how to configure NFS exports for a tenant.</p>
 
 <h3 id="enabling-the-nfs-protocol-for-a-tenant">Enabling the NFS Protocol for a Tenant</h3>
-<p>To let a tenant use NFS to access a specific set of exports, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_modify_tenant.html"><code>qq multitenancy_modify_tenant</code></a>
+<p>To let a tenant use NFS to access a specific set of exports, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_modify_tenant.html"><code class="language-plaintext highlighter-rouge">qq multitenancy_modify_tenant</code></a>
  command, specify the tenant ID, and use the <code class="language-plaintext highlighter-rouge">--enable-nfs</code> flag.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Initially, the tenant has no exports to mount.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Initially, the tenant has no exports to mount.
+</div>
 
 <p>In the following example, the cluster begins to accept NFS traffic on TCP and UDP ports 111 and 2019, on all networks assigned to the tenant.</p>
 
@@ -2744,10 +2746,10 @@ $(document).ready(function() {
 </code></pre></div></div>
 
 <h3 id="configuring-the-nfs-protocol-globally-or-for-a-tenant">Configuring the NFS Protocol Globally or for a Tenant</h3>
-<p>You can use <em>global settings</em> that apply to all tenants. For example, to enable NFSv4.1 for all tenants, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code>qq nfs_modify_settings</code></a>
+<p>You can use <em>global settings</em> that apply to all tenants. For example, to enable NFSv4.1 for all tenants, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq nfs_modify_settings</code></a>
  command and use the <code class="language-plaintext highlighter-rouge">--enable-v4</code> flag. For more information about NFS settings see <a href="../nfs/nfsv4.1-enabling-using.html">Enabling and Using NFSv4.1 on a Qumulo Cluster</a> and <a href="../kerberos/kerberos-with-qumulo-core.html">How NFSv4.1 works with Kerberos in Qumulo Core</a>.</p>
 
-<p>To override this global setting, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_nfs_modify_settings.html"><code>qq multitenancy_nfs_modify_settings</code></a>
+<p>To override this global setting, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_nfs_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq multitenancy_nfs_modify_settings</code></a>
  command to disable NFSv4.1 on a specific tenant, specify the tenant ID, and use the <code class="language-plaintext highlighter-rouge">--disable-v4</code> flag. In the following example, despite the global setting, the specified tenant no longer accepts NFSv4.1 traffic on port 2049, on all networks assigned to the tenant.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq multitenancy_nfs_modify_settings <span class="se">\</span>
@@ -2755,7 +2757,7 @@ $(document).ready(function() {
   <span class="nt">--disable-v4</span>
 </code></pre></div></div>
 
-<p>To revert to the global setting for a specific tenant, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_nfs_delete_settings.html"><code>qq multitenancy_nfs_delete_settings</code></a>
+<p>To revert to the global setting for a specific tenant, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_nfs_delete_settings.html"><code class="language-plaintext highlighter-rouge">qq multitenancy_nfs_delete_settings</code></a>
  command and specify the tenant ID. For example:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq multitenancy_nfs_delete_settings <span class="se">\</span>
@@ -2765,9 +2767,11 @@ $(document).ready(function() {
 <h3 id="configuring-nfs-exports">Configuring NFS Exports</h3>
 <p>To isolate clients within a network in specific directories in the file system, you can configure NFS exports for each tenant.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Because each new tenant has no exports initially, to give clients within that tenant’s network access to the cluster over NFS, you must add exports. For more information, see <a href="https://care.qumulo.com/hc/en-us/articles/360000723928">Create an NFS Export</a> on Qumulo Care.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Because each new tenant has no exports initially, to give clients within that tenant’s network access to the cluster over NFS, you must add exports. For more information, see <a href="https://care.qumulo.com/hc/en-us/articles/360000723928">Create an NFS Export</a> on Qumulo Care.
+</div>
 
-<p>To create an NFS export for a tenant, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_add_export.html"><code>qq nfs_add_export</code></a>
+<p>To create an NFS export for a tenant, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_add_export.html"><code class="language-plaintext highlighter-rouge">qq nfs_add_export</code></a>
  command and specify the tenant ID, the export path, and the file system path and use the <code class="language-plaintext highlighter-rouge">--no-restrictions</code> flag. In the following example, a cluster lets clients access directory <code class="language-plaintext highlighter-rouge">/my-directory</code> from the export <code class="language-plaintext highlighter-rouge">/my-export</code> when the clients are in the network assigned to the tenant.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq nfs_add_export <span class="se">\</span>
@@ -2777,9 +2781,11 @@ $(document).ready(function() {
   <span class="nt">--no-restrictions</span>
 </code></pre></div></div>
 
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> When multiple tenants exist on a cluster, you must specify the tenant ID.</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> When multiple tenants exist on a cluster, you must specify the tenant ID.
+</div>
 
-<p>To move an NFS export from one tenant to another, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_mod_export.html"><code>qq nfs_mod_export</code></a>
+<p>To move an NFS export from one tenant to another, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_mod_export.html"><code class="language-plaintext highlighter-rouge">qq nfs_mod_export</code></a>
  command. In the following example, while the cluster denies access to clients in tenant 2, it lets clients in tenant 1 access the export <code class="language-plaintext highlighter-rouge">/my-export</code>.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq nfs_mod_export <span class="se">\</span>
@@ -2792,10 +2798,12 @@ $(document).ready(function() {
 <p>This section explains how to enable the SMB protocol for a tenant, the difference between global settings and settings for each tenant, and how to configure SMB shares for a tenant.</p>
 
 <h3 id="enabling-the-smb-protocol-for-a-tenant">Enabling the SMB Protocol for a Tenant</h3>
-<p>To let a tenant use SMB to access a specific set of shares, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_modify_tenant.html"><code>qq multitenancy_modify_tenant</code></a>
+<p>To let a tenant use SMB to access a specific set of shares, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_modify_tenant.html"><code class="language-plaintext highlighter-rouge">qq multitenancy_modify_tenant</code></a>
  command, specify the tenant ID, and use the <code class="language-plaintext highlighter-rouge">--enable-smb</code> flag.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Initially, the tenant has no shares to mount.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Initially, the tenant has no shares to mount.
+</div>
 
 <p>In the following example, the cluster begins to accept SMB traffic on TCP port 445, on all networks assigned to the tenant.</p>
 
@@ -2805,7 +2813,7 @@ $(document).ready(function() {
 </code></pre></div></div>
 
 <h3 id="configuring-the-smb-protocol-globally-or-for-a-tenant">Configuring the SMB Protocol Globally or for a Tenant</h3>
-<p>You can use <em>global settings</em> that apply to all tenants. For example, to require encryption for all tenants, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/smb/smb_modify_settings.html"><code>qq smb_modify_settings</code></a>
+<p>You can use <em>global settings</em> that apply to all tenants. For example, to require encryption for all tenants, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/smb/smb_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq smb_modify_settings</code></a>
  command with the <code class="language-plaintext highlighter-rouge">--encryption-mode required</code> flag. For more information about SMB settings, see the following resources:</p>
 
 <ul>
@@ -2819,12 +2827,12 @@ $(document).ready(function() {
     <p><a href="../authorization-qumulo-core/using-smb-host-restrictions.html#hiding-an-smb-share">Hiding an SMB Share</a></p>
   </li>
   <li>
-    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/smb/smb_modify_settings.html"><code>qq smb_modify_settings</code></a>
- in the Qumulo <code>qq</code> CLI Command Guide (set the <code class="language-plaintext highlighter-rouge">--snapshot-directory-mode</code> flag to <code class="language-plaintext highlighter-rouge">visible</code>, <code class="language-plaintext highlighter-rouge">hidden</code>, or <code class="language-plaintext highlighter-rouge">disabled</code>)</p>
+    <p><a href="https://docs.qumulo.com/qq-cli-command-guide/smb/smb_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq smb_modify_settings</code></a>
+ in the Qumulo <code class="language-plaintext highlighter-rouge">qq</code> CLI Command Guide (set the <code class="language-plaintext highlighter-rouge">--snapshot-directory-mode</code> flag to <code class="language-plaintext highlighter-rouge">visible</code>, <code class="language-plaintext highlighter-rouge">hidden</code>, or <code class="language-plaintext highlighter-rouge">disabled</code>)</p>
   </li>
 </ul>
 
-<p>To override this global setting, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_smb_modify_settings.html"><code>qq multitenancy_smb_modify_settings</code></a>
+<p>To override this global setting, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_smb_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq multitenancy_smb_modify_settings</code></a>
  command to allow clients on only specific networks to require encryption. In the following example, despite the global setting, the specified tenant accepts unencrypted SMB requests on all networks assigned to the tenant.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq multitenancy_smb_modify_settings <span class="se">\</span>
@@ -2832,7 +2840,7 @@ $(document).ready(function() {
   <span class="nt">--encryption-mode</span> none
 </code></pre></div></div>
 
-<p>To revert to the global setting for a specific tenant, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_smb_delete_settings.html"><code>qq multitenancy_smb_delete_settings</code></a>
+<p>To revert to the global setting for a specific tenant, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_smb_delete_settings.html"><code class="language-plaintext highlighter-rouge">qq multitenancy_smb_delete_settings</code></a>
  command and specify the tenant ID. For example:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq multitenancy_smb_delete_settings <span class="se">\</span>
@@ -2842,9 +2850,11 @@ $(document).ready(function() {
 <h3 id="configuring-smb-shares">Configuring SMB Shares</h3>
 <p>To isolate clients within a network in specific directories in the file system, you can configure SMB shares for each tenant.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Because each new tenant has no shares initially, to give clients within that tenant’s network access to the cluster over SMB, you must add shares. For more information, see <a href="https://care.qumulo.com/hc/en-us/articles/360000722428">Create an SMB Share</a> on Qumulo Care.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Because each new tenant has no shares initially, to give clients within that tenant’s network access to the cluster over SMB, you must add shares. For more information, see <a href="https://care.qumulo.com/hc/en-us/articles/360000722428">Create an SMB Share</a> on Qumulo Care.
+</div>
 
-<p>To create an SMB share for a tenant, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/smb/smb_add_share.html"><code>qq smb_add_share</code></a>
+<p>To create an SMB share for a tenant, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/smb/smb_add_share.html"><code class="language-plaintext highlighter-rouge">qq smb_add_share</code></a>
  command and specify the tenant ID, the share path, and the file system path and use the <code class="language-plaintext highlighter-rouge">--all-access</code> flag. In the following example, a cluster lets clients access access directory <code class="language-plaintext highlighter-rouge">/my-directory</code> from the share <code class="language-plaintext highlighter-rouge">/my-share</code> when the clients are in the network assigned to the tenant.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq smb_add_share <span class="se">\</span>
@@ -2854,9 +2864,11 @@ $(document).ready(function() {
   <span class="nt">--all-access</span>
 </code></pre></div></div>
 
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> When multiple tenants exist on a cluster, you must specify the tenant ID.</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> When multiple tenants exist on a cluster, you must specify the tenant ID.
+</div>
 
-<p>To move an SMB share from one tenant to another, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/smb/smb_mod_share.html"><code>qq smb_mod_share</code></a>
+<p>To move an SMB share from one tenant to another, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/smb/smb_mod_share.html"><code class="language-plaintext highlighter-rouge">qq smb_mod_share</code></a>
  command. In then following example, while the cluster denies access to clients in tenant 2, it lets clients in tenant 1 access the share <code class="language-plaintext highlighter-rouge">/my-share</code>.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq smb_mod_share -–tenant-id 2 <span class="se">\</span>
@@ -2867,18 +2879,22 @@ $(document).ready(function() {
 <h4 id="using-the-microsoft-management-console-mmc">Using the Microsoft Management Console (MMC)</h4>
 <p>To create, modify, and delete SMB shares for each tenant, you can use the MMC Shared Folders snap-in. For more information, see <a href="../smb/managing-file-shares-shared-folders-mmc.html">Managing Qumulo Core File Shares by Using the Shared Folders MMC Snap-In</a>.</p>
 
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Because folder paths always start at the root of the file system, using the MMC on a Windows client on a tenant’s network causes the MMC to modify that tenant’s shares.</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Because folder paths always start at the root of the file system, using the MMC on a Windows client on a tenant’s network causes the MMC to modify that tenant’s shares.
+</div>
 
 <h2 id="global-configuration-of-s3-and-ftp-protocols">Global Configuration of S3 and FTP Protocols</h2>
 <p>Qumulo Core doesn’t permit configuring file system protocols such as S3 and FTP for each tenant. You must enable, disable, and configure these protocols globally.</p>
 
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Enabling these protocols makes them available on all networks.</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Enabling these protocols makes them available on all networks.
+</div>
 
 <p>For more information, see <a href="../s3-api/configuring-using-s3-api.html">S3 API</a> in this guide and <a href="https://care.qumulo.com/hc/en-us/articles/115014912268">FTP in Qumulo Core</a> on Qumulo Care.</p>
 
 <h2 id="listing-client-connections">Listing Client Connections</h2>
-<p>To determine tenant activity and client types connected to the tenant, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_list_connections.html"><code>qq network_list_connections</code></a>
- command. For more information about balancing client connections to your Qumulo cluster, see <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_list_connections.html"><code class="language-plaintext highlighter-rouge">qq network_list_connections</code></a> in the Qumulo <code>qq</code> CLI Command Guide.</p>
+<p>To determine tenant activity and client types connected to the tenant, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_list_connections.html"><code class="language-plaintext highlighter-rouge">qq network_list_connections</code></a>
+ command. For more information about balancing client connections to your Qumulo cluster, see <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_list_connections.html"><code class="language-plaintext highlighter-rouge">qq network_list_connections</code></a> in the Qumulo <code class="language-plaintext highlighter-rouge">qq</code> CLI Command Guide.</p>
 
 <p>The following is example output.</p>
 

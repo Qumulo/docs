@@ -2698,17 +2698,19 @@ $(document).ready(function() {
      
      <p>For more information about NFSv4.1 and file access permissions, see <a href="nfsv4.1-acls.html">Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)</a>.</p>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>Currently, Qumulo Core 4.3.0 (and higher) supports only NFSv4.1. Mounting with version 4.0 or 4.2 isn't supported.</li>
-  <li>The NFSv4.1 protocol requires clients to provide the server with globally unique identifiers. By default, the NFSv4.1 client for Linux uses the machine's hostname as <code>co_ownerid</code>. Because the NFSv4.1 protocol requires a unique identifier for every client, an unpredictable failure can occur if two clients have the same hostname. To configure unique identification for your NFS clients, set the <code>nfs4_unique_id</code> value for them. For more information, see <a href="https://www.kernel.org/doc/html/v5.8/admin-guide/nfs/nfs-client.html#the-nfs4-unique-id-parameter">The nfs4_unique_id parameter</a> in the <em>Linux kernel user's and administrator's guide</em>.</li>
-</ul>
+<div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+    <li>Currently, Qumulo Core 4.3.0 (and higher) supports only NFSv4.1. Mounting with version 4.0 or 4.2 isn't supported.</li>
+    <li>The NFSv4.1 protocol requires clients to provide the server with globally unique identifiers. By default, the NFSv4.1 client for Linux uses the machine's hostname as <code class="language-plaintext highlighter-rouge">co_ownerid</code>. Because the NFSv4.1 protocol requires a unique identifier for every client, an unpredictable failure can occur if two clients have the same hostname. To configure unique identification for your NFS clients, set the <code class="language-plaintext highlighter-rouge">nfs4_unique_id</code> value for them. For more information, see <a href="https://www.kernel.org/doc/html/v5.8/admin-guide/nfs/nfs-client.html#the-nfs4-unique-id-parameter">The nfs4_unique_id parameter</a> in the <em>Linux kernel user's and administrator's guide</em>.</li>
+  </ul>
 </div>
 
 <h2 id="how-nfsv41-user-identities-work-in-qumulo-core">How NFSv4.1 User Identities Work in Qumulo Core</h2>
 <p>In Qumulo Core 7.7.5.1 (and higher), the system accepts user identities in the <code class="language-plaintext highlighter-rouge">&lt;principal&gt;@&lt;domain&gt;</code> format (for example, <code class="language-plaintext highlighter-rouge">alice@example.com</code>) when a domain name is different from the Active Directory domain to which your Qumulo cluster is joined NFS configuration for each tenant lets Qumulo Core and NFSv4.1 clients determine the domain string to be used over the wire.</p>
 
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> For Qumulo Core versions lower than 7.7.5.1, if the Qumulo cluster was joined to <code class="language-plaintext highlighter-rouge">domain.example.com</code>, the system expects all NFSv4.1 user identities to be in the <code class="language-plaintext highlighter-rouge">&lt;principal&gt;@domain.example.com</code> format. If <code class="language-plaintext highlighter-rouge">idmapd</code> on your clients is configured to use a different domain, authorization issues can occur.</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> For Qumulo Core versions lower than 7.7.5.1, if the Qumulo cluster was joined to <code class="language-plaintext highlighter-rouge">domain.example.com</code>, the system expects all NFSv4.1 user identities to be in the <code class="language-plaintext highlighter-rouge">&lt;principal&gt;@domain.example.com</code> format. If <code class="language-plaintext highlighter-rouge">idmapd</code> on your clients is configured to use a different domain, authorization issues can occur.
+</div>
 
 <h2 id="configuring-and-using-exports-for-nfsv41">Configuring and Using Exports for NFSv4.1</h2>
 <p>Qumulo’s NFS exports can present a view of your cluster over NFS that might differ from the contents of the underlying file system. You can mark NFS exports as read-only, restricted (to allow access only from certain IP addresses), or configure specific user mappings. For more information, see <a href="https://care.qumulo.com/hc/en-us/articles/360000723928">Create an NFS Export</a> on Qumulo Care.</p>
@@ -2835,7 +2837,9 @@ $(document).ready(function() {
 </table>
 
 <h3 id="visibility-of-ip-address-restricted-exports">Visibility of IP-Address-Restricted Exports</h3>
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The names of exports are public to all NFSv4.1 clients, regardless of IP address restrictions. You can’t disable this behavior.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The names of exports are public to all NFSv4.1 clients, regardless of IP address restrictions. You can’t disable this behavior.
+</div>
 
 <p>NFSv4.1 respects IP address restrictions on exports: Only clients with allowed IP addresses can access the contents of an export. However, clients without access to an export can still view the export as a directory when they traverse <em>above</em> exports. The restrictions apply only when a client attempts to access the contents of the export.</p>
 
@@ -2846,7 +2850,9 @@ $(document).ready(function() {
 </ul>
 
 <h2 id="enabling-nfsv41-on-a-qumulo-cluster">Enabling NFSv4.1 on a Qumulo Cluster</h2>
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Currently, you can enable NFSv4.1 only by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Currently, you can enable NFSv4.1 only by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI.
+</div>
 
 <p>You can enable NFSv4.1 on your Qumulo cluster by using a single cluster-wide configuration command, for example:</p>
 
@@ -2856,7 +2862,9 @@ $(document).ready(function() {
 <p>When you enable NFSv4.1, all NFS exports are accessible through NFSv3 and NFSv4.1.</p>
 
 <h2 id="specifying-the-nfs-mount-option">Specifying the NFS Mount Option</h2>
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> In Qumulo Core 7.0.0 (and higher), to greatly improve throughput, use the <code class="language-plaintext highlighter-rouge">nconnect=16</code> option to enable cross-connection write combining.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> In Qumulo Core 7.0.0 (and higher), to greatly improve throughput, use the <code class="language-plaintext highlighter-rouge">nconnect=16</code> option to enable cross-connection write combining.
+</div>
 
 <p>Typically, NFS clients find and use the highest version of the protocol that both the client and server support. For example, the following command mounts by using NFSv4.1 (if it is enabled) or by using NFSv3 otherwise.</p>
 
@@ -2874,7 +2882,9 @@ $(document).ready(function() {
   /path/to/mount_point
 </code></pre></div></div>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> We recommend specifying the <code class="language-plaintext highlighter-rouge">nfsvers=4</code> or <code class="language-plaintext highlighter-rouge">nfsvers=4.1</code> option for any mounts that use NFSv4.1.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> We recommend specifying the <code class="language-plaintext highlighter-rouge">nfsvers=4</code> or <code class="language-plaintext highlighter-rouge">nfsvers=4.1</code> option for any mounts that use NFSv4.1.
+</div>
 
 <h2 id="checking-whether-nfsv41-is-enabled">Checking Whether NFSv4.1 is enabled</h2>
 <p>To check whether NFSv4.1 is enabled on your cluster, run the following <code class="language-plaintext highlighter-rouge">qq</code> CLI command:</p>
@@ -2883,7 +2893,9 @@ $(document).ready(function() {
 </code></pre></div></div>
 
 <h2 id="disabling-nfsv41-on-a-qumulo-cluster">Disabling NFSv4.1 on a Qumulo Cluster</h2>
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Disabling NFSv4.1 makes any NFSv4.1 mounts unusable immediately. We recommend switching any NFSv4.1 mounts to NFSv3 before disabling NFSv4.1.</div>
+<div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Disabling NFSv4.1 makes any NFSv4.1 mounts unusable immediately. We recommend switching any NFSv4.1 mounts to NFSv3 before disabling NFSv4.1.
+</div>
 
 <p>To disable NFSv4.1 on an entire Qumulo cluster, run the following <code class="language-plaintext highlighter-rouge">qq</code> CLI command:</p>
 
@@ -2900,11 +2912,11 @@ $(document).ready(function() {
 
 <p>The NFSv4.1 implementation in Qumulo Core has a non-configurable lease of one minute. During each lease period, clients send a heartbeat to your Qumulo cluster. The cluster uses this heartbeat to detect lost client connections and to revoke the client leases. When the cluster revokes a lease, it releases any byte-range locks and makes them available to other clients.</p>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>NFSv4.1 byte-range locks are interoperable with NLM (NFSv3) byte-range locks. NFSv4.1 clients view and respect locks that NFSv3 clients hold (the opposite is also true).</li>
-  <li>NFSv4.1 and NLM locks aren't interoperable with SMB locks.</li>
-</ul>
+<div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+    <li>NFSv4.1 byte-range locks are interoperable with NLM (NFSv3) byte-range locks. NFSv4.1 clients view and respect locks that NFSv3 clients hold (the opposite is also true).</li>
+    <li>NFSv4.1 and NLM locks aren't interoperable with SMB locks.</li>
+  </ul>
 </div>
 
 <p>To list NFSv4.1 byte-range locks in your cluster, run the following <code class="language-plaintext highlighter-rouge">qq</code> CLI command:</p>
@@ -2914,11 +2926,11 @@ $(document).ready(function() {
   <span class="nt">--lock-type</span> byte-range
 </code></pre></div></div>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>Currently, Qumulo Core doesn't support revoking NFSv4.1 byte-range locks by using the CLI.</li>
-  <li>The time to acquire or release a lock scales linearly with the number of locks that the system already holds on a specific file. If a file has a very large number of locks, system performance can degrade.</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>Currently, Qumulo Core doesn't support revoking NFSv4.1 byte-range locks by using the CLI.</li>
+    <li>The time to acquire or release a lock scales linearly with the number of locks that the system already holds on a specific file. If a file has a very large number of locks, system performance can degrade.</li>
+  </ul>
 </div>
 
 <h2 id="known-limits">Known Limits</h2>

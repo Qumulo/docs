@@ -2726,7 +2726,9 @@ $(document).ready(function() {
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CN=Users,DC=my,DC=example,DC=com;CN=Computers,DC=stuff,DC=example,DC=com
 </code></pre></div></div>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This example is a very common configuration for user and computer objects in AD.</div>
+<div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This example is a very common configuration for user and computer objects in AD.
+</div>
 
 <h2 id="using-the-active-directory-domain-controller-as-the-ntp-server">Using the Active Directory Domain Controller as the NTP Server</h2>
 <p>Kerberos is very sensitive to clock skew. It is important for all systems involved in a Kerberos relationship—the KDC, your Qumulo cluster, and any Linux clients—to have as little clock skew as possible. We recommend using the same NTP server for all three components.</p>

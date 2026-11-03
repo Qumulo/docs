@@ -2705,7 +2705,7 @@ $(document).ready(function() {
 
 <ol>
   <li>
-    <p>To assign a default gateway, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_interface.html"><code>qq network_mod_interface</code></a>
+    <p>To assign a default gateway, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_interface.html"><code class="language-plaintext highlighter-rouge">qq network_mod_interface</code></a>
  command. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq network_mod_interface <span class="se">\</span>
@@ -2713,7 +2713,7 @@ $(document).ready(function() {
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>To configure the <code class="language-plaintext highlighter-rouge">Default</code> network to use static (rather than DHCP) addressing, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_network.html"><code>qq network_mod_network</code></a>
+    <p>To configure the <code class="language-plaintext highlighter-rouge">Default</code> network to use static (rather than DHCP) addressing, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_network.html"><code class="language-plaintext highlighter-rouge">qq network_mod_network</code></a>
  command. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq network_mod_network <span class="se">\</span>
@@ -2734,18 +2734,17 @@ $(document).ready(function() {
 <h2 id="add-more-networks">Step 2: Add More Networks</h2>
 <p>After you configure the first network for your Qumulo cluster, you can add more networks to it.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>If you can add both static and floating IP addresses, they must be on the same network.</li>
-  <li>You can use multiple <code>--floating-ip-ranges</code> or <code>--dns-servers</code> flags.</li>
-  <li>Each VLAN can have different MTU values, as long as the MTU value of the <code>Default</code> network is equal or greater than the combined MTU values of all networks in your Qumulo cluster. To set the MTU value for the <code>Default</code> network, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_interface.html"><code>qq network_mod_interface</code></a>
- command. Then, you can set an equal or smaller MTU value for the other networks.</li>
-</ul>
+<div class="alert alert-info" role="alert">
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+    <li>If you can add both static and floating IP addresses, they must be on the same network.</li>
+    <li>You can use multiple <code class="language-plaintext highlighter-rouge">--floating-ip-ranges</code> or <code class="language-plaintext highlighter-rouge">--dns-servers</code> flags.</li>
+    <li>Each VLAN can have different MTU values, as long as the MTU value of the <code class="language-plaintext highlighter-rouge">Default</code> network is equal or greater than the combined MTU values of all networks in your Qumulo cluster. To set the MTU value for the <code class="language-plaintext highlighter-rouge">Default</code> network, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_interface.html"><code class="language-plaintext highlighter-rouge">qq network_mod_interface</code></a> command. Then, you can set an equal or smaller MTU value for the other networks.</li>
+  </ul>
 </div>
 
 <ol>
   <li>
-    <p>To add a network, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_add_network.html"><code>qq network_add_network</code></a>
+    <p>To add a network, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_add_network.html"><code class="language-plaintext highlighter-rouge">qq network_add_network</code></a>
  command. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq network_add_network <span class="se">\</span>
@@ -2760,11 +2759,11 @@ $(document).ready(function() {
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>To view the details your networks, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_list_networks.html"><code>qq network_list_networks</code></a>
+    <p>To view the details your networks, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_list_networks.html"><code class="language-plaintext highlighter-rouge">qq network_list_networks</code></a>
  command.</p>
   </li>
   <li>
-    <p>To view the IP addresses assigned to the nodes in your cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_poll.html"><code>qq network_poll</code></a>
+    <p>To view the IP addresses assigned to the nodes in your cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_poll.html"><code class="language-plaintext highlighter-rouge">qq network_poll</code></a>
  command.</p>
   </li>
 </ol>
