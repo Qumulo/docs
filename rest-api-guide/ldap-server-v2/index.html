@@ -34,17 +34,16 @@
     https://www.googletagmanager.com;
   object-src 'none';
 ">
-
-<!-- AI Agent Discovery Headers -->
-<link rel="sitemap" type="application/xml" href="https://docs.qumulo.com/sitemap.xml">
-<link rel="service-doc" href="https://docs.qumulo.com/">
-
-<!-- This replaces frame-ancestors 'self'; which is unsupported in meta tags. -->
+<!-- The following replaces frame-ancestors 'self', which is unsupported in meta tags. -->
 <script>
   if (self !== top) {
     top.location = self.location;
   }
 </script>
+
+<!-- AI Agent Discovery Headers -->
+<link rel="sitemap" type="application/xml" href="https://docs.qumulo.com/sitemap.xml">
+<link rel="service-doc" href="https://docs.qumulo.com/">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LDAP Server V2 (ldap) | Qumulo Documentation Portal</title>
