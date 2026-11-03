@@ -122,13 +122,6 @@ fetch('/data/website.json')
 
 <!-- Define page metadata -->
 {% if page.rest_endpoint %}{% assign apiDescription = 'REST API Documentation for ' | append: page.rest_endpoint %}<meta name="description" content="{{ apiDescription }}">{% else %}<meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines }}{% endif %}">{% endif %}
-<meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
-<meta name="application-name" content="Qumulo Documentation Portal">
-<meta name="msapplication-TileColor" content="#2b5797">
-<meta name="msapplication-TileImage" content="{{ "images/mstile-144x144.png" | relative_url }}">
-<meta name="msapplication-config" content="{{ "images/browserconfig.xml" | relative_url }}">
-<meta name="theme-color" content="#ffffff">
-<meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
 
 <!-- Open Graph Meta Tags -->
 {% if page.isHomepage %}<meta property="og:title" content="Qumulo Documentation Portal">{% elsif page.rest_endpoint %}<meta property="og:title" content="{{ title }} | {{site.site_title}}">{% else %}<meta property="og:title" content="{{ page.title }} | {{ site.site_title }}">{% endif %}
@@ -150,13 +143,24 @@ fetch('/data/website.json')
 <meta property="twitter:domain" content="docs.qumulo.com">
 
 <!-- Define favicon variants -->
-<link rel="apple-touch-icon" sizes="180x180" href="{{ "images/apple-touch-icon.png" | relative_url }}">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ "images/favicon-32x32.png" | relative_url }}">
-<link rel="icon" type="image/png" sizes="194x194" href="{{ "images/favicon-194x194.png" | relative_url }}">
-<link rel="icon" type="image/png" sizes="192x192" href="{{ "images/android-chrome-192x192.png" | relative_url }}">
+<link rel="shortcut icon" href={{ "/favicon.ico" | relative_url }}>
+<link rel="icon" type="image/svg+xml" href="{{ "images/favicon.svg" | relative_url }}">
 <link rel="icon" type="image/png" sizes="16x16" href="{{ "images/favicon-16x16.png" | relative_url }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ "images/favicon-32x32.png" | relative_url }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ "images/apple-touch-icon.png" | relative_url }}">
+<link rel="icon" type="image/png" sizes="192x192" href="{{ "images/android-chrome-192x192.png" | relative_url }}">
+<link rel="icon" type="image/png" sizes="194x194" href="{{ "images/favicon-194x194.png" | relative_url }}">
 <link rel="manifest" href="{{ "images/site.webmanifest" | relative_url }}">
 <link rel="mask-icon" href="{{ "images/safari-pinned-tab.svg" | relative_url }}" color="#5bbad5">
+<meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
+<meta name="application-name" content="Qumulo Documentation Portal">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="msapplication-TileImage" content="{{ "images/mstile-144x144.png" | relative_url }}">
+<meta name="msapplication-config" content="{{ "images/browserconfig.xml" | relative_url }}">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
 <!-- Define RSS feed -->
 <!-- TEMPORARILY DISABLED
@@ -188,5 +192,6 @@ fetch('/data/website.json')
 <script src="{{ "js/grt-cookie-consent-default.js" | relative_url }}"></script>
 
 <!-- Load Google Analytics -->
+<meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE"></script>
 <script defer src="{{ "js/googletag.js" | relative_url }}"></script>
