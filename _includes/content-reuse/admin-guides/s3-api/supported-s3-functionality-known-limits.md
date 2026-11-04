@@ -388,7 +388,7 @@ Qumulo Core stores each kind of S3 object metadata as [{{site.udm.l}}](../metada
   <tbody>
     <tr>
       <td>{{site.udm.t}}</td>
-      <td><code>x-amz-meta-&ast;</code> headers</td>
+      <td><code>x-amz-meta-&#42;</code> headers</td>
       <td><code>S3</code></td>
     </tr>
     <tr>
@@ -477,7 +477,7 @@ For presigned requests that use the following request types, you can use respons
 For more information, see the following Amazon S3 documentation:
 
 * [`GetObject`: Overriding response header values through the request](https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html#:~:text=Overriding%20response%20header%20values%20through%20the%20request)
-* [`HeadObject`: URI Request parameters (`response-&ast;`)](https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html#AmazonS3-HeadObject-request-uri-querystring-ResponseCacheControl)
+* [`HeadObject`: URI Request parameters (`response-&#42;`)](https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html#AmazonS3-HeadObject-request-uri-querystring-ResponseCacheControl)
 
 ### Request Authentication
 * Qumulo Core supports authenticating requests by using only [Amazon Signature Version 4]({{site.s3.docs.signatureV4}}). Most S3 client applications support this authentication type.
@@ -596,12 +596,12 @@ This section lists the known minimum and maximum limits for S3 objects.
     <td>Unlimited</td>
   </tr>
   <tr>
-    <td>Number of {{site.udm.l}} (<code>x-amz-meta-&ast;</code>) entries</td>
+    <td>Number of {{site.udm.l}} (<code>x-amz-meta-&#42;</code>) entries</td>
     <td>100</td>
     <td>&mdash;</td>
   </tr>
   <tr>
-    <td>Size of {{site.udm.l}} (<code>x-amz-meta-&ast;</code>) headers</td>
+    <td>Size of {{site.udm.l}} (<code>x-amz-meta-&#42;</code>) headers</td>
     <td colspan="2" class="joined-cell">2 KiB (2,048 bytes) combined key bytes and value bytes</td>
   </tr>
   <tr>
