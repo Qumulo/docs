@@ -44,9 +44,11 @@ While Linux systems disallow deprecated encryption types for Kerberos, Windows p
 
 For certain trust configurations, you must enable a more secure encryption type for trusted traffic. To enable AES-128 (or SHA1) and AES-256 (or SHA1) for a particular trust, run the `ksetup` command in a Windows Administrator console. For example:
 
-```bash
-$ ksetup /getenctypeattr <domain>
-$ ksetup /setenctypeattr <domain> RC4-HMAC-MD5 AES128-CTS-HMAC-SHA1-96 AES256-CTS-HMAC-SHA1-96
+```bat
+ksetup /getenctypeattr example.com; ^
+  ksetup /setenctypeattr example.com ^
+  RC4-HMAC-MD5 AES128-CTS-HMAC-SHA1-96 ^
+  AES256-CTS-HMAC-SHA1-96
 ```
 
 {% include note.html content="This example doesn't disable RC4. Instead, it enables new encryption types _in addition_ to RC4. When working with Windows systems, we recommend making additive changes whenever possible. We also recommend staging changes in a safe environment before applying them to a production environment." %}

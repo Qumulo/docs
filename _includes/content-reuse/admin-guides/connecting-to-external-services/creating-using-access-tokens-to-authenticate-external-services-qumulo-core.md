@@ -35,7 +35,7 @@ This section explains how to create access tokens without or with an expiration 
 Run the {% include qq.html command="auth_create_access_token" %} command with the <code>--self</code> flag. For example:
 
 ```bash
-$ qq auth_create_access_token --self
+qq auth_create_access_token --self
 ```
 
 The {% include qq.html command="auth_create_access_token" %} command returns a JSON response that contains the bearer token body and the access token ID, which you can use to manage the access token.
@@ -61,7 +61,7 @@ The {% include qq.html command="auth_create_access_token" %} command returns a J
 Run the {% include qq.html command="auth_create_access_token" %} command and specify the user. For example:
 
 ```bash
-$ qq auth_create_access_token jane
+qq auth_create_access_token jane
 ```
 
 {: #create-token-format}
@@ -86,11 +86,13 @@ You can:
 In Qumulo Core 5.3.2 (and higher), you can run the {% include qq.html command="auth_create_access_token" %} command and specify the expiration time. You can specify the expiration time in different formats. For example:
 
 ```bash
-$ qq auth_create_access_token jane --expiration-time 'Jan 01 2023'
+qq auth_create_access_token jane \
+  --expiration-time 'Jan 01 2023'
 ```
 
 ```bash
-$ qq auth_create_access_token jane --expiration-time '01/01/2023 00:00'
+qq auth_create_access_token jane \
+  --expiration-time '01/01/2023 00:00'
 ```
 
 {{page.varTokenExpiration}}
@@ -112,7 +114,8 @@ Authorization: Bearer access-v1:abAcde...==
 You can also add the bearer token to a `curl` command. For example:
 
 ```bash
-$ curl https://{{site.exampleIP0}}:8000/v1/session/who-am-i -H 'Authorization: Bearer access-v1:abAcde...=='
+curl https://{{site.exampleIP0}}:8000/v1/session/who-am-i \
+  -H 'Authorization: Bearer access-v1:abAcde...=='
 ```
 
 #### Python SDK
@@ -130,13 +133,14 @@ For more information, see the [Qumulo Core Python SDK](https://pypi.org/project/
 {{page.varTokenQQcli}} For example:
 
 ```bash
-$ qq auth_create_access_token jane --file ./qumulo_credentials
+qq auth_create_access_token jane \
+  --file ./qumulo_credentials
 ```
 
 To use the credentials file, specify its location by using the `--credentials-store` flag. For example:
 
 ```bash
-$ qq --credentials-store ./qumulo_credentials who_am_i
+qq --credentials-store ./qumulo_credentials who_am_i
 ```
 
 ## Listing Access Tokens
@@ -147,19 +151,19 @@ This section explains how to list access tokens for yourself, a specific user, o
 * To list access tokens for yourself, run the {% include qq.html command="auth_list_access_tokens" %} command with <code>--self</code> flag. For example:
 
   ```bash
-  $ qq auth_list_access_tokens --self
+  qq auth_list_access_tokens --self
   ```
 
 * To list access tokens for a specific user, run the {% include qq.html command="auth_list_access_tokens" %} command and use the <code>--user</code> flag to specify a user. For example:
 
   ```bash
-  $ qq auth_list_access_tokens --user jane
+  qq auth_list_access_tokens --user jane
   ```
 
 * To list access tokens for all users, run the {% include qq.html command="auth_list_access_tokens" %} command without any additional parameters. For example:
 
   ```bash
-  $ qq auth_list_access_tokens
+  qq auth_list_access_tokens
   ```
 
 ## Retrieving Metadata for Access Tokens
@@ -171,7 +175,7 @@ This section explains how to get metadata for a specific access token or all acc
 Run the `auth_get_access_token` command and specify the access token ID. For example:
 
 ```bash
-$ qq auth_get_access_token {{site.exampleAccessTokenID1}}
+qq auth_get_access_token {{site.exampleAccessTokenID1}}
 ```
 
 This command returns a JSON object that lists:
@@ -241,7 +245,8 @@ This section explains how to modify access tokens by using the `qq` CLI.
 Run the `auth_modify_access_token` command and specify the access token ID and the expiration time. For example:
 
 ```bash
-$ qq auth_modify_access_token 1234567890123456789012 --expiration-time 'Jan 01 2023'
+qq auth_modify_access_token 1234567890123456789012 \
+  --expiration-time 'Jan 01 2023'
 ```
 
 {{page.varTokenExpiration}}
@@ -262,13 +267,13 @@ To help you check your system's security posture, Qumulo Core lets you disable a
 To disable an access token, run the {% include qq.html command="auth_modify_access_token" %} command, specify the access token ID, and use the `-d` flag. For example:
 
 ```bash
-$ qq auth_modify_access_token 1234567890123456789012 -d
+qq auth_modify_access_token 1234567890123456789012 -d
 ```
 
 To enable an access token, run the {% include qq.html command="auth_modify_access_token" %} command, specify the access token ID, and use the `-e` flag. For example:
 
 ```bash
-$ qq auth_modify_access_token 1234567890123456789012 -e
+qq auth_modify_access_token 1234567890123456789012 -e
 ```
 
 
@@ -283,7 +288,7 @@ This section explains how to delete an access token by using the `qq` CLI.
 To delete an access token, run the {% include qq.html command="auth_delete_access_token" %} command and specify the access token ID. For example:
 
 ```bash
-$ qq auth_delete_access_token 1234567890123456789012
+qq auth_delete_access_token 1234567890123456789012
 ```
 
 ## Best Practices for Using Qumulo Core Access Tokens {#best-practices-using-access-tokens}

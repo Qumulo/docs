@@ -8,7 +8,7 @@ To be able to log in to the cluster with the local administrative account, take 
 
 * At the command prompt, close all shares currently mapped on the client by running the following command:
 
-  ```batch
+  ```bat
   net use * /delete
   ```
 

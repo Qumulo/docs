@@ -33,7 +33,7 @@ After you enable multitenancy for your cluster, you can create a new tenant.
 Run the {% include qq.html command="multitenancy_create_tenant" %} command and specify a name for your tenant. For example:
 
 ```bash
-$ qq multitenancy_create_tenant \
+qq multitenancy_create_tenant \
   --name my_tenant
 ```
 
@@ -57,7 +57,7 @@ Use the `qq multitenancy_create_tenant` and specify the tenant name and network 
 In the following example, we specify a single network.
 
 ```bash
-$ qq multitenancy_create_tenant \
+qq multitenancy_create_tenant \
   --name my_tenant_name \
   --network-id 2
 ```
@@ -66,7 +66,7 @@ $ qq multitenancy_create_tenant \
 To assign a single network to a tenant, modify _the tenant that belongs to the network._ Run the {% include qq.html command="network_mod_network" %} command and specify the network and tenant ID.
 
 ```bash
-$ qq network_mod_network \
+qq network_mod_network \
   --network-id 3 \
   --tenant-id 2
 ```
@@ -79,7 +79,7 @@ To assign multiple networks to a tenant, modify _the networks that belong to the
 In the following example, we specify three networks.
 
 ```bash
-$ qq multitenancy_modify_tenant \
+qq multitenancy_modify_tenant \
   --id 2 \
   --network-id 2 3 4
 ```
@@ -91,7 +91,7 @@ To unassign a single network from a tenant, clear _the tenant that belongs to th
 {% include note.html content=unassignNetwork %}
 
 ```bash
-$ qq network_mod_network \
+qq network_mod_network \
   --network-id 3 \
   --clear-tenant-id
 ```
@@ -107,7 +107,7 @@ To unassign all networks from a tenant, clear _the networks that belong to the t
 {{site.data.alerts.end}}
   
 ```bash
-$ qq multitenancy_modify_tenant \
+qq multitenancy_modify_tenant \
   --id 2 \
   --network-id
 ```
@@ -116,7 +116,7 @@ $ qq multitenancy_modify_tenant \
 Run the {% include qq.html command="network_mod_network" %} command and specify the network and target tenant.
 
 ```bash
-$ qq network_mod_network \
+qq network_mod_network \
   --network-id 2 \
   --tenant-id 1
 ```
@@ -128,7 +128,7 @@ To determine a tenant's network assignments and enabled management and file syst
 To view the information for a single tenant, run the {% include qq.html command="multitenancy_get_tenant" %} command.
 
 ```bash
-$ qq multitenancy_get_tenant \
+qq multitenancy_get_tenant \
   --id 1
 ```
 
@@ -143,7 +143,7 @@ $ qq multitenancy_get_tenant \
 * To view the information for a single network, run the {% include qq.html command="network_get_network" %} command.
 
   ```bash
-  $ qq network_get_network \
+  qq network_get_network \
     --network-id 2
   ```
  
@@ -160,7 +160,7 @@ $ qq multitenancy_get_tenant \
 To delete a tenant, run the {% include qq.html command="multitenancy_delete_tenant" %} command and specify the tenant ID.
 
 ```bash
-$ qq multitenancy_delete_tenant \
+qq multitenancy_delete_tenant \
   --id 2
 ```
 

@@ -591,6 +591,10 @@ td.align-middle {
   vertical-align: middle;
 }
 
+td.align-center {
+  text-align: center;
+}
+
 a {
   /* This color is required to meet WCAG standards for accessible text.
      Note: This style overrides bootstrap.css.
@@ -1036,11 +1040,15 @@ h1.post-title-main:nth-child(1) {
 }
 
 .three-grumpquats {
-  max-width:220px;
-  max-height:93px;
-  height:255px;
-  width:604px;
-  
+  max-width: 220px;
+  max-height: 93px;
+  height: 255px;
+  width: 604px;  
+}
+
+.grumpquat-404 {
+  width: 200px !important;
+  height: 232px !important;
 }
 
 .crumb {

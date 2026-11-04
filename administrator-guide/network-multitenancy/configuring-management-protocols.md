@@ -34,7 +34,7 @@ The Qumulo REST API lets you manage clusters by using the `qq` CLI, Python bindi
 In the following example, the cluster begins to accept REST API traffic on TCP port 8000 on all networks assigned to the tenant.
 
 ```bash
-$ qq multitenancy_modify_tenant \
+qq multitenancy_modify_tenant \
   --id 2
   --enable-rest-api
 ```
@@ -53,7 +53,7 @@ The Qumulo Core Web UI lets you manage clusters from a browser.
 In the following example, the cluster begins to serve the Qumulo Core Web UI on TCP ports 80 and 433 on all networks assigned to the tenant.
 
 ```bash
-$ qq multitenancy_modify_tenant \
+qq multitenancy_modify_tenant \
   --id 2
   --enable-web-ui
 ```
@@ -72,7 +72,7 @@ SSH lets you view logs and use the `qq` CLI by using a client to connect to node
 In the following example, the cluster begins to accept SSH traffic on TCP port 22 on all networks assigned to the tenant.
 
 ```bash
-$ qq multitenancy_modify_tenant \
+qq multitenancy_modify_tenant \
   --id 2
   --enable-ssh
 ```
@@ -88,7 +88,7 @@ Replication lets a cluster transfer data from a directory on one cluster to a di
 In the following example, the cluster begins to accept replication traffic on TCP port 3712 on all networks assigned to the tenant.
 
 ```bash
-$ qq multitenancy_modify_tenant \
+qq multitenancy_modify_tenant \
   --id 2 \
   --enable-replication
 ```

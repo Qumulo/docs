@@ -49,7 +49,7 @@ You can list the incomplete multipart uploads for a single S3 bucket by using th
 * To list incomplete uploads by using the `qq` CLI, run the {% include qq.html command="s3_list_uploads" %} command and specify the bucket name. For example:
 
   ```bash
-  $ qq s3_list_uploads \
+  qq s3_list_uploads \
     --bucket my-bucket
   ```
 
@@ -133,14 +133,14 @@ To configure the expiry interval for all current and future multipart uploads by
 In the following example, we instruct Qumulo Core to abort and clean up uploads that haven't received data in more than 30 days.
 
 ```bash
-$ qq s3_modify_settings \
+qq s3_modify_settings \
   --multipart-upload-expiry-interval 30days
 ```
 
 In the following example, we disable automatic cleanup.
 
 ```bash
-$ qq s3_modify_settings \
+qq s3_modify_settings \
   --multipart-upload-expiry-interval never
 ```
 
@@ -153,7 +153,7 @@ Use the Qumulo REST API or `qq` CLI to abort and clean up the upload. You need t
 * To abort an upload by using the `qq` CLI, run the {% include qq.html command="s3_abort_upload" %} command and specify the upload ID. For example:
 
   ```bash
-  $ qq s3_abort_upload \
+  qq s3_abort_upload \
     --bucket my-bucket \
     --upload-id 000000000example
   ```

@@ -42,7 +42,12 @@ touch /mnt/mount_point/filename
 To view the exact permissions metadata for this file, run the {% include qq.html command="fs_file_get_attr" %} command. For example:
 
 ```bash
-$ qq fs_file_get_attr --path /filename
+qq fs_file_get_attr --path /filename
+```
+
+{{ site.exampleOutput }}
+
+```json
 {
   "group_details": {
     "id_type": "NFS_GID",
@@ -59,7 +64,12 @@ $ qq fs_file_get_attr --path /filename
 To view the permissions configured in an ACL, run the {% include qq.html command="fs_get_acl" %} command. For example:
 
 ```bash
-$ qq fs_get_acl --path /filename
+qq fs_get_acl --path /filename
+```
+
+{{ site.exampleOutput }}
+
+```
 Control: Present
 Posix Special Permissions: None
 
@@ -75,7 +85,7 @@ Position  Trustee   Type     Flags  Rights
 ## Listing Security Identifiers (SIDs)
 The SID is a globally unique identifier for a user or group object in a domain. For more information, see [Security identifiers](https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/security-identifiers) in the Microsoft documentation.
 
-Because Qumulo's Kerberos implementation requires AD, every user is also an Active Directory user. The domain controller (DC) has an equivalent mapping for AD users and SIDs. Qumulo uses LDAP to determine the AD-user &harr; SID mapping. For this reason, it is important to configure the Base DN for your cluster correctly.
+Because Qumulo's Kerberos implementation requires AD, every user is also an Active Directory user. The domain controller (DC) has an equivalent mapping for AD users and SIDs. Qumulo uses LDAP to determine the mapping between the AD user and SID. For this reason, it is important to configure the Base DN for your cluster correctly.
 
 Qumulo's Kerberos implementation stores SIDs on disk for files that have Kerberos identities in the user, group, or ACL. When a user authenticates by using Kerberos and creates a file, Qumulo Core configures the user, group, and ACL automatically.
 
@@ -84,7 +94,12 @@ To set the identity for an AD user, you can modify the permissions for an existi
 In the following example, the Kerberos-authenticated AD domain user `AD\myusername` creates a file over NFSv4.1 and the system gives an ACL response from the Qumulo REST API. The response contains an ACE entry for the owner and group owner of the user `AD\myusername`, with corresponding SIDs for both.
 
 ```bash
-$ qq fs_get_acl --path /filename --json
+qq fs_get_acl --path /filename --json
+```
+
+{{ site.exampleOutput }}
+
+```
 {
   "aces": [{
     "trustee": {
@@ -109,7 +124,7 @@ Although Qumulo stores SIDs on disk, SIDs appear rarely when you use NFSv4.1 on 
 
 {% include note.html content="There is an equivalent mapping between AD users, SIDs and Kerberos principals. Each of these representations is unique (a primary key to the AD identity database)." %}
 
-Qumulo's implementation of the SID &harr; Kerberos principal mapping uses the [`sAMAccountName`](https://docs.microsoft.com/en-us/windows/win32/ad/naming-properties#samaccountname) field, which is always present and unique for all AD users and groups. The system forms the Kerberos principal by concatenating the name and domain in the `<sAMAccountName>@<domain>` format.
+Qumulo's implementation of the mapping between the SID and the Kerberos principal uses the [`sAMAccountName`](https://docs.microsoft.com/en-us/windows/win32/ad/naming-properties#samaccountname) field, which is always present and unique for all AD users and groups. The system forms the Kerberos principal by concatenating the name and domain in the `<sAMAccountName>@<domain>` format.
 
 AD has fields with similar content but without the guarantee of uniqueness (such as the `name`, `distinguishedName`, `CN`, and `servicePrincipalName`). However, AD permits setting these fields to unrelated values. For this reason, it is unlikely but possible that certain environments use special values in these fields. Qumulo's Kerberos implementation ignores these fields and uses only the value in the `sAMAccountName` field. 
 
@@ -118,7 +133,12 @@ AD has fields with similar content but without the guarantee of uniqueness (such
 The following example shows how the system represents the SIDs from the previous example as Kerberos principals.
 
 ```bash
-$ nfs4_getfacl filename
+nfs4_getfacl filename
+```
+
+{{ site.exampleOutput }}
+
+```
 A::test2@ad.eng.qumulo.com:rwatTnNcy
 A:g:Domain Users@ad.eng.qumulo.com:rtncy
 A::EVERYONE@:rtncy
@@ -161,7 +181,7 @@ Kerberos doesn't have the concept of the root user. However, you can still use i
 If both conditions are true, a `chown` operation on files performed as a Kerberos user over NFSv4.1 succeeds. For example:
 
 ```bash
-$ chown user3:group4 filename
+chown user3:group4 filename
 ```
 
 {% include note.html content="Including `@<domain>` for the destination user and group is optional." %}
@@ -169,13 +189,25 @@ $ chown user3:group4 filename
 ### Viewing the Owner and Group
 The following examples show how to display user and group membership by using the `ls -l` and `stat -c` commands.
 
+#### Example 1
 ```bash
-$ ls -l filename
+ls -l filename
+```
+
+{{ site.exampleOutput }}
+
+```
 -rw-r--r--    1 user3    group4         0 Jun  9 23:18 filename
 ```
 
+#### Example 2
 ```bash
-$ stat -c '%U, %G' filename
+stat -c '%U, %G' filename
+```
+
+{{ site.exampleOutput }}
+
+```
 user3, group4
 ```
 

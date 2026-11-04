@@ -40,7 +40,7 @@ For more information, see [Authenticating Requests: Using Query Parameters (AWS 
 To create a presigned URL, run the AWS CLI [`presign`](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/presign.html) command. In the following example, the presigned URL expires in 10 minutes (600 seconds).
 
 ```bash
-$ aws s3 presign s3://my-bucket/my-file.txt \
+aws s3 presign s3://my-bucket/my-file.txt \
   --endpoint-url https://{{site.exampleIP0}}:9000 \
   --profile my-qumulo-profile \
   --expires-in 600
@@ -137,7 +137,7 @@ The following sections show how to use the `qq` CLI to imitate bucket-level perm
 Run the {% include qq.html command="fs_modify_acl" %} command. In the following example, we add the access control entry (ACE) to the bucket whose root directory is `/buckets/my-bucket` for the user group `MyWriters`.
 
 ```bash
-$ qq fs_modify_acl \
+qq fs_modify_acl \
   --path /buckets/my-bucket add_entry \
   --trustee MyWriters \
   --type Allowed \
@@ -158,7 +158,7 @@ Allowed  Object inherit, Container inherit  Delete child, Execute/Traverse, Read
 Run the {% include qq.html command="fs_modify_acl" %} command. In the following example, we add the access control entry (ACE) to the bucket whose root directory is `/buckets/my-bucket` for the user group `MyReaders`:
 
 ```bash
-$ qq fs_modify_acl
+qq fs_modify_acl
   --path /buckets/my-bucket add_entry \
   --trustee MyReaders \
   --type Allowed \
@@ -178,7 +178,7 @@ Allowed  Object inherit, Container inherit  Execute/Traverse, Read
 Run the {% include qq.html command="fs_modify_acl" %} command. In the following example, we add two access control entries (ACEs) to the bucket whose root directory is `/buckets/my-bucket` for the user group `MyListers`.
 
 ```bash
-$ qq fs_modify_acl
+qq fs_modify_acl
   --path /buckets/my-bucket add_entry \
   --trustee MyListers \
   --type Allowed \
@@ -187,7 +187,7 @@ $ qq fs_modify_acl
 ```
 
 ```bash
-$ qq fs_modify_acl
+qq fs_modify_acl
   --path /buckets/my-bucket add_entry \
   --trustee MyListers \
   --type Allowed \

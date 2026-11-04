@@ -370,5 +370,3 @@ You can delete a hub portal in either the `Pending` or `Accepted` portal relatio
    ==========  ===========
    Authorized  /projects/
    ```
-
-   {% include note.html content=deleteStalled %}

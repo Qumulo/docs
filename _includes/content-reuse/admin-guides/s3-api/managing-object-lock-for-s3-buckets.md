@@ -39,7 +39,9 @@ You can view the Object Lock configuration for an S3 bucket in two ways:
 * Run the {% include qq.html command="fs_file_get_attr" %} command and use the `--retrieve-file-lock` flag. For example:
 
   ```bash
-  $ qq fs_file_get_attr --retrieve-file-lock --path /demo
+  qq fs_file_get_attr \
+    --retrieve-file-lock \
+    --path /demo
   ```
 
   {{site.exampleOutput}} (Only part of the output is shown).
@@ -56,7 +58,7 @@ You can view the Object Lock configuration for an S3 bucket in two ways:
 * Run the `s3api get-object-retention` command and specify your bucket name, and your S3 access key. For example:
 
   ```bash
-  $ aws s3api get-object-retention \
+  aws s3api get-object-retention \
     --bucket my-bucket \
     --key {{site.exampleAWSaccessKeyID}}
   ```

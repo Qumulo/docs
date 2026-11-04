@@ -8,7 +8,12 @@ Qumulo provides configuration for the permitted NFSv4.1 authentication flavors i
    {{site.exampleOutput}}
 
    ```bash
-   $ qq nfs_get_settings
+   qq nfs_get_settings
+   ```
+
+   {{ site.exampleOutput }}
+
+   ```json
    {
      "auth_sys_enabled": true,
      "krb5_enabled": true,
@@ -27,7 +32,12 @@ Qumulo provides configuration for the permitted NFSv4.1 authentication flavors i
    {% include important.html content="Because it uses authentication based on a simple UID and GID passed over the wire in plain text, RPC `AUTH_SYS` is inherently insecure. In a trusted environment, `AUTH_SYS` might be sufficient for enforcing basic permissions and preventing good-faith actors from making mistakes. In all other cases, you must treat `AUTH_SYS` as if it provides _no security whatsoever_." %}
 
    ```bash
-   $ qq nfs_modify_settings --disable-auth-sys  
+   qq nfs_modify_settings --disable-auth-sys
+   ```
+
+   {{ site.exampleOutput }}
+
+   ```json
    {
      "v4_enabled": false,
      "auth_sys_enabled": false,
@@ -36,19 +46,54 @@ Qumulo provides configuration for the permitted NFSv4.1 authentication flavors i
      "auth_krb5i_enabled": true
    }
    ```
-1. (Optional) You can also run the following commands.
+1. (Optional) You can also use the following flags with the {% include qq.html command="nfs_modify_settings" %} command.
 
-   | Command | Description |
-   | ------- | ----------- |
-   | {% include qq.html command="nfs_modify_settings" %} `--enable-auth-sys` | Enables `AUTH_SYS` without changing `AUTH_KRB5` |
-   | {% include qq.html command="nfs_modify_settings" %} `--enable-krb5` | Enables `AUTH_KRB5` without changing `AUTH_SYS` |
-   | {% include qq.html command="nfs_modify_settings" %} `--enable-krb5p` | Enables `AUTH_KRB5P` without changing `AUTH_SYS` |
-   | {% include qq.html command="nfs_modify_settings" %} `--enable-krb5i` | Enables `AUTH_KRB5I` without changing `AUTH_SYS` |
-   | {% include qq.html command="nfs_modify_settings" %} `--enable-v4` | Enables NFSv4.1 |
-   | {% include qq.html command="nfs_modify_settings" %} `--disable-v4` | Disables NFSv4.1 |
-   | {% include qq.html command="nfs_modify_settings" %} `--disable-krb5` | Disables `AUTH_KRB5` without changing `AUTH_SYS` |
-   | {% include qq.html command="nfs_modify_settings" %} `--disable-krb5p` | Disables `AUTH_KRB5P` without changing `AUTH_SYS` |
-   | {% include qq.html command="nfs_modify_settings" %} `--disable-krb5i` | Disables `AUTH_KRB5I` without changing `AUTH_SYS` |
+    <table>
+      <thead>
+        <tr>
+          <th>Command</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>--enable-auth-sys</code></td>
+          <td>Enables <code>AUTH_SYS</code> without changing <code>AUTH_KRB5</code></td>
+        </tr>
+        <tr>
+          <td><code>--enable-krb5</code></td>
+          <td>Enables <code>AUTH_KRB5</code> without changing <code>AUTH_SYS</code></td>
+        </tr>
+        <tr>
+          <td><code>--enable-krb5p</code></td>
+          <td>Enables <code>AUTH_KRB5P</code> without changing <code>AUTH_SYS</code></td>
+        </tr>
+        <tr>
+          <td><code>--enable-krb5i</code></td>
+          <td>Enables <code>AUTH_KRB5I</code> without changing <code>AUTH_SYS</code></td>
+        </tr>
+        <tr>
+          <td><code>--enable-v4</code></td>
+          <td>Enables NFSv4.1</td>
+        </tr>
+        <tr>
+          <td><code>--disable-v4</code></td>
+          <td>Disables NFSv4.1</td>
+        </tr>
+        <tr>
+          <td><code>--disable-krb5</code></td>
+          <td>Disables <code>AUTH_KRB5</code> without changing <code>AUTH_SYS</code></td>
+        </tr>
+        <tr>
+          <td><code>--disable-krb5p</code></td>
+          <td>Disables <code>AUTH_KRB5P</code> without changing <code>AUTH_SYS</code></td>
+        </tr>
+        <tr>
+          <td><code>--disable-krb5i</code></td>
+          <td>Disables <code>AUTH_KRB5I</code> without changing <code>AUTH_SYS</code></td>
+        </tr>
+      </tbody>
+    </table>
 
 {{site.data.alerts.note}}
 <ul>

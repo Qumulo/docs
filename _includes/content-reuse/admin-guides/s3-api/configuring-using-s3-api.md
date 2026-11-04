@@ -29,7 +29,7 @@ To create and manage S3 buckets you must have a valid S3 access key pair associa
 Run the {% include qq.html command="s3_create_access_key" %} command and specify the username. For example:
 
 ```bash
-$ qq s3_create_access_key my-username
+qq s3_create_access_key my-username
 ```
 
 {% capture accessKeys %}{{site.s3.permissions.secretAccessKeys}}{% endcapture %}
@@ -50,7 +50,7 @@ To create and manage S3 buckets, you must configure AWS CLI to work with your Qu
 1. Configure the AWS CLI to use path-style bucket addressing by using the `aws configure` command and specify your profile.
 
    ```bash
-   $ aws configure \
+   aws configure \
      --profile my-qumulo-profile set s3.addressing_style path
    ```
 
@@ -59,7 +59,7 @@ To create and manage S3 buckets, you must configure AWS CLI to work with your Qu
    1. Specify your profile and [access key ID](creating-managing-s3-access-keys.html#access-key-id). For example:
 
       ```bash
-      $ aws configure \
+      aws configure \
         --profile my-qumulo-profile set aws_access_key_id \
           000000000001fEXAMPLE
       ```
@@ -67,7 +67,7 @@ To create and manage S3 buckets, you must configure AWS CLI to work with your Qu
    1. Specify your profile and [secret access key](creating-managing-s3-access-keys.html#secret-access-key). For example:
 
       ```bash
-      $ aws configure \
+      aws configure \
         --profile my-qumulo-profile set aws_secret_access_key \
           TEIT4liMZ8A32iI7JXmqIiLWp5co/jmkjEXAMPLE
       ```
@@ -75,7 +75,7 @@ To create and manage S3 buckets, you must configure AWS CLI to work with your Qu
 1. Because it isn't possible to specify your cluster's URI persistently, create a shell alias to specify your cluster's URI, in the following format:
 
    ```bash
-   $ alias aws="aws --endpoint-url https://<qumulo-cluster>:9000 --profile my-qumulo-profile"
+   alias aws="aws --endpoint-url https://<qumulo-cluster>:9000 --profile my-qumulo-profile"
    ```
    
    {% include note.html content="If you haven't installed an SSL certificate, append `--no-verify-ssl` to the end of the command." %}
@@ -83,7 +83,7 @@ To create and manage S3 buckets, you must configure AWS CLI to work with your Qu
 1. (Optional) If you haven't configured your machine to trust the SSL certificate installed on your Qumulo cluster, to configure the path to [the trusted SSL certificate bundle that you have created and installed earlier](#configuring-https) manually, run the `aws configure` command. For example:
   
    ```bash
-   $ aws configure \
+   aws configure \
      --profile my-qumulo-profile set ca_bundle MySpecialCert.crt
    ```
 
@@ -104,7 +104,7 @@ To create and manage S3 buckets, you must configure AWS CLI to work with your Qu
 Run the `aws s3api create-bucket` command and specify the bucket name. For example:
 
 ```bash
-$ aws s3api create-bucket \
+aws s3api create-bucket \
   --bucket my-bucket
 ```
 
@@ -116,7 +116,7 @@ The S3 API creates the new directory `/my-bucket/`. All of the bucket's objects 
 1. To test writing data to your Qumulo cluster, perform a `PutObject` S3 API action by using the `aws s3api put-object` command. Specify the S3 bucket name, the object key, and the object data. For example:
 
    ```bash
-   $ aws s3api put-object \
+   aws s3api put-object \
      --bucket my-bucket \
      --key archives/my-remote-file.zip \
      --body my-local-file.zip
@@ -127,7 +127,7 @@ The S3 API creates the new directory `/my-bucket/`. All of the bucket's objects 
 1. To test reading read data from and S3 bucket, perform a `GetObject` S3 API action by using the `aws s3api get-object` command. Specify the S3 bucket name, the object key, and the file name for saving the contents. For example:
 
    ```bash
-   $ aws s3api get-object \
+   aws s3api get-object \
      --bucket my-bucket \
      --key archives/my-remote-file.zip local-file.zip
    ```

@@ -87,7 +87,7 @@ This section explains how you can configure, provision, and mount Qumulo storage
    
    * Windows:
    
-     ```batch
+     ```bat
      cd deploy_v{{ currentVer }}
      install-driver.bat
      ```

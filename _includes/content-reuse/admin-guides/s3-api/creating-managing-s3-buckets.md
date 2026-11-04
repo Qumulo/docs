@@ -127,7 +127,7 @@ By default, the default bucket directory prefix for newly created buckets is the
 1. To change the setting, run the {% include qq.html command="s3_modify_settings" %} command and specify the new default bucket directory prefix. In the following example, we specify `/buckets`.
 
    ```bash
-   $ qq s3_modify_settings \
+   qq s3_modify_settings \
      --base-path /buckets
    ```
 
@@ -143,7 +143,7 @@ When you use the `qq` CLI to create a bucket, you can use a new or existing dire
 * To create a new, empty bucket from the {{page.varDefaultPrefix}}, run the {% include qq.html command="s3_add_bucket" %} command and specify the bucket name. For example:
 
   ```bash
-  $ qq s3_add_bucket \
+  qq s3_add_bucket \
     --name my-bucket
   ```
 
@@ -152,7 +152,7 @@ When you use the `qq` CLI to create a bucket, you can use a new or existing dire
 * To create a bucket from an existing directory, run the {% include qq.html command="s3_add_bucket" %} command and specify the bucket name and the directory path. For example:
 
   ```bash
-  $ qq s3_add_bucket \
+  qq s3_add_bucket \
     --name my-bucket \
     --fs-path /products/web/appliances/
   ```
@@ -160,7 +160,7 @@ When you use the `qq` CLI to create a bucket, you can use a new or existing dire
 * To create a bucket for a path that doesn't exist yet, specify the name and path and add the `--create-fs-path` flag. For example:
 
   ```bash
-  $ qq s3_add_bucket \
+  qq s3_add_bucket \
     --name my-bucket \
     --fs-path /products/web/appliances/ \
     --create-fs-path
@@ -170,7 +170,7 @@ When you use the `qq` CLI to create a bucket, you can use a new or existing dire
 Run the `aws s3api create-bucket` command and specify the bucket name. This command uses the [`CreateBucket`]({{site.s3.actions.CreateBucket}}) S3 API action. For example:
 
 ```bash
-$ aws s3api create-bucket \
+aws s3api create-bucket \
   --bucket my-bucket
 ```
 
@@ -198,7 +198,7 @@ An [Object Lock](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lo
 1. Run the {% include qq.html command="s3_modify_bucket" %} command, specify the bucket name, and use the `--enable-object-locking` flag. For example:
 
 ```bash
-$ qq s3_modify_bucket \
+qq s3_modify_bucket \
   --name my-bucket \
   --enable-object-locking
 ```
@@ -278,7 +278,7 @@ When you use the `qq` CLI to delete a bucket, you can choose to also delete the 
 * To delete an S3 bucket, but not its root directory, run the {% include qq.html command="s3_delete_bucket" %} command and specify the bucket name. For example:
 
   ```bash
-  $ qq s3_delete_bucket \
+  qq s3_delete_bucket \
     --name my-bucket
   ```
 
@@ -295,7 +295,7 @@ When you use the `qq` CLI to delete a bucket, you can choose to also delete the 
 * To delete a bucket together with its root directory, run the {% include qq.html command="s3_delete_bucket" %} command, specify the bucket name, and use the `--delete-root-dir` flag. For example:
 
   ```bash
-  $ qq s3_delete_bucket \
+  qq s3_delete_bucket \
     --delete-root-dir \
     --name my-bucket
   ```
@@ -310,7 +310,7 @@ When you use the `qq` CLI to delete a bucket, you can choose to also delete the 
 Run the `aws s3api delete-bucket` command and specify the bucket name. This command uses the [`DeleteBucket`]({{site.s3.actions.DeleteBucket}}) S3 API action. For example:
 
 ```bash
-$ aws s3api delete-bucket \
+aws s3api delete-bucket \
   --bucket my-bucket
 ```
 

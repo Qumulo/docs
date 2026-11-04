@@ -39,7 +39,7 @@ The following is an example configuration for joining a domain.
 1. To join the domain, run the `net ads join` command. For example:
 
    ```bash
-   $ net ads join my-domain.example.com -U Administrator
+   net ads join my-domain.example.com -U Administrator
    ```
 
 1. `samba` doesn't create configuration files. {{page.varConfig}}
@@ -50,7 +50,7 @@ The following is an example configuration for joining a domain.
 1. To join a domain, run the `realm join` command. For example:
 
    ```bash
-   $ realm join my-domain.example.com -U Administrator
+   realm join my-domain.example.com -U Administrator
    ```
 
 1. {{page.varConfig}}
@@ -62,7 +62,7 @@ The following is an example configuration for joining a domain.
 1. After you configure DNS, check DNS resolution from your client. For example:
 
    ```bash
-   $ nslookup my-client-machine.my-domain.example.com
+   nslookup my-client-machine.my-domain.example.com
    ```
 
 1. In addition to DNS configuration, Linux clients require a standard host SPN on the machine account created while joining the domain. We recommend configuring the SPN by using the `setspn` command on the domain controller after the join procedure. For example:
@@ -186,15 +186,20 @@ Machine account authentication can be useful for simple scenarios in which trust
 1. {{page.varMountKRB5}}
 
    ```bash
-   $ sudo mount -o vers=4.1,sec=krb5 my-cluster.my-domain.example.com:/ /mnt/point
+   sudo mount -o vers=4.1,sec=krb5 my-cluster.my-domain.example.com:/ /mnt/point
    ```
 
 1. Use the Qumulo file system.
 
    ```bash
-   $ cd /mnt/point
-   $ touch filename
-   $ ls -l filename
+   cd /mnt/point && \
+     touch filename && \
+     ls -l filename
+   ```
+
+   {{ site.exampleOutput }}
+
+   ```
    -rw-r--r--    1 MY_MACHINE$    domain computers         0 Jun  9 23:18 filename
    ```
 
@@ -214,7 +219,7 @@ In environments where Linux systems map exactly to end users that have `kinit`-b
 1. Authenticate by using `kinit`. For example:
 
    ```bash
-   $ sudo kinit my-user
+   sudo kinit my-user
    ```
 
 1. When prompted for a password, use the AD domain password for the user.
@@ -233,15 +238,20 @@ In environments where Linux systems map exactly to end users that have `kinit`-b
 1. {{page.varMountKRB5}}
 
    ```bash
-   $ sudo mount -o vers=4.1,sec=krb5 my-cluster.my-domain.example.com:/ /mnt/point
+   sudo mount -o vers=4.1,sec=krb5 my-cluster.my-domain.example.com:/ /mnt/point
    ```
 
 1. Use the Qumulo file system. 
 
    ```bash
-   $ cd /mnt/point
-   $ touch filename
-   $ ls -l filename
+   cd /mnt/point && \
+     touch filename && \
+     ls -l filename
+   ```
+
+   {{ site.exampleOutput }}
+
+   ```
    -rw-r--r--    1 my-user    domain users         0 Jun  9 23:18 filename
    ```
 
@@ -256,13 +266,13 @@ In environments where Linux systems map exactly to end users that have `kinit`-b
 1. Connect to an AD domain and configure `sssd` to authenticate with this domain. For example:
 
    ```bash
-   $ sudo login my-domain-user
+   sudo login my-domain-user
    ```
 
    Alternatively, you can run the following command.
 
    ```bash
-   $ ssh my-domain_user@my-linux-system
+   ssh my-domain_user@my-linux-system
    ```
 
 1. Configure the `autofs` mappings. For more information, see [auto.master](https://man7.org/linux/man-pages/man5/auto.master.5.html) in the Linux documentation. The following is an example of a simple configuration that provides a single (direct) mount point which authenticates AD users automatically.
@@ -284,15 +294,20 @@ In environments where Linux systems map exactly to end users that have `kinit`-b
 1. Restart `autofs`.
 
    ```bash
-   $ sudo systemctl restart autofs
+   sudo systemctl restart autofs
    ```
 
    `autofs` creates the `/mnt/qumulo_mount_point` directory and mounts it as necessary for any user. For example:
 
    ```
-   $ ssh domain_user_1@my-linux-system touch /mnt/qumulo_mount_point/user1_file
-   $ ssh domain_user_2@my-linux-system touch /mnt/qumulo_mount_point/user2_file
-   $ ssh domain_user_3@my-linux-system ls -l /mnt/qumulo_mount_point
+   ssh domain_user_1@my-linux-system touch /mnt/qumulo_mount_point/user1_file && \
+   ssh domain_user_2@my-linux-system touch /mnt/qumulo_mount_point/user2_file && \
+   ssh domain_user_3@my-linux-system ls -l /mnt/qumulo_mount_point
+   ```
+
+   {{ site.exampleOutput }}
+
+   ```
    -rw-r--r--    1 user1    domain users         0 Jun  9 23:18 user1_file
    -rw-r--r--    1 user2    domain users         0 Jun  9 23:18 user2_file
    ```

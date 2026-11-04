@@ -68,7 +68,7 @@ To make S3 API requests to a Qumulo cluster as a specific user, you must create 
 Run the {% include qq.html command="s3_create_access_key" %} command and use the `--self` flag. For example:
 
 ```bash
-$ qq s3_create_access_key --self
+qq s3_create_access_key --self
 ```
 
 {{site.exampleOutput}}
@@ -100,7 +100,7 @@ To create S3 access keys for another user [identity](#identity), you must have a
 To create an S3 access key for a particular user , run the {% include qq.html command="s3_create_access_key" %} command and specify an identity. For example:
 
 ```bash
-$ qq s3_create_access_key ANOTHER_IDENTITY
+qq s3_create_access_key ANOTHER_IDENTITY
 ```
 
 You can specify an identity by using:
@@ -205,7 +205,7 @@ You can list every S3 access key known to your Qumulo cluster, {{page.varKeyDoAl
 * To list the S3 access keys for your user known to your Qumulo cluster, run the {% include qq.html command="s3_list_access_keys" %}:
 
   ```bash
-  $ qq s3_list_access_keys  --self
+  qq s3_list_access_keys  --self
   ```
 
   {{site.exampleOutput}} {{site.s3.permissions.timesUTC}}
@@ -258,7 +258,7 @@ To revoke an S3 access key, you must delete the access key from your Qumulo clus
 Run the {% include qq.html command="s3_delete_access_key" %} command and specify the access key ID. For example:
 
 ```bash
-$ qq s3_delete_access_key \
+qq s3_delete_access_key \
   --id 000000000001fEXAMPLE
 ```
 
@@ -274,7 +274,7 @@ For users that exist in an AD domain that has a trust relationship with the join
 To append the trusted base DN to the base DN in use&mdash;with a semicolon (`;`) separating the two&mdash;use the Qumulo Core Web UI or the {% include qq.html command="ad_reconfigure" %} command. For example:
 
 ```bash
-$ qq ad_reconfigure \
+qq ad_reconfigure \
   --base-dn 'CN=Users, DC=joined_domain,DC=example,DC=com;\
   CN=Users,DC=trusted_domain,DC=example,DC=com'
 ```
