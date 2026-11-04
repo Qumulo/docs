@@ -2439,7 +2439,7 @@ $(document).ready(function() {
 <p>To enable automatic DNS responses and traffic load balancing, every Qumulo cluster hosts and manages a single fully qualified domain name (FQDN) that provides DNS records to all queries.</p>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>Regardless of the number of tenants or network configurations, it is possible to configure only one FQDN for every Qumulo cluster.</li>
     <li>QDNS uses the naming convention <code class="language-plaintext highlighter-rouge">&lt;NetworkID&gt;.&lt;ClusterFQDN&gt;</code>. For example, <code class="language-plaintext highlighter-rouge">1.my-cluster.example.com</code> indicates network ID 1 for cluster <code class="language-plaintext highlighter-rouge">my-cluster.example.com</code>.</li>
   </ul>
@@ -2512,7 +2512,7 @@ my-cluster-ns3.example.com. A 203.0.113.3
     <p>When you specify the name server’s IP addresses, use a minimum of three floating IP addresses from your Qumulo cluster. These floating IP addresses act as the DNS endpoints that respond to queries for the delegated zone.</p>
 
     <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> If you use a DNS resolver hosted in the cloud or in Active Directory, the resolver must be able to reach the nodes in your Qumulo cluster.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> If you use a DNS resolver hosted in the cloud or in Active Directory, the resolver must be able to reach the nodes in your Qumulo cluster.
     </div>
   </li>
 </ul>
@@ -2530,7 +2530,7 @@ my-cluster-ns3.example.com. A 203.0.113.3
 </code></pre></div></div>
 
 <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Include the trailing dot at the end of your FQDN.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> Include the trailing dot at the end of your FQDN.
 </div>
 
 <h3 id="to-view-the-current-qdns-configuration">To View the Current QDNS Configuration</h3>
@@ -2548,7 +2548,7 @@ my-cluster-ns3.example.com. A 203.0.113.3
 
 <h3 id="to-modify-the-fully-qualified-domain-name-fqdn-for-your-qdns-configuration">To Modify the Fully Qualified Domain Name (FQDN) for Your QDNS Configuration</h3>
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>Include the trailing dot at the end of your FQDN.</li>
     <li>After you change the FQDN for your QDNS configuration, you must <a href="#configure-dns-delegation">reconfigure the DNS delegation</a> for your domain.</li>
   </ul>
@@ -2565,7 +2565,7 @@ my-cluster-ns3.example.com. A 203.0.113.3
 <p>To limit DNS queries to authorized resolvers, add host restrictions to your QDNS configuration.</p>
 
 <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> You can specify multiple IP addresses or CIDR blocks separated by spaces.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> You can specify multiple IP addresses or CIDR blocks separated by spaces.
 </div>
 
 <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/authoritative/authoritative_dns_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq authoritative_dns_modify_settings</code></a>
@@ -2586,7 +2586,7 @@ my-cluster-ns3.example.com. A 203.0.113.3
  command with the <code class="language-plaintext highlighter-rouge">--disable</code> flag.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> When you disable QDNS, any previously configured FQDN and host restrictions remain on the cluster in an inactive state.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> When you disable QDNS, any previously configured FQDN and host restrictions remain on the cluster in an inactive state.
 </div>
 
 <h2 id="known-limits">Known Limits</h2>

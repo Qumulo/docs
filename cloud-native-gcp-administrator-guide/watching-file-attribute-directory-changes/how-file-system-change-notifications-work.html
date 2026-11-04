@@ -2455,14 +2455,14 @@ $(document).ready(function() {
 <p>A client can request Qumulo Core to filter notifications. Although available filters differ between protocols, they work in a similar way.</p>
 
 <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> We recommend using a filter whenever you have an idea of the kind of events for which you want to receive notifications. Filtering notifications reduces back-end and front-end load and helps your client keep up with the data the cluster streams to it.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> We recommend using a filter whenever you have an idea of the kind of events for which you want to receive notifications. Filtering notifications reduces back-end and front-end load and helps your client keep up with the data the cluster streams to it.
 </div>
 
 <p>For example, you want to configure a client to receive notifications only about files being created but not deleted. In this scenario, you can make a notification request with the <code class="language-plaintext highlighter-rouge">child_file_added</code> filter for your protocol.</p>
 
 <h2 id="how-recursion-works">How Recursion Works</h2>
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>Because recursive notification lets you monitor large regions of the file system tree without having to "walk" through these regions to look for changes, recursive notification is a powerful feature. Use this feature carefully: Watching too large a file tree can lead to the system sending too many notifications.</li>
     <li>In case a client can't keep up with the amount of events that the system emits, the cluster stops queuing events and produces an error the next time the client attempts to contact the cluster.</li>
     <li>When Qumulo Core sends too many messages, there can also be a slight performance impact for your cluster. For example, thousands of recursive watches at the file system root can have a measurable performance impact on a write-heavy IOPS workload.</li>
@@ -2517,14 +2517,14 @@ $(document).ready(function() {
     <p>Use this mode to improve compatibility with applications that request recursive behavior but don’t depend on it.</p>
 
     <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> For scenarios that require recursive behavior, this mode can cause an application to become unresponsive or exhibit other unexpected behavior.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> For scenarios that require recursive behavior, this mode can cause an application to become unresponsive or exhibit other unexpected behavior.
     </div>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">ENABLED</code>: This is the default mode. This mode provides full support for recursive change notification requests. The system pushes notifications for all descendants of the watched directory to the watcher.</p>
 
     <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This mode can affect system performance. For example, thousands of recursive watches at the file system root can have a measurable performance impact on a write-heavy IOPS workload.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> This mode can affect system performance. For example, thousands of recursive watches at the file system root can have a measurable performance impact on a write-heavy IOPS workload.
     </div>
   </li>
 </ul>

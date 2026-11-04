@@ -2722,7 +2722,7 @@ $(document).ready(function() {
 </ol>
 
 <figure>
-<img class="docimage" src="/images/shared-images/admin-guides/snapshots/how-snapshots-work.png" alt="The following example diagram uses a 4 MB file to explain how a snapshot grows over time." />
+<img class="docimage" src="/images/shared-images/admin-guides/snapshots/how-snapshots-work.png" alt="The following example diagram uses a 4 MB file to explain how a snapshot grows over time.">
 </figure>
 
 <p>Now, the following is true:</p>
@@ -2758,7 +2758,7 @@ $(document).ready(function() {
 
 <h2 id="determining-snapshots-storage-usage">Determining Snapshots’ Storage Usage</h2>
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Qumulo Core 7.9.0.2 (and higher) removes the <code class="language-plaintext highlighter-rouge">qq snapshot_calculate_used_capacity</code> and <code class="language-plaintext highlighter-rouge">qq snapshot_get_capacity_used_per_snapshot</code> commands and their corresponding <code class="language-plaintext highlighter-rouge">/v1/snapshots/</code> REST API endpoints. To determine the amount of data that a single snapshot references, use the <a href="https://github.com/Qumulo/qsnap"><code class="language-plaintext highlighter-rouge">qsnap</code></a> CLI.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Qumulo Core 7.9.0.2 (and higher) removes the <code class="language-plaintext highlighter-rouge">qq snapshot_calculate_used_capacity</code> and <code class="language-plaintext highlighter-rouge">qq snapshot_get_capacity_used_per_snapshot</code> commands and their corresponding <code class="language-plaintext highlighter-rouge">/v1/snapshots/</code> REST API endpoints. To determine the amount of data that a single snapshot references, use the <a href="https://github.com/Qumulo/qsnap"><code class="language-plaintext highlighter-rouge">qsnap</code></a> CLI.
 </div>
 
 <p>When Qumulo Core tracks the difference between the <em>saved</em> (snapshotted) and <em>live</em> (latest) versions of a file, it creates a <em>lineage</em> of snapshots independent from each other.</p>
@@ -2778,7 +2778,7 @@ $(document).ready(function() {
 <p>When you delete a snapshot, Qumulo Core removes the data which that snapshot references but retains the data which any other snapshot references. This ensures a full file representation within the remaining snapshots. Qumulo Core uses a background process to recover the storage that the snapshot had consumed.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> When you delete a snapshot, the background process might take some time. To track the reclaimed storage, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/snapshot/snapshot_get_total_used_capacity.html"><code class="language-plaintext highlighter-rouge">qq snapshot_get_total_used_capacity</code></a>
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> When you delete a snapshot, the background process might take some time. To track the reclaimed storage, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/snapshot/snapshot_get_total_used_capacity.html"><code class="language-plaintext highlighter-rouge">qq snapshot_get_total_used_capacity</code></a>
  command.
 </div>
 
@@ -2806,7 +2806,7 @@ $(document).ready(function() {
 <p>If you delete snapshot 1, only 1,023 GiB of data (covered by snapshots 2 and 3) remain. Qumulo Core doesn’t release this 1,023 GiB of data until you delete all snapshots that reference the original file.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Without the data that snapshots 2 and 3 cover, no full file representation is possible.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Without the data that snapshots 2 and 3 cover, no full file representation is possible.
 </div>
 
 

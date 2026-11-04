@@ -2446,7 +2446,7 @@ $(document).ready(function() {
 
 <h3 id="enabling-and-disabling-plaintext-http-connections">Enabling and Disabling Plaintext HTTP Connections</h3>
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> If you configure the S3 API service to accept only plaintext HTTP connections, no requests made through the S3 API are encrypted.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> If you configure the S3 API service to accept only plaintext HTTP connections, no requests made through the S3 API are encrypted.
 </div>
 
 <ul>
@@ -2472,18 +2472,18 @@ $(document).ready(function() {
 <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_create_access_key.html"><code class="language-plaintext highlighter-rouge">qq s3_create_access_key</code></a>
  command and specify the username. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq s3_create_access_key my-username
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq s3_create_access_key my-username
 </code></pre></div></div>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> After Qumulo Core initially creates your secret access keys, it never logs or displays them again. If you lose your secret access key, it isn’t possible to recover it and you must create a new access key pair.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> After Qumulo Core initially creates your secret access keys, it never logs or displays them again. If you lose your secret access key, it isn’t possible to recover it and you must create a new access key pair.
 </div>
 
 <h2 id="configuring-aws-cli">Step 4: Configure the AWS CLI for Use with Qumulo Core</h2>
 <p>To create and manage S3 buckets, you must configure AWS CLI to work with your Qumulo cluster.</p>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>We recommend configuring a dedicated profile for Qumulo in your <a href="https://docs.aws.amazon.com/cli/latest/topic/s3-config.html">AWS CLI S3 Configuration</a>.</li>
     <li>Qumulo Core listens for S3 API traffic on TCP port 9000. It isn't possible to change this setting.</li>
     <li>Currently, Qumulo Core supports only <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/VirtualHosting.html#path-style-access">path-style</a> bucket addressing. For more information, see <a href="supported-s3-functionality-known-limits.html#bucket-addressing-style">Bucket Addressing Style</a>.</li>
@@ -2494,7 +2494,7 @@ $(document).ready(function() {
   <li>
     <p>Configure the AWS CLI to use path-style bucket addressing by using the <code class="language-plaintext highlighter-rouge">aws configure</code> command and specify your profile.</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>aws configure <span class="se">\</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aws configure <span class="se">\</span>
   <span class="nt">--profile</span> my-qumulo-profile <span class="nb">set </span>s3.addressing_style path
 </code></pre></div>    </div>
   </li>
@@ -2505,7 +2505,7 @@ $(document).ready(function() {
       <li>
         <p>Specify your profile and <a href="creating-managing-s3-access-keys.html#access-key-id">access key ID</a>. For example:</p>
 
-        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>aws configure <span class="se">\</span>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aws configure <span class="se">\</span>
   <span class="nt">--profile</span> my-qumulo-profile <span class="nb">set </span>aws_access_key_id <span class="se">\</span>
     000000000001fEXAMPLE
 </code></pre></div>        </div>
@@ -2513,7 +2513,7 @@ $(document).ready(function() {
       <li>
         <p>Specify your profile and <a href="creating-managing-s3-access-keys.html#secret-access-key">secret access key</a>. For example:</p>
 
-        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>aws configure <span class="se">\</span>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aws configure <span class="se">\</span>
   <span class="nt">--profile</span> my-qumulo-profile <span class="nb">set </span>aws_secret_access_key <span class="se">\</span>
     TEIT4liMZ8A32iI7JXmqIiLWp5co/jmkjEXAMPLE
 </code></pre></div>        </div>
@@ -2523,17 +2523,17 @@ $(document).ready(function() {
   <li>
     <p>Because it isn’t possible to specify your cluster’s URI persistently, create a shell alias to specify your cluster’s URI, in the following format:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">alias </span><span class="nv">aws</span><span class="o">=</span><span class="s2">"aws --endpoint-url https://&lt;qumulo-cluster&gt;:9000 --profile my-qumulo-profile"</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">alias </span><span class="nv">aws</span><span class="o">=</span><span class="s2">"aws --endpoint-url https://&lt;qumulo-cluster&gt;:9000 --profile my-qumulo-profile"</span>
 </code></pre></div>    </div>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If you haven’t installed an SSL certificate, append <code class="language-plaintext highlighter-rouge">--no-verify-ssl</code> to the end of the command.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> If you haven’t installed an SSL certificate, append <code class="language-plaintext highlighter-rouge">--no-verify-ssl</code> to the end of the command.
     </div>
   </li>
   <li>
     <p>(Optional) If you haven’t configured your machine to trust the SSL certificate installed on your Qumulo cluster, to configure the path to <a href="#configuring-https">the trusted SSL certificate bundle that you have created and installed earlier</a> manually, run the <code class="language-plaintext highlighter-rouge">aws configure</code> command. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>aws configure <span class="se">\</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aws configure <span class="se">\</span>
   <span class="nt">--profile</span> my-qumulo-profile <span class="nb">set </span>ca_bundle MySpecialCert.crt
 </code></pre></div>    </div>
   </li>
@@ -2551,12 +2551,12 @@ $(document).ready(function() {
 
 <h2 id="step-5-create-an-s3-bucket">Step 5: Create an S3 Bucket</h2>
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Creating buckets requires the <code class="language-plaintext highlighter-rouge">PRIVILEGE_S3_BUCKETS_WRITE</code> <a href="../authorization-qumulo-core/managing-role-based-access-control-rbac.html">role-based access control (RBAC)</a> privilege and permission to create a directory under the cluster’s root directory.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Creating buckets requires the <code class="language-plaintext highlighter-rouge">PRIVILEGE_S3_BUCKETS_WRITE</code> <a href="../authorization-qumulo-core/managing-role-based-access-control-rbac.html">role-based access control (RBAC)</a> privilege and permission to create a directory under the cluster’s root directory.
 </div>
 
 <p>Run the <code class="language-plaintext highlighter-rouge">aws s3api create-bucket</code> command and specify the bucket name. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>aws s3api create-bucket <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aws s3api create-bucket <span class="se">\</span>
   <span class="nt">--bucket</span> my-bucket
 </code></pre></div></div>
 
@@ -2568,7 +2568,7 @@ $(document).ready(function() {
   <li>
     <p>To test writing data to your Qumulo cluster, perform a <code class="language-plaintext highlighter-rouge">PutObject</code> S3 API action by using the <code class="language-plaintext highlighter-rouge">aws s3api put-object</code> command. Specify the S3 bucket name, the object key, and the object data. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>aws s3api put-object <span class="se">\</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aws s3api put-object <span class="se">\</span>
   <span class="nt">--bucket</span> my-bucket <span class="se">\</span>
   <span class="nt">--key</span> archives/my-remote-file.zip <span class="se">\</span>
   <span class="nt">--body</span> my-local-file.zip
@@ -2579,7 +2579,7 @@ $(document).ready(function() {
   <li>
     <p>To test reading read data from and S3 bucket, perform a <code class="language-plaintext highlighter-rouge">GetObject</code> S3 API action by using the <code class="language-plaintext highlighter-rouge">aws s3api get-object</code> command. Specify the S3 bucket name, the object key, and the file name for saving the contents. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>aws s3api get-object <span class="se">\</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aws s3api get-object <span class="se">\</span>
   <span class="nt">--bucket</span> my-bucket <span class="se">\</span>
   <span class="nt">--key</span> archives/my-remote-file.zip local-file.zip
 </code></pre></div>    </div>

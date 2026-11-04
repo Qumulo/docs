@@ -2420,7 +2420,7 @@ $(document).ready(function() {
      
      
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo provides REST access to the same <a href="how-file-system-change-notifications-work.html">change notification system</a> that backs SMB2 <code class="language-plaintext highlighter-rouge">CHANGE_NOTIFY</code>. Because the notification interface and types are easier to work with compared to SMB2, we recommend programming by using REST rather than SMB <code class="language-plaintext highlighter-rouge">CHANGE_NOTIFY</code>.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Qumulo provides REST access to the same <a href="how-file-system-change-notifications-work.html">change notification system</a> that backs SMB2 <code class="language-plaintext highlighter-rouge">CHANGE_NOTIFY</code>. Because the notification interface and types are easier to work with compared to SMB2, we recommend programming by using REST rather than SMB <code class="language-plaintext highlighter-rouge">CHANGE_NOTIFY</code>.
 </div>
 
 <p>Qumulo Core can watch for changes in file attributes and directory entries with a combination of SMB2 <a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-smb2/598f395a-e7a2-4cc8-afb3-ccb30dd2df7c"><code class="language-plaintext highlighter-rouge">CHANGE_NOTIFY</code></a> filters. Depending on the requested filter—and activity in the file system—an SMB client or an application remains current by receiving a variety of notifications.</p>
@@ -2452,7 +2452,7 @@ $(document).ready(function() {
     </ul>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo doesn’t support mutating extended attributes (EA). If the system requests only the <code class="language-plaintext highlighter-rouge">FILE_NOTIFY_CHANGE_EA</code> filter, no events propagate.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Qumulo doesn’t support mutating extended attributes (EA). If the system requests only the <code class="language-plaintext highlighter-rouge">FILE_NOTIFY_CHANGE_EA</code> filter, no events propagate.
     </div>
   </li>
 </ul>
@@ -2500,7 +2500,7 @@ $(document).ready(function() {
       <p>• <code>FILE_NOTIFY_CHANGE_LAST_ACCESS</code></p>
       <p>• <code>FILE_NOTIFY_CHANGE_LAST_WRITE</code></p>
       
-      <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo doesn’t support mutating extended attributes (EA). If the system requests only the <code class="language-plaintext highlighter-rouge">FILE_NOTIFY_CHANGE_EA</code> filter, no events propagate.</div>
+      <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Qumulo doesn’t support mutating extended attributes (EA). If the system requests only the <code class="language-plaintext highlighter-rouge">FILE_NOTIFY_CHANGE_EA</code> filter, no events propagate.</div>
     
     </td>
     <td>
@@ -2508,7 +2508,7 @@ $(document).ready(function() {
     </td>
     <td>
       <p>When one of the watched attributes changes for an entry of the watched directory and the filter is requested, the client receives a <code>MODIFIED</code> event.</p>
-      <p><div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> In Microsoft terminology, attributes are <em>flags.</em> For more information, see <a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/ca28ec38-f155-4768-81d6-4bfeb8586fc9">File Attributes</a> in the Open Specification documentation.</div>
+      <p><div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> In Microsoft terminology, attributes are <em>flags.</em> For more information, see <a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/ca28ec38-f155-4768-81d6-4bfeb8586fc9">File Attributes</a> in the Open Specification documentation.</div>
 </p>
     </td>
   </tr>
@@ -2535,7 +2535,7 @@ $(document).ready(function() {
 </table>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If you don’t supply a filter, the SMB server accepts the request but doesn’t send any notifications.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> If you don’t supply a filter, the SMB server accepts the request but doesn’t send any notifications.
 </div>
 
 <h2 id="re-enumerating-changes-after-the-status_enum_dir-error">Re-Enumerating Changes after the STATUS_ENUM_DIR Error</h2>

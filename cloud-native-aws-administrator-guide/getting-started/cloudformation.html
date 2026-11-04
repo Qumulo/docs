@@ -2445,7 +2445,7 @@ $(document).ready(function() {
     <p>To allow your Qumulo cluster to report metrics to Qumulo, your AWS VPC must have outbound Internet connectivity through a NAT gateway or a firewall. Your instance shares no file data during this process.</p>
 
     <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br /> Connectivity to the following endpoints is required for a successful deployment of a Qumulo instance and quorum formation:       <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br> Connectivity to the following endpoints is required for a successful deployment of a Qumulo instance and quorum formation:       <ul>
         <li><code class="language-plaintext highlighter-rouge">api.missionq.qumulo.com</code></li>
         <li><code class="language-plaintext highlighter-rouge">api.nexus.qumulo.com</code></li>
       </ul>
@@ -2487,7 +2487,7 @@ $(document).ready(function() {
       <td>
         Creating persistent storage
           
-        <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> You must create persistent storage by using a separate CloudFormation stack <em>before</em> you deploy the compute and cache resources for your cluster.</div>
+        <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> You must create persistent storage by using a separate CloudFormation stack <em>before</em> you deploy the compute and cache resources for your cluster.</div>
 
       </td>
       <td>7.1.3 with version 4.0 of the deployment scripts</td>
@@ -2519,7 +2519,7 @@ $(document).ready(function() {
     </ul>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Although the <code class="language-plaintext highlighter-rouge">AdministratorAccess</code> managed IAM policy provides sufficient permissions, your organization might use a custom policy with more restrictions.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Although the <code class="language-plaintext highlighter-rouge">AdministratorAccess</code> managed IAM policy provides sufficient permissions, your organization might use a custom policy with more restrictions.
     </div>
   </li>
 </ul>
@@ -2528,7 +2528,7 @@ $(document).ready(function() {
 <p>The CNQ Provisioner is an m5.large EC2 instance that configures your Qumulo cluster and any additional AWS environment requirements.</p>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Don’t delete the CNQ Provisioner’s EC2 instance. It is necessary for EC2 updates.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Don’t delete the CNQ Provisioner’s EC2 instance. It is necessary for EC2 updates.
 </div>
 
 <h4 id="monitor-provisioner-status">To Monitor the Provisioner’s Status</h4>
@@ -2563,7 +2563,7 @@ $(document).ready(function() {
 </code></pre></div>    </div>
 
     <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Make a new subdirectory for every new release of Qumulo Core.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> Make a new subdirectory for every new release of Qumulo Core.
     </div>
   </li>
   <li>
@@ -2579,7 +2579,7 @@ $(document).ready(function() {
 </code></pre></div>    </div>
 
     <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Make a new subdirectory for every new release of Qumulo Core.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> Make a new subdirectory for every new release of Qumulo Core.
     </div>
   </li>
 </ol>
@@ -2613,7 +2613,7 @@ $(document).ready(function() {
     <p>For <strong>S3 key prefix</strong>, enter your S3 bucket prefix.</p>
 
     <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To avoid a potential <code class="language-plaintext highlighter-rouge">AccessDenied</code> error from CloudFormation, include a slash (<code class="language-plaintext highlighter-rouge">/</code>) at the end of your prefix.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> To avoid a potential <code class="language-plaintext highlighter-rouge">AccessDenied</code> error from CloudFormation, include a slash (<code class="language-plaintext highlighter-rouge">/</code>) at the end of your prefix.
     </div>
   </li>
   <li>
@@ -2636,7 +2636,7 @@ $(document).ready(function() {
 <p>This section explains how to deploy compute and cache resources for a Qumulo cluster by using a Ubuntu AMI and the Qumulo Core <code class="language-plaintext highlighter-rouge">.deb</code> installer.</p>
 
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>If you plan to use <a href="../network-configuration/configuring-authoritative-dns.html">Qumulo Authoritative DNS (QDNS)</a> functionality and you have configured the Amazon Route 53 Resolver outbound endpoint by specifying the <strong>FQDN for Qumulo DNS Resolver</strong> parameter during the CloudFormation stack creation process, you must attach your client VPC by selecting <strong>Associate VPC</strong> when configuring the Route 53 forwarding rule.</li>
     <li>If your client VPCs are in an AWS account different from the AWS account into which you deployed your <code class="language-plaintext highlighter-rouge">qumulo</code> VPC, you must share the Route 53 forwarding rule with your other AWS account by using AWS Resource Access Manager.</li>
   </ul>
@@ -2644,7 +2644,7 @@ $(document).ready(function() {
 
 <h3 id="recommendations">Recommendations</h3>
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> We strongly recommend reviewing the following recommendations before beginning this process.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> We strongly recommend reviewing the following recommendations before beginning this process.
 </div>
 
 <ul>
@@ -2700,7 +2700,7 @@ $(document).ready(function() {
         <p>For <strong>S3 key prefix</strong>, enter your S3 bucket prefix.</p>
 
         <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To avoid a potential <code class="language-plaintext highlighter-rouge">AccessDenied</code> error from CloudFormation, include a slash (<code class="language-plaintext highlighter-rouge">/</code>) at the end of your prefix.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> To avoid a potential <code class="language-plaintext highlighter-rouge">AccessDenied</code> error from CloudFormation, include a slash (<code class="language-plaintext highlighter-rouge">/</code>) at the end of your prefix.
         </div>
       </li>
       <li>
@@ -2754,7 +2754,7 @@ $(document).ready(function() {
         <p>Enter the <strong>Total number of Floating IPs for the Qumulo Cluster</strong>.</p>
 
         <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> If you intend to scale out your Qumulo cluster, enter 6 floating IP addresses for each EC2 instance.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> If you intend to scale out your Qumulo cluster, enter 6 floating IP addresses for each EC2 instance.
         </div>
       </li>
       <li>
@@ -2782,7 +2782,7 @@ $(document).ready(function() {
     <p>To log in to your cluster’s Web UI, use the endpoint from the the <strong>QumuloPrivateIP</strong> key on the <strong>Outputs</strong> tab for this stack  and the username and password that you have configured.</p>
 
     <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> If you change the administrative password for your cluster by using the Qumulo Core Web UI, <code class="language-plaintext highlighter-rouge">qq</code> CLI, or REST API after deployment, you must update your password in AWS Secrets Manager.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> If you change the administrative password for your cluster by using the Qumulo Core Web UI, <code class="language-plaintext highlighter-rouge">qq</code> CLI, or REST API after deployment, you must update your password in AWS Secrets Manager.
     </div>
 
     <p>You can use the Qumulo Core Web UI to create and manage <a href="../nfs/creating-nfs-export.html">NFS exports</a>, <a href="../smb/creating-smb-share.html">SMB shares</a>, <a href="../snapshots/managing-snapshots.html">snapshots</a>, and <a href="../replicating-data/creating-managing-continuous-replication-relationship.html">continuous replication relationships</a>. You can also <a href="../authentication-qumulo-core/configuring-ad.html">join your cluster to Active Directory</a>, <a href="../authentication-qumulo-core/configuring-ldap.html">configure LDAP</a>, and <a href="../">perform many other operations</a>.</p>
@@ -2797,7 +2797,7 @@ $(document).ready(function() {
 
 <h3 id="adding-node-to-existing-cluster">Adding Nodes to an Existing Cluster</h3>
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> To add nodes to an existing cluster, the total node count must be greater than that of the current deployment.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> To add nodes to an existing cluster, the total node count must be greater than that of the current deployment.
 </div>
 
 <ol>
@@ -2814,7 +2814,7 @@ $(document).ready(function() {
     <p>On the <strong>Specify stack details</strong> page, enter a new value for <strong>Number of Qumulo EC2 instances</strong>, enter the <strong>Qumulo AMI ID</strong> and then click <strong>Next</strong>.</p>
 
     <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To find the value for <strong>Qumulo AMI ID</strong>, on the EC2 console, click <strong>Instances &gt; Instances</strong>.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> To find the value for <strong>Qumulo AMI ID</strong>, on the EC2 console, click <strong>Instances &gt; Instances</strong>.
     </div>
   </li>
   <li>
@@ -2873,7 +2873,7 @@ $(document).ready(function() {
     <p>On the <strong>Specify stack details</strong> page, enter the <strong>Qumulo AMI ID</strong> and then click <strong>Next</strong>.</p>
 
     <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To find the value for <strong>Qumulo AMI ID</strong>, on the EC2 console, click <strong>Instances &gt; Instances</strong>.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> To find the value for <strong>Qumulo AMI ID</strong>, on the EC2 console, click <strong>Instances &gt; Instances</strong>.
     </div>
   </li>
   <li>
@@ -2892,7 +2892,7 @@ $(document).ready(function() {
 <p>You can change the EC2 instance type, node count, and to convert your cluster from single-AZ to multi-AZ, or the other way around.</p>
 
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>To minimize potential availability interruptions, you must perform the <em>cluster replacement procedure</em> as a two-quorum event. For example, if you stop the existing EC2 instances by using the AWS Management Console and change the EC2 instance types, two quorum events occur <em>for each node</em> and the read and write cache isn't optimized for the EC2 instance type.</li>
     <li>Performing the cluster replacement procedure ensures that the required EC2 instance types are available in advance.</li>
     <li>For Qumulo clusters with <a href="../cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html#portal-relationship">Cloud Data Fabric portal relationships</a>, portal data becomes inaccessible until you specify the correct IP addresses in your portal configuration.</li>
@@ -2930,7 +2930,7 @@ $(document).ready(function() {
             <p>For <strong>S3 key prefix</strong>, enter your S3 bucket prefix.</p>
 
             <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To avoid a potential <code class="language-plaintext highlighter-rouge">AccessDenied</code> error from CloudFormation, include a slash (<code class="language-plaintext highlighter-rouge">/</code>) at the end of your prefix.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> To avoid a potential <code class="language-plaintext highlighter-rouge">AccessDenied</code> error from CloudFormation, include a slash (<code class="language-plaintext highlighter-rouge">/</code>) at the end of your prefix.
             </div>
           </li>
           <li>
@@ -2984,7 +2984,7 @@ $(document).ready(function() {
             <p>Enter the <strong>Total number of Floating IPs for the Qumulo Cluster</strong>.</p>
 
             <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> If you intend to scale out your Qumulo cluster, enter 6 floating IP addresses for each EC2 instance.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> If you intend to scale out your Qumulo cluster, enter 6 floating IP addresses for each EC2 instance.
             </div>
           </li>
           <li>
@@ -3028,7 +3028,7 @@ $(document).ready(function() {
 </ol>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The persistent storage deployment remains in its original CloudFormation stack. You can perform the next cluster replacement procedure in the original CloudFormation stack.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The persistent storage deployment remains in its original CloudFormation stack. You can perform the next cluster replacement procedure in the original CloudFormation stack.
 </div>
 
 <h4 id="step-3-clean-up-s3-bucket-policies">Step 3: Clean Up S3 Bucket Policies</h4>
@@ -3049,7 +3049,7 @@ $(document).ready(function() {
 <p>Deleting a cluster is a two-step process in which you delete your cluster’s compute and cache resources and then delete your persistent storage.</p>
 
 <div class="alert alert-danger" role="alert">
-<em class="fa fa-exclamation-circle"></em> <strong>Caution</strong><br />   <ul>
+<em class="fa fa-exclamation-circle"></em> <strong>Caution</strong><br>   <ul>
     <li>When you no longer need your cluster, you must back up all important data on the cluster safely before deleting the cluster.</li>
     <li>When you delete your cluster's cache and computer resources, it isn't possible to access your persistent storage anymore.</li>
   </ul>

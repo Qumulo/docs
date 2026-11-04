@@ -2463,7 +2463,7 @@ $(document).ready(function() {
         <p><code class="language-plaintext highlighter-rouge">ReadWriteOncePod</code></p>
 
         <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The <code class="language-plaintext highlighter-rouge">ReadWriteOncePod</code> access mode requires Kubernetes 1.27 (and higher). Earlier Kubernetes versions reject this access mode when you create a Persistent Volume Claim.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The <code class="language-plaintext highlighter-rouge">ReadWriteOncePod</code> access mode requires Kubernetes 1.27 (and higher). Earlier Kubernetes versions reject this access mode when you create a Persistent Volume Claim.
         </div>
       </li>
     </ul>
@@ -2472,7 +2472,7 @@ $(document).ready(function() {
     <p>NFSv4.1</p>
 
     <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Even when you enable NFSv4.1 for your Qumulo cluster, you must explicitly <a href="../kerberos/kerberos-with-qumulo-core.html">configure NFSv4.1 to work with Kerberos</a>.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Even when you enable NFSv4.1 for your Qumulo cluster, you must explicitly <a href="../kerberos/kerberos-with-qumulo-core.html">configure NFSv4.1 to work with Kerberos</a>.
     </div>
   </li>
 </ul>
@@ -2503,7 +2503,7 @@ $(document).ready(function() {
 <h3 id="step-1-install-the-qumulo-csi-driver">Step 1: Install the Qumulo CSI Driver</h3>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>The installation pulls the CSI driver's sidecar containers from <code class="language-plaintext highlighter-rouge">registry.k8s.io</code> and the CSI driver's container from <code class="language-plaintext highlighter-rouge">public.ecr.aws</code>. If a firewall, HTTP proxy, or private registry mirror limits the registries from which your Kubernetes nodes can pull images, allow both registries (or mirror the images into your private registry) before installing the CSI driver.</li>
     <li>For information about upgrading an existing installation, see <a href="#upgrading-csi-driver">Upgrading the Qumulo CSI Driver</a>.</li>
   </ul>
@@ -2555,7 +2555,7 @@ $(document).ready(function() {
       <li>
         <p>Windows:</p>
 
-        <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> <span class="kd">deploy_v1</span>.2.0
+        <div class="language-bat highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> <span class="kd">deploy_v1</span>.2.0
 <span class="kd">install</span><span class="na">-driver</span>.bat
 </code></pre></div>        </div>
       </li>
@@ -2569,7 +2569,7 @@ $(document).ready(function() {
 <p>To prepare your Qumulo cluster for connecting to your Kubernetes cluster, you must first configure your volume and NFS export paths on your Qumulo cluster by setting the following parameters for each storage class that you define.</p>
 
 <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Write down the paths for the following YAML keys for the <code class="language-plaintext highlighter-rouge">storageclass-qumulo.yaml</code> file that you use when you <a href="#step-5-create-storage-class">create a storage class in step 5</a>.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> Write down the paths for the following YAML keys for the <code class="language-plaintext highlighter-rouge">storageclass-qumulo.yaml</code> file that you use when you <a href="#step-5-create-storage-class">create a storage class in step 5</a>.
 </div>
 
 <ol>
@@ -2577,7 +2577,7 @@ $(document).ready(function() {
     <p>For <code class="language-plaintext highlighter-rouge">storeRealPath</code>, from the root of the Qumulo file system, create a directory for storing volumes on your Qumulo cluster, for example <code class="language-plaintext highlighter-rouge">/csi/volumes1</code>.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Because the CSI driver doesn’t create the directory listed in the <code class="language-plaintext highlighter-rouge">storeRealPath</code> key automatically, this directory must exist below the NFS export and must not be the NFS export itself.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Because the CSI driver doesn’t create the directory listed in the <code class="language-plaintext highlighter-rouge">storeRealPath</code> key automatically, this directory must exist below the NFS export and must not be the NFS export itself.
     </div>
   </li>
   <li>
@@ -2587,7 +2587,7 @@ $(document).ready(function() {
     <p>If your cluster has more than one tenant, specify the tenant ID that contains your NFS export for the <code class="language-plaintext highlighter-rouge">tenantId</code> parameter.</p>
 
     <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />       <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>       <ul>
         <li>If you have only one tenant, it isn't necessary to specify the `tenantId` parameter.</li>
         <li>You must provide the value for <code class="language-plaintext highlighter-rouge">tenantId</code> as a string. For example: <code class="language-plaintext highlighter-rouge">"2"</code>.</li>
       </ul>
@@ -2671,7 +2671,7 @@ kubectl create secret generic cluster1-login <span class="se">\</span>
 <p>The CSI driver communicates with your Qumulo cluster by using the Qumulo REST API over HTTPS. By default, the CSI driver accepts any TLS certificate, including self-signed certificates, without verifying the identity of the cluster that presents it.</p>
 
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>We strongly recommend configuring verification if your cluster's certificate allows it. Verifying your cluster's TLS certificate can help prevent someone from posing as your cluster in order to capture the CSI driver's credentials.</li>
     <li>Before you configure verification for a storage class in use, confirm that your certificate is current.</li>
     <li>When verification isn't configured, the CSI driver logs the informational warning <code class="language-plaintext highlighter-rouge">TLS certificate verification is DISABLED for the Qumulo cluster.</code> for each connection to your cluster.</li>
@@ -2682,7 +2682,7 @@ kubectl create secret generic cluster1-login <span class="se">\</span>
 <p>To configure verification, add one of the following optional keys to the Secret that you created. The following table outlines the CSI driver’s behavior and key configuration process for each type of cluster certificate issuer.</p>
 
 <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> If your storage class names different Secrets for provisioning and for expansion, add the keys to both Secrets.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> If your storage class names different Secrets for provisioning and for expansion, add the keys to both Secrets.
 </div>
 
 <table>
@@ -2710,7 +2710,7 @@ kubectl create secret generic cluster1-login <span class="se">\</span>
     <tr>
       <td>
         <p>Self-Signed or Your Organization's Internal CA</p>
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Because a self-signed certificate provides the same protection as a certificate from a public certificate authority (CA), it isn’t necessary to replace a self-signed certificate to configure verification.</div>
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Because a self-signed certificate provides the same protection as a certificate from a public certificate authority (CA), it isn’t necessary to replace a self-signed certificate to configure verification.</div>
 
       </td>
       <td><p>The CSI driver verifies the certificate against only the <code>.pem</code> bundle that you supply.</p></td>
@@ -2722,7 +2722,7 @@ kubectl create secret generic cluster1-login <span class="se">\</span>
   <span class="nt">-showcerts</span> &lt;/dev/null <span class="se">\</span>
   2&gt;/dev/null | openssl x509 <span class="o">&gt;</span> cluster1-ca.pem</code></pre></div></div>
         <p>When you create your Secret, specify a path to the certificate.</p>
-        <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+        <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br>
         <ul>
           <li>When you specify a <code>.pem</code> bundle for <code>ca_cert</code>, the CSI driver trusts only the specified bundle and rejects any certificates from a public CA that aren't included in the bundle.</li>
           <li>Don't specify a value for <code>ca_cert</code> and set <code>tls_insecure</code> to <code>true</code> at the same time.</li>
@@ -2741,13 +2741,13 @@ kubectl create secret generic cluster1-login <span class="se">\</span>
     <tr>
       <td>
         <p>Any Issuer</p>
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The system retains the current behavior without a log warning.</div>
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The system retains the current behavior without a log warning.</div>
 
       </td>
       <td><p>The CSI driver skips verification and doesn't log the warning.</p></td>
       <td>
        <p>Set the <code>tls_insecure</code> key to <code>true</code>.</p>
-       <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />Don't specify a value for <code>ca_cert</code> and set <code>tls_insecure</code> to <code>true</code> at the same time.</div>
+       <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br>Don't specify a value for <code>ca_cert</code> and set <code>tls_insecure</code> to <code>true</code> at the same time.</div>
       </td> 
    </tr>
   </tbody>
@@ -2761,7 +2761,7 @@ kubectl create secret generic cluster1-login <span class="se">\</span>
     <p>Begin with the example Qumulo storage class configuration.</p>
 
     <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />       <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>       <ul>
         <li>In the following example, it is possible to use a fully qualified domain name (FQDN) for the <code class="language-plaintext highlighter-rouge">parameters: server:</code> entry.</li>
         <li>For such a configuration, all Kubernetes nodes in the cluster must be able to resolve FQDNs.</li>
       </ul>
@@ -2807,7 +2807,7 @@ kubectl create secret generic cluster1-login <span class="se">\</span>
         <p>(Optional) Specify <code class="language-plaintext highlighter-rouge">tenantId</code>.</p>
 
         <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You must provide the value for <code class="language-plaintext highlighter-rouge">tenantId</code> as a string. For example: <code class="language-plaintext highlighter-rouge">"2"</code>.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> You must provide the value for <code class="language-plaintext highlighter-rouge">tenantId</code> as a string. For example: <code class="language-plaintext highlighter-rouge">"2"</code>.
         </div>
       </li>
       <li>
@@ -2911,7 +2911,7 @@ kubectl create secret generic cluster1-login <span class="se">\</span>
 </code></pre></div>    </div>
 
     <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> When the PVC is released, a tree-delete is initiated on the Qumulo cluster for the directory that the PVC indicates. To prevent this behavior, set <code class="language-plaintext highlighter-rouge">reclaimPolicy</code> to <code class="language-plaintext highlighter-rouge">Retain</code> in your <code class="language-plaintext highlighter-rouge">StorageClass</code> configuration.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> When the PVC is released, a tree-delete is initiated on the Qumulo cluster for the directory that the PVC indicates. To prevent this behavior, set <code class="language-plaintext highlighter-rouge">reclaimPolicy</code> to <code class="language-plaintext highlighter-rouge">Retain</code> in your <code class="language-plaintext highlighter-rouge">StorageClass</code> configuration.
     </div>
   </li>
   <li>
@@ -2923,7 +2923,7 @@ kubectl create secret generic cluster1-login <span class="se">\</span>
 <p>To upgrade the CSI driver, you can install a new version without removing the previous installation.</p>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>The upgrade doesn't require changing your existing storage classes, Persistent Volume Claims, or Secrets and doesn't disrupt any running workloads.</li>
     <li>The CSI driver's components restart one at a time and any volumes that are already mounted remain mounted, readable, and writable throughout the upgrade.</li>
     <li>The process pauses new volume creation for a few seconds while the CSI driver's controller restarts.</li>
@@ -2934,7 +2934,7 @@ kubectl create secret generic cluster1-login <span class="se">\</span>
 <p>Before you begin, confirm that your Kubernetes nodes can pull images from <code class="language-plaintext highlighter-rouge">registry.k8s.io</code>.</p>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>Driver versions 1.2.0 (and higher) pull their sidecar containers from <code class="language-plaintext highlighter-rouge">registry.k8s.io</code>. If a firewall, HTTP proxy, or private registry mirror limits the registries from which your Kubernetes nodes can pull images, allow both registries (or mirror the images into your private registry) before installing the CSI driver.</li>
     <li>If the registry is unreachable, the new driver Pods remain in the <code class="language-plaintext highlighter-rouge">ImagePullBackOff</code> state until it becomes reachable and the previous driver version continues to run.</li>
   </ul>
@@ -2949,7 +2949,7 @@ kubectl create secret generic cluster1-login <span class="se">\</span>
     <p>Run the installation script.</p>
 
     <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />       <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>       <ul>
         <li>The script applies four manifests, including the CSI driver's role-based access control (RBAC) configuration.</li>
         <li>Updating only the container image references leaves the previous permissions in place and can prevent volume provisioning.</li>
         <li>If the CSI driver can't read Secrets, ensure that the current CSI driver's RBAC manifest has been applied and isn't being overridden by an older manifest.</li>
@@ -2991,7 +2991,7 @@ kubectl delete role <span class="se">\</span>
 <p>To roll back to the previous driver version, run <code class="language-plaintext highlighter-rouge">install-driver.sh</code> from the previous version’s deployment files.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The additional permissions that version 1.2.0 grants are backwards-compatible with earlier versions.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The additional permissions that version 1.2.0 grants are backwards-compatible with earlier versions.
 </div>
 
 

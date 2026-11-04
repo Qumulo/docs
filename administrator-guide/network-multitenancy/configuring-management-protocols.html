@@ -2698,7 +2698,7 @@ $(document).ready(function() {
      <p>After you <a href="partitioning-cluster-into-tenants.html">create tenants</a> on your Qumulo cluster, you can manage access for clients that connect to the cluster from the tenant’s network by enabling or disabling the management protocols for each tenant.</p>
 
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>Access to a management protocol lets a client use the protocol to view and modify resources across the entire cluster, not only within the client's tenant.</li>
     <li>If you disable a management protocol, you can still access your cluster by using a physical or remote console.</li>
   </ul>
@@ -2731,7 +2731,7 @@ $(document).ready(function() {
 
 <p>In the following example, the cluster begins to accept REST API traffic on TCP port 8000 on all networks assigned to the tenant.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq multitenancy_modify_tenant <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq multitenancy_modify_tenant <span class="se">\</span>
   <span class="nt">--id</span> 2
   <span class="nt">--enable-rest-api</span>
 </code></pre></div></div>
@@ -2740,7 +2740,7 @@ $(document).ready(function() {
 <p>The Qumulo Core Web UI lets you manage clusters from a browser.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Enabling Web UI access doesn’t require enabling REST API access.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Enabling Web UI access doesn’t require enabling REST API access.
 </div>
 
 <ul>
@@ -2755,7 +2755,7 @@ $(document).ready(function() {
 
 <p>In the following example, the cluster begins to serve the Qumulo Core Web UI on TCP ports 80 and 433 on all networks assigned to the tenant.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq multitenancy_modify_tenant <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq multitenancy_modify_tenant <span class="se">\</span>
   <span class="nt">--id</span> 2
   <span class="nt">--enable-web-ui</span>
 </code></pre></div></div>
@@ -2764,7 +2764,7 @@ $(document).ready(function() {
 <p>SSH lets you view logs and use the <code class="language-plaintext highlighter-rouge">qq</code> CLI by using a client to connect to nodes in a cluster remotely.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Enabling SSH access doesn’t require enabling REST API access.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Enabling SSH access doesn’t require enabling REST API access.
 </div>
 
 <ul>
@@ -2779,7 +2779,7 @@ $(document).ready(function() {
 
 <p>In the following example, the cluster begins to accept SSH traffic on TCP port 22 on all networks assigned to the tenant.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq multitenancy_modify_tenant <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq multitenancy_modify_tenant <span class="se">\</span>
   <span class="nt">--id</span> 2
   <span class="nt">--enable-ssh</span>
 </code></pre></div></div>
@@ -2799,7 +2799,7 @@ $(document).ready(function() {
 
 <p>In the following example, the cluster begins to accept replication traffic on TCP port 3712 on all networks assigned to the tenant.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq multitenancy_modify_tenant <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq multitenancy_modify_tenant <span class="se">\</span>
   <span class="nt">--id</span> 2 <span class="se">\</span>
   <span class="nt">--enable-replication</span>
 </code></pre></div></div>

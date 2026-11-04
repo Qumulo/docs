@@ -2706,7 +2706,7 @@ $(document).ready(function() {
     <p>To join your cluster to an Active Directory (AD) domain, log in to the Qumulo Core Web UI and click <strong>Cluster &gt; Active Directory</strong>.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core supports SAML authentication only for AD users.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Qumulo Core supports SAML authentication only for AD users.
     </div>
   </li>
   <li>
@@ -2718,7 +2718,7 @@ $(document).ready(function() {
     <p id="service-provider">Typically, an IT department manages an IdP centrally and the IdP is linked with AD. Before you can enable SSO, your IT department must register a new Service Provider (SP) in your IdP. A <em>service provider</em> is the server which users access, in this case a Qumulo cluster.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can use trusts, as long as the Base DN covers all users that might require access to your cluster.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> You can use trusts, as long as the Base DN covers all users that might require access to your cluster.
     </div>
   </li>
   <li>
@@ -2744,7 +2744,7 @@ $(document).ready(function() {
 </code></pre></div>        </div>
 
         <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Because the user’s browser performs DNS resolution (for example, in a VPN-only scenario), it isn’t necessary for an external DNS server to be able to resolve the cluster’s FQDN.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Because the user’s browser performs DNS resolution (for example, in a VPN-only scenario), it isn’t necessary for an external DNS server to be able to resolve the cluster’s FQDN.
         </div>
       </li>
       <li>
@@ -2757,14 +2757,14 @@ $(document).ready(function() {
         <p>If <strong>SAML Signing</strong>  (depending on the SSO service, this option is named differently) configuration is available, the SSO administrator sets it to <strong>Sign SAML response and assertion</strong>.</p>
 
         <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core requires that the IdP sign both the assertion and the entire SAML response.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Qumulo Core requires that the IdP sign both the assertion and the entire SAML response.
         </div>
       </li>
       <li>
         <p>To configure the IdP to use an algorithm based on SHA-256 (certain SSO providers use older algorithms, such as SHA-1, by default), follow the instructions in your SSO provider’s documentation.</p>
 
         <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Commonly, a <code class="language-plaintext highlighter-rouge">signatureAlgorithm</code> key is set to <code class="language-plaintext highlighter-rouge">rsa-sha256</code> and the <code class="language-plaintext highlighter-rouge">digestAlgorithm</code> key is set to <code class="language-plaintext highlighter-rouge">sha256</code> in the configuration file.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> Commonly, a <code class="language-plaintext highlighter-rouge">signatureAlgorithm</code> key is set to <code class="language-plaintext highlighter-rouge">rsa-sha256</code> and the <code class="language-plaintext highlighter-rouge">digestAlgorithm</code> key is set to <code class="language-plaintext highlighter-rouge">sha256</code> in the configuration file.
         </div>
       </li>
     </ol>
@@ -2785,14 +2785,14 @@ $(document).ready(function() {
 </code></pre></div>        </div>
 
         <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The IdP SSO URL often contains a unique identifier for the SAML integration. We don’t recommend using the same identifier on several clusters simultaneously.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The IdP SSO URL often contains a unique identifier for the SAML integration. We don’t recommend using the same identifier on several clusters simultaneously.
         </div>
       </li>
       <li>
         <p>The IdP issuer or <code class="language-plaintext highlighter-rouge">EntityId</code>.</p>
 
         <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Don’t confuse <code class="language-plaintext highlighter-rouge">EntityId</code> with SP Entity ID.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Don’t confuse <code class="language-plaintext highlighter-rouge">EntityId</code> with SP Entity ID.
         </div>
 
         <p>For example:</p>
@@ -2821,7 +2821,7 @@ $(document).ready(function() {
 </code></pre></div>    </div>
 
     <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />       <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>       <ul>
         <li>To view the current SAML configuration, the cluster administrator can run the <a href="https://docs.qumulo.com/qq-cli-command-guide/saml/saml_get_settings.html"><code class="language-plaintext highlighter-rouge">qq saml_get_settings</code></a> command.</li>
         <li>To allow specific changes (for example, correct a typo, update a DNS name or an expired certificate, or temporarily disable SAML SSO without losing any of the other settings), the cluster administrator can run the <a href="https://docs.qumulo.com/qq-cli-command-guide/saml/saml_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq saml_modify_settings</code></a> command to change individual SAML settings independently.</li>
         <li>For first-time SAML configurations, the cluster administrator must provide all of the required settings.</li>
@@ -2840,7 +2840,7 @@ $(document).ready(function() {
 </ul>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>Members of the built-in Administrators role always have access to the Qumulo Core Web UI.</li>
     <li>To allow other users to access the Qumulo Core Web UI, you must assign the built-in Observers role to individual users or to groups.</li>
     <li>Depending on policy, additional verification might be necessary for users. For example, the SSO administrator can enforce mandatory two-factor authentication (2FA) for certain clusters.</li>
@@ -2898,7 +2898,7 @@ $(document).ready(function() {
 </code></pre></div>    </div>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The user must complete the following step within 5 minutes, while the <code class="language-plaintext highlighter-rouge">qq</code> CLI pauses for authentication.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The user must complete the following step within 5 minutes, while the <code class="language-plaintext highlighter-rouge">qq</code> CLI pauses for authentication.
     </div>
   </li>
   <li>
@@ -2930,7 +2930,7 @@ $(document).ready(function() {
 
 <h2 id="requiring-sso-authentication-for-cluster-management">Requiring SSO Authentication for Cluster Management</h2>
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>If you use the <code class="language-plaintext highlighter-rouge">--require-sso</code> flag, you can no longer run the <a href="https://docs.qumulo.com/qq-cli-command-guide/login/login.html"><code class="language-plaintext highlighter-rouge">qq login</code></a> command with your AD account password. Instead, you must run the <a href="https://docs.qumulo.com/qq-cli-command-guide/sso/sso_login.html"><code class="language-plaintext highlighter-rouge">qq sso_login</code></a> command&lt;/a&gt;.</li>
     <li>This setting doesn't restrict access through file protocols such as SMB.</li>
     <li>Because the FTP protocol sends passwords in plaintext, it is inherently insecure. In addition, many FTP clients don't support Transport Layer Security (TLS) or fall back quietly to the plaintext protocol. For this reason, all Qumulo clusters have FTP disabled by default.</li>
@@ -2951,7 +2951,7 @@ $(document).ready(function() {
     <p>Local users (the built-in <code class="language-plaintext highlighter-rouge">admin</code> user and any additional users) can always use their passwords to authenticate to the Qumulo Core Web UI and the <code class="language-plaintext highlighter-rouge">qq</code> CLI.</p>
 
     <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> We recommend setting a strong password for the built-in <code class="language-plaintext highlighter-rouge">admin</code> user and using this account only for emergencies.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> We recommend setting a strong password for the built-in <code class="language-plaintext highlighter-rouge">admin</code> user and using this account only for emergencies.
     </div>
   </li>
   <li>

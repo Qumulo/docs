@@ -942,7 +942,7 @@ $(document).ready(function() {
 <p>This section explains how to configure alarm and alert collection by adding your Qumulo cluster to Qumulo Alerts and then configuring alert plugins for your cluster in the Qumulo Alerts Web UI.</p>
 
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>When you add a Qumulo cluster to Qumulo Alerts, all available alarm and alert plugins are enabled for that cluster by default.</li>
     <li>If you use a floating IP address, you must click <strong>Network Load Balancer</strong> to ensure that Qumulo Alerts connects to the node that currently uses the floating IP address.</li>
     <li>To avoid spreading a plugin's API request load across the nodes of a Qumulo cluster, all alarm and alert plugins communicate with your cluster by using either a network load balancer or floating IP addresses. You can configure <em>one</em>—but not both—of these communication methods.</li>
@@ -965,7 +965,7 @@ $(document).ready(function() {
         <p>For <strong>Cluster Name/IP</strong>, specify the hostname or IP address for your Qumulo cluster.</p>
 
         <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Qumulo Alerts uses this value as the display name. It isn’t possible to change it after saving the cluster configuration.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Qumulo Alerts uses this value as the display name. It isn’t possible to change it after saving the cluster configuration.
         </div>
       </li>
       <li>
@@ -989,7 +989,7 @@ $(document).ready(function() {
 
 <h3 id="step-2-configure-alarm-or-alert-plugins-for-a-qumulo-cluster">Step 2: Configure Alarm or Alert Plugins for a Qumulo Cluster</h3>
 <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To view all available plugin names and categories before configuring a cluster, click <strong>Monitoring &gt; Alert Types</strong> on the sidebar
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> To view all available plugin names and categories before configuring a cluster, click <strong>Monitoring &gt; Alert Types</strong> on the sidebar
 </div>
 
 <ol>
@@ -1045,7 +1045,7 @@ $(document).ready(function() {
 </span></code></pre></div></div>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>For the <code class="language-plaintext highlighter-rouge">--nlb</code> flag, the <code class="language-plaintext highlighter-rouge">false</code> setting requires floating IP address configuration.</li>
     <li>To avoid spreading a plugin's API request load across the nodes of a Qumulo cluster, all alarm and alert plugins communicate with your cluster by using either a network load balancer or floating IP addresses. You can configure <em>one</em>—but not both—of these communication methods.</li>
   </ul>

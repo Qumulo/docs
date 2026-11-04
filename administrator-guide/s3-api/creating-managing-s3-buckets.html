@@ -2706,7 +2706,7 @@ $(document).ready(function() {
     <p><code class="language-plaintext highlighter-rouge">PRIVILEGE_S3_BUCKETS_WRITE</code>: Create and delete S3 buckets</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If you perform create and delete operations on directories by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI, you also need this privilege.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> If you perform create and delete operations on directories by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI, you also need this privilege.
     </div>
   </li>
   <li>
@@ -2733,7 +2733,7 @@ $(document).ready(function() {
 <p>The <em>bucket root directory</em> (or <em>bucket root)</em> is the directory to which you attach an S3 bucket. All files under the bucket root directory (and all of its subdirectories) are objects in the bucket. The presence of the slash (<code class="language-plaintext highlighter-rouge">/</code>) in objects’ keys determines the directory hierarchy.</p>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Because S3 buckets can use any directory in the file system as a root directory, the same file can be an object in multiple buckets.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Because S3 buckets can use any directory in the file system as a root directory, the same file can be an object in multiple buckets.
 </div>
 
 <h3 id="object-keys">How the Qumulo File System Determines Object Keys</h3>
@@ -2782,7 +2782,7 @@ $(document).ready(function() {
 </ul>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <p>In this example:</p>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <p>In this example:</p>
   <ul>
     <li>Both buckets contain <code class="language-plaintext highlighter-rouge">/application-data/deployment/data1.dat</code> and <code class="language-plaintext highlighter-rouge">/application-data/deployment/data2.dat</code> as objects.</li>
     <li>The <code class="language-plaintext highlighter-rouge">processing/</code> object in <code class="language-plaintext highlighter-rouge">bucket2</code> has a trailing slash because it is a directory.</li>
@@ -2829,7 +2829,7 @@ $(document).ready(function() {
 <p>While the Qumulo REST API and <code class="language-plaintext highlighter-rouge">qq</code> CLI let you use an existing directory as the new bucket root, the S3 API always creates a new directory for the bucket root.</p>
 
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>All S3 buckets in a Qumulo cluster share the same namespace: It isn't possible to create two buckets with the same name, even if they use different directories as their bucket root.</li>
     <li>All S3 buckets must follow the <a href="#bucket-naming-rules">bucket naming rules</a>.</li>
   </ul>
@@ -2868,7 +2868,7 @@ $(document).ready(function() {
     <p>To change the setting, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq s3_modify_settings</code></a>
  command and specify the new default bucket directory prefix. In the following example, we specify <code class="language-plaintext highlighter-rouge">/buckets</code>.</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq s3_modify_settings <span class="se">\</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq s3_modify_settings <span class="se">\</span>
   <span class="nt">--base-path</span> /buckets
 </code></pre></div>    </div>
   </li>
@@ -2878,13 +2878,13 @@ $(document).ready(function() {
 <p>To create an S3 bucket by using the Qumulo REST API or <code class="language-plaintext highlighter-rouge">qq</code> CLI, you need the <code class="language-plaintext highlighter-rouge">PRIVILEGE_S3_BUCKETS_WRITE</code> privilege.</p>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> In Qumulo Core 6.0.1.1 (and higher), the <code class="language-plaintext highlighter-rouge">qq</code> CLI command changed from <code class="language-plaintext highlighter-rouge">s3_create_bucket</code> to <code class="language-plaintext highlighter-rouge">s3_add_bucket</code> and the flag for specifying the directory path has changed from <code class="language-plaintext highlighter-rouge">--path</code> to <code class="language-plaintext highlighter-rouge">--fs-path</code>.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> In Qumulo Core 6.0.1.1 (and higher), the <code class="language-plaintext highlighter-rouge">qq</code> CLI command changed from <code class="language-plaintext highlighter-rouge">s3_create_bucket</code> to <code class="language-plaintext highlighter-rouge">s3_add_bucket</code> and the flag for specifying the directory path has changed from <code class="language-plaintext highlighter-rouge">--path</code> to <code class="language-plaintext highlighter-rouge">--fs-path</code>.
 </div>
 
 <p>When you use the <code class="language-plaintext highlighter-rouge">qq</code> CLI to create a bucket, you can use a new or existing directory as the bucket root.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If an entry with the specified name or directory already exists, or if you don’t have permission to create a directory, the command returns an error. For more information, see <a href="#default-directory-prefix">Configuring the Default Bucket Directory Prefix for S3 Buckets</a>.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> If an entry with the specified name or directory already exists, or if you don’t have permission to create a directory, the command returns an error. For more information, see <a href="#default-directory-prefix">Configuring the Default Bucket Directory Prefix for S3 Buckets</a>.
 </div>
 
 <ul>
@@ -2892,7 +2892,7 @@ $(document).ready(function() {
     <p>To create a new, empty bucket from the <a href="#default-directory-prefix">default bucket directory prefix</a>, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_add_bucket.html"><code class="language-plaintext highlighter-rouge">qq s3_add_bucket</code></a>
  command and specify the bucket name. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq s3_add_bucket <span class="se">\</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq s3_add_bucket <span class="se">\</span>
   <span class="nt">--name</span> my-bucket
 </code></pre></div>    </div>
 
@@ -2902,7 +2902,7 @@ $(document).ready(function() {
     <p>To create a bucket from an existing directory, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_add_bucket.html"><code class="language-plaintext highlighter-rouge">qq s3_add_bucket</code></a>
  command and specify the bucket name and the directory path. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq s3_add_bucket <span class="se">\</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq s3_add_bucket <span class="se">\</span>
   <span class="nt">--name</span> my-bucket <span class="se">\</span>
   <span class="nt">--fs-path</span> /products/web/appliances/
 </code></pre></div>    </div>
@@ -2910,7 +2910,7 @@ $(document).ready(function() {
   <li>
     <p>To create a bucket for a path that doesn’t exist yet, specify the name and path and add the <code class="language-plaintext highlighter-rouge">--create-fs-path</code> flag. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq s3_add_bucket <span class="se">\</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq s3_add_bucket <span class="se">\</span>
   <span class="nt">--name</span> my-bucket <span class="se">\</span>
   <span class="nt">--fs-path</span> /products/web/appliances/ <span class="se">\</span>
   <span class="nt">--create-fs-path</span>
@@ -2921,14 +2921,14 @@ $(document).ready(function() {
 <h3 id="creating-an-s3-bucket-by-using-the-s3-api">Creating an S3 Bucket by Using the S3 API</h3>
 <p>Run the <code class="language-plaintext highlighter-rouge">aws s3api create-bucket</code> command and specify the bucket name. This command uses the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html"><code class="language-plaintext highlighter-rouge">CreateBucket</code></a> S3 API action. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>aws s3api create-bucket <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aws s3api create-bucket <span class="se">\</span>
   <span class="nt">--bucket</span> my-bucket
 </code></pre></div></div>
 
 <p>Qumulo Core creates the bucket root directory under the <a href="#default-directory-prefix">default bucket directory prefix</a> and names it the same as the bucket. In this example, if the default bucket directory prefix is <code class="language-plaintext highlighter-rouge">/buckets/</code>, the new bucket root directory is <code class="language-plaintext highlighter-rouge">/buckets/my-bucket/</code>.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> When you use the <code class="language-plaintext highlighter-rouge">CreateBucket</code> S3 API action with the <code class="language-plaintext highlighter-rouge">LocationConstraint</code> parameter, the Qumulo S3 API supports only the <code class="language-plaintext highlighter-rouge">local</code> region.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> When you use the <code class="language-plaintext highlighter-rouge">CreateBucket</code> S3 API action with the <code class="language-plaintext highlighter-rouge">LocationConstraint</code> parameter, the Qumulo S3 API supports only the <code class="language-plaintext highlighter-rouge">local</code> region.
 </div>
 
 <h2 id="configuring-s3-buckets">Configuring S3 Buckets</h2>
@@ -2961,14 +2961,14 @@ $(document).ready(function() {
   </li>
 </ol>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq s3_modify_bucket <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq s3_modify_bucket <span class="se">\</span>
   <span class="nt">--name</span> my-bucket <span class="se">\</span>
   <span class="nt">--enable-object-locking</span>
 </code></pre></div></div>
 
 <h3 id="to-enable-object-lock-for-an-s3-bucket-by-using-the-s3-api">To Enable Object Lock for an S3 Bucket by Using the S3 API</h3>
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Currently, because Qumulo Core doesn’t support default retention periods, you can set only a <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-retention-date.html">compliance retention period</a> on an individual object in an S3 bucket by using the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectRetention.html"><code class="language-plaintext highlighter-rouge">PutObjectRetention</code></a> API action.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Currently, because Qumulo Core doesn’t support default retention periods, you can set only a <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-retention-date.html">compliance retention period</a> on an individual object in an S3 bucket by using the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectRetention.html"><code class="language-plaintext highlighter-rouge">PutObjectRetention</code></a> API action.
 </div>
 
 <ol>
@@ -3038,7 +3038,7 @@ my-bucket  2022-12-13T22:18:01.406433425Z  /my-bucket  Unversioned
 <p>While the Qumulo REST API and <code class="language-plaintext highlighter-rouge">qq</code> CLI let you choose whether to also delete the bucket root directory, the S3 API always deletes the bucket root directory.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Before you delete your S3 bucket, you must either let all in-progress upload operations for the bucket (<code class="language-plaintext highlighter-rouge">UploadPart</code>, <code class="language-plaintext highlighter-rouge">PutObject</code>, or <code class="language-plaintext highlighter-rouge">CopyObject</code>) complete or you must abort the operations.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Before you delete your S3 bucket, you must either let all in-progress upload operations for the bucket (<code class="language-plaintext highlighter-rouge">UploadPart</code>, <code class="language-plaintext highlighter-rouge">PutObject</code>, or <code class="language-plaintext highlighter-rouge">CopyObject</code>) complete or you must abort the operations.
 </div>
 
 <h3 id="deleting-an-s3-bucket-by-using-the-qq-cli">Deleting an S3 Bucket by Using the qq CLI</h3>
@@ -3052,7 +3052,7 @@ my-bucket  2022-12-13T22:18:01.406433425Z  /my-bucket  Unversioned
     <p>To delete an S3 bucket, but not its root directory, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_delete_bucket.html"><code class="language-plaintext highlighter-rouge">qq s3_delete_bucket</code></a>
  command and specify the bucket name. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq s3_delete_bucket <span class="se">\</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq s3_delete_bucket <span class="se">\</span>
   <span class="nt">--name</span> my-bucket
 </code></pre></div>    </div>
 
@@ -3076,7 +3076,7 @@ my-bucket  2022-12-13T22:18:01.406433425Z  /my-bucket  Unversioned
     <p>To delete a bucket together with its root directory, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_delete_bucket.html"><code class="language-plaintext highlighter-rouge">qq s3_delete_bucket</code></a>
  command, specify the bucket name, and use the <code class="language-plaintext highlighter-rouge">--delete-root-dir</code> flag. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq s3_delete_bucket <span class="se">\</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq s3_delete_bucket <span class="se">\</span>
   <span class="nt">--delete-root-dir</span> <span class="se">\</span>
   <span class="nt">--name</span> my-bucket
 </code></pre></div>    </div>
@@ -3097,7 +3097,7 @@ my-bucket  2022-12-13T22:18:01.406433425Z  /my-bucket  Unversioned
 <h3 id="deleting-an-s3-bucket-by-using-the-s3-api">Deleting an S3 Bucket by Using the S3 API</h3>
 <p>Run the <code class="language-plaintext highlighter-rouge">aws s3api delete-bucket</code> command and specify the bucket name. This command uses the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html"><code class="language-plaintext highlighter-rouge">DeleteBucket</code></a> S3 API action. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>aws s3api delete-bucket <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aws s3api delete-bucket <span class="se">\</span>
   <span class="nt">--bucket</span> my-bucket
 </code></pre></div></div>
 

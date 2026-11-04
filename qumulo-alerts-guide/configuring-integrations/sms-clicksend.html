@@ -943,7 +943,7 @@ $(document).ready(function() {
      <p><a href="https://www.clicksend.com/en/">ClickSend</a> is a paid, third-party service that provides delivery of messages as SMS (and other formats). For more information, see <a href="https://help.clicksend.com/article/3pp05c4fcs-how-to-get-started-with-clicksend">How to get started with ClickSend</a> in the ClickSend documentation.</p>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> To be able to send SMS in the U.S. and Canada, you must sign up for a dedicated toll-free number (TFN).
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> To be able to send SMS in the U.S. and Canada, you must sign up for a dedicated toll-free number (TFN).
 </div>
 
 <h2 id="to-integrate-clicksend-with-qumulo-alerts-and-test-the-integration-by-using-the-qumulo-alerts-web-ui">To Integrate ClickSend with Qumulo Alerts and Test the Integration by Using the Qumulo Alerts Web UI</h2>
@@ -963,7 +963,7 @@ $(document).ready(function() {
         <p>For <strong>API Key</strong>, enter the API key from your ClickSend account dashboard.</p>
 
         <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To keep the current key, leave <strong>API Key</strong> empty when you edit an existing ClickSend configuration.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> To keep the current key, leave <strong>API Key</strong> empty when you edit an existing ClickSend configuration.
         </div>
       </li>
       <li>
@@ -978,7 +978,7 @@ $(document).ready(function() {
     <p>Click <strong>Save Configuration</strong>.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You must configure recipient phone numbers separately for each user on the <strong>Alert Recipients</strong> page. For more information, see <a href="../configuring-notifications/alarms-and-alert-notifications-to-administrators.html">Configuring Alarm and Alert Notifications to an Administrative Account</a>.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> You must configure recipient phone numbers separately for each user on the <strong>Alert Recipients</strong> page. For more information, see <a href="../configuring-notifications/alarms-and-alert-notifications-to-administrators.html">Configuring Alarm and Alert Notifications to an Administrative Account</a>.
     </div>
   </li>
   <li>
@@ -1011,7 +1011,7 @@ $(document).ready(function() {
 </code></pre></div>    </div>
 
     <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />       <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>       <ul>
         <li>For the <code class="language-plaintext highlighter-rouge">--username</code> and <code class="language-plaintext highlighter-rouge">--token</code> flags, see <a href="https://help.clicksend.com/article/dghaoyf7tg-api-credentials">API Credentials</a> in the ClickSend documentation.</li>
         <li>The <code class="language-plaintext highlighter-rouge">--senderid</code> flag is mandatory for the U.S. and Canada. For more information, see <a href="https://help.clicksend.com/article/nu1dkqqpi0-how-to-register-a-toll-free-number-tfn-with-click-send">How to Register a Toll-Free Number (TFN) with ClickSend</a> in the ClickSend documentation.</li>
         <li>For more information about locales, see <a href="../getting-started/supported-language-locales.html">What Language Locales Qumulo Alerts Supports</a>. The consumer processes for <a href="../configuring-integrations/email-server.html">email</a>, <a href="../configuring-integrations/ifttt.html">IFTTT</a>, and <a href="../configuring-integrations/sms-clicksend.html">SMS (ClickSend)</a> integrations translate messages into the recipient's native language.</li>
@@ -1034,7 +1034,7 @@ $(document).ready(function() {
     <p>Run the <code class="language-plaintext highlighter-rouge">./alerts clicksend_server_test</code> command.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For integration testing to complete successfully, the <code class="language-plaintext highlighter-rouge">--to-address</code> flag must be configured already.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> For integration testing to complete successfully, the <code class="language-plaintext highlighter-rouge">--to-address</code> flag must be configured already.
     </div>
 
     <p>A successful response returns the <code class="language-plaintext highlighter-rouge">[{ "ok"&amp;colon; true }]</code> JSON output. In addition, the recipient’s phone number receives a test message.</p>

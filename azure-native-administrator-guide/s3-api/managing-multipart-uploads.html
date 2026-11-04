@@ -2378,7 +2378,7 @@ $(document).ready(function() {
      <p>Qumulo Core supports the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">multipart upload functionality</a> of the S3 API, which lets you upload objects to a bucket in parts and then, at a later time, combine these parts into a single object.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For objects above a certain size (typically, larger than 100 MiB), applications often use the multipart S3 uploads, rather than the <code class="language-plaintext highlighter-rouge">PutObject</code> S3 API action. The limitation for the <code class="language-plaintext highlighter-rouge">PutObject</code> action is 5 GiB. For more information about how Qumulo handles this type of operation, see <a href="#system-initiated-uploads">System-Initiated Multipart S3 Uploads</a>.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> For objects above a certain size (typically, larger than 100 MiB), applications often use the multipart S3 uploads, rather than the <code class="language-plaintext highlighter-rouge">PutObject</code> S3 API action. The limitation for the <code class="language-plaintext highlighter-rouge">PutObject</code> action is 5 GiB. For more information about how Qumulo handles this type of operation, see <a href="#system-initiated-uploads">System-Initiated Multipart S3 Uploads</a>.
 </div>
 
 <h2 id="prerequisites">Prerequisites</h2>
@@ -2407,7 +2407,7 @@ $(document).ready(function() {
     <p>Multipart upload data isn’t visible in the Qumulo file system, and isn’t included in file system snapshots, until you complete the upload successfully by making a call to the <code class="language-plaintext highlighter-rouge">CompleteMultipartUpload</code> S3 API.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> When you view the breakdown of a Qumulo cluster’s capacity by using the Qumulo Core Web UI, REST API, or <code class="language-plaintext highlighter-rouge">qq</code> CLI, Qumulo Core doesn’t distinguish between capacity that the file system and incomplete multipart uploads use.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> When you view the breakdown of a Qumulo cluster’s capacity by using the Qumulo Core Web UI, REST API, or <code class="language-plaintext highlighter-rouge">qq</code> CLI, Qumulo Core doesn’t distinguish between capacity that the file system and incomplete multipart uploads use.
     </div>
   </li>
   <li>
@@ -2425,14 +2425,14 @@ $(document).ready(function() {
 <p>However, if Qumulo Core is unable to clean up the incomplete upload data immediately, it cleans up the incomplete upload data in the background, <a href="#cleaning-up-uploads-automatically">according to the expiry interval</a>.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The process for background clean-up after incomplete and user-initiated uploads is the same. For more information, see <a href="#cleaning-up-uploads-automatically">Aborting and Cleaning Up Multipart S3 Uploads Automatically</a>.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The process for background clean-up after incomplete and user-initiated uploads is the same. For more information, see <a href="#cleaning-up-uploads-automatically">Aborting and Cleaning Up Multipart S3 Uploads Automatically</a>.
 </div>
 
 <h2 id="listing-uploads">Listing Incomplete Multipart S3 Uploads</h2>
 <p>You can list the incomplete multipart uploads for a single S3 bucket by using the Qumulo REST API or <code class="language-plaintext highlighter-rouge">qq</code> CLI.</p>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>If you use the <code class="language-plaintext highlighter-rouge">ListMultipartUploads</code> S3 API action, the system doesn't show <a href="#system-initiated-uploads">system-initiated uploads</a> or how much space the uploads use on your cluster.</li>
     <li>If you use the Qumulo REST API or <code class="language-plaintext highlighter-rouge">qq</code> CLI, Qumulo Core shows <a href="#system-initiated-uploads">system-initiated uploads</a> and how much space each upload uses on your cluster.</li>
   </ul>
@@ -2443,7 +2443,7 @@ $(document).ready(function() {
     <p>To list incomplete uploads by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_list_uploads.html"><code class="language-plaintext highlighter-rouge">qq s3_list_uploads</code></a>
  command and specify the bucket name. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq s3_list_uploads <span class="se">\</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq s3_list_uploads <span class="se">\</span>
   <span class="nt">--bucket</span> my-bucket
 </code></pre></div>    </div>
   </li>
@@ -2542,13 +2542,13 @@ $(document).ready(function() {
 
 <p>In the following example, we instruct Qumulo Core to abort and clean up uploads that haven’t received data in more than 30 days.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq s3_modify_settings <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq s3_modify_settings <span class="se">\</span>
   <span class="nt">--multipart-upload-expiry-interval</span> 30days
 </code></pre></div></div>
 
 <p>In the following example, we disable automatic cleanup.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq s3_modify_settings <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq s3_modify_settings <span class="se">\</span>
   <span class="nt">--multipart-upload-expiry-interval</span> never
 </code></pre></div></div>
 
@@ -2556,7 +2556,7 @@ $(document).ready(function() {
 <p>Use the Qumulo REST API or <code class="language-plaintext highlighter-rouge">qq</code> CLI to abort and clean up the upload. You need the bucket name and upload ID. For more information about looking up this information, see <a href="#listing-uploads">Listing Incomplete Multipart S3 Uploads</a>.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If you are an administrative user or the user who initiated the upload, you can use the <code class="language-plaintext highlighter-rouge">AbortMultipartUpload</code> S3 API action. In addition to the bucket name and upload ID, you also need the object key for the upload.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> If you are an administrative user or the user who initiated the upload, you can use the <code class="language-plaintext highlighter-rouge">AbortMultipartUpload</code> S3 API action. In addition to the bucket name and upload ID, you also need the object key for the upload.
 </div>
 
 <ul>
@@ -2564,7 +2564,7 @@ $(document).ready(function() {
     <p>To abort an upload by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_abort_upload.html"><code class="language-plaintext highlighter-rouge">qq s3_abort_upload</code></a>
  command and specify the upload ID. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq s3_abort_upload <span class="se">\</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq s3_abort_upload <span class="se">\</span>
   <span class="nt">--bucket</span> my-bucket <span class="se">\</span>
   <span class="nt">--upload-id</span> 000000000example
 </code></pre></div>    </div>

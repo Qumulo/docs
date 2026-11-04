@@ -2497,12 +2497,12 @@ $(document).ready(function() {
 <p>The SPN is a string that identifies the Kerberos services that a particular host provides. We recommend configuring the Qumulo cluster to provide the NFS service. When you configure the SPN, clients can enumerate the cluster and the NFS service as part of a service-ticket-granting request.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If the cluster’s SPN is already configured in Active Directory, no further configuration is necessary.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> If the cluster’s SPN is already configured in Active Directory, no further configuration is necessary.
 </div>
 
 <h3 id="to-configure-the-spn-for-nfs-by-using-the-windows-server-attribute-editor">To Configure the SPN for NFS by Using the Windows Server Attribute Editor</h3>
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br /> To maximize compatibility with Linux, we recommend formatting SPN entries in lowercase.
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br> To maximize compatibility with Linux, we recommend formatting SPN entries in lowercase.
 </div>
 
 <ol>
@@ -2527,14 +2527,14 @@ $(document).ready(function() {
 </code></pre></div>    </div>
 
     <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> You can use the other, automatically generated entries as syntax examples.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> You can use the other, automatically generated entries as syntax examples.
     </div>
   </li>
 </ol>
 
 <h3 id="to-configure-the-spn-for-nfs-by-using-the-windows-server-command-prompt">To Configure the SPN for NFS by Using the Windows Server Command Prompt</h3>
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>To maximize compatibility with Linux, we recommend formatting SPN entries in lowercase.</li>
     <li>The SPN formatting in the following example is generally sufficient for Linux service ticket requests. However, depending on your environment and client configuration, additional entries might be necessary.</li>
   </ul>

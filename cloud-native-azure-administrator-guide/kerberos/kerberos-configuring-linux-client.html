@@ -2419,7 +2419,7 @@ $(document).ready(function() {
    
      
      <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core supports only Linux for using NFSv4.1 with Kerberos.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Qumulo Core supports only Linux for using NFSv4.1 with Kerberos.
 </div>
 
 <p>Linux systems implement Kerberos support as a series of loosely related packages and configuration files. For this reason, configuration depends on the Linux distribution and version. This section refers to tools, packages, dæmons, configuration files, and other elements in the latest supported Ubuntu LTS release.</p>
@@ -2460,7 +2460,7 @@ kerberos method = system keytab
   <li>
     <p>To join the domain, run the <code class="language-plaintext highlighter-rouge">net ads join</code> command. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>net ads <span class="nb">join </span>my-domain.example.com <span class="nt">-U</span> Administrator
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>net ads <span class="nb">join </span>my-domain.example.com <span class="nt">-U</span> Administrator
 </code></pre></div>    </div>
   </li>
   <li>
@@ -2475,7 +2475,7 @@ kerberos method = system keytab
   <li>
     <p>To join a domain, run the <code class="language-plaintext highlighter-rouge">realm join</code> command. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>realm <span class="nb">join </span>my-domain.example.com <span class="nt">-U</span> Administrator
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>realm <span class="nb">join </span>my-domain.example.com <span class="nt">-U</span> Administrator
 </code></pre></div>    </div>
   </li>
   <li>
@@ -2490,14 +2490,14 @@ kerberos method = system keytab
   <li>
     <p>After you configure DNS, check DNS resolution from your client. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nslookup my-client-machine.my-domain.example.com
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nslookup my-client-machine.my-domain.example.com
 </code></pre></div>    </div>
   </li>
   <li>
     <p>In addition to DNS configuration, Linux clients require a standard host SPN on the machine account created while joining the domain. We recommend configuring the SPN by using the <code class="language-plaintext highlighter-rouge">setspn</code> command on the domain controller after the join procedure. For example:</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Running this command resets the SPN to the default value for your machine.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Running this command resets the SPN to the default value for your machine.
     </div>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>setspn <span class="nt">-s</span> my-client_machine
@@ -2514,7 +2514,7 @@ kerberos method = system keytab
 </ul>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Because Linux can’t use complex external identities in system calls, a Linux system must perform identity conversion before operating on files.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Because Linux can’t use complex external identities in system calls, a Linux system must perform identity conversion before operating on files.
 </div>
 
 <p>ID mapping is bidirectional. A system call, such as <code class="language-plaintext highlighter-rouge">chown</code>, that takes a UID or GID as input requires mapping the UID or GID be mapped to a domain user or group <em>before</em> passing it to your Qumulo cluster over NFS.</p>
@@ -2565,14 +2565,14 @@ access_provider = ad
             <p>If the number is set, it becomes the Linux UID or GID for the operation.</p>
 
             <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> AD doesn’t prevent duplicate UID or GID numbers from being added to RFC 2307 values. For this reason, incorrect configuration can lead or UID or GUID collisions. When a Linux system determines that a collision has occurred, it chooses the first UID or GID it finds.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> AD doesn’t prevent duplicate UID or GID numbers from being added to RFC 2307 values. For this reason, incorrect configuration can lead or UID or GUID collisions. When a Linux system determines that a collision has occurred, it chooses the first UID or GID it finds.
             </div>
           </li>
           <li>
             <p>Otherwise, the UID or GID becomes <code class="language-plaintext highlighter-rouge">nobody</code> or <code class="language-plaintext highlighter-rouge">nogroup</code> (<code class="language-plaintext highlighter-rouge">65534</code>).</p>
 
             <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> In most cases, an owner or group becomes 65534 as a result of incorrect user mapping configuration in the client. To understand which LDAP queries run and why they have trouble finding the correct information, check your logs.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> In most cases, an owner or group becomes 65534 as a result of incorrect user mapping configuration in the client. To understand which LDAP queries run and why they have trouble finding the correct information, check your logs.
             </div>
           </li>
         </ul>
@@ -2581,7 +2581,7 @@ access_provider = ad
         <p>When you set the field to <code class="language-plaintext highlighter-rouge">True</code>, the client assigns locally a new unique UID or GID to each <code class="language-plaintext highlighter-rouge">objectSID</code> that it finds on the DC.</p>
 
         <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This is a more flexible approach than requiring RFC 2307. However, this also means that UIDs and GIDs aren’t the same across different Linux systems within the same domain.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> This is a more flexible approach than requiring RFC 2307. However, this also means that UIDs and GIDs aren’t the same across different Linux systems within the same domain.
         </div>
       </li>
     </ul>
@@ -2609,7 +2609,7 @@ Nobody-Group = nogroup
 </code></pre></div></div>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Depending on your Linux distribution and configuration, you might have to add the <code class="language-plaintext highlighter-rouge">Domain</code> field to the default configuration file.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Depending on your Linux distribution and configuration, you might have to add the <code class="language-plaintext highlighter-rouge">Domain</code> field to the default configuration file.
 </div>
 
 <h2 id="authenticating-as-an-ad-user-and-mounting-your-qumulo-cluster">Authenticating as an AD User and Mounting Your Qumulo Cluster</h2>
@@ -2627,7 +2627,7 @@ Nobody-Group = nogroup
 <p>Machine account authentication can be useful for simple scenarios in which trusted users on trusted Linux machines require a secure mechanism for communicating with a Qumulo cluster. Because this is also the easiest authentication method to configure, it can be a good starting point for administrators who configure NFSv4.1 with Kerberos for the first time.</p>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br /> Both machine account authentication and <code class="language-plaintext highlighter-rouge">kinit</code> have limited usefulness because they limit the mount point to a single authenticated user. Between the two authentication options, <code class="language-plaintext highlighter-rouge">kinit</code> has an advantage because of the way it handles ID mapping.
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br> Both machine account authentication and <code class="language-plaintext highlighter-rouge">kinit</code> have limited usefulness because they limit the mount point to a single authenticated user. Between the two authentication options, <code class="language-plaintext highlighter-rouge">kinit</code> has an advantage because of the way it handles ID mapping.
 </div>
 
 <ol>
@@ -2641,28 +2641,32 @@ use-machine-creds=true
     <p>The <code class="language-plaintext highlighter-rouge">use-machine-creds</code> flag specifies whether authentication uses machine credentials when <code class="language-plaintext highlighter-rouge">sudo mount</code> is invoked for NFSv4.1 with Kerberos. When you set the flag to <code class="language-plaintext highlighter-rouge">true</code>, <code class="language-plaintext highlighter-rouge">gssd</code> authenticates as the machine account for the system on behalf of the NFS client. (It performs a <code class="language-plaintext highlighter-rouge">kinit</code> operation as the machine account). The <a href="https://web.mit.edu/kerberos/krb5-1.12/doc/basic/ccache_def.html">credential cache</a> that results from the <code class="language-plaintext highlighter-rouge">kinit</code> is usually located in <code class="language-plaintext highlighter-rouge">/tmp</code>. To search for the cache, run the <code class="language-plaintext highlighter-rouge">ls /tmp/*krb5*</code> command.</p>
 
     <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br /> In versions of Ubuntu lower than 22.04 (and possibly on other Linux distributions), you can't use the <code class="language-plaintext highlighter-rouge">/etc/nfs.conf</code> file to configure <code class="language-plaintext highlighter-rouge">gssd</code>. If this is the case for your system, we recommend starting the <code class="language-plaintext highlighter-rouge">rpc.gssd</code> service by using the <code class="language-plaintext highlighter-rouge">-n</code> flag.
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br> In versions of Ubuntu lower than 22.04 (and possibly on other Linux distributions), you can't use the <code class="language-plaintext highlighter-rouge">/etc/nfs.conf</code> file to configure <code class="language-plaintext highlighter-rouge">gssd</code>. If this is the case for your system, we recommend starting the <code class="language-plaintext highlighter-rouge">rpc.gssd</code> service by using the <code class="language-plaintext highlighter-rouge">-n</code> flag.
     </div>
   </li>
   <li>
     <p>Mount your cluster by using the <code class="language-plaintext highlighter-rouge">krb5</code> security mechanism. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>mount <span class="nt">-o</span> <span class="nv">vers</span><span class="o">=</span>4.1,sec<span class="o">=</span>krb5 my-cluster.my-domain.example.com:/ /mnt/point
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>mount <span class="nt">-o</span> <span class="nv">vers</span><span class="o">=</span>4.1,sec<span class="o">=</span>krb5 my-cluster.my-domain.example.com:/ /mnt/point
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Use the Qumulo file system.</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> /mnt/point
-<span class="nv">$ </span><span class="nb">touch </span>filename
-<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span> filename
-<span class="nt">-rw-r--r--</span>    1 MY_MACHINE<span class="nv">$ </span>   domain computers         0 Jun  9 23:18 filename
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /mnt/point <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  <span class="nb">touch </span>filename <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  <span class="nb">ls</span> <span class="nt">-l</span> filename
+</code></pre></div>    </div>
+
+    <p>The following is example output.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-rw-r--r--    1 MY_MACHINE$    domain computers         0 Jun  9 23:18 filename
 </code></pre></div>    </div>
   </li>
 </ol>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> The machine account is the owner of any new files.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> The machine account is the owner of any new files.
 </div>
 
 <p>If the machine name isn’t visible, make sure that the AD container holds this machine in the Qumulo cluster’s Base DN configuration (typically, <code class="language-plaintext highlighter-rouge">CN=Computers,DC=...</code>). If the machine name is still not visible, configure the Linux client ID mapper to provide local mappings when no RFC 2307 mapping is available. It is uncommon for machine accounts to have RFC 2307 mappings.</p>
@@ -2671,7 +2675,7 @@ use-machine-creds=true
 <p><a href="https://linux.die.net/man/1/kinit">kinit</a> authentication is very similar to machine account authentication. The main difference is that you must create the credentials for the mount manually. You can use any user in the AD domain. However (this is also true for machine accounts), any local Linux user that can access the mount point can operate on the Qumulo cluster as this single user.</p>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br /> Both machine account authentication and <code class="language-plaintext highlighter-rouge">kinit</code> have limited usefulness because they limit the mount point to a single authenticated user. Between the two authentication options, <code class="language-plaintext highlighter-rouge">kinit</code> has an advantage because of the way it handles ID mapping.
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br> Both machine account authentication and <code class="language-plaintext highlighter-rouge">kinit</code> have limited usefulness because they limit the mount point to a single authenticated user. Between the two authentication options, <code class="language-plaintext highlighter-rouge">kinit</code> has an advantage because of the way it handles ID mapping.
 </div>
 
 <p>In environments where Linux systems map exactly to end users that have <code class="language-plaintext highlighter-rouge">kinit</code>-based Kerberos mounts on their Qumulo clusters, <code class="language-plaintext highlighter-rouge">kinit</code> might be sufficient.</p>
@@ -2680,7 +2684,7 @@ use-machine-creds=true
   <li>
     <p>Authenticate by using <code class="language-plaintext highlighter-rouge">kinit</code>. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>kinit my-user
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>kinit my-user
 </code></pre></div>    </div>
   </li>
   <li>
@@ -2701,41 +2705,45 @@ use-machine-creds=false
   <li>
     <p>Mount your cluster by using the <code class="language-plaintext highlighter-rouge">krb5</code> security mechanism. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>mount <span class="nt">-o</span> <span class="nv">vers</span><span class="o">=</span>4.1,sec<span class="o">=</span>krb5 my-cluster.my-domain.example.com:/ /mnt/point
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>mount <span class="nt">-o</span> <span class="nv">vers</span><span class="o">=</span>4.1,sec<span class="o">=</span>krb5 my-cluster.my-domain.example.com:/ /mnt/point
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Use the Qumulo file system.</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> /mnt/point
-<span class="nv">$ </span><span class="nb">touch </span>filename
-<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span> filename
-<span class="nt">-rw-r--r--</span>    1 my-user    domain <span class="nb">users         </span>0 Jun  9 23:18 filename
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /mnt/point <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  <span class="nb">touch </span>filename <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  <span class="nb">ls</span> <span class="nt">-l</span> filename
+</code></pre></div>    </div>
+
+    <p>The following is example output.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-rw-r--r--    1 my-user    domain users         0 Jun  9 23:18 filename
 </code></pre></div>    </div>
   </li>
 </ol>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> The <code class="language-plaintext highlighter-rouge">kinit</code> user is the owner of any new files.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> The <code class="language-plaintext highlighter-rouge">kinit</code> user is the owner of any new files.
 </div>
 
 <h3 id="to-authenticate-as-an-ad-user-manually-by-using-autofs-and-mount-your-qumulo-cluster">To Authenticate as an AD User Manually by Using autofs and Mount Your Qumulo Cluster</h3>
 <p><a href="https://man7.org/linux/man-pages/man5/autofs.5.html">autofs</a> is a dæmon that manages mount points for individual Linux users. For this reason, Linux users have different views of a mount point. <code class="language-plaintext highlighter-rouge">autofs</code> can authenticate an AD user through SSH, the Linux file system, or a Qumulo cluster mounted on a Linux system.</p>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> When you use <code class="language-plaintext highlighter-rouge">autofs</code>, the Linux system maps the root user to the machine account user for the Linux system on the Qumulo cluster. However, the machine account user doesn’t have all the privileges of the root user, such as special permissions for the Qumulo cluster. You must specify all permissions in ACLs.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> When you use <code class="language-plaintext highlighter-rouge">autofs</code>, the Linux system maps the root user to the machine account user for the Linux system on the Qumulo cluster. However, the machine account user doesn’t have all the privileges of the root user, such as special permissions for the Qumulo cluster. You must specify all permissions in ACLs.
 </div>
 
 <ol>
   <li>
     <p>Connect to an AD domain and configure <code class="language-plaintext highlighter-rouge">sssd</code> to authenticate with this domain. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>login my-domain-user
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>login my-domain-user
 </code></pre></div>    </div>
 
     <p>Alternatively, you can run the following command.</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ssh my-domain_user@my-linux-system
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh my-domain_user@my-linux-system
 </code></pre></div>    </div>
   </li>
   <li>
@@ -2761,22 +2769,26 @@ use-machine-creds=false
   <li>
     <p>Restart <code class="language-plaintext highlighter-rouge">autofs</code>.</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>systemctl restart autofs
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl restart autofs
 </code></pre></div>    </div>
 
     <p><code class="language-plaintext highlighter-rouge">autofs</code> creates the <code class="language-plaintext highlighter-rouge">/mnt/qumulo_mount_point</code> directory and mounts it as necessary for any user. For example:</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ssh domain_user_1@my-linux-system touch /mnt/qumulo_mount_point/user1_file
-$ ssh domain_user_2@my-linux-system touch /mnt/qumulo_mount_point/user2_file
-$ ssh domain_user_3@my-linux-system ls -l /mnt/qumulo_mount_point
--rw-r--r--    1 user1    domain users         0 Jun  9 23:18 user1_file
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh domain_user_1@my-linux-system touch /mnt/qumulo_mount_point/user1_file &amp;&amp; \
+ssh domain_user_2@my-linux-system touch /mnt/qumulo_mount_point/user2_file &amp;&amp; \
+ssh domain_user_3@my-linux-system ls -l /mnt/qumulo_mount_point
+</code></pre></div>    </div>
+
+    <p>The following is example output.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-rw-r--r--    1 user1    domain users         0 Jun  9 23:18 user1_file
 -rw-r--r--    1 user2    domain users         0 Jun  9 23:18 user2_file
 </code></pre></div>    </div>
   </li>
 </ol>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> The user you logged in to the AD domain with is the owner of any new files.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> The user you logged in to the AD domain with is the owner of any new files.
 </div>
 
 <h2 id="network-time-protocol-ntp-server">Network Time Protocol (NTP) Server</h2>

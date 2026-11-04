@@ -2428,9 +2428,13 @@ $(document).ready(function() {
 <h3 id="showing-the-acl-of-a-file">Showing the ACL of a File</h3>
 <p>To show the ACL of a file, run the <code class="language-plaintext highlighter-rouge">nfs4_getfacl</code> command. In the following example, we create the file <code class="language-plaintext highlighter-rouge">my-file</code> and then show the ACL for it.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">touch</span> /mnt/qumulo/my-file
-<span class="nv">$ </span>nfs4_getfacl /mnt/qumulo/my-file
-A::user1@domain.example.com:rwatTnNcy
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">touch</span> /mnt/qumulo/my-file <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  nfs4_getfacl /mnt/qumulo/my-file
+</code></pre></div></div>
+
+<p>The following is example output.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A::user1@domain.example.com:rwatTnNcy
 A:g:group1@domain.example.com:rwatTnNcy
 A::EVERYONE@:rtncy
 </code></pre></div></div>
@@ -2439,8 +2443,12 @@ A::EVERYONE@:rtncy
 
 <p>The ACL in this example corresponds to <code class="language-plaintext highlighter-rouge">664</code> mode: The owner (<code class="language-plaintext highlighter-rouge">user1</code>) and group (<code class="language-plaintext highlighter-rouge">group1</code>) of the file are allowed to read and write, while others (<code class="language-plaintext highlighter-rouge">EVERYONE@</code>) are allowed to only read. To check the current mode, run the <code class="language-plaintext highlighter-rouge">stat</code> command, for example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">stat</span> <span class="nt">-c</span> %a /mnt/qumulo/my-file
-664
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">stat</span> <span class="nt">-c</span> %a /mnt/qumulo/my-file
+</code></pre></div></div>
+
+<p>The following is example output.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>664
 </code></pre></div></div>
 
 <h3 id="editing-the-acl-of-a-file">Editing the ACL of a File</h3>
@@ -2456,7 +2464,7 @@ A::EVERYONE@:rtncy
 
 <h3 id="configuring-access-control-entries-aces-and-trustee-representation">Configuring Access Control Entries (ACEs) and Trustee Representation</h3>
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The following guidance applies to all <code class="language-plaintext highlighter-rouge">nfs4_acl</code> scenarios, including getting, editing, and setting the ACL.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The following guidance applies to all <code class="language-plaintext highlighter-rouge">nfs4_acl</code> scenarios, including getting, editing, and setting the ACL.
 </div>
 
 <p>There are four fields in the <code class="language-plaintext highlighter-rouge">nfs4_acl</code> syntax, separated by colons (<code class="language-plaintext highlighter-rouge">:</code>):</p>
@@ -2472,7 +2480,7 @@ A::EVERYONE@:rtncy
 <p>In <a href="#showing-the-acl-of-a-file">the example of the file ACL</a>, all three ACEs are set to <code class="language-plaintext highlighter-rouge">A</code> (allow).</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core supports only <code class="language-plaintext highlighter-rouge">A</code> and <code class="language-plaintext highlighter-rouge">D</code> ACEs.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Qumulo Core supports only <code class="language-plaintext highlighter-rouge">A</code> and <code class="language-plaintext highlighter-rouge">D</code> ACEs.
 </div>
 
 <ul>
@@ -2486,14 +2494,14 @@ A::EVERYONE@:rtncy
 <p>In <a href="#showing-the-acl-of-a-file">the example of the file ACL</a>, the second ACE has the flag <code class="language-plaintext highlighter-rouge">g</code> that shows that the ID in the following part represents a <em>group</em> (rather than a user).</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core doesn’t support The <code class="language-plaintext highlighter-rouge">S</code> and <code class="language-plaintext highlighter-rouge">F</code> flags.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Qumulo Core doesn’t support The <code class="language-plaintext highlighter-rouge">S</code> and <code class="language-plaintext highlighter-rouge">F</code> flags.
 </div>
 
 <h4 id="the-trustee-to-which-the-ace-applies">The Trustee to Which the ACE Applies</h4>
 <p>You can use the following trustee representation formats.</p>
 
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>Be careful when you copy <em>local users and groups</em> across different Qumulo clusters manually. Aside from UIDs and GIDs, local users and groups are the only identity types in this table that aren't globally unique (because a user or group name represents them). If the destination cluster interprets the named user or group differently, the permissions you set might be unexpected.</li>
     <li>This consideration doesn't apply to replication copies of local user or group trustees.</li>
   </ul>
@@ -2502,69 +2510,104 @@ A::EVERYONE@:rtncy
 <table>
   <thead>
     <tr>
-      <th>Trustee Representation</th>
-      <th>Example</th>
-      <th>Description</th>
+      <th style="width:28%">Representation</th>
+      <th style="width:28%">Example</th>
+      <th style="width:21%">Storage Location</th>
+      <th style="width:21%">Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">&lt;user&gt;@&lt;domain&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">user1@domain.example.com</code></td>
-      <td>A Kerberos principal that represents a user in the domain to which a Qumulo cluster is joined. You can use this format regardless of client mount security, but only when the cluster is joined to AD. For this trustee in the ACE, the system stores the corresponding AD SID for this user principal on disk. For more information about configuring your clients and Qumulo cluster for Kerberos, see the <a href="../kerberos/kerberos-with-qumulo-core.html">How NFSv4.1 Works with Kerberos in Qumulo Core</a>.</td>
+      <td>A Kerberos principal that represents a user in the domain to which a Qumulo cluster is joined, in the following format:<br><code>&lt;user&gt;@&lt;domain&gt;</code></td>
+      <td><code>user1@domain.example.com</code></td>   
+      <td>For this trustee in the ACE, the system stores the corresponding AD SID for this user principal on disk.</td>
+      <td>
+        <p>You can use this format regardless of client mount security, but only when the cluster is joined to AD.</p>
+        <p>For more information about configuring your clients and Qumulo cluster for Kerberos, see the <a href="../kerberos/kerberos-with-qumulo-core.html">How NFSv4.1 Works with Kerberos in Qumulo Core</a>.</p>
+      </td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">&lt;group&gt;@&lt;domain&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">group1@domain.example.com</code></td>
-      <td>A Kerberos principal that represents a group in the domain to which that a Qumulo cluster is joined. You can use this format regardless of client mount security, but only when the cluster is joined to AD. The group flag isn’t necessary to show that this is a group. For this trustee in this ACE, the system stores the corresponding AD SID for this group principal on disk. For more information about configuring your clients and Qumulo cluster for Kerberos, see <a href="../kerberos/kerberos-with-qumulo-core.html">How NFSv4.1 Works with Kerberos in Qumulo Core</a>.</td>
+      <td>A Kerberos principal that represents a group in the domain to which a Qumulo cluster is joined, in the following format:<br><code>&lt;group&gt;@&lt;domain&gt;</code></td>
+      <td><code>group1@domain.example.com</code></td>
+      <td>For this trustee in the ACE, the system stores the corresponding AD SID for this group principal on disk.</td>
+      <td>
+        <ul>
+          <li>You can use this format regardless of client mount security, but only when the cluster is joined to AD.</li>
+          <li>The group flag isn't necessary to show that this is a group.</li>
+        </ul>
+        <p>For more information about configuring your clients and Qumulo cluster for Kerberos, see <a href="../kerberos/kerberos-with-qumulo-core.html">How NFSv4.1 Works with Kerberos in Qumulo Core</a>.</p>
+      </td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">&lt;S-R-X-Y1-Y2-Yn-1-Yn&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">S-1-5-32-544</code></td>
-      <td>A raw SID. For more information, see <a href="https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/security-identifiers">Security Identifiers</a> in the Microsoft documentation. To store a SID on disk for this trustee, you can use this format in place of a Kerberos principal. An AD SID must be a user or a group, but can’t be both. However, the group flag isn’t necessary for showing whether the SID represents a user or group. This can be useful if you have SIDs in a foreign domain (that is, a domain that the cluster isn’t joined to). You can use this representation when the cluster isn’t joined to a domain at all. When you retrieve an ACL by using <code class="language-plaintext highlighter-rouge">nfs4_getfacl</code>, the presentation for joined domain SIDs is <code class="language-plaintext highlighter-rouge">&lt;group&gt;@&lt;domain&gt;</code> and the presentation for foreign SIDs is <code class="language-plaintext highlighter-rouge">&lt;S-R-X-Y1-Y2-Yn-1-Yn&gt;</code>.</td>
+      <td>A raw SID, in the following format:<br><code>&lt;S-R-X-Y1-Y2-Yn-1-Yn&gt;</code></td>
+      <td><code>S-1-5-32-544</code></td>
+      <td>To store a SID on disk for this trustee, you can use this format in place of a Kerberos principal.</td>
+      <td>
+        <ul>
+          <li>An AD SID must be a user or a group, but can't be both.</li>
+          <li>
+            The group flag isn't necessary for showing whether the SID represents a user or group.
+            <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> This can be useful if you have SIDs in a foreign domain (that is, a domain that the cluster isn’t joined to).</div>
+
+          </li>
+          <li>You can use this representation when the cluster isn't joined to a domain at all. When you retrieve an ACL by using <code>nfs4_getfacl</code>, the presentation for joined domain SIDs is <code>&lt;group&gt;@&lt;domain&gt;</code> and the presentation for foreign SIDs is <code>&lt;S-R-X-Y1-Y2-Yn-1-Yn&gt;</code>.</li>
+        </ul>
+        <p>For more information, see <a href="https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/security-identifiers">Security Identifiers</a> in the Microsoft documentation.</p>
+      </td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">&lt;numeric_uid&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">1234</code></td>
-      <td>A numerical UID for an <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> user. For this trustee in the ACE, the system stores this UID on disk.</td>
+      <td>A numerical UID for an <code>AUTH_SYS</code> user, in the following format:<br><code>&lt;numeric_uid&gt;</code></td>
+      <td><code>1234</code></td>
+      <td>For this trustee in the ACE, the system stores this UID on disk.</td>
+      <td class="align-center">—</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">&lt;numeric_gid&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">5678</code></td>
-      <td>A numerical GID for an <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> user. To avoid having the group interpreted as a user, you must <a href="#additional-ace-flags">specify the group flag</a>. For this trustee in the ACE, the system stores the GID on disk.</td>
+      <td>A numerical GID for an <code>AUTH_SYS</code> user, in the following format:<br><code>&lt;numeric_gid&gt;</code></td>
+      <td><code>5678</code></td>
+      <td>For this trustee in the ACE, the system stores the GID on disk.</td>
+      <td>To avoid having the group interpreted as a user, you must <a href="#additional-ace-flags">specify the group flag</a>.</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">qumulo_local/&lt;username&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">qumulo_local/localuser1</code></td>
-      <td>A user local to a Qumulo cluster (that is, a user that created by using Qumulo Core Web UI or the <code class="language-plaintext highlighter-rouge">qq</code> CLI.) For the trustee in this ACE, the system stores this user as a local user.</td>
+      <td>A user local to a Qumulo cluster (that is, a user that was created by using Qumulo Core Web UI or the <code>qq</code> CLI), in the following format:<br><code>qumulo_local/&lt;username&gt;</code></td>
+      <td><code>qumulo_local/localuser1</code></td>
+      <td>For the trustee in this ACE, the system stores this user as a local user.</td>
+      <td class="align-center">—</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">qumulo_local/&lt;groupname&gt;</code></td>
-      <td><code class="language-plaintext highlighter-rouge">qumulo_local/localgroup1</code></td>
-      <td>A group local to a Qumulo cluster (that is, a group created by using the Qumulo Core Web UI or the <code class="language-plaintext highlighter-rouge">qq</code> CLI.) Because local Qumulo users and groups can’t share a name, the group flag isn’t necessary to show this is a group. For the trustee in this ACE, the system stores this group as a local group, on disk.</td>
+      <td>A group local to a Qumulo cluster (that is, a group created by using the Qumulo Core Web UI or the <code>qq</code> CLI), in the following format:<br><code>qumulo_local/&lt;groupname&gt;</code></td>
+      <td><code>qumulo_local/localgroup1</code></td>
+      <td>For the trustee in this ACE, the system stores this group as a local group, on disk.</td>
+      <td>Because local Qumulo users and groups can't share a name, the group flag isn't necessary to show this is a group.</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">EVERYONE@</code></td>
-      <td>—</td>
-      <td>Any user of the file system.</td>
+      <td>Any user of the file system, in the following format:<br><code>EVERYONE@</code></td>
+      <td class="align-center">—</td>
+      <td class="align-center">—</td>
+      <td class="align-center">—</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">GROUP@</code></td>
-      <td>—</td>
-      <td>The group owner of a file.</td>
+      <td>The group owner of a file, in the following format:<br><code>GROUP@</code></td>
+      <td class="align-center">—</td>
+      <td class="align-center">—</td>
+      <td class="align-center">—</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">OWNER@</code></td>
-      <td>—</td>
-      <td>The owner of a file.</td>
+      <td>The owner of a file, in the following format:<br><code>OWNER@</code></td>
+      <td class="align-center">—</td>
+      <td class="align-center">—</td>
+      <td class="align-center">—</td>
     </tr>
   </tbody>
 </table>
 
-<p>You you can use all trustee representations interchangeably, even within a single ACL. For example, the following ACL is possible for a file:</p>
+<p>You can use all trustee representations interchangeably, even within a single ACL. For example, the following ACL is possible for a file:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nfs4_getfacl /mnt/qumulo/my-file
-A::user1@domain.example.com:rwatTnNcy
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nfs4_getfacl /mnt/qumulo/my-file
+</code></pre></div></div>
+
+<p>The following is example output.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A::user1@domain.example.com:rwatTnNcy
 A:g:group1@domain.example.com:rwatTnNcy
 A::1234:rwatTnNcy
 A:g:5678:rwatTnNcy
@@ -2572,7 +2615,7 @@ A::S-1-5-8-9:rwatTnNcy
 A:g:S-1-5-32-544:rwatTnNcy
 A::qumulo_local/localuser1:rwatTnNcy
 A:g:qumulo_local/localgroup1:rwatTnNcy
-A::EVERYONE@:rtncy&lt;/code&gt;
+A::EVERYONE@:rtncy
 </code></pre></div></div>
 
 <h4 id="the-access-types-to-which-the-ace-applies">The Access Types to Which the ACE Applies</h4>
@@ -2605,7 +2648,7 @@ A::EVERYONE@:rtncy&lt;/code&gt;
 </ul>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Because the <code class="language-plaintext highlighter-rouge">EVERYONE@</code> identifier includes the owner and group of a file and the <code class="language-plaintext highlighter-rouge">other</code> bits of a mode don’t apply to the owner or group, the permissions you grant to the <code class="language-plaintext highlighter-rouge">EVERYONE@</code> identifier are more broad than a mode’s <code class="language-plaintext highlighter-rouge">other</code> bits.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Because the <code class="language-plaintext highlighter-rouge">EVERYONE@</code> identifier includes the owner and group of a file and the <code class="language-plaintext highlighter-rouge">other</code> bits of a mode don’t apply to the owner or group, the permissions you grant to the <code class="language-plaintext highlighter-rouge">EVERYONE@</code> identifier are more broad than a mode’s <code class="language-plaintext highlighter-rouge">other</code> bits.
 </div>
 
 <h2 id="using-nfsv41-acls-with-smb-access-control">Using NFSv4.1 ACLs with SMB Access Control</h2>
@@ -2614,15 +2657,25 @@ A::EVERYONE@:rtncy&lt;/code&gt;
 <h2 id="changing-file-owners">Changing File Owners</h2>
 <p>When you change the owner of a file, the ACEs that refer to the owner change to the new owner, for example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nfs4_getfacl /mnt/qumulo/my-file
-A::user1@domain.example.com:rwatTnNcy
+<h3 id="example-1">Example 1</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nfs4_getfacl /mnt/qumulo/my-file
+</code></pre></div></div>
+
+<p>The following is example output.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A::user1@domain.example.com:rwatTnNcy
 A:g:group1@domain.example.com:rwatTnNcy
 A::EVERYONE@:rtncy
+</code></pre></div></div>
 
-<span class="nv">$ </span><span class="nb">sudo chown </span>user2 /mnt/qumulo/my_file
+<h3 id="example-2">Example 2</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo chown </span>user2 /mnt/qumulo/my_file <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  nfs4_getfacl /mnt/qumulo/my-file
+</code></pre></div></div>
 
-<span class="nv">$ </span>nfs4_getfacl /mnt/qumulo/my-file
-A::user2@domain.example.com:rwatTnNcy
+<p>The following is example output.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A::user2@domain.example.com:rwatTnNcy
 A:g:group1@domain.example.com:rwatTnNcy
 A::EVERYONE@:rtncy
 </code></pre></div></div>
@@ -2696,8 +2749,16 @@ A::EVERYONE@:rtncy
       <td><code class="language-plaintext highlighter-rouge">Delete</code></td>
     </tr>
     <tr>
+      <td><code class="language-plaintext highlighter-rouge">D</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Delete child</code></td>
+    </tr>
+    <tr>
       <td><code class="language-plaintext highlighter-rouge">n</code></td>
       <td><code class="language-plaintext highlighter-rouge">Read EA</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">N</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Write EA</code></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">o</code></td>
@@ -2747,41 +2808,84 @@ A::EVERYONE@:rtncy
 <table>
   <thead>
     <tr>
-      <th>Permissions</th>
-      <th>NFSv4.1 Command</th>
-      <th>Qumulo Command</th>
+      <th style="width:20%">Permissions</th>
+      <th style="width:40%">NFSv4.1 Command</th>
+      <th style="width:40%">Qumulo Command</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Add Read Permission to File</td>
-      <td><code class="language-plaintext highlighter-rouge">nfs4_setfacl -a "A::OWNER@:R" myfile.ext</code></td>
-      <td><code class="language-plaintext highlighter-rouge">qq fs_modify_acl --path /myfile.ext add_entry -y Allowed -t "File Owner" -r Read</code></td>
+      <td><pre><code>nfs4_setfacl \
+  -a "A::OWNER@:R" \
+  myfile.ext</code></pre></td>
+      <td><pre><code>qq fs_modify_acl \
+  --path /myfile.ext \
+  add_entry \
+  -y Allowed \
+  -t "File Owner" \
+  -r 'Read' 'Read EA' 'Read attr' 'Read ACL' 'Synchronize'</code></pre></td>
     </tr>
     <tr>
       <td>Add Read and Execute Permissions to File</td>
-      <td><code class="language-plaintext highlighter-rouge">nfs4_setfacl -a "A::EVERYONE@:rtRX" myfile.ext</code></td>
-      <td><code class="language-plaintext highlighter-rouge">qq fs_modify_acl --path /myfile.ext add_entry -y Allowed -t "EVERYONE" -r Execute/Traverse, Read</code></td>
+      <td><pre><code>nfs4_setfacl \
+  -a "A::EVERYONE@:rtRX" \
+  myfile.ext</code></pre></td>
+      <td><pre><code>qq fs_modify_acl \
+  --path /myfile.ext \
+  add_entry \
+  -y Allowed \
+  -t "EVERYONE" \
+  -r 'Read' 'Read attr' 'Read EA' 'Read ACL' 'Synchronize' 'Execute/Traverse'</code></pre></td>
     </tr>
     <tr>
       <td>Add Read, Write, and Execute Permissions to File</td>
-      <td><code class="language-plaintext highlighter-rouge">nfs4_setfacl -a "A::GROUP@:rtwRWX" myfile.ext</code></td>
-      <td><code class="language-plaintext highlighter-rouge">qq fs_modify_acl --path /myfile.ext add_entry -y Allowed -t "File Group Owner" -r Execute/Traverse, Read, Write ACL, Write file</code></td>
+      <td><pre><code>nfs4_setfacl \
+  -a "A::GROUP@:rtwRWX" \
+  myfile.ext</code></pre></td>
+      <td><pre><code>qq fs_modify_acl \
+  --path /myfile.ext \
+  add_entry \
+  -y Allowed \
+  -t "File Group Owner" \
+  -r 'Read' 'Read attr' 'Write file' 'Read EA' 'Read ACL' 'Synchronize' 'Extend file' 'Write attr' 'Write EA' 'Write ACL' 'Execute/Traverse'</code></pre></td>
     </tr>
     <tr>
       <td>Add Full Access to File</td>
-      <td><code class="language-plaintext highlighter-rouge">nfs4_setfacl -a "A::GROUP@:rtwRWX" myfile.ext</code></td>
-      <td><code class="language-plaintext highlighter-rouge">qq fs_modify_acl --path /myfile.ext add_entry -y Allowed -t "File Group Owner" -r Execute/Traverse, Read, Write ACL, Write file</code></td>
+      <td><pre><code>nfs4_setfacl \
+  -a "A::GROUP@:rwaDdxtTnNcCoy" \
+  myfile.ext</code></pre></td>
+      <td><pre><code>qq fs_modify_acl \
+  --path /myfile.ext \
+  add_entry \
+  -y Allowed \
+  -t "File Group Owner" \
+  -r All</code></pre></td>
     </tr>
     <tr>
-      <td>Remove Write and Execute Permission to File</td>
-      <td><code class="language-plaintext highlighter-rouge">nfs4_setfacl -a "D::OWNER@:wx" myfile.ext</code></td>
-      <td><code class="language-plaintext highlighter-rouge">qq fs_modify_acl --path /myfile.ext add_entry -y Denied -t "File Owner" -r Execute/Traverse, Write data</code></td>
+      <td>Add Deny ACE for Write and Execute Permissions on File</td>
+      <td><pre><code>nfs4_setfacl \
+  -a "D::OWNER@:wx" \
+  myfile.ext</code></pre></td>
+      <td><pre><code>qq fs_modify_acl \
+  --path /myfile.ext \
+  add_entry \
+  -y Denied \
+  -t "File Owner" \
+  -r 'Write file' 'Execute/Traverse'</code></pre></td>
     </tr>
     <tr>
       <td>Add Full Access to Group File and Directory Inheritances to Directory</td>
-      <td><code class="language-plaintext highlighter-rouge">nfs4_setfacl -a "A:fd:GROUP@:rwaDdxtTnNcCoy" mydirectory</code></td>
-      <td><code class="language-plaintext highlighter-rouge">qq fs_modify_acl --path /mydirectory add_entry -y Allowed -t "File Group Owner" -r All -f 'Container inherit' 'Object inherit'</code></td>
+      <td><pre><code>nfs4_setfacl \
+  -a "A:fd:GROUP@:rwaDdxtTnNcCoy" \
+  mydirectory</code></pre></td>
+      <td><pre><code>qq fs_modify_acl \
+  --path /mydirectory \
+  add_entry \
+  -y Allowed \
+  -t "File Group Owner" \
+  -r All \
+  -f 'Container inherit' 'Object inherit'</code></pre></td>
     </tr>
   </tbody>
 </table>

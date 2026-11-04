@@ -2421,7 +2421,7 @@ $(document).ready(function() {
      <h2 id="how-continuous-replication-works">How Continuous Replication Works</h2>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Qumulo Core supports replication between different versions only if either the source or target cluster is running Qumulo Core 2.12.0 (or higher). For more information, see <a href="../upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.html">Replication Version Requirements and Upgrade Recommendations</a>.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Qumulo Core supports replication between different versions only if either the source or target cluster is running Qumulo Core 2.12.0 (or higher). For more information, see <a href="../upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.html">Replication Version Requirements and Upgrade Recommendations</a>.
 </div>
 
 <p>Continuous replication takes a snapshot of the data in a directory on the <em>source cluster</em> and transfers it to a directory on the <em>target cluster</em>. While continuous replication runs, Qumulo Core scans modified files for any changed regions and transfer only these changes to the target cluster.</p>
@@ -2432,7 +2432,7 @@ $(document).ready(function() {
 <p>The following privileges are required for continuous replication.</p>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>We don't recommend granting the following privileges to specific users because they grant administrative access to your cluster.</li>
     <li>
       <p>The following privileges grant user access to Qumulo Core functionality beyond replication relationship management:</p>
@@ -2461,7 +2461,7 @@ $(document).ready(function() {
 
 <h2 id="create-replication-relationship">To Create a Replication Relationship</h2>
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> A replication job doesn’t begin until you authorize the relationship on the target cluster.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> A replication job doesn’t begin until you authorize the relationship on the target cluster.
 </div>
 
 <ol>
@@ -2488,14 +2488,14 @@ $(document).ready(function() {
         <p>For <strong>Target Address</strong>, enter one of the IP addresses from a node on the target cluster.</p>
 
         <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> We recommend using a floating IP address.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> We recommend using a floating IP address.
         </div>
       </li>
       <li>
         <p>For <strong>Port Number</strong>, click <strong>Default (3712)</strong> or enter a custom port.</p>
 
         <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />           <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>           <ul>
             <li>Every node on the target cluster uses port 3712 to listen for incoming replication connections.</li>
             <li>If a source cluster is unable to reach a target cluster on port 3712, you must configure your firewall, by mapping an external IP address and port number to the target cluster's IP address and port number.</li>
           </ul>
@@ -2510,7 +2510,7 @@ $(document).ready(function() {
     <p>(Optional) To add another blackout window, click <strong>Add Blackout Window</strong>.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can add up to ten blackout windows. For more information, see <a href="https://care.qumulo.com/hc/en-us/articles/360019101513">Replication: Blackout Windows</a> on Qumulo Care.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> You can add up to ten blackout windows. For more information, see <a href="https://care.qumulo.com/hc/en-us/articles/360019101513">Replication: Blackout Windows</a> on Qumulo Care.
     </div>
   </li>
   <li>
@@ -2528,7 +2528,7 @@ $(document).ready(function() {
 
 <h2 id="to-authorize-a-replication-relationship">To Authorize a Replication Relationship</h2>
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If your cluster is currently in a blackout window or if continuous replication for the replication relationship is disabled, replication doesn’t begin. For more information, see <a href="https://care.qumulo.com/hc/en-us/articles/360019101513">Replication: Blackout Windows</a> on Qumulo Care.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> If your cluster is currently in a blackout window or if continuous replication for the replication relationship is disabled, replication doesn’t begin. For more information, see <a href="https://care.qumulo.com/hc/en-us/articles/360019101513">Replication: Blackout Windows</a> on Qumulo Care.
 </div>
 
 <ol>
@@ -2562,31 +2562,31 @@ $(document).ready(function() {
     <th>Description</th>
   </tr>
   <tr>
-    <td class="replication-icon"><figure><img class="docimage" src="/images/shared-images/admin-guides/replication-running.png" alt="Replication is Running" /></figure></td>
+    <td class="replication-icon"><figure><img class="docimage" src="/images/shared-images/admin-guides/replication-running.png" alt="Replication is Running"></figure></td>
     <td>The replication is running or is ready to run.</td>
   </tr>
   <tr>
-    <td class="replication-icon"><figure><img class="docimage" src="/images/shared-images/admin-guides/replication-awaiting-authorization.png" alt="Replication is Awaiting Authorization" /></figure></td>
+    <td class="replication-icon"><figure><img class="docimage" src="/images/shared-images/admin-guides/replication-awaiting-authorization.png" alt="Replication is Awaiting Authorization"></figure></td>
     <td>The replication is awaiting authorization from the target cluster's administrator.</td>
   </tr>
   <tr>
-    <td class="replication-icon"><figure><img class="docimage" src="/images/shared-images/admin-guides/replication-relationship-disconnected.png" alt="Replication Relationship is Disconnected" /></figure></td>
+    <td class="replication-icon"><figure><img class="docimage" src="/images/shared-images/admin-guides/replication-relationship-disconnected.png" alt="Replication Relationship is Disconnected"></figure></td>
     <td>The replication relationship is disconnected and the target directory is writable.</td>
   </tr>
   <tr>
-    <td class="replication-icon"><figure><img class="docimage" src="/images/shared-images/admin-guides/replication-relationship-in-blackout-window.png" alt="Replication Relationship is in a Blackout Window" /></figure></td>
+    <td class="replication-icon"><figure><img class="docimage" src="/images/shared-images/admin-guides/replication-relationship-in-blackout-window.png" alt="Replication Relationship is in a Blackout Window"></figure></td>
     <td>The replication relationship is in a blackout window.</td>
   </tr>
   <tr>
-    <td class="replication-icon"><figure><img class="docimage" src="/images/shared-images/admin-guides/continuous-replication-disabled.png" alt="Continuous Replication Disabled" /></figure></td>       
+    <td class="replication-icon"><figure><img class="docimage" src="/images/shared-images/admin-guides/continuous-replication-disabled.png" alt="Continuous Replication Disabled"></figure></td>       
     <td>Continuous replication is disabled.</td>
   </tr>
   <tr>
-    <td class="replication-icon"><figure><img class="docimage" src="/images/shared-images/admin-guides/target-directory-reverting-to-last-recovery-point.png" alt="Target Directory is Reverting to the Last Recovery Point" /></figure></td>
+    <td class="replication-icon"><figure><img class="docimage" src="/images/shared-images/admin-guides/target-directory-reverting-to-last-recovery-point.png" alt="Target Directory is Reverting to the Last Recovery Point"></figure></td>
     <td>The target directory is reverting to the last recovery point before becoming writable.</td>
   </tr>
   <tr>
-    <td class="replication-icon"><figure><img class="docimage" src="/images/shared-images/admin-guides/replication-job-incomplete.png" alt="Replication Job is Incomplete" /></figure></td>          
+    <td class="replication-icon"><figure><img class="docimage" src="/images/shared-images/admin-guides/replication-job-incomplete.png" alt="Replication Job is Incomplete"></figure></td>          
     <td>The replication job is incomplete and will retry soon.</td>
   </tr>
 </table>
@@ -2594,7 +2594,7 @@ $(document).ready(function() {
     <p>A progress bar in the <strong>Status</strong> column indicates the replication process.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The replication process percentage considers the number of files to be replicated <em>and</em> the amount of data to be transferred.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The replication process percentage considers the number of files to be replicated <em>and</em> the amount of data to be transferred.
     </div>
   </li>
   <li>
@@ -2604,7 +2604,7 @@ $(document).ready(function() {
 
 <h2 id="to-modify-a-replication-relationship">To Modify a Replication Relationship</h2>
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> It isn’t possible to edit the source and target directory paths. To make these changes, you must create a new replication relationship.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> It isn’t possible to edit the source and target directory paths. To make these changes, you must create a new replication relationship.
 </div>
 
 <ol>
@@ -2615,7 +2615,7 @@ $(document).ready(function() {
     <p>Click <strong>Cluster &gt; Replication</strong>.</p>
   </li>
   <li>
-    <p>On the <strong>Replication Relationships</strong> page, next to the relationship to modify, click <img class="inline" src="/images/shared-images/admin-guides/vertical-ellipsis.png" alt="Vertical Ellipsis" />
+    <p>On the <strong>Replication Relationships</strong> page, next to the relationship to modify, click <img class="inline" src="/images/shared-images/admin-guides/vertical-ellipsis.png" alt="Vertical Ellipsis">
  <strong>&gt; Edit Relationship…</strong></p>
   </li>
   <li>
@@ -2633,7 +2633,7 @@ $(document).ready(function() {
     <p>Click <strong>Cluster &gt; Replication</strong>.</p>
   </li>
   <li>
-    <p>On the <strong>Replication Relationships</strong> page, next to the relationship to delete, click <img class="inline" src="/images/shared-images/admin-guides/vertical-ellipsis.png" alt="Vertical Ellipsis" />
+    <p>On the <strong>Replication Relationships</strong> page, next to the relationship to delete, click <img class="inline" src="/images/shared-images/admin-guides/vertical-ellipsis.png" alt="Vertical Ellipsis">
  <strong>&gt; Delete Relationship…</strong></p>
   </li>
   <li>

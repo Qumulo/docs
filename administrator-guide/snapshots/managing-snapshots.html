@@ -2697,7 +2697,7 @@ $(document).ready(function() {
    
      
      <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Creating a single snapshot policy at the root level (/) can potentially cause an issue when Qumulo Core attempts to remove data which no snapshots reference to reclaim space when the Qumulo cluster’s capacity is used fully. We recommend creating multiple snapshot policies for individual directories. If your organization has a requirement for creating a single root-level snapshot policy, make sure that your cluster always has some free space available.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Creating a single snapshot policy at the root level (/) can potentially cause an issue when Qumulo Core attempts to remove data which no snapshots reference to reclaim space when the Qumulo cluster’s capacity is used fully. We recommend creating multiple snapshot policies for individual directories. If your organization has a requirement for creating a single root-level snapshot policy, make sure that your cluster always has some free space available.
 </div>
 
 <h2 id="managing-snapshots-by-using-the-qumulo-core-web-ui">Managing Snapshots by Using the Qumulo Core Web UI</h2>
@@ -2779,7 +2779,7 @@ $(document).ready(function() {
     <p>Click <strong>Cluster &gt; Policy</strong>.</p>
   </li>
   <li>
-    <p>On the <strong>Snapshot Policies</strong> page, next to a policy, click <img class="inline" src="/images/shared-images/admin-guides/vertical-ellipsis.png" alt="Pagination controls" style="max-width: 40px" />
+    <p>On the <strong>Snapshot Policies</strong> page, next to a policy, click <img class="inline" src="/images/shared-images/admin-guides/vertical-ellipsis.png" alt="Pagination controls" style="max-width: 40px">
  <strong>&gt; Edit Policy</strong>.</p>
   </li>
   <li>
@@ -2788,7 +2788,7 @@ $(document).ready(function() {
     <p>Qumulo Core begins to lock all new snapshots that the policy creates with the specified lock key.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Snapshots created prior to this configuration remain unlocked.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Snapshots created prior to this configuration remain unlocked.
     </div>
   </li>
 </ol>
@@ -2806,7 +2806,7 @@ $(document).ready(function() {
     <p>Click <strong>Cluster &gt; Saved Snapshots</strong>.</p>
   </li>
   <li>
-    <p>In Qumulo Core version 4.3.3 (and higher), if you have more than 50 snapshots, use <img class="inline" src="/images/shared-images/admin-guides/snapshots/managing-snapshots-pagination.png" alt="Pagination controls" style="max-width: 40px" />
+    <p>In Qumulo Core version 4.3.3 (and higher), if you have more than 50 snapshots, use <img class="inline" src="/images/shared-images/admin-guides/snapshots/managing-snapshots-pagination.png" alt="Pagination controls" style="max-width: 40px">
  to navigate the snapshot pages.</p>
 
     <p>You can also use the controls at the bottom of the table to navigate to a specific page or change the number of rows for each page.</p>
@@ -2847,7 +2847,7 @@ $(document).ready(function() {
     <p>Click <strong>Cluster &gt; Saved Snapshots</strong>.</p>
   </li>
   <li>
-    <p>On the right side of a snapshot’s row, click <img class="inline" src="/images/shared-images/admin-guides/snapshots/managing-snapshots-delete.png" alt="Delete icon" style="max-width: 25px" />
+    <p>On the right side of a snapshot’s row, click <img class="inline" src="/images/shared-images/admin-guides/snapshots/managing-snapshots-delete.png" alt="Delete icon" style="max-width: 25px">
 .</p>
   </li>
 </ol>
@@ -2873,14 +2873,14 @@ $(document).ready(function() {
 </ol>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Because all selection and deletion controls operate only on the current page, it isn’t possible to delete a snapshot accidentally if it isn’t listed on the current page.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Because all selection and deletion controls operate only on the current page, it isn’t possible to delete a snapshot accidentally if it isn’t listed on the current page.
 </div>
 
 <h2 id="managing-snapshots-by-using-the-qq-cli">Managing Snapshots by Using the qq CLI</h2>
 <p>This section explains how to create snapshots on a schedule, create a snapshot with an expiration time, and modify a snapshot’s expiration time by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI.</p>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Creating and modifying snapshot policies with an associated lock requires the <code class="language-plaintext highlighter-rouge">SNAPSHOT_LOCK</code> permission in addition to policy permissions.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Creating and modifying snapshot policies with an associated lock requires the <code class="language-plaintext highlighter-rouge">SNAPSHOT_LOCK</code> permission in addition to policy permissions.
 </div>
 
 <h3 id="create-snapshot-with-policy">Creating Snapshots on a Schedule by Using a Snapshot Policy</h3>
@@ -2897,7 +2897,7 @@ $(document).ready(function() {
 <p>In the following example, we create a policy named <code class="language-plaintext highlighter-rouge">every_day</code> that takes a snapshot every midnight in the Pacific time zone and retains the snapshot for two days. Every new snapshot that this policy creates is locked with a key named <code class="language-plaintext highlighter-rouge">my-key-name</code>.  For more information, see <a href="locking-unlocking-snapshots.html">Locking and Unlocking Snapshots in Qumulo Core</a>.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The <code class="language-plaintext highlighter-rouge">timezone</code> flag uses values from the <a href="https://en.wikipedia.org/wiki/Tz_database">tz database</a>. If you don’t specify a time zone, the snapshot policy uses UTC time.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The <code class="language-plaintext highlighter-rouge">timezone</code> flag uses values from the <a href="https://en.wikipedia.org/wiki/Tz_database">tz database</a>. If you don’t specify a time zone, the snapshot policy uses UTC time.
 </div>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq snapshot_create_policy daily <span class="se">\</span>
@@ -2935,14 +2935,14 @@ $(document).ready(function() {
 </code></pre></div></div>
 
 <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To view the arguments specific to individual schedules, run any command with the <code class="language-plaintext highlighter-rouge">-h</code> flag.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> To view the arguments specific to individual schedules, run any command with the <code class="language-plaintext highlighter-rouge">-h</code> flag.
 </div>
 
 <h3 id="creating-an-on-demand-snapshot-with-an-expiration-time">Creating an On-Demand Snapshot with an Expiration Time</h3>
 <p>Run the <code class="language-plaintext highlighter-rouge">qq_snapshot_create_snapshot</code> command to specify an expiration date or expiration time before Qumulo Core deletes the snapshot.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If you don’t specify an expiration date or expiration time before deletion, Qumulo Core never deletes the snapshot.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> If you don’t specify an expiration date or expiration time before deletion, Qumulo Core never deletes the snapshot.
 </div>
 
 <p>In the following example, the snapshot expires on December 31, 2030, at midnight, in UTC time.</p>

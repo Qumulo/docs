@@ -2459,7 +2459,7 @@ $(document).ready(function() {
       <td><a id="metric-type-counter"></a><code>counter</code></td>
       <td>
         An integer that increases monotonically from zero, stored in <code>&lt;metric_name&gt;&amp;lowbar;count</code>.
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> During normal operation, the value of <code class="language-plaintext highlighter-rouge">counter</code> never decreases.</div>
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> During normal operation, the value of <code class="language-plaintext highlighter-rouge">counter</code> never decreases.</div>
 
       </td>
     </tr>
@@ -2467,7 +2467,7 @@ $(document).ready(function() {
       <td><a id="metric-type-gauge"></a><code>gauge</code></td>
       <td>
         A value that represents a single integer (similar to <code>counter</code>), stored in <code>&lt;metric_name&gt;</code>.
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> During normal operation, the value of a <code class="language-plaintext highlighter-rouge">gauge</code> metric might increase or decrease.</div>
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> During normal operation, the value of a <code class="language-plaintext highlighter-rouge">gauge</code> metric might increase or decrease.</div>
 
       </td>
     </tr>
@@ -2476,7 +2476,7 @@ $(document).ready(function() {
       <td>
         <p>A representation of a series of <em>buckets</em>, where each bucket tracks values within a specific range.</p>
         <p>A histogram has a <code>count</code> field and a <code>sum</code> field, stored in <code>&lt;metric_name&gt;&amp;lowbar;count</code> (the total number of samples) and <code>&lt;metric_name&gt;&amp;lowbar;sum</code> (the sum of all samples). Qumulo Core emits a single bucket that contains all samples.</p>
-        <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> You can use <code class="language-plaintext highlighter-rouge">histogram</code> metrics to keep track of averages by dividing the <code class="language-plaintext highlighter-rouge">sum</code> field by the <code class="language-plaintext highlighter-rouge">count</code> field.</div>
+        <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> You can use <code class="language-plaintext highlighter-rouge">histogram</code> metrics to keep track of averages by dividing the <code class="language-plaintext highlighter-rouge">sum</code> field by the <code class="language-plaintext highlighter-rouge">count</code> field.</div>
 
       </td>
     </tr>
@@ -2522,7 +2522,7 @@ $(document).ready(function() {
           <li class="pdf-friendly"><code>uuid</code></li>
           <li class="pdf-friendly">
             <code>version</code>
-            <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Don’t confuse this label for the <em>Qumulo Core version</em> with the identically named label for the <em>kernel version</em> for the <code class="language-plaintext highlighter-rouge">qumulo_kernel</code> metric.</div>
+            <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> Don’t confuse this label for the <em>Qumulo Core version</em> with the identically named label for the <em>kernel version</em> for the <code class="language-plaintext highlighter-rouge">qumulo_kernel</code> metric.</div>
 
           </li>
         </ul>
@@ -2748,7 +2748,7 @@ $(document).ready(function() {
       <td>5.3.0</td>
       <td>
         The free space on the cluster, in bytes
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This metric doesn’t include the cached data on spoke portals.</div>
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> This metric doesn’t include the cached data on spoke portals.</div>
 
       </td>
     </tr>
@@ -3110,7 +3110,7 @@ $(document).ready(function() {
           <li class="pdf-friendly"><code>metadata</code>: Operations (such as <code>lookup</code>, <code>stat</code>, or <code>getattr</code>) unrelated to a file's data</li>
           <li class="pdf-friendly">
             <code>none</code>: Operations that apply to neither the file data nor the metadata.
-            <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The protocol often requires these operations for session negotiation and authentication.</div>
+            <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The protocol often requires these operations for session negotiation and authentication.</div>
 
           </li>
         </ul>
@@ -3175,7 +3175,7 @@ $(document).ready(function() {
       <td><a id="metric-label-fs_uuid"></a><code>fs_uuid</code></td>
       <td>
         A UUID that identifies a local file system.
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The UUID of a spoke portal file system is identical to the UUID of the corresponding hub portal file system.</div>
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The UUID of a spoke portal file system is identical to the UUID of the corresponding hub portal file system.</div>
 
       </td>
       <td>File system ID</td>
@@ -3216,7 +3216,7 @@ $(document).ready(function() {
       <td>A location on the chassis, for example <code>left</code> or <code>right</code></td>
       <td>
         The location on the chassis.
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For PSU, this location is relative to the back of the node.</div>
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> For PSU, this location is relative to the back of the node.</div>
 
       </td>
     </tr>
@@ -3303,7 +3303,7 @@ $(document).ready(function() {
       </td>
       <td>
         The role of the interface
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> <code class="language-plaintext highlighter-rouge">frontend</code> includes protocol, management, and replication traffic. <code class="language-plaintext highlighter-rouge">backend</code> includes all intra-node communications.</div>
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> <code class="language-plaintext highlighter-rouge">frontend</code> includes protocol, management, and replication traffic. <code class="language-plaintext highlighter-rouge">backend</code> includes all intra-node communications.</div>
 
       </td>
     </tr>

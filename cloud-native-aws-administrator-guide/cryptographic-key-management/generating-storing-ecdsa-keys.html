@@ -2437,7 +2437,7 @@ $(document).ready(function() {
      <p>In Qumulo Core 6.1.0 (and higher), you can store multiple ECDSA public keys in the Qumulo file system key store and use these keys to protect file system resources.</p>
 
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>Currently, Qumulo Core supports only 256-bit ECDSA keys in <code class="language-plaintext highlighter-rouge">.pem</code> and <code class="language-plaintext highlighter-rouge">.der</code> formats. Qumulo Core doesn't support storing ECDSA keys of other lengths and formats.</li>
     <li>No KMS system shows the private key. To sign messages later, write down the key ID in the responses from key generation commands.</li>
   </ul>
@@ -2613,7 +2613,7 @@ WXYza1BCdEfGHIjkOlMnOpqr1STUvW3XYzAB6c8DefghIJkEXAMPLE==
 <p>You can use your private key to generate a verification signature and then provide this signature to Qumulo Core in Base64 encoding.</p>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>When you add a new key, the key name is the security challenge.</li>
     <li>When you replace an existing key or unlock a snapshot, the <code class="language-plaintext highlighter-rouge">qq</code> CLI command provides the challenge.</li>
   </ul>
@@ -2628,7 +2628,7 @@ WXYza1BCdEfGHIjkOlMnOpqr1STUvW3XYzAB6c8DefghIJkEXAMPLE==
 </code></pre></div>    </div>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The <code class="language-plaintext highlighter-rouge">-n</code> flag ensures that there are no newline characters following the challenge.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The <code class="language-plaintext highlighter-rouge">-n</code> flag ensures that there are no newline characters following the challenge.
     </div>
   </li>
   <li>
@@ -2690,7 +2690,7 @@ WXYza1BCdEfGHIjkOlMnOpqr1STUvW3XYzAB6c8DefghIJkEXAMPLE==
 
 <h3 id="to-sign-a-security-challenge-by-using-the-azure-key-vault">To Sign a Security Challenge by Using the Azure Key Vault</h3>
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> The Azure API requires a security challenge as a UrlBase64-encoded SHA-256 digest.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> The Azure API requires a security challenge as a UrlBase64-encoded SHA-256 digest.
 </div>
 
 <ol>

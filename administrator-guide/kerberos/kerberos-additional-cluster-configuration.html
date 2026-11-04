@@ -2708,15 +2708,19 @@ $(document).ready(function() {
 
     <p>The following is example output.</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq nfs_get_settings
-<span class="o">{</span>
-  <span class="s2">"auth_sys_enabled"</span>: <span class="nb">true</span>,
-  <span class="s2">"krb5_enabled"</span>: <span class="nb">true</span>,
-  <span class="s2">"krb5p_enabled"</span>: <span class="nb">true</span>,
-  <span class="s2">"krbi_enabled"</span>: <span class="nb">true</span>,
-  <span class="s2">"v4_enabled"</span>: <span class="nb">false</span>
-<span class="o">}</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq nfs_get_settings
 </code></pre></div>    </div>
+
+    <p>The following is example output.</p>
+
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"auth_sys_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"krb5_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"krb5p_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"krbi_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"v4_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
 
     <p>This is the default configuration:</p>
     <ul>
@@ -2728,21 +2732,26 @@ $(document).ready(function() {
     <p>To harden security, configure your cluster to use only Kerberos by disabling <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> (without changing <code class="language-plaintext highlighter-rouge">AUTH_KRB5</code>). For example:</p>
 
     <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Because it uses authentication based on a simple UID and GID passed over the wire in plain text, RPC <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> is inherently insecure. In a trusted environment, <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> might be sufficient for enforcing basic permissions and preventing good-faith actors from making mistakes. In all other cases, you must treat <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> as if it provides <em>no security whatsoever</em>.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Because it uses authentication based on a simple UID and GID passed over the wire in plain text, RPC <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> is inherently insecure. In a trusted environment, <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> might be sufficient for enforcing basic permissions and preventing good-faith actors from making mistakes. In all other cases, you must treat <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> as if it provides <em>no security whatsoever</em>.
     </div>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq nfs_modify_settings <span class="nt">--disable-auth-sys</span>  
-<span class="o">{</span>
-  <span class="s2">"v4_enabled"</span>: <span class="nb">false</span>,
-  <span class="s2">"auth_sys_enabled"</span>: <span class="nb">false</span>,
-  <span class="s2">"auth_krb5_enabled"</span>: <span class="nb">true</span>,
-  <span class="s2">"auth_krb5p_enabled"</span>: <span class="nb">true</span>,
-  <span class="s2">"auth_krb5i_enabled"</span>: <span class="nb">true</span>
-<span class="o">}</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq nfs_modify_settings <span class="nt">--disable-auth-sys</span>
 </code></pre></div>    </div>
+
+    <p>The following is example output.</p>
+
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"v4_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"auth_sys_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"auth_krb5_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"auth_krb5p_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"auth_krb5i_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
   </li>
   <li>
-    <p>(Optional) You can also run the following commands.</p>
+    <p>(Optional) You can also use the following flags with the <a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq nfs_modify_settings</code></a>
+ command.</p>
 
     <table>
       <thead>
@@ -2753,72 +2762,36 @@ $(document).ready(function() {
       </thead>
       <tbody>
         <tr>
-          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq nfs_modify_settings</code></a></td>
-          <td> </td>
-        </tr>
-        <tr>
           <td><code class="language-plaintext highlighter-rouge">--enable-auth-sys</code></td>
           <td>Enables <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> without changing <code class="language-plaintext highlighter-rouge">AUTH_KRB5</code></td>
-        </tr>
-        <tr>
-          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq nfs_modify_settings</code></a></td>
-          <td> </td>
         </tr>
         <tr>
           <td><code class="language-plaintext highlighter-rouge">--enable-krb5</code></td>
           <td>Enables <code class="language-plaintext highlighter-rouge">AUTH_KRB5</code> without changing <code class="language-plaintext highlighter-rouge">AUTH_SYS</code></td>
         </tr>
         <tr>
-          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq nfs_modify_settings</code></a></td>
-          <td> </td>
-        </tr>
-        <tr>
           <td><code class="language-plaintext highlighter-rouge">--enable-krb5p</code></td>
           <td>Enables <code class="language-plaintext highlighter-rouge">AUTH_KRB5P</code> without changing <code class="language-plaintext highlighter-rouge">AUTH_SYS</code></td>
-        </tr>
-        <tr>
-          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq nfs_modify_settings</code></a></td>
-          <td> </td>
         </tr>
         <tr>
           <td><code class="language-plaintext highlighter-rouge">--enable-krb5i</code></td>
           <td>Enables <code class="language-plaintext highlighter-rouge">AUTH_KRB5I</code> without changing <code class="language-plaintext highlighter-rouge">AUTH_SYS</code></td>
         </tr>
         <tr>
-          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq nfs_modify_settings</code></a></td>
-          <td> </td>
-        </tr>
-        <tr>
           <td><code class="language-plaintext highlighter-rouge">--enable-v4</code></td>
           <td>Enables NFSv4.1</td>
-        </tr>
-        <tr>
-          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq nfs_modify_settings</code></a></td>
-          <td> </td>
         </tr>
         <tr>
           <td><code class="language-plaintext highlighter-rouge">--disable-v4</code></td>
           <td>Disables NFSv4.1</td>
         </tr>
         <tr>
-          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq nfs_modify_settings</code></a></td>
-          <td> </td>
-        </tr>
-        <tr>
           <td><code class="language-plaintext highlighter-rouge">--disable-krb5</code></td>
           <td>Disables <code class="language-plaintext highlighter-rouge">AUTH_KRB5</code> without changing <code class="language-plaintext highlighter-rouge">AUTH_SYS</code></td>
         </tr>
         <tr>
-          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq nfs_modify_settings</code></a></td>
-          <td> </td>
-        </tr>
-        <tr>
           <td><code class="language-plaintext highlighter-rouge">--disable-krb5p</code></td>
           <td>Disables <code class="language-plaintext highlighter-rouge">AUTH_KRB5P</code> without changing <code class="language-plaintext highlighter-rouge">AUTH_SYS</code></td>
-        </tr>
-        <tr>
-          <td><a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_settings.html"><code class="language-plaintext highlighter-rouge">qq nfs_modify_settings</code></a></td>
-          <td> </td>
         </tr>
         <tr>
           <td><code class="language-plaintext highlighter-rouge">--disable-krb5i</code></td>
@@ -2830,7 +2803,7 @@ $(document).ready(function() {
 </ol>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>Security configuration options apply to <em>all</em> versions of NFS (NFSv3 and NFSv4.1). Thus, disabling <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> also disables NFSv3, because <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> is the only <a href="../kerberos/kerberos-with-qumulo-core.html#choosing-a-kerberos-security-flavor">Kerberos security flavor</a> that NFSv3 supports by design.</li>
     <li>In a secure environment, where Kerberos is required, <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> NFSv3 connections aren't allowed.</li>
     <li>These configuration options apply cluster-wide to all NFS exports and files.</li>

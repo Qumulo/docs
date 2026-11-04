@@ -2379,7 +2379,7 @@ $(document).ready(function() {
 
 <h2 id="listing-permissions-for-files">Listing Permissions for Files</h2>
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>This section uses the Kerberos term <em>trustee</em> and Qumulo term <em>identity</em> (or <code class="language-plaintext highlighter-rouge">auth_id</code>) interchangeably.</li>
     <li>The term <em>file</em> in the Qumulo file system can refer to:       <ul>
         <li>A file</li>
@@ -2406,7 +2406,7 @@ $(document).ready(function() {
 <p>In the following example, we create a file in a mount over NFS.</p>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>Because this example uses an <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> mount, it has UID and GID identity values set to <code class="language-plaintext highlighter-rouge">1000</code>.</li>
     <li>We recommend becoming familiar with the following commands to better understand the various elements for permissions types that the system stores on disk.</li>
   </ul>
@@ -2418,30 +2418,38 @@ $(document).ready(function() {
 <p>To view the exact permissions metadata for this file, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_file_get_attr.html"><code class="language-plaintext highlighter-rouge">qq fs_file_get_attr</code></a>
  command. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq fs_file_get_attr <span class="nt">--path</span> /filename
-<span class="o">{</span>
-  <span class="s2">"group_details"</span>: <span class="o">{</span>
-    <span class="s2">"id_type"</span>: <span class="s2">"NFS_GID"</span>,
-    <span class="s2">"id_value"</span>: <span class="s2">"1000"</span>
-  <span class="o">}</span>,
-  <span class="s2">"owner_details"</span>: <span class="o">{</span>
-    <span class="s2">"id_type"</span>: <span class="s2">"NFS_UID"</span>,
-    <span class="s2">"id_value"</span>: <span class="s2">"1000"</span>
-  <span class="o">}</span>,
-  ...
-<span class="o">}</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_file_get_attr <span class="nt">--path</span> /filename
 </code></pre></div></div>
+
+<p>The following is example output.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"group_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NFS_GID"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"owner_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NFS_UID"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p>To view the permissions configured in an ACL, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_get_acl.html"><code class="language-plaintext highlighter-rouge">qq fs_get_acl</code></a>
  command. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq fs_get_acl <span class="nt">--path</span> /filename
-Control: Present
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_get_acl <span class="nt">--path</span> /filename
+</code></pre></div></div>
+
+<p>The following is example output.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Control: Present
 Posix Special Permissions: None
 
 Permissions:
 Position  Trustee   Type     Flags  Rights
-<span class="o">========</span>  <span class="o">========</span>  <span class="o">=======</span>  <span class="o">=====</span>  <span class="o">==============================</span>
+========  ========  =======  =====  ==============================
 1         uid:1000  Allowed         Delete child, Read, Write file
 2         gid:1000  Allowed         Delete child, Read, Write file
 3         Everyone  Allowed         Read
@@ -2450,7 +2458,7 @@ Position  Trustee   Type     Flags  Rights
 <h2 id="listing-security-identifiers-sids">Listing Security Identifiers (SIDs)</h2>
 <p>The SID is a globally unique identifier for a user or group object in a domain. For more information, see <a href="https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/security-identifiers">Security identifiers</a> in the Microsoft documentation.</p>
 
-<p>Because Qumulo’s Kerberos implementation requires AD, every user is also an Active Directory user. The domain controller (DC) has an equivalent mapping for AD users and SIDs. Qumulo uses LDAP to determine the AD-user ↔ SID mapping. For this reason, it is important to configure the Base DN for your cluster correctly.</p>
+<p>Because Qumulo’s Kerberos implementation requires AD, every user is also an Active Directory user. The domain controller (DC) has an equivalent mapping for AD users and SIDs. Qumulo uses LDAP to determine the mapping between the AD user and SID. For this reason, it is important to configure the Base DN for your cluster correctly.</p>
 
 <p>Qumulo’s Kerberos implementation stores SIDs on disk for files that have Kerberos identities in the user, group, or ACL. When a user authenticates by using Kerberos and creates a file, Qumulo Core configures the user, group, and ACL automatically.</p>
 
@@ -2458,45 +2466,53 @@ Position  Trustee   Type     Flags  Rights
 
 <p>In the following example, the Kerberos-authenticated AD domain user <code class="language-plaintext highlighter-rouge">AD\myusername</code> creates a file over NFSv4.1 and the system gives an ACL response from the Qumulo REST API. The response contains an ACE entry for the owner and group owner of the user <code class="language-plaintext highlighter-rouge">AD\myusername</code>, with corresponding SIDs for both.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq fs_get_acl <span class="nt">--path</span> /filename <span class="nt">--json</span>
-<span class="o">{</span>
-  <span class="s2">"aces"</span>: <span class="o">[{</span>
-    <span class="s2">"trustee"</span>: <span class="o">{</span>
-      <span class="s2">"name"</span>: <span class="s2">"AD</span><span class="se">\\</span><span class="s2">myusername"</span>,
-      <span class="s2">"sid"</span>: <span class="s2">"S-1-5-21-1234567890-4567890123-9876543210-13507"</span>,
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_get_acl <span class="nt">--path</span> /filename <span class="nt">--json</span>
+</code></pre></div></div>
+
+<p>The following is example output.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "aces": [{
+    "trustee": {
+      "name": "AD\\myusername",
+      "sid": "S-1-5-21-1234567890-4567890123-9876543210-13507",
       ...
-    <span class="o">}</span>,
+    },
     ...
-  <span class="o">}</span>, <span class="o">{</span>
-    <span class="s2">"trustee"</span>: <span class="o">{</span>
-      <span class="s2">"name"</span>: <span class="s2">"AD</span><span class="se">\\</span><span class="s2">Domain Users"</span>,
-      <span class="s2">"sid"</span>: <span class="s2">"S-1-5-21-1234567890-4567890123-9876543210-513"</span>,
+  }, {
+    "trustee": {
+      "name": "AD\\Domain Users",
+      "sid": "S-1-5-21-1234567890-4567890123-9876543210-513",
       ...
-    <span class="o">}</span>,
+    },
     ...
-  <span class="o">}]</span>
-<span class="o">}</span>
+  }]
+}
 </code></pre></div></div>
 
 <h2 id="using-kerberos-principals">Using Kerberos Principals</h2>
 <p>Although Qumulo stores SIDs on disk, SIDs appear rarely when you use NFSv4.1 on Linux systems. Instead, the system represents Kerberos identities as Kerberos principals. A <em>Kerberos principal</em>, a string in the <code class="language-plaintext highlighter-rouge">&lt;user@domain&gt;</code> or <code class="language-plaintext highlighter-rouge">&lt;group@domain&gt;</code> format, is easier to read.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> There is an equivalent mapping between AD users, SIDs and Kerberos principals. Each of these representations is unique (a primary key to the AD identity database).
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> There is an equivalent mapping between AD users, SIDs and Kerberos principals. Each of these representations is unique (a primary key to the AD identity database).
 </div>
 
-<p>Qumulo’s implementation of the SID ↔ Kerberos principal mapping uses the <a href="https://docs.microsoft.com/en-us/windows/win32/ad/naming-properties#samaccountname"><code class="language-plaintext highlighter-rouge">sAMAccountName</code></a> field, which is always present and unique for all AD users and groups. The system forms the Kerberos principal by concatenating the name and domain in the <code class="language-plaintext highlighter-rouge">&lt;sAMAccountName&gt;@&lt;domain&gt;</code> format.</p>
+<p>Qumulo’s implementation of the mapping between the SID and the Kerberos principal uses the <a href="https://docs.microsoft.com/en-us/windows/win32/ad/naming-properties#samaccountname"><code class="language-plaintext highlighter-rouge">sAMAccountName</code></a> field, which is always present and unique for all AD users and groups. The system forms the Kerberos principal by concatenating the name and domain in the <code class="language-plaintext highlighter-rouge">&lt;sAMAccountName&gt;@&lt;domain&gt;</code> format.</p>
 
 <p>AD has fields with similar content but without the guarantee of uniqueness (such as the <code class="language-plaintext highlighter-rouge">name</code>, <code class="language-plaintext highlighter-rouge">distinguishedName</code>, <code class="language-plaintext highlighter-rouge">CN</code>, and <code class="language-plaintext highlighter-rouge">servicePrincipalName</code>). However, AD permits setting these fields to unrelated values. For this reason, it is unlikely but possible that certain environments use special values in these fields. Qumulo’s Kerberos implementation ignores these fields and uses only the value in the <code class="language-plaintext highlighter-rouge">sAMAccountName</code> field.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The fields can diverge significantly if an administrator edits them.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The fields can diverge significantly if an administrator edits them.
 </div>
 
 <p>The following example shows how the system represents the SIDs from the previous example as Kerberos principals.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nfs4_getfacl filename
-A::test2@ad.eng.qumulo.com:rwatTnNcy
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nfs4_getfacl filename
+</code></pre></div></div>
+
+<p>The following is example output.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A::test2@ad.eng.qumulo.com:rwatTnNcy
 A:g:Domain Users@ad.eng.qumulo.com:rtncy
 A::EVERYONE@:rtncy
 </code></pre></div></div>
@@ -2543,26 +2559,36 @@ A::EVERYONE@:rtncy
 
 <p>If both conditions are true, a <code class="language-plaintext highlighter-rouge">chown</code> operation on files performed as a Kerberos user over NFSv4.1 succeeds. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">chown </span>user3:group4 filename
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chown </span>user3:group4 filename
 </code></pre></div></div>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Including <code class="language-plaintext highlighter-rouge">@&lt;domain&gt;</code> for the destination user and group is optional.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Including <code class="language-plaintext highlighter-rouge">@&lt;domain&gt;</code> for the destination user and group is optional.
 </div>
 
 <h3 id="viewing-the-owner-and-group">Viewing the Owner and Group</h3>
 <p>The following examples show how to display user and group membership by using the <code class="language-plaintext highlighter-rouge">ls -l</code> and <code class="language-plaintext highlighter-rouge">stat -c</code> commands.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span> filename
-<span class="nt">-rw-r--r--</span>    1 user3    group4         0 Jun  9 23:18 filename
+<h4 id="example-1">Example 1</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-l</span> filename
 </code></pre></div></div>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">stat</span> <span class="nt">-c</span> <span class="s1">'%U, %G'</span> filename
-user3, group4
+<p>The following is example output.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-rw-r--r--    1 user3    group4         0 Jun  9 23:18 filename
+</code></pre></div></div>
+
+<h4 id="example-2">Example 2</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">stat</span> <span class="nt">-c</span> <span class="s1">'%U, %G'</span> filename
+</code></pre></div></div>
+
+<p>The following is example output.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>user3, group4
 </code></pre></div></div>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The Kerberos restrictions for <code class="language-plaintext highlighter-rouge">chown</code> also apply to other Linux tools that use the <code class="language-plaintext highlighter-rouge">chown</code> system call, such as <code class="language-plaintext highlighter-rouge">cp</code> and <code class="language-plaintext highlighter-rouge">rsync</code>, when you run them in ownership-preserving modes.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The Kerberos restrictions for <code class="language-plaintext highlighter-rouge">chown</code> also apply to other Linux tools that use the <code class="language-plaintext highlighter-rouge">chown</code> system call, such as <code class="language-plaintext highlighter-rouge">cp</code> and <code class="language-plaintext highlighter-rouge">rsync</code>, when you run them in ownership-preserving modes.
 </div>
 
 <h2 id="using-the-linux-acl-editor">Using the Linux ACL Editor</h2>

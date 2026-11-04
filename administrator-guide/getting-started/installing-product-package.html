@@ -2738,7 +2738,7 @@ Click to expand
     <td>Linux Distribution</td>
     <td>
       A <a target="_blank" href="https://en.wikipedia.org/wiki/Systemd#Adoption"><code>systemd</code>-based Linux distribution</a>
-      <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
+      <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br>
       <ul>
          <li>We've performed comprehensive testing of the <code>.deb</code> package running on Ubuntu 20.04, on-premises and on AWS, as well as spot-checks of installation and clustering processes on Ubuntu 22.04, Ubuntu 24.04, and Debian 11.</li>
          <li>We've also spot-checked the <code>.rpm</code> package by performing installation and clustering on the Rocky 9.3 distribution (compatible with RHEL in terms of performance and known issues). </li>
@@ -2749,7 +2749,7 @@ Click to expand
   <tr>
     <td>Kernel</td>
     <td>
-      <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Kernel versions lower than 5.19 have a bug that can cause core dumps from Qumulo Core to be truncated.</div>
+      <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Kernel versions lower than 5.19 have a bug that can cause core dumps from Qumulo Core to be truncated.</div>
       
       We've tested support for the following kernel versions:
       <ul>
@@ -2757,7 +2757,7 @@ Click to expand
         <li>Rocky or Red Hat Enterprise Linux (RHEL) 5.14 (and higher)</li>
         <li>Ubuntu 5.15 (and higher)</li>
       </ul>
-      <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
+      <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br>
       To ensure compatibility with other kernels, check whether the following features are supported.
       <ul>
          <li><code>io_uring</code>: To check whether your kernel has this system call, run the <code>grep io_uring_setup /proc/kallsyms</code> command.</li>
@@ -2775,7 +2775,7 @@ Click to expand
         <li><a target="_blank" href="https://en.wikipedia.org/wiki/Advanced_Vector_Extensions">Advanced Vector Extensions (AVX)</a></li>
         <li><a target="_blank" href="https://en.wikipedia.org/wiki/CLMUL_instruction_set#New_instructions">Carry-Less Multiplication (PCLMUL)</a></li>
       </ul>
-      <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip</b><br />
+      <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip</b><br>
       <ul>
         <li>To allow Qumulo Core to configure your CPU for optimal performance, install the <code>cpupower</code> and <code>x86_energy_perf_policy</code> utilities.</li>
         <li>Utilities are built from specific versions of the kernel source tree. For information about the packages that you can use to install these utilities, see the documentation for your Linux distribution.</li>
@@ -2791,7 +2791,7 @@ Click to expand
         <li>Recommended: 128 GB (or more) for hybrid and all-flash nodes</li>
         <li>ECC DIMMs</li>
       </ul>
-      <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip</b><br />
+      <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip</b><br>
       <ul>
         <li>Individual CPU core and data drive caches, as well as the number of CPU cores and number and size of data drives, can affect the memory requirements. For information about recommendations for performance benchmarking, see Qumulo Supported Platforms on the <a target="_blank" href="https://qumulo.com/terms-hub/">Qumulo Terms Hub</a>.</li>
         <li>Because the Debian kernel in the official AMI is compiled with the <code>CONFIG_EDAC</code> kernel configuration option disabled, any ECC memory errors aren't present in <code>sysfs</code> or the <a target="_blank" href="../monitoring-and-metrics/openmetrics-api-specification.html">OpenMetrics API specification</a>. In addition, your system doesn't reboot automatically if an uncorrectable ECC error occurs.</li>
@@ -2805,7 +2805,7 @@ Click to expand
       <ul>
         <li>
           Hybrid nodes must have at least 2 SSDs and 4 HDDs
-          <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The number of HDDs must divide evenly by the number of SSDs.</div>
+          <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The number of HDDs must divide evenly by the number of SSDs.</div>
 
         </li>
         <li>All-flash systems must have at least 3 SSDs.</li>
@@ -2821,7 +2821,7 @@ Click to expand
 <p>Before configuring your host operating system (OS) for installing the Qumulo Core Product Package, certain Linux distributions require some preliminary configuration.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Ubuntu doesn’t require any additional configuration. Continue to <a href="#choose-networking-mode">Choose a Networking Mode</a>.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Ubuntu doesn’t require any additional configuration. Continue to <a href="#choose-networking-mode">Choose a Networking Mode</a>.
 </div>
 
 <h4 id="to-prepare-a-rocky-or-red-hat-enterprise-linux-rhel-93-system">To Prepare a Rocky or Red Hat Enterprise Linux (RHEL) 9.3 System</h4>
@@ -2862,7 +2862,7 @@ Click to expand
     </ul>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can use Host-Managed Networking with or without the Qumulo REST API. However, using floating IP addresses requires tagging with alternative names and REST API access.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> You can use Host-Managed Networking with or without the Qumulo REST API. However, using floating IP addresses requires tagging with alternative names and REST API access.
     </div>
 
     <p>To disable Host-Managed Networking, enable Qumulo-Managed Networking when you <a href="#install-qumulo-core-product-package">install the Qumulo Core Product Package</a>.</p>
@@ -2877,7 +2877,7 @@ Click to expand
     </ul>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> To ensure that Qumulo Core has full control over network configuration, disable or remove the default network configuration tool (such as ENI, netplan.io, NetworkManager) before you install the Qumulo Core Product Package.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> To ensure that Qumulo Core has full control over network configuration, disable or remove the default network configuration tool (such as ENI, netplan.io, NetworkManager) before you install the Qumulo Core Product Package.
     </div>
 
     <p>To enable Host-Managed Networking for Qumulo Core versions lower than 7.8.0.4, enable Qumulo-Managed Networking when you <a href="#install-qumulo-core-product-package">install the Qumulo Core Product Package</a>.</p>
@@ -2886,7 +2886,7 @@ Click to expand
 
 <h2 id="install-qumulo-core-product-package">To Install the Qumulo Core Product Package</h2>
 <div class="alert alert-success" role="alert">
-<em class="fa fa-check-square-o"></em> <strong>Tip</strong><br />   <ul>
+<em class="fa fa-check-square-o"></em> <strong>Tip</strong><br>   <ul>
     <li>Use the latest, official image available for your Linux distribution on the distribution's website or cloud marketplace.</li>
     <li>In Qumulo Core versions lower than 7.8.0.4, the default networking mode is Qumulo-Managed Networking. To run the installation with Host-Managed Networking, set the <code class="language-plaintext highlighter-rouge">QUMULO_NETWORK_MANAGED_BY_HOST</code> environment variable to <code class="language-plaintext highlighter-rouge">true</code>.</li>
     <li>To avoid the <code class="language-plaintext highlighter-rouge">Download is performed unsandboxed as root</code> notice, run <code class="language-plaintext highlighter-rouge">qumulo-core.deb</code> from the <code class="language-plaintext highlighter-rouge">/tmp</code> directory.</li>
@@ -2934,7 +2934,7 @@ Click to expand
 
 <h2 id="upgrading-the-qumulo-core-product-package">Upgrading the Qumulo Core Product Package</h2>
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>Don't attempt to upgrade the Qumulo Core Produce Package by installing a newer <code class="language-plaintext highlighter-rouge">.deb</code> or <code class="language-plaintext highlighter-rouge">.rpm</code> package on your system.</li>
     <li>You must upgrade all the nodes in your cluster at the same time, by using the Qumulo Core Web UI, Qumulo REST API, or the <code class="language-plaintext highlighter-rouge">qq</code> CLI. The Qumulo Core Product Package doesn't support upgrading individual nodes and attempting to do so takes the cluster offline.</li>
   </ul>

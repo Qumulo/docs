@@ -2740,7 +2740,7 @@ $(document).ready(function() {
     </ul>
 
     <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />       <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>       <ul>
         <li>For any changes to take effect, user accounts with newly assigned roles must log out and log back in (or their sessions must time out).</li>
         <li>Use special care when granting privileges to roles and users because certain privileges (such as replication-write privileges) can use system privileges to overwrite or move data to a location where a user has greater permissions. This can give a user access to all directories and files in a cluster regardless of any specific file and directory settings.</li>
       </ul>
@@ -2801,7 +2801,7 @@ $(document).ready(function() {
 
 <h2 id="how-shift-to-relationships-work">How Shift-To Relationships Work</h2>
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>This process …       <ul>
         <li>Doesn't encode or transform your data; it only replicates the data in a regular file's primary stream</li>
         <li>Excludes alternate data streams and file system metadata such as access control lists (ACLs)</li>
@@ -2825,7 +2825,7 @@ $(document).ready(function() {
     <p>Starts a job by using one of the nodes in the Qumulo cluster.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If you perform multiple Shift operations, Qumulo Core uses multiple nodes.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> If you perform multiple Shift operations, Qumulo Core uses multiple nodes.
     </div>
   </li>
   <li>
@@ -2846,7 +2846,7 @@ $(document).ready(function() {
     <p>Checks whether a file is already replicated. If the object exists in the remote S3 bucket, and neither the file nor the object are modified since the last successful replication, its data isn’t retransferred to S3.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Shift never deletes files in the remote S3 folder, even if the files are removed from the local directory since the last replication.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Shift never deletes files in the remote S3 folder, even if the files are removed from the local directory since the last replication.
     </div>
   </li>
   <li>
@@ -2876,7 +2876,7 @@ $(document).ready(function() {
     <p>Directory</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For objects created for files, the system preserves the directory structure in the object key.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> For objects created for files, the system preserves the directory structure in the object key.
     </div>
   </li>
   <li>
@@ -2910,7 +2910,7 @@ $(document).ready(function() {
       <td>Regular file</td>
       <td>
         S3 object
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The object key is the file system path and the object value is the metadata.</div>
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The object key is the file system path and the object value is the metadata.</div>
 
       </td>
     </tr>
@@ -2932,7 +2932,7 @@ $(document).ready(function() {
       <td><a href="../metadata/managing-user-defined-metadata.html#well-known-keyspace">Well-known metadata</a> (Qumulo Core 7.10.3 and higher)</td>
       <td>
         Standard object headers
-        <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
+        <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br>
         Shift-To sends the following stored file values as the object headers:
         <ul>
           <li><code>Cache-Control</code></li>
@@ -2949,7 +2949,7 @@ $(document).ready(function() {
       <td>Hole in <em>sparse files</em> (files whose unwritten zero regions are stored as metadata holes rather than actual disk blocks)</td>
       <td>
         Zero
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The system expands any holes.</div>
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The system expands any holes.</div>
 
       </td>
     </tr>
@@ -3174,7 +3174,7 @@ $(document).ready(function() {
     <p>The <code class="language-plaintext highlighter-rouge">state</code> field shows the <code class="language-plaintext highlighter-rouge">REPLICATION_RUNNING</code> status and the <code class="language-plaintext highlighter-rouge">current_job</code> field shows the job’s progress. When Qumulo Core copies files from S3, details for the most recently completed job become available in the <code class="language-plaintext highlighter-rouge">last_job</code> field, the <code class="language-plaintext highlighter-rouge">state</code> field changes to <code class="language-plaintext highlighter-rouge">REPLICATION_NOT_RUNNING</code>, and the <code class="language-plaintext highlighter-rouge">current_job</code> field reverts to <code class="language-plaintext highlighter-rouge">null</code>.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If you already ran a job for a relationship, it is possible for both the <code class="language-plaintext highlighter-rouge">current_job</code> and <code class="language-plaintext highlighter-rouge">last_job</code> fields to be non-null while you run a new job.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> If you already ran a job for a relationship, it is possible for both the <code class="language-plaintext highlighter-rouge">current_job</code> and <code class="language-plaintext highlighter-rouge">last_job</code> fields to be non-null while you run a new job.
     </div>
 
     <p>The <code class="language-plaintext highlighter-rouge">bytes_total</code> and <code class="language-plaintext highlighter-rouge">files_total</code> fields represent the total amount of data and number of files to be transferred by a Shift job. The <code class="language-plaintext highlighter-rouge">bytes_remaining</code> and <code class="language-plaintext highlighter-rouge">files_remaining</code> fields show the amount of data and number of files not yet transferred. The values of these four fields don’t stabilize until the work estimation for the job is complete.</p>
@@ -3197,7 +3197,7 @@ $(document).ready(function() {
 <p>After your copy job is complete, you can delete your Shift relationship. To do this, run the <code class="language-plaintext highlighter-rouge">replication_delete_object_relationship</code> command and use the <code class="language-plaintext highlighter-rouge">--id</code> flag to specify the Shift relationship ID.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can run this command only against a relationship that doesn’t have any active jobs running.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> You can run this command only against a relationship that doesn’t have any active jobs running.
 </div>
 
 <p>This command removes the copy job’s record, leaving locally stored objects unchanged. Any storage that the relationship used to track downloaded objects becomes available when you delete the relationship.</p>
@@ -3291,7 +3291,7 @@ $(document).ready(function() {
             <p>Any object uploaded from a cluster running a version of Qumulo Core lower than 7.10.3</p>
 
             <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> A browser can interpret such an object as binary data.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> A browser can interpret such an object as binary data.
             </div>
           </li>
         </ul>

@@ -2390,14 +2390,14 @@ $(document).ready(function() {
     <p>The versioned files are stored in <code class="language-plaintext highlighter-rouge">/dir/.s3-versioning~/obj</code>.</p>
 
     <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Because <code class="language-plaintext highlighter-rouge">.s3-versioning~</code> is a normal, hidden directory, visible and accessible to other protocols. To ensure consistent S3 API behavior, we strongly recommend avoiding the use of other protocols to write to the directory. Any protocol can read from the directory safely.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Because <code class="language-plaintext highlighter-rouge">.s3-versioning~</code> is a normal, hidden directory, visible and accessible to other protocols. To ensure consistent S3 API behavior, we strongly recommend avoiding the use of other protocols to write to the directory. Any protocol can read from the directory safely.
     </div>
   </li>
   <li>
     <p>An object with the object store key <code class="language-plaintext highlighter-rouge">dir/obj</code> has two versions: <code class="language-plaintext highlighter-rouge">12345a6b-7c89-0d12-3456-78fe9012f345</code> and <code class="language-plaintext highlighter-rouge">abcde1f2-g3hi-j4kl-mnop-qr56stuv7wxy</code>.</p>
 
     <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />       <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>       <ul>
         <li>To access a specific version of a file by using CLI or REST API, specify the version ID.</li>
         <li>To access the <em>head version</em> (current version) of a file, omit the version ID.</li>
       </ul>

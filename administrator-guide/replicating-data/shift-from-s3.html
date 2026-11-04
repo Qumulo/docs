@@ -2699,7 +2699,7 @@ $(document).ready(function() {
      <p>For more information about copying objects from Qumulo to S3, see <a href="/shift-to-s3.html">Using Qumulo Shift-To for Amazon S3 to Copy Objects</a> on Qumulo Care.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> From Qumulo Core 4.3.4, Shift-From estimates the work that a copy job performs.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> From Qumulo Core 4.3.4, Shift-From estimates the work that a copy job performs.
 </div>
 
 <h2 id="prerequisites">Prerequisites</h2>
@@ -2743,7 +2743,7 @@ $(document).ready(function() {
     </ul>
 
     <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />       <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>       <ul>
         <li>For any changes to take effect, user accounts with newly assigned roles must log out and log back in (or their sessions must time out).</li>
         <li>Use special care when granting privileges to roles and users because certain privileges (such as replication-write privileges) can use system privileges to overwrite or move data to a location where a user has greater permissions. This can give a user access to all directories and files in a cluster regardless of any specific file and directory settings.</li>
       </ul>
@@ -2808,7 +2808,7 @@ $(document).ready(function() {
     <p>Starts a job by using one of the nodes in the Qumulo cluster.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If you perform multiple Shift operations, Qumulo Core uses multiple nodes.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> If you perform multiple Shift operations, Qumulo Core uses multiple nodes.
     </div>
   </li>
   <li>
@@ -2823,14 +2823,14 @@ $(document).ready(function() {
 </code></pre></div>    </div>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This process doesn’t encode or transform your data in any way. Shift-From attempts only to map every S3 object in the specified folder to a file on your Qumulo cluster.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> This process doesn’t encode or transform your data in any way. Shift-From attempts only to map every S3 object in the specified folder to a file on your Qumulo cluster.
     </div>
   </li>
   <li>
     <p>Avoids redownloading an unchanged object in a subsequent job by tracking the information about an object and its replicated object.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If you rename or move an object or local file between jobs, or if there are any metadata changes in S3 or Qumulo, the object is replicated again.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> If you rename or move an object or local file between jobs, or if there are any metadata changes in S3 or Qumulo, the object is replicated again.
     </div>
   </li>
 </ol>
@@ -2856,7 +2856,7 @@ $(document).ready(function() {
     </tr>
     <tr>
       <td>
-        <code>WELL_KNOWN</code><br />
+        <code>WELL_KNOWN</code><br>
         (Qumulo Core 7.10.3 and higher)
       </td>
       <td>
@@ -2945,7 +2945,7 @@ $(document).ready(function() {
     <p>The copy job begins and Qumulo Core estimates the work to be performed. When the estimation is complete, the Qumulo Core Web UI displays a progress bar with a percentage for a relationship on the <strong>Replication Relationships</strong> page. The page also displays the estimated total work, the remaining bytes and files, and the estimated time to completion for a running copy job.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For work estimates, Shift-From jobs calculate the total number of files and bytes in a job’s bucket prefix. This requires the job to use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html"><code class="language-plaintext highlighter-rouge">ListObjectV2</code> S3 action</a> once for every 5,000 objects (or 200 times for every 1 million objects).
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> For work estimates, Shift-From jobs calculate the total number of files and bytes in a job’s bucket prefix. This requires the job to use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html"><code class="language-plaintext highlighter-rouge">ListObjectV2</code> S3 action</a> once for every 5,000 objects (or 200 times for every 1 million objects).
     </div>
   </li>
 </ol>
@@ -3117,7 +3117,7 @@ $(document).ready(function() {
     <p>The <code class="language-plaintext highlighter-rouge">state</code> field shows the <code class="language-plaintext highlighter-rouge">REPLICATION_RUNNING</code> status and the <code class="language-plaintext highlighter-rouge">current_job</code> field shows the job’s progress. When Qumulo Core copies files from S3, details for the most recently completed job become available in the <code class="language-plaintext highlighter-rouge">last_job</code> field, the <code class="language-plaintext highlighter-rouge">state</code> field changes to <code class="language-plaintext highlighter-rouge">REPLICATION_NOT_RUNNING</code>, and the <code class="language-plaintext highlighter-rouge">current_job</code> field reverts to <code class="language-plaintext highlighter-rouge">null</code>.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If you already ran a job for a relationship, it is possible for both the <code class="language-plaintext highlighter-rouge">current_job</code> and <code class="language-plaintext highlighter-rouge">last_job</code> fields to be non-null while you run a new job.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> If you already ran a job for a relationship, it is possible for both the <code class="language-plaintext highlighter-rouge">current_job</code> and <code class="language-plaintext highlighter-rouge">last_job</code> fields to be non-null while you run a new job.
     </div>
 
     <p>The <code class="language-plaintext highlighter-rouge">bytes_total</code> and <code class="language-plaintext highlighter-rouge">files_total</code> fields represent the total amount of data and number of files to be transferred by a Shift job. The <code class="language-plaintext highlighter-rouge">bytes_remaining</code> and <code class="language-plaintext highlighter-rouge">files_remaining</code> fields show the amount of data and number of files not yet transferred. The values of these four fields don’t stabilize until the work estimation for the job is complete.</p>
@@ -3142,7 +3142,7 @@ $(document).ready(function() {
 <p>After your copy job is complete, you can delete your Shift relationship. To do this, run the <code class="language-plaintext highlighter-rouge">replication_delete_object_relationship</code> command and use the <code class="language-plaintext highlighter-rouge">--id</code> flag to specify the Shift relationship ID.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can run this command only against a relationship that doesn’t have any active jobs running.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> You can run this command only against a relationship that doesn’t have any active jobs running.
 </div>
 
 <p>This command removes the copy job’s record, leaving locally stored objects unchanged. Any storage that the relationship used to track downloaded objects becomes available when you delete the relationship.</p>
@@ -3159,7 +3159,7 @@ $(document).ready(function() {
     <p><strong>Inheritable Permissions:</strong> Because the system user creates the files that Shift-From for S3 copies, the system owns these files. By default, everyone is granted read permissions and administrators always have full access to the files.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> To ensure that the copied files and subdirectories have the correct permissions, you must assign the necessary inheritable permissions to the root directory of the relationship <em>before</em> you create a Shift-From S3 relationship. To edit directory permissions, you can use the Windows Security Dialog or the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_modify_acl.html"><code class="language-plaintext highlighter-rouge">qq fs_modify_acl</code></a>
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> To ensure that the copied files and subdirectories have the correct permissions, you must assign the necessary inheritable permissions to the root directory of the relationship <em>before</em> you create a Shift-From S3 relationship. To edit directory permissions, you can use the Windows Security Dialog or the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_modify_acl.html"><code class="language-plaintext highlighter-rouge">qq fs_modify_acl</code></a>
  command. For more information, see <a href="https://care.qumulo.com/hc/en-us/articles/115008211868">Qumulo File Permissions Overview</a> on Qumulo Care.
     </div>
   </li>

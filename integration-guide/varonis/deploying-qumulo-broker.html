@@ -683,7 +683,7 @@ $(document).ready(function() {
     <p>To configure the system to use the MariaDB database, edit the <code class="language-plaintext highlighter-rouge">/opt/qumulo/QumuloBroker/api/.env</code> file and specify the values for the <code class="language-plaintext highlighter-rouge">MYSQL_ROOT_PASSWORD</code> and <code class="language-plaintext highlighter-rouge">MYSQL_PASSWORD</code> variables.</p>
 
     <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Leave the <code class="language-plaintext highlighter-rouge">MYSQL_DATABASE</code> and <code class="language-plaintext highlighter-rouge">MYSQL_USERNAME</code> variables unchanged.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Leave the <code class="language-plaintext highlighter-rouge">MYSQL_DATABASE</code> and <code class="language-plaintext highlighter-rouge">MYSQL_USERNAME</code> variables unchanged.
     </div>
   </li>
 </ol>
@@ -782,7 +782,7 @@ Up 5 seconds   0.0.0.0:3306-&gt;3306/tcp, :::3306-&gt;3306/tcp       api-db-1
         <p><code class="language-plaintext highlighter-rouge">AUDIT_LOG_DISCONNECTED</code>: The <code class="language-plaintext highlighter-rouge">rsyslog</code> instance is disconnected from your Qumulo Broker. Your Qumulo cluster is configured to buffer all outgoing audit log messages until it fills its buffer. When the <code class="language-plaintext highlighter-rouge">rsyslog</code> instance reconnects to your Qumulo Broker the cluster attempts to send all buffered messages.</p>
 
         <div class="alert alert-danger" role="alert">
-<em class="fa fa-exclamation-circle"></em> <strong>Caution</strong><br />           <ul>
+<em class="fa fa-exclamation-circle"></em> <strong>Caution</strong><br>           <ul>
             <li>When the message buffer fills up, Qumulo Core discards all new messages. To change the buffer size, configure `rsyslog` parameters.</li>
             <li>If a power outage or cluster reboot occurs while Qumulo Core is waiting to send its messages, all unsent messages are lost.</li>
           </ul>
@@ -799,7 +799,7 @@ Up 5 seconds   0.0.0.0:3306-&gt;3306/tcp, :::3306-&gt;3306/tcp       api-db-1
 <p>This section explains how to configure <code class="language-plaintext highlighter-rouge">rsyslog</code> on the Qumulo Broker machine.</p>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Before you restart the <code class="language-plaintext highlighter-rouge">rsyslog</code> service to apply a new configuration, you must always <a href="#deploy-qumulo-broker">ensure that Qumulo Broker is deployed</a>.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Before you restart the <code class="language-plaintext highlighter-rouge">rsyslog</code> service to apply a new configuration, you must always <a href="#deploy-qumulo-broker">ensure that Qumulo Broker is deployed</a>.
 </div>
 
 <ol>

@@ -2428,7 +2428,7 @@ $(document).ready(function() {
     <p>Because a Qumulo cluster restricts S3 actions based on file access control lists (ACLs), an S3 bucket might work differently or have more restrictive permissions than expected.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> To configure an S3 bucket in Qumulo Core to work more like an Amazon S3 bucket, <a href="#inheritable-aces">use inheritable access control entries (ACEs) to imitate bucket-level permissions</a>.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> To configure an S3 bucket in Qumulo Core to work more like an Amazon S3 bucket, <a href="#inheritable-aces">use inheritable access control entries (ACEs) to imitate bucket-level permissions</a>.
     </div>
   </li>
 </ul>
@@ -2437,7 +2437,7 @@ $(document).ready(function() {
 <p>To process an S3 API request, Qumulo Core performs one or more file system operations. Qumulo Core processes these operations by checking the user’s access against the access control lists (ACLs) for each file that is part of the request.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> To permit an action to be performed, the <a href="managing-access-policies-for-s3-buckets.html">bucket policy</a> and the object’s file system ACL must allow the action.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> To permit an action to be performed, the <a href="managing-access-policies-for-s3-buckets.html">bucket policy</a> and the object’s file system ACL must allow the action.
 </div>
 
 <p>For authenticated requests signed with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Amazon Signature Version 4</a>, Qumulo Core maps the <a href="creating-managing-s3-access-keys.html#access-key-id">access key ID</a> in the request to its corresponding <a href="creating-managing-s3-access-keys.html#auth-id">auth ID</a>, and then processes the request as that user. Qumulo Core processes unsigned, anonymous requests as the <code class="language-plaintext highlighter-rouge">Guest</code> user.</p>
@@ -2450,7 +2450,7 @@ $(document).ready(function() {
 <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> in the Amazon Simple Storage Service API Reference.</p>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>
       <p>Qumulo Core accepts only presigned requests that use the <code class="language-plaintext highlighter-rouge">PUT</code>, <code class="language-plaintext highlighter-rouge">GET</code>, <code class="language-plaintext highlighter-rouge">HEAD</code>, and <code class="language-plaintext highlighter-rouge">DELETE</code> HTTP methods. Qumulo Core rejects presigned requests for <code class="language-plaintext highlighter-rouge">POST</code> requests, such as the following:</p>
       <ul>
@@ -2467,7 +2467,7 @@ $(document).ready(function() {
 
 <p>To create a presigned URL, run the AWS CLI <a href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/presign.html"><code class="language-plaintext highlighter-rouge">presign</code></a> command. In the following example, the presigned URL expires in 10 minutes (600 seconds).</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>aws s3 presign s3://my-bucket/my-file.txt <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aws s3 presign s3://my-bucket/my-file.txt <span class="se">\</span>
   <span class="nt">--endpoint-url</span> https://203.0.113.0:9000 <span class="se">\</span>
   <span class="nt">--profile</span> my-qumulo-profile <span class="se">\</span>
   <span class="nt">--expires-in</span> 600
@@ -2488,7 +2488,7 @@ X-Amz-Algorithm=AWS4-HMAC-SHA256
 <p>In certain cases, it might be more practical to allow anonymous (unauthenticated) requests to access the contents of S3 buckets, for example, if you want to let users access objects from the S3 bucket by using a web browser or if the number of users who need read access is very large. When you enable anonymous access to an S3 bucket, your users can perform read-only S3 operations without authenticating their requests.</p>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Anonymous requests can never perform modifying operations. Qumulo Core requires all modifying operations on an S3 bucket to be authenticated.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Anonymous requests can never perform modifying operations. Qumulo Core requires all modifying operations on an S3 bucket to be authenticated.
 </div>
 
 <p>When you enable anonymous access for an S3 bucket, Qumulo Core performs all anonymous requests as the <code class="language-plaintext highlighter-rouge">Guest</code> user. The <code class="language-plaintext highlighter-rouge">Guest</code> user is a member of the <code class="language-plaintext highlighter-rouge">Everyone</code> group, but not of the <code class="language-plaintext highlighter-rouge">Users</code> group.</p>
@@ -2496,7 +2496,7 @@ X-Amz-Algorithm=AWS4-HMAC-SHA256
 <p>To ensure that anonymous requests have permission to read files in a bucket, grant read permission to the <code class="language-plaintext highlighter-rouge">Everyone</code> group or to the <code class="language-plaintext highlighter-rouge">Guest</code> user. For more information, see <a href="#bucket-level-read-access">Imitating Bucket-Level Read-Only Access</a>.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If a file’s ACL doesn’t allow reads for the <code class="language-plaintext highlighter-rouge">Guest</code> user, an anonymous request can’t read the file.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> If a file’s ACL doesn’t allow reads for the <code class="language-plaintext highlighter-rouge">Guest</code> user, an anonymous request can’t read the file.
 </div>
 
 <ul>
@@ -2569,7 +2569,7 @@ X-Amz-Algorithm=AWS4-HMAC-SHA256
 <p>To add ACEs to a directory, use the <code class="language-plaintext highlighter-rouge">qq</code> CLI or use the File Explorer on a Windows client with a mapped SMB share that contains the directory.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Adding inheritable ACEs to a directory doesn’t affect any files that already exist in that directory. For more information, see <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_walk_tree.html#to-recursively-add-a-new-acl-with-multithreading">To Recursively Add a New ACL with Multithreading</a>.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Adding inheritable ACEs to a directory doesn’t affect any files that already exist in that directory. For more information, see <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_walk_tree.html#to-recursively-add-a-new-acl-with-multithreading">To Recursively Add a New ACL with Multithreading</a>.
 </div>
 
 <h2 id="imitating-bucket-level-permissions-by-using-the-qq-cli">Imitating Bucket-Level Permissions by Using the qq CLI</h2>
@@ -2579,7 +2579,7 @@ X-Amz-Algorithm=AWS4-HMAC-SHA256
 <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_modify_acl.html"><code class="language-plaintext highlighter-rouge">qq fs_modify_acl</code></a>
  command. In the following example, we add the access control entry (ACE) to the bucket whose root directory is <code class="language-plaintext highlighter-rouge">/buckets/my-bucket</code> for the user group <code class="language-plaintext highlighter-rouge">MyWriters</code>.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq fs_modify_acl <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_modify_acl <span class="se">\</span>
   <span class="nt">--path</span> /buckets/my-bucket add_entry <span class="se">\</span>
   <span class="nt">--trustee</span> MyWriters <span class="se">\</span>
   <span class="nt">--type</span> Allowed <span class="se">\</span>
@@ -2599,7 +2599,7 @@ Allowed  Object inherit, Container inherit  Delete child, Execute/Traverse, Read
 <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_modify_acl.html"><code class="language-plaintext highlighter-rouge">qq fs_modify_acl</code></a>
  command. In the following example, we add the access control entry (ACE) to the bucket whose root directory is <code class="language-plaintext highlighter-rouge">/buckets/my-bucket</code> for the user group <code class="language-plaintext highlighter-rouge">MyReaders</code>:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq fs_modify_acl
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_modify_acl
   <span class="nt">--path</span> /buckets/my-bucket add_entry <span class="se">\</span>
   <span class="nt">--trustee</span> MyReaders <span class="se">\</span>
   <span class="nt">--type</span> Allowed <span class="se">\</span>
@@ -2618,7 +2618,7 @@ Allowed  Object inherit, Container inherit  Execute/Traverse, Read
 <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_modify_acl.html"><code class="language-plaintext highlighter-rouge">qq fs_modify_acl</code></a>
  command. In the following example, we add two access control entries (ACEs) to the bucket whose root directory is <code class="language-plaintext highlighter-rouge">/buckets/my-bucket</code> for the user group <code class="language-plaintext highlighter-rouge">MyListers</code>.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq fs_modify_acl
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_modify_acl
   <span class="nt">--path</span> /buckets/my-bucket add_entry <span class="se">\</span>
   <span class="nt">--trustee</span> MyListers <span class="se">\</span>
   <span class="nt">--type</span> Allowed <span class="se">\</span>
@@ -2626,7 +2626,7 @@ Allowed  Object inherit, Container inherit  Execute/Traverse, Read
   <span class="nt">--rights</span> <span class="s1">'Execute/Traverse'</span> <span class="s1">'Read'</span>
 </code></pre></div></div>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq fs_modify_acl
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_modify_acl
   <span class="nt">--path</span> /buckets/my-bucket add_entry <span class="se">\</span>
   <span class="nt">--trustee</span> MyListers <span class="se">\</span>
   <span class="nt">--type</span> Allowed <span class="se">\</span>

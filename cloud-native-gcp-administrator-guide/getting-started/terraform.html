@@ -2432,7 +2432,7 @@ $(document).ready(function() {
     <p>To allow your Qumulo cluster to report metrics to Qumulo, your VPC must have outbound Internet connectivity through a Cloud NAT gateway. Your instance shares no file data during this process.</p>
 
     <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br /> Connectivity to the following endpoints is required for a successful deployment of a Qumulo instance and quorum formation:       <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br> Connectivity to the following endpoints is required for a successful deployment of a Qumulo instance and quorum formation:       <ul>
         <li><code class="language-plaintext highlighter-rouge">api.missionq.qumulo.com</code></li>
         <li><code class="language-plaintext highlighter-rouge">api.nexus.qumulo.com</code></li>
       </ul>
@@ -2554,7 +2554,7 @@ $(document).ready(function() {
 </code></pre></div>    </div>
 
     <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Make a new subdirectory for every new release of Qumulo Core.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> Make a new subdirectory for every new release of Qumulo Core.
     </div>
   </li>
   <li>
@@ -2613,7 +2613,7 @@ $(document).ready(function() {
         <p>To store the Terraform state locally, set the <code class="language-plaintext highlighter-rouge">tf_persistent_storage_backend_type</code> variable to <code class="language-plaintext highlighter-rouge">local</code>.</p>
 
         <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> For production deployments, we don’t recommend storing the Terraform state locally. Instead, use the S3 backend and enable versioning on the state bucket. This configuration makes it possible to recover a previous state file if a particular state becomes corrupted or gets overwritten.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> For production deployments, we don’t recommend storing the Terraform state locally. Instead, use the S3 backend and enable versioning on the state bucket. This configuration makes it possible to recover a previous state file if a particular state becomes corrupted or gets overwritten.
         </div>
       </li>
     </ul>
@@ -2634,7 +2634,7 @@ $(document).ready(function() {
         <p>Set the <code class="language-plaintext highlighter-rouge">soft_capacity_limit</code> to <code class="language-plaintext highlighter-rouge">500</code> (or higher).</p>
 
         <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This value specifies the initial capacity limit of your Qumulo clusters (in TB). It is possible to increase this limit at any time.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> This value specifies the initial capacity limit of your Qumulo clusters (in TB). It is possible to increase this limit at any time.
         </div>
       </li>
     </ol>
@@ -2682,7 +2682,7 @@ deployment_unique_name = "mydeploymentname-ABCDE01EG2H"
 
 <h3 id="recommendations">Recommendations</h3>
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> We strongly recommend reviewing the following recommendations before beginning this process.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> We strongly recommend reviewing the following recommendations before beginning this process.
 </div>
 
 <ul>
@@ -2710,7 +2710,7 @@ deployment_unique_name = "mydeploymentname-ABCDE01EG2H"
         <p>To store the Terraform state locally, comment the sections that begin with <code class="language-plaintext highlighter-rouge">backend "gcp" {</code> and <code class="language-plaintext highlighter-rouge">data "terraform_remote_state" "persistent_storage_gcs" {</code> and uncomment the section that contains <code class="language-plaintext highlighter-rouge">backend = "local"</code>.</p>
 
         <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> For production deployments, we don’t recommend storing the Terraform state locally. Instead, use the S3 backend and enable versioning on the state bucket. This configuration makes it possible to recover a previous state file if a particular state becomes corrupted or gets overwritten.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> For production deployments, we don’t recommend storing the Terraform state locally. Instead, use the S3 backend and enable versioning on the state bucket. This configuration makes it possible to recover a previous state file if a particular state becomes corrupted or gets overwritten.
         </div>
       </li>
     </ul>
@@ -2744,7 +2744,7 @@ deployment_unique_name = "mydeploymentname-ABCDE01EG2H"
         <p>The floating IP addresses for your Qumulo cluster</p>
 
         <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You must specify the floating IP addresses in your <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file explicitly.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> You must specify the floating IP addresses in your <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file explicitly.
         </div>
       </li>
       <li>
@@ -2790,7 +2790,7 @@ qumulo_private_url_node1 = "https://203.0.113.5"
     <p>To log in to your cluster’s Web UI, use the endpoint from the Terraform output and the username and password that you have configured.</p>
 
     <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> If you change the administrative password for your cluster by using the Qumulo Core Web UI, <code class="language-plaintext highlighter-rouge">qq</code> CLI, or REST API after deployment, you must update your password in GCP Secrets Manager.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> If you change the administrative password for your cluster by using the Qumulo Core Web UI, <code class="language-plaintext highlighter-rouge">qq</code> CLI, or REST API after deployment, you must update your password in GCP Secrets Manager.
     </div>
 
     <p>You can use the Qumulo Core Web UI to create and manage <a href="../nfs/creating-nfs-export.html">NFS exports</a>, <a href="../smb/creating-smb-share.html">SMB shares</a>, <a href="../snapshots/managing-snapshots.html">snapshots</a>, and <a href="../replicating-data/creating-managing-continuous-replication-relationship.html">continuous replication relationships</a>. You can also <a href="../authentication-qumulo-core/configuring-ad.html">join your cluster to Active Directory</a>, <a href="../authentication-qumulo-core/configuring-ldap.html">configure LDAP</a>, and <a href="../">perform many other operations</a>.</p>
@@ -2805,7 +2805,7 @@ qumulo_private_url_node1 = "https://203.0.113.5"
 
 <h3 id="adding-node-to-existing-cluster">Adding Nodes to an Existing Cluster</h3>
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> To add nodes to an existing cluster, the total node count must be greater than that of the current deployment.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> To add nodes to an existing cluster, the total node count must be greater than that of the current deployment.
 </div>
 
 <ol>
@@ -2840,7 +2840,7 @@ qumulo_private_url_node1 = "https://203.0.113.5"
 <h4 id="step-1-remove-nodes-from-the-clusters-quorum">Step 1: Remove Nodes from the Cluster’s Quorum</h4>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> You must perform this step while the cluster is running.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> You must perform this step while the cluster is running.
 </div>
 
 <ol>
@@ -3032,7 +3032,7 @@ soft_capacity_limit = "1000 TB"
 <p>You can change the GCE instance type, node count, and to convert your cluster from single-zone to multi-zone, or the other way around.</p>
 
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>To minimize potential availability interruptions, you must perform the <em>cluster replacement procedure</em> as a two-quorum event. For example, if you stop the existing GCE instances by using the GCP Console and change the GCE instance types, two quorum events occur <em>for each node</em> and the read and write cache isn't optimized for the GCE instance type.</li>
     <li>Performing the cluster replacement procedure ensures that the required GCE instance types are available in advance.</li>
   </ul>
@@ -3054,7 +3054,7 @@ soft_capacity_limit = "1000 TB"
         <p>Specify the value for the <code class="language-plaintext highlighter-rouge">gcp_zones</code> variable.</p>
 
         <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For multi-zone deployments, specify values as a comma-delimited list.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> For multi-zone deployments, specify values as a comma-delimited list.
         </div>
       </li>
       <li>
@@ -3072,7 +3072,7 @@ soft_capacity_limit = "1000 TB"
     </ol>
 
     <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Leave the other variables unchanged.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Leave the other variables unchanged.
     </div>
   </li>
   <li>
@@ -3147,7 +3147,7 @@ qumulo_private_url_node1 = "https://203.0.113.10"
 </ol>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The persistent storage deployment remains in its original Terraform workspace. You can perform the next cluster replacement procedure in the <code class="language-plaintext highlighter-rouge">default</code> workspace.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The persistent storage deployment remains in its original Terraform workspace. You can perform the next cluster replacement procedure in the <code class="language-plaintext highlighter-rouge">default</code> workspace.
 </div>
 
 <h4 id="step-3-clean-up-gcs-bucket-policies">Step 3: Clean Up GCS Bucket Policies</h4>
@@ -3168,7 +3168,7 @@ qumulo_private_url_node1 = "https://203.0.113.10"
 <p>Deleting a cluster is a two-step process in which you delete your cluster’s compute and cache resources and then delete your persistent storage.</p>
 
 <div class="alert alert-danger" role="alert">
-<em class="fa fa-exclamation-circle"></em> <strong>Caution</strong><br />   <ul>
+<em class="fa fa-exclamation-circle"></em> <strong>Caution</strong><br>   <ul>
     <li>When you no longer need your cluster, you must back up all important data on the cluster safely before deleting the cluster.</li>
     <li>When you delete your cluster's cache and computer resources, it isn't possible to access your persistent storage anymore.</li>
   </ul>

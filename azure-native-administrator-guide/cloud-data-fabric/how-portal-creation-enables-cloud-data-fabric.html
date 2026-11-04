@@ -2387,7 +2387,7 @@ $(document).ready(function() {
 </ul>
 
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>Qumulo Core 7.6.2 (and higher) adds the ability to have multiple root directories for each relationship and changed some of the existing terminology concerning <a href="#portal-relationship-states"><em>portal relationship states</em></a> and <a href="#portal-root-directory-states"><em>portal root directory states</em></a>. For more information, see <a href="#multiple-root-directories">How Multiple Root Directories Work in Qumulo Core 7.2.0 (and Higher)</a>.</li>
     <li>Before you begin to implement Cloud Data Fabric in your organization, we strongly recommend reviewing the <a href="#key-terms">key terms</a>, <a href="#functionality-explanation">functionality explanation</a>, <a href="#example-scenarios">example scenarios</a>, and the <a href="known-limits.html">known limits</a>.</li>
     <li>For any questions, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a>.</li>
@@ -2403,7 +2403,7 @@ $(document).ready(function() {
     <p id="cluster"><strong>Cluster:</strong> Any Qumulo cluster that shares a portion of its file system for a hub portal or a spoke portal. A directory on a cluster defines a <em>root directory</em> for a spoke portal or a hub portal.</p>
 
     <div class="alert alert-success" role="alert">
-<em class="fa fa-check-square-o"></em> <strong>Tip</strong><br />       <p>Because <em>a portion</em> of a Qumulo cluster's file system can hold the hub portal root directory or spoke portal root directory, using the correct terminology can help avoid confusion:</p>
+<em class="fa fa-check-square-o"></em> <strong>Tip</strong><br>       <p>Because <em>a portion</em> of a Qumulo cluster's file system can hold the hub portal root directory or spoke portal root directory, using the correct terminology can help avoid confusion:</p>
       <ul>
         <li><span class="emoji">❌</span> hub cluster</li>
         <li><span class="emoji">✅</span> hub portal host cluster</li>
@@ -2418,7 +2418,7 @@ $(document).ready(function() {
     <p>According to the file system permissions that a hub portal might impose, you can access a spoke portal root directory by using NFSv3, NFSv4.1 (Qumulo Core 7.4.3 and higher), SMB, the S3 API (7.5.3 and higher) or the Qumulo REST API.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> In Qumulo Core 7.6.2 (and higher), it is possible to configure up to 32 spoke portal root directories for each Qumulo cluster, for each portal relationship.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> In Qumulo Core 7.6.2 (and higher), it is possible to configure up to 32 spoke portal root directories for each Qumulo cluster, for each portal relationship.
     </div>
 
     <ul id="hub-portal-data">
@@ -2523,7 +2523,7 @@ $(document).ready(function() {
     <p id="hub-portal"><strong>Hub Portal:</strong> An interface point on a Qumulo cluster that shares a portion of its file system with another cluster (which has a <em>spoke portal)</em>. A directory on a cluster defines a <em>root directory</em> for a hub portal. The spoke portal initiates the creation of a hub portal. You can configure multiple portal relationships, with the same hub portal root directory, with nested directories, or with independent ones.</p>
 
     <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />       <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>       <ul>
         <li>It isn't possible to create a hub portal without a spoke portal. For example, a spoke portal on Cluster A can propose a portal relationship to Cluster B. This action initiates the creation of a hub portal in a <code class="language-plaintext highlighter-rouge">Pending</code> state on Cluster B.</li>
         <li>You must accept the portal relationship and then authorize any hub portal root directories before you can use them.</li>
         <li>While a spoke portal can be either <em>read-only</em> or <em>read-write</em>, a hub portal is always read-write.</li>
@@ -2575,7 +2575,7 @@ $(document).ready(function() {
 <p>A <em>portal root directory state</em> indicates the stages of the <a href="#portal-root-directory"><em>hub portal root directory</em></a> approval process.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> In Qumulo Core 7.6.2 (and higher), it is possible to configure up to 32 spoke portal root directories for each Qumulo cluster, for each portal relationship. Each unique hub portal root directory has its own state.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> In Qumulo Core 7.6.2 (and higher), it is possible to configure up to 32 spoke portal root directories for each Qumulo cluster, for each portal relationship. Each unique hub portal root directory has its own state.
 </div>
 
 <table>
@@ -2659,7 +2659,7 @@ $(document).ready(function() {
 <h3 id="data-synchronization">Data Synchronization</h3>
 
 <div class="alert alert-danger" role="alert">
-<span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br /> The cache of a spoke portal is inherently ephemeral. You must not use it in place of data replication or backup.
+<span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br> The cache of a spoke portal is inherently ephemeral. You must not use it in place of data replication or backup.
 </div>
 
 <p>For read-write portals, data synchronization is bidirectional, asynchronous, and strictly consistent upon access. For example, when a client creates or modifies files or directories in the spoke portal root directory, the spoke portal synchronizes these changes to the hub portal in the background. Clients that access the hub portal can see these changes immediately.</p>
@@ -2667,7 +2667,7 @@ $(document).ready(function() {
 <p>To ensure that any changes on one portal become available immediately to any client that reads data from the portal’s peers, Qumulo Core uses a proprietary locking synchronization mechanism.</p>
 
 <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> In Qumulo Core 7.6.3.1 (and higher), if two Qumulo clusters use a load balancer or if the portal relationship is configured by using the IP addresses of peer portals, portal data synchronization can achieve higher IOPS and throughput by making full use of all nodes from both Qumulo clusters in a portal relationship.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> In Qumulo Core 7.6.3.1 (and higher), if two Qumulo clusters use a load balancer or if the portal relationship is configured by using the IP addresses of peer portals, portal data synchronization can achieve higher IOPS and throughput by making full use of all nodes from both Qumulo clusters in a portal relationship.
 </div>
 
 <h3 id="data-caching">Data Caching</h3>
@@ -2679,7 +2679,7 @@ $(document).ready(function() {
 <p>Qumulo Core enforces permissions in the same way for files and directories in the spoke portal root directory and the hub portal root directory.</p>
 
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>Deleting the portal relationship never affects the data on the hub portal.</li>
     <li>For a spoke portal to be accessible, there must be full connectivity between the two clusters in a portal relationship, without which files or directories with outstanding modifications on one portal are inaccessible on other portals. Specifically, every node in the spoke portal host cluster must be able to connect to the configured hub portal host cluster address, and the other way around.</li>
   </ul>
@@ -2710,7 +2710,7 @@ $(document).ready(function() {
 </ol>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> When you remove a portal relationship, any files or directories on the hub portal that were inaccessible, due to <em>both</em> connectivity loss and outstanding spoke portal modifications, become accessible.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> When you remove a portal relationship, any files or directories on the hub portal that were inaccessible, due to <em>both</em> connectivity loss and outstanding spoke portal modifications, become accessible.
 </div>
 
 <h3 id="portal-operation-audit-logging">Portal Operation Audit Logging</h3>
@@ -2730,7 +2730,7 @@ $(document).ready(function() {
 <p>In this scenario, you deploy a single, large central cluster at your organization’s data center and multiple, small edge clusters at your organization’s branch offices or in remote locations.</p>
 
 <figure>
-<img class="docimage" src="/images/shared-images/admin-guides/cloud-data-fabric/cloud-data-fabric-workflow-edge.png" alt="A diagram for an example scenario that uses the Cloud Data Fabric functionality for an edge cluster" />
+<img class="docimage" src="/images/shared-images/admin-guides/cloud-data-fabric/cloud-data-fabric-workflow-edge.png" alt="A diagram for an example scenario that uses the Cloud Data Fabric functionality for an edge cluster">
 </figure>
 
 <p>The Cloud Data Fabric functionality lets you make the data on the central cluster available to the remote clusters without the need to replicate data to each location. The data remains available to the edge clusters even if their capacity is lower than that of the central cluster. While a read-write portal lets the edge clusters create or modify data on the central cluster, a read-only portal lets only the edge clusters read data from the central cluster.</p>
@@ -2739,7 +2739,7 @@ $(document).ready(function() {
 <p>In this scenario, several clusters serve active workloads but require access to a large data archive after the initial workflow completes.</p>
 
 <figure>
-<img class="docimage" src="/images/shared-images/admin-guides/cloud-data-fabric/cloud-data-fabric-workflow-active-workload-with-archive.png" alt="Active Workload with Archive" />
+<img class="docimage" src="/images/shared-images/admin-guides/cloud-data-fabric/cloud-data-fabric-workflow-active-workload-with-archive.png" alt="Active Workload with Archive">
 </figure>
 
 <p>The Cloud Data Fabric functionality lets you:</p>

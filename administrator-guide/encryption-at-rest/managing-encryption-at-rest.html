@@ -2698,7 +2698,7 @@ $(document).ready(function() {
      
      
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>Upgrading a Qumulo cluster from a Qumulo Core version lower than 3.1.5 doesn't enable encryption automatically. You must rebuild your cluster to take advantage of this feature. When you <a href="https://care.qumulo.com/hc/en-us/articles/115014525587">create a new cluster</a>, Qumulo Core enables encryption automatically and distributes the master key to all nodes in the cluster.</li>
     <li>In case of replication processes, Qumulo Core maintains the encryption type after data transfers. Although source and target clusters don't require encryption for replication, we strongly recommend encrypting both source and target clusters.</li>
   </ul>
@@ -2713,7 +2713,7 @@ $(document).ready(function() {
 <p>This section explains how to retrieve the status or detailed information about an active encryption configuration for a Qumulo cluster and gives examples for a system that uses a locally stored master key and a system that uses a Key Management Server (KMS).</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The <a href="https://docs.qumulo.com/qq-cli-command-guide/encryption/encryption_get_key_store.html"><code class="language-plaintext highlighter-rouge">qq encryption_get_key_store</code></a>
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The <a href="https://docs.qumulo.com/qq-cli-command-guide/encryption/encryption_get_key_store.html"><code class="language-plaintext highlighter-rouge">qq encryption_get_key_store</code></a>
  and <a href="https://docs.qumulo.com/qq-cli-command-guide/encryption/encryption_get_status.html"><code class="language-plaintext highlighter-rouge">qq encryption_get_status</code></a>
  commands require the <code class="language-plaintext highlighter-rouge">PRIVILEGE_ENCRYPTION_READ</code> privilege.
 </div>
@@ -2774,7 +2774,7 @@ $(document).ready(function() {
 <p>This section explains how to configure Qumulo Core to use a master key stored locally or in a Key Management Server (KMS) by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI.</p>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>The <code class="language-plaintext highlighter-rouge">qq</code> CLI command <a href="https://docs.qumulo.com/qq-cli-command-guide/encryption/encryption_set_key_store.html"><code class="language-plaintext highlighter-rouge">qq encryption_set_key_store</code></a> requires the <code class="language-plaintext highlighter-rouge">PRIVILEGE_ENCRYPTION_WRITE</code> privilege.</li>
     <li>To be able to configure an external KMS, the KMS must support Key Management Interoperability Protocol (KMIP) 1.0.</li>
   </ul>
@@ -2782,7 +2782,7 @@ $(document).ready(function() {
 
 <h3 id="to-configure-qumulo-core-to-use-a-master-key-stored-locally">To Configure Qumulo Core to Use a Master Key Stored Locally</h3>
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>While the <em>master key</em> on your boot drive encrypts your <em>data keys</em>, the master key <em>itself</em> isn't encrypted.</li>
     <li>The boot drive contains the disk image, the installed build of Qumulo Core, and configuration files. In the unlikely event that your boot drive fails and requires replacement, remove the encrypted data keys associated with the master key from the boot drive by <a href="#rotate-master-key">rotating the master key</a>. When you complete the key rotation process, you can dispose of the failed boot drive securely.</li>
     <li>To avoid potential decryption, ensure that your data keys eventually <em>age out</em> by rotating the master key any time you replace a drive in your cluster.</li>
@@ -2804,7 +2804,7 @@ $(document).ready(function() {
 
 <h3 id="to-configure-qumulo-core-to-use-a-master-key-stored-in-a-key-management-server-kms">To Configure Qumulo Core to Use a Master Key Stored in a Key Management Server (KMS)</h3>
 <div class="alert alert-danger" role="alert">
-<em class="fa fa-exclamation-circle"></em> <strong>Caution</strong><br />   <ul>
+<em class="fa fa-exclamation-circle"></em> <strong>Caution</strong><br>   <ul>
     <li>If the master key is deleted from the KMS, and all nodes in the cluster are rebooted, all data on the cluster becomes permanently unrecoverable.</li>
     <li>If you allow the certificates to expire, or the master key is deleted accidentally, you must create a new, valid configuration as soon as possible. To warn you of this scenario, the Qumulo Core Web UI indicates if any of your certificates are about to expire, or if the configured master key becomes unavailable.</li>
   </ul>
@@ -2834,7 +2834,7 @@ $(document).ready(function() {
 <p>This section explains how to rotate the master key and check the encryption status for your cluster by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI and how to check the encryption status by using the Qumulo Core Web UI.</p>
 
 <div class="alert alert-danger" role="alert">
-<span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br /> <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">Qumulo Care</a> team members can help you <a href="#rotate-master-key">rotate your master keys</a>. However, they don’t have access to your encryption keys and can’t retrieve them for you.
+<span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br> <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">Qumulo Care</a> team members can help you <a href="#rotate-master-key">rotate your master keys</a>. However, they don’t have access to your encryption keys and can’t retrieve them for you.
 </div>
 
 <h3 id="to-rotate-master-keys-stored-locally">To Rotate Master Keys Stored Locally</h3>
@@ -2861,7 +2861,7 @@ $(document).ready(function() {
 </code></pre></div>    </div>
 
     <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> The key ID might be different from the key name.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> The key ID might be different from the key name.
     </div>
   </li>
   <li>

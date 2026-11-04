@@ -2438,7 +2438,7 @@ $(document).ready(function() {
 <p>The following table lists the S3 API actions that Qumulo Core supports and the version from which support begins. For the full list of S3 API actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_Operations.html">Actions</a> in the Amazon Simple Storage Service API Reference.</p>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>The S3 API became generally available in Qumulo Core 5.3.3. This guide doesn't document enabling or using API actions that became available with preview functionality in versions of Qumulo Core lower than 5.3.3.</li>
     <li>The Qumulo S3 protocol creates data that supports all file system functionality, such as quotas, snapshots, replication, and Cloud Data Fabric functionality.</li>
   </ul>
@@ -2674,7 +2674,7 @@ $(document).ready(function() {
 
 <h3 id="authentication">Authentication</h3>
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>Qumulo Core supports only AWS Signature Version 4 (SigV4). AWS Signature Version 2 (SigV2) is unsupported.</li>
     <li>Attempting to use the <code class="language-plaintext highlighter-rouge">CRC32</code> or <code class="language-plaintext highlighter-rouge">CRC32C</code> header value or the <code class="language-plaintext highlighter-rouge">STREAMING-UNSIGNED-PAYLOAD-TRAILER</code> header value with an unsupported checksum format returns the error <code class="language-plaintext highlighter-rouge">QumuloUnsupportedTrailerChecksumFormat</code>.</li>
     <li>Attempting to use the <code class="language-plaintext highlighter-rouge">x-amz-content-sha256</code> header with an unsupported value returns the error <code class="language-plaintext highlighter-rouge">AuthorizationHeaderMalformed</code>.</li>
@@ -2738,7 +2738,7 @@ $(document).ready(function() {
     <td>Partial</td>    
     <td>
       <p>Sending a payload in multiple chunks</p>
-      <p><div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The digest for the chunks is included as a trailing header.</div>
+      <p><div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The digest for the chunks is included as a trailing header.</div>
 </p>
     </td>
     <td>Unsigned</td>
@@ -2761,7 +2761,7 @@ $(document).ready(function() {
       <ul>
         <li>
           Sending a payload in multiple chunks
-          <p><div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The digest for the chunks is included as a trailing header.</div>
+          <p><div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The digest for the chunks is included as a trailing header.</div>
 </p>
         </li>
         <li>Signing the chunks by using the AWS4-HMAC-SHA256 algorithm</li>
@@ -2780,7 +2780,7 @@ $(document).ready(function() {
 <p>RESTful APIs, such as the Qumulo Core S3 API, use HTTP <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag">ETags</a> to identify different resource versions. When working with files by using Qumulo Core, each time a file’s contents change (regardless of protocol), the value of its ETag changes as well.</p>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>Certain applications might assume that S3 object ETags contain the MD5 checksum of the object's contents. Such applications might not function properly with the Qumulo S3 API.</li>
     <li>To maintain data integrity, we recommend that applications do one of the following:       <ul>
         <li><a href="configuring-using-s3-api.html">Configure HTTPS for the S3 API</a></li>
@@ -2830,7 +2830,7 @@ $(document).ready(function() {
 </table>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Although Qumulo Core supports <code class="language-plaintext highlighter-rouge">Prefix</code> and <code class="language-plaintext highlighter-rouge">Delimiter</code> partially, it fully supports the most common use case: listing the contents of S3 buckets as a hierarchical file.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Although Qumulo Core supports <code class="language-plaintext highlighter-rouge">Prefix</code> and <code class="language-plaintext highlighter-rouge">Delimiter</code> partially, it fully supports the most common use case: listing the contents of S3 buckets as a hierarchical file.
 </div>
 
 <h3 id="object-metadata">Object Metadata</h3>
@@ -2893,7 +2893,7 @@ $(document).ready(function() {
 
 <h4 id="header-storage">Header Storage</h4>
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>In Qumulo Core 7.10.2.1 (and higher), the S3 API stores the <a target="_blank" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingMetadata.html#SysMetadata">system-defined metadata headers that users can control</a> and returns them in the responses of <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"><code class="language-plaintext highlighter-rouge">GetObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html"><code class="language-plaintext highlighter-rouge">HeadObject</code></a> API actions.</li>
     <li>Lower versions of Qumulo Core accept these headers, don't store them, and return <code class="language-plaintext highlighter-rouge">Content-Type: binary/octet-stream</code> for every object.</li>
   </ul>
@@ -2947,7 +2947,7 @@ $(document).ready(function() {
 
 <h4 id="response-header-overrides">Response Header Overrides</h4>
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br /> Qumulo Core returns the <code class="language-plaintext highlighter-rouge">InvalidRequest</code> error when…   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br> Qumulo Core returns the <code class="language-plaintext highlighter-rouge">InvalidRequest</code> error when…   <ul>
     <li>An anonymous request uses any of the following query parameters</li>
     <li>A request uses any other query parameter that begins with <code class="language-plaintext highlighter-rouge">response-</code></li>
   </ul>
@@ -3035,7 +3035,7 @@ $(document).ready(function() {
 </table>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If all objects in a bucket are under the same directory—none of the object keys have the slash (<code class="language-plaintext highlighter-rouge">/</code>) character in them—the maximum number of objects in the bucket is limited to the maximum number of files in a directory. For more information, see <a href="../getting-started/supported-configurations-known-limits.html">Supported Configurations and Known Limits for Qumulo Core</a>.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> If all objects in a bucket are under the same directory—none of the object keys have the slash (<code class="language-plaintext highlighter-rouge">/</code>) character in them—the maximum number of objects in the bucket is limited to the maximum number of files in a directory. For more information, see <a href="../getting-started/supported-configurations-known-limits.html">Supported Configurations and Known Limits for Qumulo Core</a>.
 </div>
 
 <h3 id="known-limits-for-s3-objects">Known Limits for S3 Objects</h3>
@@ -3066,7 +3066,7 @@ $(document).ready(function() {
 <h4 id="maximum-limits">Maximum Limits</h4>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>The size limits for user-defined metadata and for standard object headers are completely separate.</li>
     <li>In Qumulo Core 7.10.2.1 (and higher), a request whose user-defined metadata or standard object headers exceed the size limit returns the <code class="language-plaintext highlighter-rouge">MetadataTooLarge</code> error.</li>
     <li>A request with more than 100 user-defined metadata entries returns the <code class="language-plaintext highlighter-rouge">QumuloUserMetadataLimitExceeded</code> error.</li>
@@ -3197,7 +3197,7 @@ $(document).ready(function() {
 </table>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> <code class="language-plaintext highlighter-rouge">DeleteObjects</code> is subject to a 10 MiB request payload limit in Qumulo Core. This provides a practical upper limit on the number of object keys that the API action can specify.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> <code class="language-plaintext highlighter-rouge">DeleteObjects</code> is subject to a 10 MiB request payload limit in Qumulo Core. This provides a practical upper limit on the number of object keys that the API action can specify.
 </div>
 
 <p>In addition, the following API actions have the Qumulo-specific maximum payload size limit of 10 MiB.</p>

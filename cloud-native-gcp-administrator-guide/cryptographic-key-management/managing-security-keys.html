@@ -2421,7 +2421,7 @@ $(document).ready(function() {
      <p>In Qumulo Core 6.1.0 (and higher), you can store multiple ECDSA public keys in the Qumulo file system key store and use these keys to protect file system resources.</p>
 
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>Currently, Qumulo Core supports only 256-bit ECDSA keys in <code class="language-plaintext highlighter-rouge">.pem</code> and <code class="language-plaintext highlighter-rouge">.der</code> formats. Qumulo Core doesn't support storing ECDSA keys of other lengths and formats.</li>
     <li>Qumulo Core retains only the public key. We strongly recommend storing the corresponding private key safely, outside of your Qumulo cluster and according to your organization's security policy.</li>
   </ul>
@@ -2435,7 +2435,7 @@ $(document).ready(function() {
 <h3 id="if-you-have-access-to-the-private-key">If You Have Access to the Private Key</h3>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Before you begin, install the <a target="_blank" href="https://pypi.org/project/cryptography/">Python <code class="language-plaintext highlighter-rouge">cryptography</code> library</a>.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Before you begin, install the <a target="_blank" href="https://pypi.org/project/cryptography/">Python <code class="language-plaintext highlighter-rouge">cryptography</code> library</a>.
 </div>
 
 <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_security_add_key.html"><code class="language-plaintext highlighter-rouge">qq fs_security_add_key</code></a>
@@ -2485,14 +2485,14 @@ $(document).ready(function() {
  command and specify the key identifier or name and the flags for the fields to modify.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The response of the <code class="language-plaintext highlighter-rouge">qq fs_security_add_key</code> command includes the <em>key identifier.</em> When you use <code class="language-plaintext highlighter-rouge">qq fs_security</code> commands, you can specify either the key identifier (by using the <code class="language-plaintext highlighter-rouge">--id</code> flag) or the key name (by using the <code class="language-plaintext highlighter-rouge">--name</code> flag).
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The response of the <code class="language-plaintext highlighter-rouge">qq fs_security_add_key</code> command includes the <em>key identifier.</em> When you use <code class="language-plaintext highlighter-rouge">qq fs_security</code> commands, you can specify either the key identifier (by using the <code class="language-plaintext highlighter-rouge">--id</code> flag) or the key name (by using the <code class="language-plaintext highlighter-rouge">--name</code> flag).
 </div>
 
 <h2 id="rotating-a-public-key">Rotating a Public Key</h2>
 <p>This section explains how to rotate a public key in the Qumulo file system key store.</p>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>Key rotation doesn't affect the resources that the key protects or change the identifier or name of the public key.</li>
     <li>When the key rotation is complete, only the replacement public key can unlock the protected resources.</li>
     <li>The response of the <code class="language-plaintext highlighter-rouge">qq fs_security_add_key</code> command includes the <em>key identifier.</em> When you use <code class="language-plaintext highlighter-rouge">qq fs_security</code> commands, you can specify either the key identifier (by using the <code class="language-plaintext highlighter-rouge">--id</code> flag) or the key name (by using the <code class="language-plaintext highlighter-rouge">--name</code> flag).</li>
@@ -2501,7 +2501,7 @@ $(document).ready(function() {
 
 <h3 id="if-you-have-access-to-the-existing-and-replacement-private-keys">If You Have Access to the Existing and Replacement Private Keys</h3>
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Before you begin, install the <a target="_blank" href="https://pypi.org/project/cryptography/">Python <code class="language-plaintext highlighter-rouge">cryptography</code> library</a>.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Before you begin, install the <a target="_blank" href="https://pypi.org/project/cryptography/">Python <code class="language-plaintext highlighter-rouge">cryptography</code> library</a>.
 </div>
 
 <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_security_replace_key.html"><code class="language-plaintext highlighter-rouge">qq fs_security_replace_key</code></a>
@@ -2538,7 +2538,7 @@ $(document).ready(function() {
     <p>For more information, see <a href="generating-storing-ecdsa-keys.html#extracting-the-public-key-from-an-ecdsa-private-key">Extracting the Public Key from an ECDSA Private Key</a>.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Because the key version is part of the challenge message, and this version changes when a user writes or modifies the key, any change to the key name or comment after you receive the challenge message makes the message stale.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Because the key version is part of the challenge message, and this version changes when a user writes or modifies the key, any change to the key name or comment after you receive the challenge message makes the message stale.
     </div>
   </li>
 </ol>
@@ -2557,7 +2557,7 @@ $(document).ready(function() {
 </ul>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>It isn't possible to lock a Qumulo file system resource with a disabled key. However, you can still unlock resources that this key locked previously.</li>
     <li>It isn't possible to disable a key that Qumulo Core uses to create new resources. For example, you can't disable a key associated with a snapshot policy when the snapshot policy creates new snapshots by using the key. In this scenario, you must disassociate the key from the snapshot policy before you can disable it. For more information, see <a href="#retrieve-key-usage">Retrieving Public Key Usage Information</a>.</li>
     <li>The response of the <code class="language-plaintext highlighter-rouge">qq fs_security_add_key</code> command includes the <em>key identifier.</em> When you use <code class="language-plaintext highlighter-rouge">qq fs_security</code> commands, you can specify either the key identifier (by using the <code class="language-plaintext highlighter-rouge">--id</code> flag) or the key name (by using the <code class="language-plaintext highlighter-rouge">--name</code> flag).</li>
@@ -2569,7 +2569,7 @@ $(document).ready(function() {
  command and specify the key identifier or name.</p>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>It isn't possible to delete a key that a Qumulo file system resource uses. For more information, see <a href="#retrieve-key-usage">Retrieving Public Key Usage Information</a>.</li>
     <li>The response of the <code class="language-plaintext highlighter-rouge">qq fs_security_add_key</code> command includes the <em>key identifier.</em> When you use <code class="language-plaintext highlighter-rouge">qq fs_security</code> commands, you can specify either the key identifier (by using the <code class="language-plaintext highlighter-rouge">--id</code> flag) or the key name (by using the <code class="language-plaintext highlighter-rouge">--name</code> flag).</li>
   </ul>

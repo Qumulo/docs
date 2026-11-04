@@ -2438,7 +2438,7 @@ $(document).ready(function() {
 <p>This section explains how to configure a <a href="how-portal-creation-enables-cloud-data-fabric.html#portal-relationship">portal relationship</a> between two Qumulo clusters by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI.</p>
 
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>Before you begin to implement Cloud Data Fabric in your organization, we strongly recommend reviewing the <a href="how-portal-creation-enables-cloud-data-fabric.html">How Portal Relationships between Qumulo Clusters Enable Cloud Data Fabric in Qumulo Core</a> and <a href="known-limits.html">Known Limits</a> sections.</li>
     <li>For any questions, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a>.</li>
   </ul>
@@ -2485,7 +2485,7 @@ $(document).ready(function() {
 </ul>
 
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>If both of the clusters use Active Directory, they must be joined to the same domain or each cluster must be joined to Active Directory domains that have a two-way trust relationship to each other.</li>
     <li>In Qumulo Core 7.5.0.1 to 7.5.1, it is possible for a Qumulo cluster to host only up to 32 hub portals <em>or</em> up to 32 spoke portals.</li>
   </ul>
@@ -2495,7 +2495,7 @@ $(document).ready(function() {
 <p>This section explains how to create the <a href="how-portal-creation-enables-cloud-data-fabric.html#spoke-portal">spoke portal</a> on one cluster and propose the creation of a <a href="how-portal-creation-enables-cloud-data-fabric.html#portal-relationship">portal relationship</a> to another cluster (which creates the <a href="how-portal-creation-enables-cloud-data-fabric.html#hub-portal">hub portal</a>).</p>
 
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>We strongly recommend using the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_create.html"><code class="language-plaintext highlighter-rouge">qq portal_create</code></a> command with the <code class="language-plaintext highlighter-rouge">--hub-hosts</code> flag to spread the workload across all nodes on the hub portal host cluster.</li>
     <li>For the command to succeed, don't use the backslash (<code class="language-plaintext highlighter-rouge">\</code>) to break the list of IP addresses across multiple lines.</li>
     <li>While using multiple IP addresses greatly helps with resilience, it isn't required. It is possible to run this command with:       <ul>
@@ -2537,7 +2537,7 @@ Unauthorized  /remote/projects/  107592715270601080910970355714
     <p>Hub Portal ID <code class="language-plaintext highlighter-rouge">4</code> is the ID that the hub portal host cluster allocates for this portal relationship. You can use it to accept the relationship on the hub portal host cluster as described later.</p>
 
     <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />       <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>       <ul>
         <li>We recommend using floating IP addresses.</li>
         <li>Qumulo Core doesn't support fully qualified domain names (FQDNs) for this operation.</li>
         <li>Portal IDs are unique within each cluster. It isn't possible to use a portal ID from a spoke portal to identify the other side of the relationship, or the other way around.</li>
@@ -2549,7 +2549,7 @@ Unauthorized  /remote/projects/  107592715270601080910970355714
     <p>When the portal relationship is established, both spoke portal and hub portal enter the <code class="language-plaintext highlighter-rouge">Pending</code> portal relationship state.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> In this state, the spoke portal root directory is empty and Qumulo Core doesn’t transfer any data until the hub portal authorizes access to the hub portal root directory.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> In this state, the spoke portal root directory is empty and Qumulo Core doesn’t transfer any data until the hub portal authorizes access to the hub portal root directory.
     </div>
   </li>
   <li>
@@ -2581,7 +2581,7 @@ Hub   4   RW    Pending  Inactive  203.0.113.1  1
 <p>This section explains how to accept the <a href="how-portal-creation-enables-cloud-data-fabric.html#portal-relationship">portal relationship</a> from the <a href="how-portal-creation-enables-cloud-data-fabric.html#hub-portal">hub portal</a> to the <a href="how-portal-creation-enables-cloud-data-fabric.html#spoke-portal">spoke portal</a>.</p>
 
 <div class="alert alert-danger" role="alert">
-<span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br /> This action makes both clusters in the portal relationship unavailable for less than 30 seconds while the systems reconfigure.
+<span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br> This action makes both clusters in the portal relationship unavailable for less than 30 seconds while the systems reconfigure.
 </div>
 
 <ol>
@@ -2590,7 +2590,7 @@ Hub   4   RW    Pending  Inactive  203.0.113.1  1
  command.</p>
 
     <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To retrieve portal configuration information, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_list_spokes.html"><code class="language-plaintext highlighter-rouge">qq portal_list_spokes</code></a>
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> To retrieve portal configuration information, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_list_spokes.html"><code class="language-plaintext highlighter-rouge">qq portal_list_spokes</code></a>
  and <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_list_hubs.html"><code class="language-plaintext highlighter-rouge">qq portal_list_hubs</code></a>
  commands.
     </div>
@@ -2606,7 +2606,7 @@ Hub   4   RW    Pending  Inactive  203.0.113.1  1
 </code></pre></div>    </div>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Portal IDs are unique within each cluster. It isn't possible to use a portal ID from a spoke portal to identify the other side of the relationship, or the other way around.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Portal IDs are unique within each cluster. It isn't possible to use a portal ID from a spoke portal to identify the other side of the relationship, or the other way around.
     </div>
 
     <p>The following is example output.</p>
@@ -2628,7 +2628,7 @@ Authorized  /projects/
 <p>In Qumulo Core 7.6.2 (and higher), it is possible to configure up to 32 spoke portal root directories for each Qumulo cluster, for each portal relationship. This section explains how to configure an additional spoke portal root directory, how to remove access from a hub portal root directory, and how to remove a spoke portal root directory by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI.</p>
 
 <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Configuring an additional spoke portal root directory can be useful when it is necessary to provide access to individual directories rather than the contents of the entire file system on the hub portal host cluster.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> Configuring an additional spoke portal root directory can be useful when it is necessary to provide access to individual directories rather than the contents of the entire file system on the hub portal host cluster.
 </div>
 
 <h3 id="prerequisites-1">Prerequisites</h3>
@@ -2672,7 +2672,7 @@ Unauthorized  /remote/archive/   107592715270601080910970355715
  command and specify the portal ID and the hub portal root directory path. For example:</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> It is possible to use an existing hub portal root directory which you have already authorized. In this scenario, the additional spoke portal root directory will be in the <code class="language-plaintext highlighter-rouge">Authorized</code> state immediately.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> It is possible to use an existing hub portal root directory which you have already authorized. In this scenario, the additional spoke portal root directory will be in the <code class="language-plaintext highlighter-rouge">Authorized</code> state immediately.
     </div>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq portal_authorize_hub_root <span class="se">\</span>
@@ -2699,7 +2699,7 @@ Authorized  /archive/
  command and specify the portal ID and the hub portal root directory path.</p>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> It isn’t possible to use the <code class="language-plaintext highlighter-rouge">portal_deny_hub_root</code> command to restrict access to a subdirectory of a hub portal root directory. For example, if hub portal root directories are nested, removing access from a child hub portal root directory doesn’t deny access from the corresponding parent hub portal root directory.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> It isn’t possible to use the <code class="language-plaintext highlighter-rouge">portal_deny_hub_root</code> command to restrict access to a subdirectory of a hub portal root directory. For example, if hub portal root directories are nested, removing access from a child hub portal root directory doesn’t deny access from the corresponding parent hub portal root directory.
 </div>
 
 <p>For example:</p>
@@ -2726,7 +2726,7 @@ Authorized    /projects/
  command and specify the portal ID and the spoke portal root directory path.</p>
 
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>This operation doesn't affect any data on the hub portal host cluster, any unsynchronized data in the spoke portal root directory, or the portal relationship.</li>
     <li>To restore the spoke portal root directory, you can propose a new spoke portal root directory.</li>
     <li>When there are no more spoke portal root directories that correspond to a particular hub portal root directory, Qumulo Core removes that hub portal root directory from the portal relationship automatically.</li>
@@ -2755,7 +2755,7 @@ Authorized    /remote/projects/  107592715270601080910970355714
 <p>When you delete the <a href="how-portal-creation-enables-cloud-data-fabric.html#spoke-portal">spoke portal</a> and the <a href="how-portal-creation-enables-cloud-data-fabric.html#hub-portal">hub portal</a> (in any order), the <a href="how-portal-creation-enables-cloud-data-fabric.html#portal-relationship">portal relationship</a> is deleted completely. This section explains how to delete a portal relationship between two Qumulo clusters by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI.</p>
 
 <div class="alert alert-danger" role="alert">
-<span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br /> This action makes both clusters in the portal relationship unavailable for less than 30 seconds while the systems reconfigure.
+<span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br> This action makes both clusters in the portal relationship unavailable for less than 30 seconds while the systems reconfigure.
 </div>
 
 <h3 id="prerequisites-2">Prerequisites</h3>
@@ -2814,7 +2814,7 @@ Authorized  /remote/projects/  107592715270601080910970355715
     <p>When the synchronization process is complete and the spoke portal configuration is removed, Qumulo Core begins to reclaim the spoke portal’s cluster capacity in the background.</p>
 
     <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />       <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>       <ul>
         <li>A spoke portal with connectivity issues receives the <a href="how-portal-creation-enables-cloud-data-fabric.html#portal-statuses"><code class="language-plaintext highlighter-rouge">Degraded</code></a> status, which in turn can cause the deletion of a portal relationship to stall in the <a href="how-portal-creation-enables-cloud-data-fabric.html#portal-relationship-states"><code class="language-plaintext highlighter-rouge">Deleting</code></a> state.</li>
         <li>If it isn't possible to restore connectivity between portals, you can delete a spoke portal with any status and in any state by running the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_delete_spoke.html"><code class="language-plaintext highlighter-rouge">qq portal_delete_spoke</code></a> command with the <code class="language-plaintext highlighter-rouge">--force</code> flag. At the end of this operation, Qumulo Core keeps all synchronized changes on the hub portal and discards all unsynchronized changes from the spoke portal.</li>
       </ul>
@@ -2826,7 +2826,7 @@ Authorized  /remote/projects/  107592715270601080910970355715
 <p>You can delete a hub portal in either the <code class="language-plaintext highlighter-rouge">Pending</code> or <code class="language-plaintext highlighter-rouge">Accepted</code> portal relationship state.</p>
 
 <div class="alert alert-danger" role="alert">
-<span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br /> This action makes the spoke portal root directory and all cached data inaccessible.
+<span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br> This action makes the spoke portal root directory and all cached data inaccessible.
 </div>
 
 <ol>
@@ -2867,13 +2867,8 @@ Root State  Local Path
 ==========  ===========
 Authorized  /projects/
 </code></pre></div>    </div>
-
-    <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> 
-    </div>
   </li>
 </ol>
-
 
    
 

@@ -2393,7 +2393,7 @@ $(document).ready(function() {
     <p><strong>Lock with manual retention period:</strong> This configuration specifies a fixed period of time during which an object remains locked. Qumulo Core supports <em>compliance mode,</em> a type of retention period which prevents a protected object version from being overwritten or deleted by any user.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Currently, Qumulo Core doesn’t support governance mode.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Currently, Qumulo Core doesn’t support governance mode.
     </div>
 
     <p>To configure a lock with a manual compliance mode retention period, use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectRetention.html"><code class="language-plaintext highlighter-rouge">PutObjectRetention</code></a> S3 API action or specify the configuration in the headers of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html"><code class="language-plaintext highlighter-rouge">CreateMultipartUpload</code></a>, <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html"><code class="language-plaintext highlighter-rouge">CopyObject</code></a>, or <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html"><code class="language-plaintext highlighter-rouge">PutObject</code></a> S3 API action.</p>
@@ -2402,7 +2402,7 @@ $(document).ready(function() {
     <p><strong>Lock with default retention period:</strong> This configuration is similar to that of a lock with a manual retention period. It ensures that the S3 bucket locks any new object added to it.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Specifying a manual retention period while creating a new object in an S3 bucket overrides the default retention period.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Specifying a manual retention period while creating a new object in an S3 bucket overrides the default retention period.
     </div>
   </li>
   <li>
@@ -2441,7 +2441,9 @@ $(document).ready(function() {
     <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_file_get_attr.html"><code class="language-plaintext highlighter-rouge">qq fs_file_get_attr</code></a>
  command and use the <code class="language-plaintext highlighter-rouge">--retrieve-file-lock</code> flag. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq fs_file_get_attr <span class="nt">--retrieve-file-lock</span> <span class="nt">--path</span> /demo
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_file_get_attr <span class="se">\</span>
+  <span class="nt">--retrieve-file-lock</span> <span class="se">\</span>
+  <span class="nt">--path</span> /demo
 </code></pre></div>    </div>
 
     <p>The following is example output. (Only part of the output is shown).</p>
@@ -2457,7 +2459,7 @@ $(document).ready(function() {
   <li>
     <p>Run the <code class="language-plaintext highlighter-rouge">s3api get-object-retention</code> command and specify your bucket name, and your S3 access key. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>aws s3api get-object-retention <span class="se">\</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aws s3api get-object-retention <span class="se">\</span>
   <span class="nt">--bucket</span> my-bucket <span class="se">\</span>
   <span class="nt">--key</span> AKIAIOSFODNN7EXAMPLE
 </code></pre></div>    </div>

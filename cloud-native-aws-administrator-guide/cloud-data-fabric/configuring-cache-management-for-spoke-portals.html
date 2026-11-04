@@ -2440,14 +2440,14 @@ $(document).ready(function() {
 <p>By default, Qumulo Core automatically recaches data on spoke portals upon access and maintains a minimum of 5% free capacity on clusters whose spoke portals contain cached data. Qumulo Core removes cached data in the background until it meets its configured <em>free threshold</em> or until it removes all cached data from the spoke portals.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Although this process doesn’t affect data on the hub portal, accessing the portions of spoke portals whose cached data has been removed can incur the same latency as during initial access.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Although this process doesn’t affect data on the hub portal, accessing the portions of spoke portals whose cached data has been removed can incur the same latency as during initial access.
 </div>
 
 <h2 id="configure-automated-removal">Configuring Automated Removal of Cached Data from Spoke Portals</h2>
 <p>This section explains how to configure automatic cache management for active spoke portals. To control automatic cache management, you can configure a <em>free threshold.</em> For example, if you set the free threshold setting to <code class="language-plaintext highlighter-rouge">0.05</code>, Qumulo Core begins to remove cached data from spoke portals when the system is 95% full.</p>
 
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>Depending on the free threshold configuration, the maximum amount of cached data that Qumulo Core can remove is equal to the amount of data that spoke portals consume.</li>
     <li>Spoke portals function as long as Qumulo Core has sufficient capacity for servicing in-flight file system requests. However, having to continuously fetch data from the hub portal can decrease system performance.</li>
     <li>If file system objects unrelated to spoke portals consume all usable capacity on a cluster, clients can experience issues while attempting to access spoke portals.</li>

@@ -2420,7 +2420,7 @@ $(document).ready(function() {
      
      
 <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> It is possible to confuse the terms <em>access token</em> and <em>session token</em>. Unlike access tokens, session tokens are short-lived and require a password to refresh, for example, to authenticate by using the <a href="https://docs.qumulo.com/qq-cli-command-guide/login/login.html"><code class="language-plaintext highlighter-rouge">qq login</code></a>
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> It is possible to confuse the terms <em>access token</em> and <em>session token</em>. Unlike access tokens, session tokens are short-lived and require a password to refresh, for example, to authenticate by using the <a href="https://docs.qumulo.com/qq-cli-command-guide/login/login.html"><code class="language-plaintext highlighter-rouge">qq login</code></a>
  command. Access tokens are the focus of this section.
 </div>
 
@@ -2430,7 +2430,7 @@ $(document).ready(function() {
  command and the Qumulo Core Web UI use. They also support support authentication for services, long-lived automation processes, and programmatic REST API access that doesn’t require user input.</p>
 
 <div class="alert alert-danger" role="alert">
-<em class="fa fa-exclamation-circle"></em> <strong>Caution</strong><br />   <ul>
+<em class="fa fa-exclamation-circle"></em> <strong>Caution</strong><br>   <ul>
     <li>An attacker can use an access token to authenticate as the token's user to Qumulo REST API (through HTTP, the Python SDK, or the <code class="language-plaintext highlighter-rouge">qq</code> CLI) and gain all of the user's privileges. Treat access tokens, and the bearer tokens they generate, like passwords. Store your tokens securely, rotate your tokens often, and create a token revocation policy for your organization.</li>
     <li>Because a token allows indefinite authentication to the associated user's account, we strongly recommend against creating tokens for individual Qumulo REST API users. For more information, see <a href="#best-practices-using-access-tokens">Best Practices for Using Access Tokens</a>.</li>
   </ul>
@@ -2443,7 +2443,7 @@ $(document).ready(function() {
 </ul>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>These RBAC privileges grant administrative access to view, modify, create and delete keys for any user in the system.</li>
     <li>Qumulo Core access tokens can also use a <em>self service</em> permissions model that allows any system user to view, modify, create, or and delete their own access keys.</li>
   </ul>
@@ -2458,7 +2458,7 @@ $(document).ready(function() {
 <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_create_access_token.html"><code class="language-plaintext highlighter-rouge">qq auth_create_access_token</code></a>
  command with the <code class="language-plaintext highlighter-rouge">--self</code> flag. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq auth_create_access_token <span class="nt">--self</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq auth_create_access_token <span class="nt">--self</span>
 </code></pre></div></div>
 
 <p id="json-bearer-token">The <a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_create_access_token.html"><code class="language-plaintext highlighter-rouge">qq auth_create_access_token</code></a>
@@ -2471,7 +2471,7 @@ $(document).ready(function() {
 </span></code></pre></div></div>
 
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>As soon as you receive your bearer token, record it in a safe place. If you misplace the bearer token, you can't retrieve it at a later time. You must create a new access token.</li>
     <li>Any user can have a maximum of two access tokens. If a user already has two access tokens, creating new tokens fails until you remove at least one token from the user. We strongly recommend creating a single access token for each user and using the second access token to perform secret rotation.</li>
     <li>Treat access tokens, and the bearer tokens they generate, like passwords. Store your tokens securely, rotate your tokens often, and create a token revocation policy for your organization.</li>
@@ -2483,7 +2483,7 @@ $(document).ready(function() {
 <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_create_access_token.html"><code class="language-plaintext highlighter-rouge">qq auth_create_access_token</code></a>
  command and specify the user. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq auth_create_access_token jane
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq auth_create_access_token jane
 </code></pre></div></div>
 
 <p id="create-token-format">You can:</p>
@@ -2505,7 +2505,7 @@ $(document).ready(function() {
 </ul>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>Although you can create groups for users, you can't create access tokens for groups.</li>
     <li>To use an access token in the <code class="language-plaintext highlighter-rouge">qq</code> CLI, you must use the <code class="language-plaintext highlighter-rouge">--file</code> flag—to specify a path for saving your credentials file in a format that the <code class="language-plaintext highlighter-rouge">qq</code> CLI can use—when you create the access token.</li>
   </ul>
@@ -2515,16 +2515,18 @@ $(document).ready(function() {
 <p>In Qumulo Core 5.3.2 (and higher), you can run the <a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_create_access_token.html"><code class="language-plaintext highlighter-rouge">qq auth_create_access_token</code></a>
  command and specify the expiration time. You can specify the expiration time in different formats. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq auth_create_access_token jane <span class="nt">--expiration-time</span> <span class="s1">'Jan 01 2023'</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq auth_create_access_token jane <span class="se">\</span>
+  <span class="nt">--expiration-time</span> <span class="s1">'Jan 01 2023'</span>
 </code></pre></div></div>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq auth_create_access_token jane <span class="nt">--expiration-time</span> <span class="s1">'01/01/2023 00:00'</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq auth_create_access_token jane <span class="se">\</span>
+  <span class="nt">--expiration-time</span> <span class="s1">'01/01/2023 00:00'</span>
 </code></pre></div></div>
 
 <p>When an access token’s expiration time elapses, it isn’t possible to use the token for authentication. Any attempt to use the token results in an authentication error. To continue the authentication process, you must either <a href="#creating-using-access-tokens">create a new access token</a> or <a href="#modifying-expiration-time-access-token">update the expiration time for your existing token</a>.</p>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br /> The <code class="language-plaintext highlighter-rouge">--expiration-time</code> flag interprets arguments as timestamps in the UTC time zone.
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br> The <code class="language-plaintext highlighter-rouge">--expiration-time</code> flag interprets arguments as timestamps in the UTC time zone.
 </div>
 
 <h3 id="using-bearer-tokens-for-authentication">Using Bearer Tokens for Authentication</h3>
@@ -2538,7 +2540,8 @@ $(document).ready(function() {
 
 <p>You can also add the bearer token to a <code class="language-plaintext highlighter-rouge">curl</code> command. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl https://203.0.113.0:8000/v1/session/who-am-i <span class="nt">-H</span> <span class="s1">'Authorization: Bearer access-v1:abAcde...=='</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://203.0.113.0:8000/v1/session/who-am-i <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Authorization: Bearer access-v1:abAcde...=='</span>
 </code></pre></div></div>
 
 <h4 id="python-sdk">Python SDK</h4>
@@ -2554,12 +2557,13 @@ $(document).ready(function() {
 <h4 id="qq-cli">qq CLI</h4>
 <p>To use an access token in the <code class="language-plaintext highlighter-rouge">qq</code> CLI, you must use the <code class="language-plaintext highlighter-rouge">--file</code> flag—to specify a path for saving your credentials file in a format that the <code class="language-plaintext highlighter-rouge">qq</code> CLI can use—when you create the access token. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq auth_create_access_token jane <span class="nt">--file</span> ./qumulo_credentials
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq auth_create_access_token jane <span class="se">\</span>
+  <span class="nt">--file</span> ./qumulo_credentials
 </code></pre></div></div>
 
 <p>To use the credentials file, specify its location by using the <code class="language-plaintext highlighter-rouge">--credentials-store</code> flag. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq <span class="nt">--credentials-store</span> ./qumulo_credentials who_am_i
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq <span class="nt">--credentials-store</span> ./qumulo_credentials who_am_i
 </code></pre></div></div>
 
 <h2 id="listing-access-tokens">Listing Access Tokens</h2>
@@ -2572,21 +2576,21 @@ $(document).ready(function() {
     <p>To list access tokens for yourself, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_list_access_tokens.html"><code class="language-plaintext highlighter-rouge">qq auth_list_access_tokens</code></a>
  command with <code class="language-plaintext highlighter-rouge">--self</code> flag. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq auth_list_access_tokens <span class="nt">--self</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq auth_list_access_tokens <span class="nt">--self</span>
 </code></pre></div>    </div>
   </li>
   <li>
     <p>To list access tokens for a specific user, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_list_access_tokens.html"><code class="language-plaintext highlighter-rouge">qq auth_list_access_tokens</code></a>
  command and use the <code class="language-plaintext highlighter-rouge">--user</code> flag to specify a user. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq auth_list_access_tokens <span class="nt">--user</span> jane
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq auth_list_access_tokens <span class="nt">--user</span> jane
 </code></pre></div>    </div>
   </li>
   <li>
     <p>To list access tokens for all users, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_list_access_tokens.html"><code class="language-plaintext highlighter-rouge">qq auth_list_access_tokens</code></a>
  command without any additional parameters. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq auth_list_access_tokens
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq auth_list_access_tokens
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -2599,7 +2603,7 @@ $(document).ready(function() {
 <h3 id="to-retrieve-metadata-for-a-specific-access-token">To Retrieve Metadata for a Specific Access Token</h3>
 <p>Run the <code class="language-plaintext highlighter-rouge">auth_get_access_token</code> command and specify the access token ID. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq auth_get_access_token 1234567890123456789012
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq auth_get_access_token 1234567890123456789012
 </code></pre></div></div>
 
 <p>This command returns a JSON object that lists:</p>
@@ -2644,7 +2648,7 @@ $(document).ready(function() {
  command.</p>
 
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br /> Listing access tokens <em>doesn't</em> return the bearer token required for authentication. If you misplace the bearer token, you can't retrieve it at a later time. You must create a new access token.
+<em class="fa fa-warning"></em> <strong>Important</strong><br> Listing access tokens <em>doesn't</em> return the bearer token required for authentication. If you misplace the bearer token, you can't retrieve it at a later time. You must create a new access token.
 </div>
 
 <p>The <code class="language-plaintext highlighter-rouge">auth_list_access_tokens</code> command returns:</p>
@@ -2681,13 +2685,14 @@ expiration time       enabled
 
 <p>Run the <code class="language-plaintext highlighter-rouge">auth_modify_access_token</code> command and specify the access token ID and the expiration time. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq auth_modify_access_token 1234567890123456789012 <span class="nt">--expiration-time</span> <span class="s1">'Jan 01 2023'</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq auth_modify_access_token 1234567890123456789012 <span class="se">\</span>
+  <span class="nt">--expiration-time</span> <span class="s1">'Jan 01 2023'</span>
 </code></pre></div></div>
 
 <p>When an access token’s expiration time elapses, it isn’t possible to use the token for authentication. Any attempt to use the token results in an authentication error. To continue the authentication process, you must either <a href="#creating-using-access-tokens">create a new access token</a> or <a href="#modifying-expiration-time-access-token">update the expiration time for your existing token</a>.</p>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br /> The <code class="language-plaintext highlighter-rouge">--expiration-time</code> flag interprets arguments as timestamps in the UTC time zone.
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br> The <code class="language-plaintext highlighter-rouge">--expiration-time</code> flag interprets arguments as timestamps in the UTC time zone.
 </div>
 
 <h2 id="disabling-access-token">Disabling an Access Token</h2>
@@ -2696,19 +2701,19 @@ expiration time       enabled
 <p><code class="language-plaintext highlighter-rouge">PRIVILEGE_ACCESS_TOKEN_WRITE</code> is required for creating, disabling, and deleting access tokens for all users in the system.</p>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> After you disable an access token, you can no longer use any bearer tokens associated with the access token to authenticate to Qumulo Core.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> After you disable an access token, you can no longer use any bearer tokens associated with the access token to authenticate to Qumulo Core.
 </div>
 
 <p>To disable an access token, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_modify_access_token.html"><code class="language-plaintext highlighter-rouge">qq auth_modify_access_token</code></a>
  command, specify the access token ID, and use the <code class="language-plaintext highlighter-rouge">-d</code> flag. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq auth_modify_access_token 1234567890123456789012 <span class="nt">-d</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq auth_modify_access_token 1234567890123456789012 <span class="nt">-d</span>
 </code></pre></div></div>
 
 <p>To enable an access token, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_modify_access_token.html"><code class="language-plaintext highlighter-rouge">qq auth_modify_access_token</code></a>
  command, specify the access token ID, and use the <code class="language-plaintext highlighter-rouge">-e</code> flag. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq auth_modify_access_token 1234567890123456789012 <span class="nt">-e</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq auth_modify_access_token 1234567890123456789012 <span class="nt">-e</span>
 </code></pre></div></div>
 
 <h2 id="deleting-access-tokens">Deleting Access Tokens</h2>
@@ -2717,13 +2722,13 @@ expiration time       enabled
 <p><code class="language-plaintext highlighter-rouge">PRIVILEGE_ACCESS_TOKEN_WRITE</code> is required for creating, disabling, and deleting access tokens for all users in the system.</p>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> After you delete an access token, you can no longer use any bearer tokens associated with the access token to authenticate to Qumulo Core.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> After you delete an access token, you can no longer use any bearer tokens associated with the access token to authenticate to Qumulo Core.
 </div>
 
 <p>To delete an access token, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/auth/auth_delete_access_token.html"><code class="language-plaintext highlighter-rouge">qq auth_delete_access_token</code></a>
  command and specify the access token ID. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq auth_delete_access_token 1234567890123456789012
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq auth_delete_access_token 1234567890123456789012
 </code></pre></div></div>
 
 <h2 id="best-practices-using-access-tokens">Best Practices for Using Qumulo Core Access Tokens</h2>

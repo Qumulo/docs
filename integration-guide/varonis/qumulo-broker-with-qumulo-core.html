@@ -681,15 +681,15 @@ $(document).ready(function() {
 <p>The following architecture diagram shows the workflow between Qumulo Broker and Qumulo Core.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> We recommend installing Qumulo Broker and Varonis in the same VLAN or VPC.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> We recommend installing Qumulo Broker and Varonis in the same VLAN or VPC.
 </div>
 
 <figure>
-<span class="enlargeimage" data-url="/integration-guide/varonis/images/qumulo-broker-with-qumulo-core.png"><a target="_blank" rel="noopener" href="/integration-guide/varonis/images/qumulo-broker-with-qumulo-core.png"><img class="docimage" src="images/qumulo-broker-with-qumulo-core.png" alt="An Architecture Diagram of Integration Between Qumulo Broker and Qumulo Core" /></a></span>
+<span class="enlargeimage" data-url="/integration-guide/varonis/images/qumulo-broker-with-qumulo-core.png"><a target="_blank" rel="noopener" href="/integration-guide/varonis/images/qumulo-broker-with-qumulo-core.png"><img class="docimage" src="images/qumulo-broker-with-qumulo-core.png" alt="An Architecture Diagram of Integration Between Qumulo Broker and Qumulo Core"></a></span>
 </figure>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Although Qumulo currently is certified only for the Varonis SaaS offering, you can configure and use the SaaS offering with an on-premises Qumulo cluster.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Although Qumulo currently is certified only for the Varonis SaaS offering, you can configure and use the SaaS offering with an on-premises Qumulo cluster.
 </div>
 
 <h3 id="qumulo-broker">How Qumulo Broker Gathers, Processes, and Emits Data</h3>
@@ -698,13 +698,13 @@ $(document).ready(function() {
 <p>Typically, Qumulo Core sends the audit logs to a single remote <code class="language-plaintext highlighter-rouge">syslog</code> instance. In the Qumulo-Varonis integration, Qumulo Broker receives the audit logs from multiple Qumulo clusters, converts them to various formats, and then sends them to Varonis.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core can send audit logs to only one target <code class="language-plaintext highlighter-rouge">syslog</code> instance. For information about sending your Qumulo audit logs to different target systems in addition to Varonis, see <a href="deploying-qumulo-broker.html#rsyslog-with-multiple-clusters">Configuring <code class="language-plaintext highlighter-rouge">rsyslog</code> to Communicate with Multiple Clusters</a>.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Qumulo Core can send audit logs to only one target <code class="language-plaintext highlighter-rouge">syslog</code> instance. For information about sending your Qumulo audit logs to different target systems in addition to Varonis, see <a href="deploying-qumulo-broker.html#rsyslog-with-multiple-clusters">Configuring <code class="language-plaintext highlighter-rouge">rsyslog</code> to Communicate with Multiple Clusters</a>.
 </div>
 
 <p>The following architecture diagram shows how Qumulo Broker gathers, processes, and sends data.</p>
 
 <figure>
-<span class="enlargeimage" data-url="/integration-guide/varonis/images/how-qumulo-broker-works.png"><a target="_blank" rel="noopener" href="/integration-guide/varonis/images/how-qumulo-broker-works.png"><img class="docimage" src="images/how-qumulo-broker-works.png" alt="An Architecture Diagram that Shows how Qumulo Broker Gathers, Processes, and Sends Data" /></a></span>
+<span class="enlargeimage" data-url="/integration-guide/varonis/images/how-qumulo-broker-works.png"><a target="_blank" rel="noopener" href="/integration-guide/varonis/images/how-qumulo-broker-works.png"><img class="docimage" src="images/how-qumulo-broker-works.png" alt="An Architecture Diagram that Shows how Qumulo Broker Gathers, Processes, and Sends Data"></a></span>
 </figure>
 
 <h2 id="qumulo-broker-specifications">Qumulo Broker Specifications</h2>

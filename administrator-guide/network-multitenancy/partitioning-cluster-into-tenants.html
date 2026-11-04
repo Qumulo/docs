@@ -2700,7 +2700,7 @@ $(document).ready(function() {
 <p>For each tenant, you can specify individual <a href="configuring-management-protocols.html">management protocol access and configuration</a> and <a href="configuring-file-system-protocols.html">file system protocol access and configuration</a>.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> All tenants share the cluster’s underlying file system, identity providers, role-based access control (RBAC) configuration, and other global settings.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> All tenants share the cluster’s underlying file system, identity providers, role-based access control (RBAC) configuration, and other global settings.
 </div>
 
 <h2 id="prerequisites">Prerequisites</h2>
@@ -2717,7 +2717,7 @@ $(document).ready(function() {
 <p>This section explains the lifecycle of working with tenants, including creating tenants, assigning networks to new and existing tenants, viewing tenant configuration, and unassigning tenants.</p>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Creating a tenant and assigning a network to it causes the removal of any static routes from all nodes in a cluster. After creating the new tenant, you must reapply the static routes to your nodes.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Creating a tenant and assigning a network to it causes the removal of any static routes from all nodes in a cluster. After creating the new tenant, you must reapply the static routes to your nodes.
 </div>
 
 <h3 id="step-1-create-a-new-tenant">Step 1: Create a New Tenant</h3>
@@ -2726,7 +2726,7 @@ $(document).ready(function() {
 <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_create_tenant.html"><code class="language-plaintext highlighter-rouge">qq multitenancy_create_tenant</code></a>
  command and specify a name for your tenant. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq multitenancy_create_tenant <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq multitenancy_create_tenant <span class="se">\</span>
   <span class="nt">--name</span> my_tenant
 </code></pre></div></div>
 
@@ -2751,12 +2751,12 @@ $(document).ready(function() {
 <p>Use the <code class="language-plaintext highlighter-rouge">qq multitenancy_create_tenant</code> and specify the tenant name and network ID.</p>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> The network must not be assigned to another tenant already.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> The network must not be assigned to another tenant already.
 </div>
 
 <p>In the following example, we specify a single network.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq multitenancy_create_tenant <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq multitenancy_create_tenant <span class="se">\</span>
   <span class="nt">--name</span> my_tenant_name <span class="se">\</span>
   <span class="nt">--network-id</span> 2
 </code></pre></div></div>
@@ -2765,7 +2765,7 @@ $(document).ready(function() {
 <p>To assign a single network to a tenant, modify <em>the tenant that belongs to the network.</em> Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_network.html"><code class="language-plaintext highlighter-rouge">qq network_mod_network</code></a>
  command and specify the network and tenant ID.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq network_mod_network <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq network_mod_network <span class="se">\</span>
   <span class="nt">--network-id</span> 3 <span class="se">\</span>
   <span class="nt">--tenant-id</span> 2
 </code></pre></div></div>
@@ -2775,12 +2775,12 @@ $(document).ready(function() {
  command and specify the tenant and network ID.</p>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Any existing networks not specified after the <code class="language-plaintext highlighter-rouge">--network-id</code> flag become unassigned.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Any existing networks not specified after the <code class="language-plaintext highlighter-rouge">--network-id</code> flag become unassigned.
 </div>
 
 <p>In the following example, we specify three networks.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq multitenancy_modify_tenant <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq multitenancy_modify_tenant <span class="se">\</span>
   <span class="nt">--id</span> 2 <span class="se">\</span>
   <span class="nt">--network-id</span> 2 3 4
 </code></pre></div></div>
@@ -2790,10 +2790,10 @@ $(document).ready(function() {
  command and specify the network and the <code class="language-plaintext highlighter-rouge">--clear-tenant-id</code> flag.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> After you unassign a network from a tenant, you can assign it to another tenant.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> After you unassign a network from a tenant, you can assign it to another tenant.
 </div>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq network_mod_network <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq network_mod_network <span class="se">\</span>
   <span class="nt">--network-id</span> 3 <span class="se">\</span>
   <span class="nt">--clear-tenant-id</span>
 </code></pre></div></div>
@@ -2803,13 +2803,13 @@ $(document).ready(function() {
  command and specify the tenant and network ID.</p>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>After you unassign a network from a tenant, you can assign it to another tenant.</li>
     <li>Don't specify any arguments for the <code class="language-plaintext highlighter-rouge">--network-id</code> flag.</li>
   </ul>
 </div>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq multitenancy_modify_tenant <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq multitenancy_modify_tenant <span class="se">\</span>
   <span class="nt">--id</span> 2 <span class="se">\</span>
   <span class="nt">--network-id</span>
 </code></pre></div></div>
@@ -2818,7 +2818,7 @@ $(document).ready(function() {
 <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_network.html"><code class="language-plaintext highlighter-rouge">qq network_mod_network</code></a>
  command and specify the network and target tenant.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq network_mod_network <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq network_mod_network <span class="se">\</span>
   <span class="nt">--network-id</span> 2 <span class="se">\</span>
   <span class="nt">--tenant-id</span> 1
 </code></pre></div></div>
@@ -2830,7 +2830,7 @@ $(document).ready(function() {
 <p>To view the information for a single tenant, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_get_tenant.html"><code class="language-plaintext highlighter-rouge">qq multitenancy_get_tenant</code></a>
  command.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq multitenancy_get_tenant <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq multitenancy_get_tenant <span class="se">\</span>
   <span class="nt">--id</span> 1
 </code></pre></div></div>
 
@@ -2854,7 +2854,7 @@ $(document).ready(function() {
     <p>To view the information for a single network, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_get_network.html"><code class="language-plaintext highlighter-rouge">qq network_get_network</code></a>
  command.</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq network_get_network <span class="se">\</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq network_get_network <span class="se">\</span>
   <span class="nt">--network-id</span> 2
 </code></pre></div>    </div>
   </li>
@@ -2866,7 +2866,7 @@ $(document).ready(function() {
 
 <h3 id="step-4-delete-a-tenant">Step 4: Delete a Tenant</h3>
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>When you delete a tenant, Qumulo Core removes the tenant's entire configuration from your cluster, including NFS exports and SMB shares associated with the tenant.</li>
     <li>It isn't possible to delete the last tenant.</li>
   </ul>
@@ -2875,7 +2875,7 @@ $(document).ready(function() {
 <p>To delete a tenant, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_delete_tenant.html"><code class="language-plaintext highlighter-rouge">qq multitenancy_delete_tenant</code></a>
  command and specify the tenant ID.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq multitenancy_delete_tenant <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq multitenancy_delete_tenant <span class="se">\</span>
   <span class="nt">--id</span> 2
 </code></pre></div></div>
 

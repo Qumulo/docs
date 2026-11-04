@@ -2428,14 +2428,14 @@ $(document).ready(function() {
     <p><strong>Deployment Version:</strong> This deployment path requires Qumulo Core 7.9.2 (or higher).</p>
 
     <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To deploy the latest release, leave the Qumulo Core version unset. Otherwise, specify 7.9.2 (or higher).
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> To deploy the latest release, leave the Qumulo Core version unset. Otherwise, specify 7.9.2 (or higher).
     </div>
   </li>
   <li>
     <p><strong>Metrics:</strong> To allow your Qumulo cluster to report metrics to Qumulo, your virtual network must have outbound Internet connectivity through a <a href="https://learn.microsoft.com/en-us/azure/nat-gateway/nat-overview">NAT gateway</a> or a firewall. Your cluster shares no file data during this process.</p>
 
     <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br /> Connectivity to the following endpoints is required for a successful deployment of a Qumulo instance and quorum formation:       <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br> Connectivity to the following endpoints is required for a successful deployment of a Qumulo instance and quorum formation:       <ul>
         <li><code class="language-plaintext highlighter-rouge">api.missionq.qumulo.com</code></li>
         <li><code class="language-plaintext highlighter-rouge">api.nexus.qumulo.com</code></li>
       </ul>
@@ -2449,14 +2449,14 @@ $(document).ready(function() {
     <p><strong>Virtual Network:</strong> You must have an existing virtual network and subnet with the <a href="https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview">service endpoints</a> <code class="language-plaintext highlighter-rouge">Microsoft.Storage</code> and <code class="language-plaintext highlighter-rouge">Microsoft.KeyVault</code> enabled on the cluster subnet. The Terraform configuration checks for both endpoints and fails before creating anything if either is missing.</p>
 
     <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Size the subnet for one address per node, one for the Provisioner VM, one per floating IP, and the five addresses Azure reserves in every subnet.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Size the subnet for one address per node, one for the Provisioner VM, one per floating IP, and the five addresses Azure reserves in every subnet.
     </div>
   </li>
   <li>
     <p><strong>Region:</strong> Your region requires enough <a href="https://learn.microsoft.com/en-us/azure/quotas/per-vm-quota-requests">vCPU quota</a> in the L-series VM family you select for your node count, plus quota in the Provisioner VM’s family.</p>
 
     <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Because a quota shortage looks identical to a capacity shortage, check <strong>Usage + quotas</strong> before you deploy.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> Because a quota shortage looks identical to a capacity shortage, check <strong>Usage + quotas</strong> before you deploy.
     </div>
   </li>
 </ul>
@@ -2474,11 +2474,11 @@ $(document).ready(function() {
     <p>Before you configure your Terraform environment, run the <code class="language-plaintext highlighter-rouge">az login</code> command.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The Qumulo provider doesn’t read the subscription from the Azure CLI context, so you also set the subscription ID explicitly in <code class="language-plaintext highlighter-rouge">terraform.tfvars</code>.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The Qumulo provider doesn’t read the subscription from the Azure CLI context, so you also set the subscription ID explicitly in <code class="language-plaintext highlighter-rouge">terraform.tfvars</code>.
     </div>
 
     <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br /> The principal that runs Terraform needs three roles:       <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br> The principal that runs Terraform needs three roles:       <ul>
         <li><strong>Contributor</strong> on the subscription or the target resource group</li>
         <li><strong>User Access Administrator</strong> on the target resource group</li>
         <li><strong>Key Vault Administrator</strong> on the target resource group</li>
@@ -2492,7 +2492,7 @@ $(document).ready(function() {
 
 <h3 id="working-with-the-qumulo-terraform-azure-repository">Working with the qumulo-terraform-azure Repository</h3>
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br /> Qumulo is moving CNQ deployments from the downloadable Terraform bundles to the <a href="https://qumulo.github.io/terraform-provider-qumulo-cloud/">Qumulo Terraform provider</a>, and the <code class="language-plaintext highlighter-rouge">qumulo-terraform-azure</code> repository, which uses the provider, is the path this section documents. If you deployed CNQ previously with the <code class="language-plaintext highlighter-rouge">azure-terraform-cnq-&lt;x.y&gt;.zip</code> provisioning scripts, the provider changes three things:   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br> Qumulo is moving CNQ deployments from the downloadable Terraform bundles to the <a href="https://qumulo.github.io/terraform-provider-qumulo-cloud/">Qumulo Terraform provider</a>, and the <code class="language-plaintext highlighter-rouge">qumulo-terraform-azure</code> repository, which uses the provider, is the path this section documents. If you deployed CNQ previously with the <code class="language-plaintext highlighter-rouge">azure-terraform-cnq-&lt;x.y&gt;.zip</code> provisioning scripts, the provider changes three things:   <ul>
     <li>One Terraform workspace instead of two: persistent storage and compute deploy together, with no cross-workspace remote state to configure.</li>
     <li>Nothing to download from Qumulo Nexus: no Terraform bundle, and no Qumulo Core installer to stage in a storage account.</li>
     <li>Day-2 operations are one variable change and one apply: node add and remove, capacity increases, and VM size changes need no multi-stage sequences, and cluster replacement needs no second workspace.</li>
@@ -2549,7 +2549,7 @@ $(document).ready(function() {
 </table>
 
 <div class="alert alert-success" role="alert">
-<em class="fa fa-check-square-o"></em> <strong>Tip</strong><br /> For anything else, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a> and include the following items with your request:   <ul>
+<em class="fa fa-check-square-o"></em> <strong>Tip</strong><br> For anything else, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a> and include the following items with your request:   <ul>
     <li>Your deployment's unique name</li>
     <li>The region</li>
     <li>Your Terraform version</li>
@@ -2587,7 +2587,7 @@ $(document).ready(function() {
 </code></pre></div></div>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> When <code class="language-plaintext highlighter-rouge">azure_environment</code> is set to <code class="language-plaintext highlighter-rouge">usgovernment</code>, the link uses <code class="language-plaintext highlighter-rouge">portal.azure.us</code> rather than <code class="language-plaintext highlighter-rouge">portal.azure.com</code>.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> When <code class="language-plaintext highlighter-rouge">azure_environment</code> is set to <code class="language-plaintext highlighter-rouge">usgovernment</code>, the link uses <code class="language-plaintext highlighter-rouge">portal.azure.us</code> rather than <code class="language-plaintext highlighter-rouge">portal.azure.com</code>.
 </div>
 
 <p>To view the log:</p>
@@ -2615,7 +2615,7 @@ $(document).ready(function() {
 </ol>
 
 <div class="alert alert-success" role="alert">
-<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To skip the portal entirely, run <code class="language-plaintext highlighter-rouge">tools/get-provisioner-log.sh</code> (or <code class="language-plaintext highlighter-rouge">tools/get-provisioner-log.ps1</code> on Windows) from the deployment directory. The script runs the same query by using the Azure CLI and writes the result to a local <code class="language-plaintext highlighter-rouge">.txt</code> file. This is useful if you would rather not use the portal UI, or for scripted log collection.
+<span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br> To skip the portal entirely, run <code class="language-plaintext highlighter-rouge">tools/get-provisioner-log.sh</code> (or <code class="language-plaintext highlighter-rouge">tools/get-provisioner-log.ps1</code> on Windows) from the deployment directory. The script runs the same query by using the Azure CLI and writes the result to a local <code class="language-plaintext highlighter-rouge">.txt</code> file. This is useful if you would rather not use the portal UI, or for scripted log collection.
 </div>
 
 <h2 id="deploy-your-qumulo-cluster">Part 1: Deploying Your Qumulo Cluster</h2>
@@ -2623,7 +2623,7 @@ $(document).ready(function() {
 
 <h3 id="prepare-the-required-files">Step 1: Prepare the Required Files</h3>
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> There is no Terraform configuration to download from Qumulo Nexus and no Qumulo Core installer to stage in a storage account. Terraform downloads the Qumulo Terraform provider from Qumulo’s registry, and the provider installs Qumulo Core on the nodes. By default the nodes and the Provisioner run Ubuntu; set <code class="language-plaintext highlighter-rouge">marketplace_image</code> or <code class="language-plaintext highlighter-rouge">custom_image_id</code> to use RHEL or a hardened image instead.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> There is no Terraform configuration to download from Qumulo Nexus and no Qumulo Core installer to stage in a storage account. Terraform downloads the Qumulo Terraform provider from Qumulo’s registry, and the provider installs Qumulo Core on the nodes. By default the nodes and the Provisioner run Ubuntu; set <code class="language-plaintext highlighter-rouge">marketplace_image</code> or <code class="language-plaintext highlighter-rouge">custom_image_id</code> to use RHEL or a hardened image instead.
 </div>
 
 <ol>
@@ -2664,7 +2664,7 @@ az storage account create <span class="nt">-n</span> mytfstatestorage <span clas
     <p>For more information, see the <a href="https://developer.hashicorp.com/terraform/language/backend/azurerm">azurerm backend</a> documentation.</p>
 
     <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />       <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>       <ul>
         <li>We don't recommend making further changes to this part of the configuration.</li>
         <li>We don't recommend storing the Terraform state locally for production deployments. Enable soft delete and blob versioning on the state storage account, and use a storage account dedicated to Terraform state.</li>
         <li>The shipped <code class="language-plaintext highlighter-rouge">backend.tf</code> file authenticates to the container with Microsoft Entra ID (<code class="language-plaintext highlighter-rouge">use_azuread_auth = true</code>), so the principal that runs Terraform needs <strong>Storage Blob Data Contributor</strong> on the container.</li>
@@ -2678,7 +2678,7 @@ az storage account create <span class="nt">-n</span> mytfstatestorage <span clas
     <p>Terraform prepares the environment, downloads the Qumulo provider from Qumulo’s registry, verifies its GPG-signed checksums, and displays the message <code class="language-plaintext highlighter-rouge">Terraform has been successfully initialized!</code></p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The <code class="language-plaintext highlighter-rouge">terraform init</code> command reports the Qumulo provider as self-signed. This is expected for providers hosted outside <code class="language-plaintext highlighter-rouge">registry.terraform.io</code> and doesn’t indicate a security issue; Terraform still performs full signature and checksum verification. For more information, see <a href="https://qumulo.github.io/terraform-provider-qumulo-cloud/installation-trust/">Installation and Trust</a> in the Qumulo Terraform provider documentation.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The <code class="language-plaintext highlighter-rouge">terraform init</code> command reports the Qumulo provider as self-signed. This is expected for providers hosted outside <code class="language-plaintext highlighter-rouge">registry.terraform.io</code> and doesn’t indicate a security issue; Terraform still performs full signature and checksum verification. For more information, see <a href="https://qumulo.github.io/terraform-provider-qumulo-cloud/installation-trust/">Installation and Trust</a> in the Qumulo Terraform provider documentation.
     </div>
   </li>
   <li>
@@ -2692,7 +2692,7 @@ az storage account create <span class="nt">-n</span> mytfstatestorage <span clas
         <p><strong>Basic Details:</strong> Specify the <code class="language-plaintext highlighter-rouge">deployment_name</code> (2–15 characters, lowercase letters, digits, and interior hyphens), the <code class="language-plaintext highlighter-rouge">resource_group_name</code>, and the correct <code class="language-plaintext highlighter-rouge">location</code> for your cluster. The provider creates the resource group if it doesn’t exist.</p>
 
         <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Don’t share the resource group with other VMs.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Don’t share the resource group with other VMs.
         </div>
       </li>
       <li>
@@ -2711,7 +2711,7 @@ az storage account create <span class="nt">-n</span> mytfstatestorage <span clas
         <p><strong>Cluster Configuration:</strong> Specify the <code class="language-plaintext highlighter-rouge">vm_type</code> and the <code class="language-plaintext highlighter-rouge">node_count</code>. Valid counts are 1, or 3–24; 2 is never valid. Only L-series storage-optimized sizes are supported, for example <code class="language-plaintext highlighter-rouge">Standard_L8s_v4</code>.</p>
 
         <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> A multi-AZ deployment needs at least 3 nodes and can’t use 4, so set <code class="language-plaintext highlighter-rouge">node_count</code> to 3, or to 5 or more, when you set <code class="language-plaintext highlighter-rouge">availability_zones</code>.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> A multi-AZ deployment needs at least 3 nodes and can’t use 4, so set <code class="language-plaintext highlighter-rouge">node_count</code> to 3, or to 5 or more, when you set <code class="language-plaintext highlighter-rouge">availability_zones</code>.
         </div>
       </li>
       <li>
@@ -2721,7 +2721,7 @@ az storage account create <span class="nt">-n</span> mytfstatestorage <span clas
         <p><strong>Soft Capacity Limit:</strong> If you aren’t using the default, set the <code class="language-plaintext highlighter-rouge">soft_capacity_limit_tb</code> (50–10,000). This value specifies the initial capacity limit of your Qumulo cluster (in TB).</p>
 
         <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> It is possible to increase this limit at any time, but not to decrease it.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> It is possible to increase this limit at any time, but not to decrease it.
         </div>
       </li>
       <li>
@@ -2751,7 +2751,7 @@ az storage account create <span class="nt">-n</span> mytfstatestorage <span clas
     <p>Specify the administrator password in <code class="language-plaintext highlighter-rouge">admin_pwd_or_keyvault_secret_id</code>, either as the resource ID of an <a href="https://learn.microsoft.com/en-us/azure/key-vault/secrets/about-secrets">Azure Key Vault secret</a> (<code class="language-plaintext highlighter-rouge">/subscriptions/.../vaults/&lt;vault&gt;/secrets/&lt;secret&gt;</code>) or as plain text. The password must be 8–72 characters and include at least three of: a lowercase letter, an uppercase letter, a number, and a special character.</p>
 
     <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />       <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>       <ul>
         <li>The system treats the administrator password as sensitive and write-only: It never writes it to the Terraform state.</li>
         <li>Use the Key Vault secret reference rather than a plain-text password, so that your secret store stays the single source of truth. Terraform reads the current version of the secret on every apply and resupplies it to the provider for operations that authenticate to the cluster, such as scaling and VM size changes. If you change the password on the cluster later, update the Key Vault secret to match before the next apply.</li>
       </ul>
@@ -2761,7 +2761,7 @@ az storage account create <span class="nt">-n</span> mytfstatestorage <span clas
 
 <h3 id="create-the-necessary-resources">Step 3: Create the Necessary Resources</h3>
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The repository sets a 30-minute timeout for create, update, and delete through <code class="language-plaintext highlighter-rouge">provider_timeout_minutes</code>. When VM capacity for your L-series size is unavailable, the provider keeps retrying in the region and zones you configured; it doesn’t move the deployment to a different zone or region on its own. To relocate, change <code class="language-plaintext highlighter-rouge">availability_zones</code> or <code class="language-plaintext highlighter-rouge">location</code> and run the apply again, which replaces the cluster. You can also raise <code class="language-plaintext highlighter-rouge">provider_create_timeout_minutes</code> and let the provider keep retrying.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The repository sets a 30-minute timeout for create, update, and delete through <code class="language-plaintext highlighter-rouge">provider_timeout_minutes</code>. When VM capacity for your L-series size is unavailable, the provider keeps retrying in the region and zones you configured; it doesn’t move the deployment to a different zone or region on its own. To relocate, change <code class="language-plaintext highlighter-rouge">availability_zones</code> or <code class="language-plaintext highlighter-rouge">location</code> and run the apply again, which replaces the cluster. You can also raise <code class="language-plaintext highlighter-rouge">provider_create_timeout_minutes</code> and let the provider keep retrying.
 </div>
 
 <ol>
@@ -2823,7 +2823,7 @@ soft_capacity_limit_tb = 100
 </code></pre></div>    </div>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Terraform escapes backslashes when it prints string values, so the SMB endpoint appears with doubled backslashes. The path clients use is <code class="language-plaintext highlighter-rouge">\\&lt;IP address&gt;\&lt;SMB Share Name&gt;</code>.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Terraform escapes backslashes when it prints string values, so the SMB endpoint appears with doubled backslashes. The path clients use is <code class="language-plaintext highlighter-rouge">\\&lt;IP address&gt;\&lt;SMB Share Name&gt;</code>.
     </div>
   </li>
 </ol>
@@ -2834,7 +2834,7 @@ soft_capacity_limit_tb = 100
     <p>To log in to your cluster’s Web UI, use the <code class="language-plaintext highlighter-rouge">web_ui</code> endpoint from the Terraform output and the username <code class="language-plaintext highlighter-rouge">admin</code> with the password that you have configured.</p>
 
     <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />       <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>       <ul>
         <li>The administrator password is applied at cluster creation and is never written to the Terraform state.</li>
         <li>If you change the password by using the Qumulo Core Web UI, <code class="language-plaintext highlighter-rouge">qq</code> CLI, or REST API after deployment, update the Key Vault secret (or the value in <code class="language-plaintext highlighter-rouge">terraform.tfvars</code>) to match. Terraform resupplies the password to the provider on every apply that authenticates to the cluster, and a mismatch fails that apply part-way through.</li>
       </ul>
@@ -2854,7 +2854,7 @@ soft_capacity_limit_tb = 100
     <p>Mount your Qumulo file system by using NFS or SMB and your cluster’s DNS name or an IP address from the Terraform output.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Clients must be inside a range listed in <code class="language-plaintext highlighter-rouge">allow_cidrs</code>, or inside the cluster subnet when <code class="language-plaintext highlighter-rouge">allow_cidrs</code> is unset.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Clients must be inside a range listed in <code class="language-plaintext highlighter-rouge">allow_cidrs</code>, or inside the cluster subnet when <code class="language-plaintext highlighter-rouge">allow_cidrs</code> is unset.
     </div>
   </li>
 </ol>
@@ -2863,7 +2863,7 @@ soft_capacity_limit_tb = 100
 <p>This section describes the common actions you can perform on a CNQ cluster after deploying it: <a href="#adding-node-to-existing-cluster">adding nodes</a>, <a href="#removing-node-from-existing-cluster">removing nodes</a>, <a href="#increasing-soft-capacity-limit-existing-cluster">increasing the soft capacity limit</a>, <a href="#changing-the-vm-size">changing the VM size</a>, <a href="#upgrading-qumulo-core">upgrading Qumulo Core</a>, and <a href="#deleting-existing-cluster">deleting a cluster</a>. Each action is a variable change followed by a <code class="language-plaintext highlighter-rouge">terraform apply</code> command; there are no Terraform workspaces to manage and no multi-stage sequences.</p>
 
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>Leave <code class="language-plaintext highlighter-rouge">cluster_version</code> at the value you deployed with. The version is immutable after creation, and changing it fails the apply immediately, including after you upgrade Qumulo Core from the Web UI or the <code class="language-plaintext highlighter-rouge">qq</code> CLI.</li>
     <li>The provider matches the software version your cluster is already running for every node add and node replacement, so no day-2 operation needs the variable updated.</li>
   </ul>
@@ -2891,7 +2891,7 @@ soft_capacity_limit_tb = 100
 <p>Removing nodes is a single Terraform operation. The separate quorum-removal (<code class="language-plaintext highlighter-rouge">q_target_node_count</code>) and resource-cleanup steps of the legacy bundle are now handled by the Qumulo Terraform provider.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can’t choose which node leaves. Lowering <code class="language-plaintext highlighter-rouge">node_count</code> removes the highest-numbered nodes, so taking a 4-node cluster to 3 removes node 4; there is no supported way to remove node 2 and keep node 4. To retire a specific node, replace the cluster instead.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> You can’t choose which node leaves. Lowering <code class="language-plaintext highlighter-rouge">node_count</code> removes the highest-numbered nodes, so taking a 4-node cluster to 3 removes node 4; there is no supported way to remove node 2 and keep node 4. To retire a specific node, replace the cluster instead.
 </div>
 
 <ol>
@@ -2908,7 +2908,7 @@ soft_capacity_limit_tb = 100
 
 <h3 id="increasing-soft-capacity-limit-existing-cluster">Increasing the Soft Capacity Limit for an Existing CNQ on Azure Cluster</h3>
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>One apply can raise the soft capacity limit by almost 5,000 TB: The increase must be under 5,000 TB, so an increase of 5,000 TB or more has to be applied in steps.</li>
     <li>The ceiling is 10,000 TB.</li>
     <li>It isn't possible to decrease the soft capacity limit.</li>
@@ -2933,7 +2933,7 @@ soft_capacity_limit_tb = 100
 <p>The Qumulo Terraform provider performs the replacement natively within the existing deployment. The cluster replacement procedure no longer requires a new Terraform workspace or the <code class="language-plaintext highlighter-rouge">q_replacement_cluster</code> and <code class="language-plaintext highlighter-rouge">q_existing_deployment_unique_name</code> variables.</p>
 
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>Changing the VM size, the availability zones, or the node image replaces cluster nodes.</li>
     <li>Don't resize the VMs in the Azure portal.</li>
   </ul>
@@ -2956,7 +2956,7 @@ soft_capacity_limit_tb = 100
 
 <h3 id="deleting-existing-cluster">Deleting an Existing CNQ on Azure Cluster</h3>
 <div class="alert alert-danger" role="alert">
-<em class="fa fa-exclamation-circle"></em> <strong>Caution</strong><br />   <ul>
+<em class="fa fa-exclamation-circle"></em> <strong>Caution</strong><br>   <ul>
     <li>When you no longer need your cluster, you must back up all important data on the cluster safely before deleting the cluster. Deleting the cluster deletes its compute and cache resources and its persistent storage.</li>
     <li>Until you disable deletion protection and apply this change, the <code class="language-plaintext highlighter-rouge">CanNotDelete</code> management locks refuse deletion from Terraform, the Azure portal, and the Azure CLI alike.</li>
   </ul>

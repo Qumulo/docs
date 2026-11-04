@@ -2421,7 +2421,7 @@ $(document).ready(function() {
 <p>This section explains how to create, retrieve, list, and delete user-defined metadata by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI.</p>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>All <code class="language-plaintext highlighter-rouge">qq</code> CLI commands default to using the <code class="language-plaintext highlighter-rouge">GENERIC</code> keyspace.       <ul>
         <li>For the <code class="language-plaintext highlighter-rouge">S3</code> keyspace, use the <code class="language-plaintext highlighter-rouge">--s3</code> flag.</li>
         <li>For the <a href="#well-known-keyspace"><code class="language-plaintext highlighter-rouge">WELL_KNOWN</code> keyspace</a>, use the <code class="language-plaintext highlighter-rouge">--well-known</code> flag.</li>
@@ -2503,7 +2503,7 @@ $(document).ready(function() {
 <p>In Qumulo Core 7.10.2.1 (and higher), you can change the <a href="../s3-api/supported-s3-functionality-known-limits.html#special-considerations-standard-object-headers">standard object headers</a> that the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"><code class="language-plaintext highlighter-rouge">GetObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html"><code class="language-plaintext highlighter-rouge">HeadObject</code></a> S3 API actions returns for an object without rewriting the object.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Deleting the <code class="language-plaintext highlighter-rouge">content-type</code> key causes <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"><code class="language-plaintext highlighter-rouge">GetObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html"><code class="language-plaintext highlighter-rouge">HeadObject</code></a> API actions to return <code class="language-plaintext highlighter-rouge">Content-Type: binary/octet-stream</code> for the object.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Deleting the <code class="language-plaintext highlighter-rouge">content-type</code> key causes <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html"><code class="language-plaintext highlighter-rouge">GetObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html"><code class="language-plaintext highlighter-rouge">HeadObject</code></a> API actions to return <code class="language-plaintext highlighter-rouge">Content-Type: binary/octet-stream</code> for the object.
 </div>
 
 <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_set_user_metadata.html"><code class="language-plaintext highlighter-rouge">qq fs_set_user_metadata</code></a>
@@ -2530,7 +2530,7 @@ $(document).ready(function() {
 <h2 id="managing-user-defined-metadata-by-using-the-s3-api">Managing User-Defined Metadata by Using the S3 API</h2>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> In Qumulo Core 6.3.2 (and higher) the <a href="../s3-api">Qumulo S3 API</a> supports user-defined metadata fully. For more information about how to access metadata by using the S3 API, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html">Amazon Simple Storage Service
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> In Qumulo Core 6.3.2 (and higher) the <a href="../s3-api">Qumulo S3 API</a> supports user-defined metadata fully. For more information about how to access metadata by using the S3 API, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html">Amazon Simple Storage Service
 API Reference</a>.
 </div>
 
@@ -2554,7 +2554,7 @@ API Reference</a>.
       <td>Tags</td>
       <td>
         Mutable metadata that doesn't impact the object's entity tag
-        <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Only tag values encoded with UTF-8 are visible to the S3 API.</div>
+        <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Only tag values encoded with UTF-8 are visible to the S3 API.</div>
 
       </td>
       <td><a href="#keyspace"><code>GENERIC</code> keyspace</a></td>

@@ -2419,7 +2419,7 @@ $(document).ready(function() {
    
      
      <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can configure an S3 bucket to allow <a href="managing-access-to-s3-buckets.html#enabling-anonymous-access">read-only, anonymous access</a>. This approach requires no credentials but limits users to non-modifying operations.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> You can configure an S3 bucket to allow <a href="managing-access-to-s3-buckets.html#enabling-anonymous-access">read-only, anonymous access</a>. This approach requires no credentials but limits users to non-modifying operations.
 </div>
 
 <p>In Qumulo Core 7.2.3.2 (and higher), system users can list, create, and delete S3 access keys for their <a href="#identity">identities</a>.</p>
@@ -2440,7 +2440,7 @@ $(document).ready(function() {
 <p id="identity">An <em>identity</em> is a single principal from an identity provider (IdP). Examples of identities include SMB security identifiers (SIDs), Active Directory user principal names (UPNs), POSIX user identifiers (UIDs), and local users in a Qumulo cluster.</p>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> It isn’t possible to create access keys for UIDs in an Active Directory environment that has POSIX extensions enabled. However, it is possible to use Active Directory identity identifiers (SIDs, UPNs, and so on).
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> It isn’t possible to create access keys for UIDs in an Active Directory environment that has POSIX extensions enabled. However, it is possible to use Active Directory identity identifiers (SIDs, UPNs, and so on).
 </div>
 
 <p>An <em>access key</em> (or <em>access key pair)</em> is comprised of an S3 access key ID and an S3 secret access key.</p>
@@ -2455,7 +2455,7 @@ $(document).ready(function() {
 </ul>
 
 <div class="alert alert-warning" role="alert">
-<em class="fa fa-warning"></em> <strong>Important</strong><br />   <ul>
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>Qumulo Core uses a cryptographically secure source, certified according to FIPS 140-2 requirements, to derive secret access keys.</li>
     <li>Because access keys are cluster-local, you can't use an access key for an identity in one Qumulo cluster on a different Qumulo cluster.</li>
   </ul>
@@ -2476,7 +2476,7 @@ $(document).ready(function() {
 <p>To authenticate S3 API requests, Qumulo Core retrieves existing access key pairs that it stores securely as configuration metadata in your Qumulo cluster. Qumulo Core encrypts secret access keys on disk and holds decrypted secret access keys in memory (only while it processes a request).</p>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Because (unlike <em>secret access keys)</em> your <em>access key IDs</em> aren’t a cryptographic secret, Qumulo Core <em>can</em> log and display access key IDs. After Qumulo Core initially creates your secret access keys, it never logs or displays them again. If you lose your secret access key, it isn’t possible to recover it and you must create a new access key pair.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Because (unlike <em>secret access keys)</em> your <em>access key IDs</em> aren’t a cryptographic secret, Qumulo Core <em>can</em> log and display access key IDs. After Qumulo Core initially creates your secret access keys, it never logs or displays them again. If you lose your secret access key, it isn’t possible to recover it and you must create a new access key pair.
 </div>
 
 <h3 id="s3-access-key-lifecycle-in-qumulo-core">S3 Access Key Lifecycle in Qumulo Core</h3>
@@ -2485,7 +2485,7 @@ $(document).ready(function() {
 <p>For more information, see <a href="#listing-s3-access-keys">Listing S3 Access Keys for a Qumulo Cluster</a>.</p>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>To facilitate key rotation, each user <a href="#identity">identity</a> can have at most two S3 access key pairs associated with it. It is a good practice to delete a user's old access key after you create a new one and test that the new key works.</li>
     <li>If you revoke an access key pair, it isn't possible to restore it. Before you revoke an access key pair, ensure that no critical applications depend on it.</li>
   </ul>
@@ -2498,7 +2498,7 @@ $(document).ready(function() {
 <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_create_access_key.html"><code class="language-plaintext highlighter-rouge">qq s3_create_access_key</code></a>
  command and use the <code class="language-plaintext highlighter-rouge">--self</code> flag. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq s3_create_access_key <span class="nt">--self</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq s3_create_access_key <span class="nt">--self</span>
 </code></pre></div></div>
 
 <p>The following is example output.</p>
@@ -2519,7 +2519,7 @@ $(document).ready(function() {
 </span></code></pre></div></div>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> After Qumulo Core initially creates your secret access keys, it never logs or displays them again. If you lose your secret access key, it isn’t possible to recover it and you must create a new access key pair.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> After Qumulo Core initially creates your secret access keys, it never logs or displays them again. If you lose your secret access key, it isn’t possible to recover it and you must create a new access key pair.
 </div>
 
 <h3 id="to-create-an-access-key-for-another-user-identity-by-using-the-qq-cli">To Create an Access Key for Another User Identity by Using the qq CLI</h3>
@@ -2528,7 +2528,7 @@ $(document).ready(function() {
 <p>To create an S3 access key for a particular user , run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_create_access_key.html"><code class="language-plaintext highlighter-rouge">qq s3_create_access_key</code></a>
  command and specify an identity. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq s3_create_access_key ANOTHER_IDENTITY
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq s3_create_access_key ANOTHER_IDENTITY
 </code></pre></div></div>
 
 <p>You can specify an identity by using:</p>
@@ -2561,7 +2561,7 @@ $(document).ready(function() {
 </ul>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Currently, it isn’t possible to associate an S3 access key with a POSIX group ID (GID).
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Currently, it isn’t possible to associate an S3 access key with a POSIX group ID (GID).
 </div>
 
 <p>The following is example output.</p>
@@ -2582,7 +2582,7 @@ $(document).ready(function() {
 </span></code></pre></div></div>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> After Qumulo Core initially creates your secret access keys, it never logs or displays them again. If you lose your secret access key, it isn’t possible to recover it and you must create a new access key pair.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> After Qumulo Core initially creates your secret access keys, it never logs or displays them again. If you lose your secret access key, it isn’t possible to recover it and you must create a new access key pair.
 </div>
 
 <h3 id="to-create-an-s3-access-key-by-using-the-qumulo-rest-api">To Create an S3 Access Key by Using the Qumulo REST API</h3>
@@ -2627,14 +2627,14 @@ $(document).ready(function() {
 </span></code></pre></div></div>
 
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> After Qumulo Core initially creates your secret access keys, it never logs or displays them again. If you lose your secret access key, it isn’t possible to recover it and you must create a new access key pair.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> After Qumulo Core initially creates your secret access keys, it never logs or displays them again. If you lose your secret access key, it isn’t possible to recover it and you must create a new access key pair.
 </div>
 
 <h2 id="listing-s3-access-keys">Listing S3 Access Keys for a Qumulo Cluster</h2>
 <p>You can list every S3 access key known to your Qumulo cluster, along with the identities associated with the key and the key creation times, by using the Qumulo REST API or <code class="language-plaintext highlighter-rouge">qq</code> CLI. The <code class="language-plaintext highlighter-rouge">PRIVILEGE_S3_BUCKETS_READ</code> privilege is required.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core doesn’t list access keys in any particular order. To sort keys according to fields such as <code class="language-plaintext highlighter-rouge">creation_time</code> or <code class="language-plaintext highlighter-rouge">owner</code> you must process or filter the response.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Qumulo Core doesn’t list access keys in any particular order. To sort keys according to fields such as <code class="language-plaintext highlighter-rouge">creation_time</code> or <code class="language-plaintext highlighter-rouge">owner</code> you must process or filter the response.
 </div>
 
 <h3 id="to-list-s3-access-keys-for-your-own-user-identity-by-using-the-qq-cli">To List S3 Access Keys for Your Own User Identity by Using the qq CLI</h3>
@@ -2644,7 +2644,7 @@ $(document).ready(function() {
     <p>To list the S3 access keys for your user known to your Qumulo cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_list_access_keys.html"><code class="language-plaintext highlighter-rouge">qq s3_list_access_keys</code></a>
 :</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq s3_list_access_keys  <span class="nt">--self</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq s3_list_access_keys  <span class="nt">--self</span>
 </code></pre></div>    </div>
 
     <p>The following is example output. All times are in the UTC time zone.</p>
@@ -2731,7 +2731,7 @@ $(document).ready(function() {
 <p>To list all S3 access keys known to your Qumulo cluster, send a <code class="language-plaintext highlighter-rouge">GET</code> request to the <code class="language-plaintext highlighter-rouge">/v1/s3/access-keys/</code> endpoint.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> To restrict the number of returned results, up to the maximum of 10,000 access keys (this is the default limit), include the optional <code class="language-plaintext highlighter-rouge">limit</code> query parameter in the request.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> To restrict the number of returned results, up to the maximum of 10,000 access keys (this is the default limit), include the optional <code class="language-plaintext highlighter-rouge">limit</code> query parameter in the request.
 </div>
 
 <p>The following is example output. The <code class="language-plaintext highlighter-rouge">entries</code> list contains the access keys, limited to the first 10,000. The <code class="language-plaintext highlighter-rouge">paging.next</code> field contains the URI to which you can send a <code class="language-plaintext highlighter-rouge">GET</code> request to retrieve the next page of access keys. By making <code class="language-plaintext highlighter-rouge">GET</code> requests with all returned <code class="language-plaintext highlighter-rouge">paging.next</code> values, you can iterate over all of the access keys in the cluster.</p>
@@ -2765,7 +2765,7 @@ $(document).ready(function() {
 <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_delete_access_key.html"><code class="language-plaintext highlighter-rouge">qq s3_delete_access_key</code></a>
  command and specify the access key ID. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq s3_delete_access_key <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq s3_delete_access_key <span class="se">\</span>
   <span class="nt">--id</span> 000000000001fEXAMPLE
 </code></pre></div></div>
 
@@ -2774,7 +2774,7 @@ $(document).ready(function() {
 
 <h2 id="configuring-active-directory-ad-for-s3">Configuring Active Directory (AD) for S3</h2>
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> To be able to create access keys for a user in a joined AD domain, the user must exist within the domain’s base DN.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> To be able to create access keys for a user in a joined AD domain, the user must exist within the domain’s base DN.
 </div>
 
 <p>For users that exist in an AD domain that has a trust relationship with the joined domain, you must append that domain’s base DN to the base DN in your Qumulo cluster’s AD configuration.</p>
@@ -2782,7 +2782,7 @@ $(document).ready(function() {
 <p>To append the trusted base DN to the base DN in use—with a semicolon (<code class="language-plaintext highlighter-rouge">;</code>) separating the two—use the Qumulo Core Web UI or the <a href="https://docs.qumulo.com/qq-cli-command-guide/ad/ad_reconfigure.html"><code class="language-plaintext highlighter-rouge">qq ad_reconfigure</code></a>
  command. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq ad_reconfigure <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq ad_reconfigure <span class="se">\</span>
   <span class="nt">--base-dn</span> <span class="s1">'CN=Users, DC=joined_domain,DC=example,DC=com;\
   CN=Users,DC=trusted_domain,DC=example,DC=com'</span>
 </code></pre></div></div>

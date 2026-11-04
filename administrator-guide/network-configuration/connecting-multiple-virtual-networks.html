@@ -2735,7 +2735,7 @@ $(document).ready(function() {
 <p>After you configure the first network for your Qumulo cluster, you can add more networks to it.</p>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>If you can add both static and floating IP addresses, they must be on the same network.</li>
     <li>You can use multiple <code class="language-plaintext highlighter-rouge">--floating-ip-ranges</code> or <code class="language-plaintext highlighter-rouge">--dns-servers</code> flags.</li>
     <li>Each VLAN can have different MTU values, as long as the MTU value of the <code class="language-plaintext highlighter-rouge">Default</code> network is equal or greater than the combined MTU values of all networks in your Qumulo cluster. To set the MTU value for the <code class="language-plaintext highlighter-rouge">Default</code> network, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_interface.html"><code class="language-plaintext highlighter-rouge">qq network_mod_interface</code></a> command. Then, you can set an equal or smaller MTU value for the other networks.</li>

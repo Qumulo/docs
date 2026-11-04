@@ -2810,13 +2810,13 @@ $(document).ready(function() {
       <td><code>Statements</code></td>
       <td>
         <p>Contains a list of statements, and the following fields for each policy statement</p>
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The order of the fields has no effect on the permissions that an access policy grants for an S3 bucket.</div>
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The order of the fields has no effect on the permissions that an access policy grants for an S3 bucket.</div>
 
         <ul>
           <li><code>Action</code>: Specifies a list of <a href="#actions">API actions supported in Qumulo clusters</a> to which the policy statement applies</li>
           <li>
             <p><code>Effect</code>: Specifies either <code>Allow</code> or <code>Deny</code></p>
-            <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
+            <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br>
             <ul>
               <li>Unless the policy statement has at least one matching <code>Allow</code> statement and no <code>Deny</code> statements for an action, the system outputs the <code>AccessDeniedByBucketPolicy</code> error.</li>
               <li>For the S3 API and Qumulo REST API, if a user has the <a href="https://care.qumulo.com/hc/en-us/articles/360036591633">role-based access control privilege (RBAC)</a> to perform an API action, Qumulo Core <a href="#rbac-overrides">ignores the access policy</a> and permits the API action.</li>
@@ -2826,7 +2826,7 @@ $(document).ready(function() {
           </li>
           <li>
             <p><code>Index</code>: The system ignores this field when you configure the access policy for an S3 bucket.</p>
-            <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
+            <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br>
             <ul>
               <li>To retrieve index for a policy statement, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_get_bucket_policy.html"><code>qq s3_get_bucket_policy</code></a>
  command.</li>
@@ -2853,7 +2853,7 @@ $(document).ready(function() {
 <p>The following table describes the subset of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/list_amazons3.html#amazons3-actions-as-permissions">Amazon S3 API action permissions</a> which Qumulo Core access policies support.</p>
 
 <div class="alert alert-info" role="alert">
-<em class="fa fa-info-circle"></em> <strong>Note</strong><br />   <ul>
+<em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
     <li>Certain permissions (such as <code class="language-plaintext highlighter-rouge">s3:AbortMultipartUpload</code>) grant permission to both S3 API and Qumulo REST API variants of an API call.</li>
     <li>Certain permissions (such as <code class="language-plaintext highlighter-rouge">s3:GetBucketAcl</code>) grant permission to S3 APIs that are currently implemented partially within Qumulo Core.</li>
     <li><code class="language-plaintext highlighter-rouge">s3:*</code> matches all S3 API actions.</li>
@@ -2900,7 +2900,7 @@ $(document).ready(function() {
       <td><code>s3:GetBucketLocation</code></td>
       <td>
         <p>Retrieve the region in which the S3 bucket is located</p>
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Currently, because Qumulo Core doesn’t use regions, the system always returns <code class="language-plaintext highlighter-rouge">local</code>.</div>
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Currently, because Qumulo Core doesn’t use regions, the system always returns <code class="language-plaintext highlighter-rouge">local</code>.</div>
 
       </td>
     </tr>
@@ -2936,7 +2936,7 @@ $(document).ready(function() {
       <td><code>s3:GetObject</code></td>
       <td>
         <p>Download any object from the S3 bucket</p>
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The file system permissions take precedence over this permission.</div>
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> The file system permissions take precedence over this permission.</div>
 
       </td>
     </tr>

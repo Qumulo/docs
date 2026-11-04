@@ -2712,7 +2712,7 @@ $(document).ready(function() {
     </ul>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can use Host-Managed Networking with or without the Qumulo REST API. However, using floating IP addresses requires tagging with alternative names and REST API access.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> You can use Host-Managed Networking with or without the Qumulo REST API. However, using floating IP addresses requires tagging with alternative names and REST API access.
     </div>
 
     <p>To disable Host-Managed Networking, enable Qumulo-Managed Networking when you <a href="../getting-started/installing-product-package.html#install-qumulo-core-product-package">install the Qumulo Core Product Package</a>.</p>
@@ -2768,7 +2768,7 @@ $(document).ready(function() {
         <p>The permanent MAC address of the NIC and the corresponding alternative name</p>
 
         <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> If you change the NIC in the node, you must update the <code class="language-plaintext highlighter-rouge">10-altname.link</code> file.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> If you change the NIC in the node, you must update the <code class="language-plaintext highlighter-rouge">10-altname.link</code> file.
         </div>
 
         <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[Match]</span>
@@ -2874,7 +2874,7 @@ $(document).ready(function() {
 <p>The back-end role instructs a NIC to facilitate inter-node communication. To assign this role, run the <code class="language-plaintext highlighter-rouge">ip link</code> command and specify the network interface name and the alternative name.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core permits only one interface to be tagged as <code class="language-plaintext highlighter-rouge">qumulo-backend</code>.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Qumulo Core permits only one interface to be tagged as <code class="language-plaintext highlighter-rouge">qumulo-backend</code>.
 </div>
 
 <p>In the following example, the network interface name is <code class="language-plaintext highlighter-rouge">eth1</code> and the alternative name is <code class="language-plaintext highlighter-rouge">qumulo-backend</code>.</p>
@@ -2968,7 +2968,7 @@ Click to expand
     <li>
       <p><strong>Three Network Interfaces with a Link:</strong> Qumulo Core labels the interface with the lowest PCIe address as <code class="language-plaintext highlighter-rouge">USE_FOR_FRONTEND_AND_BACKEND</code> and the interfaces with the next highest and the highest PCIe addresses as <code class="language-plaintext highlighter-rouge">USE_FOR_FRONTEND</code>.</p>
       <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Although the interface with the lowest PCIe address is labeled for both front-end and back-end connections, only front-end traffic flows through this interface.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Although the interface with the lowest PCIe address is labeled for both front-end and back-end connections, only front-end traffic flows through this interface.
       </div>
     </li>
   </ul>
