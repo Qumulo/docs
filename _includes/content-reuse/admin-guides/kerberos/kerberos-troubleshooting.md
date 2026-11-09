@@ -56,7 +56,7 @@ Under certain conditions, you might receive mount-failed errors from `mount.nfs`
 
 1. Confirm that the client has a `host` service principal name (SPN) and that the cluster has an `nfs` SPN that matches the DNS records.
 
-1. Do one of the following:
+1. Take one of the following actions:
 
    * If you use a machine account or `kinit` authentication, confirm that the credentials are correct. You can run the keytab `ktutil` command or the credential cache `klist` command to list the encryption methods.
 

@@ -329,7 +329,7 @@ RESTful APIs, such as the Qumulo Core S3 API, use HTTP [ETags](https://developer
 <ul>
   <li>Certain applications might assume that S3 object ETags contain the MD5 checksum of the object's contents. Such applications might not function properly with the Qumulo S3 API.</li>
   <li>
-    To maintain data integrity, we recommend that applications do one of the following:
+    To maintain data integrity, we recommend that applications take one of the following actions:
     <ul>
       <li><a href="configuring-using-s3-api.html">Configure HTTPS for the S3 API</a></li>
       <li>Include the <code>Content-MD5</code> header with the checksum of the object's contents</li>

@@ -62,7 +62,7 @@ This section explains how to deploy the {{site.azure.qumuloOnAzureShort}} servic
 
    1. Select the **Virtual network** for hosting your service. For more information, see [Virtual Networking Prerequisites for {{site.azure.qumuloOnAzureShort}}](virtual-networking-prerequisites-azure-native-qumulo.html).
    
-   1. Do one of the following:
+   1. Take one of the following actions:
 
       * Select an existing [delegated subnet](https://learn.microsoft.com/en-us/azure/virtual-network/subnet-delegation-overview) to associate with your service.
         

@@ -89,7 +89,7 @@ Every Qumulo Core upgrade has two phases, _preparation_ and _commit_.
 1. Click **Upgrade...**
 
 {% if page.platform == 'on-prem' %}
-1. Depending on the [upgrade mode for your release](mode-reference.html), do one of the following:
+1. Depending on the [upgrade mode for your release](mode-reference.html), take one of the following actions:
 
    * **Instant Software Upgrade:** In the **Ready to upgrade?** dialog box, confirm the current and new versions of Qumulo Core and then click **Start Upgrade**.
 
@@ -124,7 +124,7 @@ Every Qumulo Core upgrade has two phases, _preparation_ and _commit_.
 
 1. To become the root user, run the `sudo -s` command.
 
-1. Depending on the current Qumulo Core version on your cluster, do one of the following:
+1. Depending on the current Qumulo Core version on your cluster, take one of the following actions:
 
    * **Qumulo Core 5.1.0.1 (and Higher):**
 

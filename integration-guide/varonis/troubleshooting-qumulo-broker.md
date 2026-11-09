@@ -10,7 +10,7 @@ sidebar: integration_guide_sidebar
 
 ## To Troubleshoot Qumulo Broker
 
-1. Do one of the following:
+1. Take one of the following actions:
 
    * View Qumulo Broker operation logs in the `/var/log/qumulo_audit.log` file.
    

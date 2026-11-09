@@ -91,7 +91,7 @@ If you use a network manager other than `systemd-networkd` or need an alternativ
    systemctl enable qumulo-set-altname.service
    ```
 
-1. To start the service and enable alternative names immediately, do one of the following:
+1. To start the service and enable alternative names immediately, take one of the following actions:
 
    * Restart the node
      

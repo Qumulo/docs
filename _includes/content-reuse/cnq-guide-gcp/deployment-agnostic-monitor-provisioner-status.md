@@ -22,7 +22,7 @@ You can monitor the Provisioner from the GCP Console or by using the `gcloud` CL
     </div>
   </li>
   <li>
-    <p>Do one of the following:</p>
+    <p>Take one of the following actions:</p>
     <ul>
       <li>
         <p>If the Provisioner's status is <code>RUNNING</code>, you can retrieve the last console logs for troubleshooting by using the <code>gcloud compute instances get-serial-port-output</code> command and specify your deployment's name and the availability zone. For example:</p>

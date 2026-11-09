@@ -77,7 +77,7 @@ In the following example, a Qumulo cluster has the following export configuratio
 
 Because `/` is a prefix of `/admin`, you can't enable NFSv4.1 with this export configuration. This restriction prevents the situation where the path `/admin` can refer to both the export of `/home/admin` or the actual file system path `/admin`.
 
-To prepare this configuration for NFSv4.1, you can do one of the following:
+To prepare this configuration for NFSv4.1, you can take one of the following actions:
 * Delete the `/` export and use NFSv4.1 presentation of exports when mounting `/`.
 * Delete the `/admin` export.
 * Give the `/` export a name that doesn't use other exports as a prefix, for example:
