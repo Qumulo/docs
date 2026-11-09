@@ -2532,7 +2532,7 @@ $(document).ready(function() {
 
 <p>Because <code class="language-plaintext highlighter-rouge">/</code> is a prefix of <code class="language-plaintext highlighter-rouge">/admin</code>, you can’t enable NFSv4.1 with this export configuration. This restriction prevents the situation where the path <code class="language-plaintext highlighter-rouge">/admin</code> can refer to both the export of <code class="language-plaintext highlighter-rouge">/home/admin</code> or the actual file system path <code class="language-plaintext highlighter-rouge">/admin</code>.</p>
 
-<p>To prepare this configuration for NFSv4.1, you can do one of the following:</p>
+<p>To prepare this configuration for NFSv4.1, you can take one of the following actions:</p>
 <ul>
   <li>Delete the <code class="language-plaintext highlighter-rouge">/</code> export and use NFSv4.1 presentation of exports when mounting <code class="language-plaintext highlighter-rouge">/</code>.</li>
   <li>Delete the <code class="language-plaintext highlighter-rouge">/admin</code> export.</li>
