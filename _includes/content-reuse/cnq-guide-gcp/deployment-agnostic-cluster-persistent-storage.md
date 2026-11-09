@@ -28,7 +28,7 @@ To configure the persistent storage, you must specify storage configuration in t
 
 1. Navigate to the `persistent-storage` directory and edit the `backend.tf` file:
 
-   * To use remote storage, do the following:
+   * To use remote storage, take the following steps:
 
      1. Set the `bucket` variable to the name of your GCS bucket.
         
@@ -38,7 +38,7 @@ To configure the persistent storage, you must specify storage configuration in t
 
 1. Edit the `terraform.tfvars` file:
 
-   * To store the Terraform state remotely, do the following:
+   * To store the Terraform state remotely, take the following steps:
 
      1. Set the `tf_persistent_storage_backend_type` variable to `gcs`.
 

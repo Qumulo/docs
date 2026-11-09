@@ -3,7 +3,7 @@
 
 1. Click **Cluster > LDAP**.
 
-1. On the **LDAP Configuration** page, click **Edit** and then do the following:
+1. On the **LDAP Configuration** page, click **Edit** and then take the following steps:
 
    1. For **Use LDAP features**, click **Yes**.
 

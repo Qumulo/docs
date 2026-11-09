@@ -5,7 +5,7 @@
 
 1. On the right side of the **SMB Shares** page, click **Create Share**.
 
-1. On the **Create SMB Share** page, take the following steps.
+1. On the **Create SMB Share** page, take the following steps:
 
    1. Enter the **File system path** from the root of your file system.
 

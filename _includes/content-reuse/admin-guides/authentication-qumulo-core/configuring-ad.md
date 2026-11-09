@@ -3,7 +3,7 @@
 
 1. Click **Cluster > Active Directory**.
 
-1. On the **Active Directory** page, click **Edit** and then do the following:
+1. On the **Active Directory** page, click **Edit** and then take the following steps:
 
    1. Enter the **Domain Name**.
 
