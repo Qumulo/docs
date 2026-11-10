@@ -48,6 +48,10 @@ entries:
       url: /administrator-guide/getting-started/installing-product-package.html
       output: web, pdf
 
+    - title: Creating a Cluster
+      url: /administrator-guide/getting-started/creating-cluster.html
+      output: web, pdf
+
     - title: Configuring Interface Tagging for Host-Managed Networking
       url: /administrator-guide/getting-started/configuring-interface-tagging-host-managed-networking.html
       output: web, pdf
