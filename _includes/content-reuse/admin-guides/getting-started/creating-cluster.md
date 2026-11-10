@@ -1,3 +1,5 @@
+## To Create and Configure a Qumulo Cluster
+
 1. Review the End User Agreement, click **I agree to the End User Agreement**, and then click **Submit**.
 
 1. In the **1. Set up cluster** section, take the following steps:
