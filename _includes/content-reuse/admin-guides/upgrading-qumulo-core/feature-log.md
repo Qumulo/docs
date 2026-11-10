@@ -7,15 +7,13 @@ div#toc {
 {% include inject_css.html css=custom_css %}
 {% capture nexusLink %}<p>{{site.downloadsRelnotes}}{{site.loginRequired}}</p>{% endcapture %}
 {% comment %}For boilerplate text, use {{page.varNoPublicChanges}}{% endcomment %}
-{% capture majFixInt %}{{ site.fixedInLatest }} <span class="fixed-in-latest">The majority of functionality and stability improvements in this Qumulo Core release are internal.</span>{% endcapture %}
+{% capture majFixInt %}The majority of functionality and stability improvements in this Qumulo Core release are internal.{% endcapture %}
 {% capture noAPIchanges %}This release contains no REST API changes.{% endcapture %}
 {% capture platUpg %}This release of Qumulo Core is a _platform upgrade_ that requires either a complete reboot (rebooting all nodes in your cluster at the same time) or a rolling reboot (rebooting the nodes in your cluster one at a time).{% endcapture %}
 
 {% if page.platform == 'on-prem' %}
 For information about upgrade types for each release, see <a href='mode-reference.html'>Qumulo Core Upgrade Mode Reference</a>.
 {% endif %}
-
-{{ site.fixedInLatest }} <span class="fixed-in-latest">Fixed in latest version</span>
 
 
 ## 7.10 Releases
