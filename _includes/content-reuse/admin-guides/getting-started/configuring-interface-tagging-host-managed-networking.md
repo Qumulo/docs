@@ -27,7 +27,7 @@ If you use `systemd-networkd` as your network manager, you can let the network c
      Path=pci-0000:01:00.0
 
      [Link]
-     AlternativeNames=qumulo-backend
+     AlternativeName=qumulo-backend
      ```
 
    * The permanent MAC address of the NIC and the corresponding alternative name
@@ -39,7 +39,7 @@ If you use `systemd-networkd` as your network manager, you can let the network c
      PermanentMACAddress=b4:96:91:f6:33:1c
 
      [Link]
-     AlternativeNames=qumulo-backend
+     AlternativeName=qumulo-backend
      ```
      
 1. To enable the alternative names, restart `systemd-networkd`.
