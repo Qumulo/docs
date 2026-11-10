@@ -28,7 +28,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
   <li>
     <p>To improve standardization and consistency, this release introduces new aliases for existing <code>qq</code> CLI command names.</p>
     <p>All existing command names continue to function as before.</p>
-    <p>For a full list of changes, see <a href="https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7103">Qumulo Core 7.10.3</a> in the Qumulo <code>qq</code> CLI Change Log.</p>
+    <p>For a full list of changes, see <a href="https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-71031">Qumulo Core 7.10.3.1</a> in the Qumulo <code>qq</code> CLI Change Log.</p>
   </li>
 </ul>
 {{site.data.alerts.end}}
