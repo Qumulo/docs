@@ -18,16 +18,19 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 ## 7.10 Releases
 
-### Qumulo Core 7.10.3
+### Qumulo Core 7.10.3.1
 {{ nexusLink }}
 
 #### Features and Improvements
 {{site.data.alerts.important}}
-To improve standardization and consistency, this release introduces new aliases for existing <code>qq</code> CLI command names.
-All existing command names continue to function as before.
-
-For a full list of changes, see <a href="https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7103">Qumulo Core 7.10.3</a> in the Qumulo <code>qq</code> CLI Change Log.
-
+<ul>
+  <li><strong>7.10.3.1:</strong> This release adds Qumulo Core performance improvements.</li>
+  <li>
+    <p>To improve standardization and consistency, this release introduces new aliases for existing <code>qq</code> CLI command names.</p>
+    <p>All existing command names continue to function as before.</p>
+    <p>For a full list of changes, see <a href="https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7103">Qumulo Core 7.10.3</a> in the Qumulo <code>qq</code> CLI Change Log.</p>
+  </li>
+</ul>
 {{site.data.alerts.end}}
 
 * **Cloud Data Fabric:**
@@ -52,8 +55,8 @@ For a full list of changes, see <a href="https://docs.qumulo.com/qq-cli-command-
   * Behave in compliance with Amazon S3 specifications
 
 #### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7103)
-* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7103)
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71031)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-71031)
 
 
 ### Qumulo Core 7.10.2.1

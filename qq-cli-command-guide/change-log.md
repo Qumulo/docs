@@ -18,7 +18,7 @@ div#toc {
 
 ## 7.10 Releases
 
-### Qumulo Core 7.10.3
+### Qumulo Core 7.10.3.1
 {{ nexusLink }}
 
 {% include important.html content="To improve standardization and consistency, this release introduces new aliases for existing `qq` CLI command names. All existing command names continue to function as before." %}
