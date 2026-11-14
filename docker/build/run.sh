@@ -160,11 +160,14 @@ if [[ -f /.dockerenv ]] || grep -qa docker /proc/1/cgroup; then
             echo ""
             echo "Checking for script, link, and image errors..."
             bundle exec jekyll build -d _site
-
+            
             LYCHEE_ARGS=(
                 "--root-dir" "/src/_site"
                 "--exclude-path" "\.xml$"
                 "--remap" "https://docs\.qumulo\.com/ file:///src/_site/"
+                "--max-retries" "3"
+                "--retry-wait-time" "2"
+                "--accept" "200..=299,429"
             )
 
             if [ "$GITHUB_ACTIONS" = "true" ]; then
