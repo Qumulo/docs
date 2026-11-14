@@ -2778,10 +2778,10 @@ $(document).ready(function() {
 </code></pre></div></div>
 
 <h4 id="assigning-a-single-network-to-an-existing-tenant">Assigning a Single Network to an Existing Tenant</h4>
-<p>To assign a single network to a tenant, modify <em>the tenant that belongs to the network.</em> Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_network.html"><code class="language-plaintext highlighter-rouge">qq network_mod_network</code></a>
+<p>To assign a single network to a tenant, modify <em>the tenant that belongs to the network.</em> Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_modify_network.html"><code class="language-plaintext highlighter-rouge">qq network_modify_network</code></a>
  command and specify the network and tenant ID.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq network_mod_network <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq network_modify_network <span class="se">\</span>
   <span class="nt">--network-id</span> 3 <span class="se">\</span>
   <span class="nt">--tenant-id</span> 2
 </code></pre></div></div>
@@ -2802,14 +2802,14 @@ $(document).ready(function() {
 </code></pre></div></div>
 
 <h4 id="unassigning-a-single-network-from-a-tenant">Unassigning a Single Network from a Tenant</h4>
-<p>To unassign a single network from a tenant, clear <em>the tenant that belongs to the network</em>. Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_network.html"><code class="language-plaintext highlighter-rouge">qq network_mod_network</code></a>
+<p>To unassign a single network from a tenant, clear <em>the tenant that belongs to the network</em>. Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_modify_network.html"><code class="language-plaintext highlighter-rouge">qq network_modify_network</code></a>
  command and specify the network and the <code class="language-plaintext highlighter-rouge">--clear-tenant-id</code> flag.</p>
 
 <div class="alert alert-info" role="alert">
 <span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> After you unassign a network from a tenant, you can assign it to another tenant.
 </div>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq network_mod_network <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq network_modify_network <span class="se">\</span>
   <span class="nt">--network-id</span> 3 <span class="se">\</span>
   <span class="nt">--clear-tenant-id</span>
 </code></pre></div></div>
@@ -2831,10 +2831,10 @@ $(document).ready(function() {
 </code></pre></div></div>
 
 <h4 id="moving-networks-between-tenants">Moving Networks between Tenants</h4>
-<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_network.html"><code class="language-plaintext highlighter-rouge">qq network_mod_network</code></a>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_modify_network.html"><code class="language-plaintext highlighter-rouge">qq network_modify_network</code></a>
  command and specify the network and target tenant.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq network_mod_network <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq network_modify_network <span class="se">\</span>
   <span class="nt">--network-id</span> 2 <span class="se">\</span>
   <span class="nt">--tenant-id</span> 1
 </code></pre></div></div>
@@ -2867,15 +2867,15 @@ $(document).ready(function() {
 <h4 id="determining-the-tenant-assignment-for-networks">Determining the Tenant Assignment for Networks</h4>
 <ul>
   <li>
-    <p>To view the information for a single network, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_get_network.html"><code class="language-plaintext highlighter-rouge">qq network_get_network</code></a>
+    <p>To view the information for a single network, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_get_config.html"><code class="language-plaintext highlighter-rouge">qq network_get_config</code></a>
  command.</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq network_get_network <span class="se">\</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq network_get_config <span class="se">\</span>
   <span class="nt">--network-id</span> 2
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>To view the information for all networks, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_list_networks.html"><code class="language-plaintext highlighter-rouge">qq network_list_networks</code></a>
+    <p>To view the information for all networks, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_list_connections.html"><code class="language-plaintext highlighter-rouge">qq network_list_connections</code></a>
  command.</p>
   </li>
 </ul>

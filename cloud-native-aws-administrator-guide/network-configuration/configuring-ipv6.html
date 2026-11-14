@@ -2447,19 +2447,19 @@ $(document).ready(function() {
 
 <ol>
   <li>
-    <p>To specify the default gateway for IPv4 and IPv6 traffic, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_interface.html"><code class="language-plaintext highlighter-rouge">qq network_mod_interface</code></a>
+    <p>To specify the default gateway for IPv4 and IPv6 traffic, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_modify_interface.html"><code class="language-plaintext highlighter-rouge">qq network_modify_interface</code></a>
  command. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq network_mod_interface <span class="nt">--default-gateway</span> 192.168.0.1 <span class="se">\</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq network_modify_interface <span class="nt">--default-gateway</span> 192.168.0.1 <span class="se">\</span>
   <span class="nt">--default-gateway-ipv6</span> 2001:db8:60e0:7352:e9d2:e180:e7e8:cdb8 <span class="se">\</span>
   <span class="nt">--mtu</span> 1500
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>To specify IPv6 addresses for your Qumulo cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_network.html"><code class="language-plaintext highlighter-rouge">qq network_mod_network</code></a>
+    <p>To specify IPv6 addresses for your Qumulo cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_modify_network.html"><code class="language-plaintext highlighter-rouge">qq network_modify_network</code></a>
  command to modify the default network configuration. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq network_mod_network <span class="nt">--network-id</span> 1 <span class="se">\</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq network_modify_network <span class="nt">--network-id</span> 1 <span class="se">\</span>
   <span class="nt">--assigned-by</span> STATIC <span class="se">\</span>
   <span class="nt">--netmask</span> 2001:db8::/64 <span class="se">\</span>
   <span class="nt">--ip-ranges</span> 2001:db8:0:0:1::1-2001:db8:0:0:1::ffff <span class="se">\</span>
@@ -2474,7 +2474,7 @@ $(document).ready(function() {
     </div>
   </li>
   <li>
-    <p>To verify the configuration and confirm the assigned IPv6 addresses, uses the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_poll.html"><code class="language-plaintext highlighter-rouge">qq network_poll</code></a>
+    <p>To verify the configuration and confirm the assigned IPv6 addresses, uses the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_get_status.html"><code class="language-plaintext highlighter-rouge">qq network_get_status</code></a>
  command.</p>
   </li>
   <li>

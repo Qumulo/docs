@@ -741,21 +741,26 @@ Up 5 seconds   0.0.0.0:3306-&gt;3306/tcp, :::3306-&gt;3306/tcp       api-db-1
 
 <ol>
   <li>
-    <p>To configure audit logging on your Qumulo cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/audit/audit_set_syslog_config.html"><code class="language-plaintext highlighter-rouge">qq audit_set_syslog_config</code></a>
- command with the <code class="language-plaintext highlighter-rouge">--enable</code> flag, use the <code class="language-plaintext highlighter-rouge">--json</code> flag to request logging in JSON format, and specify the IP address or hostname and port number for your Qumulo Broker machine. For example:</p>
+    <p>To configure an audit logging destination on your Qumulo cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/audit/audit_create_destination.html"><code class="language-plaintext highlighter-rouge">qq audit_create_destination</code></a>
+ command, specify a unique name for the destination, enable it with the <code class="language-plaintext highlighter-rouge">--enable</code> flag, use the <code class="language-plaintext highlighter-rouge">--json</code> flag to request logging in JSON format, and specify the IP address or hostname and port number for your Qumulo Broker machine. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq audit_set_syslog_config <span class="se">\</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq audit_create_destination <span class="se">\</span>
+  <span class="nt">--destination-name</span> varonis-broker <span class="se">\</span>
   <span class="nt">--enable</span> <span class="se">\</span>
   <span class="nt">--json</span> <span class="se">\</span>
   <span class="nt">--server-address</span> 203.0.113.1 <span class="se">\</span>
   <span class="nt">--server-port</span> 514
 </code></pre></div>    </div>
 
-    <p>Qumulo Core enables audit logging for your cluster.</p>
+    <p>Qumulo Core creates and enables the audit logging destination for your cluster.</p>
   </li>
   <li>
-    <p>To confirm the audit logging configuration for your cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/audit/audit_get_syslog_config.html"><code class="language-plaintext highlighter-rouge">qq audit_get_syslog_config</code></a>
- command.</p>
+    <p>To confirm the audit logging configuration for your destination, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/audit/audit_get_destination.html"><code class="language-plaintext highlighter-rouge">qq audit_get_destination</code></a>
+ command and specify the destination name. For example:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq audit_get_destination <span class="se">\</span>
+  <span class="nt">--destination-name</span> varonis-broker
+</code></pre></div>    </div>
 
     <p>In the following example output, audit logging is enabled in JSON format.</p>
 
@@ -763,14 +768,19 @@ Up 5 seconds   0.0.0.0:3306-&gt;3306/tcp, :::3306-&gt;3306/tcp       api-db-1
   </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"json"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"local_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"varonis-broker"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"server_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"203.0.113.1"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"server_port"</span><span class="p">:</span><span class="w"> </span><span class="mi">514</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>    </div>
   </li>
   <li>
-    <p>To confirm the connection between the Qumulo Broker and the <code class="language-plaintext highlighter-rouge">rsyslog</code> instance, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/audit/audit_get_syslog_status.html"><code class="language-plaintext highlighter-rouge">qq audit_get_syslog_status</code></a>
- command.</p>
+    <p>To confirm the connection between the Qumulo Broker and the <code class="language-plaintext highlighter-rouge">rsyslog</code> instance, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/audit/audit_get_destination_status.html"><code class="language-plaintext highlighter-rouge">qq audit_get_destination_status</code></a>
+ command and specify the destination name. For example:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq audit_get_destination_status <span class="se">\</span>
+  <span class="nt">--destination-name</span> varonis-broker
+</code></pre></div>    </div>
 
     <p>The command returns one of three possible values for the <code class="language-plaintext highlighter-rouge">connection_status</code> field:</p>
 
@@ -802,14 +812,10 @@ Up 5 seconds   0.0.0.0:3306-&gt;3306/tcp, :::3306-&gt;3306/tcp       api-db-1
 <span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Before you restart the <code class="language-plaintext highlighter-rouge">rsyslog</code> service to apply a new configuration, you must always <a href="#deploy-qumulo-broker">ensure that Qumulo Broker is deployed</a>.
 </div>
 
-<ol>
-  <li>
-    <p>Change the file permission of the Qumulo Broker binary file.</p>
+<p>Change the file permission of the Qumulo Broker binary file.</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod </span>a+x /opt/qumulo/QumuloBroker/events/Broker
-</code></pre></div>    </div>
-  </li>
-</ol>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod </span>a+x /opt/qumulo/QumuloBroker/events/Broker
+</code></pre></div></div>
 
 <h3 id="rsyslog-with-single-cluster">Configuring rsyslog to Communicate with a Single Cluster</h3>
 <p>Configure the following <code class="language-plaintext highlighter-rouge">rsyslog</code> parameters in the <code class="language-plaintext highlighter-rouge">/etc/rsyslog.d/10-qumulo.conf</code> file.</p>
