@@ -46,6 +46,4 @@ title: qq auth_modify_user
 usage: "qq auth_modify_user [-h] --id ID [--name NAME] [--primary-group PRIMARY_GROUP]\
   \ [--uid UID] [--add-group ADD_GROUP] [--remove-group REMOVE_GROUP]\n    [--home-directory\
   \ HOME_DIRECTORY] [-p [PASSWORD]]"
-zendesk_source: qq CLI Command Guide
-
 ---

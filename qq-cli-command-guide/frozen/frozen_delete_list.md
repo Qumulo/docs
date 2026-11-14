@@ -25,6 +25,4 @@ synopsis: List a Frozen bridge's deletes, whether in progress or ended, until th
 title: qq frozen_delete_list
 usage: qq frozen_delete_list [-h] [--bridge-path BRIDGE_PATH] [--state {IN_PROGRESS,FINISHED,CANCELED,FAILED}]
   [-j]
-zendesk_source: qq CLI Command Guide
-
 ---

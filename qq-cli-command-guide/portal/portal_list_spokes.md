@@ -14,6 +14,4 @@ summary: This section explains how to use the <code>qq portal_list_spokes</code>
 synopsis: Get the configuration and status for all spoke portals on the current cluster
 title: qq portal_list_spokes
 usage: qq portal_list_spokes [-h] [-j]
-zendesk_source: qq CLI Command Guide
-
 ---

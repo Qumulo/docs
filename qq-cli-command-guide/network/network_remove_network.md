@@ -22,6 +22,4 @@ summary: This section explains how to use the <code>qq network_remove_network</c
 synopsis: Delete a network from the cluster-wide network config.
 title: qq network_remove_network
 usage: qq network_remove_network [-h] --network-id NETWORK_ID [--delete-orphaned-vlans]
-zendesk_source: qq CLI Command Guide
-
 ---

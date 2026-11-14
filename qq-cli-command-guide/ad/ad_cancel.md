@@ -13,6 +13,4 @@ summary: This section explains how to use the <code>qq ad_cancel</code> command.
 synopsis: Cancel current AD join/leave operation and clear errors
 title: qq ad_cancel
 usage: qq ad_cancel [-h] [--no-wait]
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -32,6 +32,4 @@ summary: This section explains how to use the <code>qq portal_delete_spoke</code
 synopsis: Delete a spoke portal on the current cluster
 title: qq portal_delete_spoke
 usage: qq portal_delete_spoke [-h] -i ID [-j] [-n] [--force]
-zendesk_source: qq CLI Command Guide
-
 ---

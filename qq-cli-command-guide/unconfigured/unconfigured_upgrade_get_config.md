@@ -12,6 +12,4 @@ summary: This section explains how to use the <code>qq unconfigured_upgrade_get_
 synopsis: List current upgrade prepare config for an unconfigured node
 title: qq unconfigured_upgrade_get_config
 usage: qq unconfigured_upgrade_get_config [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

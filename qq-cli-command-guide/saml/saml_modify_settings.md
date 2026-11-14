@@ -50,6 +50,4 @@ usage: "qq saml_modify_settings [-h] [--disable | --enable] [--idp-sso-url IDP_S
   \ [--idp-certificate IDP_CERTIFICATE | --idp-certificate-file IDP_CERTIFICATE_FILE]\
   \ [--idp-entity-id IDP_ENTITY_ID] [--cluster-dns-name CLUSTER_DNS_NAME]\n    [--require-sso\
   \ {true,false}]"
-zendesk_source: qq CLI Command Guide
-
 ---

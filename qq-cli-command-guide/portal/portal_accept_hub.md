@@ -53,6 +53,4 @@ synopsis: Accept the specified pending hub portal. Accepting a hub portal establ
 title: qq portal_accept_hub
 usage: qq portal_accept_hub [-h] -i ID [-j] [-n] [-A] (-m SPOKE_HOSTS | -a SPOKE_ADDRESS)
   [-p SPOKE_PORT]
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -33,6 +33,4 @@ synopsis: Add a new user
 title: qq auth_create_user
 usage: qq auth_create_user [-h] --name NAME [--primary-group PRIMARY_GROUP] [--uid
   UID] [--home-directory HOME_DIRECTORY] [-p [PASSWORD]]
-zendesk_source: qq CLI Command Guide
-
 ---

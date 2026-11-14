@@ -26,6 +26,4 @@ synopsis: Remove a stream from file or directory
 title: qq fs_remove_stream
 usage: qq fs_remove_stream [-h] (--path PATH | --id ID) (--stream-id STREAM_ID | --stream-name
   STREAM_NAME)
-zendesk_source: qq CLI Command Guide
-
 ---

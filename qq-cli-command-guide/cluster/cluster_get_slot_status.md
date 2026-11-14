@@ -20,6 +20,4 @@ summary: This section explains how to use the <code>qq cluster_get_slot_status</
 synopsis: Get the cluster disk slots status
 title: qq cluster_get_slot_status
 usage: qq cluster_get_slot_status [-h] [--slot SLOT | --node NODE]
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -41,8 +41,6 @@ synopsis: Read directory
 title: qq fs_read_dir
 usage: qq fs_read_dir [-h] (--path PATH | --id ID) [--page-size PAGE_SIZE] [--snapshot
   SNAPSHOT] [--smb-pattern SMB_PATTERN] [--skip-atime-update] [--include-acls]
-zendesk_source: qq CLI Command Guide
-
 ---
 
 ## Examples

@@ -132,8 +132,6 @@ usage: "qq smb_create_share [-h] [--tenant-id TENANT_ID] --name NAME --fs-path F
   \ TRUSTEE [TRUSTEE ...]]\n    [--deny-access TRUSTEE [TRUSTEE ...]] [--full-control-hosts\
   \ IP/RANGE [IP/RANGE ...]] [--read-only-hosts IP/RANGE [IP/RANGE ...]]\n    [--deny-hosts\
   \ IP/RANGE [IP/RANGE ...]] [--deny-all-hosts]"
-zendesk_source: qq CLI Command Guide
-
 ---
 For more information, see {{site.xref.adminOnPrem.usingSMBhostRestrict}}.
 

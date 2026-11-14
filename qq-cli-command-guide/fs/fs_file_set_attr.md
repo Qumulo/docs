@@ -86,6 +86,4 @@ usage: "qq fs_file_set_attr [-h] (--path PATH | --id ID) [--stream-id STREAM_ID 
   \ CHANGE_TIME] [--owner OWNER | --owner-local OWNER_LOCAL | --owner-sid OWNER_SID\
   \ | --owner-uid OWNER_UID] [--group GROUP | --group-local GROUP_LOCAL | --group-sid\
   \ GROUP_SID | --group-gid GROUP_GID]"
-zendesk_source: qq CLI Command Guide
-
 ---

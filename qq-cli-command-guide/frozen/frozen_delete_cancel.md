@@ -20,6 +20,4 @@ synopsis: Cancel a delete, which is CANCELED at once, and print it. What it alre
   deleted stays deleted, and it deletes nothing more.
 title: qq frozen_delete_cancel
 usage: qq frozen_delete_cancel [-h] --id ID [--bridge-path BRIDGE_PATH]
-zendesk_source: qq CLI Command Guide
-
 ---

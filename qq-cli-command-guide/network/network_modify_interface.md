@@ -16,6 +16,4 @@ summary: This section explains how to use the <code>qq network_modify_interface<
 synopsis: Modify a network interface in the cluster-wide network config.
 title: qq network_modify_interface
 usage: qq network_modify_interface [-h] {bond,vlan} ...
-zendesk_source: qq CLI Command Guide
-
 ---

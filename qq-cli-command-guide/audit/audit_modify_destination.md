@@ -24,6 +24,4 @@ summary: This section explains how to use the <code>qq audit_modify_destination<
 synopsis: Modify audit log destination configuration
 title: qq audit_modify_destination
 usage: qq audit_modify_destination [-h] --id ID (--enable | --disable)
-zendesk_source: qq CLI Command Guide
-
 ---

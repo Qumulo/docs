@@ -18,6 +18,4 @@ summary: This section explains how to use the <code>qq fs_try_resolve_paths</cod
 synopsis: Resolve file IDs to paths, grouping IDs that cannot be resolved right now
 title: qq fs_try_resolve_paths
 usage: qq fs_try_resolve_paths [-h] --ids [IDS [IDS ...]] [--snapshot SNAPSHOT]
-zendesk_source: qq CLI Command Guide
-
 ---

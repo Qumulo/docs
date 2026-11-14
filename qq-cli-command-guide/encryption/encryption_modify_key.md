@@ -49,6 +49,4 @@ synopsis: 'Modify the name or comment of a key in the filesystem key store.
 title: qq encryption_modify_key
 usage: qq encryption_modify_key [-h] -k KEY [--new-name NEW_NAME] [--comment COMMENT]
   [--enable | --disable] [--json]
-zendesk_source: qq CLI Command Guide
-
 ---

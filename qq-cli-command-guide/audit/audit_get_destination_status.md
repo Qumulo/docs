@@ -14,6 +14,4 @@ summary: This section explains how to use the <code>qq audit_get_destination_sta
 synopsis: Retrieve audit log destination connection status
 title: qq audit_get_destination_status
 usage: qq audit_get_destination_status [-h] --id ID
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -37,6 +37,4 @@ synopsis: Start a freeze job, which moves the data of files on a Frozen bridge t
 title: qq frozen_freeze
 usage: qq frozen_freeze [-h] (--subtree SUBTREE | --files FILES [FILES ...] | --files-from
   FILE) [--exclude PATH [PATH ...]]
-zendesk_source: qq CLI Command Guide
-
 ---

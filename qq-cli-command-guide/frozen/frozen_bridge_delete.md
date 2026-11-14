@@ -19,6 +19,4 @@ summary: This section explains how to use the <code>qq frozen_bridge_delete</cod
 synopsis: Delete an empty Frozen bridge.
 title: qq frozen_bridge_delete
 usage: qq frozen_bridge_delete [-h] --path PATH [--force]
-zendesk_source: qq CLI Command Guide
-
 ---

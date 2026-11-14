@@ -56,6 +56,4 @@ synopsis: Modify the spoke hosts and type of a hub portal
 title: qq portal_modify_hub
 usage: qq portal_modify_hub [-h] -i ID [-j] [-n] [--type {read-write,read-only,paused}]
   [-m SPOKE_HOSTS | -a SPOKE_ADDRESS] [-p SPOKE_PORT]
-zendesk_source: qq CLI Command Guide
-
 ---

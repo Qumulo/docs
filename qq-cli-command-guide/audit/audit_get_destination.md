@@ -14,6 +14,4 @@ summary: This section explains how to use the <code>qq audit_get_destination</co
 synopsis: Retrieve audit log destination configuration
 title: qq audit_get_destination
 usage: qq audit_get_destination [-h] --id ID
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -20,6 +20,4 @@ summary: This section explains how to use the <code>qq encryption_get_key</code>
 synopsis: Get information for a key in the filesystem key store.
 title: qq encryption_get_key
 usage: qq encryption_get_key [-h] -k KEY [--json]
-zendesk_source: qq CLI Command Guide
-
 ---

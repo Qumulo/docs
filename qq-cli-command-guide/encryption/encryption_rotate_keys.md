@@ -20,6 +20,4 @@ summary: This section explains how to use the <code>qq encryption_rotate_keys</c
 synopsis: Rotate the at-rest encryption master keys.
 title: qq encryption_rotate_keys
 usage: qq encryption_rotate_keys [-h] [--key-id KEY_ID | --create-key-with-name KEY_NAME]
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -23,6 +23,4 @@ summary: This section explains how to use the <code>qq auth_modify_group</code> 
 synopsis: Modify a group
 title: qq auth_modify_group
 usage: qq auth_modify_group [-h] --id ID [--name NAME] [--gid GID]
-zendesk_source: qq CLI Command Guide
-
 ---

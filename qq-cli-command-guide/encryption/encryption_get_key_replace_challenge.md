@@ -18,6 +18,4 @@ synopsis: Get a security challenge for replacing the specified key without affec
   the snapshots and snapshot policies associated with it.
 title: qq encryption_get_key_replace_challenge
 usage: qq encryption_get_key_replace_challenge [-h] -k KEY
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -36,6 +36,4 @@ synopsis: Server-side copy a file.
 title: qq fs_copy
 usage: qq fs_copy [-h] [--source-snapshot SOURCE_SNAPSHOT] [--overwrite] [--quiet]
   [--no-attributes] [--no-named-streams] source target
-zendesk_source: qq CLI Command Guide
-
 ---

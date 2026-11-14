@@ -27,6 +27,4 @@ synopsis: Get an export
 title: qq nfs_get_export
 usage: qq nfs_get_export [-h] (--export-id EXPORT_ID | --export-path EXPORT_PATH)
   [--tenant-id TENANT_ID] [--json]
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -36,6 +36,4 @@ title: qq authoritative_dns_modify_settings
 usage: qq authoritative_dns_modify_settings [-h] [--fqdn FQDN] [--enable] [--disable]
   [--host-restrictions HOST_RESTRICTIONS [HOST_RESTRICTIONS ...]] [--disable-host-restrictions]
   [--record-ttl-seconds RECORD_TTL_SECONDS]
-zendesk_source: qq CLI Command Guide
-
 ---

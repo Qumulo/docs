@@ -35,6 +35,4 @@ synopsis: "Create a hole in a region of a file. Destroys all data\n        withi
 title: qq fs_punch_hole
 usage: qq fs_punch_hole [-h] (--path PATH | --id ID) [--stream-id STREAM_ID | --stream-name
   STREAM_NAME] --offset OFFSET --size SIZE
-zendesk_source: qq CLI Command Guide
-
 ---

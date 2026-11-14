@@ -13,6 +13,4 @@ summary: This section explains how to use the <code>qq tree_delete_restart</code
 synopsis: Retry errored delete job
 title: qq tree_delete_restart
 usage: qq tree_delete_restart [-h] id
-zendesk_source: qq CLI Command Guide
-
 ---

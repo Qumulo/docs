@@ -15,6 +15,4 @@ summary: This section explains how to use the <code>qq snapshot_delete_snapshot<
 synopsis: Delete a single snapshot
 title: qq snapshot_delete_snapshot
 usage: qq snapshot_delete_snapshot [-h] -i ID
-zendesk_source: qq CLI Command Guide
-
 ---

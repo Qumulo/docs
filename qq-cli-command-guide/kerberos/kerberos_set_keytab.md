@@ -15,6 +15,4 @@ summary: This section explains how to use the <code>qq kerberos_set_keytab</code
 synopsis: Set the Kerberos keytab
 title: qq kerberos_set_keytab
 usage: qq kerberos_set_keytab [-h] -k KEYTAB_FILE
-zendesk_source: qq CLI Command Guide
-
 ---

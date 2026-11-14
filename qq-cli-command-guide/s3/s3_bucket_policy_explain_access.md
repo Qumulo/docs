@@ -28,8 +28,6 @@ synopsis: Details a users access as allowed by the bucket policy
 title: qq s3_bucket_policy_explain_access
 usage: qq s3_bucket_policy_explain_access [-h] --bucket BUCKET [--auth-id AUTH_ID]
   [--anonymous] [identifier]
-zendesk_source: qq CLI Command Guide
-
 ---
 For more information, see {{site.xref.adminOnPrem.manageAccessS3}}.
 

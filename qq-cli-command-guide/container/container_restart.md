@@ -13,6 +13,4 @@ summary: This section explains how to use the <code>qq container_restart</code> 
 synopsis: Restart the qcore container
 title: qq container_restart
 usage: qq container_restart [-h] [--node-id NODE_ID]
-zendesk_source: qq CLI Command Guide
-
 ---

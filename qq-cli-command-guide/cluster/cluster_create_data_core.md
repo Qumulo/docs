@@ -53,6 +53,4 @@ usage: "qq cluster_create_data_core [-h] --cluster-name CLUSTER_NAME [--admin-pa
   \ ADMIN_PASSWORD] [--accept-eula] [--reject-eula] [--node-uuids NODE_UUIDS [NODE_UUIDS\
   \ ...]]\n    [--blocks-per-stripe BLOCKS_PER_STRIPE] [--max-drive-failures MAX_DRIVE_FAILURES]\
   \ [--max-node-failures MAX_NODE_FAILURES] [--all-unconfigured]"
-zendesk_source: qq CLI Command Guide
-
 ---

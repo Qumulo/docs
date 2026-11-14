@@ -28,6 +28,4 @@ synopsis: Update a bridge's file or directory for one object now, rather than wh
   removed along with any parent directories left empty.
 title: qq object_portal_refresh
 usage: qq object_portal_refresh [-h] --bucket-uri BUCKET_URI --key KEY [--mode {MERGE,OVERWRITE}]
-zendesk_source: qq CLI Command Guide
-
 ---

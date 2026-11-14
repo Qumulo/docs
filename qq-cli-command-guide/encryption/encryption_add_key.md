@@ -40,6 +40,4 @@ title: qq encryption_add_key
 usage: "qq encryption_add_key [-h] --name NAME [--private-key-file PRIVATE_KEY_FILE]\
   \ [--public-key PUBLIC_KEY] [--verification-signature VERIFICATION_SIGNATURE]\n\
   \    [--comment COMMENT] [--json]"
-zendesk_source: qq CLI Command Guide
-
 ---

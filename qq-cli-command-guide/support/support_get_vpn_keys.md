@@ -12,6 +12,4 @@ summary: This section explains how to use the <code>qq support_get_vpn_keys</cod
 synopsis: Get VPN keys stored in the cluster.
 title: qq support_get_vpn_keys
 usage: qq support_get_vpn_keys [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

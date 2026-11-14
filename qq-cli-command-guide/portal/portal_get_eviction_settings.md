@@ -10,6 +10,4 @@ summary: This section explains how to use the <code>qq portal_get_eviction_setti
 synopsis: Retrieve the configuration for automated removal of cached data
 title: qq portal_get_eviction_settings
 usage: qq portal_get_eviction_settings [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

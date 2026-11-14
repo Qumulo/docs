@@ -13,6 +13,4 @@ summary: This section explains how to use the <code>qq license_get_status</code>
 synopsis: Fetch the current license state of the cluster.
 title: qq license_get_status
 usage: qq license_get_status [-h] [--json]
-zendesk_source: qq CLI Command Guide
-
 ---

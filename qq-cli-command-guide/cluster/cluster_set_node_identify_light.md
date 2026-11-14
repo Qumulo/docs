@@ -19,6 +19,4 @@ summary: This section explains how to use the <code>qq cluster_set_node_identify
 synopsis: Turn node identification light on or off
 title: qq cluster_set_node_identify_light
 usage: qq cluster_set_node_identify_light [-h] --node NODE {on,off}
-zendesk_source: qq CLI Command Guide
-
 ---

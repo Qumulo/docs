@@ -10,6 +10,4 @@ synopsis: Perform an interactive SAML single sign-on (SSO) authentication proces
   for the cluster.
 title: qq sso_login
 usage: qq sso_login [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

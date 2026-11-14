@@ -22,6 +22,4 @@ synopsis: Show information about snapshot and snapshot policy usage for a key fr
   the filesystem key store.
 title: qq encryption_get_key_usage
 usage: qq encryption_get_key_usage [-h] -k KEY [--json]
-zendesk_source: qq CLI Command Guide
-
 ---

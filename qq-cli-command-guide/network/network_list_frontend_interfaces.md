@@ -14,6 +14,4 @@ summary: This section explains how to use the <code>qq network_list_frontend_int
 synopsis: Retrieve the list of frontend interfaces for every node in the cluster.
 title: qq network_list_frontend_interfaces
 usage: qq network_list_frontend_interfaces [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

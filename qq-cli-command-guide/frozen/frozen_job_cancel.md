@@ -29,6 +29,4 @@ synopsis: Cancel a freeze or thaw job, which is CANCELED at once and starts on n
   one of its files waits.
 title: qq frozen_job_cancel
 usage: qq frozen_job_cancel [-h] --id ID [--bridge-path BRIDGE_PATH]
-zendesk_source: qq CLI Command Guide
-
 ---

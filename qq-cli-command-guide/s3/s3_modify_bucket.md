@@ -38,8 +38,6 @@ title: qq s3_modify_bucket
 usage: qq s3_modify_bucket [-h] --name NAME [--suspend-versioning | --enable-versioning]
   [--enable-object-lock-without-retention | --enable-object-lock-with-retention-days
   RETENTION_DAYS | --enable-object-lock-with-retention-years RETENTION_YEARS]
-zendesk_source: qq CLI Command Guide
-
 ---
 For more information, see {{site.xref.adminOnPrem.manageAccessS3}}.
 

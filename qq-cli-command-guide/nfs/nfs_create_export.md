@@ -80,8 +80,6 @@ usage: "qq nfs_create_export [-h] --export-path EXPORT_PATH --fs-path FS_PATH [-
   \ TENANT_ID] [--description DESCRIPTION]\n    (--no-restrictions | --restrictions\
   \ JSON_FILE_PATH) [--create-fs-path] [--fields-to-present-as-32-bit FIELD [FIELD\
   \ ...]]"
-zendesk_source: qq CLI Command Guide
-
 ---
 
 ## Example

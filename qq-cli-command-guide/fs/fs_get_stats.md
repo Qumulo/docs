@@ -13,6 +13,4 @@ summary: This section explains how to use the <code>qq fs_get_stats</code> comma
 synopsis: Get filesystem statistics
 title: qq fs_get_stats
 usage: qq fs_get_stats [-h] [--json]
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -31,6 +31,4 @@ summary: This section explains how to use the <code>qq portal_delete_hub</code> 
 synopsis: Delete a hub portal on the current cluster
 title: qq portal_delete_hub
 usage: qq portal_delete_hub [-h] -i ID [-j] [-n] [--force]
-zendesk_source: qq CLI Command Guide
-
 ---

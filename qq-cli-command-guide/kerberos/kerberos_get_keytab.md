@@ -10,6 +10,4 @@ summary: This section explains how to use the <code>qq kerberos_get_keytab</code
 synopsis: Get the Kerberos keytab
 title: qq kerberos_get_keytab
 usage: qq kerberos_get_keytab [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

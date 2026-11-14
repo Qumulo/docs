@@ -15,6 +15,4 @@ summary: This section explains how to use the <code>qq auth_get_user</code> comm
 synopsis: List a user
 title: qq auth_get_user
 usage: qq auth_get_user [-h] --id ID
-zendesk_source: qq CLI Command Guide
-
 ---

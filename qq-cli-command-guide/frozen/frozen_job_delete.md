@@ -23,6 +23,4 @@ synopsis: Delete a freeze or thaw job that is FINISHED, CANCELED or FAILED, so i
   retry later.
 title: qq frozen_job_delete
 usage: qq frozen_job_delete [-h] --id ID [--bridge-path BRIDGE_PATH]
-zendesk_source: qq CLI Command Guide
-
 ---

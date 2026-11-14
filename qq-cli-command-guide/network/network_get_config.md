@@ -17,6 +17,4 @@ summary: This section explains how to use the <code>qq network_get_config</code>
 synopsis: Retrieve the cluster-wide network config
 title: qq network_get_config
 usage: qq network_get_config [-h] [-o OUTPUT]
-zendesk_source: qq CLI Command Guide
-
 ---

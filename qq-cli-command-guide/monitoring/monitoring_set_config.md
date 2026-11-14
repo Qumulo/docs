@@ -102,6 +102,4 @@ usage: "qq monitoring_set_config [-h] [--enabled | --disabled] [--vpn-enabled | 
   \ [--period PERIOD] [--vpn-host VPN_HOST] [--nexus-enabled | --nexus-disabled]\n\
   \    [--nexus-host NEXUS_HOST] [--nexus-port NEXUS_PORT] [--nexus-interval NEXUS_INTERVAL]\
   \ [--nexus-registration-key NEXUS_REGISTRATION_KEY]"
-zendesk_source: qq CLI Command Guide
-
 ---

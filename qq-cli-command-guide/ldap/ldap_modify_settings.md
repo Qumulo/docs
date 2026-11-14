@@ -86,6 +86,4 @@ usage: "qq ldap_modify_settings [-h] [--use-ldap {false,true}] [--bind-uri BIND_
   \ CUSTOM_USER_OBJECT_CLASS]\n    [--custom-group-object-class CUSTOM_GROUP_OBJECT_CLASS]\
   \ [--custom-uid-number-attribute CUSTOM_UID_NUMBER_ATTRIBUTE]\n    [--custom-gid-number-attribute\
   \ CUSTOM_GID_NUMBER_ATTRIBUTE]"
-zendesk_source: qq CLI Command Guide
-
 ---

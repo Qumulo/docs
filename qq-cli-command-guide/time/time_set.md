@@ -27,6 +27,4 @@ synopsis: Set time configuration.
 title: qq time_set
 usage: qq time_set [-h] [--source SOURCE] [--set-use-ad] [--unset-use-ad] [--ntp-servers
   NTP_SERVERS]
-zendesk_source: qq CLI Command Guide
-
 ---

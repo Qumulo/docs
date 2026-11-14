@@ -19,6 +19,4 @@ summary: This section explains how to use the <code>qq portal_get_filesystem</co
 synopsis: Retrieve portal information for a specific filesystem
 title: qq portal_get_filesystem
 usage: qq portal_get_filesystem [-h] --uuid UUID [-j]
-zendesk_source: qq CLI Command Guide
-
 ---

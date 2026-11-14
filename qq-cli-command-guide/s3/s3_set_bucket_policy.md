@@ -26,8 +26,6 @@ synopsis: Upload the access policy JSON file that the --file flag specifies to t
   S3 bucket name that the --bucket flag specifies.
 title: qq s3_set_bucket_policy
 usage: qq s3_set_bucket_policy [-h] --bucket BUCKET --file FILE [--allow-remove-self]
-zendesk_source: qq CLI Command Guide
-
 ---
 For more information, see {{site.xref.adminOnPrem.manageAccessS3}}.
   

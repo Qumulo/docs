@@ -28,6 +28,4 @@ summary: This section explains how to use the <code>qq ad_leave</code> command.
 synopsis: Leave an Active Directory Domain
 title: qq ad_leave
 usage: qq ad_leave [-h] -d DOMAIN [-u USERNAME] [-p PASSWORD] [--no-wait]
-zendesk_source: qq CLI Command Guide
-
 ---

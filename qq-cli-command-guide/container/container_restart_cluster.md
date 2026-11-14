@@ -14,6 +14,4 @@ summary: This section explains how to use the <code>qq container_restart_cluster
 synopsis: Restart the qcore container on every node in the cluster
 title: qq container_restart_cluster
 usage: qq container_restart_cluster [-h] [--force]
-zendesk_source: qq CLI Command Guide
-
 ---

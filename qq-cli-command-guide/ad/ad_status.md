@@ -11,6 +11,4 @@ summary: This section explains how to use the <code>qq ad_status</code> command.
 synopsis: Get status of a join, leave, or reconfigure operation with Active Directory
 title: qq ad_status
 usage: qq ad_status [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -42,8 +42,6 @@ title: qq fs_file_modify_lock
 usage: qq fs_file_modify_lock [-h] (--path PATH | --id ID) [--enable-legal-hold |
   --disable-legal-hold] [--retention-period RETENTION_PERIOD | --retention-days RETENTION_DAYS
   | --retention-years RETENTION_YEARS]
-zendesk_source: qq CLI Command Guide
-
 ---
 For more information, see {{site.xref.adminOnPrem.fileLock}}.
 

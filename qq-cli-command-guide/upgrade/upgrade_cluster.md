@@ -25,6 +25,4 @@ synopsis: Run a cluster upgrade to the image specified by the provided path
 title: qq upgrade_cluster
 usage: qq upgrade_cluster [-h] [--path PATH] [--no-monitor] [--rolling] [--num-nodes-to-reboot
   NUM_NODES_TO_REBOOT] {prepare,commit} ...
-zendesk_source: qq CLI Command Guide
-
 ---

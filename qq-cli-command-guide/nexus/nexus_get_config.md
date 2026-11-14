@@ -9,6 +9,4 @@ summary: This section explains how to use the <code>qq nexus_get_config</code> c
 synopsis: Get Nexus connection configuration
 title: qq nexus_get_config
 usage: qq nexus_get_config [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

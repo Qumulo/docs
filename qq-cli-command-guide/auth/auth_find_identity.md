@@ -56,6 +56,4 @@ title: qq auth_find_identity
 usage: "qq auth_find_identity [-h] [--auth-id AUTH_ID] [--uid UID] [--gid GID] [--sid\
   \ SID] [--name NAME] [--domain {LOCAL,WORLD,POSIX_USER,POSIX_GROUP,ACTIVE_DIRECTORY}]\
   \ [--json]\n    [identifier]"
-zendesk_source: qq CLI Command Guide
-
 ---

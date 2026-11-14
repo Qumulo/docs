@@ -13,6 +13,4 @@ summary: This section explains how to use the <code>qq frozen_bridge_get</code> 
 synopsis: Show a Frozen bridge.
 title: qq frozen_bridge_get
 usage: qq frozen_bridge_get [-h] --path PATH
-zendesk_source: qq CLI Command Guide
-
 ---

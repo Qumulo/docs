@@ -16,6 +16,4 @@ summary: This section explains how to use the <code>qq analytics_get_capacity_hi
 synopsis: Get historical largest file data.
 title: qq analytics_get_capacity_history_files
 usage: qq analytics_get_capacity_history_files [-h] --timestamp TIMESTAMP
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -46,6 +46,4 @@ title: qq ad_reconfigure
 usage: "qq ad_reconfigure [-h] [--enable-search-trusted-domains | --disable-search-trusted-domains]\
   \ [--enable-ad-posix-attributes | --disable-ad-posix-attributes]\n    [--base-dn\
   \ BASE_DN] [--domain-controllers DOMAIN_CONTROLLERS] [--no-wait]"
-zendesk_source: qq CLI Command Guide
-
 ---

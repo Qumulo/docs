@@ -63,6 +63,4 @@ title: qq ad_join
 usage: "qq ad_join [-h] -d DOMAIN -u USERNAME [-p PASSWORD] [--domain-netbios DOMAIN_NETBIOS]\
   \ [-o OU] [--disable-search-trusted-domains] [--use-ad-posix-attributes]\n    [--base-dn\
   \ BASE_DN] [--domain-controllers DOMAIN_CONTROLLERS] [--no-wait]"
-zendesk_source: qq CLI Command Guide
-
 ---

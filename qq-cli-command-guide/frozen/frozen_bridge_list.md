@@ -14,6 +14,4 @@ summary: This section explains how to use the <code>qq frozen_bridge_list</code>
 synopsis: List the cluster's Frozen bridges.
 title: qq frozen_bridge_list
 usage: qq frozen_bridge_list [-h] [-j]
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -22,6 +22,4 @@ synopsis: Create a Frozen bridge, a directory whose files freeze jobs can move t
   the Azure Archive tier, over Azure storage Qumulo has set aside for the cluster.
 title: qq frozen_bridge_create
 usage: qq frozen_bridge_create [-h] --path PATH [--allow-archived-metadata-changes]
-zendesk_source: qq CLI Command Guide
-
 ---

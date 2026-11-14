@@ -12,6 +12,4 @@ summary: This section explains how to use the <code>qq tree_delete_cancel</code>
 synopsis: Cancel delete job
 title: qq tree_delete_cancel
 usage: qq tree_delete_cancel [-h] id
-zendesk_source: qq CLI Command Guide
-
 ---

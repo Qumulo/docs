@@ -67,6 +67,4 @@ usage: "qq modify_object_backed_cluster_membership [-h] (--node-ips-and-fault-do
   \ NODE_IPS_AND_FAULT_DOMAINS [NODE_IPS_AND_FAULT_DOMAINS ...] | --node-uuids-and-fault-domains\
   \ NODE_UUIDS_AND_FAULT_DOMAINS [NODE_UUIDS_AND_FAULT_DOMAINS ...])\n    [--batch]\
   \ [--dry-run]"
-zendesk_source: qq CLI Command Guide
-
 ---

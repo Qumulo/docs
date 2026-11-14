@@ -62,6 +62,4 @@ title: qq audit_set_destination
 usage: "qq audit_set_destination [-h] --id ID --name NAME [--type {SYSLOG,CLOUDWATCH,LOCAL}]\
   \ [--csv | --json] [--server-address SERVER_ADDRESS] [--server-port SERVER_PORT]\n\
   \    [--log-group-name LOG_GROUP_NAME] [--region REGION] (--enable | --disable)"
-zendesk_source: qq CLI Command Guide
-
 ---

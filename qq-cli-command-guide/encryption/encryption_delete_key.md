@@ -17,6 +17,4 @@ summary: This section explains how to use the <code>qq encryption_delete_key</co
 synopsis: Delete a key from the filesystem key store.
 title: qq encryption_delete_key
 usage: qq encryption_delete_key [-h] -k KEY
-zendesk_source: qq CLI Command Guide
-
 ---

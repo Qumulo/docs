@@ -12,6 +12,4 @@ summary: This section explains how to use the <code>qq cluster_get_protection_st
 synopsis: Get cluster protection status
 title: qq cluster_get_protection_status
 usage: qq cluster_get_protection_status [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

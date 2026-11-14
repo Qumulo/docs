@@ -83,6 +83,4 @@ usage: "qq cluster_create_stratus [-h] --cluster-name CLUSTER_NAME [--admin-pass
   \ --usable-capacity\n    USABLE_CAPACITY --object-store-uris OBJECT_STORE_URIS [OBJECT_STORE_URIS\
   \ ...]\n    [--object-store-credentials OBJECT_STORE_CREDENTIALS [OBJECT_STORE_CREDENTIALS\
   \ ...]]"
-zendesk_source: qq CLI Command Guide
-
 ---

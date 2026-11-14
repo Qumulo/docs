@@ -34,8 +34,6 @@ synopsis: Get file attributes
 title: qq fs_file_get_attr
 usage: qq fs_file_get_attr [-h] (--path PATH | --id ID) [--snapshot SNAPSHOT] [--retrieve-file-lock]
   [--stream-id STREAM_ID | --stream-name STREAM_NAME]
-zendesk_source: qq CLI Command Guide
-
 ---
 For more information, see {{site.xref.adminOnPrem.fileLock}}.
 

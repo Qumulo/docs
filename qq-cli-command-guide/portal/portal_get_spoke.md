@@ -31,6 +31,4 @@ summary: This section explains how to use the <code>qq portal_get_spoke</code> c
 synopsis: Get the configuration and status for a spoke portal on the current cluster
 title: qq portal_get_spoke
 usage: qq portal_get_spoke [-h] -i ID [-j] [-n] [-d]
-zendesk_source: qq CLI Command Guide
-
 ---

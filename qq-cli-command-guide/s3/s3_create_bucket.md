@@ -39,6 +39,4 @@ synopsis: Create an S3 bucket
 title: qq s3_create_bucket
 usage: qq s3_create_bucket [-h] --name NAME [--fs-path FS_PATH] [--create-fs-path]
   [--enable-object-lock] [--private]
-zendesk_source: qq CLI Command Guide
-
 ---

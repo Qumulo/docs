@@ -18,6 +18,4 @@ summary: This section explains how to use the <code>qq tree_delete_create</code>
 synopsis: Create delete job
 title: qq tree_delete_create
 usage: qq tree_delete_create [-h] [--force] directory
-zendesk_source: qq CLI Command Guide
-
 ---

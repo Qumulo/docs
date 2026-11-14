@@ -31,6 +31,4 @@ synopsis: List the information for every snapshot.
 title: qq snapshot_list_statuses
 usage: qq snapshot_list_statuses [-h] [--exclude-in-delete | --only-in-delete] [--exclude-locked
   | --only-locked]
-zendesk_source: qq CLI Command Guide
-
 ---

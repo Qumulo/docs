@@ -32,6 +32,4 @@ synopsis: Create a new pipe, character device, block device or socket
 title: qq fs_create_unix_file
 usage: qq fs_create_unix_file [-h] (--path PATH | --id ID) [--major-minor-numbers
   major,minor] --name NAME --type TYPE
-zendesk_source: qq CLI Command Guide
-
 ---

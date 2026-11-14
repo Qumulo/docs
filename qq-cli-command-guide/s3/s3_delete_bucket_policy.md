@@ -14,8 +14,6 @@ summary: This section explains how to use the <code>qq s3_delete_bucket_policy</
 synopsis: Remove the access policy stored at `BUCKET`.
 title: qq s3_delete_bucket_policy
 usage: qq s3_delete_bucket_policy [-h] --bucket BUCKET
-zendesk_source: qq CLI Command Guide
-
 ---
 For more information, see {{site.xref.adminOnPrem.manageAccessS3}}.
 

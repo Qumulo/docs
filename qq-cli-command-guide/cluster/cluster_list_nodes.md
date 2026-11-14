@@ -15,8 +15,6 @@ summary: This section explains how to use the <code>qq cluster_list_nodes</code>
 synopsis: List nodes
 title: qq cluster_list_nodes
 usage: qq cluster_list_nodes [-h] [--node NODE]
-zendesk_source: qq CLI Command Guide
-
 ---
 
 ## Examples

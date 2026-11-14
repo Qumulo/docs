@@ -53,6 +53,4 @@ title: qq fs_file_set_smb_attrs
 usage: qq fs_file_set_smb_attrs [-h] (--path PATH | --id ID) [--archive BOOL] [--compressed
   BOOL] [--hidden BOOL] [--not-content-indexed BOOL] [--read-only BOOL] [--system
   BOOL] [--temporary BOOL] [--offline BOOL]
-zendesk_source: qq CLI Command Guide
-
 ---

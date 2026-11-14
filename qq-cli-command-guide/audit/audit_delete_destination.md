@@ -14,6 +14,4 @@ summary: This section explains how to use the <code>qq audit_delete_destination<
 synopsis: Delete an audit log destination
 title: qq audit_delete_destination
 usage: qq audit_delete_destination [-h] --id ID
-zendesk_source: qq CLI Command Guide
-
 ---

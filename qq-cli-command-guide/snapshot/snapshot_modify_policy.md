@@ -11,6 +11,4 @@ synopsis: Modify an existing snapshot scheduling policy.
 title: qq snapshot_modify_policy
 usage: qq snapshot_modify_policy [-h] {modify_non_schedule_fields,change_to_hourly_or_less,change_to_daily,change_to_monthly,change_to_yearly}
   ...
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -20,6 +20,4 @@ synopsis: Release a snapshot queued for replication from the queue of the specif
 title: qq replication_release_queued_snapshot
 usage: qq replication_release_queued_snapshot [-h] --relationship-id RELATIONSHIP_ID
   --snapshot-id SNAPSHOT_ID
-zendesk_source: qq CLI Command Guide
-
 ---

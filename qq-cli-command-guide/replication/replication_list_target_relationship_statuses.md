@@ -10,6 +10,4 @@ summary: This section explains how to use the <code>qq replication_list_target_r
 synopsis: List statuses for all existing target replication relationships.
 title: qq replication_list_target_relationship_statuses
 usage: qq replication_list_target_relationship_statuses [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -14,6 +14,4 @@ summary: This section explains how to use the <code>qq network_list_backend_inte
 synopsis: Retrieve the list of backend interfaces for every node in the cluster.
 title: qq network_list_backend_interfaces
 usage: qq network_list_backend_interfaces [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

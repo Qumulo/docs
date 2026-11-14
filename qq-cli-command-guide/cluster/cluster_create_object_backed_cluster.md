@@ -73,6 +73,4 @@ usage: "qq cluster_create_object_backed_cluster [-h] --cluster-name CLUSTER_NAME
   \ --product-type PRODUCT_TYPE\n    [--node-ips-and-fault-domains NODE_IPS_AND_FAULT_DOMAINS\
   \ [NODE_IPS_AND_FAULT_DOMAINS ...]] --accept-eula\n    [--azure-key-vault-uri KEY_VAULT\
   \ | --key-vault KEY_VAULT]"
-zendesk_source: qq CLI Command Guide
-
 ---

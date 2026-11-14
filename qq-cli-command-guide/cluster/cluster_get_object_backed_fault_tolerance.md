@@ -12,6 +12,4 @@ summary: This section explains how to use the <code>qq cluster_get_object_backed
 synopsis: Get the current fault tolerance of an object-backed cluster.
 title: qq cluster_get_object_backed_fault_tolerance
 usage: qq cluster_get_object_backed_fault_tolerance [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

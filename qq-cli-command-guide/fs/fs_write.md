@@ -43,8 +43,6 @@ synopsis: Write data to an object
 title: qq fs_write
 usage: qq fs_write [-h] (--path PATH | --id ID) [--stream-id STREAM_ID | --stream-name
   STREAM_NAME | --create] [--offset OFFSET] [--file FILE] [--stdin]
-zendesk_source: qq CLI Command Guide
-
 ---
 
 ## Examples

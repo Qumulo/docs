@@ -62,8 +62,6 @@ synopsis: Create a spoke portal on the current cluster and propose a hub portal 
 title: qq portal_create
 usage: qq portal_create [-h] [--spoke-root SPOKE_ROOT] [--hub-root HUB_ROOT] [-j]
   [-n] [-r] (-m HUB_HOSTS | -a HUB_ADDRESS) [-p HUB_PORT]
-zendesk_source: qq CLI Command Guide
-
 ---
 
 ## Example

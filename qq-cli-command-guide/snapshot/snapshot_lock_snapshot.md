@@ -27,6 +27,4 @@ summary: This section explains how to use the <code>qq snapshot_lock_snapshot</c
 synopsis: Lock a snapshot.
 title: qq snapshot_lock_snapshot
 usage: qq snapshot_lock_snapshot [-h] -i ID [-f] -k LOCK_KEY
-zendesk_source: qq CLI Command Guide
-
 ---

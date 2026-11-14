@@ -62,7 +62,5 @@ usage: "qq cluster_create [-h] --cluster-name CLUSTER_NAME [--admin-password ADM
   \ [--max-node-failures MAX_NODE_FAILURES] [--accept-eula] [--reject-eula]\n    [--host-instance-id\
   \ HOST_INSTANCE_ID] (--node-uuids NODE_UUIDS [NODE_UUIDS ...] | --node-ips NODE_IPS\
   \ [NODE_IPS ...] | --all-unconfigured)"
-zendesk_source: qq CLI Command Guide
-
 ---
 {% include important.html content="To ensure that the Qumulo Core Web UI displays the nodes in your cluster in the same order that they are racked, enter the node UUIDs in the same order when you run the `qq cluster_create` command." %}

@@ -31,6 +31,4 @@ summary: This section explains how to use the <code>qq network_modify_config</co
 synopsis: Validate or overwrite the cluster-wide network configuration.
 title: qq network_modify_config
 usage: qq network_modify_config [-h] [--dry-run] (--file FILE | --modify | --templates)
-zendesk_source: qq CLI Command Guide
-
 ---

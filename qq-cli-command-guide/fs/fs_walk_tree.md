@@ -67,8 +67,6 @@ usage: "qq fs_walk_tree [-h] [--path PATH] [--snapshot SNAPSHOT] [--file-only | 
   \ | --symlink-only] [--display-ownership | --display-all-attributes | --summary]\
   \ [--output-file OUTPUT_FILE] [--max-depth MAX_DEPTH] [--progress]\n    [-m MAX_BYTES_PER_FILE]\
   \ [--fetch-data]"
-zendesk_source: qq CLI Command Guide
-
 ---
 
 ## Examples

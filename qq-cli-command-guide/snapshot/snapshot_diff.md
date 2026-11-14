@@ -22,6 +22,4 @@ synopsis: List the changed files and directories between two snapshots.
 title: qq snapshot_diff
 usage: qq snapshot_diff [-h] --newer-snapshot NEWER_SNAPSHOT --older-snapshot OLDER_SNAPSHOT
   [--page-size PAGE_SIZE]
-zendesk_source: qq CLI Command Guide
-
 ---

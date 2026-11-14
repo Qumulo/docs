@@ -11,6 +11,4 @@ summary: This section explains how to use the <code>qq cluster_get_config</code>
 synopsis: Get the cluster config
 title: qq cluster_get_config
 usage: qq cluster_get_config [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

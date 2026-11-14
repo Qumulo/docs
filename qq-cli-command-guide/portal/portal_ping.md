@@ -45,6 +45,4 @@ synopsis: Test connectivity from all local nodes to the specified remote hosts
 title: qq portal_ping
 usage: qq portal_ping [-h] [-j | -b] (-m HOSTS | --spoke-id SPOKE_ID | --hub-id HUB_ID)
   [-p PORTAL_PORT]
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -10,6 +10,4 @@ summary: This section explains how to use the <code>qq dns_get_system_config</co
 synopsis: Get the system's DNS configuration.
 title: qq dns_get_system_config
 usage: qq dns_get_system_config [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

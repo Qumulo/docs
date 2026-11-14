@@ -18,6 +18,4 @@ summary: This section explains how to use the <code>qq nexus_set_registration</c
 synopsis: Set Nexus registration or delete registration
 title: qq nexus_set_registration
 usage: qq nexus_set_registration [-h] (--delete | --join-key JOIN_KEY)
-zendesk_source: qq CLI Command Guide
-
 ---

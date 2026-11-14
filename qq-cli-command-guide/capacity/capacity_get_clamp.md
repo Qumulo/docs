@@ -14,6 +14,4 @@ synopsis: Get the capacity clamp value in bytes, which can be set via PUT API or
   would exceed this value.
 title: qq capacity_get_clamp
 usage: qq capacity_get_clamp [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

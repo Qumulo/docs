@@ -33,6 +33,4 @@ synopsis: Create a new symbolic link
 title: qq fs_create_symlink
 usage: qq fs_create_symlink [-h] (--path PATH | --id ID) --target TARGET [--target-type
   {FS_FILE_TYPE_UNKNOWN,FS_FILE_TYPE_FILE,FS_FILE_TYPE_DIRECTORY}] --name NAME
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -36,8 +36,6 @@ synopsis: Modify a custom role.
 title: qq auth_modify_role
 usage: qq auth_modify_role [-h] -r ROLE [-d DESCRIPTION] [-p PRIVILEGES_FILE] [-G
   PRIVILEGE [PRIVILEGE ...]] [-R PRIVILEGE [PRIVILEGE ...]]
-zendesk_source: qq CLI Command Guide
-
 ---
 For more information, see {{site.xref.adminOnPrem.manageRBAC}}.
 

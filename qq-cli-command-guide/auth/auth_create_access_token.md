@@ -32,6 +32,4 @@ synopsis: Create a long-lived access token
 title: qq auth_create_access_token
 usage: qq auth_create_access_token [-h] [--self] [--expiration-time EXPIRATION_TIME]
   [--file PATH] [identifier]
-zendesk_source: qq CLI Command Guide
-
 ---

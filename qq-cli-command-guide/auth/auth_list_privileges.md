@@ -24,8 +24,6 @@ summary: This section explains how to use the <code>qq auth_list_privileges</cod
 synopsis: List all privileges or privileges associated with a role.
 title: qq auth_list_privileges
 usage: qq auth_list_privileges [-h] [-r ROLE] [-v] [--json]
-zendesk_source: qq CLI Command Guide
-
 ---
 For more information, see {{site.xref.adminOnPrem.manageRBAC}}.
 

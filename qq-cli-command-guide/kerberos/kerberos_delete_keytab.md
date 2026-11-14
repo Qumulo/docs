@@ -10,6 +10,4 @@ summary: This section explains how to use the <code>qq kerberos_delete_keytab</c
 synopsis: Delete the Kerberos keytab
 title: qq kerberos_delete_keytab
 usage: qq kerberos_delete_keytab [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

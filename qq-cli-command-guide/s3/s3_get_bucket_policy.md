@@ -18,8 +18,6 @@ summary: This section explains how to use the <code>qq s3_get_bucket_policy</cod
 synopsis: Retrieve entries of the access policy json stored at `BUCKET`.
 title: qq s3_get_bucket_policy
 usage: qq s3_get_bucket_policy [-h] [--bucket BUCKET] [--example]
-zendesk_source: qq CLI Command Guide
-
 ---
 For more information, see {{site.xref.adminOnPrem.manageAccessS3}}.
 

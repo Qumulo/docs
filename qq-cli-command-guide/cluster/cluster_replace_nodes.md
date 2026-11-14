@@ -13,6 +13,4 @@ synopsis: Replace configured nodes by adding nodes to a Qumulo cluster.
 title: qq cluster_replace_nodes
 usage: qq cluster_replace_nodes [-h] {register_plan,add_nodes_and_replace,get_plan,cancel_plan}
   ...
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -69,6 +69,4 @@ usage: "qq multitenancy_smb_modify_settings [-h] --tenant-id TENANT_ID [-e {none
   \ [--hide-shares-from-unauthorized-users {true,false}]\n    [--snapshot-directory-mode\
   \ {visible,hidden,disabled}] [--bypass-traverse-checking {true,false}] [--signing-required\
   \ {true,false}]"
-zendesk_source: qq CLI Command Guide
-
 ---

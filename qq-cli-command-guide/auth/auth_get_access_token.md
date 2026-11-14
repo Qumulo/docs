@@ -13,6 +13,4 @@ summary: This section explains how to use the <code>qq auth_get_access_token</co
 synopsis: Get metadata for the specified access token
 title: qq auth_get_access_token
 usage: qq auth_get_access_token [-h] id
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -16,6 +16,4 @@ summary: This section explains how to use the <code>qq encryption_list_keys</cod
 synopsis: List information for all keys in the filesystem key store.
 title: qq encryption_list_keys
 usage: qq encryption_list_keys [-h] [--json]
-zendesk_source: qq CLI Command Guide
-
 ---

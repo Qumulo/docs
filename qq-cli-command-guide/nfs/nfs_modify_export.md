@@ -93,6 +93,4 @@ usage: "qq nfs_modify_export [-h] (--export-id EXPORT_ID | --export-path EXPORT_
   \    [--fs-path FS_PATH] [--description DESCRIPTION] [--no-restrictions | --restrictions\
   \ JSON_FILE_PATH] [--create-fs-path]\n    [--fields-to-present-as-32-bit FIELD [FIELD\
   \ ...]]"
-zendesk_source: qq CLI Command Guide
-
 ---

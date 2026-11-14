@@ -10,6 +10,4 @@ summary: This section explains how to use the <code>qq authoritative_dns_get_set
 synopsis: Retrieve settings for Qumulo Authoritative DNS server
 title: qq authoritative_dns_get_settings
 usage: qq authoritative_dns_get_settings [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

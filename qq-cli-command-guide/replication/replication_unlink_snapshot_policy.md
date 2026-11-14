@@ -19,6 +19,4 @@ synopsis: Unlink a snapshot policy from a source replication relationship.
 title: qq replication_unlink_snapshot_policy
 usage: qq replication_unlink_snapshot_policy [-h] --relationship-id RELATIONSHIP_ID
   --snapshot-policy-id SNAPSHOT_POLICY_ID
-zendesk_source: qq CLI Command Guide
-
 ---

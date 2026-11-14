@@ -76,6 +76,4 @@ usage: "qq object_portal_create_bridge [-h] --bucket-uri BUCKET_URI --mount-path
   \ [--key-prefix KEY_PREFIX] [--delimiter DELIMITER] [--key-vault-hostname KEY_VAULT_HOSTNAME]\
   \ [--notification-queue-url NOTIFICATION_QUEUE_URL] --protocol-access\n    {READ_WRITE_EXPORT,READ_ONLY,FROZEN}\
   \ --metadata-import {OFF,AUTO} [--allow-archived-metadata-changes | --disallow-archived-metadata-changes]"
-zendesk_source: qq CLI Command Guide
-
 ---

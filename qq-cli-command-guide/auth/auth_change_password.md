@@ -22,6 +22,4 @@ summary: This section explains how to use the <code>qq auth_change_password</cod
 synopsis: Change your password
 title: qq auth_change_password
 usage: qq auth_change_password [-h] [-o OLD_PASSWORD] [-p NEW_PASSWORD]
-zendesk_source: qq CLI Command Guide
-
 ---

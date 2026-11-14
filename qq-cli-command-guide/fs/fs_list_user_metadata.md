@@ -57,6 +57,4 @@ synopsis: Retrieve user metadata of the specified type for a file
 title: qq fs_list_user_metadata
 usage: qq fs_list_user_metadata [-h] (--path PATH | --id ID) [--s3 | --well-known]
   [--json] [--snapshot SNAPSHOT] [--hex | --base64]
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -14,6 +14,4 @@ summary: This section explains how to use the <code>qq object_portal_get_bridge<
 synopsis: Get the configuration of one bridge.
 title: qq object_portal_get_bridge
 usage: qq object_portal_get_bridge [-h] --filesystem-uuid FILESYSTEM_UUID
-zendesk_source: qq CLI Command Guide
-
 ---

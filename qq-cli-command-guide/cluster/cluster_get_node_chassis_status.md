@@ -16,6 +16,4 @@ summary: This section explains how to use the <code>qq cluster_get_node_chassis_
 synopsis: Get the status of node chassis
 title: qq cluster_get_node_chassis_status
 usage: qq cluster_get_node_chassis_status [-h] [--node NODE]
-zendesk_source: qq CLI Command Guide
-
 ---

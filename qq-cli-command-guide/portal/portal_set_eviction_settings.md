@@ -18,6 +18,4 @@ summary: This section explains how to use the <code>qq portal_set_eviction_setti
 synopsis: Configure the automated removal of cached data
 title: qq portal_set_eviction_settings
 usage: qq portal_set_eviction_settings [-h] -f FREE_THRESHOLD
-zendesk_source: qq CLI Command Guide
-
 ---

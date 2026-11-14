@@ -15,6 +15,4 @@ summary: This section explains how to use the <code>qq upgrade_status</code> com
 synopsis: Get the status of the upgrade system
 title: qq upgrade_status
 usage: qq upgrade_status [-h] [--raw]
-zendesk_source: qq CLI Command Guide
-
 ---

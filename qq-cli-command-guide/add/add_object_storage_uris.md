@@ -48,6 +48,4 @@ synopsis: Add object storage URIs and associated credentials for configuring the
 title: qq add_object_storage_uris
 usage: qq add_object_storage_uris [-h] [--uris URIS [URIS ...]] [--credentials-file
   CREDENTIALS_FILE | --credentials CREDENTIALS [CREDENTIALS ...]]
-zendesk_source: qq CLI Command Guide
-
 ---

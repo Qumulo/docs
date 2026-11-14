@@ -25,6 +25,4 @@ summary: This section explains how to use the <code>qq reboot_start</code> comma
 synopsis: Start a cluster-wide reboot
 title: qq reboot_start
 usage: qq reboot_start [-h] [--rolling] [--num-nodes NUM_NODES_TO_REBOOT] [--force]
-zendesk_source: qq CLI Command Guide
-
 ---

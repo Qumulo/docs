@@ -24,6 +24,4 @@ synopsis: Set the capacity clamp value in bytes. This limits the capacity that w
   new quorum.
 title: qq capacity_set_clamp
 usage: qq capacity_set_clamp [-h] (--clamp CLAMP | --disable)
-zendesk_source: qq CLI Command Guide
-
 ---

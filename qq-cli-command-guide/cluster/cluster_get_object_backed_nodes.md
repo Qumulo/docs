@@ -12,6 +12,4 @@ summary: This section explains how to use the <code>qq cluster_get_object_backed
 synopsis: Get the object-backed nodes.
 title: qq cluster_get_object_backed_nodes
 usage: qq cluster_get_object_backed_nodes [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

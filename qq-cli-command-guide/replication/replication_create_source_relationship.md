@@ -33,6 +33,4 @@ usage: "qq replication_create_source_relationship [-h] (--source-id SOURCE_ID | 
   \ SOURCE_PATH) --target-path TARGET_PATH --target-address TARGET_ADDRESS [--target-port\
   \ TARGET_PORT] [--enable-replication {true,false}]\n    [--set-source-directory-read-only\
   \ {true,false}] [--map-local-ids-to-nfs-ids {true,false}]"
-zendesk_source: qq CLI Command Guide
-
 ---

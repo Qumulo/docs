@@ -18,6 +18,4 @@ synopsis: Set SSL cipher suites for the TLS 1.2 and 1.3 protocols. Note that cip
   required by Qumulo Core to function cannot be removed.
 title: qq ssl_modify_ciphers
 usage: qq ssl_modify_ciphers [-h] [--tls12 TLS12] [--tls13 TLS13]
-zendesk_source: qq CLI Command Guide
-
 ---

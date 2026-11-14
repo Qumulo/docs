@@ -19,8 +19,6 @@ synopsis: Modify the access policy for --bucket.
 title: qq s3_modify_bucket_policy
 usage: qq s3_modify_bucket_policy [-h] --bucket BUCKET [--allow-remove-self] {delete_statement,append_statement,modify_statement}
   ...
-zendesk_source: qq CLI Command Guide
-
 ---
 For more information, see {{site.xref.adminOnPrem.manageAccessS3}}.
 

@@ -71,6 +71,4 @@ usage: "qq multitenancy_create_tenant [-h] --name NAME [--network-id [NETWORK_ID
   \ ...]]] [--enable-web-ui | --disable-web-ui] [--enable-rest-api | --disable-rest-api]\
   \ [--enable-ssh | --disable-ssh]\n    [--enable-replication | --disable-replication]\
   \ [--enable-nfs | --disable-nfs] [--enable-smb | --disable-smb]"
-zendesk_source: qq CLI Command Guide
-
 ---

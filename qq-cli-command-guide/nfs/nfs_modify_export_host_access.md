@@ -30,6 +30,4 @@ title: qq nfs_modify_export_host_access
 usage: qq nfs_modify_export_host_access [-h] (--export-id EXPORT_ID | --export-path
   EXPORT_PATH) [--tenant-id TENANT_ID] [--json] {add_entry,modify_entry,remove_entry}
   ...
-zendesk_source: qq CLI Command Guide
-
 ---

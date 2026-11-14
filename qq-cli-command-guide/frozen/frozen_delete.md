@@ -38,6 +38,4 @@ synopsis: Start a delete of files and directories on a Frozen bridge, whether th
 title: qq frozen_delete
 usage: qq frozen_delete [-h] (--subtree SUBTREE | --files FILES [FILES ...] | --files-from
   FILE) [--force]
-zendesk_source: qq CLI Command Guide
-
 ---

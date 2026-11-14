@@ -25,6 +25,4 @@ synopsis: Get cluster-wide static IP allocation
 title: qq network_get_static_ip_allocation
 usage: qq network_get_static_ip_allocation [-h] [--try-ranges TRY_RANGES] [--try-netmask
   TRY_NETMASK] [--try-floating-ranges TRY_FLOATING_RANGES]
-zendesk_source: qq CLI Command Guide
-
 ---

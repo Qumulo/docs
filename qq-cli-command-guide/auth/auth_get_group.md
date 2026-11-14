@@ -15,6 +15,4 @@ summary: This section explains how to use the <code>qq auth_get_group</code> com
 synopsis: List a group
 title: qq auth_get_group
 usage: qq auth_get_group [-h] --id ID
-zendesk_source: qq CLI Command Guide
-
 ---

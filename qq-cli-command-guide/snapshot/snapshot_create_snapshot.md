@@ -30,6 +30,4 @@ synopsis: Create a new snapshot
 title: qq snapshot_create_snapshot
 usage: qq snapshot_create_snapshot [-h] [--source-file-id SOURCE_FILE_ID | --path
   PATH] [-e EXPIRATION] [-n NAME]
-zendesk_source: qq CLI Command Guide
-
 ---

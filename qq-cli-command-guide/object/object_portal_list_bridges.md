@@ -15,6 +15,4 @@ summary: This section explains how to use the <code>qq object_portal_list_bridge
 synopsis: List every bridge on the cluster.
 title: qq object_portal_list_bridges
 usage: qq object_portal_list_bridges [-h] [-j]
-zendesk_source: qq CLI Command Guide
-
 ---

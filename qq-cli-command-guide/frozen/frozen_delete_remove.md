@@ -22,6 +22,4 @@ synopsis: Remove a delete that is FINISHED, CANCELED or FAILED, so it is no long
   has ended it; retry shortly.
 title: qq frozen_delete_remove
 usage: qq frozen_delete_remove [-h] --id ID [--bridge-path BRIDGE_PATH]
-zendesk_source: qq CLI Command Guide
-
 ---

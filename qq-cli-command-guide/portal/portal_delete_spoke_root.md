@@ -36,6 +36,4 @@ synopsis: Delete the specified spoke root directory for the specified spoke port
 title: qq portal_delete_spoke_root
 usage: qq portal_delete_spoke_root [-h] -i ID [-j] [-n] (--spoke-root-id SPOKE_ROOT_ID
   | --spoke-root-path SPOKE_ROOT_PATH)
-zendesk_source: qq CLI Command Guide
-
 ---

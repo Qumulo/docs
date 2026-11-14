@@ -50,6 +50,4 @@ synopsis: Modify the remote hub address and port for a spoke portal
 title: qq portal_modify_spoke
 usage: qq portal_modify_spoke [-h] -i ID [-j] [-n] (-m HUB_HOSTS | -a HUB_ADDRESS)
   [-p HUB_PORT]
-zendesk_source: qq CLI Command Guide
-
 ---

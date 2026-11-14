@@ -26,6 +26,4 @@ synopsis: Get capacity history data.
 title: qq analytics_get_capacity_history
 usage: qq analytics_get_capacity_history [-h] --begin-time BEGIN_TIME [--end-time
   END_TIME] [--interval {hourly,daily,weekly}]
-zendesk_source: qq CLI Command Guide
-
 ---

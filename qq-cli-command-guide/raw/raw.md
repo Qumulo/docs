@@ -22,6 +22,4 @@ synopsis: Issue an HTTP request to a Qumulo REST endpoint. Content for modifying
 title: qq raw
 usage: qq raw [-h] [--content-type {application/json,application/octet-stream}] {DELETE,GET,PATCH,POST,PUT}
   url
-zendesk_source: qq CLI Command Guide
-
 ---

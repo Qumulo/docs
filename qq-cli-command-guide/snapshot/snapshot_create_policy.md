@@ -10,6 +10,4 @@ summary: This section explains how to use the <code>qq snapshot_create_policy</c
 synopsis: Create a new snapshot scheduling policy.
 title: qq snapshot_create_policy
 usage: qq snapshot_create_policy [-h] {hourly_or_less,daily,monthly,yearly} ...
-zendesk_source: qq CLI Command Guide
-
 ---

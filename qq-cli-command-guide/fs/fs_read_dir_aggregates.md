@@ -49,6 +49,4 @@ title: qq fs_read_dir_aggregates
 usage: "qq fs_read_dir_aggregates [-h] (--path PATH | --id ID) [--recursive] [--max-entries\
   \ MAX_ENTRIES] [--max-depth MAX_DEPTH]\n    [--order-by {total_blocks,total_datablocks,total_named_stream_datablocks,total_metablocks,total_files,total_directories,total_symlinks,total_other,total_named_streams,total_external_objects,total_external_object_bytes,total_capacity_and_unfilled_bytes}]\n\
   \    [--snapshot SNAPSHOT]"
-zendesk_source: qq CLI Command Guide
-
 ---

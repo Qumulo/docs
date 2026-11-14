@@ -12,6 +12,4 @@ summary: This section explains how to use the <code>qq restriper_get_status</cod
 synopsis: Get restriper status
 title: qq restriper_get_status
 usage: qq restriper_get_status [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

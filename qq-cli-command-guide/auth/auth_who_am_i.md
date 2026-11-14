@@ -11,6 +11,4 @@ summary: This section explains how to use the <code>qq auth_who_am_i</code> comm
 synopsis: Get information on the current user
 title: qq auth_who_am_i
 usage: qq auth_who_am_i [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

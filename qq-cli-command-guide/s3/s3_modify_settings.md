@@ -43,6 +43,4 @@ synopsis: Modify S3 server settings
 title: qq s3_modify_settings
 usage: qq s3_modify_settings [-h] [--disable | --enable] [--base-path BASE_PATH] [--multipart-upload-expiry-interval
   MULTIPART_UPLOAD_EXPIRY_INTERVAL] [--secure | --insecure]
-zendesk_source: qq CLI Command Guide
-
 ---

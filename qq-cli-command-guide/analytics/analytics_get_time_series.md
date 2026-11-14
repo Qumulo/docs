@@ -21,6 +21,4 @@ summary: This section explains how to use the <code>qq analytics_get_time_series
 synopsis: Get specified time series data.
 title: qq analytics_get_time_series
 usage: qq analytics_get_time_series [-h] [-b BEGIN_TIME] [--csv]
-zendesk_source: qq CLI Command Guide
-
 ---

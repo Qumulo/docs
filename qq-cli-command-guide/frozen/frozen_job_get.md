@@ -20,6 +20,4 @@ synopsis: 'Show a freeze or thaw job: what it covers, its state, and how many fi
   are waiting for Azure to bring them back online.'
 title: qq frozen_job_get
 usage: qq frozen_job_get [-h] --id ID [--bridge-path BRIDGE_PATH]
-zendesk_source: qq CLI Command Guide
-
 ---

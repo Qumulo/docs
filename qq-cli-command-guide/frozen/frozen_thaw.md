@@ -48,6 +48,4 @@ synopsis: Start a thaw job, which brings the data of frozen files on a Frozen br
 title: qq frozen_thaw
 usage: qq frozen_thaw [-h] (--subtree SUBTREE | --files FILES [FILES ...] | --files-from
   FILE) [--exclude PATH [PATH ...]] [--tier {HOT,COOL,COLD}] [--priority {STANDARD,HIGH}]
-zendesk_source: qq CLI Command Guide
-
 ---

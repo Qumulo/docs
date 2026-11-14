@@ -10,6 +10,4 @@ summary: This section explains how to use the <code>qq audit_list_destinations</
 synopsis: List all audit log destinations
 title: qq audit_list_destinations
 usage: qq audit_list_destinations [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

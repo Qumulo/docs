@@ -24,6 +24,4 @@ synopsis: Delete a bridge and everything the cluster stored for it. Changes not 
   the cluster pauses briefly while the cluster restarts its services.
 title: qq object_portal_delete_bridge
 usage: qq object_portal_delete_bridge [-h] --filesystem-uuid FILESYSTEM_UUID [--force]
-zendesk_source: qq CLI Command Guide
-
 ---

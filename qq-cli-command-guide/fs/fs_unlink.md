@@ -21,6 +21,4 @@ summary: This section explains how to use the <code>qq fs_unlink</code> command.
 synopsis: Delete a directory entry by name
 title: qq fs_unlink
 usage: qq fs_unlink [-h] (--path PATH | --id ID) --name NAME
-zendesk_source: qq CLI Command Guide
-
 ---

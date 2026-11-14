@@ -13,6 +13,4 @@ usage: "qq ftp_modify_settings [-h] [--enabled {true,false}] [--check-remote-hos
   \ {true,false}] [--log-operations {true,false}] [--chroot-users {true,false}] [--allow-unencrypted-connections\
   \ {true,false}] [--expand-wildcards {true,false}]\n    [--anonymous-user-as-local-user\
   \ ANONYMOUS_USER_AS_LOCAL_USER | --anonymous-user-none | --greeting GREETING]"
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -27,6 +27,4 @@ synopsis: Fetch file data into cluster caches for an entire file tree
 title: qq fs_fetch_tree
 usage: qq fs_fetch_tree [-h] --path PATH [--no-progress] [--max-depth MAX_DEPTH] [-m
   MAX_BYTES_PER_FILE]
-zendesk_source: qq CLI Command Guide
-
 ---

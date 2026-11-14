@@ -23,6 +23,4 @@ synopsis: Reverse source and target for a replication relationship.
 title: qq replication_reverse_target_relationship
 usage: qq replication_reverse_target_relationship [-h] --id ID --source-address SOURCE_ADDRESS
   [--source-port SOURCE_PORT]
-zendesk_source: qq CLI Command Guide
-
 ---

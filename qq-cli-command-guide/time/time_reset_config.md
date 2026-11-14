@@ -11,6 +11,4 @@ summary: This section explains how to use the <code>qq time_reset_config</code> 
 synopsis: Set time configuration to this platform's default
 title: qq time_reset_config
 usage: qq time_reset_config [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -17,6 +17,4 @@ summary: This section explains how to use the <code>qq network_get_status</code>
 synopsis: Retrieve the comprehensive network status
 title: qq network_get_status
 usage: qq network_get_status [-h] [--node-id NODE_ID]
-zendesk_source: qq CLI Command Guide
-
 ---

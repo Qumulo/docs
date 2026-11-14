@@ -30,6 +30,4 @@ synopsis: List SMB open file handles
 title: qq smb_list_file_handles
 usage: qq smb_list_file_handles [-h] [--page-size PAGE_SIZE] [--file-number FILE_NUMBER]
   [-p] [--path PATH]
-zendesk_source: qq CLI Command Guide
-
 ---

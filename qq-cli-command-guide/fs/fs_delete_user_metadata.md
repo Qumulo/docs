@@ -43,6 +43,4 @@ synopsis: Delete the user metadata for a file by using the specified metadata ke
 title: qq fs_delete_user_metadata
 usage: qq fs_delete_user_metadata [-h] (--path PATH | --id ID) [--s3 | --well-known]
   --key KEY
-zendesk_source: qq CLI Command Guide
-
 ---

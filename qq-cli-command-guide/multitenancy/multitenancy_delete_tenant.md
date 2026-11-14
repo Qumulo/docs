@@ -18,6 +18,4 @@ summary: This section explains how to use the <code>qq multitenancy_delete_tenan
 synopsis: Delete a tenant
 title: qq multitenancy_delete_tenant
 usage: qq multitenancy_delete_tenant [-h] --id ID [--force]
-zendesk_source: qq CLI Command Guide
-
 ---

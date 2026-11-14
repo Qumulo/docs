@@ -35,6 +35,4 @@ synopsis: Deny access to the specified hub root directory for the specified hub 
 title: qq portal_deny_hub_root
 usage: qq portal_deny_hub_root [-h] -i ID [-j] [-n] (--hub-root-id HUB_ROOT_ID | --hub-root-path
   HUB_ROOT_PATH)
-zendesk_source: qq CLI Command Guide
-
 ---

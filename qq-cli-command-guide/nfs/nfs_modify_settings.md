@@ -60,6 +60,4 @@ title: qq nfs_modify_settings
 usage: "qq nfs_modify_settings [-h] [--enable-v4 | --disable-v4] [--enable-krb5 |\
   \ --disable-krb5] [--enable-krb5p | --disable-krb5p] [--enable-krb5i | --disable-krb5i]\
   \ [--enable-auth-sys | --disable-auth-sys]\n    [--idmap-domain OVERRIDE | --clear-idmap-domain]"
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -9,6 +9,4 @@ summary: This section explains how to use the <code>qq ssl_get_ciphers</code> co
 synopsis: Get SSL cipher suites for the TLS 1.2 and 1.3 protocols.
 title: qq ssl_get_ciphers
 usage: qq ssl_get_ciphers [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

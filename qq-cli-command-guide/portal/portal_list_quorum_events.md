@@ -38,6 +38,4 @@ title: qq portal_list_quorum_events
 usage: qq portal_list_quorum_events [-h] [--begin-time BEGIN_TIME] [--end-time END_TIME]
   [--type {success,abandon}] [--node-id NODE_ID] [--filesystem-uuid FILESYSTEM_UUID]
   [--limit LIMIT]
-zendesk_source: qq CLI Command Guide
-
 ---

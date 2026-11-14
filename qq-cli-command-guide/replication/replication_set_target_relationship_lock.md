@@ -37,6 +37,4 @@ synopsis: 'The key that locks policy-created snapshots for a target replication 
 title: qq replication_set_target_relationship_lock
 usage: qq replication_set_target_relationship_lock [-h] --relationship-id RELATIONSHIP_ID
   (-k LOCK_KEY | --clear-lock-key)
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -91,6 +91,4 @@ usage: "qq multitenancy_modify_tenant [-h] --id ID [--name NAME] [--enable-web-u
   \ | --disable-web-ui] [--enable-rest-api | --disable-rest-api] [--enable-ssh | --disable-ssh]\
   \ [--enable-replication | --disable-replication] [--enable-nfs | --disable-nfs]\n\
   \    [--enable-smb | --disable-smb] [--network-id [NETWORK_ID [NETWORK_ID ...]]]"
-zendesk_source: qq CLI Command Guide
-
 ---

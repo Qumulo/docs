@@ -53,6 +53,4 @@ title: qq fs_list_locks
 usage: qq fs_list_locks [-h] --protocol {nlm,nfs4,smb} --lock-type {share-mode,byte-range}
   [--path PATH | --id ID | --ip IP | --hostname HOSTNAME] [--snapshot SNAPSHOT] [--no-resolve]
   [--json] [--sort {file,client}]
-zendesk_source: qq CLI Command Guide
-
 ---

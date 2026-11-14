@@ -19,6 +19,4 @@ synopsis: 'Show a delete: what it covers, its state, and how many files and byte
   it has deleted. A failed delete''s failure_message says what to do.'
 title: qq frozen_delete_get
 usage: qq frozen_delete_get [-h] --id ID [--bridge-path BRIDGE_PATH]
-zendesk_source: qq CLI Command Guide
-
 ---

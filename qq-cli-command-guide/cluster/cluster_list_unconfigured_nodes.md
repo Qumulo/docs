@@ -20,6 +20,4 @@ summary: This section explains how to use the <code>qq cluster_list_unconfigured
 synopsis: Get the list of unconfigured nodes
 title: qq cluster_list_unconfigured_nodes
 usage: qq cluster_list_unconfigured_nodes [-h] [--table] [--include-incompatibles]
-zendesk_source: qq CLI Command Guide
-
 ---

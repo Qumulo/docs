@@ -13,6 +13,4 @@ summary: This section explains how to use the <code>qq halt_cluster</code> comma
 synopsis: Halt the cluster
 title: qq halt_cluster
 usage: qq halt_cluster [-h] [--force]
-zendesk_source: qq CLI Command Guide
-
 ---

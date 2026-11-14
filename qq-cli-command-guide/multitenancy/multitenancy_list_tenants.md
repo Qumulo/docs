@@ -15,6 +15,4 @@ summary: This section explains how to use the <code>qq multitenancy_list_tenants
 synopsis: List all tenants
 title: qq multitenancy_list_tenants
 usage: qq multitenancy_list_tenants [-h] [-j]
-zendesk_source: qq CLI Command Guide
-
 ---

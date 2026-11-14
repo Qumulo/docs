@@ -65,6 +65,4 @@ usage: "qq multitenancy_smb_modify_global_settings [-h] [-e {none,preferred,requ
   \ [--hide-shares-from-unauthorized-users {true,false}]\n    [--snapshot-directory-mode\
   \ {visible,hidden,disabled}] [--bypass-traverse-checking {true,false}] [--signing-required\
   \ {true,false}]"
-zendesk_source: qq CLI Command Guide
-
 ---

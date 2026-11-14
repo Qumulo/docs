@@ -31,6 +31,4 @@ summary: This section explains how to use the <code>qq portal_get_hub</code> com
 synopsis: Get the configuration and status for a hub portal on the current cluster
 title: qq portal_get_hub
 usage: qq portal_get_hub [-h] -i ID [-j] [-n] [-d]
-zendesk_source: qq CLI Command Guide
-
 ---

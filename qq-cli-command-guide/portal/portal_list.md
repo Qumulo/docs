@@ -14,6 +14,4 @@ summary: This section explains how to use the <code>qq portal_list</code> comman
 synopsis: Get the configuration and status for all portals on the current cluster
 title: qq portal_list
 usage: qq portal_list [-h] [-j]
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -19,6 +19,4 @@ synopsis: Aborts an S3 upload in progress. You can perform this operation on use
   API actions use.
 title: qq s3_abort_upload
 usage: qq s3_abort_upload [-h] --bucket BUCKET --upload-id UPLOAD_ID
-zendesk_source: qq CLI Command Guide
-
 ---

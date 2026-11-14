@@ -10,6 +10,4 @@ summary: This section explains how to use the <code>qq nexus_get_registration</c
 synopsis: Get Nexus registration status
 title: qq nexus_get_registration
 usage: qq nexus_get_registration [-h]
-zendesk_source: qq CLI Command Guide
-
 ---

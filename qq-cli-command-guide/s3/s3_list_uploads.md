@@ -18,6 +18,4 @@ synopsis: List S3 uploads in progress, including user-initiated multipart upload
   and system-initiated uploads that the PutObject and CopyObject API actions use.
 title: qq s3_list_uploads
 usage: qq s3_list_uploads [-h] --bucket BUCKET [--starts-with STARTS_WITH]
-zendesk_source: qq CLI Command Guide
-
 ---

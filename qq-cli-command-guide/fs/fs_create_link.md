@@ -25,6 +25,4 @@ summary: This section explains how to use the <code>qq fs_create_link</code> com
 synopsis: Create a new link
 title: qq fs_create_link
 usage: qq fs_create_link [-h] (--path PATH | --id ID) --target TARGET --name NAME
-zendesk_source: qq CLI Command Guide
-
 ---

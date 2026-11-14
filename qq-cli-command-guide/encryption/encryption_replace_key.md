@@ -48,6 +48,4 @@ usage: "qq encryption_replace_key [-h] -k KEY [--old-private-key-file OLD_PRIVAT
   \ REPLACEMENT_PUBLIC_KEY] [--old-key-verification-signature OLD_KEY_VERIFICATION_SIGNATURE]\n\
   \    [--replacement-key-verification-signature REPLACEMENT_KEY_VERIFICATION_SIGNATURE]\
   \ [--json]"
-zendesk_source: qq CLI Command Guide
-
 ---

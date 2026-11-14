@@ -38,6 +38,4 @@ synopsis: Propose a spoke root directory for the specified spoke portal. This cr
 title: qq portal_propose_spoke_root
 usage: qq portal_propose_spoke_root [-h] -i ID [-j] [-n] --spoke-root-path SPOKE_ROOT_PATH
   --hub-root-path HUB_ROOT_PATH
-zendesk_source: qq CLI Command Guide
-
 ---

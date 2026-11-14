@@ -116,8 +116,6 @@ usage: "qq smb_modify_share [-h] (--id ID | --name NAME) [--tenant-id TENANT_ID]
   \ {true,false}] [--offline-files-caching-mode {no_caching,manual_caching,automatic_caching}]\
   \ [--json]\n    [--full-control-hosts IP/RANGE [IP/RANGE ...]] [--read-only-hosts\
   \ IP/RANGE [IP/RANGE ...]] [--deny-hosts IP/RANGE [IP/RANGE ...]] [--deny-all-hosts]"
-zendesk_source: qq CLI Command Guide
-
 ---
 
 ## Examples

@@ -24,6 +24,4 @@ synopsis: Get a number of sample files from the filesystem
 title: qq fs_file_samples
 usage: qq fs_file_samples [-h] (--path PATH | --id ID) --count COUNT [--sample-by
   {capacity,data,file,named_streams}]
-zendesk_source: qq CLI Command Guide
-
 ---

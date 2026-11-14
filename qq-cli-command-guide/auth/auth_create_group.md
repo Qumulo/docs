@@ -19,6 +19,4 @@ summary: This section explains how to use the <code>qq auth_create_group</code> 
 synopsis: Add a new group
 title: qq auth_create_group
 usage: qq auth_create_group [-h] --name NAME [--gid GID]
-zendesk_source: qq CLI Command Guide
-
 ---

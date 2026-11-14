@@ -29,6 +29,4 @@ synopsis: List a Frozen bridge's freeze and thaw jobs, whether in progress or en
 title: qq frozen_job_list
 usage: qq frozen_job_list [-h] [--bridge-path BRIDGE_PATH] [--kind {FREEZE,THAW}]
   [--state {IN_PROGRESS,FINISHED,CANCELED,FAILED}] [-j]
-zendesk_source: qq CLI Command Guide
-
 ---

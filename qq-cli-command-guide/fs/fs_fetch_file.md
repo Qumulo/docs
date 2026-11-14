@@ -26,6 +26,4 @@ summary: This section explains how to use the <code>qq fs_fetch_file</code> comm
 synopsis: Fetch file data into cluster caches
 title: qq fs_fetch_file
 usage: qq fs_fetch_file [-h] (--path PATH | --id ID) [--progress] [-m MAX_BYTES]
-zendesk_source: qq CLI Command Guide
-
 ---

@@ -15,6 +15,4 @@ summary: This section explains how to use the <code>qq portal_list_filesystems</
 synopsis: Retrieve portal information for all filesystems
 title: qq portal_list_filesystems
 usage: qq portal_list_filesystems [-h] [-j]
-zendesk_source: qq CLI Command Guide
-
 ---

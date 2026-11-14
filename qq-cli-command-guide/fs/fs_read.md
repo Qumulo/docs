@@ -56,6 +56,4 @@ title: qq fs_read
 usage: qq fs_read [-h] (--path PATH | --id ID) [--stream-id STREAM_ID | --stream-name
   STREAM_NAME] [--snapshot SNAPSHOT] [--offset OFFSET] [--length LENGTH] [--file FILE]
   [--force] [--stdout] [--skip-atime-update]
-zendesk_source: qq CLI Command Guide
-
 ---

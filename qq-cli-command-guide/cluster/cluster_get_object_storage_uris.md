@@ -14,6 +14,4 @@ synopsis: Get the list of object storage uris configured on the cluster. These o
   cluster that is not backed by objects, the returned list is always empty.
 title: qq cluster_get_object_storage_uris
 usage: qq cluster_get_object_storage_uris [-h]
-zendesk_source: qq CLI Command Guide
-
 ---
