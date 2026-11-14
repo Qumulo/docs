@@ -1,0 +1,7 @@
+^file:///src/_site/hardware-guide(/|$)
+^https?://(www\.)?github\.com/[Qq]umulo/docs(/|$)
+^https?://qumulocare\.slack\.com(/|$)
+^https?://docs\.redhat\.com/
+^https?://(help|wiki)\.ubuntu\.com/(community/)?Autofs(/|$)
+css/printstyles\.css
+sitemap\.xml$

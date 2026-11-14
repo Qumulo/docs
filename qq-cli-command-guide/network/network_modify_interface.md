@@ -4,12 +4,12 @@ command: network_modify_interface
 optional_options: []
 permalink: /qq-cli-command-guide/network/network_modify_interface.html
 positional_options:
-- help: The kind of interface you want to modify.
-  name: interface
-  required: true
+  - help: The kind of interface you want to modify.
+    name: interface
+    required: true
 redirect_from:
-- /qq-cli-command-guide/network/network_v3_modify_interface.html
-- /qq-cli-command-guide/network/network_preview_modify_interface.html
+  - /qq-cli-command-guide/network/network_v3_modify_interface.html
+  - /qq-cli-command-guide/network/network_preview_modify_interface.html
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq network_modify_interface</code>
   command.

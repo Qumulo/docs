@@ -13,7 +13,7 @@ optional_options:
 permalink: /qq-cli-command-guide/cluster/cluster_list_unconfigured_nodes.html
 positional_options: []
 redirect_from:
-- /qq-cli-command-guide/unconfigured/unconfigured_nodes_list.html
+  - /qq-cli-command-guide/unconfigured/unconfigured_nodes_list.html
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq cluster_list_unconfigured_nodes</code>
   command.

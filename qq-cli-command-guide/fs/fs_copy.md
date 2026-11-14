@@ -24,12 +24,12 @@ optional_options:
   required: false
 permalink: /qq-cli-command-guide/fs/fs_copy.html
 positional_options:
-- help: Source file absolute path
-  name: source
-  required: true
-- help: Target file absolute path
-  name: target
-  required: true
+  - help: Source file absolute path
+    name: source
+    required: true
+  - help: Target file absolute path
+    name: target
+    required: true
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq fs_copy</code> command.
 synopsis: Server-side copy a file.

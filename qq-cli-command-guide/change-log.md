@@ -472,7 +472,7 @@ div#toc {
       <li><code>qq object_bridge_export_rule_get</code></li>
       <li><code>qq object_bridge_export_rule_list</code></li>
       <li><code>qq portal_get_file_system</code></li>
-      <li><code>qq portal_list_file_systems</code></li>
+      <li><code>qq portal_list_filesystems</code></li>
     </ul>
   </li>
   <li>
@@ -796,8 +796,8 @@ div#toc {
   <li>
     Changed help text for commands:
     <ul>
-      <li><code>qq network_add_network --dns-servers</code></li>
-      <li><code>qq network_mod_network --dns-servers</code></li>
+      <li><code>qq network_create_network --dns-servers</code></li>
+      <li><code>qq network_modify_network --dns-servers</code></li>
     </ul>
   </li>
   <li>Added <code>--source</code> flag to <code>qq time_set</code> command</li>
@@ -865,7 +865,7 @@ div#toc {
     Added <code>--json</code> flag to commands:
     <ul>
       <li><code>qq portal_get_file_system</code></li>
-      <li><code>qq portal_list_file_systems</code></li>
+      <li><code>qq portal_list_filesystems</code></li>
     </ul>
   </li>
 </ul>

@@ -10,9 +10,9 @@ optional_options:
   required: false
 permalink: /qq-cli-command-guide/tree/tree_delete_create.html
 positional_options:
-- help: Directory id or path
-  name: directory
-  required: true
+  - help: Directory id or path
+    name: directory
+    required: true
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq tree_delete_create</code> command.
 synopsis: Create delete job

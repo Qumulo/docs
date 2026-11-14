@@ -13,7 +13,7 @@ optional_options:
 permalink: /qq-cli-command-guide/capacity/capacity_set_clamp.html
 positional_options: []
 redirect_from:
-- /qq-cli-command-guide/capacity/capacity_clamp_set.html
+  - /qq-cli-command-guide/capacity/capacity_clamp_set.html
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq capacity_set_clamp</code> command.
 synopsis: Set the capacity clamp value in bytes. This limits the capacity that will

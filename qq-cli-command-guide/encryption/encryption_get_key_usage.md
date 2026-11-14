@@ -14,7 +14,7 @@ optional_options:
 permalink: /qq-cli-command-guide/encryption/encryption_get_key_usage.html
 positional_options: []
 redirect_from:
-- /qq-cli-command-guide/fs/fs_security_get_key_usage.html
+  - /qq-cli-command-guide/fs/fs_security_get_key_usage.html
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq encryption_get_key_usage</code>
   command.

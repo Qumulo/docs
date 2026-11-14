@@ -42,11 +42,11 @@ optional_options:
   required: false
 permalink: /qq-cli-command-guide/auth/auth_expand_identity.html
 positional_options:
-- help: A name or a SID, optionally qualified with a domain prefix (e.g "local:name",
-    "world:Everyone", "ldap_user:name", "ldap_group:name", or "ad:name") or an ID
-    type (e.g. "uid:1001", "gid:2001", "auth_id:513", "SID:S-1-1-0").
-  name: identifier
-  required: true
+  - help: A name or a SID, optionally qualified with a domain prefix (e.g "local:name",
+      "world:Everyone", "ldap_user:name", "ldap_group:name", or "ad:name") or an ID
+      type (e.g. "uid:1001", "gid:2001", "auth_id:513", "SID:S-1-1-0").
+    name: identifier
+    required: true
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq auth_expand_identity</code>
   command.

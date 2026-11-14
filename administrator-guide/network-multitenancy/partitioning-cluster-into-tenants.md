@@ -63,10 +63,10 @@ qq multitenancy_create_tenant \
 ```
 
 #### Assigning a Single Network to an Existing Tenant
-To assign a single network to a tenant, modify _the tenant that belongs to the network._ Run the {% include qq.html command="network_mod_network" %} command and specify the network and tenant ID.
+To assign a single network to a tenant, modify _the tenant that belongs to the network._ Run the {% include qq.html command="network_modify_network" %} command and specify the network and tenant ID.
 
 ```bash
-qq network_mod_network \
+qq network_modify_network \
   --network-id 3 \
   --tenant-id 2
 ```
@@ -85,13 +85,13 @@ qq multitenancy_modify_tenant \
 ```
 
 #### Unassigning a Single Network from a Tenant
-To unassign a single network from a tenant, clear _the tenant that belongs to the network_. Run the {% include qq.html command="network_mod_network" %} command and specify the network and the `--clear-tenant-id` flag.
+To unassign a single network from a tenant, clear _the tenant that belongs to the network_. Run the {% include qq.html command="network_modify_network" %} command and specify the network and the `--clear-tenant-id` flag.
 
 {% capture unassignNetwork %}{{page.varUnassignNetwork}}{% endcapture %}
 {% include note.html content=unassignNetwork %}
 
 ```bash
-qq network_mod_network \
+qq network_modify_network \
   --network-id 3 \
   --clear-tenant-id
 ```
@@ -113,10 +113,10 @@ qq multitenancy_modify_tenant \
 ```
 
 #### Moving Networks between Tenants
-Run the {% include qq.html command="network_mod_network" %} command and specify the network and target tenant.
+Run the {% include qq.html command="network_modify_network" %} command and specify the network and target tenant.
 
 ```bash
-qq network_mod_network \
+qq network_modify_network \
   --network-id 2 \
   --tenant-id 1
 ```
@@ -140,14 +140,14 @@ qq multitenancy_get_tenant \
 * In the `qq` CLI, run the {% include qq.html command="multitenancy_list_tenants" %} command.
 
 #### Determining the Tenant Assignment for Networks
-* To view the information for a single network, run the {% include qq.html command="network_get_network" %} command.
+* To view the information for a single network, run the {% include qq.html command="network_get_config" %} command.
 
   ```bash
-  qq network_get_network \
+  qq network_get_config \
     --network-id 2
   ```
  
-* To view the information for all networks, run the {% include qq.html command="network_list_networks" %} command.
+* To view the information for all networks, run the {% include qq.html command="network_list_connections" %} command.
 
 ### Step 4: Delete a Tenant
 {{site.data.alerts.important}}

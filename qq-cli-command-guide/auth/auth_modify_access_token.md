@@ -21,9 +21,9 @@ optional_options:
   required: false
 permalink: /qq-cli-command-guide/auth/auth_modify_access_token.html
 positional_options:
-- help: The unique ID of the access token to be modified.
-  name: id
-  required: true
+  - help: The unique ID of the access token to be modified.
+    name: id
+    required: true
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq auth_modify_access_token</code>
   command.

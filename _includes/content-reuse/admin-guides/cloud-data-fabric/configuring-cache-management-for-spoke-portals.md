@@ -26,4 +26,4 @@ This section explains how to configure automatic cache management for active spo
      --free-threshold 0.2
    ```
 
-* To view the current cluster capacity used by a spoke portal's cache, run the {% include qq.html command="portal_list_file_systems" %} command.
+* To view the current cluster capacity used by a spoke portal's cache, run the {% include qq.html command="portal_list_filesystems" %} command.

@@ -148,31 +148,36 @@ if [[ -f /.dockerenv ]] || grep -qa docker /proc/1/cgroup; then
         clean)
             echo ""
             echo "Cleaning up HTML output..."
-            rm -rf _site ;;
+            rm -rf _site
+            ;;
         proof)
             echo ""
             echo "Checking for spelling errors..."
             rm -rf _site
-            bundle exec ruby tools/check-spelling.rb ;;
+            bundle exec ruby tools/check-spelling.rb
+            ;;
         check)
             echo ""
             echo "Checking for script, link, and image errors..."
             bundle exec jekyll build -d _site
-            ignore_list=$(grep -v '^\s*$' /src/tools/.ignore-error | paste -sd "," -)
-            if [ -n "$ignore_list" ]; then
-                echo "Ignoring: $ignore_list"
-                bundle exec htmlproofer _site \
-                    --only-4xx \
-                    --allow-missing-href=true \
-                    --ignore-urls "$ignore_list"
-            else
-                bundle exec htmlproofer _site --only-4xx --allow-missing-href=true
+
+            LYCHEE_ARGS=(
+                "--root-dir" "/src/_site"
+                "--exclude-path" "\.xml$"
+                "--remap" "https://docs\.qumulo\.com/ file:///src/_site/"
+            )
+
+            if [ "$GITHUB_ACTIONS" = "true" ]; then
+                LYCHEE_ARGS+=("--no-progress")
             fi
+
+            lychee "${LYCHEE_ARGS[@]}" "_site"
             ;;
         sidebar)
             echo ""
             echo "Checking for sidebar errors and loose Markdown files..."
-            bundle exec ruby tools/check-sidebars.rb ;;
+            bundle exec ruby tools/check-sidebars.rb
+            ;;
         serve)
             echo ""
             echo "Serving on port 4000"
@@ -180,9 +185,11 @@ if [[ -f /.dockerenv ]] || grep -qa docker /proc/1/cgroup; then
             if [ -z "${NOLIVERELOAD}" ]; then
                 LIVERELOAD="--livereload"
             fi
-            exec bundle exec jekyll serve ${LIVERELOAD} -H 0.0.0.0 "$@" ;;
+            exec bundle exec jekyll serve ${LIVERELOAD} -H 0.0.0.0 "$@"
+            ;;
         *)
-            bundle exec jekyll build -d _site "$@" ;;
+            bundle exec jekyll build -d _site "$@"
+            ;;
     esac
 
 else

@@ -42,7 +42,7 @@ optional_options:
 permalink: /qq-cli-command-guide/portal/portal_modify_spoke.html
 positional_options: []
 redirect_from:
-- /qq-cli-command-guide/portal/portal_modify_spoke_host.html
+  - /qq-cli-command-guide/portal/portal_modify_spoke_host.html
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq portal_modify_spoke</code>
   command.

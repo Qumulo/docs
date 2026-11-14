@@ -83,7 +83,7 @@ optional_options:
 permalink: /qq-cli-command-guide/nfs/nfs_modify_export.html
 positional_options: []
 redirect_from:
-- /qq-cli-command-guide/nfs/nfs_mod_export.html
+  - /qq-cli-command-guide/nfs/nfs_mod_export.html
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq nfs_modify_export</code> command.
 synopsis: Modify an export

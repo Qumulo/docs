@@ -24,7 +24,7 @@ optional_options:
 permalink: /qq-cli-command-guide/replication/replication_create_blackout_window.html
 positional_options: []
 redirect_from:
-- /qq-cli-command-guide/replication/replication_add_blackout_window.html
+  - /qq-cli-command-guide/replication/replication_add_blackout_window.html
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq replication_create_blackout_window</code>
   command.

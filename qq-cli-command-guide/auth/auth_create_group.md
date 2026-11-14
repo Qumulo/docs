@@ -13,7 +13,7 @@ optional_options:
 permalink: /qq-cli-command-guide/auth/auth_create_group.html
 positional_options: []
 redirect_from:
-- /qq-cli-command-guide/auth/auth_add_group.html
+  - /qq-cli-command-guide/auth/auth_add_group.html
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq auth_create_group</code> command.
 synopsis: Add a new group

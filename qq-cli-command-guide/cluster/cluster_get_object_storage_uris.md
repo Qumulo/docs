@@ -5,7 +5,7 @@ optional_options: []
 permalink: /qq-cli-command-guide/cluster/cluster_get_object_storage_uris.html
 positional_options: []
 redirect_from:
-- /qq-cli-command-guide/get/get_object_storage_uris.html
+  - /qq-cli-command-guide/get/get_object_storage_uris.html
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq cluster_get_object_storage_uris</code>
   command.

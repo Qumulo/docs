@@ -69,7 +69,7 @@ optional_options:
 permalink: /qq-cli-command-guide/cluster/cluster_create_stratus.html
 positional_options: []
 redirect_from:
-- /qq-cli-command-guide/stratus/stratus_cluster_create.html
+  - /qq-cli-command-guide/stratus/stratus_cluster_create.html
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq cluster_create_stratus</code>
   command.

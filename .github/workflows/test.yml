@@ -38,16 +38,6 @@ jobs:
         run: |
           ./tools/test-sidebars.sh || { echo "::error title=Sidebar Validation Failed::Ensure there are no loose .md files in the repository and that all files are added to _data/sidebars/*.yml"; exit 1; }
 
-      - name: Check scripts, links, and images (non-fatal)
-        shell: bash {0} # Allow manual error handling 
+      - name: Check scripts, links, and images
         run: |
-          # Do not fail if the check throws an error
-          set +e
-          ./tools/test-scripts-links-images.sh
-
-          # Capture the exit code
-          status=$?
-          if [ $status -ne 0 ]; then
-            echo "::warning title=Script, Link, and Image Check Failed::Fix script/link/image errors. 404s for unpublished pages is normal."
-          fi
-          exit 0
+          ./tools/test-scripts-links-images.sh || { echo "::error title=Script, Link, and Image Check Failed::Fix broken scripts, links, or images or add exceptions to .lycheeignore"; exit 1; }

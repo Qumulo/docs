@@ -32,7 +32,7 @@ optional_options:
 permalink: /qq-cli-command-guide/encryption/encryption_add_key.html
 positional_options: []
 redirect_from:
-- /qq-cli-command-guide/fs/fs_security_add_key.html
+  - /qq-cli-command-guide/fs/fs_security_add_key.html
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq encryption_add_key</code> command.
 synopsis: Add a key to the filesystem key-store.

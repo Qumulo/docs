@@ -1,10 +1,18 @@
 FROM ruby:3.4.1
 
-# Install system dependencies
+# Install Hunspell spell checker
 RUN apt-get update && apt-get install -y \
     libhunspell-dev \
     hunspell-en-us && \
     rm -rf /var/lib/apt/lists/*
+
+# Install Lychee link checker
+RUN curl -sSL https://github.com/lycheeverse/lychee/releases/download/lychee-v0.24.2/lychee-x86_64-unknown-linux-musl.tar.gz -o /tmp/lychee.tar.gz && \
+    tar -xzf /tmp/lychee.tar.gz -C /tmp && \
+    mv $(find /tmp -name lychee -type f) /usr/local/bin/lychee && \
+    chmod +x /usr/local/bin/lychee && \
+    rm -rf /tmp/lychee*
+
 
 # Set up GEM paths to avoid permission issues
 ENV GEM_HOME=/usr/local/bundle

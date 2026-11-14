@@ -23,7 +23,7 @@ optional_options:
 permalink: /qq-cli-command-guide/smb/smb_modify_share_permissions.html
 positional_options: []
 redirect_from:
-- /qq-cli-command-guide/smb/smb_mod_share_permissions.html
+  - /qq-cli-command-guide/smb/smb_mod_share_permissions.html
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq smb_modify_share_permissions</code>
   command.

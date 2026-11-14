@@ -22,9 +22,9 @@ optional_options:
 permalink: /qq-cli-command-guide/network/network_modify_config.html
 positional_options: []
 redirect_from:
-- /qq-cli-command-guide/network/network_put_config.html
-- /qq-cli-command-guide/network/network_v3_put_config.html
-- /qq-cli-command-guide/network/network_preview_put_config.html
+  - /qq-cli-command-guide/network/network_put_config.html
+  - /qq-cli-command-guide/network/network_v3_put_config.html
+  - /qq-cli-command-guide/network/network_preview_put_config.html
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq network_modify_config</code>
   command.

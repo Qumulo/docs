@@ -65,40 +65,52 @@ You can now configure Varonis to communicate with your Qumulo cluster.
 ## Step 3: Configure Qumulo Audit Logging by Using the qq CLI {#configure-audit-logging}
 This section explains how to configure audit logging on your Qumulo cluster.
 
-1. To configure audit logging on your Qumulo cluster, run the {% include qq.html command="audit_set_syslog_config" %} command with the `--enable` flag, use the `--json` flag to request logging in JSON format, and specify the IP address or hostname and port number for your Qumulo Broker machine. For example:
+1. To configure an audit logging destination on your Qumulo cluster, run the {% include qq.html command="audit_create_destination" %} command, specify a unique name for the destination, enable it with the `--enable` flag, use the `--json` flag to request logging in JSON format, and specify the IP address or hostname and port number for your Qumulo Broker machine. For example:
 
    ```bash
-   qq audit_set_syslog_config \
+   qq audit_create_destination \
+     --destination-name varonis-broker \
      --enable \
      --json \
      --server-address {{site.exampleIP1}} \
      --server-port 514
    ```
-   
-   Qumulo Core enables audit logging for your cluster.
-   
-1. To confirm the audit logging configuration for your cluster, run the {% include qq.html command="audit_get_syslog_config" %} command.
+
+   Qumulo Core creates and enables the audit logging destination for your cluster.
+
+1. To confirm the audit logging configuration for your destination, run the {% include qq.html command="audit_get_destination" %} command and specify the destination name. For example:
+
+   ```bash
+   qq audit_get_destination \
+     --destination-name varonis-broker
+   ```
 
    In the following example output, audit logging is enabled in JSON format.
-   
+
    ```json
    {
      "enabled": true,
      "format": "json",
      "local_enabled": false,
+     "name": "varonis-broker",
      "server_address": "{{site.exampleIP1}}",
      "server_port": 514
    }
    ```
-   
-1. To confirm the connection between the Qumulo Broker and the `rsyslog` instance, run the {% include qq.html command="audit_get_syslog_status" %} command.
+
+1. To confirm the connection between the Qumulo Broker and the `rsyslog` instance, run the {% include qq.html command="audit_get_destination_status" %} command and specify the destination name. For example:
+
+   ```bash
+   qq audit_get_destination_status \
+     --destination-name varonis-broker
+   ```
 
    The command returns one of three possible values for the `connection_status` field:
 
    * `AUDIT_LOG_CONNECTED`: The `rsyslog` instance is connected to your Qumulo Broker machine and all audit log messages are being transferred correctly.
 
    * `AUDIT_LOG_DISCONNECTED`: The `rsyslog` instance is disconnected from your Qumulo Broker. Your Qumulo cluster is configured to buffer all outgoing audit log messages until it fills its buffer. When the `rsyslog` instance reconnects to your Qumulo Broker the cluster attempts to send all buffered messages.
-     
+
      {{site.data.alerts.caution}}
      <ul>
        <li>When the message buffer fills up, Qumulo Core discards all new messages. To change the buffer size, configure `rsyslog` parameters.</li>
@@ -113,11 +125,11 @@ This section explains how to configure `rsyslog` on the Qumulo Broker machine.
 
 {% include important.html content="Before you restart the `rsyslog` service to apply a new configuration, you must always [ensure that Qumulo Broker is deployed](#deploy-qumulo-broker)." %}
 
-1. Change the file permission of the Qumulo Broker binary file.
+Change the file permission of the Qumulo Broker binary file.
 
-   ```bash
-   chmod a+x /opt/qumulo/QumuloBroker/events/Broker
-   ```
+```bash
+chmod a+x /opt/qumulo/QumuloBroker/events/Broker
+```
 
 ### Configuring rsyslog to Communicate with a Single Cluster {#rsyslog-with-single-cluster}
 Configure the following `rsyslog` parameters in the `/etc/rsyslog.d/10-qumulo.conf` file.

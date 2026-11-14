@@ -5,7 +5,7 @@ optional_options: []
 permalink: /qq-cli-command-guide/cluster/cluster_replace_nodes.html
 positional_options: []
 redirect_from:
-- /qq-cli-command-guide/replace/replace_nodes.html
+  - /qq-cli-command-guide/replace/replace_nodes.html
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq cluster_replace_nodes</code>
   command.

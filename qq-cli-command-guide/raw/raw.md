@@ -9,12 +9,12 @@ optional_options:
   required: false
 permalink: /qq-cli-command-guide/raw/raw.html
 positional_options:
-- help: HTTP method. PATCH, POST, and PUT accept input on stdin
-  name: method
-  required: true
-- help: REST endpoint (e.g. /v1/ad/join)
-  name: url
-  required: true
+  - help: HTTP method. PATCH, POST, and PUT accept input on stdin
+    name: method
+    required: true
+  - help: REST endpoint (e.g. /v1/ad/join)
+    name: url
+    required: true
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq raw</code> command.
 synopsis: Issue an HTTP request to a Qumulo REST endpoint. Content for modifying requests

@@ -283,7 +283,7 @@ In environments where Linux systems map exactly to end users that have `kinit`-b
       /- /etc/auto.kerberos_nfs_mount_example --timeout 60
       ```
 
-      For more information, see [`autofs`](https://help.ubuntu.com/community/Autofs) in the Ubuntu documentation.
+      For more information, see [`autofs`](https://wiki.ubuntu.com/Autofs) in the Ubuntu documentation.
 
    1. Add the following line to the `/etc/auto.kerberos_nfs_mount_example` map file.
 
