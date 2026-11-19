@@ -2535,7 +2535,7 @@ $(document).ready(function() {
 <em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
     <li>The majority of functionality and stability improvements in this Qumulo Core release are internal.</li>
     <li>This release…       <ul>
-        <li>Resolves an issue that previously reduced the performance of the process that reclaims the capacity used by deleted snapshots on clusters with large numbers of deleted snapshots.</li>
+        <li>This release resolves an issue that previously reduced the performance of the process that reclaims the capacity used by deleted snapshots on clusters with large numbers of deleted snapshots.</li>
         <li>Significantly shortens quorum formation time for Cloud Native Qumulo created on Qumulo Core versions lower than 7.10.0 and Stratus Accelerator clusters created on Qumulo Core versions lower than 7.9.2.</li>
       </ul>
     </li>
@@ -2573,18 +2573,39 @@ $(document).ready(function() {
   <li><a href="https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-71013"><code class="language-plaintext highlighter-rouge">qq</code> CLI</a></li>
 </ul>
 
-<h3 id="qumulo-core-71003-quarterly">Qumulo Core 7.10.0.3 (Quarterly)</h3>
+<h3 id="qumulo-core-71004-quarterly">Qumulo Core 7.10.0.4 (Quarterly)</h3>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 
 <h4 id="features-and-improvements-2">Features and Improvements</h4>
 <div class="alert alert-warning" role="alert">
 <em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
-    <li>The majority of functionality and stability improvements in this Qumulo Core release are internal.</li>
-    <li>This release…       <ul>
-        <li>Resolves an issue that previously reduced the performance of the process that reclaims the capacity used by deleted snapshots on clusters with large numbers of deleted snapshots.</li>
-        <li>Includes a cryptographic module compliant with <a target="_blank" href="https://csrc.nist.gov/pubs/fips/140-3/final">FIPS 140-3</a>. To be able to upgrade your cluster to Qumulo Core 7.10.0.1, you must ensure that all certificates on your cluster are compliant with FIPS 140-3. Non-compliant certificates can cause error messages beginning with <code class="language-plaintext highlighter-rouge">REPLACEMENT_ADVICE</code> or <code class="language-plaintext highlighter-rouge">MATCHING_KEY_ADVICE</code>.</li>
+    <li><span class="dot-release">7.10.0.4</span>       <ul>
+        <li>This release improves the space reclamation system in Qumulo Core by…           <ul>
+            <li>Significantly increasing the reclamation speed for deleted files and snapshots</li>
+            <li>Adding quality-of-service functionality for reclamation on:               <ul>
+                <li>Clusters with intensive workloads</li>
+                <li>Clusters that are nearly full</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>Due to on-disk changes, the system prevents attempts to upgrade from Qumulo Core 7.10.0.4 to:</p>
+          <ul>
+            <li>Qumulo Core 7.10.1.x</li>
+            <li>Qumulo Core 7.10.2.x</li>
+          </ul>
+          <p>The next possible upgrade versions are:</p>
+          <ul>
+            <li>Qumulo Core 7.10.3.x</li>
+            <li>Qumulo Core 7.11.0.x</li>
+          </ul>
+        </li>
       </ul>
     </li>
+    <li><span class="dot-release">7.10.0.3</span>The majority of functionality and stability improvements in this Qumulo Core release are internal.</li>
+    <li><span class="dot-release">7.10.0.2</span>This release includes a cryptographic module compliant with <a target="_blank" href="https://csrc.nist.gov/pubs/fips/140-3/final">FIPS 140-3</a>. To be able to upgrade your cluster to Qumulo Core 7.10.0.4, you must ensure that all certificates on your cluster are compliant with FIPS 140-3. Non-compliant certificates can cause error messages beginning with <code class="language-plaintext highlighter-rouge">REPLACEMENT_ADVICE</code> or <code class="language-plaintext highlighter-rouge">MATCHING_KEY_ADVICE</code>.</li>
+    <li><span class="dot-release">7.10.0.1</span>This release resolves an issue that previously reduced the performance of the process that reclaims the capacity used by deleted snapshots on clusters with large numbers of deleted snapshots.</li>
     <li>
       <p>For Cloud Native Qumulo (CNQ) clusters that were:</p>
       <ul>
