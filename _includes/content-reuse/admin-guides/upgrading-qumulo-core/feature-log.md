@@ -78,7 +78,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {{ nexusLink }}
 
 #### Features and Improvements
-{% capture delSnap %}Resolves an issue that previously reduced the performance of the process that reclaims the capacity used by deleted snapshots on clusters with large numbers of deleted snapshots.{% endcapture %}
+{% capture delSnap %}This release resolves an issue that previously reduced the performance of the process that reclaims the capacity used by deleted snapshots on clusters with large numbers of deleted snapshots.{% endcapture %}
 {% capture adjInfra %}    <p>For Cloud Native Qumulo (CNQ) clusters that were:</p>
     <ul>
       <li><strong>Deployed on Qumulo Core lower than 7.4.3:</strong> If the clusters haven’t undergone a cluster infrastructure adjustment on Qumulo Core 7.4.3 (or higher), they must complete this process before upgrading to Qumulo Core 7.10.1 (or higher). The process retains your cluster’s configuration and all data.</li>
@@ -115,20 +115,44 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-71013)
 
 
-### Qumulo Core 7.10.0.3 (Quarterly)
+### Qumulo Core 7.10.0.4 (Quarterly)
 {{ nexusLink }}
+{% capture spcRcl %}This release improves the space reclamation system in Qumulo Core by&hellip;
+    <ul>
+      <li>Significantly increasing the reclamation speed for deleted files and snapshots</li>
+      <li>
+        Adding quality-of-service functionality for reclamation on:
+        <ul>
+          <li>Clusters with intensive workloads</li>
+          <li>Clusters that are nearly full</li>
+        </ul>
+      </li>
+    </ul>{% endcapture %}
 
 #### Features and Improvements
 {{site.data.alerts.important}}
 <ul>
-  <li>{{ majFixInt }}</li>
   <li>
-    This release&hellip;
+    <span class="dot-release">7.10.0.4</span>
     <ul>
-      <li>{{ delSnap }}</li>
-      <li>Includes a cryptographic module compliant with <a target="_blank" href="https://csrc.nist.gov/pubs/fips/140-3/final">FIPS 140-3</a>. To be able to upgrade your cluster to Qumulo Core 7.10.0.1, you must ensure that all certificates on your cluster are compliant with FIPS 140-3. Non-compliant certificates can cause error messages beginning with <code>REPLACEMENT_ADVICE</code> or <code>MATCHING_KEY_ADVICE</code>.</li>
+      <li>{{ spcRcl }}</li>
+      <li>
+        <p>Due to on-disk changes, the system prevents attempts to upgrade from Qumulo Core 7.10.0.4 to:</p>
+        <ul>
+          <li>Qumulo Core 7.10.1.x</li>
+          <li>Qumulo Core 7.10.2.x</li>
+        </ul>
+        <p>The next possible upgrade versions are:</p>
+        <ul>
+          <li>Qumulo Core 7.10.3.x</li>
+          <li>Qumulo Core 7.11.0.x</li>
+        </ul>
+      </li>
     </ul>
   </li>
+  <li><span class="dot-release">7.10.0.3</span>{{ majFixInt }}</li>
+  <li><span class="dot-release">7.10.0.2</span>This release includes a cryptographic module compliant with <a target="_blank" href="https://csrc.nist.gov/pubs/fips/140-3/final">FIPS 140-3</a>. To be able to upgrade your cluster to Qumulo Core 7.10.0.4, you must ensure that all certificates on your cluster are compliant with FIPS 140-3. Non-compliant certificates can cause error messages beginning with <code>REPLACEMENT_ADVICE</code> or <code>MATCHING_KEY_ADVICE</code>.</li>
+  <li><span class="dot-release">7.10.0.1</span>{{ delSnap }}</li>
   <li>
 {{ adjInfra }}
   </li>

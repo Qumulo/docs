@@ -606,7 +606,7 @@ div#toc {
   </ul>
 </details>
 
-### Qumulo Core 7.10.0.3 (Quarterly)
+### Qumulo Core 7.10.0.4 (Quarterly)
 {{ nexusLink }}
 
 <ul>
