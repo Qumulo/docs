@@ -79,8 +79,8 @@ For information about upgrade types for each release, see <a href='mode-referenc
   * Behave in compliance with Amazon S3 specifications
 
 #### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71031)
-* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-71031)
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71032)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-71032)
 
 
 ### Qumulo Core 7.10.2.1
@@ -182,8 +182,8 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * **REST API:** Made improvements to Analytics and Files endpoints
 
 #### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71003-quarterly)
-* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-71003-quarterly)
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-71004-quarterly)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-71004-quarterly)
 
 
 ## 7.9 Releases
