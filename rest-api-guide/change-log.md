@@ -18,7 +18,7 @@ div#toc {
 
 ## 7.10 Releases
 
-### Qumulo Core 7.10.3.1
+### Qumulo Core 7.10.3.2
 {{ nexusLink }}
 <ul>
   <li>Removed <code>/v1/object-portal/notify</code> endpoint</li>

@@ -18,17 +18,41 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 ## 7.10 Releases
 
-### Qumulo Core 7.10.3.1
+### Qumulo Core 7.10.3.2
 {{ nexusLink }}
+{% capture upgRest %}Due to on-disk changes, the system prevents attempts to upgrade from Qumulo Core 7.10.0.4 to:
+        <ul>
+          <li>Qumulo Core 7.10.1.x</li>
+          <li>Qumulo Core 7.10.2.x</li>
+        </ul>
+        <p>The next possible upgrade versions are:</p>
+        <ul>
+          <li>Qumulo Core 7.10.3.x</li>
+          <li>Qumulo Core 7.11.0.x</li>
+        </ul>{% endcapture %}
+{% capture spcRcl %}This release improves the space reclamation system in Qumulo Core by&hellip;
+    <ul>
+      <li>Significantly increasing the reclamation speed for deleted files and snapshots</li>
+      <li>
+        Adding quality-of-service functionality for reclamation on:
+        <ul>
+          <li>Clusters with intensive workloads</li>
+          <li>Clusters that are nearly full</li>
+        </ul>
+      </li>
+    </ul>{% endcapture %}
 
 #### Features and Improvements
 {{site.data.alerts.important}}
 <ul>
-  <li><strong>7.10.3.1:</strong> This release adds Qumulo Core performance improvements.</li>
+  <li>
+    <span class="dot-release">7.10.3.2</span> {{ spcRcl }}
+  </li>
+  <li><span class="dot-release">7.10.3.1</span> This release adds Qumulo Core performance improvements.</li>
   <li>
     <p>To improve standardization and consistency, this release introduces new aliases for existing <code>qq</code> CLI command names.</p>
     <p>All existing command names continue to function as before.</p>
-    <p>For a full list of changes, see <a href="https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-71031">Qumulo Core 7.10.3.1</a> in the Qumulo <code>qq</code> CLI Change Log.</p>
+    <p>For a full list of changes, see <a href="https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-71032">Qumulo Core 7.10.3.2</a> in the Qumulo <code>qq</code> CLI Change Log.</p>
   </li>
 </ul>
 {{site.data.alerts.end}}
@@ -135,19 +159,8 @@ For information about upgrade types for each release, see <a href='mode-referenc
   <li>
     <span class="dot-release">7.10.0.4</span>
     <ul>
+      <li>{{ upgRest }}</li>
       <li>{{ spcRcl }}</li>
-      <li>
-        <p>Due to on-disk changes, the system prevents attempts to upgrade from Qumulo Core 7.10.0.4 to:</p>
-        <ul>
-          <li>Qumulo Core 7.10.1.x</li>
-          <li>Qumulo Core 7.10.2.x</li>
-        </ul>
-        <p>The next possible upgrade versions are:</p>
-        <ul>
-          <li>Qumulo Core 7.10.3.x</li>
-          <li>Qumulo Core 7.11.0.x</li>
-        </ul>
-      </li>
     </ul>
   </li>
   <li><span class="dot-release">7.10.0.3</span>{{ majFixInt }}</li>
