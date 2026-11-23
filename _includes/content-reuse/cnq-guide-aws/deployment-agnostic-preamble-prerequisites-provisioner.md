@@ -17,7 +17,7 @@ This section explains the prerequisites to deploying {{site.aws.cnqAWSshort}}.
 
 * To deploy your Qumulo cluster with a VPC S3 gateway, you must configure your VPC to use the S3 gateway VPC endpoint.
 
-* The following features require specific versions of Qumulo Core:
+* The following features require specific Qumulo Core versions:
 
   <table>
     <thead>

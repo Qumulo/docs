@@ -91,7 +91,7 @@ Every Qumulo Core upgrade has two phases, _preparation_ and _commit_.
 {% if page.platform == 'on-prem' %}
 1. Depending on the [upgrade mode for your release](mode-reference.html), take one of the following actions:
 
-   * **Instant Software Upgrade:** In the **Ready to upgrade?** dialog box, confirm the current and new versions of Qumulo Core and then click **Start Upgrade**.
+   * **Instant Software Upgrade:** In the **Ready to upgrade?** dialog box, confirm the current and new Qumulo Core versions and then click **Start Upgrade**.
 
      On the **Software Upgrade** page, the upgrade progress is displayed.
 
@@ -101,7 +101,7 @@ Every Qumulo Core upgrade has two phases, _preparation_ and _commit_.
 
        * **Rolling reboot (with SMB client impact):** You can access your cluster during reboot, but SMB connectivity to specific nodes is impacted.
 {% else %}
-1. Confirm the current and new versions of Qumulo Core and then click **Start Upgrade**.
+1. Confirm the current and new Qumulo Core versions and then click **Start Upgrade**.
 {% endif %}
 
    Qumulo Core prepares the upgrade then installs Qumulo software on your cluster.

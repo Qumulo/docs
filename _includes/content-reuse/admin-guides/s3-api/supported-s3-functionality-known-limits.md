@@ -3,7 +3,7 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
 
 {{site.data.alerts.note}}
 <ul>
-  <li>The S3 API became generally available in Qumulo Core 5.3.3. This guide doesn't document enabling or using API actions that became available with preview functionality in versions of Qumulo Core lower than 5.3.3.</li>
+  <li>The S3 API became generally available in Qumulo Core 5.3.3. This guide doesn't document enabling or using API actions that became available with preview functionality in Qumulo Core versions lower than 5.3.3.</li>
   <li>The Qumulo S3 protocol creates data that supports all file system functionality, such as quotas, snapshots, replication, and Cloud Data Fabric functionality.</li>
 </ul>
 {{site.data.alerts.end}}
@@ -431,7 +431,7 @@ This section describes the special considerations for how default header values,
 {{site.data.alerts.note}}
 <ul>
   <li>In Qumulo Core 7.10.2.1 (and higher), the S3 API stores the <a target="_blank" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingMetadata.html#SysMetadata">system-defined metadata headers that users can control</a> and returns them in the responses of <a href="{{site.s3.actions.GetObject}}"><code>GetObject</code></a> and <a href="{{site.s3.actions.HeadObject}}"><code>HeadObject</code></a> API actions.</li>
-  <li>Lower versions of Qumulo Core accept these headers, don't store them, and return <code>Content-Type: binary/octet-stream</code> for every object.</li>
+  <li>Lower Qumulo Core versions accept these headers, don't store them, and return <code>Content-Type: binary/octet-stream</code> for every object.</li>
 </ul>
 {{site.data.alerts.end}}
 

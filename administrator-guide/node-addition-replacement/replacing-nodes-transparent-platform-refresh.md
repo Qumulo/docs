@@ -45,7 +45,7 @@ There are two node replacement plan types:
 * While a node replacement step is in progress, both new nodes and nodes marked for replacement appear on the **Cluster** page of the Qumulo Core Web UI and clients can connect to any of the nodes in the _combined cluster_ while the step is in progress.
   {: #combined-cluster}
 
-* When a node replacement step is complete, the reassignment of static IP addresses differs between versions of Qumulo Core:
+* When a node replacement step is complete, the reassignment of static IP addresses differs between Qumulo Core versions:
 
   * In Qumulo Core 6.3.0.1 (and higher), the static IP addresses assigned to nodes remain unchanged and Qumulo Core removes only the static IP addresses for nodes removed from the cluster.
  
