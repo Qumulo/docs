@@ -55,7 +55,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
     * Made related changes to the Qumulo REST API and `qq` CLI.
 
-* **CNQ on AWS:* Added support for DKV disks of 4 GiB (and larger)
+* **CNQ on AWS:** Added support for DKV disks of 4 GiB (and larger)
 
 * **NFS**
 
