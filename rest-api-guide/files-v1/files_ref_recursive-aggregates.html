@@ -9453,6 +9453,15 @@ $(document).ready(function() {
                   </span><span class="p">}</span><span class="w">
                 </span><span class="p">}</span><span class="w">
               </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"bridge_listing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"NOT_LISTED"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"LISTING"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"LISTED"</span><span class="w">
+              </span><span class="p">],</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[preview] Whether this directory's own entries have been listed from the bucket of the object bridge it is on. Each directory under it reports its own, so LISTED doesn't mean the totals under it are complete. Null for anything that isn't a directory on an object bridge.:</span><span class="se">\n</span><span class="s2"> * `LISTED` - The directory's entries have been listed from its bucket, or placed by a full import that finished,</span><span class="se">\n</span><span class="s2"> * `LISTING` - A listing of the directory from its bucket, or a full import placing its entries, is underway, so its counts may leave out part of what the bucket holds under it,</span><span class="se">\n</span><span class="s2"> * `NOT_LISTED` - The directory's entries haven't been listed from its bucket yet, so its counts may leave out what the bucket holds under it"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -9606,6 +9615,15 @@ $(document).ready(function() {
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"bridge_listing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"NOT_LISTED"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"LISTING"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"LISTED"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[preview] Whether this directory's own entries have been listed from the bucket of the object bridge it is on. Each directory under it reports its own, so LISTED doesn't mean the totals under it are complete. Null for anything that isn't a directory on an object bridge.:</span><span class="se">\n</span><span class="s2"> * `LISTED` - The directory's entries have been listed from its bucket, or placed by a full import that finished,</span><span class="se">\n</span><span class="s2"> * `LISTING` - A listing of the directory from its bucket, or a full import placing its entries, is underway, so its counts may leave out part of what the bucket holds under it,</span><span class="se">\n</span><span class="s2"> * `NOT_LISTED` - The directory's entries haven't been listed from its bucket yet, so its counts may leave out what the bucket holds under it"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">

@@ -1457,6 +1457,22 @@ fetch('/data/website.json')
           
           
           <li>
+            <a title="Changing the Portal Relationship Type" href="/administrator-guide/cloud-data-fabric/changing-portal-relationship-type.html">
+              Changing the Portal Relationship Type
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
             <a title="Configuring Cache Management" href="/administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html">
               Configuring Cache Management
               <span class="tag-container">
@@ -2712,10 +2728,7 @@ $(document).ready(function() {
    <p>This section describes the known limits in Cloud Data Fabric that pertain to the file system, data caching, portal relationships, portal connectivity, and protocols.</p>
    
      
-     <h2 id="general">General</h2>
-<p>Currently, it is possible to configure and manage Cloud Data Fabric functionality only by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI.</p>
-
-<h2 id="file-system">File System</h2>
+     <h2 id="file-system">File System</h2>
 <ul>
   <li>While Qumulo Core doesn’t support hard links between the files local to the spoke portal host cluster and files within the spoke portal root directory, it does support hard links entirely outside or inside the spoke portal root directory.</li>
 </ul>
@@ -2759,17 +2772,24 @@ $(document).ready(function() {
 <p>For a spoke portal to be accessible, there must be full connectivity between the two clusters in a portal relationship, without which files or directories with outstanding modifications on one portal are inaccessible on other portals. Specifically, every node in the spoke portal host cluster must be able to connect to the configured hub portal host cluster address, and the other way around.</p>
 
 <h2 id="portal-relationships">Portal Relationships</h2>
+<p>This section lists the known limits in Cloud Data Fabric that pertain to configuring and managing portal relationships on Qumulo clusters.</p>
+
+<h3 id="number-of-hosted-portals">Number of Hosted Portals</h3>
 <ul>
   <li>
     <p>In Qumulo Core 7.5.2 (and higher), it is possible for a Qumulo cluster to host both up to 32 spoke portals <em>and</em> up to 32 hub portals at the same time.</p>
 
-    <ul>
-      <li>Currently, Qumulo Core doesn’t support a single cluster establishing two portal relationships with the same remote cluster.</li>
-    </ul>
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Currently, Qumulo Core doesn’t support a single cluster establishing two portal relationships with the same remote cluster.
+    </div>
   </li>
   <li>
     <p>In Qumulo Core 7.5.0.1 to 7.5.1, it is possible for a Qumulo cluster to host only up to 32 hub portals <em>or</em> up to 32 spoke portals.</p>
   </li>
+</ul>
+
+<h3 id="unique-host-cluster">Unique Host Cluster</h3>
+<ul>
   <li>
     <p>Your cluster’s Qumulo Core version determines whether the host cluster for each portal relationship must be unique. For example:</p>
 
@@ -2787,6 +2807,19 @@ $(document).ready(function() {
         <p>In Qumulo Core versions lower than 7.5.2, another spoke portal on Cluster A can’t propose a relationship to a hub portal on Cluster B, because a relationship of that type between portals on the host clusters already exists.</p>
       </li>
     </ul>
+  </li>
+</ul>
+
+<h3 id="portal-relationship-management">Portal Relationship Management</h3>
+<ul>
+  <li>
+    <p>In Qumulo Core versions lower than 7.10.1.3, it is possible to configure and manage Cloud Data Fabric functionality only by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI.</p>
+  </li>
+  <li>
+    <p>In Qumulo Core 7.10.1.3 (and higher), it is possible to manage portal relationships by using the Qumulo Core Web UI (under <strong>Cluster &gt; Portals</strong>) or the <code class="language-plaintext highlighter-rouge">qq</code> CLI.</p>
+  </li>
+  <li>
+    <p>In Qumulo Core 7.11.0 (and higher), it is possible to configure the portal relationship <em>type</em> only by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI.</p>
   </li>
 </ul>
 
@@ -2835,7 +2868,7 @@ $(document).ready(function() {
     <p>While NFSv3 is a stateless protocol, NFSv4.1 is a stateful protocol which permits open file handles to remain open after a file is unlinked. However, Qumulo Core doesn’t always maintain access to files deleted from a portal in a relationship. For example, if you open a file on the spoke portal host cluster and then delete the same file on the hub portal host cluster, an application that uses the file on the spoke portal host cluster will lose access to the file unexpectedly.</p>
   </li>
   <li>
-    <p>When you authenticate over NFSv4.1 by using Kerberos, you can use Kerberos principals only from the Active Directory domain associated with the Qumulo cluster to which you are connected. It isn’t possible to use principals from a remote Qumulo cluster.”</p>
+    <p>When you authenticate over NFSv4.1 by using Kerberos, you can use Kerberos principals only from the Active Directory domain associated with the Qumulo cluster to which you are connected. It isn’t possible to use principals from a remote Qumulo cluster.</p>
   </li>
   <li>
     <p>When you edit ACLs over NFSv4.1 by using <code class="language-plaintext highlighter-rouge">editfacl</code> or similar tools, you can use only Kerberos principals from the Active Directory domain associated with the Qumulo cluster to which you are connected. It isn’t possible to use principals from a remote Qumulo cluster.</p>
@@ -3040,11 +3073,19 @@ $(document).ready(function() {
           
             
             
+  <li><a href="/administrator-guide/cloud-data-fabric/changing-portal-relationship-type.html">Changing the Portal Relationship Type</a></li>
+            
+          
+            
+            
   <li><a href="/administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html">Configuring Cache Management</a></li>
             
           
         
 </ul>
+        
+    
+      
         
     
       

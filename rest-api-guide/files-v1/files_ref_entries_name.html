@@ -9179,6 +9179,322 @@ $(document).ready(function() {
   
   
   
+<h2>GET</h2>
+
+    
+    
+    
+
+    Get the attributes of the file, directory or link specified by 'name' in the directory specified by 'ref'. With a directory's ID, this needs no path for the entry, unlike 'GET /v1/files/<ref>/info/attributes'.
+
+    
+
+<h3>Parameters</h3>
+    
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Required</th>
+  </tr>
+      
+  <tr>
+    <td><code>ref</code></td>
+    <td>The file ID or the absolute path to the filesystem object. File IDs can be found in the id field of responses of APIs that return file attributes. You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web UI URL-encodes the paths.</td>
+    <td>Yes</td>
+  </tr>
+      
+  <tr>
+    <td><code>name</code></td>
+    <td>Name of the directory entry</td>
+    <td>Yes</td>
+  </tr>
+      
+  <tr>
+    <td><code>snapshot</code></td>
+    <td>The snapshot ID that specifies the version of the filesystem to use. If not specified, use the head version.</td>
+    <td>No</td>
+  </tr>
+      
+</table>
+    
+
+    
+
+<h3>Response</h3>
+<h4>Codes</h4>
+<table>
+  <tr>
+    <th>Code</th>
+    <th>Description</th>
+  </tr>
+      
+  <tr>
+    <td>200</td>
+    <td>Return value on success</td>
+  </tr>
+      
+</table>
+
+    
+<h4>Schema</h4>
+    
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api_files_attributes"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Filesystem path of the object"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name of this file"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"num_links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How many directory entries are associated with this file"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"FS_FILE_TYPE_FILE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"FS_FILE_TYPE_DIRECTORY"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"FS_FILE_TYPE_SYMLINK"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"FS_FILE_TYPE_UNIX_PIPE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"FS_FILE_TYPE_UNIX_CHARACTER_DEVICE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"FS_FILE_TYPE_UNIX_BLOCK_DEVICE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"FS_FILE_TYPE_UNIX_SOCKET"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Resource type:</span><span class="se">\n</span><span class="s2"> * `FS_FILE_TYPE_DIRECTORY` - FS_FILE_TYPE_DIRECTORY,</span><span class="se">\n</span><span class="s2"> * `FS_FILE_TYPE_FILE` - FS_FILE_TYPE_FILE,</span><span class="se">\n</span><span class="s2"> * `FS_FILE_TYPE_SYMLINK` - FS_FILE_TYPE_SYMLINK,</span><span class="se">\n</span><span class="s2"> * `FS_FILE_TYPE_UNIX_BLOCK_DEVICE` - FS_FILE_TYPE_UNIX_BLOCK_DEVICE,</span><span class="se">\n</span><span class="s2"> * `FS_FILE_TYPE_UNIX_CHARACTER_DEVICE` - FS_FILE_TYPE_UNIX_CHARACTER_DEVICE,</span><span class="se">\n</span><span class="s2"> * `FS_FILE_TYPE_UNIX_PIPE` - FS_FILE_TYPE_UNIX_PIPE,</span><span class="se">\n</span><span class="s2"> * `FS_FILE_TYPE_UNIX_SOCKET` - FS_FILE_TYPE_UNIX_SOCKET"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"major_minor_numbers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The major and minor numbers for UNIX device files"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"major"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"major"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"minor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"minor"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"symlink_target_type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"FS_FILE_TYPE_UNKNOWN"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"FS_FILE_TYPE_FILE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"FS_FILE_TYPE_DIRECTORY"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The type of the target file if this file is a symlink:</span><span class="se">\n</span><span class="s2"> * `FS_FILE_TYPE_DIRECTORY` - API_SYMLINK_TARGET_DIRECTORY,</span><span class="se">\n</span><span class="s2"> * `FS_FILE_TYPE_FILE` - API_SYMLINK_TARGET_FILE,</span><span class="se">\n</span><span class="s2"> * `FS_FILE_TYPE_UNKNOWN` - API_SYMLINK_TARGET_UNKNOWN"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"file_number"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unique ID of this file"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unique ID of this file"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POSIX-style file mode (octal)"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"File owner"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"owner_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"File owner details"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id_type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"LOCAL_USER"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"LOCAL_GROUP"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"NFS_GID"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"NFS_UID"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"SMB_SID"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"INTERNAL"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"QUMULO_OPERATOR"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"QUMULO_SUPPORT"</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id_type:</span><span class="se">\n</span><span class="s2"> * `INTERNAL` - INTERNAL,</span><span class="se">\n</span><span class="s2"> * `LOCAL_GROUP` - LOCAL_GROUP,</span><span class="se">\n</span><span class="s2"> * `LOCAL_USER` - LOCAL_USER,</span><span class="se">\n</span><span class="s2"> * `NFS_GID` - NFS_GID,</span><span class="se">\n</span><span class="s2"> * `NFS_UID` - NFS_UID,</span><span class="se">\n</span><span class="s2"> * `QUMULO_OPERATOR` - QUMULO_OPERATOR,</span><span class="se">\n</span><span class="s2"> * `QUMULO_SUPPORT` - QUMULO_SUPPORT,</span><span class="se">\n</span><span class="s2"> * `SMB_SID` - SMB_SID"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"id_value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id_value"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"group"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"File group"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"group_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"File group details"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id_type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"LOCAL_USER"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"LOCAL_GROUP"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"NFS_GID"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"NFS_UID"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"SMB_SID"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"INTERNAL"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"QUMULO_OPERATOR"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"QUMULO_SUPPORT"</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id_type:</span><span class="se">\n</span><span class="s2"> * `INTERNAL` - INTERNAL,</span><span class="se">\n</span><span class="s2"> * `LOCAL_GROUP` - LOCAL_GROUP,</span><span class="se">\n</span><span class="s2"> * `LOCAL_USER` - LOCAL_USER,</span><span class="se">\n</span><span class="s2"> * `NFS_GID` - NFS_GID,</span><span class="se">\n</span><span class="s2"> * `NFS_UID` - NFS_UID,</span><span class="se">\n</span><span class="s2"> * `QUMULO_OPERATOR` - QUMULO_OPERATOR,</span><span class="se">\n</span><span class="s2"> * `QUMULO_SUPPORT` - QUMULO_SUPPORT,</span><span class="se">\n</span><span class="s2"> * `SMB_SID` - SMB_SID"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"id_value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id_value"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"blocks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Number of blocks used by the file on this cluster"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"datablocks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Number of data blocks used by the file on this cluster"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"metablocks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Number of meta blocks used by the file on this cluster"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"logical_datablocks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Number of data blocks used by the file"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"File size in bytes"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"access_time"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Last time content was read, RFC 3339 format"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"modification_time"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Last time content was modified, RFC 3339 format"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"change_time"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Last time content or attributes were modified, RFC 3339 format"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"creation_time"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"File creation time, RFC 3339 format"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"child_count"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Count of children (valid for directories)"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"extended_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SMB extended file attributes"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"read_only"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"read_only"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"hidden"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hidden"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"system"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"archive"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"archive"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"temporary"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"temporary"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"compressed"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"compressed"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"not_content_indexed"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not_content_indexed"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"sparse_file"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sparse_file"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"offline"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"offline"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"directory_entry_hash_policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"FS_DIRECTORY_HASH_VERSION_LOWER"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"FS_DIRECTORY_HASH_VERSION_FOLDED"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hash policy for directory entries:</span><span class="se">\n</span><span class="s2"> * `FS_DIRECTORY_HASH_VERSION_FOLDED` - FS_DIRECTORY_HASH_VERSION_FOLDED,</span><span class="se">\n</span><span class="s2"> * `FS_DIRECTORY_HASH_VERSION_LOWER` - FS_DIRECTORY_HASH_VERSION_LOWER"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"data_revision"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The revision for changes to the underlying file data."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"user_metadata_revision"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The revision for changes to the user defined metadata of the file."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"file_revision"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The revision for any change to the file, including its data and attributes."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"archival"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Files and symlinks on an object bridge only: the archival status and storage tier of the object behind it, and the job that last set it. Null for directories and for anything on no bridge."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"ONLINE"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"FREEZING"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"OFFLINE"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"RESTORING"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"RESTORED"</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Where the file stands between its object store's online and archive tiers:</span><span class="se">\n</span><span class="s2"> * `FREEZING` - A freeze job has set the file, and its object isn't archived yet.,</span><span class="se">\n</span><span class="s2"> * `OFFLINE` - Its object is in an archive tier, and can't be read until it's restored.,</span><span class="se">\n</span><span class="s2"> * `ONLINE` - Readable without a restore, and no freeze job asks to archive it.,</span><span class="se">\n</span><span class="s2"> * `RESTORED` - Its object is in an archive tier, and a temporary restored copy of it can be read until the copy expires.,</span><span class="se">\n</span><span class="s2"> * `RESTORING` - Its object is in an archive tier, and a restore is bringing it back online."</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"store_tier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The storage tier of the file's object, in the bridge's provider's terms, such as HOT, COOL, COLD or ARCHIVE on Azure, or null when the cluster hasn't learned it"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"job_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The freeze or thaw job that last set the file. Null if none has, or if a canceled or failed freeze released it"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"restore_expires_at"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When the file's temporary restored copy stops being readable, RFC 3339 format. Null unless the status is RESTORED, or if the provider reported no expiry"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+    
+  
 
   
   
@@ -9222,7 +9538,7 @@ $(document).ready(function() {
       
   <tr>
     <td><code>name</code></td>
-    <td>Name of the directory entry to be deleted</td>
+    <td>Name of the directory entry</td>
     <td>Yes</td>
   </tr>
       

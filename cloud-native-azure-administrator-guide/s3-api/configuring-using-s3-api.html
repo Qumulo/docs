@@ -1302,6 +1302,22 @@ fetch('/data/website.json')
           
           
           <li>
+            <a title="Changing the Portal Relationship Type" href="/cloud-native-azure-administrator-guide/cloud-data-fabric/changing-portal-relationship-type.html">
+              Changing the Portal Relationship Type
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
             <a title="Configuring Cache Management" href="/cloud-native-azure-administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html">
               Configuring Cache Management
               <span class="tag-container">
@@ -2422,11 +2438,11 @@ $(document).ready(function() {
 <p>To use the S3 API, you must install the <a href="https://aws.amazon.com/cli"><code class="language-plaintext highlighter-rouge">aws</code> CLI</a> and <a href="../qq-cli/getting-started.html"><code class="language-plaintext highlighter-rouge">qq</code> CLI</a>.</p>
 
 <h2 id="configuring-https">Step 1: Configure HTTPS</h2>
-<p>The Qumulo Core S3 API accepts only HTTPS requests by default. To enable HTTPS support for your Qumulo cluster, you must install a valid SSL certificate on it.</p>
+<p>The Qumulo S3 API accepts only HTTPS requests by default. To enable HTTPS support for your Qumulo cluster, you must install a valid SSL certificate on it.</p>
 
 <p>Every Qumulo cluster is preconfigured with a self-signed SSL certificate. However, because certain applications don’t accept the default certificate, we recommend installing your own.</p>
 
-<p>For information about configuring HTTPS for your cluster, see <a href="https://care.qumulo.com/hc/en-us/articles/17652500917779">Installing the Qumulo Core Web UI SSL Certificate</a> on Qumulo Care.</p>
+<p>For information about configuring HTTPS for your cluster, see <a href="../authentication-qumulo-core/installing-signed-ssl-certificate.html">Installing a Signed SSL Certificate on a Qumulo Cluster</a>.</p>
 
 <h3 id="enabling-and-disabling-plaintext-http-connections">Enabling and Disabling Plaintext HTTP Connections</h3>
 <div class="alert alert-warning" role="alert">
@@ -2719,6 +2735,9 @@ $(document).ready(function() {
         
     
   
+    
+      
+        
     
       
         

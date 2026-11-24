@@ -124,13 +124,13 @@ fetch('/data/website.json')
 </noscript>
 
 <!-- Define page metadata -->
-<meta name="description" content="This section explains how to install a signed SSL certificate for the Qumulo Core Web UI and for the LDAP server on your Qumulo cluster.">
+<meta name="description" content="This section explains how to install a signed SSL certificate on your Qumulo cluster for the Qumulo Core Web UI, REST API, and S3 API; and the FTP and NFS over TLS protocols. It also explains how to install a CA certificate for connections to an LDAP server.">
 
 <!-- Open Graph Meta Tags -->
 <meta property="og:title" content="Installing a Signed SSL Certificate on a Qumulo Cluster | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/cloud-native-azure-administrator-guide/authentication-qumulo-core/installing-signed-ssl-certificate.html">
 <meta property="og:site_name" content="Qumulo Documentation Portal">
-<meta property="og:description" content="This section explains how to install a signed SSL certificate for the Qumulo Core Web UI and for the LDAP server on your Qumulo cluster.">
+<meta property="og:description" content="This section explains how to install a signed SSL certificate on your Qumulo cluster for the Qumulo Core Web UI, REST API, and S3 API; and the FTP and NFS over TLS protocols. It also explains how to install a CA certificate for connections to an LDAP server.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
@@ -141,7 +141,7 @@ fetch('/data/website.json')
 <meta name="twitter:title" content="Installing a Signed SSL Certificate on a Qumulo Cluster | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/cloud-native-azure-administrator-guide/authentication-qumulo-core/installing-signed-ssl-certificate.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="This section explains how to install a signed SSL certificate for the Qumulo Core Web UI and for the LDAP server on your Qumulo cluster.">
+<meta name="twitter:description" content="This section explains how to install a signed SSL certificate on your Qumulo cluster for the Qumulo Core Web UI, REST API, and S3 API; and the FTP and NFS over TLS protocols. It also explains how to install a CA certificate for connections to an LDAP server.">
 <meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
 <meta property="twitter:domain" content="docs.qumulo.com">
 
@@ -1302,6 +1302,22 @@ fetch('/data/website.json')
           
           
           <li>
+            <a title="Changing the Portal Relationship Type" href="/cloud-native-azure-administrator-guide/cloud-data-fabric/changing-portal-relationship-type.html">
+              Changing the Portal Relationship Type
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
             <a title="Configuring Cache Management" href="/cloud-native-azure-administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html">
               Configuring Cache Management
               <span class="tag-container">
@@ -2415,10 +2431,12 @@ $(document).ready(function() {
 
     
 
-   <p>This section explains how to install a signed SSL certificate for the Qumulo Core Web UI and for the LDAP server on your Qumulo cluster.</p>
+   <p>This section explains how to install a signed SSL certificate on your Qumulo cluster for the Qumulo Core Web UI, REST API, and S3 API; and the FTP and NFS over TLS protocols. It also explains how to install a CA certificate for connections to an LDAP server.</p>
    
      
-     <h2 id="requirements">Requirements</h2>
+     <p>Your Qumulo cluster uses one SSL certificate for every service that encrypts its connections by using TLS: the Qumulo Core Web UI, REST API, and S3 API; and FTP and NFS over TLS protocols. Every Qumulo cluster is preconfigured with a self-signed certificate. Because browsers and clients don’t trust this certificate, we recommend installing a certificate signed by your certificate authority (CA).</p>
+
+<h2 id="requirements">Requirements</h2>
 
 <ul>
   <li>
@@ -2439,6 +2457,18 @@ $(document).ready(function() {
       </li>
     </ul>
   </li>
+  <li>
+    <p>The private key of your certificate:</p>
+
+    <ul>
+      <li>
+        <p>In the PEM format</p>
+      </li>
+      <li>
+        <p>Not password-protected</p>
+      </li>
+    </ul>
+  </li>
 </ul>
 
 <h2 id="to-install-signed-ssl-certificates-on-a-qumulo-cluster-from-the-command-line">To Install Signed SSL Certificates on a Qumulo Cluster from the Command Line</h2>
@@ -2454,14 +2484,6 @@ private.key: PEM RSA private key
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>(Optional) If your file isn’t an RSA key, run the <code class="language-plaintext highlighter-rouge">openssl rsa</code> command to convert your key. For example:</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl rsa <span class="se">\</span>
-  <span class="nt">-in</span> original.key <span class="se">\</span>
-  <span class="nt">-out</span> private.key
-</code></pre></div>    </div>
-  </li>
-  <li>
     <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/login/login.html"><code class="language-plaintext highlighter-rouge">qq login</code></a>
  command to log in to a node in your Qumulo cluster as an administrator. For example:</p>
 
@@ -2471,22 +2493,26 @@ private.key: PEM RSA private key
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>To install the SSL certificate for the Qumulo Core Web UI, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/ssl/ssl_modify_certificate.html"><code class="language-plaintext highlighter-rouge">qq ssl_modify_certificate</code></a>
+    <p>To install the certificate and its private key, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/ssl/ssl_modify_certificate.html"><code class="language-plaintext highlighter-rouge">qq ssl_modify_certificate</code></a>
  command. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq ssl_modify_certificate <span class="se">\</span>
   <span class="nt">--host</span> 203.0.113.0 <span class="se">\</span>
   <span class="nt">-c</span> certbundle.pem <span class="se">\</span>
-  <span class="nt">-k</span> private.key.insecure
+  <span class="nt">-k</span> private.key
 </code></pre></div>    </div>
+
+    <p>All nodes in the cluster begin to use the new certificate immediately.</p>
   </li>
   <li>
-    <p>To install the SSL certificate for the LDAP server, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/ssl/ssl_modify_ca_certificate.html"><code class="language-plaintext highlighter-rouge">qq ssl_modify_ca_certificate</code></a>
+    <p>(Optional) If your cluster connects to an LDAP server by using TLS, install the certificate of the CA that signed the LDAP server’s certificate by running the <a href="https://docs.qumulo.com/qq-cli-command-guide/ssl/ssl_modify_ca_certificate.html"><code class="language-plaintext highlighter-rouge">qq ssl_modify_ca_certificate</code></a>
  command. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq ssl_modify_ca_certificate <span class="se">\</span>
   <span class="nt">-c</span> myCertificate.pem
 </code></pre></div>    </div>
+
+    <p>Qumulo Core uses this CA certificate only to verify the LDAP server.</p>
   </li>
 </ol>
 
@@ -2700,6 +2726,9 @@ private.key: PEM RSA private key
         
     
   
+    
+      
+        
     
       
         

@@ -1302,6 +1302,22 @@ fetch('/data/website.json')
           
           
           <li>
+            <a title="Changing the Portal Relationship Type" href="/cloud-native-gcp-administrator-guide/cloud-data-fabric/changing-portal-relationship-type.html">
+              Changing the Portal Relationship Type
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
             <a title="Configuring Cache Management" href="/cloud-native-gcp-administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html">
               Configuring Cache Management
               <span class="tag-container">
@@ -2431,7 +2447,7 @@ $(document).ready(function() {
 
 <div class="alert alert-warning" role="alert">
 <em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
-    <li>Qumulo Core 7.6.2 (and higher) adds the ability to have multiple root directories for each relationship and changed some of the existing terminology concerning <a href="#portal-relationship-states"><em>portal relationship states</em></a> and <a href="#portal-root-directory-states"><em>portal root directory states</em></a>. For more information, see <a href="#multiple-root-directories">How Multiple Root Directories Work in Qumulo Core 7.2.0 (and Higher)</a>.</li>
+    <li>Qumulo Core 7.6.2 (and higher) adds the ability to have multiple root directories for each relationship and changed some of the existing terminology concerning <a href="#portal-relationship-states"><em>portal relationship states</em></a> and <a href="#portal-root-directory-states"><em>portal root directory states</em></a>. For more information, see <a href="#multiple-root-directories">How Multiple Root Directories Work in Qumulo Core 7.6.2 (and Higher)</a>.</li>
     <li>Before you begin to implement Cloud Data Fabric in your organization, we strongly recommend reviewing the <a href="#key-terms">key terms</a>, <a href="#functionality-explanation">functionality explanation</a>, <a href="#example-scenarios">example scenarios</a>, and the <a href="known-limits.html">known limits</a>.</li>
     <li>For any questions, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a>.</li>
   </ul>
@@ -2518,8 +2534,8 @@ $(document).ready(function() {
   </li>
 </ul>
 
-<h4 id="multiple-root-directories">How Multiple Root Directories Work in Qumulo Core 7.2.0 (and Higher)</h4>
-<p>In Qumulo Core 7.2.0 (and higher), clusters can take advantage of the Cloud Data Fabric functionality that lets clusters across disparate geographic or infrastructural locations (on-premises and in the cloud) access the same data while maintaining independent namespace structures on each cluster (by setting a portion of the cluster’s file system as the <em>portal root directory).</em></p>
+<h4 id="multiple-root-directories">How Multiple Root Directories Work in Qumulo Core 7.6.2 (and Higher)</h4>
+<p>In Qumulo Core 7.6.2 (and higher), clusters can take advantage of the Cloud Data Fabric functionality that lets clusters across disparate geographic or infrastructural locations (on-premises and in the cloud) access the same data while maintaining independent namespace structures on each cluster (by setting a portion of the cluster’s file system as the <em>portal root directory).</em></p>
 
 <p>In Qumulo Core 7.6.2 (and higher), it is possible to configure up to 32 spoke portal root directories for each Qumulo cluster, for each portal relationship. A spoke portal root directory can either map to a unique hub portal root directory or share hub portal root directories with other spoke portals.</p>
 
@@ -2533,7 +2549,7 @@ $(document).ready(function() {
     <p>We have added the <code class="language-plaintext highlighter-rouge">Authorized</code> and <code class="language-plaintext highlighter-rouge">Unauthorized</code> <em>portal root directory states</em> to indicate the stages of the root directory approval process.</p>
   </li>
   <li>
-    <p>Although Qumulo Core still doesn’t support more than one relationship between two clusters, it is now possible to have a variety of configurations involving spoke portal root directories and hub portal root directories, for example:</p>
+    <p>Although Qumulo Core doesn’t currently support more than one relationship in each direction between two clusters, Qumulo Core 7.11.0 (and higher) supports a variety of configurations involving spoke portal root directories and hub portal root directories. For example:</p>
 
     <ul>
       <li>
@@ -2554,13 +2570,59 @@ $(document).ready(function() {
   <li>
     <p id="spoke-portal"><strong>Spoke Portal:</strong> An interface point on a Qumulo cluster that accesses a portion of the file system on another cluster (which has a <em>hub portal)</em>. A directory on a cluster defines a <em>root directory</em> for a spoke portal. The spoke portal initiates the creation of a hub portal. You can configure multiple spoke portals on the same Qumulo cluster, as long as the spoke portal root directories don’t overlap and the host cluster for each portal relationship is unique.</p>
 
-    <ul id="read-write-portal">
-      <li><strong>Read-Write Portal:</strong> A spoke portal that can access, modify, and create any files or directories within one or more corresponding hub portal root directories (in the <code class="language-plaintext highlighter-rouge">Authorized</code> state) according to file system permissions.</li>
-    </ul>
+    <p>The following table illustrates the various spoke portal types and the operations that they can perform.</p>
 
-    <ul id="read-only-portal">
-      <li><strong>Read-Only Portal:</strong> A spoke portal that can access any files or directories within one or more corresponding hub portal root directories (in the <code class="language-plaintext highlighter-rouge">Authorized</code> state) according to file system permissions, but can’t modify or create any files or directories regardless of file system permissions.</li>
-    </ul>
+    <table>
+  <thead>
+    <tr>
+      <th class="hide-cell"></th>
+      <th colspan="2" style="text-align:center;vertical-align:middle;">Spoke Portal Client Can…</th>
+      <th style="text-align:center;vertical-align:middle;">Spoke Portal Can…</th>
+      <th rowspan="2" colspan="2" style="text-align:center;vertical-align:middle;">Description: A Spoke Portal That…</th>
+    </tr>
+    <tr>
+      <th style="text-align:center;">Spoke Portal Type</th>
+      <th style="width:10%;text-align:center;">Write Data</th>
+      <th style="width:10%;text-align:center;">Read Data</th>
+      <th style="width:10%;text-align:center;">Evict Cache as Necessary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="read-write-portal"><code>Read-Write</code></td>
+      <td class="align-center"><span class="emoji">✅</span></td>
+      <td class="align-center"><span class="emoji">✅</span></td>
+      <td class="align-center"><span class="emoji">✅</span></td>
+      <td colspan="2">Can access, modify, and create any files or directories within one or more corresponding hub portal root directories (in the <code>Authorized</code> state) according to file system permissions</td>
+    </tr>
+    <tr>
+      <td id="read-only-portal"><code>Read-Only</code></td>
+      <td class="align-center"><span class="emoji">❌</span></td>        
+      <td class="align-center"><span class="emoji">✅</span></td>
+      <td class="align-center"><span class="emoji">✅</span></td>
+      <td colspan="2">Can access any files or directories within one or more corresponding hub portal root directories (in the <code>Authorized</code> state) according to file system permissions, but can't modify or create any files or directories regardless of file system permissions</td>
+    </tr>
+    <tr>
+      <td id="paused-portal"><code>Paused</code></td>
+      <td class="align-center"><span class="emoji">❌</span></td>  
+      <td class="align-center"><span class="emoji">❌</span></td>  
+      <td class="align-center"><span class="emoji">✅</span></td>
+      <td rowspan="2">
+        In Qumulo Core 7.11.0 (and higher), can allow other clusters to access data while it is offline
+        <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> For paused and suspended portals, read or write attempts from spoke portal clients always result in a permissions error.</div>
+
+      </td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td id="suspended-portal"><code>Suspended</code></td>
+      <td class="align-center"><span class="emoji">❌</span></td>  
+      <td class="align-center"><span class="emoji">❌</span></td>  
+      <td class="align-center"><span class="emoji">✅</span></td>
+      <td>Doesn't affect other clusters when its networking changes</td>
+    </tr>
+  </tbody>
+</table>
   </li>
   <li>
     <p id="hub-portal"><strong>Hub Portal:</strong> An interface point on a Qumulo cluster that shares a portion of its file system with another cluster (which has a <em>spoke portal)</em>. A directory on a cluster defines a <em>root directory</em> for a hub portal. The spoke portal initiates the creation of a hub portal. You can configure multiple portal relationships, with the same hub portal root directory, with nested directories, or with independent ones.</p>
@@ -2575,6 +2637,14 @@ $(document).ready(function() {
   </li>
   <li>
     <p id="portal-relationship"><strong>Portal Relationship:</strong> A proposal that a spoke portal on one Qumulo cluster issues to another Qumulo cluster (with a <em>hub portal)</em>, which the Qumulo cluster with the hub portal <em>accepts</em>.</p>
+
+    <p>The following table illustrates the various portal relationship types and the operations that they can perform.</p>
+
+    <div class="alert alert-warning" role="alert">
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> For all portal relationship types, hub portal clients can always access, modify, and create files and directories according to file system permissions.
+    </div>
+
+    <table>  <thead>    <tr>      <th class="hide-cell"></th>      <th colspan="2" style="text-align:center;vertical-align:middle;">Spoke Portal Clients Can…</th>      <th colspan="2" style="text-align:center;vertical-align:middle;">Hub Portal Clients Can…</th>    </tr>    <tr>      <th style="width:20%;text-align:center;">Portal Relationship Type</th>      <th style="width:20%;text-align:center;vertical-align:middle;">Write Data</th>      <th style="width:20%;text-align:center;vertical-align:middle;">Read Data</th>      <th style="width:20%;text-align:center;vertical-align:middle;">Write Data</th>      <th style="width:20%;text-align:center;vertical-align:middle;">Read Data</th>    </tr>  </thead>  <tbody>    <tr>      <td id="read-write-portal-relationship"><code>Read-Write</code></td>      <td class="align-center"><span class="emoji">✅</span></td>      <td class="align-center"><span class="emoji">✅</span></td>      <td class="align-center"><span class="emoji">✅</span></td>      <td class="align-center"><span class="emoji">✅</span></td>    </tr>    <tr>      <td id="read-only-portal-relationship"><code>Read-Only</code></td>      <td class="align-center"><span class="emoji">❌</span></td>      <td class="align-center"><span class="emoji">✅</span></td>      <td class="align-center"><span class="emoji">✅</span></td>      <td class="align-center"><span class="emoji">✅</span></td>    </tr>    <tr>      <td id="paused-portal-relationship"><code>Paused</code></td>      <td class="align-center"><span class="emoji">❌</span></td>      <td class="align-center"><span class="emoji">❌</span></td>      <td class="align-center"><span class="emoji">✅</span></td>      <td class="align-center"><span class="emoji">✅</span></td>    </tr>    <tr>      <td id="suspended-portal-relationship"><code>Suspended</code></td>      <td class="align-center"><span class="emoji">❌</span></td>      <td class="align-center"><span class="emoji">❌</span></td>      <td class="align-center"><span class="emoji">✅</span></td>      <td class="align-center"><span class="emoji">✅</span></td>    </tr>  </tbody></table>
   </li>
   <li>
     <p id="peer-portal"><strong>Peer Portal:</strong> A portal that serves as a counterpart to another portal. For example, a hub portal is a peer portal to a spoke portal.</p>
@@ -2585,31 +2655,44 @@ $(document).ready(function() {
 </ul>
 
 <h4 id="portal-relationship-states">Portal Relationship States</h4>
-<p>A <em>portal relationship state</em> indicates the stages of the <a href="#spoke-portal"><em>spoke portal</em></a> creation process, and the proposal or deletion of a <a href="#portal-relationship"><em>portal relationship</em></a>.</p>
+<p>A <em>portal relationship state</em> indicates the stages of the <a href="#spoke-portal"><em>spoke portal</em></a> creation process, and the proposal, type change, or deletion of a <a href="#portal-relationship"><em>portal relationship</em></a>.</p>
 
 <table>
   <thead>
     <tr>
       <th>State</th>
-      <th>Description</th>
+      <th colspan="2">Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><p><code>Pending</code></p></td>
-      <td>
+      <td colspan="2">
         <p>Qumulo Core has established a relationship between the spoke portal and a hub portal, but the hub portal hasn't yet accepted the relationship.</p>
-        <p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_accept_hub.html"><code>qq portal_accept_hub</code></a>
- command to do so.</p>
+        <p>To accept the portal relationship, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_accept_hub.html"><code>qq portal_accept_hub</code></a>
+ command.</p>
       </td>
     </tr>
     <tr>
       <td><p><code>Accepted</code></p></td>
-      <td><p>Both Qumulo clusters have acknowledged the portal relationship. Data in <a href="#portal-root-directory-authorized">authorized</a> hub portal root directories is accessible, if full connectivity between Qumulo clusters is established.</p></td>
+      <td colspan="2"><p>Both Qumulo clusters have acknowledged the portal relationship. Data in <a href="#portal-root-directory-authorized">authorized</a> hub portal root directories is accessible, if full connectivity between Qumulo clusters is established.</p></td>
+    </tr>
+    <tr>
+      <td><p><code>Quiescing</code></p></td>
+      <td rowspan="3" style="vertical-align:middle;width:50%;"><p>Qumulo Core 7.11.0 (and higher) is in process of synchronizing outstanding changes from the spoke portal to the hub portal.</p></td>
+      <td style="width:50%;"><p>The portal relationship is in process of changing to the read-only type.</p></td>
+    </tr>
+    <tr>
+      <td><p><code>Pausing</code></p></td>
+      <td><p>The portal relationship is in process of changing to the paused type.</p></td>
+    </tr>
+    <tr>
+      <td><p><code>Suspending</code></p></td>
+      <td><p>The portal relationship is in process of changing to the suspended type.</p></td>
     </tr>
     <tr>
       <td><p><code>Deleting</code></p></td>
-      <td><p>Qumulo Core is in process of synchronizing any outstanding changes from the spoke portal to the hub portal. When synchronization is complete, Qumulo Core removes the portal relationship from each cluster.</p></td>
+      <td colspan="2"><p>Qumulo Core is in process of synchronizing outstanding changes from the spoke portal to the hub portal. When synchronization is complete, Qumulo Core removes the portal relationship from each cluster.</p></td>
     </tr>
   </tbody>
 </table>
@@ -2667,6 +2750,8 @@ $(document).ready(function() {
           <li>Full connectivity isn't required at this time.</li>
           <li>The portal is inaccessible.</li>
         </ul>
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> In Qumulo Core 7.11.0 (and higher), the <code class="language-plaintext highlighter-rouge">Suspended</code> portal relationship type always reports the <code class="language-plaintext highlighter-rouge">Inactive</code> status, because the spoke portal host cluster is disconnected from the hub portal host cluster.</div>
+ 
       </td>
     </tr>
     <tr>
@@ -2687,6 +2772,19 @@ $(document).ready(function() {
           <li>Qumulo Core is attempting to restore connectivity.</li>
           <li>The portal might be inaccessible.</li>
         </ul>
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> In Qumulo Core 7.10.1 (and higher), the <code class="language-plaintext highlighter-rouge">Degraded</code> portal status indicates that a cluster connected to the portal— other than the peer cluster of this portal relationship—is unreachable.</div>
+      
+      </td>
+    </tr>
+    <tr>
+      <td><p><code>Disconnected</code></p></td>
+      <td>
+        <ul>
+          <li>Qumulo Core is attempting to restore connectivity.</li>
+          <li>The portal is inaccessible.</li>
+        </ul>
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> In Qumulo Core 7.10.1 (and higher), the <code class="language-plaintext highlighter-rouge">Disconnected</code> portal status indicates that the peer cluster of this portal relationship—the hub portal host cluster for a spoke portal or the spoke portal host cluster for a hub portal—is unreachable.</div>
+        
       </td>
     </tr>
   </tbody>
@@ -2734,6 +2832,10 @@ $(document).ready(function() {
 <ol>
   <li>
     <p>When you request the removal of the spoke portal, the relationship becomes read-only and enters the <code class="language-plaintext highlighter-rouge">Deleting</code> state and Qumulo Core begins to synchronize any outstanding changes from the spoke portal to the hub portal.</p>
+
+    <div class="alert alert-info" role="alert">
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> In Qumulo Core 7.11.0 (and higher), a <code class="language-plaintext highlighter-rouge">Read-Only</code>, <code class="language-plaintext highlighter-rouge">Paused</code>, or <code class="language-plaintext highlighter-rouge">Suspended</code> relationship whose type doesn’t change has nothing to synchronize. Qumulo Core removes such relationships immediately.
+    </div>
   </li>
   <li>
     <p>During deletion, the relationship requires connectivity to make progress, indicated by the Active status.</p>
@@ -2959,11 +3061,19 @@ $(document).ready(function() {
           
             
             
+  <li><a href="/cloud-native-gcp-administrator-guide/cloud-data-fabric/changing-portal-relationship-type.html">Changing the Portal Relationship Type</a></li>
+            
+          
+            
+            
   <li><a href="/cloud-native-gcp-administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html">Configuring Cache Management</a></li>
             
           
         
 </ul>
+        
+    
+      
         
     
       

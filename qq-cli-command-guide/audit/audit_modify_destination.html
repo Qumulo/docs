@@ -1057,22 +1057,6 @@ fetch('/data/website.json')
           
           
           
-          
-          
-          <li>
-            <a title="audit_set_destination" href="/qq-cli-command-guide/audit/audit_set_destination.html">
-              audit_set_destination
-              <span class="tag-container">
-              
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
       </ul>
    </li>
      
@@ -3007,6 +2991,22 @@ fetch('/data/website.json')
           <li>
             <a title="fs_delete_user_metadata" href="/qq-cli-command-guide/fs/fs_delete_user_metadata.html">
               fs_delete_user_metadata
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="fs_entry_get_attr" href="/qq-cli-command-guide/fs/fs_entry_get_attr.html">
+              fs_entry_get_attr
               <span class="tag-container">
               
               
@@ -8133,7 +8133,7 @@ $(document).ready(function() {
 
 
 <h2>Description</h2>
-<div id="description"><p>Modify audit log destination configuration</p>
+<div id="description"><p>Modify audit log destination configuration, changing only the given settings</p>
 </div>
 
 <h2>Usage</h2>
@@ -8169,6 +8169,104 @@ $(document).ready(function() {
 
   <tr>
     <td>
+      <code>--name</code>
+    </td>
+    <td>
+      
+        No
+      
+    </td>
+    <td>
+      New audit log destination name.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <code>--csv</code>
+    </td>
+    <td>
+      
+        No
+      
+    </td>
+    <td>
+      Use CSV format for SYSLOG destinations.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <code>--json</code>
+    </td>
+    <td>
+      
+        No
+      
+    </td>
+    <td>
+      Use JSON format for SYSLOG destinations.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <code>--server-address</code>
+    </td>
+    <td>
+      
+        No
+      
+    </td>
+    <td>
+      Syslog server address.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <code>--server-port</code>
+    </td>
+    <td>
+      
+        No
+      
+    </td>
+    <td>
+      Syslog server port.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <code>--log-group-name</code>
+    </td>
+    <td>
+      
+        No
+      
+    </td>
+    <td>
+      CloudWatch log group.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <code>--region</code>
+    </td>
+    <td>
+      
+        No
+      
+    </td>
+    <td>
+      CloudWatch region.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
       <code>--enable</code>
     </td>
     <td>
@@ -8177,7 +8275,7 @@ $(document).ready(function() {
       
     </td>
     <td>
-      Enable audit log destination.
+      Enable audit log destination. If neither is given, the enabled state is unchanged.
     </td>
   </tr>
 
@@ -8191,7 +8289,7 @@ $(document).ready(function() {
       
     </td>
     <td>
-      Disable audit log destination.
+      Disable audit log destination. If neither is given, the enabled state is unchanged.
     </td>
   </tr>
 
@@ -8351,18 +8449,10 @@ $(document).ready(function() {
             
             
           
-            
-            
-  <li><a href="/qq-cli-command-guide/audit/audit_set_destination.html">audit_set_destination</a></li>
-            
-          
         
 </ul>
         
     
-      
-        
-    
   
     
       
@@ -8660,6 +8750,9 @@ $(document).ready(function() {
         
     
   
+    
+      
+        
     
       
         

@@ -1057,22 +1057,6 @@ fetch('/data/website.json')
           
           
           
-          
-          
-          <li>
-            <a title="audit_set_destination" href="/qq-cli-command-guide/audit/audit_set_destination.html">
-              audit_set_destination
-              <span class="tag-container">
-              
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
       </ul>
    </li>
      
@@ -3007,6 +2991,22 @@ fetch('/data/website.json')
           <li>
             <a title="fs_delete_user_metadata" href="/qq-cli-command-guide/fs/fs_delete_user_metadata.html">
               fs_delete_user_metadata
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="fs_entry_get_attr" href="/qq-cli-command-guide/fs/fs_entry_get_attr.html">
+              fs_entry_get_attr
               <span class="tag-container">
               
               
@@ -8140,9 +8140,8 @@ $(document).ready(function() {
 
 
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq nfs_modify_export <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="o">(</span><span class="nt">--export-id</span> EXPORT_ID | <span class="nt">--export-path</span> EXPORT_PATH<span class="o">)</span> <span class="o">[</span><span class="nt">--tenant-id</span> TENANT_ID] <span class="o">[</span><span class="nt">--new-export-path</span> NEW_EXPORT_PATH] <span class="o">[</span><span class="nt">--new-tenant-id</span> NEW_TENANT_ID]
-    <span class="o">[</span><span class="nt">--fs-path</span> FS_PATH] <span class="o">[</span><span class="nt">--description</span> DESCRIPTION] <span class="o">[</span><span class="nt">--no-restrictions</span> | <span class="nt">--restrictions</span> JSON_FILE_PATH] <span class="o">[</span><span class="nt">--create-fs-path</span><span class="o">]</span>
-    <span class="o">[</span><span class="nt">--fields-to-present-as-32-bit</span> FIELD <span class="o">[</span>FIELD ...]]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq nfs_modify_export <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="o">(</span><span class="nt">--export-id</span> EXPORT_ID | <span class="nt">--export-path</span> EXPORT_PATH<span class="o">)</span> <span class="o">[</span><span class="nt">--tenant-id</span> TENANT_ID] <span class="o">[</span><span class="nt">--new-export-path</span> NEW_EXPORT_PATH] <span class="o">[</span><span class="nt">--new-tenant-id</span> NEW_TENANT_ID] <span class="o">[</span><span class="nt">--fs-path</span> FS_PATH] <span class="o">[</span><span class="nt">--description</span> DESCRIPTION]
+    <span class="o">[</span><span class="nt">--no-restrictions</span> | <span class="nt">--restrictions</span> JSON_FILE_PATH] <span class="o">[</span><span class="nt">--create-fs-path</span><span class="o">]</span> <span class="o">[</span><span class="nt">--fields-to-present-as-32-bit</span> FIELD <span class="o">[</span>FIELD ...]]
 </code></pre></div></div>
 
 
@@ -8299,6 +8298,10 @@ map_to_group can be:
 If user_mapping is not "none", then:
     either specify "map_to_user" as a local user
     or specify both "map_to_user" and "map_to_group" as NFS user/group.
+require_tls can be:
+    true | false (the default). Require that hosts use TLS (RFC 9289) for NFS when
+    interacting with this export using either NFSv3 or NFSv4. Setting this for hosts that
+    have already mounted the export without TLS causes their mounts to break.
 
 ==Example JSON==:
 {
@@ -8317,7 +8320,8 @@ If user_mapping is not "none", then:
             "read_only" : false,
             "host_restrictions" : [ "*.example.com" ],
             "required_authentication_mode": "AUTHENTICATION_MODE_KRB5",
-            "user_mapping" : "none"
+            "user_mapping" : "none",
+            "require_tls" : true
         },
         {
             "read_only" : true,
@@ -8506,9 +8510,6 @@ NONE: explicitly specifies no 32 bit mapping.
       
         
     
-      
-        
-    
   
     
       
@@ -8806,6 +8807,9 @@ NONE: explicitly specifies no 32 bit mapping.
         
     
   
+    
+      
+        
     
       
         

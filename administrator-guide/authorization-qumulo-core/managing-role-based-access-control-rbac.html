@@ -1457,6 +1457,22 @@ fetch('/data/website.json')
           
           
           <li>
+            <a title="Changing the Portal Relationship Type" href="/administrator-guide/cloud-data-fabric/changing-portal-relationship-type.html">
+              Changing the Portal Relationship Type
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
             <a title="Configuring Cache Management" href="/administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html">
               Configuring Cache Management
               <span class="tag-container">
@@ -2732,7 +2748,7 @@ $(document).ready(function() {
 <p>This role is suitable for system administrators. Users with this role have full access to, and control of, the cluster, including:</p>
 
 <ul>
-  <li>Configuration and management of general cluster settings for audit logging, snapshots, replication, quotas, and so on by using the Qumulo Core Web UI, REST API, or <code class="language-plaintext highlighter-rouge">qq</code> CLI</li>
+  <li>Configuration and management of general cluster settings for audit logging, snapshots, replication, quotas, and so on by using the Qumulo Core Web UI, Qumulo REST API, or <code class="language-plaintext highlighter-rouge">qq</code> CLI</li>
   <li>Creation of files and directories in any current and future directories</li>
   <li>Reading of any files and file attributes and listing of any directories in any current and future directories</li>
   <li>Deletion or renaming of any files and directories in any current and future directories</li>
@@ -2743,17 +2759,17 @@ $(document).ready(function() {
 <p>This role is suitable for Qumulo REST API and <code class="language-plaintext highlighter-rouge">qq</code> CLI users who don’t have access to the Qumulo Core Web UI but have the same file privileges as those of the Administrators role, including:</p>
 
 <ul>
-  <li>Read and write permissions for all NFS, SMB, quota, and snapshot REST APIs</li>
-  <li>Read-only permissions for local REST API users</li>
+  <li>Read and write permissions for all NFS, SMB, quota, and snapshot Qumulo REST API endpoints</li>
+  <li>Read-only permissions for local Qumulo REST API users</li>
   <li>Access to analytics and file system</li>
 </ul>
 
 <h3 id="observers">Observers</h3>
-<p>This role is suitable for users or groups who can access the Qumulo Core Web UI and read-only REST APIs (with the exception of <code class="language-plaintext highlighter-rouge">DEBUG</code> REST APIs and authentication settings).</p>
+<p>This role is suitable for users or groups who can access the Qumulo Core Web UI and read-only Qumulo REST API endpoints (with the exception of <code class="language-plaintext highlighter-rouge">DEBUG</code> Qumulo REST API endpoints and authentication settings).</p>
 
 <div class="alert alert-info" role="alert">
 <em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
-    <li>Clusters that run Qumulo Core 3.0.5 (and higher) don't assign the Observers role automatically and non-administrative users don't have access to the Qumulo Core Web UI or read-only APIs (unless you explicitly assign the necessary role to specific usernames).</li>
+    <li>Clusters that run Qumulo Core 3.0.5 (and higher) don't assign the Observers role automatically and non-administrative users don't have access to the Qumulo Core Web UI or read-only API endpoints (unless you explicitly assign the necessary role to specific usernames).</li>
     <li>It is possible to assign both Data-Administrators and Observers roles to a single user. This can give the user the ability to manage data on your Qumulo cluster by using the Qumulo Core Web UI without full administrative access.</li>
   </ul>
 </div>
@@ -2772,9 +2788,9 @@ $(document).ready(function() {
 <p>This role is suitable for members of the Qumulo Care Team who access and support your Qumulo cluster. Users with this role have:</p>
 
 <ul>
-  <li>Read permissions for REST API endpoints that control cluster configuration</li>
-  <li>Write permissions (including <code class="language-plaintext highlighter-rouge">DEBUG</code> REST APIs) for internal debugging features</li>
-  <li>Permissions for REST API endpoints that help debug integration with external services (such as Active Directory, LDAP, and DNS)</li>
+  <li>Read permissions for Qumulo REST API endpoints that control cluster configuration</li>
+  <li>Write permissions (including <code class="language-plaintext highlighter-rouge">DEBUG</code> Qumulo REST API endpoints) for internal debugging features</li>
+  <li>Permissions for Qumulo REST API endpoints that help debug integration with external services (such as Active Directory, LDAP, and DNS)</li>
 </ul>
 
 <h2 id="custom-roles">Custom Roles</h2>
@@ -3076,6 +3092,9 @@ $(document).ready(function() {
         
     
   
+    
+      
+        
     
       
         

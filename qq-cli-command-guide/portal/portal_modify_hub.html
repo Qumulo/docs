@@ -1057,22 +1057,6 @@ fetch('/data/website.json')
           
           
           
-          
-          
-          <li>
-            <a title="audit_set_destination" href="/qq-cli-command-guide/audit/audit_set_destination.html">
-              audit_set_destination
-              <span class="tag-container">
-              
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
       </ul>
    </li>
      
@@ -3007,6 +2991,22 @@ fetch('/data/website.json')
           <li>
             <a title="fs_delete_user_metadata" href="/qq-cli-command-guide/fs/fs_delete_user_metadata.html">
               fs_delete_user_metadata
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="fs_entry_get_attr" href="/qq-cli-command-guide/fs/fs_entry_get_attr.html">
+              fs_entry_get_attr
               <span class="tag-container">
               
               
@@ -8140,7 +8140,7 @@ $(document).ready(function() {
 
 
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq portal_modify_hub <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="nt">-i</span> ID <span class="o">[</span><span class="nt">-j</span><span class="o">]</span> <span class="o">[</span><span class="nt">-n</span><span class="o">]</span> <span class="o">[</span><span class="nt">--type</span> <span class="o">{</span>read-write,read-only,paused<span class="o">}]</span> <span class="o">[</span><span class="nt">-m</span> SPOKE_HOSTS | <span class="nt">-a</span> SPOKE_ADDRESS] <span class="o">[</span><span class="nt">-p</span> SPOKE_PORT]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq portal_modify_hub <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="nt">-i</span> ID <span class="o">[</span><span class="nt">-j</span><span class="o">]</span> <span class="o">[</span><span class="nt">-n</span><span class="o">]</span> <span class="o">[</span><span class="nt">--type</span> <span class="o">{</span>read-write,read-only,paused,suspended<span class="o">}]</span> <span class="o">[</span><span class="nt">-m</span> SPOKE_HOSTS | <span class="nt">-a</span> SPOKE_ADDRESS] <span class="o">[</span><span class="nt">-p</span> SPOKE_PORT]
 </code></pre></div></div>
 
 
@@ -8205,7 +8205,7 @@ $(document).ready(function() {
       
     </td>
     <td>
-      Change the type of the portal. A read-write spoke serves reads and writes, a read-only spoke serves reads, and a paused spoke refuses all client operations. Setting read-only or paused drains the spoke first; the portal reports Quiescing or Pausing until the drain finishes.
+      Change the type of the portal. A read-write spoke serves reads and writes, a read-only spoke serves reads, a paused spoke refuses all client operations, and a suspended spoke also takes no part in the portal quorum. Moving a portal down the order read-write, read-only, paused, suspended drains the spoke first, and the portal reports Quiescing, Pausing or Suspending until the drain finishes. Moving it up takes effect at once. A suspended spoke can go offline without affecting client operations on the hub. A suspended hub accumulates changes to replay when the relationship is resumed.
     </td>
   </tr>
 
@@ -8375,9 +8375,6 @@ $(document).ready(function() {
       
         
     
-      
-        
-    
   
     
       
@@ -8675,6 +8672,9 @@ $(document).ready(function() {
         
     
   
+    
+      
+        
     
       
         

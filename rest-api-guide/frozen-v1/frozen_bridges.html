@@ -9239,6 +9239,26 @@ $(document).ready(function() {
           </span><span class="nl">"allow_archived_metadata_changes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Whether clients can change the metadata and named streams of a file that is frozen, offline or restoring; see the create request's field."</span><span class="p">,</span><span class="w">
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="s2">"AZURE"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"AWS"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The cloud whose storage holds the bridge's data: AZURE or AWS.:</span><span class="se">\n</span><span class="s2"> * `AWS` - The bridge's data is in an S3 bucket in the cluster's AWS account, and a freeze puts it in the bridge's `archive_class`.,</span><span class="se">\n</span><span class="s2"> * `AZURE` - The bridge's data is in Azure storage that Qumulo manages, and a freeze moves it to the Azure Archive tier."</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"archive_class"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="s2">"GLACIER"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"DEEP_ARCHIVE"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"On AWS, the S3 storage class the bridge's freezes put files in, chosen when the bridge was created. Absent on Azure.:</span><span class="se">\n</span><span class="s2"> * `DEEP_ARCHIVE` - S3 Glacier Deep Archive, cheaper to store than GLACIER. AWS charges for at least 180 days of storage for each object.,</span><span class="se">\n</span><span class="s2"> * `GLACIER` - S3 Glacier Flexible Retrieval. AWS charges for at least 90 days of storage for each object."</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"restore_days_max"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"On AWS, the most days a thaw's `restore_days` may be; the least is 1. Absent on Azure."</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -9262,7 +9282,7 @@ $(document).ready(function() {
     
     
 
-    Creates a Frozen bridge at `mount_path` over Azure storage that Qumulo has set aside for this cluster, and returns the bridge. File access across the cluster pauses briefly during this call while the cluster restarts its services, so create a bridge while clients are quiet. The bridge is listed as soon as the call returns, shortly before it can be used. Returns HTTP 400 if `mount_path` isn't absolute or already exists, or its parent isn't a directory or is inside another bridge; HTTP 409 if the cluster has as many bridges as it allows, no storage is ready for another Frozen bridge, or the bridge this call created was deleted before the call returned; HTTP 412 while the cluster's REST file IDs leave out the filesystem ID; HTTP 503 while the cluster is still preparing for bridges, which a retry shortly after clears, or if the storage set aside can't be used right now; and HTTP 404 if this cluster can't have Frozen bridges. For no storage ready, or storage that can't be used, contact Qumulo.
+    Creates a Frozen bridge at `mount_path` and returns it. File access across the cluster pauses briefly while the cluster restarts its services, so create a bridge while clients are quiet. On AWS the bridge uses the bucket, event queue and archive class the request names; on a Qumulo-managed Azure cluster, storage Qumulo set aside for it. Returns HTTP 409 if another bridge already uses the bucket, and HTTP 503 while the cluster or AWS is briefly unavailable, which a retry clears. Other refusals say what to fix.
 
     
       
@@ -9290,6 +9310,22 @@ $(document).ready(function() {
     </span><span class="nl">"allow_archived_metadata_changes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When true, clients can change the metadata of a file that is frozen, offline or restoring: its mode, owner, group, ACL, times and DOS attributes, and its named streams. When false, every protocol and the REST API refuse those changes with access denied. Defaults to false, and can't be changed after creation."</span><span class="p">,</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"bucket_uri"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWS only, and required there: a versioned S3 bucket that holds no objects."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"notification_queue_url"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWS only, and required there: the SQS queue, in the bucket's region, that receives the bucket's restore events."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"archive_class"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"GLACIER"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"DEEP_ARCHIVE"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWS only, and required there: the S3 storage class the bridge's freezes put files in, GLACIER or DEEP_ARCHIVE, fixed for the bridge's life.:</span><span class="se">\n</span><span class="s2"> * `DEEP_ARCHIVE` - S3 Glacier Deep Archive, cheaper to store than GLACIER. AWS charges for at least 180 days of storage for each object.,</span><span class="se">\n</span><span class="s2"> * `GLACIER` - S3 Glacier Flexible Retrieval. AWS charges for at least 90 days of storage for each object."</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>

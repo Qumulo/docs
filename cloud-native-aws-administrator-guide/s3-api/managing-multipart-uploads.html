@@ -1318,6 +1318,22 @@ fetch('/data/website.json')
           
           
           <li>
+            <a title="Changing the Portal Relationship Type" href="/cloud-native-aws-administrator-guide/cloud-data-fabric/changing-portal-relationship-type.html">
+              Changing the Portal Relationship Type
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
             <a title="Configuring Cache Management" href="/cloud-native-aws-administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html">
               Configuring Cache Management
               <span class="tag-container">
@@ -2466,7 +2482,7 @@ $(document).ready(function() {
     <p>Multipart upload data isn’t visible in the Qumulo file system, and isn’t included in file system snapshots, until you complete the upload successfully by making a call to the <code class="language-plaintext highlighter-rouge">CompleteMultipartUpload</code> S3 API.</p>
 
     <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> When you view the breakdown of a Qumulo cluster’s capacity by using the Qumulo Core Web UI, REST API, or <code class="language-plaintext highlighter-rouge">qq</code> CLI, Qumulo Core doesn’t distinguish between capacity that the file system and incomplete multipart uploads use.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> When you view the breakdown of a Qumulo cluster’s capacity by using the Qumulo Core Web UI, Qumulo REST API, or <code class="language-plaintext highlighter-rouge">qq</code> CLI, Qumulo Core doesn’t distinguish between capacity that the file system and incomplete multipart uploads use.
     </div>
   </li>
   <li>
@@ -2511,7 +2527,7 @@ $(document).ready(function() {
   </li>
 </ul>
 
-<p>The output from the <code class="language-plaintext highlighter-rouge">qq</code> CLI and REST API is the same. The following example output is a single JSON object that contains the list of objects for the specified bucket. The list shows information for each multipart S3 upload, including:</p>
+<p>The output from the <code class="language-plaintext highlighter-rouge">qq</code> CLI and Qumulo REST API is the same. The following example output is a single JSON object that contains the list of objects for the specified bucket. The list shows information for each multipart S3 upload, including:</p>
 
 <ul>
   <li>
@@ -2636,7 +2652,7 @@ $(document).ready(function() {
   </li>
 </ul>
 
-<p>There is no response body for both the <code class="language-plaintext highlighter-rouge">qq</code> CLI and REST API. Qumulo Core returns a <code class="language-plaintext highlighter-rouge">204 No Content</code> status code when the upload is aborted or the cleanup is complete.</p>
+<p>There is no response body for both the <code class="language-plaintext highlighter-rouge">qq</code> CLI and Qumulo REST API. Qumulo Core returns a <code class="language-plaintext highlighter-rouge">204 No Content</code> status code when the upload is aborted or the cleanup is complete.</p>
 
    
 
@@ -2779,6 +2795,9 @@ $(document).ready(function() {
         
     
   
+    
+      
+        
     
       
         

@@ -1302,6 +1302,22 @@ fetch('/data/website.json')
           
           
           <li>
+            <a title="Changing the Portal Relationship Type" href="/cloud-native-azure-administrator-guide/cloud-data-fabric/changing-portal-relationship-type.html">
+              Changing the Portal Relationship Type
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
             <a title="Configuring Cache Management" href="/cloud-native-azure-administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html">
               Configuring Cache Management
               <span class="tag-container">
@@ -2836,7 +2852,7 @@ soft_capacity_limit_tb = 100
     <div class="alert alert-warning" role="alert">
 <em class="fa fa-warning"></em> <strong>Important</strong><br>       <ul>
         <li>The administrator password is applied at cluster creation and is never written to the Terraform state.</li>
-        <li>If you change the password by using the Qumulo Core Web UI, <code class="language-plaintext highlighter-rouge">qq</code> CLI, or REST API after deployment, update the Key Vault secret (or the value in <code class="language-plaintext highlighter-rouge">terraform.tfvars</code>) to match. Terraform resupplies the password to the provider on every apply that authenticates to the cluster, and a mismatch fails that apply part-way through.</li>
+        <li>If you change the password by using the Qumulo Core Web UI, <code class="language-plaintext highlighter-rouge">qq</code> CLI, or Qumulo REST API after deployment, update the Key Vault secret (or the value in <code class="language-plaintext highlighter-rouge">terraform.tfvars</code>) to match. Terraform resupplies the password to the provider on every apply that authenticates to the cluster, and a mismatch fails that apply part-way through.</li>
       </ul>
     </div>
 
@@ -3140,6 +3156,9 @@ soft_capacity_limit_tb = 100
         
     
   
+    
+      
+        
     
       
         

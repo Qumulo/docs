@@ -1457,6 +1457,22 @@ fetch('/data/website.json')
           
           
           <li>
+            <a title="Changing the Portal Relationship Type" href="/administrator-guide/cloud-data-fabric/changing-portal-relationship-type.html">
+              Changing the Portal Relationship Type
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
             <a title="Configuring Cache Management" href="/administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html">
               Configuring Cache Management
               <span class="tag-container">
@@ -2732,12 +2748,12 @@ $(document).ready(function() {
   </li>
 </ul>
 
-<h2 id="enabling-and-disabling-rest-api-access">Enabling and Disabling REST API Access</h2>
-<p>The Qumulo REST API lets you manage clusters by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI, Python bindings, and REST API calls.</p>
+<h2 id="enabling-and-disabling-qumulo-rest-api-access">Enabling and Disabling Qumulo REST API Access</h2>
+<p>The Qumulo REST API lets you manage clusters by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI, Python bindings, and Qumulo REST API calls.</p>
 
 <ul>
   <li>
-    <p>To enable REST API access, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_modify_tenant.html"><code class="language-plaintext highlighter-rouge">qq multitenancy_modify_tenant</code></a>
+    <p>To enable Qumulo REST API access, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/multitenancy/multitenancy_modify_tenant.html"><code class="language-plaintext highlighter-rouge">qq multitenancy_modify_tenant</code></a>
  command, specify the tenant ID, and use the <code class="language-plaintext highlighter-rouge">--enable-rest-api</code> flag.</p>
   </li>
   <li>
@@ -2745,7 +2761,7 @@ $(document).ready(function() {
   </li>
 </ul>
 
-<p>In the following example, the cluster begins to accept REST API traffic on TCP port 8000 on all networks assigned to the tenant.</p>
+<p>In the following example, the cluster begins to accept Qumulo REST API traffic on TCP port 8000 on all networks assigned to the tenant.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq multitenancy_modify_tenant <span class="se">\</span>
   <span class="nt">--id</span> 2
@@ -2756,7 +2772,7 @@ $(document).ready(function() {
 <p>The Qumulo Core Web UI lets you manage clusters from a browser.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Enabling Web UI access doesn’t require enabling REST API access.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Enabling Web UI access doesn’t require enabling Qumulo REST API access.
 </div>
 
 <ul>
@@ -2780,7 +2796,7 @@ $(document).ready(function() {
 <p>SSH lets you view logs and use the <code class="language-plaintext highlighter-rouge">qq</code> CLI by using a client to connect to nodes in a cluster remotely.</p>
 
 <div class="alert alert-info" role="alert">
-<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Enabling SSH access doesn’t require enabling REST API access.
+<span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> Enabling SSH access doesn’t require enabling Qumulo REST API access.
 </div>
 
 <ul>
@@ -3005,6 +3021,9 @@ $(document).ready(function() {
         
     
   
+    
+      
+        
     
       
         

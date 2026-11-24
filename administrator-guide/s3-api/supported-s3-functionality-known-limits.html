@@ -1457,6 +1457,22 @@ fetch('/data/website.json')
           
           
           <li>
+            <a title="Changing the Portal Relationship Type" href="/administrator-guide/cloud-data-fabric/changing-portal-relationship-type.html">
+              Changing the Portal Relationship Type
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
             <a title="Configuring Cache Management" href="/administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html">
               Configuring Cache Management
               <span class="tag-container">
@@ -3055,7 +3071,7 @@ $(document).ready(function() {
 <p>Because Qumulo Core supports only <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/VirtualHosting.html#path-style-access">path-style bucket addressing</a>, you must configure your client applications to use path-style addressing to send S3 API requests to a Qumulo cluster. For more information, see <a href="configuring-using-s3-api.html#configuring-aws-cli">Configuring the AWS CLI for Use with Qumulo Core</a>.</p>
 
 <h3 id="etags">ETags</h3>
-<p>RESTful APIs, such as the Qumulo Core S3 API, use HTTP <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag">ETags</a> to identify different resource versions. When working with files by using Qumulo Core, each time a file’s contents change (regardless of protocol), the value of its ETag changes as well.</p>
+<p>RESTful APIs, such as the Qumulo S3 API, use HTTP <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag">ETags</a> to identify different resource versions. When working with files by using Qumulo Core, each time a file’s contents change (regardless of protocol), the value of its ETag changes as well.</p>
 
 <div class="alert alert-info" role="alert">
 <em class="fa fa-info-circle"></em> <strong>Note</strong><br>   <ul>
@@ -3278,7 +3294,7 @@ $(document).ready(function() {
 <p>While native Amazon S3 functionality requires Object Lock to be enabled for an S3 bucket to be able to both modify and view locks on objects, Qumulo Core requires <a href="managing-object-lock-for-s3-buckets.html">Object Lock to be enabled for an S3 bucket</a> only to <em>modify</em> locks on objects.</p>
 
 <h2 id="comparison-of-known-limits-between-s3-in-qumulo-and-amazon">Comparison of Known Limits between S3 in Qumulo and Amazon</h2>
-<p>This section compares the Qumulo Core S3 API limits with native Amazon S3 limits.</p>
+<p>This section compares the Qumulo S3 API limits with native Amazon S3 limits.</p>
 
 <h3 id="known-limits-for-s3-buckets">Known Limits for S3 Buckets</h3>
 
@@ -3650,6 +3666,9 @@ $(document).ready(function() {
         
     
   
+    
+      
+        
     
       
         

@@ -1057,22 +1057,6 @@ fetch('/data/website.json')
           
           
           
-          
-          
-          <li>
-            <a title="audit_set_destination" href="/qq-cli-command-guide/audit/audit_set_destination.html">
-              audit_set_destination
-              <span class="tag-container">
-              
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
       </ul>
    </li>
      
@@ -3007,6 +2991,22 @@ fetch('/data/website.json')
           <li>
             <a title="fs_delete_user_metadata" href="/qq-cli-command-guide/fs/fs_delete_user_metadata.html">
               fs_delete_user_metadata
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="fs_entry_get_attr" href="/qq-cli-command-guide/fs/fs_entry_get_attr.html">
+              fs_entry_get_attr
               <span class="tag-container">
               
               
@@ -8133,7 +8133,7 @@ $(document).ready(function() {
 
 
 <h2>Description</h2>
-<div id="description"><p>Create a Frozen bridge, a directory whose files freeze jobs can move to the Azure Archive tier, over Azure storage Qumulo has set aside for the cluster.</p>
+<div id="description"><p>Create a Frozen bridge, a directory whose files freeze jobs can move to archive storage.</p>
 </div>
 
 <h2>Usage</h2>
@@ -8178,6 +8178,48 @@ $(document).ready(function() {
     </td>
     <td>
       Let clients change the metadata of a file that is frozen, offline or restoring: its mode, owner, group, ACL, times and DOS attributes, and its named streams. This can't be changed after creation. (Default: such changes are refused)
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <code>--bucket-uri</code>
+    </td>
+    <td>
+      
+        No
+      
+    </td>
+    <td>
+      AWS only, and required there: the URI of a versioned S3 bucket that holds no objects, such as https://my-bucket.s3.us-west-2.amazonaws.com/
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <code>--notification-queue-url</code>
+    </td>
+    <td>
+      
+        No
+      
+    </td>
+    <td>
+      AWS only, and required there: the SQS queue, in the bucket's region, that receives the bucket's restore events.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <code>--archive-class</code>
+    </td>
+    <td>
+      
+        No
+      
+    </td>
+    <td>
+      AWS only, and required there: the S3 storage class freezes put files in, fixed for the bridge's life.
     </td>
   </tr>
 
@@ -8286,9 +8328,6 @@ $(document).ready(function() {
         
     
   
-    
-      
-        
     
       
         
@@ -8686,6 +8725,9 @@ $(document).ready(function() {
         
     
   
+    
+      
+        
     
       
         

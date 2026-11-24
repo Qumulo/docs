@@ -1318,6 +1318,22 @@ fetch('/data/website.json')
           
           
           <li>
+            <a title="Changing the Portal Relationship Type" href="/cloud-native-aws-administrator-guide/cloud-data-fabric/changing-portal-relationship-type.html">
+              Changing the Portal Relationship Type
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
             <a title="Configuring Cache Management" href="/cloud-native-aws-administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html">
               Configuring Cache Management
               <span class="tag-container">
@@ -2491,7 +2507,7 @@ $(document).ready(function() {
 <p>This configuration allows Qumulo Core to correlate an NFS UID (for example, <code class="language-plaintext highlighter-rouge">2053</code>) to a SID on Windows (for example, <code class="language-plaintext highlighter-rouge">S-1-5-21-...</code>).</p>
 
 <h3 id="to-manage-active-directory-for-posix-attributes-by-using-the-qumulo-rest-api">To Manage Active Directory for POSIX Attributes by Using the Qumulo REST API</h3>
-<p>To toggle Qumulo Core’s ability to use Active Directory for POSIX attributes, use the fields <code class="language-plaintext highlighter-rouge">use_ad_posix_attributes</code> and <code class="language-plaintext highlighter-rouge">base_dn</code> for the following REST API endpoints.</p>
+<p>To toggle Qumulo Core’s ability to use Active Directory for POSIX attributes, use the fields <code class="language-plaintext highlighter-rouge">use_ad_posix_attributes</code> and <code class="language-plaintext highlighter-rouge">base_dn</code> for the following Qumulo REST API endpoints.</p>
 
 <ul>
   <li><strong>Get Configuration and Status:</strong> <code class="language-plaintext highlighter-rouge">/v1/ad/status</code></li>
@@ -2499,7 +2515,7 @@ $(document).ready(function() {
   <li><strong>Join Active Directory:</strong> <code class="language-plaintext highlighter-rouge">/v1/ad/join</code></li>
 </ul>
 
-<p>To map identities from one domain to another, use the following REST API endpoints.</p>
+<p>To map identities from one domain to another, use the following Qumulo REST API endpoints.</p>
 
 <ul>
   <li><strong>GID to SIDs:</strong> <code class="language-plaintext highlighter-rouge">/v1/ad/uids/:gid:/sids</code></li>
@@ -2517,7 +2533,7 @@ $(document).ready(function() {
 <span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br> It is possible for one UID to be mapped to multiple SIDs.
 </div>
 
-<p>To retrieve related identities, use the <code class="language-plaintext highlighter-rouge">/v1/auth/auth-ids/:id:/related-identities</code> REST API endpoint.</p>
+<p>To retrieve related identities, use the <code class="language-plaintext highlighter-rouge">/v1/auth/auth-ids/:id:/related-identities</code> Qumulo REST API endpoint.</p>
 
    
 
@@ -2691,6 +2707,9 @@ $(document).ready(function() {
         
     
   
+    
+      
+        
     
       
         

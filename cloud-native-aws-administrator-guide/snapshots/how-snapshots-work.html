@@ -1318,6 +1318,22 @@ fetch('/data/website.json')
           
           
           <li>
+            <a title="Changing the Portal Relationship Type" href="/cloud-native-aws-administrator-guide/cloud-data-fabric/changing-portal-relationship-type.html">
+              Changing the Portal Relationship Type
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
             <a title="Configuring Cache Management" href="/cloud-native-aws-administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html">
               Configuring Cache Management
               <span class="tag-container">
@@ -2496,7 +2512,7 @@ $(document).ready(function() {
 
 <h2 id="determining-snapshots-storage-usage">Determining Snapshots’ Storage Usage</h2>
 <div class="alert alert-warning" role="alert">
-<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Qumulo Core 7.9.0.2 (and higher) removes the <code class="language-plaintext highlighter-rouge">qq snapshot_calculate_used_capacity</code> and <code class="language-plaintext highlighter-rouge">qq snapshot_get_capacity_used_per_snapshot</code> commands and their corresponding <code class="language-plaintext highlighter-rouge">/v1/snapshots/</code> REST API endpoints. To determine the amount of data that a single snapshot references, use the <a href="https://github.com/Qumulo/qsnap"><code class="language-plaintext highlighter-rouge">qsnap</code></a> CLI.
+<span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br> Qumulo Core 7.9.0.2 (and higher) removes the <code class="language-plaintext highlighter-rouge">qq snapshot_calculate_used_capacity</code> and <code class="language-plaintext highlighter-rouge">qq snapshot_get_capacity_used_per_snapshot</code> commands and their corresponding <code class="language-plaintext highlighter-rouge">/v1/snapshots/</code> Qumulo REST API endpoints. To determine the amount of data that a single snapshot references, use the <a href="https://github.com/Qumulo/qsnap"><code class="language-plaintext highlighter-rouge">qsnap</code></a> CLI.
 </div>
 
 <p>When Qumulo Core tracks the difference between the <em>saved</em> (snapshotted) and <em>live</em> (latest) versions of a file, it creates a <em>lineage</em> of snapshots independent from each other.</p>
@@ -2689,6 +2705,9 @@ $(document).ready(function() {
         
     
   
+    
+      
+        
     
       
         
