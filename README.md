@@ -76,7 +76,9 @@ Everything you need to successfully test and build the documentation from the `d
 
 ### How Automation Works in the `docs-internal` Repository
 * **Testing:** This repository runs the `.github/workflows/test.yml` workflow on every commit to the `docs-internal` repository.
-
+  * [Custom spellchecking with Hunspell](tools/check-spelling.rb)
+  * [Custom checking for loose `.md` files](tools/check-sidebars.rb)
+  * [Custom checking for links with Lychee](tools/check-spelling.sh) (includes advanced retry and backoff and avoids for false positives for valid, unpublished links)
 * **Publishing:** When the repository owner merges a pull request to `mainline`, the `docs-internal` repository runs the `.github/workflows/publish.yml` workflow.
 
 
@@ -97,7 +99,7 @@ This project began from [Jekyll Doc Theme 6.0](https://github.com/tomjoht/docume
   * [Parent landing pages](_layouts/parent_landing_page.html)
   * [Child landing pages](_layouts/landing_page.html)
 * Content creation (Python)
-  * [Custom generation of REST API documentation from `openapi.json` with dynamic labeling of REST APIs with versions, **PREVIEW**, and **DEPRECATED** tags](tools/gen-api.py)
+  * [Custom generation of REST API documentation from `openapi.json` with dynamic labeling of REST API endpoints with versions, **PREVIEW**, and **DEPRECATED** tags](tools/gen-api.py)
   * [Custom generation of REST API change summaries from `openapi.json](tools/gen-api-changes.py)
   * 🔒 Custom generation of `qq` CLI documentation from the code base
 

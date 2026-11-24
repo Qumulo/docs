@@ -2,10 +2,10 @@
 category: cluster
 command: cluster_set_config
 optional_options:
-- alternate: []
-  help: Cluster Name
-  name: --cluster-name
-  required: true
+  - alternate: []
+    help: Cluster Name
+    name: --cluster-name
+    required: true
 permalink: /qq-cli-command-guide/cluster/cluster_set_config.html
 positional_options: []
 redirect_from:

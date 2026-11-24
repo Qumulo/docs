@@ -2,10 +2,10 @@
 category: fs
 command: fs_get_stats
 optional_options:
-- alternate: []
-  help: Print the output in JSON format.
-  name: --json
-  required: false
+  - alternate: []
+    help: Print the output in JSON format.
+    name: --json
+    required: false
 permalink: /qq-cli-command-guide/fs/fs_get_stats.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

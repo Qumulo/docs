@@ -2,22 +2,22 @@
 category: fs
 command: fs_create_link
 optional_options:
-- alternate: []
-  help: Parent directory path
-  name: --path
-  required: false
-- alternate: []
-  help: Parent directory ID
-  name: --id
-  required: false
-- alternate: []
-  help: Link target
-  name: --target
-  required: true
-- alternate: []
-  help: New link name
-  name: --name
-  required: true
+  - alternate: []
+    help: Parent directory path
+    name: --path
+    required: false
+  - alternate: []
+    help: Parent directory ID
+    name: --id
+    required: false
+  - alternate: []
+    help: Link target
+    name: --target
+    required: true
+  - alternate: []
+    help: New link name
+    name: --name
+    required: true
 permalink: /qq-cli-command-guide/fs/fs_create_link.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

@@ -2,18 +2,18 @@
 category: fs
 command: fs_release_nlm_locks_by_client
 optional_options:
-- alternate: []
-  help: This command can cause corruption, add this flag to release lock
-  name: --force
-  required: false
-- alternate: []
-  help: Client hostname
-  name: --name
-  required: false
-- alternate: []
-  help: Client IP address
-  name: --address
-  required: false
+  - alternate: []
+    help: This command can cause corruption, add this flag to release lock
+    name: --force
+    required: false
+  - alternate: []
+    help: Client hostname
+    name: --name
+    required: false
+  - alternate: []
+    help: Client IP address
+    name: --address
+    required: false
 permalink: /qq-cli-command-guide/fs/fs_release_nlm_locks_by_client.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

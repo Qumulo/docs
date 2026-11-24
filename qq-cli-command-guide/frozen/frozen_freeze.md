@@ -2,28 +2,29 @@
 category: frozen
 command: frozen_freeze
 optional_options:
-- alternate: []
-  help: Cluster path of one directory, with everything under it, or of one file, on
-    a Frozen bridge.
-  name: --subtree
-  required: false
-- alternate: []
-  help: Cluster paths of files or directories, each directory with everything under
-    it, on one Frozen bridge. Up to 256.
-  name: --files
-  required: false
-- alternate: []
-  help: A local file listing the cluster paths --files takes, one to a line. Empty
-    lines are skipped.
-  name: --files-from
-  required: false
-- alternate: []
-  help: Cluster paths of files or directories for the job to leave as they are, each
-    directory with everything under it. Each must exist and lie inside the subtree
-    or inside a directory given to --files. A file that replaces an excluded file
-    is left as it is too. Up to 256, given at once or over several --exclude options.
-  name: --exclude
-  required: false
+  - alternate: []
+    help: Cluster path of one directory, with everything under it, or of one file,
+      on a Frozen bridge.
+    name: --subtree
+    required: false
+  - alternate: []
+    help: Cluster paths of files or directories, each directory with everything under
+      it, on one Frozen bridge. Up to 256.
+    name: --files
+    required: false
+  - alternate: []
+    help: A local file listing the cluster paths --files takes, one to a line. Empty
+      lines are skipped.
+    name: --files-from
+    required: false
+  - alternate: []
+    help: Cluster paths of files or directories for the job to leave as they are,
+      each directory with everything under it. Each must exist and lie inside the
+      subtree or inside a directory given to --files. A file that replaces an excluded
+      file is left as it is too. Up to 256, given at once or over several --exclude
+      options.
+    name: --exclude
+    required: false
 permalink: /qq-cli-command-guide/frozen/frozen_freeze.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

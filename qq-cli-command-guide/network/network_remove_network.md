@@ -2,15 +2,15 @@
 category: network
 command: network_remove_network
 optional_options:
-- alternate: []
-  help: Network to delete
-  name: --network-id
-  required: true
-- alternate: []
-  help: Delete the vlan associated with the specified network if it is the only network
-    on the VLAN.
-  name: --delete-orphaned-vlans
-  required: false
+  - alternate: []
+    help: Network to delete
+    name: --network-id
+    required: true
+  - alternate: []
+    help: Delete the vlan associated with the specified network if it is the only
+      network on the VLAN.
+    name: --delete-orphaned-vlans
+    required: false
 permalink: /qq-cli-command-guide/network/network_remove_network.html
 positional_options: []
 redirect_from:

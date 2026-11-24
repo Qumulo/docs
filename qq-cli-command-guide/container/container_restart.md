@@ -2,10 +2,10 @@
 category: container
 command: container_restart
 optional_options:
-- alternate: []
-  help: Restart the container on the specified node. Defaults to the current node.
-  name: --node-id
-  required: false
+  - alternate: []
+    help: Restart the container on the specified node. Defaults to the current node.
+    name: --node-id
+    required: false
 permalink: /qq-cli-command-guide/container/container_restart.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

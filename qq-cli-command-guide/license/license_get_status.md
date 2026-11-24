@@ -2,10 +2,10 @@
 category: license
 command: license_get_status
 optional_options:
-- alternate: []
-  help: Print JSON representation of license.
-  name: --json
-  required: false
+  - alternate: []
+    help: Print JSON representation of license.
+    name: --json
+    required: false
 permalink: /qq-cli-command-guide/license/license_get_status.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

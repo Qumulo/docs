@@ -2,14 +2,14 @@
 category: replication
 command: replication_unlink_snapshot_policy
 optional_options:
-- alternate: []
-  help: Unique identifier of the source replication relationship.
-  name: --relationship-id
-  required: true
-- alternate: []
-  help: Identifier of the snapshot policy to unlink.
-  name: --snapshot-policy-id
-  required: true
+  - alternate: []
+    help: Unique identifier of the source replication relationship.
+    name: --relationship-id
+    required: true
+  - alternate: []
+    help: Identifier of the snapshot policy to unlink.
+    name: --snapshot-policy-id
+    required: true
 permalink: /qq-cli-command-guide/replication/replication_unlink_snapshot_policy.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

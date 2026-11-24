@@ -2,15 +2,15 @@
 category: analytics
 command: analytics_get_time_series
 optional_options:
-- alternate:
-  - --begin-time
-  help: Begin time for time series intervals, in epoch seconds
-  name: -b
-  required: false
-- alternate: []
-  help: Format output as Comma Separated Values
-  name: --csv
-  required: false
+  - alternate:
+      - --begin-time
+    help: Begin time for time series intervals, in epoch seconds
+    name: -b
+    required: false
+  - alternate: []
+    help: Format output as Comma Separated Values
+    name: --csv
+    required: false
 permalink: /qq-cli-command-guide/analytics/analytics_get_time_series.html
 positional_options: []
 redirect_from:

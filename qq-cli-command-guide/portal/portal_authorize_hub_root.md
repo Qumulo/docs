@@ -2,29 +2,29 @@
 category: portal
 command: portal_authorize_hub_root
 optional_options:
-- alternate:
-  - --id
-  help: Hub portal ID
-  name: -i
-  required: true
-- alternate:
-  - --json
-  help: Pretty-print JSON
-  name: -j
-  required: false
-- alternate:
-  - --no-paths
-  help: Show the file IDs of portal roots instead of their paths.
-  name: -n
-  required: false
-- alternate: []
-  help: File ID of the hub root directory
-  name: --hub-root-id
-  required: false
-- alternate: []
-  help: Path of the hub root directory
-  name: --hub-root-path
-  required: false
+  - alternate:
+      - --id
+    help: Hub portal ID
+    name: -i
+    required: true
+  - alternate:
+      - --json
+    help: Pretty-print JSON
+    name: -j
+    required: false
+  - alternate:
+      - --no-paths
+    help: Show the file IDs of portal roots instead of their paths.
+    name: -n
+    required: false
+  - alternate: []
+    help: File ID of the hub root directory
+    name: --hub-root-id
+    required: false
+  - alternate: []
+    help: Path of the hub root directory
+    name: --hub-root-path
+    required: false
 permalink: /qq-cli-command-guide/portal/portal_authorize_hub_root.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

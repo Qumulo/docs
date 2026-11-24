@@ -2,11 +2,11 @@
 category: portal
 command: portal_list_filesystems
 optional_options:
-- alternate:
-  - --json
-  help: Pretty-print JSON
-  name: -j
-  required: false
+  - alternate:
+      - --json
+    help: Pretty-print JSON
+    name: -j
+    required: false
 permalink: /qq-cli-command-guide/portal/portal_list_filesystems.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

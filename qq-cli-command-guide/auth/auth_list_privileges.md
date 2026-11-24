@@ -2,20 +2,20 @@
 category: auth
 command: auth_list_privileges
 optional_options:
-- alternate:
-  - --role
-  help: List privileges associated with a role.
-  name: -r
-  required: false
-- alternate:
-  - --verbose
-  help: Show granted and denied privileges with --role.
-  name: -v
-  required: false
-- alternate: []
-  help: Print JSON representation of the privileges.
-  name: --json
-  required: false
+  - alternate:
+      - --role
+    help: List privileges associated with a role.
+    name: -r
+    required: false
+  - alternate:
+      - --verbose
+    help: Show granted and denied privileges with --role.
+    name: -v
+    required: false
+  - alternate: []
+    help: Print JSON representation of the privileges.
+    name: --json
+    required: false
 permalink: /qq-cli-command-guide/auth/auth_list_privileges.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

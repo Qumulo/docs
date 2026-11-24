@@ -2,15 +2,15 @@
 category: frozen
 command: frozen_bridge_delete
 optional_options:
-- alternate: []
-  help: Cluster path of the Frozen bridge. It must be where the bridge itself is,
-    not a path inside it.
-  name: --path
-  required: true
-- alternate: []
-  help: Don't ask for confirmation. A bridge that isn't empty is still refused.
-  name: --force
-  required: false
+  - alternate: []
+    help: Cluster path of the Frozen bridge. It must be where the bridge itself is,
+      not a path inside it.
+    name: --path
+    required: true
+  - alternate: []
+    help: Don't ask for confirmation. A bridge that isn't empty is still refused.
+    name: --force
+    required: false
 permalink: /qq-cli-command-guide/frozen/frozen_bridge_delete.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

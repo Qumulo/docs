@@ -2,29 +2,29 @@
 category: portal
 command: portal_delete_spoke_root
 optional_options:
-- alternate:
-  - --id
-  help: Spoke portal ID
-  name: -i
-  required: true
-- alternate:
-  - --json
-  help: Pretty-print JSON
-  name: -j
-  required: false
-- alternate:
-  - --no-paths
-  help: Show the file IDs of portal roots instead of their paths.
-  name: -n
-  required: false
-- alternate: []
-  help: File ID of the spoke root directory
-  name: --spoke-root-id
-  required: false
-- alternate: []
-  help: Path of the spoke root directory
-  name: --spoke-root-path
-  required: false
+  - alternate:
+      - --id
+    help: Spoke portal ID
+    name: -i
+    required: true
+  - alternate:
+      - --json
+    help: Pretty-print JSON
+    name: -j
+    required: false
+  - alternate:
+      - --no-paths
+    help: Show the file IDs of portal roots instead of their paths.
+    name: -n
+    required: false
+  - alternate: []
+    help: File ID of the spoke root directory
+    name: --spoke-root-id
+    required: false
+  - alternate: []
+    help: Path of the spoke root directory
+    name: --spoke-root-path
+    required: false
 permalink: /qq-cli-command-guide/portal/portal_delete_spoke_root.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

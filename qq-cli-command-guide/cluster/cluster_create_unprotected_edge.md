@@ -2,24 +2,24 @@
 category: cluster
 command: cluster_create_unprotected_edge
 optional_options:
-- alternate:
-  - -n
-  help: Edge Device Name
-  name: --edge-cluster-name
-  required: true
-- alternate:
-  - -p
-  help: Administrator Password
-  name: --admin-password
-  required: false
-- alternate: []
-  help: Accept the EULA
-  name: --accept-eula
-  required: false
-- alternate: []
-  help: Reject the EULA
-  name: --reject-eula
-  required: false
+  - alternate:
+      - -n
+    help: Edge Device Name
+    name: --edge-cluster-name
+    required: true
+  - alternate:
+      - -p
+    help: Administrator Password
+    name: --admin-password
+    required: false
+  - alternate: []
+    help: Accept the EULA
+    name: --accept-eula
+    required: false
+  - alternate: []
+    help: Reject the EULA
+    name: --reject-eula
+    required: false
 permalink: /qq-cli-command-guide/cluster/cluster_create_unprotected_edge.html
 positional_options: []
 redirect_from:

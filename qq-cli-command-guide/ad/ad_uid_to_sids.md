@@ -2,11 +2,11 @@
 category: ad
 command: ad_uid_to_sids
 optional_options:
-- alternate:
-  - --uid
-  help: Get the SIDs that correspond to this UID
-  name: -u
-  required: true
+  - alternate:
+      - --uid
+    help: Get the SIDs that correspond to this UID
+    name: -u
+    required: true
 permalink: /qq-cli-command-guide/ad/ad_uid_to_sids.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

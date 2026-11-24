@@ -2,31 +2,31 @@
 category: s3
 command: s3_modify_bucket
 optional_options:
-- alternate: []
-  help: The name of the bucket to be modified
-  name: --name
-  required: true
-- alternate: []
-  help: Suspends object versioning
-  name: --suspend-versioning
-  required: false
-- alternate: []
-  help: Enables object versioning
-  name: --enable-versioning
-  required: false
-- alternate: []
-  help: Enable Object Lock with no default retention period. (Requires versioning
-    to be enabled for the specified S3 bucket.)
-  name: --enable-object-lock-without-retention
-  required: false
-- alternate: []
-  help: Enable Object Lock with the retention period specified in days.
-  name: --enable-object-lock-with-retention-days
-  required: false
-- alternate: []
-  help: Enable Object Lock with the retention period specified in years.
-  name: --enable-object-lock-with-retention-years
-  required: false
+  - alternate: []
+    help: The name of the bucket to be modified
+    name: --name
+    required: true
+  - alternate: []
+    help: Suspends object versioning
+    name: --suspend-versioning
+    required: false
+  - alternate: []
+    help: Enables object versioning
+    name: --enable-versioning
+    required: false
+  - alternate: []
+    help: Enable Object Lock with no default retention period. (Requires versioning
+      to be enabled for the specified S3 bucket.)
+    name: --enable-object-lock-without-retention
+    required: false
+  - alternate: []
+    help: Enable Object Lock with the retention period specified in days.
+    name: --enable-object-lock-with-retention-days
+    required: false
+  - alternate: []
+    help: Enable Object Lock with the retention period specified in years.
+    name: --enable-object-lock-with-retention-years
+    required: false
 permalink: /qq-cli-command-guide/s3/s3_modify_bucket.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

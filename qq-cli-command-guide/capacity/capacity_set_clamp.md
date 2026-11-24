@@ -2,14 +2,14 @@
 category: capacity
 command: capacity_set_clamp
 optional_options:
-- alternate: []
-  help: The capacity clamp to set as a human readable byte count (e.g. "10TB").
-  name: --clamp
-  required: false
-- alternate: []
-  help: Remove the capacity clamp on the cluster.
-  name: --disable
-  required: false
+  - alternate: []
+    help: The capacity clamp to set as a human readable byte count (e.g. "10TB").
+    name: --clamp
+    required: false
+  - alternate: []
+    help: Remove the capacity clamp on the cluster.
+    name: --disable
+    required: false
 permalink: /qq-cli-command-guide/capacity/capacity_set_clamp.html
 positional_options: []
 redirect_from:

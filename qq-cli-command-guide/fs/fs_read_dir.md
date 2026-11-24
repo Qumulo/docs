@@ -2,37 +2,37 @@
 category: fs
 command: fs_read_dir
 optional_options:
-- alternate: []
-  help: Directory path
-  name: --path
-  required: false
-- alternate: []
-  help: Directory ID
-  name: --id
-  required: false
-- alternate: []
-  help: REST API pagination size to use. This affects the number of API calls made,
-    and the structure of the resulting JSON output, but does not affect what entries
-    are returned. Note that the system may impose an upper limit on the page size.
-  name: --page-size
-  required: false
-- alternate: []
-  help: Snapshot ID to read from
-  name: --snapshot
-  required: false
-- alternate: []
-  help: SMB style match pattern.
-  name: --smb-pattern
-  required: false
-- alternate: []
-  help: Do not update the directory's access time (atime) as a result of this read.
-  name: --skip-atime-update
-  required: false
-- alternate: []
-  help: Provides ACL for each file in files[i].acl. When the caller does not have
-    the READ_ACL permission on that entry, the entry in files[i].acl is null.
-  name: --include-acls
-  required: false
+  - alternate: []
+    help: Directory path
+    name: --path
+    required: false
+  - alternate: []
+    help: Directory ID
+    name: --id
+    required: false
+  - alternate: []
+    help: REST API pagination size to use. This affects the number of API calls made,
+      and the structure of the resulting JSON output, but does not affect what entries
+      are returned. Note that the system may impose an upper limit on the page size.
+    name: --page-size
+    required: false
+  - alternate: []
+    help: Snapshot ID to read from
+    name: --snapshot
+    required: false
+  - alternate: []
+    help: SMB style match pattern.
+    name: --smb-pattern
+    required: false
+  - alternate: []
+    help: Do not update the directory's access time (atime) as a result of this read.
+    name: --skip-atime-update
+    required: false
+  - alternate: []
+    help: Provides ACL for each file in files[i].acl. When the caller does not have
+      the READ_ACL permission on that entry, the entry in files[i].acl is null.
+    name: --include-acls
+    required: false
 permalink: /qq-cli-command-guide/fs/fs_read_dir.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

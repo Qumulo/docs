@@ -2,39 +2,39 @@
 category: auth
 command: auth_modify_user
 optional_options:
-- alternate: []
-  help: Name or ID of user to modify
-  name: --id
-  required: true
-- alternate: []
-  help: Change user's name
-  name: --name
-  required: false
-- alternate: []
-  help: Change the user's primary group
-  name: --primary-group
-  required: false
-- alternate: []
-  help: Change the user's NFS uid (or specify "none" to remove)
-  name: --uid
-  required: false
-- alternate: []
-  help: Add this user to a group
-  name: --add-group
-  required: false
-- alternate: []
-  help: Remove this user from a group
-  name: --remove-group
-  required: false
-- alternate: []
-  help: Change the user's home directory path (or specify "none" to remove)
-  name: --home-directory
-  required: false
-- alternate:
-  - --password
-  help: Change the user password
-  name: -p
-  required: false
+  - alternate: []
+    help: Name or ID of user to modify
+    name: --id
+    required: true
+  - alternate: []
+    help: Change user's name
+    name: --name
+    required: false
+  - alternate: []
+    help: Change the user's primary group
+    name: --primary-group
+    required: false
+  - alternate: []
+    help: Change the user's NFS uid (or specify "none" to remove)
+    name: --uid
+    required: false
+  - alternate: []
+    help: Add this user to a group
+    name: --add-group
+    required: false
+  - alternate: []
+    help: Remove this user from a group
+    name: --remove-group
+    required: false
+  - alternate: []
+    help: Change the user's home directory path (or specify "none" to remove)
+    name: --home-directory
+    required: false
+  - alternate:
+      - --password
+    help: Change the user password
+    name: -p
+    required: false
 permalink: /qq-cli-command-guide/auth/auth_modify_user.html
 positional_options: []
 redirect_from:

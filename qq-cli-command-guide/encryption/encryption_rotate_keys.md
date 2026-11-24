@@ -2,14 +2,14 @@
 category: encryption
 command: encryption_rotate_keys
 optional_options:
-- alternate: []
-  help: The unique ID of the master key for at-rest encryption.
-  name: --key-id
-  required: false
-- alternate: []
-  help: The name of the key that will be created and used for at-rest encryption.
-  name: --create-key-with-name
-  required: false
+  - alternate: []
+    help: The unique ID of the master key for at-rest encryption.
+    name: --key-id
+    required: false
+  - alternate: []
+    help: The name of the key that will be created and used for at-rest encryption.
+    name: --create-key-with-name
+    required: false
 permalink: /qq-cli-command-guide/encryption/encryption_rotate_keys.html
 positional_options: []
 redirect_from:

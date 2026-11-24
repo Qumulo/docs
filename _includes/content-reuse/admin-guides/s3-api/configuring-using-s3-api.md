@@ -3,11 +3,11 @@ To use the S3 API, you must install the [{{site.supportAWScliShort}}]({{site.s3.
 
 
 ## Step 1: Configure HTTPS {#configuring-https}
-The Qumulo Core S3 API accepts only HTTPS requests by default. To enable HTTPS support for your Qumulo cluster, you must install a valid SSL certificate on it.
+The Qumulo S3 API accepts only HTTPS requests by default. To enable HTTPS support for your Qumulo cluster, you must install a valid SSL certificate on it.
 
 Every Qumulo cluster is preconfigured with a self-signed SSL certificate. However, because certain applications don't accept the default certificate, we recommend installing your own.
 
-For information about configuring HTTPS for your cluster, see [Installing the Qumulo Core Web UI SSL Certificate](https://care.qumulo.com/hc/en-us/articles/17652500917779) on Qumulo Care.
+For information about configuring HTTPS for your cluster, see [Installing a Signed SSL Certificate on a Qumulo Cluster](../authentication-qumulo-core/installing-signed-ssl-certificate.html).
 
 ### Enabling and Disabling Plaintext HTTP Connections
 {% include important.html content="If you configure the S3 API service to accept only plaintext HTTP connections, no requests made through the S3 API are encrypted." %}

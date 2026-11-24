@@ -2,10 +2,10 @@
 category: auth
 command: auth_get_group
 optional_options:
-- alternate: []
-  help: Name or ID of group to list
-  name: --id
-  required: true
+  - alternate: []
+    help: Name or ID of group to list
+    name: --id
+    required: true
 permalink: /qq-cli-command-guide/auth/auth_get_group.html
 positional_options: []
 redirect_from:

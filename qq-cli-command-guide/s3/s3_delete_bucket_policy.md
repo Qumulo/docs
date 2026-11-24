@@ -2,10 +2,10 @@
 category: s3
 command: s3_delete_bucket_policy
 optional_options:
-- alternate: []
-  help: The target bucket for which the access policy will be removed.
-  name: --bucket
-  required: true
+  - alternate: []
+    help: The target bucket for which the access policy will be removed.
+    name: --bucket
+    required: true
 permalink: /qq-cli-command-guide/s3/s3_delete_bucket_policy.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

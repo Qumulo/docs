@@ -32,7 +32,7 @@ To view the fault tolerance of your Qumulo cluster:
 
 * **`qq` CLI:** Run the {% include qq.html command="protection_status_get" %} command
 
-* **REST API:** Call the `/v1/cluster/protection/status` endpoint
+* **Qumulo REST API:** Send a request to the `/v1/cluster/protection/status` endpoint
 
 ### Read-Only Mode Scenario for Hybrid Nodes
 When a hybrid node goes offline for a substantial period of time, there is a risk of the cluster entering read-only mode because Qumulo Core writes all inbound operations only to the node's SSDs.

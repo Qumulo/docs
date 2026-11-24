@@ -2,18 +2,19 @@
 category: nfs
 command: nfs_delete_export
 optional_options:
-- alternate: []
-  help: ID of export to delete
-  name: --export-id
-  required: false
-- alternate: []
-  help: Path of export to delete
-  name: --export-path
-  required: false
-- alternate: []
-  help: ID of the tenant the export is in. Only used if using the --export-path argument.
-  name: --tenant-id
-  required: false
+  - alternate: []
+    help: ID of export to delete
+    name: --export-id
+    required: false
+  - alternate: []
+    help: Path of export to delete
+    name: --export-path
+    required: false
+  - alternate: []
+    help: ID of the tenant the export is in. Only used if using the --export-path
+      argument.
+    name: --tenant-id
+    required: false
 permalink: /qq-cli-command-guide/nfs/nfs_delete_export.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

@@ -1,4 +1,4 @@
-Qumulo Core creates a descriptive audit log message for every operation that a client attempts. Qumulo Core routes audit log messages to one or more configured destinations: remote `syslog` servers (in compliance with {% include rfc.html rfc='5424' %}) or Amazon CloudWatch (configured through the audit logging REST API).
+Qumulo Core creates a descriptive audit log message for every operation that a client attempts. Qumulo Core routes audit log messages to one or more configured destinations: remote `syslog` servers (in compliance with {% include rfc.html rfc='5424' %}) or Amazon CloudWatch (configured through the audit logging Qumulo REST API).
 
 This section explains the differences between the levels of detail of audit logs in [`syslog` CSV](#details-in-syslog-csv-format), [`syslog` JSON](#details-in-syslog-json-format), and [CloudWatch JSON](#details-in-cloudwatch-json-format) formats. (In general, the `syslog` CSV and CloudWatch JSON formats contain an identical number of fields, some named differently, while the `syslog` JSON format has additional audit logging information.)
 
@@ -86,7 +86,7 @@ By default, Qumulo Core formats audit log messages in the `syslog` CSV format, p
         <li>Connectivity operation, such as <code>ftp_login</code></li>
         <li>File system operation, such as <code>fs_create</code></li>
         <li>Protocol management operation, such as <code>smb_create_share</code></li>
-        <li>REST API operation, such as <code>ad_join</code></li>
+        <li>Qumulo REST API operation, such as <code>ad_join</code></li>
       </ul>
     </td>
   </tr>
@@ -269,7 +269,7 @@ This following operation types are included in Qumulo Core audit logging.
 * Connectivity operations
 * File system operations
 * Protocol management operations
-* REST API operations
+* Qumulo REST API operations
 
 ## Error Status Messages
 The following error status message types are included in Qumulo Core audit logging.

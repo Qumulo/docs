@@ -125,9 +125,23 @@ methods:
       description: Return value on success
     preview: false
     request_body:
-      schema: "{\n  \"description\": \"audit_destination_config_delta\",\n  \"type\"\
-        : \"object\",\n  \"properties\": {\n    \"enabled\": {\n      \"description\"\
-        : \"enabled\",\n      \"type\": \"boolean\"\n    }\n  }\n}"
+      schema: "{\n  \"description\": \"api_audit_destination_config_delta\",\n  \"\
+        type\": \"object\",\n  \"properties\": {\n    \"type\": {\n      \"type\"\
+        : \"string\",\n      \"enum\": [\n        \"SYSLOG\",\n        \"CLOUDWATCH\"\
+        ,\n        \"LOCAL\"\n      ],\n      \"description\": \"type:\\n * `CLOUDWATCH`\
+        \ - AUDIT_DESTINATION_CLOUDWATCH,\\n * `LOCAL` - AUDIT_DESTINATION_LOCAL,\\\
+        n * `SYSLOG` - AUDIT_DESTINATION_SYSLOG\"\n    },\n    \"name\": {\n     \
+        \ \"description\": \"name\",\n      \"type\": \"string\"\n    },\n    \"enabled\"\
+        : {\n      \"description\": \"enabled\",\n      \"type\": \"boolean\"\n  \
+        \  },\n    \"server_address\": {\n      \"description\": \"server_address\"\
+        ,\n      \"type\": \"string\"\n    },\n    \"server_port\": {\n      \"description\"\
+        : \"server_port\",\n      \"type\": \"number\"\n    },\n    \"log_format\"\
+        : {\n      \"type\": \"string\",\n      \"enum\": [\n        \"csv\",\n  \
+        \      \"json\"\n      ],\n      \"description\": \"log_format:\\n * `csv`\
+        \ - SYSLOG_AUDIT_FORMAT_CSV,\\n * `json` - SYSLOG_AUDIT_FORMAT_JSON\"\n  \
+        \  },\n    \"log_group_name\": {\n      \"description\": \"log_group_name\"\
+        ,\n      \"type\": \"string\"\n    },\n    \"region\": {\n      \"description\"\
+        : \"region\",\n      \"type\": \"string\"\n    }\n  }\n}"
   delete:
     summary: Deletes the specified audit log destination.
     parameters:

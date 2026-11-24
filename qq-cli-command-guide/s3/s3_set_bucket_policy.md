@@ -2,21 +2,21 @@
 category: s3
 command: s3_set_bucket_policy
 optional_options:
-- alternate: []
-  help: The name of the S3 bucket whose policy is to be configured
-  name: --bucket
-  required: true
-- alternate: []
-  help: The access policy file to upload. For an access policy template, use the qq
-    s3_get_bucket_policy --example command. For what actions you are allowed use,
-    run the qq s3_bucket_policy_explain_access admin command on the bucket.
-  name: --file
-  required: true
-- alternate: []
-  help: Allow the configured policy to remove the ability to modify itself from the
-    current user.
-  name: --allow-remove-self
-  required: false
+  - alternate: []
+    help: The name of the S3 bucket whose policy is to be configured
+    name: --bucket
+    required: true
+  - alternate: []
+    help: The access policy file to upload. For an access policy template, use the
+      qq s3_get_bucket_policy --example command. For what actions you are allowed
+      use, run the qq s3_bucket_policy_explain_access admin command on the bucket.
+    name: --file
+    required: true
+  - alternate: []
+    help: Allow the configured policy to remove the ability to modify itself from
+      the current user.
+    name: --allow-remove-self
+    required: false
 permalink: /qq-cli-command-guide/s3/s3_set_bucket_policy.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

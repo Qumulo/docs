@@ -2,16 +2,21 @@
 category: login
 command: login
 optional_options:
-- alternate:
-  - --username
-  help: User name
-  name: -u
-  required: true
-- alternate:
-  - --password
-  help: Password (insecure, visible via ps)
-  name: -p
-  required: false
+  - alternate:
+      - --username
+    help: 'User name (default: the login of the --netrc entry)'
+    name: -u
+    required: false
+  - alternate:
+      - --password
+    help: Password (insecure, visible via ps)
+    name: -p
+    required: false
+  - alternate: []
+    help: 'Read the login and password from the entry for --host in FILE (default:
+      ~/.netrc). When FILE names a single machine, that machine is the default --host'
+    name: --netrc
+    required: false
 permalink: /qq-cli-command-guide/login/login.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

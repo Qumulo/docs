@@ -2,10 +2,10 @@
 category: replication
 command: replication_abort_object_replication
 optional_options:
-- alternate: []
-  help: Unique identifier of the object replication relationship
-  name: --id
-  required: true
+  - alternate: []
+    help: Unique identifier of the object replication relationship
+    name: --id
+    required: true
 permalink: /qq-cli-command-guide/replication/replication_abort_object_replication.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

@@ -2,58 +2,58 @@
 category: ad
 command: ad_join
 optional_options:
-- alternate:
-  - --domain
-  help: Fully-qualified name of Active Directory Domain
-  name: -d
-  required: true
-- alternate:
-  - --username
-  help: Domain user to perform the operation, e.g., Administrator
-  name: -u
-  required: true
-- alternate:
-  - --password
-  help: Domain password (insecure, visible via ps)
-  name: -p
-  required: false
-- alternate: []
-  help: NetBIOS name of the domain. By default, the first part of the domain name
-    is used.
-  name: --domain-netbios
-  required: false
-- alternate:
-  - --ou
-  help: Organizational Unit to join to
-  name: -o
-  required: false
-- alternate: []
-  help: Disallows the cluster from using trusted domains for user information. Disabling
-    may prevent the cluster from finding all relevant user and group membership data
-    for authenticated users.
-  name: --disable-search-trusted-domains
-  required: false
-- alternate: []
-  help: Use AD POSIX attributes.
-  name: --use-ad-posix-attributes
-  required: false
-- alternate: []
-  help: When using LDAP POSIX extensions, query using this base DN
-  name: --base-dn
-  required: false
-- alternate: []
-  help: A single fully qualified domain name (FQDN) or a comma-separated list of FQDNs
-    of the domain controllers (DCs) to use for LDAP queries and Netlogon authentication
-    (for example, dc1.example.com). When you use this flag, the specified FQDN overrides
-    the system's default discovery of DCs for the joined domain. When you specify
-    multiple FQDNs in order of preference, Qumulo Core uses only one DC at a time
-    and falls back to the remaining DCs if one of the FQDNs becomes unreachable.
-  name: --domain-controllers
-  required: false
-- alternate: []
-  help: Do not wait for the operation to complete
-  name: --no-wait
-  required: false
+  - alternate:
+      - --domain
+    help: Fully-qualified name of Active Directory Domain
+    name: -d
+    required: true
+  - alternate:
+      - --username
+    help: Domain user to perform the operation, e.g., Administrator or Administrator@<FQDN>
+    name: -u
+    required: true
+  - alternate:
+      - --password
+    help: Domain password (insecure, visible via ps)
+    name: -p
+    required: false
+  - alternate: []
+    help: NetBIOS name of the domain. By default, the first part of the domain name
+      is used.
+    name: --domain-netbios
+    required: false
+  - alternate:
+      - --ou
+    help: Organizational Unit to join to
+    name: -o
+    required: false
+  - alternate: []
+    help: Disallows the cluster from using trusted domains for user information. Disabling
+      may prevent the cluster from finding all relevant user and group membership
+      data for authenticated users.
+    name: --disable-search-trusted-domains
+    required: false
+  - alternate: []
+    help: Use AD POSIX attributes.
+    name: --use-ad-posix-attributes
+    required: false
+  - alternate: []
+    help: When using LDAP POSIX extensions, query using this base DN
+    name: --base-dn
+    required: false
+  - alternate: []
+    help: A single fully qualified domain name (FQDN) or a comma-separated list of
+      FQDNs of the domain controllers (DCs) to use for LDAP queries and Netlogon authentication
+      (for example, dc1.example.com). When you use this flag, the specified FQDN overrides
+      the system's default discovery of DCs for the joined domain. When you specify
+      multiple FQDNs in order of preference, Qumulo Core uses only one DC at a time
+      and falls back to the remaining DCs if one of the FQDNs becomes unreachable.
+    name: --domain-controllers
+    required: false
+  - alternate: []
+    help: Do not wait for the operation to complete
+    name: --no-wait
+    required: false
 permalink: /qq-cli-command-guide/ad/ad_join.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

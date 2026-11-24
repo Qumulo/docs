@@ -2,14 +2,14 @@
 category: replication
 command: replication_reconnect_target_relationship
 optional_options:
-- alternate: []
-  help: Unique identifier of the target replication relationship
-  name: --id
-  required: true
-- alternate: []
-  help: Do not prompt
-  name: --force
-  required: false
+  - alternate: []
+    help: Unique identifier of the target replication relationship
+    name: --id
+    required: true
+  - alternate: []
+    help: Do not prompt
+    name: --force
+    required: false
 permalink: /qq-cli-command-guide/replication/replication_reconnect_target_relationship.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

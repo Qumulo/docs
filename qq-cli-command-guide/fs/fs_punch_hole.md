@@ -2,30 +2,30 @@
 category: fs
 command: fs_punch_hole
 optional_options:
-- alternate: []
-  help: File path
-  name: --path
-  required: false
-- alternate: []
-  help: File ID
-  name: --id
-  required: false
-- alternate: []
-  help: Stream ID
-  name: --stream-id
-  required: false
-- alternate: []
-  help: Stream name
-  name: --stream-name
-  required: false
-- alternate: []
-  help: Offset in bytes specifying the start of the hole to create
-  name: --offset
-  required: true
-- alternate: []
-  help: Size in bytes of the hole to create
-  name: --size
-  required: true
+  - alternate: []
+    help: File path
+    name: --path
+    required: false
+  - alternate: []
+    help: File ID
+    name: --id
+    required: false
+  - alternate: []
+    help: Stream ID
+    name: --stream-id
+    required: false
+  - alternate: []
+    help: Stream name
+    name: --stream-name
+    required: false
+  - alternate: []
+    help: Offset in bytes specifying the start of the hole to create
+    name: --offset
+    required: true
+  - alternate: []
+    help: Size in bytes of the hole to create
+    name: --size
+    required: true
 permalink: /qq-cli-command-guide/fs/fs_punch_hole.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

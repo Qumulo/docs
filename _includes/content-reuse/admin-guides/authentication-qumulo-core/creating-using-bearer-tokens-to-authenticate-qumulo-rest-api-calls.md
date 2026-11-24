@@ -8,8 +8,8 @@ To create a bearer token, you can use the Qumulo REST API or Qumulo Core Web UI.
 
 {% include important.html content="Only administrative users (or users with `PRIVILEGE_ACCESS_TOKENS_WRITE`) can create bearer tokens." %}
 
-### To Create a Bearer Token by Using the REST API
-Begin an authentication session by calling the `/v1/session/login` REST API endpoint and specify the username and password. For example:
+### To Create a Bearer Token by Using the Qumulo REST API
+Begin an authentication session by calling the `/v1/session/login` Qumulo REST API endpoint and specify the username and password. For example:
 
 ```bash
 curl -k -X POST https://{{site.exampleIP0}}:8000/v1/session/login \

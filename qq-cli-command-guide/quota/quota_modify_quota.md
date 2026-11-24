@@ -2,19 +2,19 @@
 category: quota
 command: quota_modify_quota
 optional_options:
-- alternate: []
-  help: Path name
-  name: --path
-  required: false
-- alternate: []
-  help: File ID
-  name: --id
-  required: false
-- alternate: []
-  help: 'Quota limit in bytes. Both base-10 and base-2 shorthand names are accepted:
-    GB or GiB, TB or TiB (e.g. 50GB)'
-  name: --limit
-  required: true
+  - alternate: []
+    help: Path name
+    name: --path
+    required: false
+  - alternate: []
+    help: File ID
+    name: --id
+    required: false
+  - alternate: []
+    help: 'Quota limit in bytes. Both base-10 and base-2 shorthand names are accepted:
+      GB or GiB, TB or TiB (e.g. 50GB)'
+    name: --limit
+    required: true
 permalink: /qq-cli-command-guide/quota/quota_modify_quota.html
 positional_options: []
 redirect_from:

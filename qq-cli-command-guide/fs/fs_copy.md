@@ -2,26 +2,26 @@
 category: fs
 command: fs_copy
 optional_options:
-- alternate: []
-  help: Snapshot ID to copy from
-  name: --source-snapshot
-  required: false
-- alternate: []
-  help: Overwrite an existing target file
-  name: --overwrite
-  required: false
-- alternate: []
-  help: Do not show progress bar
-  name: --quiet
-  required: false
-- alternate: []
-  help: Do not copy file attributes and ACLs in addition to data
-  name: --no-attributes
-  required: false
-- alternate: []
-  help: Do not copy named streams
-  name: --no-named-streams
-  required: false
+  - alternate: []
+    help: Snapshot ID to copy from
+    name: --source-snapshot
+    required: false
+  - alternate: []
+    help: Overwrite an existing target file
+    name: --overwrite
+    required: false
+  - alternate: []
+    help: Do not show progress bar
+    name: --quiet
+    required: false
+  - alternate: []
+    help: Do not copy file attributes and ACLs in addition to data
+    name: --no-attributes
+    required: false
+  - alternate: []
+    help: Do not copy named streams
+    name: --no-named-streams
+    required: false
 permalink: /qq-cli-command-guide/fs/fs_copy.html
 positional_options:
   - help: Source file absolute path

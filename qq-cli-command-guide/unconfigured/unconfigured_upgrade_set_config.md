@@ -2,14 +2,14 @@
 category: unconfigured
 command: unconfigured_upgrade_set_config
 optional_options:
-- alternate: []
-  help: FS path to upgrade image
-  name: --path
-  required: true
-- alternate: []
-  help: 'Target: idle, prepare, arm.'
-  name: --target
-  required: false
+  - alternate: []
+    help: FS path to upgrade image
+    name: --path
+    required: true
+  - alternate: []
+    help: 'Target: idle, prepare, arm.'
+    name: --target
+    required: false
 permalink: /qq-cli-command-guide/unconfigured/unconfigured_upgrade_set_config.html
 positional_options: []
 redirect_from:

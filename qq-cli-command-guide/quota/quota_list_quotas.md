@@ -2,10 +2,10 @@
 category: quota
 command: quota_list_quotas
 optional_options:
-- alternate: []
-  help: Max quota entries to return per request
-  name: --page-size
-  required: false
+  - alternate: []
+    help: Max quota entries to return per request
+    name: --page-size
+    required: false
 permalink: /qq-cli-command-guide/quota/quota_list_quotas.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

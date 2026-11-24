@@ -2,22 +2,22 @@
 category: replication
 command: replication_authorize
 optional_options:
-- alternate: []
-  help: Unique identifier of the target replication relationship
-  name: --id
-  required: true
-- alternate: []
-  help: Allow the replication relationship to be authorized on a target directory
-    containing existing data. Existing data in the target directory may be deleted
-    or overwritten. If you wish to preserve this data, consider taking a snapshot
-    before authorizing.
-  name: --allow-non-empty-directory
-  required: false
-- alternate: []
-  help: Allow the target directory to be created with inherited permissions if it
-    does not already exist
-  name: --allow-fs-path-create
-  required: false
+  - alternate: []
+    help: Unique identifier of the target replication relationship
+    name: --id
+    required: true
+  - alternate: []
+    help: Allow the replication relationship to be authorized on a target directory
+      containing existing data. Existing data in the target directory may be deleted
+      or overwritten. If you wish to preserve this data, consider taking a snapshot
+      before authorizing.
+    name: --allow-non-empty-directory
+    required: false
+  - alternate: []
+    help: Allow the target directory to be created with inherited permissions if it
+      does not already exist
+    name: --allow-fs-path-create
+    required: false
 permalink: /qq-cli-command-guide/replication/replication_authorize.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

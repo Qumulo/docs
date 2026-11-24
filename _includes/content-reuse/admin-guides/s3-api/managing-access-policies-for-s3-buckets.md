@@ -133,7 +133,7 @@ The following table describes the subset of the [Amazon S3 API action permission
 {{site.data.alerts.note}}
 <ul>
   <li>Certain permissions (such as <code>s3:AbortMultipartUpload</code>) grant permission to both S3 API and Qumulo REST API variants of an API call.</li>
-  <li>Certain permissions (such as <code>s3:GetBucketAcl</code>) grant permission to S3 APIs that are currently implemented partially within Qumulo Core.</li>
+  <li>Certain permissions (such as <code>s3:GetBucketAcl</code>) grant permission to S3 API actions that are currently implemented partially within Qumulo Core.</li>
   <li><code>s3:*</code> matches all S3 API actions.</li>
 </ul>
 {{site.data.alerts.end}}

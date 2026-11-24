@@ -2,15 +2,15 @@
 category: network
 command: network_list_connections
 optional_options:
-- alternate:
-  - --counts
-  help: Pretty-print connection counts for the cluster and each node
-  name: -c
-  required: false
-- alternate: []
-  help: Print json instead of default pretty-printed connection table
-  name: --json
-  required: false
+  - alternate:
+      - --counts
+    help: Pretty-print connection counts for the cluster and each node
+    name: -c
+    required: false
+  - alternate: []
+    help: Print json instead of default pretty-printed connection table
+    name: --json
+    required: false
 permalink: /qq-cli-command-guide/network/network_list_connections.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

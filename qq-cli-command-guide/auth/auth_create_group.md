@@ -2,14 +2,14 @@
 category: auth
 command: auth_create_group
 optional_options:
-- alternate: []
-  help: New group's name (windows style)
-  name: --name
-  required: true
-- alternate: []
-  help: Optional NFS gid
-  name: --gid
-  required: false
+  - alternate: []
+    help: New group's name (windows style)
+    name: --name
+    required: true
+  - alternate: []
+    help: Optional NFS gid
+    name: --gid
+    required: false
 permalink: /qq-cli-command-guide/auth/auth_create_group.html
 positional_options: []
 redirect_from:

@@ -2,18 +2,18 @@
 category: fs
 command: fs_acl_explain_posix_mode
 optional_options:
-- alternate: []
-  help: File or directory path
-  name: --path
-  required: false
-- alternate: []
-  help: File or directory ID
-  name: --id
-  required: false
-- alternate: []
-  help: Print JSON representation of POSIX mode derivation
-  name: --json
-  required: false
+  - alternate: []
+    help: File or directory path
+    name: --path
+    required: false
+  - alternate: []
+    help: File or directory ID
+    name: --id
+    required: false
+  - alternate: []
+    help: Print JSON representation of POSIX mode derivation
+    name: --json
+    required: false
 permalink: /qq-cli-command-guide/fs/fs_acl_explain_posix_mode.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

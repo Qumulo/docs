@@ -2,10 +2,10 @@
 category: upgrade
 command: upgrade_verify_image
 optional_options:
-- alternate: []
-  help: FS path to upgrade image
-  name: --path
-  required: true
+  - alternate: []
+    help: FS path to upgrade image
+    name: --path
+    required: true
 permalink: /qq-cli-command-guide/upgrade/upgrade_verify_image.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

@@ -2,10 +2,10 @@
 category: s3
 command: s3_get_bucket
 optional_options:
-- alternate: []
-  help: The name of the S3 bucket for which to retrieve details
-  name: --name
-  required: true
+  - alternate: []
+    help: The name of the S3 bucket for which to retrieve details
+    name: --name
+    required: true
 permalink: /qq-cli-command-guide/s3/s3_get_bucket.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

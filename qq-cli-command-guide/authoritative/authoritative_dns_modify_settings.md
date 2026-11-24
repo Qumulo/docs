@@ -2,30 +2,31 @@
 category: authoritative
 command: authoritative_dns_modify_settings
 optional_options:
-- alternate: []
-  help: The fully qualified domain name (FQDN) for the Qumulo Authoritative DNS server.
-  name: --fqdn
-  required: false
-- alternate: []
-  help: Enable the Qumulo Authoritative DNS server
-  name: --enable
-  required: false
-- alternate: []
-  help: Disable the Qumulo Authoritative DNS server
-  name: --disable
-  required: false
-- alternate: []
-  help: The list of IP addresses that can query the Qumulo Authoritative DNS server
-  name: --host-restrictions
-  required: false
-- alternate: []
-  help: Allow all IP addresses to query the Qumulo Authoritative DNS server
-  name: --disable-host-restrictions
-  required: false
-- alternate: []
-  help: How long resolvers may cache a record, from 0 to 3600 seconds.
-  name: --record-ttl-seconds
-  required: false
+  - alternate: []
+    help: The fully qualified domain name (FQDN) for the Qumulo Authoritative DNS
+      server.
+    name: --fqdn
+    required: false
+  - alternate: []
+    help: Enable the Qumulo Authoritative DNS server
+    name: --enable
+    required: false
+  - alternate: []
+    help: Disable the Qumulo Authoritative DNS server
+    name: --disable
+    required: false
+  - alternate: []
+    help: The list of IP addresses that can query the Qumulo Authoritative DNS server
+    name: --host-restrictions
+    required: false
+  - alternate: []
+    help: Allow all IP addresses to query the Qumulo Authoritative DNS server
+    name: --disable-host-restrictions
+    required: false
+  - alternate: []
+    help: How long resolvers may cache a record, from 0 to 3600 seconds.
+    name: --record-ttl-seconds
+    required: false
 permalink: /qq-cli-command-guide/authoritative/authoritative_dns_modify_settings.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

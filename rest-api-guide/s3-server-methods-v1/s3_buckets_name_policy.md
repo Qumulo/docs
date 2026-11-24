@@ -13,9 +13,6 @@ methods:
         their access to set bucket policies on this bucket, otherwise they cannot.
         If not present, removing self permissions will be denied.
       required: false
-    - name: If-Match
-      description: ETag for expected version
-      required: false
     response_body: {}
     responses:
     - code: '200'

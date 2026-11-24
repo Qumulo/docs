@@ -2,11 +2,11 @@
 category: unconfigured
 command: unconfigured_upgrade_status
 optional_options:
-- alternate:
-  - --monitor
-  help: Monitor the upgrade status until the PREPARING state is complete.
-  name: --wait-until-prepared
-  required: false
+  - alternate:
+      - --monitor
+    help: Monitor the upgrade status until the PREPARING state is complete.
+    name: --wait-until-prepared
+    required: false
 permalink: /qq-cli-command-guide/unconfigured/unconfigured_upgrade_status.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

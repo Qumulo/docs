@@ -2,38 +2,39 @@
 category: fs
 command: fs_delete_user_metadata
 optional_options:
-- alternate: []
-  help: File path
-  name: --path
-  required: false
-- alternate: []
-  help: File ID
-  name: --id
-  required: false
-- alternate: []
-  help: 'Operate on S3 user metadata: the x-amz-meta-* headers of the object,
+  - alternate: []
+    help: File path
+    name: --path
+    required: false
+  - alternate: []
+    help: File ID
+    name: --id
+    required: false
+  - alternate: []
+    help: 'Operate on S3 user metadata: the x-amz-meta-* headers of the object,
 
-    keyed by the header name without the x-amz-meta- prefix. Without --s3 or --well-known,
+      keyed by the header name without the x-amz-meta- prefix. Without --s3 or --well-known,
 
-    qq CLI commands manipulate generic metadata, which S3 shows as object tags.
+      qq CLI commands manipulate generic metadata, which S3 shows as object tags.
 
-    '
-  name: --s3
-  required: false
-- alternate: []
-  help: 'Operate on well-known metadata, a fixed set of keys that Qumulo Core
+      '
+    name: --s3
+    required: false
+  - alternate: []
+    help: 'Operate on well-known metadata, a fixed set of keys that Qumulo Core
 
-    defines: the standard S3 object headers Cache-Control, Content-Disposition, Content-Encoding,
+      defines: the standard S3 object headers Cache-Control, Content-Disposition,
+      Content-Encoding,
 
-    Content-Language, Content-Type, and Expires.
+      Content-Language, Content-Type, and Expires.
 
-    '
-  name: --well-known
-  required: false
-- alternate: []
-  help: Metadata key
-  name: --key
-  required: true
+      '
+    name: --well-known
+    required: false
+  - alternate: []
+    help: Metadata key
+    name: --key
+    required: true
 permalink: /qq-cli-command-guide/fs/fs_delete_user_metadata.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

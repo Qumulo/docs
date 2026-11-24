@@ -514,6 +514,7 @@ gns:
   functionality762note: A spoke portal root directory can either map to a unique hub portal root directory or share hub portal root directories with other spoke portals.
   qqPortalCreate: We strongly recommend using the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_create.html"><code>qq portal_create</code></a> command with the <code>--hub-hosts</code> flag to spread the workload across all nodes on the hub portal host cluster.
   doNotBreakIPlist: For the command to succeed, don't use the backslash (<code>\</code>) to break the list of IP addresses across multiple lines.
+  readOnlyPausedSuspended: In Qumulo Core 7.11.0 (and higher), a <code>Read-Only</code>, <code>Paused</code>, or <code>Suspended</code> relationship whose type doesn't change has nothing to synchronize. Qumulo Core removes such relationships immediately.
 
 RBACoverrides: For the S3 API and Qumulo REST API, if a user has the <a href="https://care.qumulo.com/hc/en-us/articles/360036591633">role-based access control privilege (RBAC)</a> to perform an API action, Qumulo Core <a href="#rbac-overrides">ignores the access policy</a> and permits the API action.
 

@@ -23,7 +23,7 @@
 
    1. To allow Qumulo Core to follow LDAP referrals to Parent Domains, Child Domains, or Domains in the same Forest, for **Search Trusted Domains**, click **Yes**.
 
-   1. (Optional) For **Base DN (Distinguished Name) for User and Group Accounts**, enter the list of containers in the domain that Qumulo Core searches for POSIX attributes, S3 and REST API access keys, SSO access for the Qumulo Core Web UI, and accounts that use Kerberos with NFSv4.1. For example:
+   1. (Optional) For **Base DN (Distinguished Name) for User and Group Accounts**, enter the list of containers in the domain that Qumulo Core searches for POSIX attributes, Qumulo S3 API and Qumulo REST API access keys, SSO access for the Qumulo Core Web UI, and accounts that use Kerberos with NFSv4.1. For example:
 
       ```
       OU=Staff;DC=ad;DC=example;DC=com

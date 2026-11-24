@@ -2,14 +2,14 @@
 category: web
 command: web_ui_get_settings
 optional_options:
-- alternate: []
-  help: Gets the inactivity timeout
-  name: --inactivity-timeout
-  required: false
-- alternate: []
-  help: Gets the configuration for the login banner
-  name: --login-banner
-  required: false
+  - alternate: []
+    help: Gets the inactivity timeout
+    name: --inactivity-timeout
+    required: false
+  - alternate: []
+    help: Gets the configuration for the login banner
+    name: --login-banner
+    required: false
 permalink: /qq-cli-command-guide/web/web_ui_get_settings.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

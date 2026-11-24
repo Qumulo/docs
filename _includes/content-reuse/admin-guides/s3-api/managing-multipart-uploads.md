@@ -20,7 +20,7 @@ The following conditions are true for multipart S3 uploads in Qumulo Core.
 
 * Multipart upload data isn't visible in the Qumulo file system, and isn't included in file system snapshots, until you complete the upload successfully by making a call to the `CompleteMultipartUpload` S3 API.
 
-  {% include note.html content="When you view the breakdown of a Qumulo cluster's capacity by using the Qumulo Core Web UI, REST API, or `qq` CLI, Qumulo Core doesn't distinguish between capacity that the file system and incomplete multipart uploads use." %}
+  {% include note.html content="When you view the breakdown of a Qumulo cluster's capacity by using the Qumulo Core Web UI, Qumulo REST API, or `qq` CLI, Qumulo Core doesn't distinguish between capacity that the file system and incomplete multipart uploads use." %}
 
 * Qumulo Core doesn't delete multipart data unless it [aborts and cleans up the multipart upload automatically](#cleaning-up-uploads-automatically) or you [abort and clean up the multipart upload manually](#cleaning-up-uploads-manually).
 
@@ -55,7 +55,7 @@ You can list the incomplete multipart uploads for a single S3 bucket by using th
 
 * To list incomplete uploads by using the Qumulo REST API, send a `GET` request to the `/v1/s3/buckets/<bucket-name>/uploads/` endpoint and specify the bucket name.
 
-The output from the `qq` CLI and REST API is the same. The following example output is a single JSON object that contains the list of objects for the specified bucket. The list shows information for each multipart S3 upload, including:
+The output from the `qq` CLI and Qumulo REST API is the same. The following example output is a single JSON object that contains the list of objects for the specified bucket. The list shows information for each multipart S3 upload, including:
 
 * When each upload was initiated
 
@@ -164,4 +164,4 @@ Use the Qumulo REST API or `qq` CLI to abort and clean up the upload. You need t
   DELETE /v1/s3/buckets/my-bucket/uploads/000000000example
   ```
 
-There is no response body for both the `qq` CLI and REST API. Qumulo Core returns a `204 No Content` status code when the upload is aborted or the cleanup is complete.
+There is no response body for both the `qq` CLI and Qumulo REST API. Qumulo Core returns a `204 No Content` status code when the upload is aborted or the cleanup is complete.

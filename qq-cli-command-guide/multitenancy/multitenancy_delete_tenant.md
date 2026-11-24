@@ -2,14 +2,14 @@
 category: multitenancy
 command: multitenancy_delete_tenant
 optional_options:
-- alternate: []
-  help: The unique ID of the tenant to delete.
-  name: --id
-  required: true
-- alternate: []
-  help: Do not prompt
-  name: --force
-  required: false
+  - alternate: []
+    help: The unique ID of the tenant to delete.
+    name: --id
+    required: true
+  - alternate: []
+    help: Do not prompt
+    name: --force
+    required: false
 permalink: /qq-cli-command-guide/multitenancy/multitenancy_delete_tenant.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

@@ -36,7 +36,7 @@ Next, the following conditions take effect:
 
 
 ## Determining Snapshots' Storage Usage
-{% include important.html content="Qumulo Core 7.9.0.2 (and higher) removes the `qq snapshot_calculate_used_capacity` and `qq snapshot_get_capacity_used_per_snapshot` commands and their corresponding `/v1/snapshots/` REST API endpoints. To determine the amount of data that a single snapshot references, use the [`qsnap`](https://github.com/Qumulo/qsnap) CLI." %}
+{% include important.html content="Qumulo Core 7.9.0.2 (and higher) removes the `qq snapshot_calculate_used_capacity` and `qq snapshot_get_capacity_used_per_snapshot` commands and their corresponding `/v1/snapshots/` Qumulo REST API endpoints. To determine the amount of data that a single snapshot references, use the [`qsnap`](https://github.com/Qumulo/qsnap) CLI." %}
 
 When Qumulo Core tracks the difference between the _saved_ (snapshotted) and _live_ (latest) versions of a file, it creates a _lineage_ of snapshots independent from each other.
 

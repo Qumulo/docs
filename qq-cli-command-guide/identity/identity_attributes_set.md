@@ -2,10 +2,10 @@
 category: identity
 command: identity_attributes_set
 optional_options:
-- alternate: []
-  help: The home directory for the identity.
-  name: --home-directory
-  required: true
+  - alternate: []
+    help: The home directory for the identity.
+    name: --home-directory
+    required: true
 permalink: /qq-cli-command-guide/identity/identity_attributes_set.html
 positional_options:
   - help: A name or a SID, optionally qualified with a domain prefix (e.g "local:name",

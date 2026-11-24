@@ -2,11 +2,11 @@
 category: encryption
 command: encryption_delete_key
 optional_options:
-- alternate:
-  - --key
-  help: The identifier or name of the key to delete from the key store.
-  name: -k
-  required: true
+  - alternate:
+      - --key
+    help: The identifier or name of the key to delete from the key store.
+    name: -k
+    required: true
 permalink: /qq-cli-command-guide/encryption/encryption_delete_key.html
 positional_options: []
 redirect_from:

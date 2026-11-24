@@ -332,7 +332,7 @@ This section explains how to deploy the storage accounts that act as persistent 
    {{site.data.alerts.important}}
    <ul>
      <li>The administrator password is applied at cluster creation and is never written to the Terraform state.</li>
-     <li>If you change the password by using the Qumulo Core Web UI, <code>qq</code> CLI, or REST API after deployment, update the Key Vault secret (or the value in <code>terraform.tfvars</code>) to match. Terraform resupplies the password to the provider on every apply that authenticates to the cluster, and a mismatch fails that apply part-way through.</li>
+     <li>If you change the password by using the Qumulo Core Web UI, <code>qq</code> CLI, or Qumulo REST API after deployment, update the Key Vault secret (or the value in <code>terraform.tfvars</code>) to match. Terraform resupplies the password to the provider on every apply that authenticates to the cluster, and a mismatch fails that apply part-way through.</li>
    </ul>
    {{site.data.alerts.end}}
 

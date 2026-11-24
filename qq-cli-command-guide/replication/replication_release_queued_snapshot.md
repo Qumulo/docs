@@ -2,14 +2,14 @@
 category: replication
 command: replication_release_queued_snapshot
 optional_options:
-- alternate: []
-  help: Unique identifier of the source replication relationship.
-  name: --relationship-id
-  required: true
-- alternate: []
-  help: Unique identifier of the snapshot to release.
-  name: --snapshot-id
-  required: true
+  - alternate: []
+    help: Unique identifier of the source replication relationship.
+    name: --relationship-id
+    required: true
+  - alternate: []
+    help: Unique identifier of the snapshot to release.
+    name: --snapshot-id
+    required: true
 permalink: /qq-cli-command-guide/replication/replication_release_queued_snapshot.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

@@ -2,11 +2,11 @@
 category: object
 command: object_portal_list_bridges
 optional_options:
-- alternate:
-  - --json
-  help: Pretty-print JSON
-  name: -j
-  required: false
+  - alternate:
+      - --json
+    help: Pretty-print JSON
+    name: -j
+    required: false
 permalink: /qq-cli-command-guide/object/object_portal_list_bridges.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

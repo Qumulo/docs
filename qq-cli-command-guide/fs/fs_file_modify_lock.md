@@ -2,36 +2,36 @@
 category: fs
 command: fs_file_modify_lock
 optional_options:
-- alternate: []
-  help: File path
-  name: --path
-  required: false
-- alternate: []
-  help: File ID
-  name: --id
-  required: false
-- alternate: []
-  help: Set a legal hold on the file.
-  name: --enable-legal-hold
-  required: false
-- alternate: []
-  help: Unset a legal hold on the file.
-  name: --disable-legal-hold
-  required: false
-- alternate: []
-  help: Set the retention period for a file lock.
-  name: --retention-period
-  required: false
-- alternate: []
-  help: Set the retention period for a file lock to the specified number of days from
-    now.
-  name: --retention-days
-  required: false
-- alternate: []
-  help: Set the retention period for a file lock to the specified number of years
-    from now.
-  name: --retention-years
-  required: false
+  - alternate: []
+    help: File path
+    name: --path
+    required: false
+  - alternate: []
+    help: File ID
+    name: --id
+    required: false
+  - alternate: []
+    help: Set a legal hold on the file.
+    name: --enable-legal-hold
+    required: false
+  - alternate: []
+    help: Unset a legal hold on the file.
+    name: --disable-legal-hold
+    required: false
+  - alternate: []
+    help: Set the retention period for a file lock.
+    name: --retention-period
+    required: false
+  - alternate: []
+    help: Set the retention period for a file lock to the specified number of days
+      from now.
+    name: --retention-days
+    required: false
+  - alternate: []
+    help: Set the retention period for a file lock to the specified number of years
+      from now.
+    name: --retention-years
+    required: false
 permalink: /qq-cli-command-guide/fs/fs_file_modify_lock.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

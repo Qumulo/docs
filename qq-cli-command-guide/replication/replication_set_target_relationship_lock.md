@@ -2,20 +2,20 @@
 category: replication
 command: replication_set_target_relationship_lock
 optional_options:
-- alternate: []
-  help: The unique identifier of the target replication relationship.
-  name: --relationship-id
-  required: true
-- alternate:
-  - --lock-key
-  help: The identifier or name of the lock key to associate with the specified target
-    replication relationship.
-  name: -k
-  required: false
-- alternate: []
-  help: Disassociate the lock key from this target relationship
-  name: --clear-lock-key
-  required: false
+  - alternate: []
+    help: The unique identifier of the target replication relationship.
+    name: --relationship-id
+    required: true
+  - alternate:
+      - --lock-key
+    help: The identifier or name of the lock key to associate with the specified target
+      replication relationship.
+    name: -k
+    required: false
+  - alternate: []
+    help: Disassociate the lock key from this target relationship
+    name: --clear-lock-key
+    required: false
 permalink: /qq-cli-command-guide/replication/replication_set_target_relationship_lock.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

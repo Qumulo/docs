@@ -2,48 +2,48 @@
 category: portal
 command: portal_accept_hub
 optional_options:
-- alternate:
-  - --id
-  help: Hub portal ID
-  name: -i
-  required: true
-- alternate:
-  - --json
-  help: Pretty-print JSON
-  name: -j
-  required: false
-- alternate:
-  - --no-paths
-  help: Show the file IDs of portal roots instead of their paths.
-  name: -n
-  required: false
-- alternate:
-  - --authorize-hub-roots
-  help: Additionally authorize all pending hub portal roots
-  name: -A
-  required: false
-- alternate:
-  - --spoke-hosts
-  help: The IP addresses and TCP ports of the remote cluster. Use a comma-delimited
-    list to specify multiple hosts. Use colon as a separator after each IP address
-    to provide custom TCP port (3713 is used by default). Ports specified this way
-    override other --port arguments. Put brackets around an IPv6 address, such as
-    [2001:db8::1] or [2001:db8::1]:4000. Use a dash to specify a range of IPv4 addresses
-    that share their first three octets, such as 10.220.1.70-73 or 10.220.1.70-10.220.1.73.
-    A port applies to the whole range.
-  name: -m
-  required: false
-- alternate:
-  - --spoke-address
-  help: The IP address of a node in the remote cluster
-  name: -a
-  required: false
-- alternate:
-  - --spoke-port
-  help: The TCP port for portal activity on the remote cluster. The default port 3713
-    is used if this field is not provided.
-  name: -p
-  required: false
+  - alternate:
+      - --id
+    help: Hub portal ID
+    name: -i
+    required: true
+  - alternate:
+      - --json
+    help: Pretty-print JSON
+    name: -j
+    required: false
+  - alternate:
+      - --no-paths
+    help: Show the file IDs of portal roots instead of their paths.
+    name: -n
+    required: false
+  - alternate:
+      - --authorize-hub-roots
+    help: Additionally authorize all pending hub portal roots
+    name: -A
+    required: false
+  - alternate:
+      - --spoke-hosts
+    help: The IP addresses and TCP ports of the remote cluster. Use a comma-delimited
+      list to specify multiple hosts. Use colon as a separator after each IP address
+      to provide custom TCP port (3713 is used by default). Ports specified this way
+      override other --port arguments. Put brackets around an IPv6 address, such as
+      [2001:db8::1] or [2001:db8::1]:4000. Use a dash to specify a range of IPv4 addresses
+      that share their first three octets, such as 10.220.1.70-73 or 10.220.1.70-10.220.1.73.
+      A port applies to the whole range.
+    name: -m
+    required: false
+  - alternate:
+      - --spoke-address
+    help: The IP address of a node in the remote cluster
+    name: -a
+    required: false
+  - alternate:
+      - --spoke-port
+    help: The TCP port for portal activity on the remote cluster. The default port
+      3713 is used if this field is not provided.
+    name: -p
+    required: false
 permalink: /qq-cli-command-guide/portal/portal_accept_hub.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

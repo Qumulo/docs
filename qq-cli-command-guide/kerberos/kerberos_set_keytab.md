@@ -2,11 +2,11 @@
 category: kerberos
 command: kerberos_set_keytab
 optional_options:
-- alternate:
-  - --keytab-file
-  help: The Kerberos keytab file to set
-  name: -k
-  required: true
+  - alternate:
+      - --keytab-file
+    help: The Kerberos keytab file to set
+    name: -k
+    required: true
 permalink: /qq-cli-command-guide/kerberos/kerberos_set_keytab.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

@@ -2,41 +2,41 @@
 category: portal
 command: portal_ping
 optional_options:
-- alternate:
-  - --json
-  help: Pretty-print JSON
-  name: -j
-  required: false
-- alternate:
-  - --brief
-  help: Summarize output if all connections are successful
-  name: -b
-  required: false
-- alternate:
-  - --hosts
-  help: The IP addresses and TCP ports of the remote cluster. Use a comma-delimited
-    list to specify multiple hosts. Use colon as a separator after each IP address
-    to provide custom TCP port (3713 is used by default). Ports specified this way
-    override other --port arguments. Put brackets around an IPv6 address, such as
-    [2001:db8::1] or [2001:db8::1]:4000. Use a dash to specify a range of IPv4 addresses
-    that share their first three octets, such as 10.220.1.70-73 or 10.220.1.70-10.220.1.73.
-    A port applies to the whole range.
-  name: -m
-  required: false
-- alternate: []
-  help: Ping all hub hosts defined in a local spoke portal
-  name: --spoke-id
-  required: false
-- alternate: []
-  help: Ping all spoke hosts defined in a local hub portal
-  name: --hub-id
-  required: false
-- alternate:
-  - --portal-port
-  help: The TCP port for portal activity on the remote cluster. The default port 3713
-    is used if this field is not provided.
-  name: -p
-  required: false
+  - alternate:
+      - --json
+    help: Pretty-print JSON
+    name: -j
+    required: false
+  - alternate:
+      - --brief
+    help: Summarize output if all connections are successful
+    name: -b
+    required: false
+  - alternate:
+      - --hosts
+    help: The IP addresses and TCP ports of the remote cluster. Use a comma-delimited
+      list to specify multiple hosts. Use colon as a separator after each IP address
+      to provide custom TCP port (3713 is used by default). Ports specified this way
+      override other --port arguments. Put brackets around an IPv6 address, such as
+      [2001:db8::1] or [2001:db8::1]:4000. Use a dash to specify a range of IPv4 addresses
+      that share their first three octets, such as 10.220.1.70-73 or 10.220.1.70-10.220.1.73.
+      A port applies to the whole range.
+    name: -m
+    required: false
+  - alternate: []
+    help: Ping all hub hosts defined in a local spoke portal
+    name: --spoke-id
+    required: false
+  - alternate: []
+    help: Ping all spoke hosts defined in a local hub portal
+    name: --hub-id
+    required: false
+  - alternate:
+      - --portal-port
+    help: The TCP port for portal activity on the remote cluster. The default port
+      3713 is used if this field is not provided.
+    name: -p
+    required: false
 permalink: /qq-cli-command-guide/portal/portal_ping.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

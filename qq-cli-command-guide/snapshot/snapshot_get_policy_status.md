@@ -2,11 +2,11 @@
 category: snapshot
 command: snapshot_get_policy_status
 optional_options:
-- alternate:
-  - --id
-  help: Identifier of the snapshot policy.
-  name: -i
-  required: true
+  - alternate:
+      - --id
+    help: Identifier of the snapshot policy.
+    name: -i
+    required: true
 permalink: /qq-cli-command-guide/snapshot/snapshot_get_policy_status.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

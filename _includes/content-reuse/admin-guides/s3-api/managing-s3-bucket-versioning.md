@@ -15,7 +15,7 @@ In the following example:
 
   {{site.data.alerts.note}}
   <ul>
-    <li>To access a specific version of a file by using CLI or REST API, specify the version ID. </li>
+    <li>To access a specific version of a file by using CLI or Qumulo REST API, specify the version ID. </li>
     <li>To access the <em>head version</em> (current version) of a file, omit the version ID.</li>
   </ul>
   {{site.data.alerts.end}}

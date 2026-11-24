@@ -2,11 +2,11 @@
 category: analytics
 command: analytics_get_current_activity
 optional_options:
-- alternate:
-  - --type
-  help: The specific type of throughput to get
-  name: -t
-  required: false
+  - alternate:
+      - --type
+    help: The specific type of throughput to get
+    name: -t
+    required: false
 permalink: /qq-cli-command-guide/analytics/analytics_get_current_activity.html
 positional_options: []
 redirect_from:

@@ -2,24 +2,24 @@
 category: smb
 command: smb_modify_share_permissions
 optional_options:
-- alternate: []
-  help: The ID of the share to modify.
-  name: --id
-  required: false
-- alternate: []
-  help: The name of the share to modify.
-  name: --name
-  required: false
-- alternate: []
-  help: "\n                The ID of the tenant from which to delete the share. Use\
-    \ this flag only if you also\n                use the --name flag.\n         \
-    \       "
-  name: --tenant-id
-  required: false
-- alternate: []
-  help: Print the raw JSON response.
-  name: --json
-  required: false
+  - alternate: []
+    help: The ID of the share to modify.
+    name: --id
+    required: false
+  - alternate: []
+    help: The name of the share to modify.
+    name: --name
+    required: false
+  - alternate: []
+    help: "\n                The ID of the tenant from which to delete the share.\
+      \ Use this flag only if you also\n                use the --name flag.\n   \
+      \             "
+    name: --tenant-id
+    required: false
+  - alternate: []
+    help: Print the raw JSON response.
+    name: --json
+    required: false
 permalink: /qq-cli-command-guide/smb/smb_modify_share_permissions.html
 positional_options: []
 redirect_from:

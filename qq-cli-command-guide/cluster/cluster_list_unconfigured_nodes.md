@@ -2,14 +2,14 @@
 category: cluster
 command: cluster_list_unconfigured_nodes
 optional_options:
-- alternate: []
-  help: Print output as a table, instead of JSON
-  name: --table
-  required: false
-- alternate: []
-  help: Include incompatible unconfigured nodes in the output.
-  name: --include-incompatibles
-  required: false
+  - alternate: []
+    help: Print output as a table, instead of JSON
+    name: --table
+    required: false
+  - alternate: []
+    help: Include incompatible unconfigured nodes in the output.
+    name: --include-incompatibles
+    required: false
 permalink: /qq-cli-command-guide/cluster/cluster_list_unconfigured_nodes.html
 positional_options: []
 redirect_from:

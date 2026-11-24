@@ -2,18 +2,18 @@
 category: fs
 command: fs_list_named_streams
 optional_options:
-- alternate: []
-  help: File or directory path
-  name: --path
-  required: false
-- alternate: []
-  help: File or directory ID
-  name: --id
-  required: false
-- alternate: []
-  help: Snapshot ID to read from
-  name: --snapshot
-  required: false
+  - alternate: []
+    help: File or directory path
+    name: --path
+    required: false
+  - alternate: []
+    help: File or directory ID
+    name: --id
+    required: false
+  - alternate: []
+    help: Snapshot ID to read from
+    name: --snapshot
+    required: false
 permalink: /qq-cli-command-guide/fs/fs_list_named_streams.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

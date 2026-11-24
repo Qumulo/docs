@@ -2,10 +2,10 @@
 category: fs
 command: fs_set_notify_settings
 optional_options:
-- alternate: []
-  help: Notify recursive mode to set (ENABLED, DISABLED_ERROR, DISABLED_IGNORE)
-  name: --recursive-mode
-  required: false
+  - alternate: []
+    help: Notify recursive mode to set (ENABLED, DISABLED_ERROR, DISABLED_IGNORE)
+    name: --recursive-mode
+    required: false
 permalink: /qq-cli-command-guide/fs/fs_set_notify_settings.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

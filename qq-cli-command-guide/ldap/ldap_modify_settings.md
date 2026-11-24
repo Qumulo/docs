@@ -2,72 +2,72 @@
 category: ldap
 command: ldap_modify_settings
 optional_options:
-- alternate: []
-  help: Enable or disable the use of standalone LDAP.
-  name: --use-ldap
-  required: false
-- alternate: []
-  help: LDAP server URIs (for example, ldap://example.com). Separate multiple URIs
-    with commas (,). When you specify multiple URIs in order of preference, Qumulo
-    Core uses only one LDAP server at a time and falls back to the remaining servers
-    if one of the URIs becomes unreachable.
-  name: --bind-uri
-  required: false
-- alternate: []
-  help: 'Base DNs (Distinguished Names). Example: dc=account,dc=example,dc=com'
-  name: --base-dn
-  required: false
-- alternate: []
-  help: Binding users's DN.
-  name: --bind-username
-  required: false
-- alternate: []
-  help: Password for simple authentication against LDAP server.
-  name: --bind-password
-  required: false
-- alternate: []
-  help: If true, LDAP connection must be encrypted using TLS.
-  name: --encrypt-connection
-  required: false
-- alternate: []
-  help: Use the standard schema defined in RFC2307. Cannot be combined with any custom
-    schema arguments.
-  name: --rfc2307
-  required: false
-- alternate: []
-  help: The attribute on a group object which contains references to the members in
-    that group.
-  name: --custom-group-member-attribute
-  required: false
-- alternate: []
-  help: The attribute on a user that the value of the group_member_attribute on a
-    group refers to.
-  name: --custom-user-group-identifier-attribute
-  required: false
-- alternate: []
-  help: The attribute on a user that identifies their login name.
-  name: --custom-login-name-attribute
-  required: false
-- alternate: []
-  help: The attribute on a group that identifies their name.
-  name: --custom-group-name-attribute
-  required: false
-- alternate: []
-  help: The class of user objects.
-  name: --custom-user-object-class
-  required: false
-- alternate: []
-  help: The class of group objects.
-  name: --custom-group-object-class
-  required: false
-- alternate: []
-  help: The attribute on a user that identifies their uid number.
-  name: --custom-uid-number-attribute
-  required: false
-- alternate: []
-  help: The attribute on an object that identifies their gid number.
-  name: --custom-gid-number-attribute
-  required: false
+  - alternate: []
+    help: Enable or disable the use of standalone LDAP.
+    name: --use-ldap
+    required: false
+  - alternate: []
+    help: LDAP server URIs (for example, ldap://example.com). Separate multiple URIs
+      with commas (,). When you specify multiple URIs in order of preference, Qumulo
+      Core uses only one LDAP server at a time and falls back to the remaining servers
+      if one of the URIs becomes unreachable.
+    name: --bind-uri
+    required: false
+  - alternate: []
+    help: 'Base DNs (Distinguished Names). Example: dc=account,dc=example,dc=com'
+    name: --base-dn
+    required: false
+  - alternate: []
+    help: Binding users's DN.
+    name: --bind-username
+    required: false
+  - alternate: []
+    help: Password for simple authentication against LDAP server.
+    name: --bind-password
+    required: false
+  - alternate: []
+    help: If true, LDAP connection must be encrypted using TLS.
+    name: --encrypt-connection
+    required: false
+  - alternate: []
+    help: Use the standard schema defined in RFC2307. Cannot be combined with any
+      custom schema arguments.
+    name: --rfc2307
+    required: false
+  - alternate: []
+    help: The attribute on a group object which contains references to the members
+      in that group.
+    name: --custom-group-member-attribute
+    required: false
+  - alternate: []
+    help: The attribute on a user that the value of the group_member_attribute on
+      a group refers to.
+    name: --custom-user-group-identifier-attribute
+    required: false
+  - alternate: []
+    help: The attribute on a user that identifies their login name.
+    name: --custom-login-name-attribute
+    required: false
+  - alternate: []
+    help: The attribute on a group that identifies their name.
+    name: --custom-group-name-attribute
+    required: false
+  - alternate: []
+    help: The class of user objects.
+    name: --custom-user-object-class
+    required: false
+  - alternate: []
+    help: The class of group objects.
+    name: --custom-group-object-class
+    required: false
+  - alternate: []
+    help: The attribute on a user that identifies their uid number.
+    name: --custom-uid-number-attribute
+    required: false
+  - alternate: []
+    help: The attribute on an object that identifies their gid number.
+    name: --custom-gid-number-attribute
+    required: false
 permalink: /qq-cli-command-guide/ldap/ldap_modify_settings.html
 positional_options: []
 redirect_from:

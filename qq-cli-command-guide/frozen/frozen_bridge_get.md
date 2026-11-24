@@ -2,10 +2,10 @@
 category: frozen
 command: frozen_bridge_get
 optional_options:
-- alternate: []
-  help: Cluster path of the Frozen bridge.
-  name: --path
-  required: true
+  - alternate: []
+    help: Cluster path of the Frozen bridge.
+    name: --path
+    required: true
 permalink: /qq-cli-command-guide/frozen/frozen_bridge_get.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

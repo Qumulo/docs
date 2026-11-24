@@ -2,10 +2,10 @@
 category: analytics
 command: analytics_get_capacity_history_files
 optional_options:
-- alternate: []
-  help: Time period to retrieve, in epoch seconds.
-  name: --timestamp
-  required: true
+  - alternate: []
+    help: Time period to retrieve, in epoch seconds.
+    name: --timestamp
+    required: true
 permalink: /qq-cli-command-guide/analytics/analytics_get_capacity_history_files.html
 positional_options: []
 redirect_from:

@@ -2,21 +2,21 @@
 category: upgrade
 command: upgrade_cluster
 optional_options:
-- alternate: []
-  help: FS path to upgrade image
-  name: --path
-  required: false
-- alternate: []
-  help: Skip monitoring the upgrade
-  name: --no-monitor
-  required: false
-- alternate: []
-  help: Using the --rolling flag lets you specify the number of nodes to reboot at
-    a time. The number of nodes must be greater than 0 and less than or equal to the
-    number of node failures that your cluster permits. By default, this value is the
-    number of permitted node failures minus 1 (1 node minimum).
-  name: --num-nodes-to-reboot
-  required: false
+  - alternate: []
+    help: FS path to upgrade image
+    name: --path
+    required: false
+  - alternate: []
+    help: Skip monitoring the upgrade
+    name: --no-monitor
+    required: false
+  - alternate: []
+    help: Using the --rolling flag lets you specify the number of nodes to reboot
+      at a time. The number of nodes must be greater than 0 and less than or equal
+      to the number of node failures that your cluster permits. By default, this value
+      is the number of permitted node failures minus 1 (1 node minimum).
+    name: --num-nodes-to-reboot
+    required: false
 permalink: /qq-cli-command-guide/upgrade/upgrade_cluster.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

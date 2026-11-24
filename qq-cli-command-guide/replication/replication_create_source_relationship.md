@@ -2,26 +2,26 @@
 category: replication
 command: replication_create_source_relationship
 optional_options:
-- alternate: []
-  help: File ID of the source directory
-  name: --source-id
-  required: false
-- alternate: []
-  help: Path to the source directory
-  name: --source-path
-  required: false
-- alternate: []
-  help: Path to the target directory
-  name: --target-path
-  required: true
-- alternate: []
-  help: The target IP address
-  name: --target-address
-  required: true
-- alternate: []
-  help: Network port to replicate to on the target (overriding default)
-  name: --target-port
-  required: false
+  - alternate: []
+    help: File ID of the source directory
+    name: --source-id
+    required: false
+  - alternate: []
+    help: Path to the source directory
+    name: --source-path
+    required: false
+  - alternate: []
+    help: Path to the target directory
+    name: --target-path
+    required: true
+  - alternate: []
+    help: The target IP address
+    name: --target-address
+    required: true
+  - alternate: []
+    help: Network port to replicate to on the target (overriding default)
+    name: --target-port
+    required: false
 permalink: /qq-cli-command-guide/replication/replication_create_source_relationship.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

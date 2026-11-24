@@ -2,19 +2,19 @@
 category: smb
 command: smb_list_sessions
 optional_options:
-- alternate: []
-  help: Max sessions to return per request
-  name: --page-size
-  required: false
-- alternate: []
-  help: "\n                List only the sessions that match the specified user's\
-    \ identity in one of the\n                following forms: a name or a SID optionally\
-    \ qualified with a domain prefix (for\n                example, \"local:name\"\
-    , \"S-1-1-0\", \"name\", \"world:Everyone\", \"ldap_user:name\",\n           \
-    \     \"ad:name\"), or an ID type (for example, \"uid:1001\", \"auth_id:513\"\
-    , \"SID:S-1-1-0\").\n                "
-  name: --identity
-  required: false
+  - alternate: []
+    help: Max sessions to return per request
+    name: --page-size
+    required: false
+  - alternate: []
+    help: "\n                List only the sessions that match the specified user's\
+      \ identity in one of the\n                following forms: a name or a SID optionally\
+      \ qualified with a domain prefix (for\n                example, \"local:name\"\
+      , \"S-1-1-0\", \"name\", \"world:Everyone\", \"ldap_user:name\",\n         \
+      \       \"ad:name\"), or an ID type (for example, \"uid:1001\", \"auth_id:513\"\
+      , \"SID:S-1-1-0\").\n                "
+    name: --identity
+    required: false
 permalink: /qq-cli-command-guide/smb/smb_list_sessions.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

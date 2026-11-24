@@ -2,14 +2,14 @@
 category: replication
 command: replication_set_snapshot_policy_replication_mode
 optional_options:
-- alternate: []
-  help: Unique identifier of the source replication relationship.
-  name: --id
-  required: true
-- alternate: []
-  help: Replication mode to set.
-  name: --mode
-  required: true
+  - alternate: []
+    help: Unique identifier of the source replication relationship.
+    name: --id
+    required: true
+  - alternate: []
+    help: Replication mode to set.
+    name: --mode
+    required: true
 permalink: /qq-cli-command-guide/replication/replication_set_snapshot_policy_replication_mode.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

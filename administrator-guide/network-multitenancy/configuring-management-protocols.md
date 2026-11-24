@@ -3,7 +3,7 @@ title: "Configuring Management Protocols on a Tenant"
 summary: "This section explains how to configure management protocols for each tenant on a Qumulo cluster."
 permalink: /administrator-guide/network-multitenancy/configuring-management-protocols.html
 sidebar: administrator_guide_sidebar
-varNoReq: access doesn't require enabling REST API access.
+varNoReq: access doesn't require enabling Qumulo REST API access.
 ---
 
 After you [create tenants](partitioning-cluster-into-tenants.html) on your Qumulo cluster, you can manage access for clients that connect to the cluster from the tenant's network by enabling or disabling the management protocols for each tenant.
@@ -24,14 +24,14 @@ To configure management protocols, your user must have membership in a Qumulo ro
 * `PRIVILEGE_TENANT_WRITE`: Modifying tenants
 
 
-## Enabling and Disabling REST API Access
-The Qumulo REST API lets you manage clusters by using the `qq` CLI, Python bindings, and REST API calls.
+## Enabling and Disabling Qumulo REST API Access
+The Qumulo REST API lets you manage clusters by using the `qq` CLI, Python bindings, and Qumulo REST API calls.
 
-* To enable REST API access, run the {% include qq.html command="multitenancy_modify_tenant" %} command, specify the tenant ID, and use the `--enable-rest-api` flag.
+* To enable Qumulo REST API access, run the {% include qq.html command="multitenancy_modify_tenant" %} command, specify the tenant ID, and use the `--enable-rest-api` flag.
 
 * To disable access, use the `--disable-rest-api` flag.
 
-In the following example, the cluster begins to accept REST API traffic on TCP port 8000 on all networks assigned to the tenant.
+In the following example, the cluster begins to accept Qumulo REST API traffic on TCP port 8000 on all networks assigned to the tenant.
 
 ```bash
 qq multitenancy_modify_tenant \

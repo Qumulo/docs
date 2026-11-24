@@ -2,22 +2,23 @@
 category: nfs
 command: nfs_modify_export_host_access
 optional_options:
-- alternate: []
-  help: ID of export to modify
-  name: --export-id
-  required: false
-- alternate: []
-  help: Path of export to modify
-  name: --export-path
-  required: false
-- alternate: []
-  help: ID of the tenant the export is in. Only used if using the --export-path argument
-  name: --tenant-id
-  required: false
-- alternate: []
-  help: Print raw response JSON
-  name: --json
-  required: false
+  - alternate: []
+    help: ID of export to modify
+    name: --export-id
+    required: false
+  - alternate: []
+    help: Path of export to modify
+    name: --export-path
+    required: false
+  - alternate: []
+    help: ID of the tenant the export is in. Only used if using the --export-path
+      argument
+    name: --tenant-id
+    required: false
+  - alternate: []
+    help: Print raw response JSON
+    name: --json
+    required: false
 permalink: /qq-cli-command-guide/nfs/nfs_modify_export_host_access.html
 positional_options: []
 redirect_from:

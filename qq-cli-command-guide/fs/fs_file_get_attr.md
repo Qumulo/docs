@@ -2,30 +2,30 @@
 category: fs
 command: fs_file_get_attr
 optional_options:
-- alternate: []
-  help: File path
-  name: --path
-  required: false
-- alternate: []
-  help: File ID
-  name: --id
-  required: false
-- alternate: []
-  help: Snapshot ID to read from
-  name: --snapshot
-  required: false
-- alternate: []
-  help: Retrieve the file lock for this file. Optional because it requires READ_ACL
-  name: --retrieve-file-lock
-  required: false
-- alternate: []
-  help: Stream ID
-  name: --stream-id
-  required: false
-- alternate: []
-  help: Stream name
-  name: --stream-name
-  required: false
+  - alternate: []
+    help: File path
+    name: --path
+    required: false
+  - alternate: []
+    help: File ID
+    name: --id
+    required: false
+  - alternate: []
+    help: Snapshot ID to read from
+    name: --snapshot
+    required: false
+  - alternate: []
+    help: Retrieve the file lock for this file. Optional because it requires READ_ACL
+    name: --retrieve-file-lock
+    required: false
+  - alternate: []
+    help: Stream ID
+    name: --stream-id
+    required: false
+  - alternate: []
+    help: Stream name
+    name: --stream-name
+    required: false
 permalink: /qq-cli-command-guide/fs/fs_file_get_attr.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

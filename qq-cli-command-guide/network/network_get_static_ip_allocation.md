@@ -2,18 +2,18 @@
 category: network
 command: network_get_static_ip_allocation
 optional_options:
-- alternate: []
-  help: Specify ip range list to try (e.g. '1.1.1.10-12,10.20.5.0/24'
-  name: --try-ranges
-  required: false
-- alternate: []
-  help: Specify netmask to apply when using --try-range option
-  name: --try-netmask
-  required: false
-- alternate: []
-  help: Specify floating ip range list to try (e.g. '1.1.1.10-12,10.20.5.0/24'
-  name: --try-floating-ranges
-  required: false
+  - alternate: []
+    help: Specify ip range list to try (e.g. '1.1.1.10-12,10.20.5.0/24'
+    name: --try-ranges
+    required: false
+  - alternate: []
+    help: Specify netmask to apply when using --try-range option
+    name: --try-netmask
+    required: false
+  - alternate: []
+    help: Specify floating ip range list to try (e.g. '1.1.1.10-12,10.20.5.0/24'
+    name: --try-floating-ranges
+    required: false
 permalink: /qq-cli-command-guide/network/network_get_static_ip_allocation.html
 positional_options: []
 redirect_from:

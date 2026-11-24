@@ -116,26 +116,33 @@ methods:
         \      \"description\": \"The revision for changes to the underlying file\
         \ data.\",\n      \"type\": \"string\"\n    },\n    \"user_metadata_revision\"\
         : {\n      \"description\": \"The revision for changes to the user defined\
-        \ metadata of the file.\",\n      \"type\": \"string\"\n    },\n    \"archival\"\
-        : {\n      \"description\": \"Files and symlinks on an object bridge only:\
-        \ the archival status and storage tier of the object behind it, and the job\
-        \ that last set it. Null for directories and for anything on no bridge.\"\
+        \ metadata of the file.\",\n      \"type\": \"string\"\n    },\n    \"file_revision\"\
+        : {\n      \"description\": \"The revision for any change to the file, including\
+        \ its data and attributes.\",\n      \"type\": \"string\"\n    },\n    \"\
+        archival\": {\n      \"description\": \"Files and symlinks on an object bridge\
+        \ only: the archival status and storage tier of the object behind it, and\
+        \ the job that last set it. Null for directories and for anything on no bridge.\"\
         ,\n      \"type\": \"object\",\n      \"properties\": {\n        \"status\"\
         : {\n          \"type\": \"string\",\n          \"enum\": [\n            \"\
         ONLINE\",\n            \"FREEZING\",\n            \"OFFLINE\",\n         \
-        \   \"RESTORING\"\n          ],\n          \"description\": \"Where the file\
-        \ stands between its object store's online and archive tiers:\\n * `FREEZING`\
-        \ - A freeze job has set the file, and its object isn't archived yet.,\\n\
-        \ * `OFFLINE` - Its object is in an archive tier, and can't be read until\
-        \ it's restored.,\\n * `ONLINE` - Readable without a restore, and no freeze\
-        \ job asks to archive it.,\\n * `RESTORING` - Its object is in an archive\
-        \ tier, and a restore is bringing it back online.\"\n        },\n        \"\
-        store_tier\": {\n          \"description\": \"The storage tier of the file's\
-        \ object, in the bridge's provider's terms, such as HOT, COOL, COLD or ARCHIVE\
-        \ on Azure, or null when the cluster hasn't learned it\",\n          \"type\"\
-        : \"string\"\n        },\n        \"job_id\": {\n          \"description\"\
-        : \"The freeze or thaw job that last set the file. Null if none has, or if\
-        \ a canceled or failed freeze released it\",\n          \"type\": \"string\"\
+        \   \"RESTORING\",\n            \"RESTORED\"\n          ],\n          \"description\"\
+        : \"Where the file stands between its object store's online and archive tiers:\\\
+        n * `FREEZING` - A freeze job has set the file, and its object isn't archived\
+        \ yet.,\\n * `OFFLINE` - Its object is in an archive tier, and can't be read\
+        \ until it's restored.,\\n * `ONLINE` - Readable without a restore, and no\
+        \ freeze job asks to archive it.,\\n * `RESTORED` - Its object is in an archive\
+        \ tier, and a temporary restored copy of it can be read until the copy expires.,\\\
+        n * `RESTORING` - Its object is in an archive tier, and a restore is bringing\
+        \ it back online.\"\n        },\n        \"store_tier\": {\n          \"description\"\
+        : \"The storage tier of the file's object, in the bridge's provider's terms,\
+        \ such as HOT, COOL, COLD or ARCHIVE on Azure, or null when the cluster hasn't\
+        \ learned it\",\n          \"type\": \"string\"\n        },\n        \"job_id\"\
+        : {\n          \"description\": \"The freeze or thaw job that last set the\
+        \ file. Null if none has, or if a canceled or failed freeze released it\"\
+        ,\n          \"type\": \"string\"\n        },\n        \"restore_expires_at\"\
+        : {\n          \"description\": \"When the file's temporary restored copy\
+        \ stops being readable, RFC 3339 format. Null unless the status is RESTORED,\
+        \ or if the provider reported no expiry\",\n          \"type\": \"string\"\
         \n        }\n      }\n    }\n  }\n}"
     responses:
     - code: '200'

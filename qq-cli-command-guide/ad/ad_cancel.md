@@ -2,10 +2,10 @@
 category: ad
 command: ad_cancel
 optional_options:
-- alternate: []
-  help: Do not wait for the operation to complete
-  name: --no-wait
-  required: false
+  - alternate: []
+    help: Do not wait for the operation to complete
+    name: --no-wait
+    required: false
 permalink: /qq-cli-command-guide/ad/ad_cancel.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

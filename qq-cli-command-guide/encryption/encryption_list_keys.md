@@ -2,10 +2,10 @@
 category: encryption
 command: encryption_list_keys
 optional_options:
-- alternate: []
-  help: Print the output in JSON format. By default, the output is in a table.
-  name: --json
-  required: false
+  - alternate: []
+    help: Print the output in JSON format. By default, the output is in a table.
+    name: --json
+    required: false
 permalink: /qq-cli-command-guide/encryption/encryption_list_keys.html
 positional_options: []
 redirect_from:

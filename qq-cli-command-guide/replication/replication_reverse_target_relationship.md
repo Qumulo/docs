@@ -2,18 +2,18 @@
 category: replication
 command: replication_reverse_target_relationship
 optional_options:
-- alternate: []
-  help: Unique identifier of the target replication relationship
-  name: --id
-  required: true
-- alternate: []
-  help: The IP address of the current source cluster
-  name: --source-address
-  required: true
-- alternate: []
-  help: Network port of the current source cluster (defaults to 3712)
-  name: --source-port
-  required: false
+  - alternate: []
+    help: Unique identifier of the target replication relationship
+    name: --id
+    required: true
+  - alternate: []
+    help: The IP address of the current source cluster
+    name: --source-address
+    required: true
+  - alternate: []
+    help: Network port of the current source cluster (defaults to 3712)
+    name: --source-port
+    required: false
 permalink: /qq-cli-command-guide/replication/replication_reverse_target_relationship.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

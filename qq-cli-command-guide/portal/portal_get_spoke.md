@@ -2,28 +2,28 @@
 category: portal
 command: portal_get_spoke
 optional_options:
-- alternate:
-  - --id
-  help: Spoke portal ID
-  name: -i
-  required: true
-- alternate:
-  - --json
-  help: Pretty-print JSON
-  name: -j
-  required: false
-- alternate:
-  - --no-paths
-  help: Show the file IDs of portal roots instead of their paths.
-  name: -n
-  required: false
-- alternate:
-  - --dns-lookup
-  help: Resolve peer IP addresses to names. The local cluster performs the lookup,
-    so the names come from its DNS configuration and the caller needs the PRIVILEGE_DNS_USE
-    privilege.
-  name: -d
-  required: false
+  - alternate:
+      - --id
+    help: Spoke portal ID
+    name: -i
+    required: true
+  - alternate:
+      - --json
+    help: Pretty-print JSON
+    name: -j
+    required: false
+  - alternate:
+      - --no-paths
+    help: Show the file IDs of portal roots instead of their paths.
+    name: -n
+    required: false
+  - alternate:
+      - --dns-lookup
+    help: Resolve peer IP addresses to names. The local cluster performs the lookup,
+      so the names come from its DNS configuration and the caller needs the PRIVILEGE_DNS_USE
+      privilege.
+    name: -d
+    required: false
 permalink: /qq-cli-command-guide/portal/portal_get_spoke.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

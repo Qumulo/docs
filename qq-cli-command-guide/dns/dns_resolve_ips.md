@@ -2,10 +2,10 @@
 category: dns
 command: dns_resolve_ips
 optional_options:
-- alternate: []
-  help: IP addresses to resolve
-  name: --ips
-  required: true
+  - alternate: []
+    help: IP addresses to resolve
+    name: --ips
+    required: true
 permalink: /qq-cli-command-guide/dns/dns_resolve_ips.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

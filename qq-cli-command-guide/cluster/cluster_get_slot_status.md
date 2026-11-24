@@ -2,14 +2,14 @@
 category: cluster
 command: cluster_get_slot_status
 optional_options:
-- alternate: []
-  help: Slot ID
-  name: --slot
-  required: false
-- alternate: []
-  help: Node ID
-  name: --node
-  required: false
+  - alternate: []
+    help: Slot ID
+    name: --slot
+    required: false
+  - alternate: []
+    help: Node ID
+    name: --node
+    required: false
 permalink: /qq-cli-command-guide/cluster/cluster_get_slot_status.html
 positional_options: []
 redirect_from:

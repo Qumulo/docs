@@ -14,7 +14,7 @@ This section explains the difference between the two networking modes in Qumulo 
   * You're responsible for configuring most of your network infrastructure.
   * Qumulo provides configurations only for tenants and floating IP addresses.
 
-  {% include note.html content="You can use Host-Managed Networking with or without the Qumulo REST API. However, using floating IP addresses requires tagging with alternative names and REST API access." %}
+  {% include note.html content="You can use Host-Managed Networking with or without the Qumulo REST API. However, using floating IP addresses requires tagging with alternative names and Qumulo REST API access." %}
 
   To disable Host-Managed Networking, {{ howTo }}.
 

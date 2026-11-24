@@ -2,10 +2,10 @@
 category: network
 command: network_get_status
 optional_options:
-- alternate: []
-  help: Node ID
-  name: --node-id
-  required: false
+  - alternate: []
+    help: Node ID
+    name: --node-id
+    required: false
 permalink: /qq-cli-command-guide/network/network_get_status.html
 positional_options: []
 redirect_from:

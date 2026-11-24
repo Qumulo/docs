@@ -2,14 +2,14 @@
 category: s3
 command: s3_modify_bucket_policy
 optional_options:
-- alternate: []
-  help: The name of the S3 bucket whose access policy is to be modified
-  name: --bucket
-  required: true
-- alternate: []
-  help: Allow the policy set to remove the ability for this user to change the policy.
-  name: --allow-remove-self
-  required: false
+  - alternate: []
+    help: The name of the S3 bucket whose access policy is to be modified
+    name: --bucket
+    required: true
+  - alternate: []
+    help: Allow the policy set to remove the ability for this user to change the policy.
+    name: --allow-remove-self
+    required: false
 permalink: /qq-cli-command-guide/s3/s3_modify_bucket_policy.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

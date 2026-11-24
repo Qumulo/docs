@@ -76,7 +76,7 @@ Qumulo Core has three global configuration modes that affect all recursive notif
   {% capture mpi %}This mode can affect system performance. {{page.varMeasurablePerformanceImpact}}{% endcapture %}
   {% include important.html content=mpi %}
 
-To select the configuration mode, use the `/v1/file-system/settings/notify` REST API or the {% include qq.html command="fs_set_notify_settings" %} command. 
+To select the configuration mode, use the `/v1/file-system/settings/notify` Qumulo REST API or the {% include qq.html command="fs_set_notify_settings" %} command. 
 
 ## Supported Functionality
 <table>
@@ -88,7 +88,7 @@ To select the configuration mode, use the `/v1/file-system/settings/notify` REST
   </thead>
   <tbody>
     <tr>
-        <td>Fully featured REST API for streaming file system notifications</td>
+        <td>Fully featured Qumulo REST API for streaming file system notifications</td>
         <td>6.0.2</td>        
     </tr>
     <tr>

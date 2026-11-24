@@ -2,10 +2,10 @@
 category: s3
 command: s3_list_buckets
 optional_options:
-- alternate: []
-  help: List S3 buckets in JSON format (not in a table)
-  name: --json
-  required: false
+  - alternate: []
+    help: List S3 buckets in JSON format (not in a table)
+    name: --json
+    required: false
 permalink: /qq-cli-command-guide/s3/s3_list_buckets.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

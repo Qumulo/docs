@@ -77,7 +77,7 @@
     <tr>
       <td>8000</td>
       <td>TCP</td>
-      <td>REST API</td>
+      <td>Qumulo REST API</td>
     </tr>
     <tr>
       <td>9000</td>

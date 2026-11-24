@@ -2,25 +2,25 @@
 category: replication
 command: replication_modify_source_relationship
 optional_options:
-- alternate: []
-  help: Unique identifier of the source replication relationship
-  name: --id
-  required: true
-- alternate: []
-  help: The target IP address
-  name: --new-target-address
-  required: false
-- alternate: []
-  help: Network port to replicate to on the target
-  name: --new-target-port
-  required: false
-- alternate:
-  - --timezone
-  help: The timezone for the relationship's blackout windows (e.g. America/Los_Angeles
-    or UTC). See the time_list_timezones qq command for a complete list of supported
-    timezones.
-  name: -z
-  required: false
+  - alternate: []
+    help: Unique identifier of the source replication relationship
+    name: --id
+    required: true
+  - alternate: []
+    help: The target IP address
+    name: --new-target-address
+    required: false
+  - alternate: []
+    help: Network port to replicate to on the target
+    name: --new-target-port
+    required: false
+  - alternate:
+      - --timezone
+    help: The timezone for the relationship's blackout windows (e.g. America/Los_Angeles
+      or UTC). See the time_list_timezones qq command for a complete list of supported
+      timezones.
+    name: -z
+    required: false
 permalink: /qq-cli-command-guide/replication/replication_modify_source_relationship.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

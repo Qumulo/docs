@@ -136,7 +136,7 @@ Qumulo Core requires switches that meet the following criteria:
 
 ### File System Protocols
 
-#### REST API
+#### Qumulo REST API
 **TCP Sockets for each node:** 1,000
 
 #### NFS

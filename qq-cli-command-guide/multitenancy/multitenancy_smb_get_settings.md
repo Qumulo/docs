@@ -2,10 +2,10 @@
 category: multitenancy
 command: multitenancy_smb_get_settings
 optional_options:
-- alternate: []
-  help: ID of tenant to get settings for
-  name: --tenant-id
-  required: true
+  - alternate: []
+    help: ID of tenant to get settings for
+    name: --tenant-id
+    required: true
 permalink: /qq-cli-command-guide/multitenancy/multitenancy_smb_get_settings.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

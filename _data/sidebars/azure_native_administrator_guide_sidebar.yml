@@ -232,6 +232,10 @@ entries:
       url: /azure-native-administrator-guide/cloud-data-fabric/configuring-portal-relationship.html
       output: web, pdf
 
+    - title: Changing the Portal Relationship Type
+      url: /azure-native-administrator-guide/cloud-data-fabric/changing-portal-relationship-type.html
+      output: web, pdf
+
     - title: Configuring Cache Management
       url: /azure-native-administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html
       output: web, pdf

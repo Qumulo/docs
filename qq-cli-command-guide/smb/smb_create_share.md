@@ -2,122 +2,124 @@
 category: smb
 command: smb_create_share
 optional_options:
-- alternate: []
-  help: The ID of the tenant to which to add the share.
-  name: --tenant-id
-  required: false
-- alternate: []
-  help: Name of share.
-  name: --name
-  required: true
-- alternate: []
-  help: Filesystem path.
-  name: --fs-path
-  required: true
-- alternate: []
-  help: Description of this share.
-  name: --description
-  required: false
-- alternate: []
-  help: Enable Access-Based Enumeration for this share.
-  name: --access-based-enumeration-enabled
-  required: false
-- alternate: []
-  help: Creates the specified filesystem path if the path does not exist already.
-  name: --create-fs-path
-  required: false
-- alternate: []
-  help: Enable expanding %U in the specified filesystem path to the SMB username during
-    connection.
-  name: --expand-fs-path-variables
-  required: false
-- alternate: []
-  help: "\n                Change the default POSIX file create mode bits (octal)\
-    \ for the specified SMB share.\n                These mode bits are applied to\
-    \ new files as they are created. Note: If an\n                inheritable ACE\
-    \ is present in the permissions ACL, this flag has no effect.\n              \
-    \  "
-  name: --default-file-create-mode
-  required: false
-- alternate: []
-  help: "\n                Change the default POSIX directory create mode bits (octal)\
-    \ for the specified SMB\n                share. These mode bits are applied to\
-    \ new directories as they are created. Note: If\n                an inheritable\
-    \ ACE is present in the permissions ACL, this flag has no effect.\n          \
-    \      "
-  name: --default-directory-create-mode
-  required: false
-- alternate: []
-  help: "\n                Require encryption for all traffic for the specified share.\
-    \ When set to true,\n                clients without encryption capability cannot\
-    \ connect to this share.\n                "
-  name: --require-encryption
-  required: false
-- alternate: []
-  help: "\n                Offline-files caching mode advertised to SMB clients. When\
-    \ set to no_caching (the\n                default), client-side caching is disabled.\
-    \ When set to manual_caching, clients may\n                cache files that the\
-    \ user designates as available offline. When set to\n                automatic_caching,\
-    \ clients may cache files as they are opened.\n                "
-  name: --offline-files-caching-mode
-  required: false
-- alternate: []
-  help: Print the raw JSON response.
-  name: --json
-  required: false
-- alternate: []
-  help: Grant no access.
-  name: --no-access
-  required: false
-- alternate: []
-  help: Grant everyone except guest read-only access.
-  name: --read-only
-  required: false
-- alternate: []
-  help: Grant everyone except guest full access.
-  name: --all-access
-  required: false
-- alternate: []
-  help: "\n            Grant read access to the specified trustees. For example: Everyone,\
-    \ uid:1000, gid:1001,\n            sid:S-1-5-2-3-4, auth_id:500\n            "
-  name: --grant-read-access
-  required: false
-- alternate: []
-  help: Grant read-write access to these trustees.
-  name: --grant-read-write-access
-  required: false
-- alternate: []
-  help: Grant all access to these trustees.
-  name: --grant-all-access
-  required: false
-- alternate: []
-  help: Deny all access to these trustees.
-  name: --deny-access
-  required: false
-- alternate: []
-  help: "\n            The host addresses or subnet ranges for which access to to\
-    \ this share are not limited by\n            network permissions. Access may still\
-    \ be limited by share and file permissions.\n            "
-  name: --full-control-hosts
-  required: false
-- alternate: []
-  help: Address ranges which should be permitted read-only access at most.
-  name: --read-only-hosts
-  required: false
-- alternate: []
-  help: "\n            The host addresses or subnet ranges for which access to the\
-    \ specified share is denied,\n            regardless of other permissions. Important:\
-    \ Because using this flag alone results in all\n            hosts being denied,\
-    \ use the correct --full-control-hosts or --read-only-hosts flags as\n       \
-    \     necessary.\n            "
-  name: --deny-hosts
-  required: false
-- alternate: []
-  help: "\n            Deny all access to this share. Important: To avoid configuration\
-    \ issues, do not apply\n            this flag alongside any others.\n        \
-    \    "
-  name: --deny-all-hosts
-  required: false
+  - alternate: []
+    help: The ID of the tenant to which to add the share.
+    name: --tenant-id
+    required: false
+  - alternate: []
+    help: Name of share.
+    name: --name
+    required: true
+  - alternate: []
+    help: Filesystem path.
+    name: --fs-path
+    required: true
+  - alternate: []
+    help: Description of this share.
+    name: --description
+    required: false
+  - alternate: []
+    help: Enable Access-Based Enumeration for this share.
+    name: --access-based-enumeration-enabled
+    required: false
+  - alternate: []
+    help: Creates the specified filesystem path if the path does not exist already.
+    name: --create-fs-path
+    required: false
+  - alternate: []
+    help: Enable expanding %U in the specified filesystem path to the SMB username
+      during connection.
+    name: --expand-fs-path-variables
+    required: false
+  - alternate: []
+    help: "\n                Change the default POSIX file create mode bits (octal)\
+      \ for the specified SMB share.\n                These mode bits are applied\
+      \ to new files as they are created. Note: If an\n                inheritable\
+      \ ACE is present in the permissions ACL, this flag has no effect.\n        \
+      \        "
+    name: --default-file-create-mode
+    required: false
+  - alternate: []
+    help: "\n                Change the default POSIX directory create mode bits (octal)\
+      \ for the specified SMB\n                share. These mode bits are applied\
+      \ to new directories as they are created. Note: If\n                an inheritable\
+      \ ACE is present in the permissions ACL, this flag has no effect.\n        \
+      \        "
+    name: --default-directory-create-mode
+    required: false
+  - alternate: []
+    help: "\n                Require encryption for all traffic for the specified\
+      \ share. When set to true,\n                clients without encryption capability\
+      \ cannot connect to this share.\n                "
+    name: --require-encryption
+    required: false
+  - alternate: []
+    help: "\n                Offline-files caching mode advertised to SMB clients.\
+      \ When set to no_caching (the\n                default), client-side caching\
+      \ is disabled. When set to manual_caching, clients may\n                cache\
+      \ files that the user designates as available offline. When set to\n       \
+      \         automatic_caching, clients may cache files as they are opened.\n \
+      \               "
+    name: --offline-files-caching-mode
+    required: false
+  - alternate: []
+    help: Print the raw JSON response.
+    name: --json
+    required: false
+  - alternate: []
+    help: Grant no access.
+    name: --no-access
+    required: false
+  - alternate: []
+    help: Grant everyone except guest read-only access.
+    name: --read-only
+    required: false
+  - alternate: []
+    help: Grant everyone except guest full access.
+    name: --all-access
+    required: false
+  - alternate: []
+    help: "\n            Grant read access to the specified trustees. For example:\
+      \ Everyone, uid:1000, gid:1001,\n            sid:S-1-5-2-3-4, auth_id:500\n\
+      \            "
+    name: --grant-read-access
+    required: false
+  - alternate: []
+    help: Grant read-write access to these trustees.
+    name: --grant-read-write-access
+    required: false
+  - alternate: []
+    help: Grant all access to these trustees.
+    name: --grant-all-access
+    required: false
+  - alternate: []
+    help: Deny all access to these trustees.
+    name: --deny-access
+    required: false
+  - alternate: []
+    help: "\n            The host addresses or subnet ranges for which access to to\
+      \ this share are not limited by\n            network permissions. Access may\
+      \ still be limited by share and file permissions.\n            "
+    name: --full-control-hosts
+    required: false
+  - alternate: []
+    help: Address ranges which should be permitted read-only access at most.
+    name: --read-only-hosts
+    required: false
+  - alternate: []
+    help: "\n            The host addresses or subnet ranges for which access to the\
+      \ specified share is denied,\n            regardless of other permissions. Important:\
+      \ Because using this flag alone results in all\n            hosts being denied,\
+      \ use the correct --full-control-hosts or --read-only-hosts flags as\n     \
+      \       necessary.\n            "
+    name: --deny-hosts
+    required: false
+  - alternate: []
+    help: "\n            Deny all access to this share. Important: To avoid configuration\
+      \ issues, do not apply\n            this flag alongside any others.\n      \
+      \      "
+    name: --deny-all-hosts
+    required: false
 permalink: /qq-cli-command-guide/smb/smb_create_share.html
 positional_options: []
 redirect_from:
@@ -127,10 +129,14 @@ summary: This section explains how to use the <code>qq smb_create_share</code> c
 synopsis: Add a new SMB share
 title: qq smb_create_share
 usage: "qq smb_create_share [-h] [--tenant-id TENANT_ID] --name NAME --fs-path FS_PATH\
-  \ [--json] [--no-access | --read-only | --all-access]\n    [--grant-read-access\
-  \ TRUSTEE [TRUSTEE ...]] [--grant-read-write-access TRUSTEE [TRUSTEE ...]] [--grant-all-access\
-  \ TRUSTEE [TRUSTEE ...]]\n    [--deny-access TRUSTEE [TRUSTEE ...]] [--full-control-hosts\
-  \ IP/RANGE [IP/RANGE ...]] [--read-only-hosts IP/RANGE [IP/RANGE ...]]\n    [--deny-hosts\
+  \ [--description DESCRIPTION] [--access-based-enumeration-enabled {true,false}]\
+  \ [--create-fs-path] [--expand-fs-path-variables]\n    [--default-file-create-mode\
+  \ DEFAULT_FILE_CREATE_MODE] [--default-directory-create-mode DEFAULT_DIRECTORY_CREATE_MODE]\
+  \ [--require-encryption {true,false}]\n    [--offline-files-caching-mode {no_caching,manual_caching,automatic_caching}]\
+  \ [--json] [--no-access | --read-only | --all-access] [--grant-read-access TRUSTEE\
+  \ [TRUSTEE ...]]\n    [--grant-read-write-access TRUSTEE [TRUSTEE ...]] [--grant-all-access\
+  \ TRUSTEE [TRUSTEE ...]] [--deny-access TRUSTEE [TRUSTEE ...]] [--full-control-hosts\
+  \ IP/RANGE [IP/RANGE ...]]\n    [--read-only-hosts IP/RANGE [IP/RANGE ...]] [--deny-hosts\
   \ IP/RANGE [IP/RANGE ...]] [--deny-all-hosts]"
 ---
 For more information, see {{site.xref.adminOnPrem.usingSMBhostRestrict}}.

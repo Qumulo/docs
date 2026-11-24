@@ -1,7 +1,3 @@
-## General
-Currently, it is possible to configure and manage Cloud Data Fabric functionality only by using the `qq` CLI.
-
-
 ## File System
 * {{site.gns.crossFileSystem}}
 
@@ -35,12 +31,16 @@ Currently, it is possible to configure and manage Cloud Data Fabric functionalit
 
 
 ## Portal Relationships
+This section lists the known limits in Cloud Data Fabric that pertain to configuring and managing portal relationships on Qumulo clusters.
+
+### Number of Hosted Portals
 * {{site.gns.multiRelationship}}
 
-  * Currently, Qumulo Core doesn't support a single cluster establishing two portal relationships with the same remote cluster.
+  {% include note.html content="Currently, Qumulo Core doesn't support a single cluster establishing two portal relationships with the same remote cluster." %}
 
 * {{site.gns.singleRelationship}}
 
+### Unique Host Cluster
 * Your cluster's Qumulo Core version determines whether the host cluster for each portal relationship must be unique. For example:
 
   * A spoke portal on Cluster A can propose a relationship to a hub portal on Cluster B.
@@ -50,6 +50,13 @@ Currently, it is possible to configure and manage Cloud Data Fabric functionalit
   * In Qumulo Core 7.5.2 (and higher), it is possible for a spoke portal on Cluster B to propose a relationship to a hub portal on Cluster A or Cluster C (despite Cluster B already having a hub portal).
 
   * In Qumulo Core versions lower than 7.5.2, another spoke portal on Cluster A can’t propose a relationship to a hub portal on Cluster B, because a relationship of that type between portals on the host clusters already exists.
+ 
+### Portal Relationship Management
+* In Qumulo Core versions lower than 7.10.1.3, it is possible to configure and manage Cloud Data Fabric functionality only by using the `qq` CLI.
+
+* In Qumulo Core 7.10.1.3 (and higher), it is possible to manage portal relationships by using the Qumulo Core Web UI (under **Cluster > Portals**) or the `qq` CLI.
+
+* In Qumulo Core 7.11.0 (and higher), it is possible to configure the portal relationship _type_ only by using the `qq` CLI.
 
 
 ## Protocols
@@ -83,7 +90,7 @@ Currently, it is possible to configure and manage Cloud Data Fabric functionalit
 ### NFS
 * While NFSv3 is a stateless protocol, NFSv4.1 is a stateful protocol which permits open file handles to remain open after a file is unlinked. However, Qumulo Core doesn't always maintain access to files deleted from a portal in a relationship. For example, if you open a file on the spoke portal host cluster and then delete the same file on the hub portal host cluster, an application that uses the file on the spoke portal host cluster will lose access to the file unexpectedly.
 
-* When you authenticate over NFSv4.1 by using Kerberos, you can use Kerberos principals only from the Active Directory domain associated with the Qumulo cluster to which you are connected. It isn't possible to use principals from a remote Qumulo cluster."
+* When you authenticate over NFSv4.1 by using Kerberos, you can use Kerberos principals only from the Active Directory domain associated with the Qumulo cluster to which you are connected. It isn't possible to use principals from a remote Qumulo cluster.
 
 * When you edit ACLs over NFSv4.1 by using `editfacl` or similar tools, you can use only Kerberos principals from the Active Directory domain associated with the Qumulo cluster to which you are connected. It isn't possible to use principals from a remote Qumulo cluster.
 

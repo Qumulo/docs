@@ -128,9 +128,6 @@ entries:
     - output: web,pdf
       title: audit_modify_destination
       url: /qq-cli-command-guide/audit/audit_modify_destination.html
-    - output: web,pdf
-      title: audit_set_destination
-      url: /qq-cli-command-guide/audit/audit_set_destination.html
     output: web,pdf
     title: audit
     url: /qq-cli-command-guide/audit/
@@ -484,6 +481,9 @@ entries:
     - output: web,pdf
       title: fs_delete_user_metadata
       url: /qq-cli-command-guide/fs/fs_delete_user_metadata.html
+    - output: web,pdf
+      title: fs_entry_get_attr
+      url: /qq-cli-command-guide/fs/fs_entry_get_attr.html
     - output: web,pdf
       title: fs_fetch_file
       url: /qq-cli-command-guide/fs/fs_fetch_file.html

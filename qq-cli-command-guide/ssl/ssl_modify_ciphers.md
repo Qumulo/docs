@@ -2,14 +2,14 @@
 category: ssl
 command: ssl_modify_ciphers
 optional_options:
-- alternate: []
-  help: Cipher suites used for the TLS 1.2 protocol as a colon-delimited string
-  name: --tls12
-  required: false
-- alternate: []
-  help: Cipher suites used for the TLS 1.3 protocol as a colon-delimited string.
-  name: --tls13
-  required: false
+  - alternate: []
+    help: Cipher suites used for the TLS 1.2 protocol as a colon-delimited string
+    name: --tls12
+    required: false
+  - alternate: []
+    help: Cipher suites used for the TLS 1.3 protocol as a colon-delimited string.
+    name: --tls13
+    required: false
 permalink: /qq-cli-command-guide/ssl/ssl_modify_ciphers.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

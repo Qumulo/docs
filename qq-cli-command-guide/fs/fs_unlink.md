@@ -2,18 +2,18 @@
 category: fs
 command: fs_unlink
 optional_options:
-- alternate: []
-  help: Parent directory path
-  name: --path
-  required: false
-- alternate: []
-  help: Parent directory ID
-  name: --id
-  required: false
-- alternate: []
-  help: Entry to delete
-  name: --name
-  required: true
+  - alternate: []
+    help: Parent directory path
+    name: --path
+    required: false
+  - alternate: []
+    help: Parent directory ID
+    name: --id
+    required: false
+  - alternate: []
+    help: Entry to delete
+    name: --name
+    required: true
 permalink: /qq-cli-command-guide/fs/fs_unlink.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

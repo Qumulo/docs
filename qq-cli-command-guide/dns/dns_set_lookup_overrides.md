@@ -2,14 +2,14 @@
 category: dns
 command: dns_set_lookup_overrides
 optional_options:
-- alternate: []
-  help: JSON-encoded file containing overrides.
-  name: --file
-  required: false
-- alternate: []
-  help: Read JSON-encoded overrides from stdin
-  name: --stdin
-  required: false
+  - alternate: []
+    help: JSON-encoded file containing overrides.
+    name: --file
+    required: false
+  - alternate: []
+    help: Read JSON-encoded overrides from stdin
+    name: --stdin
+    required: false
 permalink: /qq-cli-command-guide/dns/dns_set_lookup_overrides.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

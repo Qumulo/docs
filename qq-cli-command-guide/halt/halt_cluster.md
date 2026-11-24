@@ -2,10 +2,10 @@
 category: halt
 command: halt_cluster
 optional_options:
-- alternate: []
-  help: Do not prompt
-  name: --force
-  required: false
+  - alternate: []
+    help: Do not prompt
+    name: --force
+    required: false
 permalink: /qq-cli-command-guide/halt/halt_cluster.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

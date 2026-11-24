@@ -2,15 +2,15 @@
 category: frozen
 command: frozen_delete_cancel
 optional_options:
-- alternate: []
-  help: The delete's ID, as frozen_delete or frozen_delete_list prints it.
-  name: --id
-  required: true
-- alternate: []
-  help: 'Cluster path of the Frozen bridge, or of any file or directory on it. (Default:
-    the cluster''s only Frozen bridge, when it has exactly one)'
-  name: --bridge-path
-  required: false
+  - alternate: []
+    help: The delete's ID, as frozen_delete or frozen_delete_list prints it.
+    name: --id
+    required: true
+  - alternate: []
+    help: 'Cluster path of the Frozen bridge, or of any file or directory on it. (Default:
+      the cluster''s only Frozen bridge, when it has exactly one)'
+    name: --bridge-path
+    required: false
 permalink: /qq-cli-command-guide/frozen/frozen_delete_cancel.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

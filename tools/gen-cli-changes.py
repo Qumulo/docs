@@ -11,7 +11,6 @@ import sys
 import tempfile
 import threading
 import urllib.request
-from tqdm import tqdm
 
 TARGET_FILE = "qq-cli-command-guide/change-log.md"
 CACHE_DIR = "tools/.cli-change-cache"
@@ -670,9 +669,7 @@ def generate_cli_bullets(curr_v, prev_v):
 
 def ensure_dependencies():
     pip_names = {
-        "dataclasses_json": "dataclasses-json",
-        "dateutil": "python-dateutil",
-        "typing_extensions": "typing-extensions",
+        "tqdm": "tqdm",
     }
     missing = []
     for module_name in pip_names:
@@ -693,9 +690,9 @@ def ensure_dependencies():
         print("pip install failed. Exiting.")
         sys.exit(1)
 
-
 def main():
     ensure_dependencies()
+    from tqdm import tqdm
     parser = argparse.ArgumentParser()
     parser.add_argument("--no-cache", action="store_true")
     parser.add_argument("version", nargs="?", default=None)

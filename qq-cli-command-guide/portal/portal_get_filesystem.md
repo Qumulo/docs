@@ -2,15 +2,15 @@
 category: portal
 command: portal_get_filesystem
 optional_options:
-- alternate: []
-  help: Filesystem UUID
-  name: --uuid
-  required: true
-- alternate:
-  - --json
-  help: Pretty-print JSON
-  name: -j
-  required: false
+  - alternate: []
+    help: Filesystem UUID
+    name: --uuid
+    required: true
+  - alternate:
+      - --json
+    help: Pretty-print JSON
+    name: -j
+    required: false
 permalink: /qq-cli-command-guide/portal/portal_get_filesystem.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

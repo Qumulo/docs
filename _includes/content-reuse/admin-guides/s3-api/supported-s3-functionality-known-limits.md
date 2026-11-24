@@ -323,7 +323,7 @@ SigV4 uses the `x-amz-content-sha256` header to specify [the authentication type
 Because Qumulo Core supports only [path-style bucket addressing]({{site.s3.docs.pathStyleAddressing}}), you must configure your client applications to use path-style addressing to send S3 API requests to a Qumulo cluster. For more information, see [Configuring the AWS CLI for Use with Qumulo Core](configuring-using-s3-api.html#configuring-aws-cli).
 
 ### ETags
-RESTful APIs, such as the Qumulo Core S3 API, use HTTP [ETags](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag) to identify different resource versions. When working with files by using Qumulo Core, each time a file's contents change (regardless of protocol), the value of its ETag changes as well.
+RESTful APIs, such as the Qumulo S3 API, use HTTP [ETags](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag) to identify different resource versions. When working with files by using Qumulo Core, each time a file's contents change (regardless of protocol), the value of its ETag changes as well.
 
 {{site.data.alerts.note}}
 <ul>
@@ -497,7 +497,7 @@ For more information, see the following Amazon S3 documentation:
 While native Amazon S3 functionality requires Object Lock to be enabled for an S3 bucket to be able to both modify and view locks on objects, Qumulo Core requires [Object Lock to be enabled for an S3 bucket](managing-object-lock-for-s3-buckets.html) only to _modify_ locks on objects.
 
 ## Comparison of Known Limits between S3 in Qumulo and Amazon
-This section compares the Qumulo Core S3 API limits with native Amazon S3 limits.
+This section compares the Qumulo S3 API limits with native Amazon S3 limits.
 
 ### Known Limits for S3 Buckets
 

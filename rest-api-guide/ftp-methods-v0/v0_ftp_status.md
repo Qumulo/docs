@@ -43,8 +43,12 @@ methods:
         ,\n        \"properties\": {\n          \"node_id\": {\n            \"description\"\
         : \"node_id\",\n            \"type\": \"number\"\n          },\n         \
         \ \"status\": {\n            \"description\": \"The status of the server on\
-        \ this node.\",\n            \"type\": \"string\"\n          }\n        }\n\
-        \      }\n    }\n  }\n}"
+        \ this node: `running`, `stopped`, `starting` (enabled, waiting for an earlier\
+        \ stop to close its connections), `stopping` (disabled, still closing connections),\
+        \ `halted; <error>` (enabled, but not running: it failed to start, or the\
+        \ node is out of quorum), or `unknown; <error>` (disabled, but its status\
+        \ couldn't be read).\",\n            \"type\": \"string\"\n          }\n \
+        \       }\n      }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success

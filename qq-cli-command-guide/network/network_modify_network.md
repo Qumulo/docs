@@ -2,24 +2,24 @@
 category: network
 command: network_modify_network
 optional_options:
-- alternate: []
-  help: Network ID
-  name: --network-id
-  required: true
-- alternate: []
-  help: Network name
-  name: --name
-  required: false
-- alternate: []
-  help: The tenant that the network will be assigned to. If only one tenant exists,
-    the network will default to that tenant. Otherwise, not specifying the tenant
-    will create the network unassigned.
-  name: --tenant-id
-  required: false
-- alternate: []
-  help: Clear the tenant from the network, making the network unassigned
-  name: --clear-tenant-id
-  required: false
+  - alternate: []
+    help: Network ID
+    name: --network-id
+    required: true
+  - alternate: []
+    help: Network name
+    name: --name
+    required: false
+  - alternate: []
+    help: The tenant that the network will be assigned to. If only one tenant exists,
+      the network will default to that tenant. Otherwise, not specifying the tenant
+      will create the network unassigned.
+    name: --tenant-id
+    required: false
+  - alternate: []
+    help: Clear the tenant from the network, making the network unassigned
+    name: --clear-tenant-id
+    required: false
 permalink: /qq-cli-command-guide/network/network_modify_network.html
 positional_options:
   - help: The kind of network you want to add.

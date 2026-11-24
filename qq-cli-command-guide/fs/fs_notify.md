@@ -2,30 +2,30 @@
 category: fs
 command: fs_notify
 optional_options:
-- alternate: []
-  help: Directory path
-  name: --path
-  required: false
-- alternate: []
-  help: Directory ID
-  name: --id
-  required: false
-- alternate: []
-  help: Listen for changes recursively.
-  name: --recursive
-  required: false
-- alternate: []
-  help: Specific notify types to filter to.
-  name: --filter
-  required: false
-- alternate: []
-  help: File to receive data
-  name: --file
-  required: false
-- alternate: []
-  help: Output results as a json stream.
-  name: --json
-  required: false
+  - alternate: []
+    help: Directory path
+    name: --path
+    required: false
+  - alternate: []
+    help: Directory ID
+    name: --id
+    required: false
+  - alternate: []
+    help: Listen for changes recursively.
+    name: --recursive
+    required: false
+  - alternate: []
+    help: Specific notify types to filter to.
+    name: --filter
+    required: false
+  - alternate: []
+    help: File to receive data
+    name: --file
+    required: false
+  - alternate: []
+    help: Output results as a json stream.
+    name: --json
+    required: false
 permalink: /qq-cli-command-guide/fs/fs_notify.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

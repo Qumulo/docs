@@ -2,10 +2,10 @@
 category: replication
 command: replication_get_object_relationship
 optional_options:
-- alternate: []
-  help: Unique identifier of the object replication relationship
-  name: --id
-  required: true
+  - alternate: []
+    help: Unique identifier of the object replication relationship
+    name: --id
+    required: true
 permalink: /qq-cli-command-guide/replication/replication_get_object_relationship.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

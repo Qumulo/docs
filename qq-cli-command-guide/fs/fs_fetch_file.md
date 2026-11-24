@@ -2,23 +2,23 @@
 category: fs
 command: fs_fetch_file
 optional_options:
-- alternate: []
-  help: File path
-  name: --path
-  required: false
-- alternate: []
-  help: File ID
-  name: --id
-  required: false
-- alternate: []
-  help: Show progress bar on stderr
-  name: --progress
-  required: false
-- alternate:
-  - --max-bytes
-  help: Fetch at most this many bytes
-  name: -m
-  required: false
+  - alternate: []
+    help: File path
+    name: --path
+    required: false
+  - alternate: []
+    help: File ID
+    name: --id
+    required: false
+  - alternate: []
+    help: Show progress bar on stderr
+    name: --progress
+    required: false
+  - alternate:
+      - --max-bytes
+    help: Fetch at most this many bytes
+    name: -m
+    required: false
 permalink: /qq-cli-command-guide/fs/fs_fetch_file.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

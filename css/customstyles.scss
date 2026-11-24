@@ -598,6 +598,12 @@ td.align-center {
   text-align: center;
 }
 
+th.hide-cell {
+  background-color: transparent;
+  border-top: 1px solid transparent !important;
+  border-left: 1px solid transparent !important;
+}
+
 a {
   /* This color is required to meet WCAG standards for accessible text.
      Note: This style overrides bootstrap.css.

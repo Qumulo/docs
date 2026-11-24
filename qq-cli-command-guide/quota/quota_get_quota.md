@@ -2,14 +2,14 @@
 category: quota
 command: quota_get_quota
 optional_options:
-- alternate: []
-  help: Path name
-  name: --path
-  required: false
-- alternate: []
-  help: File ID
-  name: --id
-  required: false
+  - alternate: []
+    help: Path name
+    name: --path
+    required: false
+  - alternate: []
+    help: File ID
+    name: --id
+    required: false
 permalink: /qq-cli-command-guide/quota/quota_get_quota.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

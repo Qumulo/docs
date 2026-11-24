@@ -2,10 +2,10 @@
 category: cluster
 command: cluster_set_node_identify_light
 optional_options:
-- alternate: []
-  help: Node ID
-  name: --node
-  required: true
+  - alternate: []
+    help: Node ID
+    name: --node
+    required: true
 permalink: /qq-cli-command-guide/cluster/cluster_set_node_identify_light.html
 positional_options:
   - help: Should light be visible

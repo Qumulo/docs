@@ -2,25 +2,25 @@
 category: ad
 command: ad_leave
 optional_options:
-- alternate:
-  - --domain
-  help: Fully-qualified name of Active Directory Domain
-  name: -d
-  required: true
-- alternate:
-  - --username
-  help: Domain user to perform the operation, e.g., Administrator
-  name: -u
-  required: false
-- alternate:
-  - --password
-  help: Domain password (insecure, visible via ps)
-  name: -p
-  required: false
-- alternate: []
-  help: Do not wait for the operation to complete
-  name: --no-wait
-  required: false
+  - alternate:
+      - --domain
+    help: Fully-qualified name of Active Directory Domain
+    name: -d
+    required: true
+  - alternate:
+      - --username
+    help: Domain user to perform the operation, e.g., Administrator or Administrator@<FQDN>
+    name: -u
+    required: false
+  - alternate:
+      - --password
+    help: Domain password (insecure, visible via ps)
+    name: -p
+    required: false
+  - alternate: []
+    help: Do not wait for the operation to complete
+    name: --no-wait
+    required: false
 permalink: /qq-cli-command-guide/ad/ad_leave.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

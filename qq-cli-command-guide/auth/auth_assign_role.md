@@ -2,17 +2,17 @@
 category: auth
 command: auth_assign_role
 optional_options:
-- alternate:
-  - --role
-  help: Name of the role to assign
-  name: -r
-  required: true
-- alternate:
-  - --trustee
-  help: Assign the role to this trustee.  e.g. Everyone, uid:1000, gid:1001, sid:S-1-5-2-3-4,
-    or auth_id:500
-  name: -t
-  required: true
+  - alternate:
+      - --role
+    help: Name of the role to assign
+    name: -r
+    required: true
+  - alternate:
+      - --trustee
+    help: Assign the role to this trustee.  e.g. Everyone, uid:1000, gid:1001, sid:S-1-5-2-3-4,
+      or auth_id:500
+    name: -t
+    required: true
 permalink: /qq-cli-command-guide/auth/auth_assign_role.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

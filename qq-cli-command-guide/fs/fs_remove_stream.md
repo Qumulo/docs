@@ -2,22 +2,22 @@
 category: fs
 command: fs_remove_stream
 optional_options:
-- alternate: []
-  help: File or directory path
-  name: --path
-  required: false
-- alternate: []
-  help: File or directory ID
-  name: --id
-  required: false
-- alternate: []
-  help: Stream id to remove
-  name: --stream-id
-  required: false
-- alternate: []
-  help: Stream name to remove
-  name: --stream-name
-  required: false
+  - alternate: []
+    help: File or directory path
+    name: --path
+    required: false
+  - alternate: []
+    help: File or directory ID
+    name: --id
+    required: false
+  - alternate: []
+    help: Stream id to remove
+    name: --stream-id
+    required: false
+  - alternate: []
+    help: Stream name to remove
+    name: --stream-name
+    required: false
 permalink: /qq-cli-command-guide/fs/fs_remove_stream.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

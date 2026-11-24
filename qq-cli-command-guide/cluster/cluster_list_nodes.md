@@ -2,10 +2,10 @@
 category: cluster
 command: cluster_list_nodes
 optional_options:
-- alternate: []
-  help: Node ID
-  name: --node
-  required: false
+  - alternate: []
+    help: Node ID
+    name: --node
+    required: false
 permalink: /qq-cli-command-guide/cluster/cluster_list_nodes.html
 positional_options: []
 redirect_from:

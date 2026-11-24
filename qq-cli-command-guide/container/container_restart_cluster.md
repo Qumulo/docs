@@ -2,10 +2,10 @@
 category: container
 command: container_restart_cluster
 optional_options:
-- alternate: []
-  help: Do not prompt
-  name: --force
-  required: false
+  - alternate: []
+    help: Do not prompt
+    name: --force
+    required: false
 permalink: /qq-cli-command-guide/container/container_restart_cluster.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

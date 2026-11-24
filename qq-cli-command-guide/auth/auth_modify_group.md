@@ -2,18 +2,18 @@
 category: auth
 command: auth_modify_group
 optional_options:
-- alternate: []
-  help: Name or ID of group to modify
-  name: --id
-  required: true
-- alternate: []
-  help: Change group's name
-  name: --name
-  required: false
-- alternate: []
-  help: Change the user's NFS gid (or specify "none" to remove)
-  name: --gid
-  required: false
+  - alternate: []
+    help: Name or ID of group to modify
+    name: --id
+    required: true
+  - alternate: []
+    help: Change group's name
+    name: --name
+    required: false
+  - alternate: []
+    help: Change the user's NFS gid (or specify "none" to remove)
+    name: --gid
+    required: false
 permalink: /qq-cli-command-guide/auth/auth_modify_group.html
 positional_options: []
 redirect_from:

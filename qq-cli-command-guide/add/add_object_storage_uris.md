@@ -2,36 +2,36 @@
 category: add
 command: add_object_storage_uris
 optional_options:
-- alternate: []
-  help: The new URIs to add to the cluster.
-  name: --uris
-  required: false
-- alternate: []
-  help: 'The new credentials to add to the cluster. Parsed as comma delimited tuples
-    where
+  - alternate: []
+    help: The new URIs to add to the cluster.
+    name: --uris
+    required: false
+  - alternate: []
+    help: 'The new credentials to add to the cluster. Parsed as comma delimited tuples
+      where
 
-    each tuple is on its own line in the file:
+      each tuple is on its own line in the file:
 
-    <store_name-1>,<access_key_id-1>,<secret_access_key-1>
+      <store_name-1>,<access_key_id-1>,<secret_access_key-1>
 
-    <store_name-2>,<access_key_id-2>,<secret_access_key-2>...
+      <store_name-2>,<access_key_id-2>,<secret_access_key-2>...
 
-    '
-  name: --credentials-file
-  required: false
-- alternate: []
-  help: 'The new credentials to add to the file via stdin. Parsed as comma delimited
-    tuples
+      '
+    name: --credentials-file
+    required: false
+  - alternate: []
+    help: 'The new credentials to add to the file via stdin. Parsed as comma delimited
+      tuples
 
-    where each tuple is separated by a space:
+      where each tuple is separated by a space:
 
-    <store_name-1>,<access_key_id-1>,<secret_access_key-1>
+      <store_name-1>,<access_key_id-1>,<secret_access_key-1>
 
-    <store_name-2>,<access_key_id-2>,<secret_access_key-2>...
+      <store_name-2>,<access_key_id-2>,<secret_access_key-2>...
 
-    '
-  name: --credentials
-  required: false
+      '
+    name: --credentials
+    required: false
 permalink: /qq-cli-command-guide/add/add_object_storage_uris.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

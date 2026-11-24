@@ -2,51 +2,51 @@
 category: fs
 command: fs_read
 optional_options:
-- alternate: []
-  help: File path
-  name: --path
-  required: false
-- alternate: []
-  help: File ID
-  name: --id
-  required: false
-- alternate: []
-  help: Stream ID
-  name: --stream-id
-  required: false
-- alternate: []
-  help: Stream name
-  name: --stream-name
-  required: false
-- alternate: []
-  help: Snapshot ID to read from
-  name: --snapshot
-  required: false
-- alternate: []
-  help: Offset at which to read data. If not specified, read from the beginning of
-    the file.
-  name: --offset
-  required: false
-- alternate: []
-  help: Amount of data to read. If not specified, read the entire file.
-  name: --length
-  required: false
-- alternate: []
-  help: File to receive data
-  name: --file
-  required: false
-- alternate: []
-  help: Overwrite an existing file
-  name: --force
-  required: false
-- alternate: []
-  help: Output data to standard out
-  name: --stdout
-  required: false
-- alternate: []
-  help: Do not update the file's access time (atime) as a result of this read.
-  name: --skip-atime-update
-  required: false
+  - alternate: []
+    help: File path
+    name: --path
+    required: false
+  - alternate: []
+    help: File ID
+    name: --id
+    required: false
+  - alternate: []
+    help: Stream ID
+    name: --stream-id
+    required: false
+  - alternate: []
+    help: Stream name
+    name: --stream-name
+    required: false
+  - alternate: []
+    help: Snapshot ID to read from
+    name: --snapshot
+    required: false
+  - alternate: []
+    help: Offset at which to read data. If not specified, read from the beginning
+      of the file.
+    name: --offset
+    required: false
+  - alternate: []
+    help: Amount of data to read. If not specified, read the entire file.
+    name: --length
+    required: false
+  - alternate: []
+    help: File to receive data
+    name: --file
+    required: false
+  - alternate: []
+    help: Overwrite an existing file
+    name: --force
+    required: false
+  - alternate: []
+    help: Output data to standard out
+    name: --stdout
+    required: false
+  - alternate: []
+    help: Do not update the file's access time (atime) as a result of this read.
+    name: --skip-atime-update
+    required: false
 permalink: /qq-cli-command-guide/fs/fs_read.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

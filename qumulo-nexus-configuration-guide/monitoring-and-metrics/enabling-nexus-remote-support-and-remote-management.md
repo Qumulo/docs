@@ -98,7 +98,7 @@ qq nexus_set_config \
   --enable-remote-support
 ```
 
-When you enable Nexus Remote Support, Qumulo Core assigns the <code>qumulosupport:everyone</code> trustee to the <code>Qumulo-Support</code> RBAC role. This RBAC role determines the level of REST API access that Nexus gives to the Qumulo Care Team. For more information, see [the Qumulo-Support section in Managing Role-Based Access Control (RBAC) for Users and Groups](https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html#qumulo-support).
+When you enable Nexus Remote Support, Qumulo Core assigns the <code>qumulosupport:everyone</code> trustee to the <code>Qumulo-Support</code> RBAC role. This RBAC role determines the level of Qumulo REST API access that Nexus gives to the Qumulo Care Team. For more information, see [the Qumulo-Support section in Managing Role-Based Access Control (RBAC) for Users and Groups](https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html#qumulo-support).
 
 ### To Enable Nexus Remote Management {#enable-nexus-remote-management}
 {{ nexusRemoteManagement }}

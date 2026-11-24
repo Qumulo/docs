@@ -2,14 +2,14 @@
 category: dns
 command: dns_clear_cache
 optional_options:
-- alternate: []
-  help: When this flag is set, the reverse lookup cache is not cleared.
-  name: --skip-reverse-cache
-  required: false
-- alternate: []
-  help: When this flag is set, the forward lookup cache is not cleared.
-  name: --skip-forward-cache
-  required: false
+  - alternate: []
+    help: When this flag is set, the reverse lookup cache is not cleared.
+    name: --skip-reverse-cache
+    required: false
+  - alternate: []
+    help: When this flag is set, the forward lookup cache is not cleared.
+    name: --skip-forward-cache
+    required: false
 permalink: /qq-cli-command-guide/dns/dns_clear_cache.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

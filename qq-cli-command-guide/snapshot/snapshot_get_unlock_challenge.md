@@ -2,11 +2,11 @@
 category: snapshot
 command: snapshot_get_unlock_challenge
 optional_options:
-- alternate:
-  - --id
-  help: The identifier of the snapshot to unlock.
-  name: -i
-  required: true
+  - alternate:
+      - --id
+    help: The identifier of the snapshot to unlock.
+    name: -i
+    required: true
 permalink: /qq-cli-command-guide/snapshot/snapshot_get_unlock_challenge.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

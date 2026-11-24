@@ -2,26 +2,26 @@
 category: frozen
 command: frozen_delete
 optional_options:
-- alternate: []
-  help: Cluster path of one directory, with everything under it, or of one file, on
-    a Frozen bridge.
-  name: --subtree
-  required: false
-- alternate: []
-  help: Cluster paths of files or directories, each directory with everything under
-    it, on one Frozen bridge. Up to 256.
-  name: --files
-  required: false
-- alternate: []
-  help: A local file listing the cluster paths --files takes, one to a line. Empty
-    lines are skipped.
-  name: --files-from
-  required: false
-- alternate: []
-  help: Don't ask first. WARNING! A delete can be canceled with frozen_delete_cancel,
-    but what it already deleted can't be recovered.
-  name: --force
-  required: false
+  - alternate: []
+    help: Cluster path of one directory, with everything under it, or of one file,
+      on a Frozen bridge.
+    name: --subtree
+    required: false
+  - alternate: []
+    help: Cluster paths of files or directories, each directory with everything under
+      it, on one Frozen bridge. Up to 256.
+    name: --files
+    required: false
+  - alternate: []
+    help: A local file listing the cluster paths --files takes, one to a line. Empty
+      lines are skipped.
+    name: --files-from
+    required: false
+  - alternate: []
+    help: Don't ask first. WARNING! A delete can be canceled with frozen_delete_cancel,
+      but what it already deleted can't be recovered.
+    name: --force
+    required: false
 permalink: /qq-cli-command-guide/frozen/frozen_delete.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

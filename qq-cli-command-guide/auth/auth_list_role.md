@@ -2,15 +2,15 @@
 category: auth
 command: auth_list_role
 optional_options:
-- alternate:
-  - --role
-  help: Name of the role to lookup
-  name: -r
-  required: true
-- alternate: []
-  help: Print JSON representation of auth role.
-  name: --json
-  required: false
+  - alternate:
+      - --role
+    help: Name of the role to lookup
+    name: -r
+    required: true
+  - alternate: []
+    help: Print JSON representation of auth role.
+    name: --json
+    required: false
 permalink: /qq-cli-command-guide/auth/auth_list_role.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

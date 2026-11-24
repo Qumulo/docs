@@ -16,6 +16,72 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {% endif %}
 
 
+## 7.11 Releases
+
+### Qumulo Core 7.11.0
+{{ nexusLink }}
+
+#### Features and Improvements
+{{site.data.alerts.important}}
+<ul>
+  <li>This release improves the space reclamation system in Qumulo Core by&hellip;
+    <ul>
+      <li>Significantly increasing the reclamation speed for deleted files and snapshots</li>
+      <li>Adding quality-of-service functionality for reclamation on:
+        <ul>
+          <li>Clusters with intensive workloads</li>
+          <li>Clusters that are nearly full</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Qumulo Core no longer supports DES and 3DES Kerberos keys. This doesn't affect clusters joined to Active Directory.</li>
+  <li><strong>Cloud Native Qumulo (CNQ) clusters:</strong> Before you upgrade from Qumulo Core 7.11.0 to a higher version, your cluster must complete a background on-disk upgrade that speeds up future quorum transitions.
+    <ul>
+      <li>If you use Qumulo Core 7.11.0 as an intermediate version, this process can take up to 12 hours.</li>
+      <li>If you upgrade before the background on-disk upgrade process completes, the upgrade verification fails.</li>
+    </ul>
+  </li>
+</ul>
+{{site.data.alerts.end}}
+
+* **Authentication:** Removed support for DES and 3DES Kerberos keys
+
+* **Cloud Data Fabric (CDF):**
+
+    * Added the ability to suspend or pause a portal relationship
+
+    * Reduced the duration of client I/O pauses on portals after a portal quorum event
+
+    * Made related changes to the Qumulo REST API and `qq` CLI.
+
+* **CNQ on AWS:* Added support for DKV disks of 4 GiB (and larger)
+
+* **NFS**
+
+    * Added support for NFS over TLS for:
+
+        * NFSv3
+
+        * NFSv4.1 (including with Kerberos)
+
+        * NFSv4.2 (including with Kerberos)
+
+    * Added support for extended attributes over NFSv4.2
+
+* **SMB:** Configured Qumulo Core to process multiple SMB `CREATE` commands in a single transaction
+
+* **General Improvements**
+
+    * Improved latency for directory read operations through the Qumulo REST API
+
+    * Improved `qq` CLI commands
+
+#### Change Log
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7110-quarterly)
+* [`qq` CLI](https://docs.qumulo.com/qq-cli-command-guide/change-log.html#qumulo-core-7110-quarterly)
+
+
 ## 7.10 Releases
 
 ### Qumulo Core 7.10.3.2
@@ -437,7 +503,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
   * Added support for conditional writes to the `CompleteMultipartUpload` and `PutObject` S3 API actions by using the `If-Match` and `If-None-Match` headers
 * **General Improvements**
   * Improved IOPS performance for certain metadata-heavy workloads
-  * Revised `analytics`, `audit`, `files`, and `snapshots` REST APIs
+  * Revised `analytics`, `audit`, `files`, and `snapshots` REST API endpoints
   * Added the [`qsnap` standalone CLI tool](https://github.com/Qumulo/qsnap) to replace the capacity-related functionality of `/v1/snapshots`
   * Removed a number of outdated `qq` CLI commands pertaining to retrieving and configuring `syslog` and CloudWatch status and configuration
 * **Bug Fixes**
@@ -652,8 +718,8 @@ Significantly improved the performance of the incremental replication process fo
 #### Features and Improvements
 {% include important.html content="This release resolves an issue that affects Azure Native Qumulo (ANQ) and Cloud Native Qumulo (CNQ) clusters. While this issue did not affect cluster data, it caused the system to not delete unneeded backing data. When certain accounts retained this data incorrectly, there was a potential increase in consumption of cloud resources." %}
 * Improved Cloud Data Fabric portal data synchronization speeds
-* Made improvements to the Network Configuration V3 REST APIs:
-  * Moved a number of `/v3/network/*` REST APIs out of preview status
+* Made improvements to the Network Configuration V3 REST API endpoints:
+  * Moved a number of `/v3/network/*` REST API endpoints out of preview status
   * Added a number `qq network_*`, `qq portal_authorize_hub`, and `qq_snapshot_*` CLI commands
 
 #### Change Log
@@ -820,7 +886,7 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 * Made improvements to the S3 API:
   * Resolved an issue with S3 directory deletion
   * Modified the XML response bodies for S3 API actions to return the canonical XML header
-* Modified `files` REST APIs to return entity tag (ETag) values correctly
+* Modified `files` REST API endpoints to return entity tag (ETag) values correctly
 * Added support for latest Western Digital Ultrastar DC SN640 SSD firmware\
 
 #### Change Log

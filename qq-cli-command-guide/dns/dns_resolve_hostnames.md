@@ -2,10 +2,10 @@
 category: dns
 command: dns_resolve_hostnames
 optional_options:
-- alternate: []
-  help: Hostnames to resolve
-  name: --hosts
-  required: true
+  - alternate: []
+    help: Hostnames to resolve
+    name: --hosts
+    required: true
 permalink: /qq-cli-command-guide/dns/dns_resolve_hostnames.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

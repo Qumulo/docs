@@ -2,29 +2,29 @@
 category: fs
 command: fs_create_symlink
 optional_options:
-- alternate: []
-  help: Parent directory path
-  name: --path
-  required: false
-- alternate: []
-  help: Parent directory ID
-  name: --id
-  required: false
-- alternate: []
-  help: Link target (relative path recommended)
-  name: --target
-  required: true
-- alternate: []
-  help: Symlink target's type. If this is unspecified or FS_FILE_TYPE_UNKNOWN, the
-    effect is the same as using 'ln -s' on a Unix NFS client. If this is FS_FILE_TYPE_FILE
-    or FS_FILE_TYPE_DIRECTORY, the effect is the same as using 'mklink' or 'mklink
-    /D' on a Windows SMB client.
-  name: --target-type
-  required: false
-- alternate: []
-  help: New symlink name
-  name: --name
-  required: true
+  - alternate: []
+    help: Parent directory path
+    name: --path
+    required: false
+  - alternate: []
+    help: Parent directory ID
+    name: --id
+    required: false
+  - alternate: []
+    help: Link target (relative path recommended)
+    name: --target
+    required: true
+  - alternate: []
+    help: Symlink target's type. If this is unspecified or FS_FILE_TYPE_UNKNOWN, the
+      effect is the same as using 'ln -s' on a Unix NFS client. If this is FS_FILE_TYPE_FILE
+      or FS_FILE_TYPE_DIRECTORY, the effect is the same as using 'mklink' or 'mklink
+      /D' on a Windows SMB client.
+    name: --target-type
+    required: false
+  - alternate: []
+    help: New symlink name
+    name: --name
+    required: true
 permalink: /qq-cli-command-guide/fs/fs_create_symlink.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

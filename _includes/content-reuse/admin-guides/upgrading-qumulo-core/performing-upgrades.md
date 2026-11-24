@@ -22,7 +22,7 @@ Because in Qumulo Core 3.3.2 (and higher), the Qumulo file and data protection s
 {{site.data.alerts.note}}
 <ul>
   <li>Under certain conditions, an end-to-end instant software upgrade might take a little longer while Qumulo Core performs background tasks. This doesn't impact user experience.</li>
-  <li>Instant software upgrades don't impact existing support for the <code>qq</code> CLI or REST API commands.</li>
+  <li>Instant software upgrades don't impact existing support for the <code>qq</code> CLI or Qumulo REST API commands.</li>
   <li>A direct upgrade to Qumulo Core 3.3.3 <em>isn't</em> an instant software upgrade (it only establishes the framework for this functionality). Upgrading from Qumulo Core 3.3.2 to 3.3.3 is the first official, minimally disruptive instant software upgrade. Any subsequent upgrade, regardless of release, is an instant software upgrade unless we specify otherwise.</li>
 </ul>
 {{site.data.alerts.end}}

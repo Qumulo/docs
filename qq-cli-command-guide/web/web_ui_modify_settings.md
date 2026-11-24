@@ -2,22 +2,22 @@
 category: web
 command: web_ui_modify_settings
 optional_options:
-- alternate: []
-  help: Sets the inactivity timeout
-  name: --inactivity-timeout
-  required: false
-- alternate: []
-  help: Disables the inactivity timeout
-  name: --disable-inactivity-timeout
-  required: false
-- alternate: []
-  help: Sets the login banner
-  name: --login-banner
-  required: false
-- alternate: []
-  help: Disables the login banner
-  name: --disable-login-banner
-  required: false
+  - alternate: []
+    help: Sets the inactivity timeout
+    name: --inactivity-timeout
+    required: false
+  - alternate: []
+    help: Disables the inactivity timeout
+    name: --disable-inactivity-timeout
+    required: false
+  - alternate: []
+    help: Sets the login banner
+    name: --login-banner
+    required: false
+  - alternate: []
+    help: Disables the login banner
+    name: --disable-login-banner
+    required: false
 permalink: /qq-cli-command-guide/web/web_ui_modify_settings.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

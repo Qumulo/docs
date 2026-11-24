@@ -34,7 +34,7 @@ This section explains how to configure alarm and alert collection by adding your
    
    1. For **Access Token**, specify the long-lived access token that you created while [Installing and Configuring Qumulo Alerts](installing-configuring-qumulo-alerts.html#step-5-create-a-long-lived-access-token) guide.
    
-   1. For **Port**, specify the REST API port (`8000` by default).
+   1. For **Port**, specify the Qumulo REST API port (`8000` by default).
    
    1. For **Polling Frequency (minutes)**, specify how frequently Qumulo Alerts should poll your Qumulo cluster.
    

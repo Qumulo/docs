@@ -2,11 +2,11 @@
 category: ad
 command: ad_expand_groups
 optional_options:
-- alternate:
-  - --sid
-  help: Get the SIDS of all the groups this SID belongs (including all nested groups).
-  name: -s
-  required: true
+  - alternate:
+      - --sid
+    help: Get the SIDS of all the groups this SID belongs (including all nested groups).
+    name: -s
+    required: true
 permalink: /qq-cli-command-guide/ad/ad_expand_groups.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

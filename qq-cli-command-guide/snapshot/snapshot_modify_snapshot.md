@@ -2,22 +2,23 @@
 category: snapshot
 command: snapshot_modify_snapshot
 optional_options:
-- alternate:
-  - --id
-  help: Identifier of the snapshot to modify.
-  name: -i
-  required: true
-- alternate:
-  - --expiration
-  help: Time of snapshot expiration. An empty string indicates that the snapshot never
-    expires. The time format follows RFC 3339, a normalized subset of ISO 8601.
-  name: -e
-  required: false
-- alternate:
-  - --force
-  help: Do not prompt for confirmation. The default setting is "false".
-  name: -f
-  required: false
+  - alternate:
+      - --id
+    help: Identifier of the snapshot to modify.
+    name: -i
+    required: true
+  - alternate:
+      - --expiration
+    help: Time of snapshot expiration. An empty string indicates that the snapshot
+      never expires. The time format follows RFC 3339, a normalized subset of ISO
+      8601.
+    name: -e
+    required: false
+  - alternate:
+      - --force
+    help: Do not prompt for confirmation. The default setting is "false".
+    name: -f
+    required: false
 permalink: /qq-cli-command-guide/snapshot/snapshot_modify_snapshot.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

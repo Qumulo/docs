@@ -139,13 +139,28 @@ if !in_ci && not_in_sidebar.any?
     if prompt_yes?("\nCommit changes? (y/n) ")
       commit_msg = "Cleaning up outdated #{deleted_labels.join(' and ')} pages"
       system("git", "add", "-u")
-      system(
+      commit_success = system(
         "git",
         "-c", "user.name=Team Qontent",
         "-c", "user.email=qontent@qumulo.com",
         "commit",
         "-m", commit_msg
       )
+
+      if commit_success && prompt_yes?("Push changes? (y/n) ")
+        ssh_cmd = "ssh -o UserKnownHostsFile=#{Dir.home}/.ssh/known_hosts"
+        # Include default identity file if present so OpenSSH skips /etc/passwd lookup
+        %w[id_ed25519 id_rsa].each do |key|
+          key_path = File.join(Dir.home, ".ssh", key)
+          if File.exist?(key_path)
+            ssh_cmd += " -i #{key_path}"
+            break
+          end
+        end
+
+        push_success = system({ "GIT_SSH_COMMAND" => ssh_cmd }, "git", "push")
+        warn "Warning: git push failed." unless push_success
+      end
     end
   end
 end

@@ -22,6 +22,7 @@ AVX
 AZs
 azurerm
 backend
+backoff
 backplane
 BMC
 Broadcom
@@ -59,9 +60,11 @@ deduplicate
 deduplicates
 denylist
 denylists
+DES
 DHCP
 DIMM
 DIMMs
+DKV
 DN
 DNS
 DnsAdmins
@@ -168,6 +171,7 @@ Lifecycle
 lookups
 LTS
 Lucía
+Lychee
 macOS
 MBR
 Mellanox

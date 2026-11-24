@@ -2,26 +2,26 @@
 category: fs
 command: fs_rename
 optional_options:
-- alternate: []
-  help: Destination parent directory path
-  name: --path
-  required: false
-- alternate: []
-  help: Destination parent directory ID
-  name: --id
-  required: false
-- alternate: []
-  help: Source file path
-  name: --source
-  required: true
-- alternate: []
-  help: New name in destination directory
-  name: --name
-  required: true
-- alternate: []
-  help: Clobber destination if exists
-  name: --clobber
-  required: false
+  - alternate: []
+    help: Destination parent directory path
+    name: --path
+    required: false
+  - alternate: []
+    help: Destination parent directory ID
+    name: --id
+    required: false
+  - alternate: []
+    help: Source file path
+    name: --source
+    required: true
+  - alternate: []
+    help: New name in destination directory
+    name: --name
+    required: true
+  - alternate: []
+    help: Clobber destination if exists
+    name: --clobber
+    required: false
 permalink: /qq-cli-command-guide/fs/fs_rename.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

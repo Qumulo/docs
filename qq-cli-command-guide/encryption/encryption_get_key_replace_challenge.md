@@ -2,11 +2,11 @@
 category: encryption
 command: encryption_get_key_replace_challenge
 optional_options:
-- alternate:
-  - --key
-  help: The identifier or name of the key for which to get a security challenge.
-  name: -k
-  required: true
+  - alternate:
+      - --key
+    help: The identifier or name of the key for which to get a security challenge.
+    name: -k
+    required: true
 permalink: /qq-cli-command-guide/encryption/encryption_get_key_replace_challenge.html
 positional_options: []
 redirect_from:

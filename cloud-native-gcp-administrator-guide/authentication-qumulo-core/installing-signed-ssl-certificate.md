@@ -1,6 +1,6 @@
 ---
 title: "Installing a Signed SSL Certificate on a Qumulo Cluster"
-summary: "This section explains how to install a signed SSL certificate for the Qumulo Core Web UI and for the LDAP server on your Qumulo cluster."
+summary: "This section explains how to install a signed SSL certificate on your Qumulo cluster for the Qumulo Core Web UI, REST API, and S3 API; and the FTP and NFS over TLS protocols. It also explains how to install a CA certificate for connections to an LDAP server."
 permalink: /cloud-native-gcp-administrator-guide/authentication-qumulo-core/installing-signed-ssl-certificate.html
 sidebar: cloud_native_gcp_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/authentication-qumulo-core/installing-signed-ssl-certificate.md

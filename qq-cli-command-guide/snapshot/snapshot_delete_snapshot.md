@@ -2,11 +2,11 @@
 category: snapshot
 command: snapshot_delete_snapshot
 optional_options:
-- alternate:
-  - --id
-  help: Snapshot ID
-  name: -i
-  required: true
+  - alternate:
+      - --id
+    help: Snapshot ID
+    name: -i
+    required: true
 permalink: /qq-cli-command-guide/snapshot/snapshot_delete_snapshot.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

@@ -2,21 +2,21 @@
 category: auth
 command: auth_list_access_tokens
 optional_options:
-- alternate: []
-  help: Output JSON instead of table.
-  name: --json
-  required: false
-- alternate: []
-  help: Show access tokens belonging to a specific user. Use an auth_id, SID, or name
-    optionally qualified with a domain prefix (e.g "local:name", "ad:name", "AD\name")
-    or an ID type (e.g. "auth_id:513", "SID:S-1-1-0"). Groups are not supported for
-    access tokens, must be a user.
-  name: --user
-  required: false
-- alternate: []
-  help: List only access keys that target yourself.
-  name: --self
-  required: false
+  - alternate: []
+    help: Output JSON instead of table.
+    name: --json
+    required: false
+  - alternate: []
+    help: Show access tokens belonging to a specific user. Use an auth_id, SID, or
+      name optionally qualified with a domain prefix (e.g "local:name", "ad:name",
+      "AD\name") or an ID type (e.g. "auth_id:513", "SID:S-1-1-0"). Groups are not
+      supported for access tokens, must be a user.
+    name: --user
+    required: false
+  - alternate: []
+    help: List only access keys that target yourself.
+    name: --self
+    required: false
 permalink: /qq-cli-command-guide/auth/auth_list_access_tokens.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

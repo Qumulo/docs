@@ -2,14 +2,14 @@
 category: s3
 command: s3_abort_upload
 optional_options:
-- alternate: []
-  help: The S3 bucket to which the upload was initiated
-  name: --bucket
-  required: true
-- alternate: []
-  help: The identifier of the upload to abort.
-  name: --upload-id
-  required: true
+  - alternate: []
+    help: The S3 bucket to which the upload was initiated
+    name: --bucket
+    required: true
+  - alternate: []
+    help: The identifier of the upload to abort.
+    name: --upload-id
+    required: true
 permalink: /qq-cli-command-guide/s3/s3_abort_upload.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

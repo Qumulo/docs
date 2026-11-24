@@ -8,7 +8,7 @@
 ## How Nexus Remote Support Works
 Nexus Remote Support lets the Qumulo Care Team access your Qumulo cluster solely to assist you with running a software update, performing diagnostics, or troubleshooting your cluster. {{site.tlsEncrypt}}
 
-When you register your Qumulo cluster with Nexus, the system creates a public-private key pair (your cluster holds the public key and Nexus holds the private key). Qumulo Core uses the public key to establish an encrypted outgoing connection that authenticates REST API operations from Nexus securely.
+When you register your Qumulo cluster with Nexus, the system creates a public-private key pair (your cluster holds the public key and Nexus holds the private key). Qumulo Core uses the public key to establish an encrypted outgoing connection that authenticates Qumulo REST API operations from Nexus securely.
 
 {{site.data.alerts.note}}
 <ul>

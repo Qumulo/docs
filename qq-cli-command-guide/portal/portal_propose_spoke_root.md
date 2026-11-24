@@ -2,32 +2,32 @@
 category: portal
 command: portal_propose_spoke_root
 optional_options:
-- alternate:
-  - --id
-  help: Spoke portal ID
-  name: -i
-  required: true
-- alternate:
-  - --json
-  help: Pretty-print JSON
-  name: -j
-  required: false
-- alternate:
-  - --no-paths
-  help: Show the file IDs of portal roots instead of their paths.
-  name: -n
-  required: false
-- alternate: []
-  help: The full path to the directory that serves as the spoke portal root directory.
-    Qumulo Core creates this directory for you automatically. If this directory exists
-    already, the system outputs an error.
-  name: --spoke-root-path
-  required: true
-- alternate: []
-  help: The full path to the prospective directory that will serve as the hub portal
-    root directory
-  name: --hub-root-path
-  required: true
+  - alternate:
+      - --id
+    help: Spoke portal ID
+    name: -i
+    required: true
+  - alternate:
+      - --json
+    help: Pretty-print JSON
+    name: -j
+    required: false
+  - alternate:
+      - --no-paths
+    help: Show the file IDs of portal roots instead of their paths.
+    name: -n
+    required: false
+  - alternate: []
+    help: The full path to the directory that serves as the spoke portal root directory.
+      Qumulo Core creates this directory for you automatically. If this directory
+      exists already, the system outputs an error.
+    name: --spoke-root-path
+    required: true
+  - alternate: []
+    help: The full path to the prospective directory that will serve as the hub portal
+      root directory
+    name: --hub-root-path
+    required: true
 permalink: /qq-cli-command-guide/portal/portal_propose_spoke_root.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

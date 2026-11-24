@@ -2,22 +2,22 @@
 category: smb
 command: smb_list_share
 optional_options:
-- alternate: []
-  help: ID of share to list.
-  name: --id
-  required: false
-- alternate: []
-  help: Name of share to list.
-  name: --name
-  required: false
-- alternate: []
-  help: ID of the tenant to get the share from. Only used if using the --name argument.
-  name: --tenant-id
-  required: false
-- alternate: []
-  help: Print the raw JSON response.
-  name: --json
-  required: false
+  - alternate: []
+    help: ID of share to list.
+    name: --id
+    required: false
+  - alternate: []
+    help: Name of share to list.
+    name: --name
+    required: false
+  - alternate: []
+    help: ID of the tenant to get the share from. Only used if using the --name argument.
+    name: --tenant-id
+    required: false
+  - alternate: []
+    help: Print the raw JSON response.
+    name: --json
+    required: false
 permalink: /qq-cli-command-guide/smb/smb_list_share.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

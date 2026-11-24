@@ -2,11 +2,11 @@
 category: ad
 command: ad_username_to_sids
 optional_options:
-- alternate:
-  - --username
-  help: Get the SIDs that correspond to this username
-  name: -u
-  required: true
+  - alternate:
+      - --username
+    help: Get the SIDs that correspond to this username
+    name: -u
+    required: true
 permalink: /qq-cli-command-guide/ad/ad_username_to_sids.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

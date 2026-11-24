@@ -152,7 +152,19 @@ methods:
         \ in the object. A file from before an upgrade to a release with this field\
         \ counts 0 until the cluster next reconciles it.\",\n                \"type\"\
         : \"string\"\n              }\n            }\n          }\n        }\n   \
-        \   }\n    }\n  }\n}"
+        \   },\n      \"bridge_listing\": {\n        \"type\": \"string\",\n     \
+        \   \"enum\": [\n          \"NOT_LISTED\",\n          \"LISTING\",\n     \
+        \     \"LISTED\"\n        ],\n        \"description\": \"[preview] Whether\
+        \ this directory's own entries have been listed from the bucket of the object\
+        \ bridge it is on. Each directory under it reports its own, so LISTED doesn't\
+        \ mean the totals under it are complete. Null for anything that isn't a directory\
+        \ on an object bridge.:\\n * `LISTED` - The directory's entries have been\
+        \ listed from its bucket, or placed by a full import that finished,\\n * `LISTING`\
+        \ - A listing of the directory from its bucket, or a full import placing its\
+        \ entries, is underway, so its counts may leave out part of what the bucket\
+        \ holds under it,\\n * `NOT_LISTED` - The directory's entries haven't been\
+        \ listed from its bucket yet, so its counts may leave out what the bucket\
+        \ holds under it\"\n      }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success

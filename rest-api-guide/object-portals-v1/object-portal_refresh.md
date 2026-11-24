@@ -25,19 +25,19 @@ methods:
     request_body:
       schema: "{\n  \"description\": \"api_bridge_refresh_request\",\n  \"type\":\
         \ \"object\",\n  \"properties\": {\n    \"bucket_uri\": {\n      \"description\"\
-        : \"Bucket URI as it appears in the bridge's configuration\",\n      \"type\"\
-        : \"string\"\n    },\n    \"key\": {\n      \"description\": \"Object key\
-        \ within the bucket. A directory is named by its marker key, including the\
-        \ trailing delimiter.\",\n      \"type\": \"string\"\n    },\n    \"mode\"\
-        : {\n      \"type\": \"string\",\n      \"enum\": [\n        \"MERGE\",\n\
-        \        \"OVERWRITE\"\n      ],\n      \"description\": \"MERGE re-reads\
-        \ the object and applies what changed, leaving alone any attribute changed\
-        \ locally since the last import. OVERWRITE discards local changes to every\
-        \ attribute the object carries, and is destructive: an administrator's ownership,\
-        \ permission, timestamp, and DOS-attribute edits on this file are lost. Attributes\
-        \ the object does not carry are left alone either way. Treated as MERGE when\
-        \ omitted.:\\n * `MERGE` - API_BRIDGE_REFRESH_MERGE,\\n * `OVERWRITE` - API_BRIDGE_REFRESH_OVERWRITE\"\
-        \n    }\n  }\n}"
+        : \"Bucket URI as it appears in the bridge's configuration. The scheme and\
+        \ host may be in any case.\",\n      \"type\": \"string\"\n    },\n    \"\
+        key\": {\n      \"description\": \"Object key within the bucket. A directory\
+        \ is named by its marker key, including the trailing delimiter.\",\n     \
+        \ \"type\": \"string\"\n    },\n    \"mode\": {\n      \"type\": \"string\"\
+        ,\n      \"enum\": [\n        \"MERGE\",\n        \"OVERWRITE\"\n      ],\n\
+        \      \"description\": \"MERGE re-reads the object and applies what changed,\
+        \ leaving alone any attribute changed locally since the last import. OVERWRITE\
+        \ discards local changes to every attribute the object carries, and is destructive:\
+        \ an administrator's ownership, permission, timestamp, and DOS-attribute edits\
+        \ on this file are lost. Attributes the object does not carry are left alone\
+        \ either way. Treated as MERGE when omitted.:\\n * `MERGE` - API_BRIDGE_REFRESH_MERGE,\\\
+        n * `OVERWRITE` - API_BRIDGE_REFRESH_OVERWRITE\"\n    }\n  }\n}"
 rest_endpoint: /v1/object-portal/refresh
 api_version: v1
 deprecated: false

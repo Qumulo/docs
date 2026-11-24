@@ -2,14 +2,14 @@
 category: fs
 command: fs_delete
 optional_options:
-- alternate: []
-  help: Filesystem object path
-  name: --path
-  required: false
-- alternate: []
-  help: Filesystem object ID
-  name: --id
-  required: false
+  - alternate: []
+    help: Filesystem object path
+    name: --path
+    required: false
+  - alternate: []
+    help: Filesystem object ID
+    name: --id
+    required: false
 permalink: /qq-cli-command-guide/fs/fs_delete.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

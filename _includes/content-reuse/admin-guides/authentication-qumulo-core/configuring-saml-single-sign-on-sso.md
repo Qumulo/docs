@@ -182,7 +182,7 @@ In Qumulo Core 5.3.0 (and higher), you can run the {% include qq.html command="s
 qq saml_modify_settings --require-sso true
 ```
 
-When the cluster requires SSO authentication, your cluster rejects password-based authentication from AD users in the Qumulo Core Web UI, REST API, and `qq` CLI.
+When the cluster requires SSO authentication, your cluster rejects password-based authentication from AD users in the Qumulo Core Web UI, Qumulo REST API, and `qq` CLI.
 
 
 ## Known Limits

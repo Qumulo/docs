@@ -2,14 +2,14 @@
 category: s3
 command: s3_list_uploads
 optional_options:
-- alternate: []
-  help: The S3 bucket for which to list uploads
-  name: --bucket
-  required: true
-- alternate: []
-  help: List uploads only for keys that begin with the specified string
-  name: --starts-with
-  required: false
+  - alternate: []
+    help: The S3 bucket for which to list uploads
+    name: --bucket
+    required: true
+  - alternate: []
+    help: List uploads only for keys that begin with the specified string
+    name: --starts-with
+    required: false
 permalink: /qq-cli-command-guide/s3/s3_list_uploads.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

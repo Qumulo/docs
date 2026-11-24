@@ -2,11 +2,11 @@
 category: ad
 command: ad_gid_to_sids
 optional_options:
-- alternate:
-  - --gid
-  help: Get the SIDs that corresponds to this GID
-  name: -g
-  required: true
+  - alternate:
+      - --gid
+    help: Get the SIDs that corresponds to this GID
+    name: -g
+    required: true
 permalink: /qq-cli-command-guide/ad/ad_gid_to_sids.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

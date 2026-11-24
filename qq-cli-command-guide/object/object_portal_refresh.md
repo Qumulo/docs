@@ -2,21 +2,21 @@
 category: object
 command: object_portal_refresh
 optional_options:
-- alternate: []
-  help: The bucket URI as the bridge's configuration shows it. Returns an error if
-    no bridge serves that bucket.
-  name: --bucket-uri
-  required: true
-- alternate: []
-  help: The object's name in the bucket. For a directory, give the name with its trailing
-    delimiter, such as projects/2025/.
-  name: --key
-  required: true
-- alternate: []
-  help: MERGE (the default) keeps attributes changed on the cluster. OVERWRITE replaces
-    every attribute the object carries, which can't be undone.
-  name: --mode
-  required: false
+  - alternate: []
+    help: The bucket URI as the bridge's configuration shows it. Returns an error
+      if no bridge serves that bucket.
+    name: --bucket-uri
+    required: true
+  - alternate: []
+    help: The object's name in the bucket. For a directory, give the name with its
+      trailing delimiter, such as projects/2025/.
+    name: --key
+    required: true
+  - alternate: []
+    help: MERGE (the default) keeps attributes changed on the cluster. OVERWRITE replaces
+      every attribute the object carries, which can't be undone.
+    name: --mode
+    required: false
 permalink: /qq-cli-command-guide/object/object_portal_refresh.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

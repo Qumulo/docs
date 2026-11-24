@@ -2,10 +2,10 @@
 category: nfs
 command: nfs_list_exports
 optional_options:
-- alternate: []
-  help: Print raw response JSON.
-  name: --json
-  required: false
+  - alternate: []
+    help: Print raw response JSON.
+    name: --json
+    required: false
 permalink: /qq-cli-command-guide/nfs/nfs_list_exports.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

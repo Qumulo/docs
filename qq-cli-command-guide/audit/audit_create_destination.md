@@ -2,52 +2,52 @@
 category: audit
 command: audit_create_destination
 optional_options:
-- alternate: []
-  help: Audit log destination name.
-  name: --name
-  required: true
-- alternate: []
-  help: 'Audit log destination type (default: SYSLOG).'
-  name: --type
-  required: false
-- alternate: []
-  help: Use CSV format for SYSLOG destinations.
-  name: --csv
-  required: false
-- alternate: []
-  help: Use JSON format for SYSLOG destinations.
-  name: --json
-  required: false
-- alternate:
-  - -s
-  help: Syslog server address.
-  name: --server-address
-  required: false
-- alternate:
-  - -p
-  help: Syslog server port.
-  name: --server-port
-  required: false
-- alternate:
-  - -l
-  help: CloudWatch log group.
-  name: --log-group-name
-  required: false
-- alternate:
-  - -r
-  help: CloudWatch region.
-  name: --region
-  required: false
-- alternate:
-  - -e
-  help: Enable audit log destination.
-  name: --enable
-  required: false
-- alternate:
-  - -d
-  help: Disable audit log destination.
-  name: --disable
-  required: false
+  - alternate: []
+    help: Audit log destination name.
+    name: --name
+    required: true
+  - alternate: []
+    help: 'Audit log destination type (default: SYSLOG).'
+    name: --type
+    required: false
+  - alternate: []
+    help: Use CSV format for SYSLOG destinations.
+    name: --csv
+    required: false
+  - alternate: []
+    help: Use JSON format for SYSLOG destinations.
+    name: --json
+    required: false
+  - alternate:
+      - -s
+    help: Syslog server address.
+    name: --server-address
+    required: false
+  - alternate:
+      - -p
+    help: Syslog server port.
+    name: --server-port
+    required: false
+  - alternate:
+      - -l
+    help: CloudWatch log group.
+    name: --log-group-name
+    required: false
+  - alternate:
+      - -r
+    help: CloudWatch region.
+    name: --region
+    required: false
+  - alternate:
+      - -e
+    help: Enable audit log destination.
+    name: --enable
+    required: false
+  - alternate:
+      - -d
+    help: Disable audit log destination.
+    name: --disable
+    required: false
 permalink: /qq-cli-command-guide/audit/audit_create_destination.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

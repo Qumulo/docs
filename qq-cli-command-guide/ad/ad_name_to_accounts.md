@@ -2,11 +2,11 @@
 category: ad
 command: ad_name_to_accounts
 optional_options:
-- alternate:
-  - --name
-  help: Get account info for this sAMAccountName
-  name: -n
-  required: true
+  - alternate:
+      - --name
+    help: Get account info for this sAMAccountName
+    name: -n
+    required: true
 permalink: /qq-cli-command-guide/ad/ad_name_to_accounts.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

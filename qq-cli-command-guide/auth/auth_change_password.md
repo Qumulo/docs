@@ -2,16 +2,16 @@
 category: auth
 command: auth_change_password
 optional_options:
-- alternate:
-  - --old-password
-  help: Your old password (insecure, visible via ps)
-  name: -o
-  required: false
-- alternate:
-  - --new-password
-  help: Your new password (insecure, visible via ps)
-  name: -p
-  required: false
+  - alternate:
+      - --old-password
+    help: Your old password (insecure, visible via ps)
+    name: -o
+    required: false
+  - alternate:
+      - --new-password
+    help: Your new password (insecure, visible via ps)
+    name: -p
+    required: false
 permalink: /qq-cli-command-guide/auth/auth_change_password.html
 positional_options: []
 redirect_from:

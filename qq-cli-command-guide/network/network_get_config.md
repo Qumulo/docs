@@ -2,11 +2,11 @@
 category: network
 command: network_get_config
 optional_options:
-- alternate:
-  - --output
-  help: The file to which the network config should be written.
-  name: -o
-  required: false
+  - alternate:
+      - --output
+    help: The file to which the network config should be written.
+    name: -o
+    required: false
 permalink: /qq-cli-command-guide/network/network_get_config.html
 positional_options: []
 redirect_from:

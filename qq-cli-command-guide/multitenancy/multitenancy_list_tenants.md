@@ -2,11 +2,11 @@
 category: multitenancy
 command: multitenancy_list_tenants
 optional_options:
-- alternate:
-  - --json
-  help: Output in JSON format
-  name: -j
-  required: false
+  - alternate:
+      - --json
+    help: Output in JSON format
+    name: -j
+    required: false
 permalink: /qq-cli-command-guide/multitenancy/multitenancy_list_tenants.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

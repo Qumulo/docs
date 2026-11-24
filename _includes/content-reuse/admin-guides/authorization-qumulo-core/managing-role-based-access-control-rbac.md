@@ -15,7 +15,7 @@ Qumulo Core includes _built-in roles_ that provide predefined privileges for com
 
 This role is suitable for system administrators. Users with this role have full access to, and control of, the cluster, including:
 
-* Configuration and management of general cluster settings for audit logging, snapshots, replication, quotas, and so on by using the Qumulo Core Web UI, REST API, or `qq` CLI
+* Configuration and management of general cluster settings for audit logging, snapshots, replication, quotas, and so on by using the Qumulo Core Web UI, Qumulo REST API, or `qq` CLI
 * Creation of files and directories in any current and future directories
 * Reading of any files and file attributes and listing of any directories in any current and future directories
 * Deletion or renaming of any files and directories in any current and future directories
@@ -24,16 +24,16 @@ This role is suitable for system administrators. Users with this role have full 
 ### Data-Administrators
 This role is suitable for Qumulo REST API and `qq` CLI users who don't have access to the Qumulo Core Web UI but have the same file privileges as those of the Administrators role, including:
 
-* Read and write permissions for all NFS, SMB, quota, and snapshot REST APIs
-* Read-only permissions for local REST API users
+* Read and write permissions for all NFS, SMB, quota, and snapshot Qumulo REST API endpoints
+* Read-only permissions for local Qumulo REST API users
 * Access to analytics and file system
 
 ### Observers
-This role is suitable for users or groups who can access the Qumulo Core Web UI and read-only REST APIs (with the exception of `DEBUG` REST APIs and authentication settings).
+This role is suitable for users or groups who can access the Qumulo Core Web UI and read-only Qumulo REST API endpoints (with the exception of `DEBUG` Qumulo REST API endpoints and authentication settings).
 
 {{site.data.alerts.note}}
 <ul>
-  <li>Clusters that run Qumulo Core 3.0.5 (and higher) don't assign the Observers role automatically and non-administrative users don't have access to the Qumulo Core Web UI or read-only APIs (unless you explicitly assign the necessary role to specific usernames).</li>
+  <li>Clusters that run Qumulo Core 3.0.5 (and higher) don't assign the Observers role automatically and non-administrative users don't have access to the Qumulo Core Web UI or read-only API endpoints (unless you explicitly assign the necessary role to specific usernames).</li>
   <li>It is possible to assign both Data-Administrators and Observers roles to a single user. This can give the user the ability to manage data on your Qumulo cluster by using the Qumulo Core Web UI without full administrative access.</li>
 </ul>
 {{site.data.alerts.end}}
@@ -56,9 +56,9 @@ This role is suitable for users or groups who can access the Qumulo Core Web UI 
 
 This role is suitable for members of the Qumulo Care Team who access and support your Qumulo cluster. Users with this role have:
 
-* Read permissions for REST API endpoints that control cluster configuration
-* Write permissions (including `DEBUG` REST APIs) for internal debugging features
-* Permissions for REST API endpoints that help debug integration with external services (such as Active Directory, LDAP, and DNS)
+* Read permissions for Qumulo REST API endpoints that control cluster configuration
+* Write permissions (including `DEBUG` Qumulo REST API endpoints) for internal debugging features
+* Permissions for Qumulo REST API endpoints that help debug integration with external services (such as Active Directory, LDAP, and DNS)
 
 
 ## Custom Roles {#custom-roles}

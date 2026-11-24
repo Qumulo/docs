@@ -2,26 +2,26 @@
 category: snapshot
 command: snapshot_file_diff
 optional_options:
-- alternate: []
-  help: Snapshot ID of the newer snapshot
-  name: --newer-snapshot
-  required: true
-- alternate: []
-  help: Snapshot ID of the older snapshot
-  name: --older-snapshot
-  required: true
-- alternate: []
-  help: Path to file
-  name: --path
-  required: false
-- alternate: []
-  help: File ID
-  name: --file-id
-  required: false
-- alternate: []
-  help: Maximum number of entries to return per request
-  name: --page-size
-  required: false
+  - alternate: []
+    help: Snapshot ID of the newer snapshot
+    name: --newer-snapshot
+    required: true
+  - alternate: []
+    help: Snapshot ID of the older snapshot
+    name: --older-snapshot
+    required: true
+  - alternate: []
+    help: Path to file
+    name: --path
+    required: false
+  - alternate: []
+    help: File ID
+    name: --file-id
+    required: false
+  - alternate: []
+    help: Maximum number of entries to return per request
+    name: --page-size
+    required: false
 permalink: /qq-cli-command-guide/snapshot/snapshot_file_diff.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

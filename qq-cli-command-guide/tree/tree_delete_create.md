@@ -2,12 +2,12 @@
 category: tree
 command: tree_delete_create
 optional_options:
-- alternate:
-  - -f
-  help: Bypass path confirmation. WARNING! Tree delete can be canceled with tree_delete_cancel,
-    but already deleted items cannot be recovered.
-  name: --force
-  required: false
+  - alternate:
+      - -f
+    help: Bypass path confirmation. WARNING! Tree delete can be canceled with tree_delete_cancel,
+      but already deleted items cannot be recovered.
+    name: --force
+    required: false
 permalink: /qq-cli-command-guide/tree/tree_delete_create.html
 positional_options:
   - help: Directory id or path

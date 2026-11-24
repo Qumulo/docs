@@ -2,15 +2,15 @@
 category: auth
 command: auth_set_password
 optional_options:
-- alternate: []
-  help: Name or ID of user to modify
-  name: --id
-  required: true
-- alternate:
-  - --password
-  help: The user's new password (insecure, visible via ps)
-  name: -p
-  required: false
+  - alternate: []
+    help: Name or ID of user to modify
+    name: --id
+    required: true
+  - alternate:
+      - --password
+    help: The user's new password (insecure, visible via ps)
+    name: -p
+    required: false
 permalink: /qq-cli-command-guide/auth/auth_set_password.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

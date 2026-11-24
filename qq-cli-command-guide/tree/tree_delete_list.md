@@ -2,10 +2,10 @@
 category: tree
 command: tree_delete_list
 optional_options:
-- alternate: []
-  help: Output JSON instead of table.
-  name: --json
-  required: false
+  - alternate: []
+    help: Output JSON instead of table.
+    name: --json
+    required: false
 permalink: /qq-cli-command-guide/tree/tree_delete_list.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

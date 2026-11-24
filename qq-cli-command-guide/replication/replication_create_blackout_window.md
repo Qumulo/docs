@@ -2,25 +2,26 @@
 category: replication
 command: replication_create_blackout_window
 optional_options:
-- alternate: []
-  help: Unique identifier of the source replication relationship.
-  name: --id
-  required: true
-- alternate: []
-  help: The 24 hour time of day start time for the blackout window (e.g. 15:30). Time
-    is always in the timezone configured on the specified source replication relationship.
-  name: --start-time
-  required: true
-- alternate: []
-  help: The 24 hour time of day end time for the blackout window (e.g. 18:30) -- on
-    the following day if earlier than the --start-time parameter.
-  name: --end-time
-  required: true
-- alternate: []
-  help: Days of the week the window applies to. Comma separated list (e.g. MON,TUE,WED,THU,FRI,SAT,SUN)
-    or ALL.
-  name: --days-of-week
-  required: true
+  - alternate: []
+    help: Unique identifier of the source replication relationship.
+    name: --id
+    required: true
+  - alternate: []
+    help: The 24 hour time of day start time for the blackout window (e.g. 15:30).
+      Time is always in the timezone configured on the specified source replication
+      relationship.
+    name: --start-time
+    required: true
+  - alternate: []
+    help: The 24 hour time of day end time for the blackout window (e.g. 18:30) --
+      on the following day if earlier than the --start-time parameter.
+    name: --end-time
+    required: true
+  - alternate: []
+    help: Days of the week the window applies to. Comma separated list (e.g. MON,TUE,WED,THU,FRI,SAT,SUN)
+      or ALL.
+    name: --days-of-week
+    required: true
 permalink: /qq-cli-command-guide/replication/replication_create_blackout_window.html
 positional_options: []
 redirect_from:

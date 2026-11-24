@@ -2,14 +2,14 @@
 category: s3
 command: s3_get_bucket_policy
 optional_options:
-- alternate: []
-  help: The target bucket for which the access policy will be retrieved
-  name: --bucket
-  required: false
-- alternate: []
-  help: Print an example Policy.
-  name: --example
-  required: false
+  - alternate: []
+    help: The target bucket for which the access policy will be retrieved
+    name: --bucket
+    required: false
+  - alternate: []
+    help: Print an example Policy.
+    name: --example
+    required: false
 permalink: /qq-cli-command-guide/s3/s3_get_bucket_policy.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

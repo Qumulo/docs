@@ -2,14 +2,14 @@
 category: fs
 command: fs_try_resolve_paths
 optional_options:
-- alternate: []
-  help: File IDs to resolve
-  name: --ids
-  required: true
-- alternate: []
-  help: Snapshot ID to read from
-  name: --snapshot
-  required: false
+  - alternate: []
+    help: File IDs to resolve
+    name: --ids
+    required: true
+  - alternate: []
+    help: Snapshot ID to read from
+    name: --snapshot
+    required: false
 permalink: /qq-cli-command-guide/fs/fs_try_resolve_paths.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

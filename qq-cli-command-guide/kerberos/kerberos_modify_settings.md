@@ -2,12 +2,12 @@
 category: kerberos
 command: kerberos_modify_settings
 optional_options:
-- alternate:
-  - --use-alt-security-identities-mapping
-  help: When enabled, map kerberos-authenticated users to LDAP records via the altSecurityIdentities
-    field
-  name: -a
-  required: true
+  - alternate:
+      - --use-alt-security-identities-mapping
+    help: When enabled, map kerberos-authenticated users to LDAP records via the altSecurityIdentities
+      field
+    name: -a
+    required: true
 permalink: /qq-cli-command-guide/kerberos/kerberos_modify_settings.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

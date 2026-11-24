@@ -2,10 +2,10 @@
 category: multitenancy
 command: multitenancy_get_tenant
 optional_options:
-- alternate: []
-  help: The unique ID of the tenant to retrieve.
-  name: --id
-  required: true
+  - alternate: []
+    help: The unique ID of the tenant to retrieve.
+    name: --id
+    required: true
 permalink: /qq-cli-command-guide/multitenancy/multitenancy_get_tenant.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

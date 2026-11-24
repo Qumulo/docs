@@ -189,43 +189,41 @@ methods:
         \ though its data lives in the object. A file from before an upgrade to a\
         \ release with this field counts 0 until the cluster next reconciles it.\"\
         ,\n                      \"type\": \"string\"\n                    }\n   \
-        \               }\n                }\n              }\n            }\n   \
-        \       }\n        }\n      },\n      \"total_capacity\": {\n        \"description\"\
-        : \"total_capacity\",\n        \"type\": \"string\"\n      },\n      \"total_data\"\
-        : {\n        \"description\": \"total_data\",\n        \"type\": \"string\"\
-        \n      },\n      \"total_named_stream_data\": {\n        \"description\"\
-        : \"total_named_stream_data\",\n        \"type\": \"string\"\n      },\n \
-        \     \"total_meta\": {\n        \"description\": \"total_meta\",\n      \
-        \  \"type\": \"string\"\n      },\n      \"total_files\": {\n        \"description\"\
-        : \"total_files\",\n        \"type\": \"string\"\n      },\n      \"total_directories\"\
-        : {\n        \"description\": \"total_directories\",\n        \"type\": \"\
-        string\"\n      },\n      \"total_symlinks\": {\n        \"description\":\
-        \ \"total_symlinks\",\n        \"type\": \"string\"\n      },\n      \"total_other_objects\"\
-        : {\n        \"description\": \"total_other_objects\",\n        \"type\":\
-        \ \"string\"\n      },\n      \"total_named_streams\": {\n        \"description\"\
-        : \"total_named_streams\",\n        \"type\": \"string\"\n      },\n     \
-        \ \"total_external_objects\": {\n        \"description\": \"Count and total\
-        \ size of the external objects that back the directory and all its children,\
-        \ by tier class. Null when nothing is backed by an external object.\",\n \
-        \       \"type\": \"object\",\n        \"properties\": {\n          \"online_hot\"\
-        : {\n            \"description\": \"online_hot\",\n            \"type\": \"\
-        object\",\n            \"properties\": {\n              \"num_objects\": {\n\
-        \                \"description\": \"Total number of external objects in this\
-        \ tier\",\n                \"type\": \"string\"\n              },\n      \
-        \        \"bytes\": {\n                \"description\": \"Total size of the\
-        \ external objects in this tier, in bytes\",\n                \"type\": \"\
-        string\"\n              },\n              \"unfilled_bytes\": {\n        \
-        \        \"description\": \"The part of bytes that the files hold no blocks\
-        \ for, since no read or export has filled it yet, by copying or mapping it,\
-        \ so their capacity doesn't count it. Bytes a file has truncated away or punched\
-        \ out aren't read, so they don't count. A range a file maps to its external\
-        \ object, by a read or an export, counts in capacity instead, though its data\
-        \ lives in the object. A file from before an upgrade to a release with this\
-        \ field counts 0 until the cluster next reconciles it.\",\n              \
-        \  \"type\": \"string\"\n              }\n            }\n          },\n  \
-        \        \"online_cold\": {\n            \"description\": \"online_cold\"\
-        ,\n            \"type\": \"object\",\n            \"properties\": {\n    \
-        \          \"num_objects\": {\n                \"description\": \"Total number\
+        \               }\n                }\n              }\n            },\n  \
+        \          \"bridge_listing\": {\n              \"type\": \"string\",\n  \
+        \            \"enum\": [\n                \"NOT_LISTED\",\n              \
+        \  \"LISTING\",\n                \"LISTED\"\n              ],\n          \
+        \    \"description\": \"[preview] Whether this directory's own entries have\
+        \ been listed from the bucket of the object bridge it is on. Each directory\
+        \ under it reports its own, so LISTED doesn't mean the totals under it are\
+        \ complete. Null for anything that isn't a directory on an object bridge.:\\\
+        n * `LISTED` - The directory's entries have been listed from its bucket, or\
+        \ placed by a full import that finished,\\n * `LISTING` - A listing of the\
+        \ directory from its bucket, or a full import placing its entries, is underway,\
+        \ so its counts may leave out part of what the bucket holds under it,\\n *\
+        \ `NOT_LISTED` - The directory's entries haven't been listed from its bucket\
+        \ yet, so its counts may leave out what the bucket holds under it\"\n    \
+        \        }\n          }\n        }\n      },\n      \"total_capacity\": {\n\
+        \        \"description\": \"total_capacity\",\n        \"type\": \"string\"\
+        \n      },\n      \"total_data\": {\n        \"description\": \"total_data\"\
+        ,\n        \"type\": \"string\"\n      },\n      \"total_named_stream_data\"\
+        : {\n        \"description\": \"total_named_stream_data\",\n        \"type\"\
+        : \"string\"\n      },\n      \"total_meta\": {\n        \"description\":\
+        \ \"total_meta\",\n        \"type\": \"string\"\n      },\n      \"total_files\"\
+        : {\n        \"description\": \"total_files\",\n        \"type\": \"string\"\
+        \n      },\n      \"total_directories\": {\n        \"description\": \"total_directories\"\
+        ,\n        \"type\": \"string\"\n      },\n      \"total_symlinks\": {\n \
+        \       \"description\": \"total_symlinks\",\n        \"type\": \"string\"\
+        \n      },\n      \"total_other_objects\": {\n        \"description\": \"\
+        total_other_objects\",\n        \"type\": \"string\"\n      },\n      \"total_named_streams\"\
+        : {\n        \"description\": \"total_named_streams\",\n        \"type\":\
+        \ \"string\"\n      },\n      \"total_external_objects\": {\n        \"description\"\
+        : \"Count and total size of the external objects that back the directory and\
+        \ all its children, by tier class. Null when nothing is backed by an external\
+        \ object.\",\n        \"type\": \"object\",\n        \"properties\": {\n \
+        \         \"online_hot\": {\n            \"description\": \"online_hot\",\n\
+        \            \"type\": \"object\",\n            \"properties\": {\n      \
+        \        \"num_objects\": {\n                \"description\": \"Total number\
         \ of external objects in this tier\",\n                \"type\": \"string\"\
         \n              },\n              \"bytes\": {\n                \"description\"\
         : \"Total size of the external objects in this tier, in bytes\",\n       \
@@ -238,8 +236,8 @@ methods:
         \ though its data lives in the object. A file from before an upgrade to a\
         \ release with this field counts 0 until the cluster next reconciles it.\"\
         ,\n                \"type\": \"string\"\n              }\n            }\n\
-        \          },\n          \"auto_online\": {\n            \"description\":\
-        \ \"auto_online\",\n            \"type\": \"object\",\n            \"properties\"\
+        \          },\n          \"online_cold\": {\n            \"description\":\
+        \ \"online_cold\",\n            \"type\": \"object\",\n            \"properties\"\
         : {\n              \"num_objects\": {\n                \"description\": \"\
         Total number of external objects in this tier\",\n                \"type\"\
         : \"string\"\n              },\n              \"bytes\": {\n             \
@@ -253,24 +251,9 @@ methods:
         \ export, counts in capacity instead, though its data lives in the object.\
         \ A file from before an upgrade to a release with this field counts 0 until\
         \ the cluster next reconciles it.\",\n                \"type\": \"string\"\
-        \n              }\n            }\n          },\n          \"archive\": {\n\
-        \            \"description\": \"archive\",\n            \"type\": \"object\"\
-        ,\n            \"properties\": {\n              \"num_objects\": {\n     \
-        \           \"description\": \"Total number of external objects in this tier\"\
-        ,\n                \"type\": \"string\"\n              },\n              \"\
-        bytes\": {\n                \"description\": \"Total size of the external\
-        \ objects in this tier, in bytes\",\n                \"type\": \"string\"\n\
-        \              },\n              \"unfilled_bytes\": {\n                \"\
-        description\": \"The part of bytes that the files hold no blocks for, since\
-        \ no read or export has filled it yet, by copying or mapping it, so their\
-        \ capacity doesn't count it. Bytes a file has truncated away or punched out\
-        \ aren't read, so they don't count. A range a file maps to its external object,\
-        \ by a read or an export, counts in capacity instead, though its data lives\
-        \ in the object. A file from before an upgrade to a release with this field\
-        \ counts 0 until the cluster next reconciles it.\",\n                \"type\"\
-        : \"string\"\n              }\n            }\n          },\n          \"deep_archive\"\
-        : {\n            \"description\": \"deep_archive\",\n            \"type\"\
-        : \"object\",\n            \"properties\": {\n              \"num_objects\"\
+        \n              }\n            }\n          },\n          \"auto_online\"\
+        : {\n            \"description\": \"auto_online\",\n            \"type\":\
+        \ \"object\",\n            \"properties\": {\n              \"num_objects\"\
         : {\n                \"description\": \"Total number of external objects in\
         \ this tier\",\n                \"type\": \"string\"\n              },\n \
         \             \"bytes\": {\n                \"description\": \"Total size\
@@ -284,7 +267,7 @@ methods:
         \ lives in the object. A file from before an upgrade to a release with this\
         \ field counts 0 until the cluster next reconciles it.\",\n              \
         \  \"type\": \"string\"\n              }\n            }\n          },\n  \
-        \        \"unknown\": {\n            \"description\": \"unknown\",\n     \
+        \        \"archive\": {\n            \"description\": \"archive\",\n     \
         \       \"type\": \"object\",\n            \"properties\": {\n           \
         \   \"num_objects\": {\n                \"description\": \"Total number of\
         \ external objects in this tier\",\n                \"type\": \"string\"\n\
@@ -299,7 +282,50 @@ methods:
         \ though its data lives in the object. A file from before an upgrade to a\
         \ release with this field counts 0 until the cluster next reconciles it.\"\
         ,\n                \"type\": \"string\"\n              }\n            }\n\
-        \          }\n        }\n      }\n    }\n  }\n}"
+        \          },\n          \"deep_archive\": {\n            \"description\"\
+        : \"deep_archive\",\n            \"type\": \"object\",\n            \"properties\"\
+        : {\n              \"num_objects\": {\n                \"description\": \"\
+        Total number of external objects in this tier\",\n                \"type\"\
+        : \"string\"\n              },\n              \"bytes\": {\n             \
+        \   \"description\": \"Total size of the external objects in this tier, in\
+        \ bytes\",\n                \"type\": \"string\"\n              },\n     \
+        \         \"unfilled_bytes\": {\n                \"description\": \"The part\
+        \ of bytes that the files hold no blocks for, since no read or export has\
+        \ filled it yet, by copying or mapping it, so their capacity doesn't count\
+        \ it. Bytes a file has truncated away or punched out aren't read, so they\
+        \ don't count. A range a file maps to its external object, by a read or an\
+        \ export, counts in capacity instead, though its data lives in the object.\
+        \ A file from before an upgrade to a release with this field counts 0 until\
+        \ the cluster next reconciles it.\",\n                \"type\": \"string\"\
+        \n              }\n            }\n          },\n          \"unknown\": {\n\
+        \            \"description\": \"unknown\",\n            \"type\": \"object\"\
+        ,\n            \"properties\": {\n              \"num_objects\": {\n     \
+        \           \"description\": \"Total number of external objects in this tier\"\
+        ,\n                \"type\": \"string\"\n              },\n              \"\
+        bytes\": {\n                \"description\": \"Total size of the external\
+        \ objects in this tier, in bytes\",\n                \"type\": \"string\"\n\
+        \              },\n              \"unfilled_bytes\": {\n                \"\
+        description\": \"The part of bytes that the files hold no blocks for, since\
+        \ no read or export has filled it yet, by copying or mapping it, so their\
+        \ capacity doesn't count it. Bytes a file has truncated away or punched out\
+        \ aren't read, so they don't count. A range a file maps to its external object,\
+        \ by a read or an export, counts in capacity instead, though its data lives\
+        \ in the object. A file from before an upgrade to a release with this field\
+        \ counts 0 until the cluster next reconciles it.\",\n                \"type\"\
+        : \"string\"\n              }\n            }\n          }\n        }\n   \
+        \   },\n      \"bridge_listing\": {\n        \"type\": \"string\",\n     \
+        \   \"enum\": [\n          \"NOT_LISTED\",\n          \"LISTING\",\n     \
+        \     \"LISTED\"\n        ],\n        \"description\": \"[preview] Whether\
+        \ this directory's own entries have been listed from the bucket of the object\
+        \ bridge it is on. Each directory under it reports its own, so LISTED doesn't\
+        \ mean the totals under it are complete. Null for anything that isn't a directory\
+        \ on an object bridge.:\\n * `LISTED` - The directory's entries have been\
+        \ listed from its bucket, or placed by a full import that finished,\\n * `LISTING`\
+        \ - A listing of the directory from its bucket, or a full import placing its\
+        \ entries, is underway, so its counts may leave out part of what the bucket\
+        \ holds under it,\\n * `NOT_LISTED` - The directory's entries haven't been\
+        \ listed from its bucket yet, so its counts may leave out what the bucket\
+        \ holds under it\"\n      }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success

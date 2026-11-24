@@ -2,28 +2,28 @@
 category: portal
 command: portal_delete_hub
 optional_options:
-- alternate:
-  - --id
-  help: Hub portal ID
-  name: -i
-  required: true
-- alternate:
-  - --json
-  help: Pretty-print JSON
-  name: -j
-  required: false
-- alternate:
-  - --no-paths
-  help: Show the file IDs of portal roots instead of their paths.
-  name: -n
-  required: false
-- alternate: []
-  help: 'Force the deletion of the hub portal. Caution: This operation deletes all
-    data from the spoke portal, including any new and modified data on the spoke that
-    has not yet synchronized with the hub portal. Data under the hub portal root directory
-    is not affected.'
-  name: --force
-  required: false
+  - alternate:
+      - --id
+    help: Hub portal ID
+    name: -i
+    required: true
+  - alternate:
+      - --json
+    help: Pretty-print JSON
+    name: -j
+    required: false
+  - alternate:
+      - --no-paths
+    help: Show the file IDs of portal roots instead of their paths.
+    name: -n
+    required: false
+  - alternate: []
+    help: 'Force the deletion of the hub portal. Caution: This operation deletes all
+      data from the spoke portal, including any new and modified data on the spoke
+      that has not yet synchronized with the hub portal. Data under the hub portal
+      root directory is not affected.'
+    name: --force
+    required: false
 permalink: /qq-cli-command-guide/portal/portal_delete_hub.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

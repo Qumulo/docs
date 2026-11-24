@@ -2,18 +2,18 @@
 category: fs
 command: fs_modify_acl
 optional_options:
-- alternate: []
-  help: File path
-  name: --path
-  required: false
-- alternate: []
-  help: File ID
-  name: --id
-  required: false
-- alternate: []
-  help: Print the raw JSON response.
-  name: --json
-  required: false
+  - alternate: []
+    help: File path
+    name: --path
+    required: false
+  - alternate: []
+    help: File ID
+    name: --id
+    required: false
+  - alternate: []
+    help: Print the raw JSON response.
+    name: --json
+    required: false
 permalink: /qq-cli-command-guide/fs/fs_modify_acl.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar

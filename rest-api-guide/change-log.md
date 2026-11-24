@@ -16,6 +16,278 @@ div#toc {
 {% capture noAPIchanges %}This release contains no REST API changes.{% endcapture %}
 
 
+## 7.11 Releases
+
+### Qumulo Core 7.11.0 (Quarterly)
+{{ nexusLink }}
+<ul>
+  <li>Added support for <code>GET /v1/files/{ref}/entries/{name}</code></li>
+  <li>Added <code>bridge_listing</code> parameter to <code>GET /v1/files/{ref}/aggregates/</code> response</li>
+  <li>
+    Modified <code>PATCH /v1/files/{ref}/data</code>:
+      <ul>
+        <li>Added parameters to <code>PATCH /v1/files/{ref}/data</code> response:
+          <ul>
+            <li><code>file_revision</code></li>
+            <li><code>restore_expires_at</code></li>
+          </ul></li>
+        <li>Added <code>RESTORED</code> enum value to <code>status</code> field in <code>PATCH /v1/files/{ref}/data</code> response</li>
+      </ul>
+  </li>
+</ul>
+<details>
+  <summary>Click to expand</summary>
+  <ul>
+    <li>
+      Modified <code>PUT /v1/files/{ref}/data</code>:
+      <ul>
+        <li>Added parameters to <code>PUT /v1/files/{ref}/data</code> response:
+          <ul>
+            <li><code>file_revision</code></li>
+            <li><code>restore_expires_at</code></li>
+          </ul></li>
+        <li>Added <code>RESTORED</code> enum value to <code>status</code> field in <code>PUT /v1/files/{ref}/data</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>GET /v1/files/{ref}/entries/</code>:
+      <ul>
+        <li>Added parameters to <code>GET /v1/files/{ref}/entries/</code> response:
+          <ul>
+            <li><code>file_revision</code></li>
+            <li><code>restore_expires_at</code></li>
+          </ul></li>
+        <li>Added <code>RESTORED</code> enum value to <code>status</code> field in <code>GET /v1/files/{ref}/entries/</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>POST /v1/files/{ref}/entries/</code>:
+      <ul>
+        <li>Added <code>verifier</code> parameter to <code>POST /v1/files/{ref}/entries/</code> request body</li>
+        <li>Added parameters to <code>POST /v1/files/{ref}/entries/</code> response:
+          <ul>
+            <li><code>file_revision</code></li>
+            <li><code>restore_expires_at</code></li>
+          </ul></li>
+        <li>Added <code>RESTORED</code> enum value to <code>status</code> field in <code>POST /v1/files/{ref}/entries/</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>PATCH /v1/files/{ref}/file-lock</code>:
+      <ul>
+        <li>Added parameters to <code>PATCH /v1/files/{ref}/file-lock</code> response:
+          <ul>
+            <li><code>file_revision</code></li>
+            <li><code>restore_expires_at</code></li>
+          </ul></li>
+        <li>Added <code>RESTORED</code> enum value to <code>status</code> field in <code>PATCH /v1/files/{ref}/file-lock</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>GET /v1/files/{ref}/info/attributes</code>:
+      <ul>
+        <li>Added parameters to <code>GET /v1/files/{ref}/info/attributes</code> response:
+          <ul>
+            <li><code>file_revision</code></li>
+            <li><code>restore_expires_at</code></li>
+          </ul></li>
+        <li>Added <code>RESTORED</code> enum value to <code>status</code> field in <code>GET /v1/files/{ref}/info/attributes</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>PATCH /v1/files/{ref}/info/attributes</code>:
+      <ul>
+        <li>Added parameters to <code>PATCH /v1/files/{ref}/info/attributes</code> response:
+          <ul>
+            <li><code>file_revision</code></li>
+            <li><code>restore_expires_at</code></li>
+          </ul></li>
+        <li>Added <code>RESTORED</code> enum value to <code>status</code> field in <code>PATCH /v1/files/{ref}/info/attributes</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>POST /v1/files/{ref}/punch-hole</code>:
+      <ul>
+        <li>Added parameters to <code>POST /v1/files/{ref}/punch-hole</code> response:
+          <ul>
+            <li><code>file_revision</code></li>
+            <li><code>restore_expires_at</code></li>
+          </ul></li>
+        <li>Added <code>RESTORED</code> enum value to <code>status</code> field in <code>POST /v1/files/{ref}/punch-hole</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>bridge_listing</code> parameter to <code>GET /v1/files/{ref}/recursive-aggregates/</code> response</li>
+    <li>Added <code>bridge_listing</code> parameter to <code>GET /v1/files/{ref}/sample/</code> response</li>
+    <li>
+      Added parameters to <code>GET /v1/frozen/bridges/</code> response:
+          <ul>
+            <li><code>archive_class</code></li>
+            <li><code>provider</code></li>
+            <li><code>restore_days_max</code></li>
+          </ul>
+    </li>
+    <li>
+      Modified <code>POST /v1/frozen/bridges/</code>:
+      <ul>
+        <li>Added parameters to <code>POST /v1/frozen/bridges/</code> request body:
+          <ul>
+            <li><code>archive_class</code></li>
+            <li><code>bucket_uri</code></li>
+            <li><code>notification_queue_url</code></li>
+          </ul></li>
+        <li>Added parameters to <code>POST /v1/frozen/bridges/</code> <code>201</code> response:
+          <ul>
+            <li><code>archive_class</code></li>
+            <li><code>provider</code></li>
+            <li><code>restore_days_max</code></li>
+          </ul></li>
+      </ul>
+    </li>
+    <li>
+      Added parameters to <code>GET /v1/frozen/bridges/{filesystem_uuid}</code> response:
+          <ul>
+            <li><code>archive_class</code></li>
+            <li><code>provider</code></li>
+            <li><code>restore_days_max</code></li>
+          </ul>
+    </li>
+    <li>
+      Modified <code>GET /v1/frozen/bridges/{filesystem_uuid}/jobs/</code>:
+      <ul>
+        <li>Added parameters to <code>GET /v1/frozen/bridges/{filesystem_uuid}/jobs/</code> response:
+          <ul>
+            <li><code>copies_readable_until</code></li>
+            <li><code>failure_reason</code></li>
+            <li><code>key_holds_online_object</code></li>
+            <li><code>restore_days</code></li>
+          </ul></li>
+        <li>Added <code>LOW</code> enum value to <code>priority</code> field in <code>GET /v1/frozen/bridges/{filesystem_uuid}/jobs/</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>POST /v1/frozen/bridges/{filesystem_uuid}/jobs/</code>:
+      <ul>
+        <li>Added <code>restore_days</code> parameter to <code>POST /v1/frozen/bridges/{filesystem_uuid}/jobs/</code> request body</li>
+        <li>Added <code>LOW</code> enum value to <code>priority</code> field in <code>POST /v1/frozen/bridges/{filesystem_uuid}/jobs/</code> request body</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>GET /v1/frozen/bridges/{filesystem_uuid}/jobs/{id}</code>:
+      <ul>
+        <li>Added parameters to <code>GET /v1/frozen/bridges/{filesystem_uuid}/jobs/{id}</code> response:
+          <ul>
+            <li><code>copies_readable_until</code></li>
+            <li><code>failure_reason</code></li>
+            <li><code>key_holds_online_object</code></li>
+            <li><code>restore_days</code></li>
+          </ul></li>
+        <li>Added <code>LOW</code> enum value to <code>priority</code> field in <code>GET /v1/frozen/bridges/{filesystem_uuid}/jobs/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>POST /v1/frozen/bridges/{filesystem_uuid}/jobs/{id}/cancel</code>:
+      <ul>
+        <li>Added parameters to <code>POST /v1/frozen/bridges/{filesystem_uuid}/jobs/{id}/cancel</code> response:
+          <ul>
+            <li><code>copies_readable_until</code></li>
+            <li><code>failure_reason</code></li>
+            <li><code>key_holds_online_object</code></li>
+            <li><code>restore_days</code></li>
+          </ul></li>
+        <li>Added <code>LOW</code> enum value to <code>priority</code> field in <code>POST /v1/frozen/bridges/{filesystem_uuid}/jobs/{id}/cancel</code> response</li>
+      </ul>
+    </li>
+    <li>Removed <code>If-Match</code> parameter from <code>PUT /v1/s3/buckets/{name}/policy</code> parameters</li>
+    <li>Added <code>credential</code> parameter to <code>GET /v1/smb/sessions/</code> response</li>
+    <li>Added <code>credential</code> parameter to <code>POST /v1/smb/sessions/close</code> request body</li>
+    <li>
+      Added parameters to <code>PATCH /v2/audit/destinations/{id}</code> request body:
+          <ul>
+            <li><code>log_format</code></li>
+            <li><code>log_group_name</code></li>
+            <li><code>name</code></li>
+            <li><code>region</code></li>
+            <li><code>server_address</code></li>
+            <li><code>server_port</code></li>
+            <li><code>type</code></li>
+          </ul>
+    </li>
+    <li>Added <code>require_tls</code> parameter to <code>GET /v2/nfs/exports/</code> response</li>
+    <li>
+      Modified <code>POST /v2/nfs/exports/</code>:
+      <ul>
+        <li>Added <code>require_tls</code> parameter to <code>POST /v2/nfs/exports/</code> request body</li>
+        <li>Added <code>require_tls</code> parameter to <code>POST /v2/nfs/exports/</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>require_tls</code> parameter to <code>GET /v2/nfs/exports/{ref}</code> response</li>
+    <li>
+      Modified <code>PATCH /v2/nfs/exports/{ref}</code>:
+      <ul>
+        <li>Added <code>require_tls</code> parameter to <code>PATCH /v2/nfs/exports/{ref}</code> request body</li>
+        <li>Added <code>require_tls</code> parameter to <code>PATCH /v2/nfs/exports/{ref}</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>PUT /v2/nfs/exports/{ref}</code>:
+      <ul>
+        <li>Added <code>require_tls</code> parameter to <code>PUT /v2/nfs/exports/{ref}</code> request body</li>
+        <li>Added <code>require_tls</code> parameter to <code>PUT /v2/nfs/exports/{ref}</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>SUSPENDING</code> enum value to <code>state</code> field in <code>GET /v2/portal/hubs/</code> response</li>
+    <li>Added <code>SUSPENDING</code> enum value to <code>state</code> field in <code>DELETE /v2/portal/hubs/{id}</code> <code>202</code> response</li>
+    <li>Added <code>SUSPENDING</code> enum value to <code>state</code> field in <code>GET /v2/portal/hubs/{id}</code> response</li>
+    <li>
+      Modified <code>PATCH /v2/portal/hubs/{id}</code>:
+      <ul>
+        <li>Added <code>SUSPENDING</code> enum value to <code>state</code> field in <code>PATCH /v2/portal/hubs/{id}</code> request body</li>
+        <li>Added <code>SUSPENDING</code> enum value to <code>state</code> field in <code>PATCH /v2/portal/hubs/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>SUSPENDING</code> enum value to <code>state</code> field in <code>POST /v2/portal/hubs/{id}/accept</code> response</li>
+    <li>Added <code>SUSPENDING</code> enum value to <code>state</code> field in <code>DELETE /v2/portal/hubs/{id}/roots/{dir}</code> response</li>
+    <li>Added <code>SUSPENDING</code> enum value to <code>state</code> field in <code>POST /v2/portal/hubs/{id}/roots/{dir}</code> response</li>
+    <li>Added <code>SUSPENDING</code> enum value to <code>state</code> field in <code>GET /v2/portal/spokes/</code> response</li>
+    <li>Added <code>SUSPENDING</code> enum value to <code>state</code> field in <code>POST /v2/portal/spokes/</code> response</li>
+    <li>Added <code>SUSPENDING</code> enum value to <code>state</code> field in <code>DELETE /v2/portal/spokes/{id}</code> <code>202</code> response</li>
+    <li>Added <code>SUSPENDING</code> enum value to <code>state</code> field in <code>GET /v2/portal/spokes/{id}</code> response</li>
+    <li>
+      Modified <code>PATCH /v2/portal/spokes/{id}</code>:
+      <ul>
+        <li>Added <code>SUSPENDING</code> enum value to <code>state</code> field in <code>PATCH /v2/portal/spokes/{id}</code> request body</li>
+        <li>Added <code>SUSPENDING</code> enum value to <code>state</code> field in <code>PATCH /v2/portal/spokes/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>SUSPENDING</code> enum value to <code>state</code> field in <code>POST /v2/portal/spokes/{id}/roots/</code> response</li>
+    <li>Added <code>SUSPENDING</code> enum value to <code>state</code> field in <code>DELETE /v2/portal/spokes/{id}/roots/{dir}</code> response</li>
+    <li>Added <code>require_tls</code> parameter to <code>GET /v3/nfs/exports/</code> response</li>
+    <li>
+      Modified <code>POST /v3/nfs/exports/</code>:
+      <ul>
+        <li>Added <code>require_tls</code> parameter to <code>POST /v3/nfs/exports/</code> request body</li>
+        <li>Added <code>require_tls</code> parameter to <code>POST /v3/nfs/exports/</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>require_tls</code> parameter to <code>GET /v3/nfs/exports/{export_id}</code> response</li>
+    <li>
+      Modified <code>PATCH /v3/nfs/exports/{export_id}</code>:
+      <ul>
+        <li>Added <code>require_tls</code> parameter to <code>PATCH /v3/nfs/exports/{export_id}</code> request body</li>
+        <li>Added <code>require_tls</code> parameter to <code>PATCH /v3/nfs/exports/{export_id}</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>PUT /v3/nfs/exports/{export_id}</code>:
+      <ul>
+        <li>Added <code>require_tls</code> parameter to <code>PUT /v3/nfs/exports/{export_id}</code> request body</li>
+        <li>Added <code>require_tls</code> parameter to <code>PUT /v3/nfs/exports/{export_id}</code> response</li>
+      </ul>
+    </li>
+  </ul>
+</details>
+
+
 ## 7.10 Releases
 
 ### Qumulo Core 7.10.3.2
