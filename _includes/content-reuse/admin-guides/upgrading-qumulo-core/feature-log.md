@@ -18,7 +18,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 ## 7.11 Releases
 
-### Qumulo Core 7.11.0
+### Qumulo Core 7.11.0 (Quarterly)
 {{ nexusLink }}
 
 #### Features and Improvements
