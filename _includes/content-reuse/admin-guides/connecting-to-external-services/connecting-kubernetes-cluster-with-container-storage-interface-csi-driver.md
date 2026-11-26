@@ -20,7 +20,7 @@ The Qumulo CSI Driver supports:
 
   * `ReadWriteOncePod`
 
-    {% include note.html content="The `ReadWriteOncePod` access mode requires Kubernetes 1.27 (and higher). Earlier Kubernetes versions reject this access mode when you create a Persistent Volume Claim." %}
+    {% include note.html content="The `ReadWriteOncePod` access mode requires Kubernetes 1.27 (or higher). Earlier Kubernetes versions reject this access mode when you create a Persistent Volume Claim." %}
 
 * NFSv4.1
 
@@ -35,7 +35,7 @@ The Qumulo CSI Driver supports:
 ## Requirements
 * A Qumulo cluster
  
-* Kubernetes 1.22 (and higher)
+* Kubernetes 1.22 (or higher)
 
 
 ## Connecting Your Qumulo Cluster to Kubernetes

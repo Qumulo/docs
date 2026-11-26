@@ -54,13 +54,13 @@ We recommend the following system requirements for Qumulo Broker.
 ### Prerequisites
 Deploying [Qumulo Broker](https://github.com/Qumulo/QumuloBroker) requires:
 
-* Qumulo Core 6.0.2 (and higher)
+* Qumulo Core 6.0.2 (or higher)
 
 * `git`
 
-* `docker` 23.0.1 (and higher)
+* `docker` 23.0.1 (or higher)
 
-* `rsyslog` 8.2001 (and higher)
+* `rsyslog` 8.2001 (or higher)
 
 ### Firewall Definitions
 In addition to the Varonis firewall requirements, you must also define the following firewall rules for Qumulo Broker connections.

@@ -38,7 +38,7 @@ When defensive snapshots are enabled, NeuralProtect creates snapshots at the roo
 ## Notes 
 * NeuralProtect is supported only with clusters [connected to Qumulo Nexus](../monitoring-and-metrics/enabling-nexus-remote-support-and-remote-management.html).
 
-* NeuralProtect uses the [audit log](/azure-native-administrator-guide/monitoring-and-metrics/how-audit-logging-works.html) to be notified of write operations. With QFSD 7.9.0 and later, multiple audit destinations are supported, so NeuralProtect can be combined with other uses of the audit function. For earlier QFSD versions, NeuralProtect cannot be combined with other audit log destinations.
+* NeuralProtect uses the [audit log](/azure-native-administrator-guide/monitoring-and-metrics/how-audit-logging-works.html) to be notified of write operations. In Qumulo Core 7.9.0.5 (and higher), multiple audit destinations are supported, so NeuralProtect can be combined with other uses of the audit function. For earlier QFSD versions, NeuralProtect cannot be combined with other audit log destinations.
 
 * Removing the NeuralProtect's audit log configuration will disable protection.
 

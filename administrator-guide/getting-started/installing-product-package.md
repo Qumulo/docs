@@ -126,7 +126,7 @@ Before configuring your host operating system (OS) for installing the Qumulo Cor
 <details>
 <summary>Click to expand</summary>
 <ul>
-  <li>To ensure that you have the features that the Qumulo Core Product Package requires, update the 5.10 kernel that Debian 11 ships with to a newer kernel, such as 6.1.0 (and higher). For more information, see <a target="_blank" href="https://wiki.debian.org/HowToUpgradeKernel">How to Upgrade the Linux Kernel</a> in the Debian documentation.</li>
+  <li>To ensure that you have the features that the Qumulo Core Product Package requires, update the 5.10 kernel that Debian 11 ships with to a newer kernel, such as 6.1.0 (or higher). For more information, see <a target="_blank" href="https://wiki.debian.org/HowToUpgradeKernel">How to Upgrade the Linux Kernel</a> in the Debian documentation.</li>
 </ul>  
 </details>
 

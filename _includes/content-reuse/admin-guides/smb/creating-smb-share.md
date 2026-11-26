@@ -25,7 +25,7 @@
   
    1. To display only the files and directories to which the user has read access, click **Enable access-based enumeration**.
 
-   1. To force users to connect over SMB3 (and higher) by using encryption-enabled clients, click **Require encryption**.
+   1. To force users to connect over SMB3 (or higher) by using encryption-enabled clients, click **Require encryption**.
   
    1. Under **Share Permissions**, enter trustees and specify their:
         

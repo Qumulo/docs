@@ -16,7 +16,7 @@ This section explains how to deploy and configure NeuralProtect for an Azure Nat
 
 * An ANQ cluster to protect and associated with Qumulo Nexus
 
-* For QFSD versions earlier than 7.9.0, the audit log feature is not in use on the cluster
+* For Qumulo Core versions lower than 7.9.0.5, the audit log feature is not in use on the cluster
 
   {% include note.html content="NeuralProtect uses the audit log configuration for threat detection. With QFSD 7.9.0 and later, multiple audit destinations are supported, so NeuralProtect can be combined with other uses of the audit function. For earlier QFSD versions, NeuralProtect can't share the audit log configuration with any other audit log destination. Replacing the audit log configuration disables protection." %}
 
