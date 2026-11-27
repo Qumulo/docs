@@ -2729,7 +2729,7 @@ $(document).ready(function() {
    
      
      <h2 id="how-host-access-rules-for-nfs-exports-work-in-qumulo-core">How Host Access Rules for NFS Exports Work in Qumulo Core</h2>
-<p>This section explains the two types of host access rules for NFS exports.</p>
+<p>This section explains the three types of host access rules for NFS exports.</p>
 
 <h3 id="restricting-access-by-ip-address-or-hostname">Restricting Access by IP Address or Hostname</h3>
 <p id="host-access-rule">In Qumulo Core 6.2.0.1 (and higher), you can add a host access rule to an NFS export to restrict the export by IP address or hostname.</p>
@@ -2797,6 +2797,15 @@ $(document).ready(function() {
   </li>
 </ul>
 
+<h3 id="require-tls">Restricting Access by the NFS Client’s TLS Connectivity</h3>
+<div class="alert alert-danger" role="alert">
+<span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br> If you set <strong>Require TLS</strong> on a host access rule that matches clients that still mount the export in plaintext, their mounts fail at the next NFS call, and the clients lose any writes that they have cached but not yet sent to the cluster. On NFSv4.1, a client with files open at that moment can’t close or unlock them on the cluster. Their opens and byte-range locks remain on the cluster until the client unmounts the export or restarts, and until then, other clients can’t lock those byte ranges. To avoid losing data, move your clients to NFS over TLS before you require it.
+</div>
+
+<p>In Qumulo Core 7.11.0 (and higher), you can require the hosts that a host access rule matches to use NFS over TLS for an NFS export. When a rule has <strong>Require TLS</strong> set, Qumulo Core refuses NFS calls that arrive in plaintext from the hosts that the rule matches, and it serves the same calls when they arrive over TLS. For more information about configuring your cluster and your clients for NFS over TLS, see <a href="nfs-over-tls-enabling-using.html">Enabling and Using NFS over TLS in Qumulo Core</a>.</p>
+
+<p><strong>Require TLS</strong> is a separate setting from the other settings of a rule, such as <strong>Read-only</strong> and <strong>Required Authentication Mode</strong>, and a rule can require both TLS and a Kerberos security flavor. Qumulo Core applies only the first rule whose hosts match a client, so <strong>Require TLS</strong> affects a client only when that rule has it set. When that rule refuses a plaintext client, Qumulo Core doesn’t try the rules below it.</p>
+
 <h2 id="prerequisites">Prerequisites</h2>
 <p>To be able to use hostnames, you must:</p>
 
@@ -2840,6 +2849,11 @@ $(document).ready(function() {
       </li>
       <li>
         <p>(Optional) To ensure that the allowed hosts have limited access to the NFS export, click <strong>Read-only</strong>.</p>
+      </li>
+      <li>
+        <p>(Optional) To require the allowed hosts to use NFS over TLS, click <strong>Require TLS</strong>.</p>
+
+        <p>For more information, see <a href="#require-tls">Restricting Access by the NFS Client’s TLS Connectivity</a>.</p>
       </li>
       <li>
         <p>(Optional) Select the <strong>Required Authentication Mode</strong>.</p>
@@ -2922,6 +2936,116 @@ $(document).ready(function() {
 </span></code></pre></div>    </div>
   </li>
 </ol>
+
+<h3 id="to-add-an-nfs-over-tls-host-access-rule-by-using-the-qumulo-core-web-ui">To Add an NFS over TLS Host Access Rule by Using the Qumulo Core Web UI</h3>
+
+<ol>
+  <li>
+    <p>Log in to the Qumulo Core Web UI.</p>
+  </li>
+  <li>
+    <p>Click <strong>Sharing &gt; NFS Exports</strong>.</p>
+  </li>
+  <li>
+    <p>For an NFS export, in the <strong>Actions</strong> column, click <img class="inline" src="/images/shared-images/admin-guides/edit.png" alt="Edit" style="max-width: 40px">
+.</p>
+  </li>
+  <li>
+    <p>On the <strong>NFS Export</strong> page, in the <strong>Host Access Rules</strong> section, for each rule whose hosts must use NFS over TLS, click <strong>Require TLS</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<p>On the <strong>NFS Exports</strong> page, the <strong>Require TLS</strong> column shows which exports require TLS.</p>
+
+<h3 id="to-add-an-nfs-over-tls-host-access-rule-by-using-the-qq-cli">To Add an NFS over TLS Host Access Rule by Using the qq CLI</h3>
+<div class="alert alert-warning" role="alert">
+<em class="fa fa-warning"></em> <strong>Important</strong><br>   <ul>
+    <li>When you replace all of an export's host access rules by using the <code class="language-plaintext highlighter-rouge">--restrictions</code> flag of the <a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_export.html"><code class="language-plaintext highlighter-rouge">qq nfs_modify_export</code></a> command or the <a href="https://docs.qumulo.com/rest-api-guide/nfs-methods-v3/v3_nfs_exports_export_id.html"><code class="language-plaintext highlighter-rouge">/v3/nfs/exports/{export_id}</code></a> Qumulo REST API endpoint, include <code class="language-plaintext highlighter-rouge">require_tls</code> for each rule. A rule written without it doesn't require TLS.</li>
+    <li>A <code class="language-plaintext highlighter-rouge">qq</code> CLI from a Qumulo Core version lower than 7.11.0 turns off <strong>Require TLS</strong> for every rule when it creates an export or replaces an export's host access rules, even if the rules file specifies <code class="language-plaintext highlighter-rouge">require_tls</code>. To manage exports that require TLS, use the <code class="language-plaintext highlighter-rouge">qq</code> CLI from Qumulo Core 7.11.0 (or higher).</li>
+  </ul>
+</div>
+
+<ol>
+  <li>
+    <p>To require TLS for an existing host access rule, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_export_host_access.html"><code class="language-plaintext highlighter-rouge">qq nfs_modify_export_host_access</code></a>
+ command with the <code class="language-plaintext highlighter-rouge">modify_entry</code> subcommand, specify the export path and the rule’s position, and use the <code class="language-plaintext highlighter-rouge">--require-tls</code> flag. For example:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq nfs_modify_export_host_access <span class="se">\</span>
+  <span class="nt">--export-path</span> /data <span class="se">\</span>
+  modify_entry <span class="se">\</span>
+  <span class="nt">--position</span> 1 <span class="se">\</span>
+  <span class="nt">--require-tls</span>
+</code></pre></div>    </div>
+
+    <p>To stop requiring TLS, use the <code class="language-plaintext highlighter-rouge">--no-require-tls</code> flag instead. To add a new rule that requires TLS, use the <code class="language-plaintext highlighter-rouge">add_entry</code> subcommand with the <code class="language-plaintext highlighter-rouge">--require-tls</code> flag.</p>
+  </li>
+  <li>
+    <p>To check the export’s host access rules, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_get_export.html"><code class="language-plaintext highlighter-rouge">qq nfs_get_export</code></a>
+ command and specify the export path. For example:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq nfs_get_export <span class="nt">--export-path</span> /data
+</code></pre></div>    </div>
+
+    <p>The following is example output.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ID:          2
+Export Path: /data
+Tenant ID:   1
+FS Path:     /data
+Description:
+32bit-mapped fields: None
+Host Access:
+ID  Hosts           Authentication Mode       Access Options
+==  ==============  ========================  =========================================
+1   203.0.113.0/24  AUTHENTICATION_MODE_NONE  rw, insecure, xprtsec=tls, no_root_squash
+</code></pre></div>    </div>
+
+    <p>For a rule that requires TLS, the <code class="language-plaintext highlighter-rouge">Access Options</code> column shows <code class="language-plaintext highlighter-rouge">xprtsec=tls</code>.</p>
+  </li>
+</ol>
+
+<h3 id="to-require-nfs-over-tls-while-permitting-some-clients-to-mount-in-plaintext">To Require NFS over TLS while Permitting Some Clients to Mount in Plaintext</h3>
+<p>While you move clients to NFS over TLS, you can require TLS only for the hosts that have already moved. Because Qumulo Core applies the first rule that matches a client, add a rule that requires TLS for the moved hosts and put it above the rule that matches the other hosts. For example:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Position</th>
+      <th>Hosts</th>
+      <th>Require TLS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="language-plaintext highlighter-rouge">203.0.113.0/24</code> (moved to TLS)</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="language-plaintext highlighter-rouge">*</code></td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>To insert a rule at the top of the list, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/nfs/nfs_modify_export_host_access.html"><code class="language-plaintext highlighter-rouge">qq nfs_modify_export_host_access</code></a>
+ command with the <code class="language-plaintext highlighter-rouge">add_entry</code> subcommand, and specify <code class="language-plaintext highlighter-rouge">0</code> for the <code class="language-plaintext highlighter-rouge">--insert-after</code> flag. For example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq nfs_modify_export_host_access <span class="se">\</span>
+  <span class="nt">--export-path</span> /data <span class="se">\</span>
+  add_entry <span class="se">\</span>
+  <span class="nt">--hosts</span> 203.0.113.0/24 <span class="se">\</span>
+  <span class="nt">--insert-after</span> 0 <span class="se">\</span>
+  <span class="nt">--require-tls</span>
+</code></pre></div></div>
+
+<p>As more hosts move, widen the first rule. When most hosts have moved, you can reverse the arrangement: put a rule without <strong>Require TLS</strong> for the hosts that still mount in plaintext first, and a rule with <strong>Require TLS</strong> for all hosts (<code class="language-plaintext highlighter-rouge">*</code>) below it.</p>
+
+<p>An NFSv4.1 TLS mount that a client makes while it has a plaintext NFSv4.1 mount of the same node open sends its traffic in plaintext, and a rule with <strong>Require TLS</strong> refuses that traffic. For this reason, count a host as moved only when it has no plaintext NFSv4.1 mounts of the cluster left and the <code class="language-plaintext highlighter-rouge">findmnt</code> command shows <code class="language-plaintext highlighter-rouge">xprtsec=tls</code> for each of its mounts of the cluster. For more information, see <a href="nfs-over-tls-enabling-using.html#mixing-tls-and-plaintext-mounts-on-one-client">Mixing TLS and Plaintext Mounts on One Client</a>.</p>
 
 <h2 id="to-troubleshoot-host-access-rules-for-an-nfs-export">To Troubleshoot Host Access Rules for an NFS Export</h2>
 <p>This section describes the troubleshooting steps for a scenario in which an NFS client can’t mount or access an NFS export.</p>
