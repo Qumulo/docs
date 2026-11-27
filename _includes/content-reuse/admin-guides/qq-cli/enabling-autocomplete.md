@@ -56,7 +56,7 @@ alias qqcreds='qq --host my.qumulo.com --credentials-store ~/.my_creds'
 When you reload your profile, you can append a parameter to the complex command by appending it to the alias. For example:
 
 ```bash
-qqcreds my_credentials
+qqcreds smb_list_shares
 ```
 
 To ensure that your `argcomplete` configuration works with `qq` CLI command aliases, you must perform additional configuration and add a third-party helper script to your system.

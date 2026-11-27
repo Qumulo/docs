@@ -160,7 +160,7 @@ This section explains how to list access tokens for yourself, a specific user, o
   qq auth_list_access_tokens --user jane
   ```
 
-* To list access tokens for all users, run the {% include qq.html command="auth_list_access_tokens" %} command without any additional parameters. For example:
+* To list access tokens for all users, run the {% include qq.html command="auth_list_access_tokens" %} command without any flags. For example:
 
   ```bash
   qq auth_list_access_tokens

@@ -196,7 +196,7 @@ When the cluster requires SSO authentication, your cluster rejects password-base
 
   * **SAML Single Logout (SLO):** We recommend clicking **Sign out** in the Qumulo Core Web UI.
 
-  * **Automatic Configuration from Metadata XML:** You must specify each parameter by using the `qq` CLI.
+  * **Automatic Configuration from Metadata XML:** You must specify each setting by using the `qq` CLI.
 
   * **Returning to Previous Web UI Page:** You can't return to a previous page after re-authenticating (for example, after a timeout).
 
